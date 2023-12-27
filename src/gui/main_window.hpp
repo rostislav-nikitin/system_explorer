@@ -3,7 +3,8 @@
 
 #include <wx/wx.h>
 #include <wx/bookctrl.h>
-#include <wx/treectrl.h>
+//#include <wx/treectrl.h>
+#include <wx/treelist.h>
 #include <wx/srchctrl.h>
 
 namespace SystemExplorer
@@ -21,7 +22,7 @@ namespace SystemExplorer
             wxPanel *processesTab;
             wxPanel *deamonsTab;
 
-            wxTreeCtrl *processesTree;
+            wxTreeListCtrl *processesTreeList;
 
             void CreateMainBook();
             void CreateProcessesTab();
@@ -29,8 +30,9 @@ namespace SystemExplorer
             void CreateStatus();
 
             void BindEvents();
+            void BindData();
 
-            void processesTree_OnKeyDown(wxTreeEvent &event);
+            void processesTreeList_OnKeyDown(wxKeyEvent &event);
             void processesSearch_Click(wxCommandEvent &event);
             
         public:

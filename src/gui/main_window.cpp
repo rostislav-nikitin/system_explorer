@@ -15,6 +15,8 @@ namespace SystemExplorer
             CreateStatus();
 
             BindEvents();
+
+            BindData();
             //Center();
             /*Center(wxBOTH);
             CenterOnScreen();*/
@@ -35,15 +37,27 @@ namespace SystemExplorer
         {
             wxSearchCtrl *processesSearch = new wxSearchCtrl(processesTab, PROCESSES_SEARCH_ID, _T("Process Name"), wxPoint(0,0), wxSize(100, 32));
 
-            processesTree = new wxTreeCtrl(processesTab, PROCESSES_TREE_ID);
-            processesTree->SetWindowStyle(wxBORDER_NONE);
-            wxTreeItemId rootId = processesTree->AddRoot("Root");
-            processesTree->AppendItem(rootId, "Sub Node");
-            processesTree->ExpandAll();
+            processesTreeList = new wxTreeListCtrl(processesTab, PROCESSES_TREE_ID, wxPoint(0,0), wxSize(100, 800));
+            processesTreeList->SetWindowStyle(wxBORDER_NONE);
+            processesTreeList->AppendColumn(_T("Name"));
+            processesTreeList->AppendColumn(_T("PID"));
+            //wxTreeItemId rootId = processesTreeList->AddRoot("Root");
+            wxTreeListItem subItem1 = processesTreeList->AppendItem(processesTreeList->GetRootItem(), "Process #1");
+            processesTreeList->SetItemText(subItem1, 1, "1");
+            wxTreeListItem subItem11 = processesTreeList->AppendItem(subItem1, "Process #1");
+            processesTreeList->SetItemText(subItem11, 1, "10");
+
+            wxTreeListItem subItem2 = processesTreeList->AppendItem(processesTreeList->GetRootItem(), "Process #2");
+            processesTreeList->SetItemText(subItem2, 1, "2");
+            wxTreeListItem subItem22 = processesTreeList->AppendItem(subItem2, "Process #2");
+            processesTreeList->SetItemText(subItem22, 1, "12");
+            //processesTreeList->ExpandAllChildren(processesTreeList->GetRootItem());
+            processesTreeList->Expand(subItem1);
+            processesTreeList->Expand(subItem2);
 
             wxBoxSizer *processesTabSizer = new wxBoxSizer(wxVERTICAL);
             processesTabSizer->Add(processesSearch, 0, wxEXPAND | wxALL, 0);
-            processesTabSizer->Add(processesTree, 0, wxEXPAND | wxALL, 0);
+            processesTabSizer->Add(processesTreeList, 0, wxEXPAND | wxALL, 0);
             processesTab->SetSizer(processesTabSizer);
         }
 
@@ -59,18 +73,24 @@ namespace SystemExplorer
 
         void MainWindow::BindEvents()
         {
-            Bind(wxEVT_TREE_KEY_DOWN, &MainWindow::processesTree_OnKeyDown, this, PROCESSES_TREE_ID);
+            processesTreeList->Bind(wxEVT_KEY_DOWN, &MainWindow::processesTreeList_OnKeyDown, this, PROCESSES_TREE_ID);
             Bind(wxEVT_SEARCHCTRL_SEARCH_BTN, &MainWindow::processesSearch_Click, this, PROCESSES_SEARCH_ID);
             Bind(wxEVT_TEXT, &MainWindow::processesSearch_Click, this, PROCESSES_SEARCH_ID);
         }
 
-        void MainWindow::processesTree_OnKeyDown(wxTreeEvent &event)
+        void MainWindow::processesTreeList_OnKeyDown(wxKeyEvent &event)
         {
             int keyCode = event.GetKeyCode();
+            //wxMessageBox("OnDelete", std::to_string(1), wxOK | wxICON_INFORMATION, this);
+            wxTreeListItem selectedItem;
+            wxString selectedItemText;
+            
             switch(keyCode)
             {
                 case WXK_DELETE:
-                    wxMessageBox("OnDelete", std::to_string(keyCode), wxOK | wxICON_INFORMATION, this);
+                    selectedItem = processesTreeList->GetSelection();
+                    selectedItemText = processesTreeList->GetItemText(selectedItem);
+                    wxMessageBox("OnDelete", std::to_string(keyCode) + "::" + selectedItemText, wxOK | wxICON_INFORMATION, this);
                     break;
                 default:
                     event.Skip();
@@ -82,6 +102,15 @@ namespace SystemExplorer
         {
             //wxMessageBox("Search", event.GetString(), wxOK | wxICON_INFORMATION, this);
             SetStatusText(event.GetString());
+        }
+
+        void MainWindow::BindData()
+        {
+            using ProcessExplorer::Core::ProcessManager;
+            using ProcessExplorer::Core::Models::ProcessTree;
+
+            ProcessManager pm;
+            ProcessTree processTree = pm.GetProcessTree(std::string(""));
         }
     }
 }

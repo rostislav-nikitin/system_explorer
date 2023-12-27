@@ -1,6 +1,9 @@
+#ifndef PROCESS_MANAGER_HPP
+#define PROCESS_MANAGER_HPP
+
 #include <string>
 
-#include "models"
+#include "models/process_tree.hpp"
 
 namespace ProcessExplorer
 {
@@ -12,6 +15,8 @@ namespace ProcessExplorer
         {
         public:
             ProcessTree GetProcessTree(std::string filter);
-        }
+        };
     }
 }
+
+#endif

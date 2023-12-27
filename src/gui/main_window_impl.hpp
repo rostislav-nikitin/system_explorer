@@ -4,6 +4,8 @@
 #include <wx/wx.h>
 
 #include "main_window.hpp"
+#include "../core/models/process_tree.hpp"
+#include "../core/process_manager.hpp"
 
 #endif
 
