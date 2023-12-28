@@ -26,6 +26,11 @@ namespace ProcessExplorer
                         char buffer[buffer_size + 1];
                         char *buffer_ptr = reinterpret_cast<char *>(buffer);
                         ssize_t size = getline(&buffer_ptr, &buffer_size, file);
+                        if(size > buffer_size)
+                        {
+                            size = buffer_size;
+                        }
+
                         if(size > 0)
                         {
                             buffer[size - 1] = '\0';
