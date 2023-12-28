@@ -26,7 +26,14 @@ namespace ProcessExplorer
                         char buffer[buffer_size + 1];
                         char *buffer_ptr = reinterpret_cast<char *>(buffer);
                         ssize_t size = getline(&buffer_ptr, &buffer_size, file);
-                        buffer[size - 1] = '\0';
+                        if(size > 0)
+                        {
+                            buffer[size - 1] = '\0';
+                        }
+                        else
+                        {
+                            buffer[0] = '\0';
+                        }
                         //std::cout << buffer << std::endl;
                         result.processes.insert(std::make_pair(std::string(buffer), std::string(ent->d_name)));
                         fclose(file);                    
