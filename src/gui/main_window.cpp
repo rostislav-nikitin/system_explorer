@@ -9,6 +9,7 @@ namespace SystemExplorer
         MainWindow::MainWindow() : wxFrame(nullptr, wxID_ANY, TITLE, wxPoint(-1, -1), wxSize(800, 600))
         {
             SetTitle(TITLE);
+
             CreateMainBook();
             CreateProcessesTab();
             CreateDeamonsTab();
@@ -17,9 +18,7 @@ namespace SystemExplorer
             BindEvents();
 
             BindData();
-            //Center();
-            /*Center(wxBOTH);
-            CenterOnScreen();*/
+
         }
 
         void MainWindow::CreateMainBook()
@@ -42,6 +41,7 @@ namespace SystemExplorer
             processesTreeList->AppendColumn(_T("Name"));
             processesTreeList->AppendColumn(_T("PID"));
             //wxTreeItemId rootId = processesTreeList->AddRoot("Root");
+            /*
             wxTreeListItem subItem1 = processesTreeList->AppendItem(processesTreeList->GetRootItem(), "Process #1");
             processesTreeList->SetItemText(subItem1, 1, "1");
             wxTreeListItem subItem11 = processesTreeList->AppendItem(subItem1, "Process #1");
@@ -51,9 +51,11 @@ namespace SystemExplorer
             processesTreeList->SetItemText(subItem2, 1, "2");
             wxTreeListItem subItem22 = processesTreeList->AppendItem(subItem2, "Process #2");
             processesTreeList->SetItemText(subItem22, 1, "12");
+            
             //processesTreeList->ExpandAllChildren(processesTreeList->GetRootItem());
             processesTreeList->Expand(subItem1);
             processesTreeList->Expand(subItem2);
+            */
 
             wxBoxSizer *processesTabSizer = new wxBoxSizer(wxVERTICAL);
             processesTabSizer->Add(processesSearch, 0, wxEXPAND | wxALL, 0);
@@ -111,6 +113,11 @@ namespace SystemExplorer
 
             ProcessManager pm;
             ProcessTree processTree = pm.GetProcessTree(std::string(""));
+            for(std::multimap<std::string, std::string>::const_iterator it = processTree.processes.begin(); it != processTree.processes.end(); ++it)
+            {
+                wxTreeListItem process = processesTreeList->AppendItem(processesTreeList->GetRootItem(), it->first);
+                processesTreeList->SetItemText(process, 1, it->second);
+            }
         }
     }
 }

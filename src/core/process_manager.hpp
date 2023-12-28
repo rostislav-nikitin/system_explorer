@@ -13,6 +13,7 @@ namespace ProcessExplorer
 
         class ProcessManager
         {
+            bool IsNumber(std::string str);
         public:
             ProcessTree GetProcessTree(std::string filter);
         };
