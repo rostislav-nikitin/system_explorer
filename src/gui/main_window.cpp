@@ -86,13 +86,18 @@ namespace SystemExplorer
             //wxMessageBox("OnDelete", std::to_string(1), wxOK | wxICON_INFORMATION, this);
             wxTreeListItem selectedItem;
             wxString selectedItemText;
+            wxString pidAsString;
+            pid_t pid;
             
             switch(keyCode)
             {
                 case WXK_DELETE:
                     selectedItem = processesTreeList->GetSelection();
-                    selectedItemText = processesTreeList->GetItemText(selectedItem);
-                    wxMessageBox("OnDelete", std::to_string(keyCode) + "::" + selectedItemText, wxOK | wxICON_INFORMATION, this);
+                    //selectedItemText = processesTreeList->GetItemText(selectedItem);
+                    pidAsString = processesTreeList->GetItemText(selectedItem, 1);
+                    //wxMessageBox("OnDelete", std::to_string(keyCode) + "::" + selectedItemText, wxOK | wxICON_INFORMATION, this);
+                    pid = std::stoi(pidAsString.ToStdString());
+                    kill(pid, SIGKILL);
                     break;
                 default:
                     event.Skip();
@@ -108,16 +113,51 @@ namespace SystemExplorer
 
         void MainWindow::BindData()
         {
-            using ProcessExplorer::Core::ProcessManager;
-            using ProcessExplorer::Core::Models::ProcessTree;
+            using SystemExplorer::Core::ProcessManager;
+            using SystemExplorer::Core::Models::Process;
+            using SystemExplorer::Core::Models::ProcessTree;
 
             ProcessManager pm;
             ProcessTree processTree = pm.GetProcessTree(std::string(""));
-            for(std::multimap<std::string, std::string>::const_iterator it = processTree.processes.begin(); it != processTree.processes.end(); ++it)
+            for(std::multimap<pid_t, Process>::const_iterator it = processTree.processes.begin(); it != processTree.processes.end(); ++it)
             {
-                wxTreeListItem process = processesTreeList->AppendItem(processesTreeList->GetRootItem(), it->first);
-                processesTreeList->SetItemText(process, 1, it->second);
+                std::string name = it->second.GetName();
+                pid_t pid = it->second.GetPid();
+                pid_t parentPid = it->second.GetParentPid();
+
+                wxTreeListItem parent;
+
+                if(parentPid == 0)
+                    parent = processesTreeList->GetRootItem();
+                else
+                    parent = FindItemByPid(parentPid);
+
+                if(parent.IsOk())
+                {
+                    wxTreeListItem process = processesTreeList->AppendItem(parent, name);
+                    processesTreeList->SetItemText(process, 1, std::to_string(pid));
+                    processesTreeList->Expand(process);
+                }
             }
+        }
+
+        wxTreeListItem MainWindow::FindItemByPid(pid_t pid)
+        {
+            wxTreeListItem result;
+
+            for(wxTreeListItem current = processesTreeList->GetFirstItem(); current.IsOk(); current = processesTreeList->GetNextItem(current))
+            {
+                wxString nodePid = processesTreeList->GetItemText(current, 1);
+//                std::cout << nodePid << std::endl;
+                if(atoi(nodePid.c_str()) == pid)
+                {
+//                    std::cout << pid << std::endl;
+                    result = current;
+                    break;
+                }
+            }
+
+            return result;
         }
     }
 }

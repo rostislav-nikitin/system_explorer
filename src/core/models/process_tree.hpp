@@ -1,10 +1,13 @@
 #ifndef PROCESS_TREE_HPP
 #define PROCESS_TREE_HPP
 
+#include <sys/types.h>
 #include <string>
 #include <map>
 
-namespace ProcessExplorer
+#include "process.hpp"
+
+namespace SystemExplorer
 {
     namespace Core
     {
@@ -13,7 +16,7 @@ namespace ProcessExplorer
             class ProcessTree
             {
             public:
-                std::multimap<std::string, std::string> processes;
+                std::multimap<pid_t, Process> processes;
             };
         }
     }

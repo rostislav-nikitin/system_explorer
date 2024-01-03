@@ -5,7 +5,7 @@
 
 #include "models/process_tree.hpp"
 
-namespace ProcessExplorer
+namespace SystemExplorer
 {
     namespace Core
     {
@@ -14,6 +14,8 @@ namespace ProcessExplorer
         class ProcessManager
         {
             bool IsNumber(std::string str);
+            std::string GetName(dirent *ent);
+            pid_t GetParentPid(dirent *ent);
         public:
             ProcessTree GetProcessTree(std::string filter);
         };

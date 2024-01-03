@@ -32,6 +32,8 @@ namespace SystemExplorer
             void BindEvents();
             void BindData();
 
+            wxTreeListItem FindItemByPid(pid_t pid);
+
             void processesTreeList_OnKeyDown(wxKeyEvent &event);
             void processesSearch_Click(wxCommandEvent &event);
             

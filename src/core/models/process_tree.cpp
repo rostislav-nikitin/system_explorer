@@ -1,6 +1,6 @@
 #include "process_tree_impl.hpp"
 
-namespace ProcessExplorer
+namespace SystemExplorer
 {
     namespace Core
     {

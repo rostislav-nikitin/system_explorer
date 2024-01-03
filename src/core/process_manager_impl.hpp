@@ -9,6 +9,8 @@
 
 #include <algorithm>
 
+#include "models/process.hpp"
+
 #include "process_manager.hpp"
 
 #endif
