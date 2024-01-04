@@ -16,7 +16,7 @@ namespace SystemExplorer
             class ProcessTree
             {
             public:
-                std::multimap<pid_t, Process> processes;
+                std::map<pid_t, Process> processes;
             };
         }
     }

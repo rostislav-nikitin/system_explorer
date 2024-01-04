@@ -18,7 +18,6 @@ namespace SystemExplorer
             BindEvents();
 
             BindData();
-
         }
 
         void MainWindow::CreateMainBook()
@@ -118,8 +117,8 @@ namespace SystemExplorer
             using SystemExplorer::Core::Models::ProcessTree;
 
             ProcessManager pm;
-            ProcessTree processTree = pm.GetProcessTree(std::string(""));
-            for(std::multimap<pid_t, Process>::const_iterator it = processTree.processes.begin(); it != processTree.processes.end(); ++it)
+            ProcessTree processTree = pm.GetProcessTree(std::string("kworker"));
+            for(std::map<pid_t, Process>::const_iterator it = processTree.processes.begin(); it != processTree.processes.end(); ++it)
             {
                 std::string name = it->second.GetName();
                 pid_t pid = it->second.GetPid();

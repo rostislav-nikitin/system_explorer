@@ -15,13 +15,18 @@ namespace SystemExplorer
                 std::string _name;
                 pid_t _pid;
                 pid_t _parentPid;
+                bool _picked;
 
             public:
-                Process(std::string name, pid_t pid, pid_t parentPid);
+                Process();
+                Process(std::string name, pid_t pid, pid_t parentPid, bool picked = true);
 
                 std::string GetName() const;
                 pid_t GetPid() const;
                 pid_t GetParentPid() const;
+
+                bool GetPicked() const;
+                void SetPicked(bool value);
             };
         }
     }

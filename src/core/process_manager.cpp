@@ -7,11 +7,16 @@ namespace SystemExplorer
 {
     namespace Core
     {
+
         std::vector<std::string> split(std::string &str, std::string delimiter);
+        std::vector<Process const*> get_leafs(ProcessTree &processTree);
+        void apply_filter(ProcessTree &processTree, std::vector<Process const*> &leafs, std::string &filter);
 
         ProcessTree ProcessManager::GetProcessTree(std::string filter)
         {
             ProcessTree result;
+            bool filtering = filter != "";
+            std::cout << "filtering=" << filtering << std::endl;
 
             DIR *dir;
             dir = opendir("/proc");
@@ -25,7 +30,7 @@ namespace SystemExplorer
                     std::string processName = GetName(ent);
                     pid_t pid = atoi(ent->d_name);
                     pid_t parentPid = GetParentPid(ent);
-                    Process process(processName, pid, parentPid);
+                    Process process(processName, pid, parentPid, !filtering);
 //                    std::cout << parentPid << std::endl;
                     result.processes.insert(std::make_pair(pid, process));
                 }
@@ -33,7 +38,54 @@ namespace SystemExplorer
 
             closedir(dir);
 
+            //if(filtering)
+            //{
+                std::vector<Process const*> leafs = get_leafs(result);
+                apply_filter(result, leafs, filter);
+            //}
+
             return result;
+        }
+
+        std::vector<Process const*> get_leafs(ProcessTree &processTree)
+        {
+            std::vector<Process const*> result;
+
+            for(std::map<pid_t, Process>::const_iterator it = processTree.processes.begin(); it != processTree.processes.end(); ++it)
+            {
+                //std::string name = it->second.GetName();
+                std::map<pid_t, Process>::iterator found = 
+                    std::find_if(processTree.processes.begin(), processTree.processes.end(), [it](std::pair<pid_t, Process> const &item)
+                    {
+                        return item.second.GetParentPid() == it->second.GetPid();
+                    });
+                if(found == processTree.processes.end())
+                {
+                    result.push_back(&(it->second));
+                }
+            }
+
+            return result;
+        }
+
+        void apply_filter(ProcessTree &processTree, std::vector<Process const*> &leafs, std::string &filter)
+        {
+            std::for_each(leafs.begin(), leafs.end(), [&processTree, &filter](Process const *process)
+            {
+                std::string name = process->GetName();
+                if(name.find(filter) == 0)
+                {
+                    pid_t pid = process->GetPid();
+                    processTree.processes[pid].SetPicked(true);
+//                    std::cout << pid << ":" << name << std::endl;
+                }
+            });
+
+            for(std::map<pid_t, Process>::const_iterator it = processTree.processes.begin(); it != processTree.processes.end(); ++it)
+            {
+                if(it->second.GetPicked())
+                    std::cout << it->second.GetPid() << ":" << it->second.GetName() << std::endl;
+            }
         }
 
         bool ProcessManager::IsNumber(std::string str)

@@ -6,7 +6,11 @@ namespace SystemExplorer
     {
         namespace Models
         {
-            Process::Process(std::string name, pid_t pid, pid_t parentPid) : _name(name), _pid(pid), _parentPid(parentPid)
+            Process::Process() : _name(), _pid(0), _parentPid(0), _picked(false)
+            {
+            }
+
+            Process::Process(std::string name, pid_t pid, pid_t parentPid, bool picked) : _name(name), _pid(pid), _parentPid(parentPid), _picked(picked)
             {
             }
 
@@ -23,6 +27,16 @@ namespace SystemExplorer
             pid_t Process::GetParentPid() const
             {
                 return _parentPid;
+            }
+
+            bool Process::GetPicked() const
+            {
+                return _picked;
+            }
+
+            void Process::SetPicked(bool value)
+            {
+                _picked = value;
             }
         }
     }
