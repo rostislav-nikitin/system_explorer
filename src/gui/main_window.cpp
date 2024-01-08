@@ -76,8 +76,8 @@ namespace SystemExplorer
         void MainWindow::BindEvents()
         {
             processesTreeList->Bind(wxEVT_KEY_DOWN, &MainWindow::processesTreeList_OnKeyDown, this, PROCESSES_TREE_ID);
-            Bind(wxEVT_SEARCHCTRL_SEARCH_BTN, &MainWindow::processesSearch_Click, this, PROCESSES_SEARCH_ID);
-            //Bind(wxEVT_TEXT, &MainWindow::processesSearch_Click, this, PROCESSES_SEARCH_ID);
+//            Bind(wxEVT_SEARCHCTRL_SEARCH_BTN, &MainWindow::processesSearch_Click, this, PROCESSES_SEARCH_ID);
+            Bind(wxEVT_TEXT, &MainWindow::processesSearch_Click, this, PROCESSES_SEARCH_ID);
         }
 
         void MainWindow::processesTreeList_OnKeyDown(wxKeyEvent &event)
