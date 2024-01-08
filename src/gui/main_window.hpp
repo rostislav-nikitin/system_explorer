@@ -22,6 +22,7 @@ namespace SystemExplorer
             wxPanel *processesTab;
             wxPanel *deamonsTab;
 
+            wxSearchCtrl *processesSearch;
             wxTreeListCtrl *processesTreeList;
 
             void CreateMainBook();

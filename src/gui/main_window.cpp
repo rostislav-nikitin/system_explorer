@@ -33,7 +33,8 @@ namespace SystemExplorer
 
         void MainWindow::CreateProcessesTab()
         {
-            wxSearchCtrl *processesSearch = new wxSearchCtrl(processesTab, PROCESSES_SEARCH_ID, _T("Process Name"), wxPoint(0,0), wxSize(100, 32));
+            processesSearch = new wxSearchCtrl(processesTab, PROCESSES_SEARCH_ID, _T(""), wxPoint(0,0), wxSize(100, 32));
+            processesSearch->SetDescriptiveText("Filter");
 
             processesTreeList = new wxTreeListCtrl(processesTab, PROCESSES_TREE_ID, wxPoint(0,0), wxSize(100, 800));
             processesTreeList->SetWindowStyle(wxBORDER_NONE);
@@ -76,7 +77,7 @@ namespace SystemExplorer
         {
             processesTreeList->Bind(wxEVT_KEY_DOWN, &MainWindow::processesTreeList_OnKeyDown, this, PROCESSES_TREE_ID);
             Bind(wxEVT_SEARCHCTRL_SEARCH_BTN, &MainWindow::processesSearch_Click, this, PROCESSES_SEARCH_ID);
-            Bind(wxEVT_TEXT, &MainWindow::processesSearch_Click, this, PROCESSES_SEARCH_ID);
+            //Bind(wxEVT_TEXT, &MainWindow::processesSearch_Click, this, PROCESSES_SEARCH_ID);
         }
 
         void MainWindow::processesTreeList_OnKeyDown(wxKeyEvent &event)
@@ -108,6 +109,8 @@ namespace SystemExplorer
         {
             //wxMessageBox("Search", event.GetString(), wxOK | wxICON_INFORMATION, this);
             SetStatusText(event.GetString());
+            BindData();
+           
         }
 
         void MainWindow::BindData()
@@ -116,26 +119,34 @@ namespace SystemExplorer
             using SystemExplorer::Core::Models::Process;
             using SystemExplorer::Core::Models::ProcessTree;
 
+            processesTreeList->DeleteAllItems();
             ProcessManager pm;
-            ProcessTree processTree = pm.GetProcessTree(std::string("kworker"));
+            std::string filter;
+                filter = processesSearch->GetValue();
+
+            ProcessTree processTree = pm.GetProcessTree(filter);
             for(std::map<pid_t, Process>::const_iterator it = processTree.processes.begin(); it != processTree.processes.end(); ++it)
             {
-                std::string name = it->second.GetName();
-                pid_t pid = it->second.GetPid();
-                pid_t parentPid = it->second.GetParentPid();
-
-                wxTreeListItem parent;
-
-                if(parentPid == 0)
-                    parent = processesTreeList->GetRootItem();
-                else
-                    parent = FindItemByPid(parentPid);
-
-                if(parent.IsOk())
+                bool picked = it->second.GetPicked();
+                if(picked)
                 {
-                    wxTreeListItem process = processesTreeList->AppendItem(parent, name);
-                    processesTreeList->SetItemText(process, 1, std::to_string(pid));
-                    processesTreeList->Expand(process);
+                    std::string name = it->second.GetName();
+                    pid_t pid = it->second.GetPid();
+                    pid_t parentPid = it->second.GetParentPid();
+
+                    wxTreeListItem parent;
+
+                    if(parentPid == 0)
+                        parent = processesTreeList->GetRootItem();
+                    else
+                        parent = FindItemByPid(parentPid);
+
+                    if(parent.IsOk())
+                    {
+                        wxTreeListItem process = processesTreeList->AppendItem(parent, name);
+                        processesTreeList->SetItemText(process, 1, std::to_string(pid));
+                        processesTreeList->Expand(process);
+                    }
                 }
             }
         }

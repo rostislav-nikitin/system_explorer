@@ -77,7 +77,35 @@ namespace SystemExplorer
                 {
                     pid_t pid = process->GetPid();
                     processTree.processes[pid].SetPicked(true);
+
+                    pid_t parentPid = process->GetParentPid();
+                    while(parentPid > 0)
+                    {
+                        Process *parent = &processTree.processes[parentPid];
+                        processTree.processes[parentPid].SetPicked(true);
+                        parentPid = parent->GetParentPid();
+                    }
+
 //                    std::cout << pid << ":" << name << std::endl;
+                }
+                else
+                {
+                    bool isPicked = false;
+                    pid_t parentPid = process->GetParentPid();
+                    while(parentPid > 0)
+                    {
+                        Process *parent = &processTree.processes[parentPid];
+                        std::string name = parent->GetName();
+                        if(isPicked || name.find(filter) == 0)
+                        {
+                            parent->SetPicked(true);
+                            isPicked = true;                        
+                        }
+                        
+                        std::cout << "1:" << parentPid << std::endl;
+                        parentPid = parent->GetParentPid();
+                        std::cout << "2:" << parentPid << std::endl;
+                    }
                 }
             });
 
