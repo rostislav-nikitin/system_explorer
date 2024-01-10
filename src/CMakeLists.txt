@@ -9,4 +9,5 @@ if(wxWidgets_USE_FILE)
 endif()
 
 add_executable(system_explorer core/models/process.cpp  core/models/process_tree.cpp core/process_manager.cpp  gui/main_window.cpp app.cpp)
+#add_executable(system_explorer core/models/process.cpp  core/models/process_tree.cpp core/process_manager.cpp  app.cpp)
 target_link_libraries(system_explorer ${wxWidgets_LIBRARIES})

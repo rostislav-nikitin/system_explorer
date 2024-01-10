@@ -9,12 +9,19 @@ namespace SystemExplorer
     class App : public wxApp
     {
     public:
-    	bool OnInit() override;
+    	virtual bool OnInit() override;
     };
 
     bool App::OnInit()
     {
         using SystemExplorer::Gui::MainWindow;
+
+        //wxFrame *frame = new wxFrame(nullptr, wxID_ANY, "wxComboCtrl and wxOwnerDrawnComboBox Sample");
+
+        // and show it (the frames, unlike simple controls, are not shown when
+        // created initially)
+        //frame->Show(true);
+
 
         MainWindow *window = new MainWindow();
         window->Show(true);

@@ -6,7 +6,7 @@ namespace SystemExplorer
 {
     namespace Gui
     {
-        MainWindow::MainWindow() : wxFrame(nullptr, wxID_ANY, TITLE, wxPoint(-1, -1), wxSize(800, 600))
+        MainWindow::MainWindow() : wxFrame(nullptr, wxID_ANY, "System Explorer", wxPoint(-1, -1), wxSize(800, 600))
         {
             SetTitle(TITLE);
 
@@ -169,5 +169,6 @@ namespace SystemExplorer
 
             return result;
         }
+
     }
 }
