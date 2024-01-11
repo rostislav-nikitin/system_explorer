@@ -8,6 +8,7 @@ namespace SystemExplorer
     namespace Core
     {
 
+        std::string get_data(dirent *ent, std::string file_name);
         std::vector<std::string> split(std::string &str, std::string delimiter);
         std::vector<Process const*> get_leafs(ProcessTree &processTree);
         void apply_filter(ProcessTree &processTree, std::vector<Process const*> &leafs, std::string &filter);
@@ -16,7 +17,7 @@ namespace SystemExplorer
         {
             ProcessTree result;
             bool filtering = filter != "";
-            std::cout << "filtering=" << filtering << std::endl;
+            //std::cout << "filtering=" << filtering << std::endl;
 
             DIR *dir;
             dir = opendir("/proc");
@@ -26,23 +27,18 @@ namespace SystemExplorer
             {
                 if(IsNumber(ent->d_name))
                 {
-                    //std::cout << ent->d_name << std::endl;
                     std::string processName = GetName(ent);
                     pid_t pid = atoi(ent->d_name);
                     pid_t parentPid = GetParentPid(ent);
                     Process process(processName, pid, parentPid, !filtering);
-//                    std::cout << parentPid << std::endl;
                     result.processes.insert(std::make_pair(pid, process));
                 }
             }
 
             closedir(dir);
 
-            //if(filtering)
-            //{
-                std::vector<Process const*> leafs = get_leafs(result);
-                apply_filter(result, leafs, filter);
-            //}
+            std::vector<Process const*> leafs = get_leafs(result);
+            apply_filter(result, leafs, filter);
 
             return result;
         }
@@ -53,12 +49,12 @@ namespace SystemExplorer
 
             for(std::map<pid_t, Process>::const_iterator it = processTree.processes.begin(); it != processTree.processes.end(); ++it)
             {
-                //std::string name = it->second.GetName();
                 std::map<pid_t, Process>::iterator found = 
                     std::find_if(processTree.processes.begin(), processTree.processes.end(), [it](std::pair<pid_t, Process> const &item)
                     {
                         return item.second.GetParentPid() == it->second.GetPid();
                     });
+
                 if(found == processTree.processes.end())
                 {
                     result.push_back(&(it->second));
@@ -101,19 +97,17 @@ namespace SystemExplorer
                             parent->SetPicked(true);
                             isPicked = true;                        
                         }
-                        
-                        std::cout << "1:" << parentPid << std::endl;
                         parentPid = parent->GetParentPid();
-                        std::cout << "2:" << parentPid << std::endl;
                     }
                 }
             });
-
+/*
             for(std::map<pid_t, Process>::const_iterator it = processTree.processes.begin(); it != processTree.processes.end(); ++it)
             {
                 if(it->second.GetPicked())
                     std::cout << it->second.GetPid() << ":" << it->second.GetName() << std::endl;
-            }
+			}
+*/
         }
 
         bool ProcessManager::IsNumber(std::string str)
@@ -124,36 +118,27 @@ namespace SystemExplorer
 
         std::string ProcessManager::GetName(dirent *ent)
         {
-            FILE *file = fopen((std::string("/proc/") + std::string(ent->d_name) + std::string("/comm")).c_str(), "r");
-            if(file != NULL)
-            {
-                size_t buffer_size = 255;
-                char buffer[buffer_size + 1];
-                char *buffer_ptr = reinterpret_cast<char *>(buffer);
-                ssize_t size = getline(&buffer_ptr, &buffer_size, file);
-                if(size > buffer_size)
-                {
-                    size = buffer_size;
-                }
-                if(size > 0)
-                {
-                    buffer[size - 1] = '\0';
-                }
-                else
-                {
-                    buffer[0] = '\0';
-                }
+			std::string result = get_data(ent, "comm");
 
-                //std::cout << buffer << std::endl;
-                fclose(file);
-                return std::string(buffer);
-            }
-            return std::string();
+			return result;
         }
 
         pid_t ProcessManager::GetParentPid(dirent *ent)
         {
-            FILE *file = fopen((std::string("/proc/") + std::string(ent->d_name) + std::string("/stat")).c_str(), "r");
+			std::string data = get_data(ent, "stat");
+
+            std::vector<std::string> parts = split(data, " ");
+            if(parts.size() > 3)
+            	return atoi(parts[3].c_str());
+
+            return 0;
+        }
+
+        std::string get_data(dirent *ent, std::string file_name)
+        {
+			std::string result;
+
+            FILE *file = fopen((std::string("/proc/") + std::string(ent->d_name) + std::string("/") + file_name).c_str(), "r");
             if(file != NULL)
             {
                 size_t buffer_size = 1024;
@@ -175,14 +160,10 @@ namespace SystemExplorer
 
                 //std::cout << buffer << std::endl;
                 fclose(file);
-                std::string data(buffer);
-                std::vector<std::string> parts = split(data, " ");
-                if(parts.size() > 3)
-                    return atoi(parts[3].c_str());
 
-                return 0;
+                result = std::string(buffer);
             }
-            return 0;
+            return result;
         }
 
         std::vector<std::string> split(std::string &str, std::string delimiter)

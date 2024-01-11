@@ -10,6 +10,7 @@ namespace SystemExplorer
         {
             SetTitle(TITLE);
 
+			CreateTimer();
             CreateMainBook();
             CreateProcessesTab();
             CreateDeamonsTab();
@@ -18,7 +19,14 @@ namespace SystemExplorer
             BindEvents();
 
             BindData();
+
+			StartTimer();
         }
+
+		void MainWindow::CreateTimer()
+		{
+			timer = new wxTimer();
+		}
 
         void MainWindow::CreateMainBook()
         {
@@ -40,22 +48,6 @@ namespace SystemExplorer
             processesTreeList->SetWindowStyle(wxBORDER_NONE);
             processesTreeList->AppendColumn(_T("Name"));
             processesTreeList->AppendColumn(_T("PID"));
-            //wxTreeItemId rootId = processesTreeList->AddRoot("Root");
-            /*
-            wxTreeListItem subItem1 = processesTreeList->AppendItem(processesTreeList->GetRootItem(), "Process #1");
-            processesTreeList->SetItemText(subItem1, 1, "1");
-            wxTreeListItem subItem11 = processesTreeList->AppendItem(subItem1, "Process #1");
-            processesTreeList->SetItemText(subItem11, 1, "10");
-
-            wxTreeListItem subItem2 = processesTreeList->AppendItem(processesTreeList->GetRootItem(), "Process #2");
-            processesTreeList->SetItemText(subItem2, 1, "2");
-            wxTreeListItem subItem22 = processesTreeList->AppendItem(subItem2, "Process #2");
-            processesTreeList->SetItemText(subItem22, 1, "12");
-            
-            //processesTreeList->ExpandAllChildren(processesTreeList->GetRootItem());
-            processesTreeList->Expand(subItem1);
-            processesTreeList->Expand(subItem2);
-            */
 
             wxBoxSizer *processesTabSizer = new wxBoxSizer(wxVERTICAL);
             processesTabSizer->Add(processesSearch, 0, wxEXPAND | wxALL, 0);
@@ -75,10 +67,29 @@ namespace SystemExplorer
 
         void MainWindow::BindEvents()
         {
+			timer->Bind(wxEVT_TIMER, &MainWindow::timer_OnTick, this);			
             processesTreeList->Bind(wxEVT_KEY_DOWN, &MainWindow::processesTreeList_OnKeyDown, this, PROCESSES_TREE_ID);
 //            Bind(wxEVT_SEARCHCTRL_SEARCH_BTN, &MainWindow::processesSearch_Click, this, PROCESSES_SEARCH_ID);
-            Bind(wxEVT_TEXT, &MainWindow::processesSearch_Click, this, PROCESSES_SEARCH_ID);
+            processesSearch->Bind(wxEVT_TEXT, &MainWindow::processesSearch_Click, this);//, PROCESSES_SEARCH_ID);
+			processesTreeList->Bind(wxEVT_TREELIST_SELECTION_CHANGED, &MainWindow::processTreeList_SelectionChanged, this);
         }
+
+		void MainWindow::timer_OnTick(wxTimerEvent& event)
+		{
+            SetStatusText(_T("Timer tick"));
+            BindData();
+		}
+		void MainWindow::processTreeList_SelectionChanged(wxTreeListEvent& event)
+		{
+            SetStatusText(_T("Selection changed"));
+            wxTreeListItem selectedItem = processesTreeList->GetSelection();
+
+           	wxString pidAsString = processesTreeList->GetItemText(selectedItem, 1);
+            _selectedPid = std::stoi(pidAsString.ToStdString());
+            //SetStatusText(std::to_string(_selectedPid));
+			bool scrollPos = processesTreeList->HasScrollbar(wxVERTICAL);
+            SetStatusText(std::to_string(scrollPos));
+		}
 
         void MainWindow::processesTreeList_OnKeyDown(wxKeyEvent &event)
         {
@@ -146,10 +157,28 @@ namespace SystemExplorer
                         wxTreeListItem process = processesTreeList->AppendItem(parent, name);
                         processesTreeList->SetItemText(process, 1, std::to_string(pid));
                         processesTreeList->Expand(process);
+						if(_selectedPid == pid)
+							processesTreeList->Select(process);
                     }
                 }
             }
         }
+
+		void MainWindow::StartTimer()
+		{
+			if(!timer->IsRunning())
+			{
+				timer->Start(REFRESH_INTERVAL);
+			}
+		}
+
+		void MainWindow::StopTimer()
+		{
+			if(timer->IsRunning())
+			{
+				timer->Stop();
+			}
+		}
 
         wxTreeListItem MainWindow::FindItemByPid(pid_t pid)
         {
