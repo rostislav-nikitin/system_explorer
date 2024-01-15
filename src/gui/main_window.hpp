@@ -23,6 +23,7 @@ namespace SystemExplorer
             wxPanel *processesTab;
             wxPanel *deamonsTab;
 
+            wxBoxSizer *processesTabSizer;
             wxSearchCtrl *processesSearch;
             wxTreeListCtrl *processesTreeList;
 			wxTimer *timer;
@@ -37,6 +38,7 @@ namespace SystemExplorer
 
             void BindEvents();
             void BindData();
+			void ReBindData();
 			void StartTimer();
 			void StopTimer();
 

@@ -49,7 +49,7 @@ namespace SystemExplorer
             processesTreeList->AppendColumn(_T("Name"));
             processesTreeList->AppendColumn(_T("PID"));
 
-            wxBoxSizer *processesTabSizer = new wxBoxSizer(wxVERTICAL);
+            processesTabSizer = new wxBoxSizer(wxVERTICAL);
             processesTabSizer->Add(processesSearch, 0, wxEXPAND | wxALL, 0);
             processesTabSizer->Add(processesTreeList, 0, wxEXPAND | wxALL, 0);
             processesTab->SetSizer(processesTabSizer);
@@ -77,18 +77,20 @@ namespace SystemExplorer
 		void MainWindow::timer_OnTick(wxTimerEvent& event)
 		{
             SetStatusText(_T("Timer tick"));
-            BindData();
+            ReBindData();
 		}
 		void MainWindow::processTreeList_SelectionChanged(wxTreeListEvent& event)
 		{
             SetStatusText(_T("Selection changed"));
             wxTreeListItem selectedItem = processesTreeList->GetSelection();
-
-           	wxString pidAsString = processesTreeList->GetItemText(selectedItem, 1);
-            _selectedPid = std::stoi(pidAsString.ToStdString());
-            //SetStatusText(std::to_string(_selectedPid));
-			bool scrollPos = processesTreeList->HasScrollbar(wxVERTICAL);
-            SetStatusText(std::to_string(scrollPos));
+			if(selectedItem.IsOk())
+			{
+	           	wxString pidAsString = processesTreeList->GetItemText(selectedItem, 1);
+	            _selectedPid = std::stoi(pidAsString.ToStdString());
+	            //SetStatusText(std::to_string(_selectedPid));
+				bool scrollPos = processesTreeList->GetView()->HasScrollbar(wxVERTICAL);
+	            SetStatusText(std::to_string(scrollPos));
+			}
 		}
 
         void MainWindow::processesTreeList_OnKeyDown(wxKeyEvent &event)
@@ -100,19 +102,28 @@ namespace SystemExplorer
             wxString pidAsString;
             pid_t pid;
             
-            switch(keyCode)
-            {
-                case WXK_DELETE:
-                    selectedItem = processesTreeList->GetSelection();
-                    //selectedItemText = processesTreeList->GetItemText(selectedItem);
-                    pidAsString = processesTreeList->GetItemText(selectedItem, 1);
-                    //wxMessageBox("OnDelete", std::to_string(keyCode) + "::" + selectedItemText, wxOK | wxICON_INFORMATION, this);
-                    pid = std::stoi(pidAsString.ToStdString());
-                    kill(pid, SIGKILL);
-                    break;
-                default:
-                    event.Skip();
-                    break;
+            selectedItem = processesTreeList->GetSelection();
+			if(selectedItem.IsOk())
+			{
+	            switch(keyCode)
+	            {
+	                case WXK_DELETE:
+	                    //selectedItemText = processesTreeList->GetItemText(selectedItem);
+	                    pidAsString = processesTreeList->GetItemText(selectedItem, 1);
+	                    //wxMessageBox("OnDelete", std::to_string(keyCode) + "::" + selectedItemText, wxOK | wxICON_INFORMATION, this);
+	                    pid = std::stoi(pidAsString.ToStdString());
+	                    kill(pid, SIGKILL);
+	                    break;
+					case WXK_LEFT:
+                        processesTreeList->Collapse(selectedItem);
+						break;
+					case WXK_RIGHT:
+                        processesTreeList->Expand(selectedItem);
+						break;
+	                default:
+	                    event.Skip();
+	                    break;
+				}
             }
         }
 
@@ -163,6 +174,92 @@ namespace SystemExplorer
                 }
             }
         }
+
+		void MainWindow::ReBindData()
+		{
+            using SystemExplorer::Core::ProcessManager;
+            using SystemExplorer::Core::Models::Process;
+            using SystemExplorer::Core::Models::ProcessTree;
+
+			// Get processes
+            ProcessManager pm;
+            std::string filter;
+			filter = processesSearch->GetValue();
+            ProcessTree processTree = pm.GetProcessTree(filter);
+
+			// Cases
+			// 1. Item retured
+            for(std::map<pid_t, Process>::const_iterator it = processTree.processes.begin(); it != processTree.processes.end(); ++it)
+            {
+				bool picked = it->second.GetPicked();
+				std::string name = it->second.GetName();
+				pid_t pid = it->second.GetPid();
+				pid_t parentPid = it->second.GetParentPid();
+
+
+                if(picked)
+				{
+			        wxTreeListItem item = FindItemByPid(pid);
+					if(!item.IsOk())
+					{
+						//	1.1. Picekd and not exists -- create(item)
+                    	wxTreeListItem parent;
+                    	if(parentPid == 0)
+	                        parent = processesTreeList->GetRootItem();
+	                    else
+	                        parent = FindItemByPid(parentPid);
+
+                    	if(parent.IsOk())
+	                    {
+    	                    wxTreeListItem process = processesTreeList->AppendItem(parent, name);
+	                        processesTreeList->SetItemText(process, 1, std::to_string(pid));
+	                        processesTreeList->Expand(process);
+						}
+						else
+						{
+							//log error
+						}
+						
+					}
+				}
+				else
+				{
+					//	1.2. Not picked and exists -- delete
+			        wxTreeListItem item = FindItemByPid(pid);
+					if(item.IsOk())
+					{
+						processesTreeList->DeleteItem(item);
+					}
+				}
+			}
+
+			// 2. Item not returned
+			// 	2.1. Exists in tree -- detele
+            wxTreeListItem result;
+			std::vector<pid_t> toDelete;
+
+            for(wxTreeListItem current = processesTreeList->GetFirstItem(); current.IsOk(); current = processesTreeList->GetNextItem(current))
+            {
+                wxString nodePid = processesTreeList->GetItemText(current, 1);
+				pid_t pid = atoi(nodePid.c_str());
+				auto item = std::find_if(processTree.processes.begin(), processTree.processes.end(), [pid](std::pair<const pid_t, Process> const &item){ return item.first == pid;  });
+				if(item == processTree.processes.end())
+				{
+					toDelete.push_back(pid);					
+				}
+            }
+
+			for(std::vector<pid_t>::iterator it = toDelete.begin(); it != toDelete.end(); ++it)
+			{
+				wxTreeListItem item = FindItemByPid(*it);
+				if(item.IsOk())
+				{
+					processesTreeList->DeleteItem(item);
+				}
+			}
+			
+
+		}
 
 		void MainWindow::StartTimer()
 		{
