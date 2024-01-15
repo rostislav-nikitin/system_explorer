@@ -115,9 +115,11 @@ namespace SystemExplorer
 	                    kill(pid, SIGKILL);
 	                    break;
 					case WXK_LEFT:
+					case WXK_NUMPAD_LEFT:
                         processesTreeList->Collapse(selectedItem);
 						break;
 					case WXK_RIGHT:
+					case WXK_NUMPAD_RIGHT:
                         processesTreeList->Expand(selectedItem);
 						break;
 	                default:
