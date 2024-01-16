@@ -19,6 +19,13 @@ namespace SystemExplorer
             int const PROCESSES_SEARCH_ID = 2;
             int const PROCESSES_TREE_ID = 3;
 
+			enum class ProcessContextMenuId
+			{
+				Open,
+				KillSigHup,
+				KillSigKill
+			};
+
             wxBookCtrl *mainBook;
             wxPanel *processesTab;
             wxPanel *deamonsTab;
@@ -26,6 +33,7 @@ namespace SystemExplorer
             wxBoxSizer *processesTabSizer;
             wxSearchCtrl *processesSearch;
             wxTreeListCtrl *processesTreeList;
+			wxMenu *processContextMenu;
 			wxTimer *timer;
 
             pid_t _selectedPid;
@@ -44,8 +52,9 @@ namespace SystemExplorer
 
             wxTreeListItem FindItemByPid(pid_t pid);
 
-            void processesTreeList_OnKeyDown(wxKeyEvent &event);
-			void processTreeList_SelectionChanged(wxTreeListEvent& event);
+            void processesTreeList_OnChar(wxKeyEvent &event);
+			void processesTreeList_OnSelectionChanged(wxTreeListEvent &event);
+			void precessesTreeList_OnItemContextMenu(wxTreeListEvent &event);
             void processesSearch_Click(wxCommandEvent &event);
 			void timer_OnTick(wxTimerEvent& event);
             

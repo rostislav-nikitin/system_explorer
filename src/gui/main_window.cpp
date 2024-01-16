@@ -49,6 +49,13 @@ namespace SystemExplorer
             processesTreeList->AppendColumn(_T("Name"));
             processesTreeList->AppendColumn(_T("PID"));
 
+
+			processContextMenu = new wxMenu();
+			processContextMenu->Append(static_cast<int>(ProcessContextMenuId::Open), wxT("&Open"), wxT("Open"));
+			processContextMenu->AppendSeparator();
+			processContextMenu->Append(static_cast<int>(ProcessContextMenuId::KillSigHup), wxT("Kill(SIG&HUP)"), wxT("Kill(SIGHUP)"));
+			processContextMenu->Append(static_cast<int>(ProcessContextMenuId::KillSigKill), wxT("&Kill(SIGKILL)"), wxT("Kill(SIGKILL)"));
+
             processesTabSizer = new wxBoxSizer(wxVERTICAL);
             processesTabSizer->Add(processesSearch, 0, wxEXPAND | wxALL, 0);
             processesTabSizer->Add(processesTreeList, 0, wxEXPAND | wxALL, 0);
@@ -68,10 +75,11 @@ namespace SystemExplorer
         void MainWindow::BindEvents()
         {
 			timer->Bind(wxEVT_TIMER, &MainWindow::timer_OnTick, this);			
-            processesTreeList->Bind(wxEVT_KEY_DOWN, &MainWindow::processesTreeList_OnKeyDown, this, PROCESSES_TREE_ID);
+            processesTreeList->Bind(wxEVT_CHAR, &MainWindow::processesTreeList_OnChar, this, PROCESSES_TREE_ID);
 //            Bind(wxEVT_SEARCHCTRL_SEARCH_BTN, &MainWindow::processesSearch_Click, this, PROCESSES_SEARCH_ID);
             processesSearch->Bind(wxEVT_TEXT, &MainWindow::processesSearch_Click, this);//, PROCESSES_SEARCH_ID);
-			processesTreeList->Bind(wxEVT_TREELIST_SELECTION_CHANGED, &MainWindow::processTreeList_SelectionChanged, this);
+			processesTreeList->Bind(wxEVT_TREELIST_SELECTION_CHANGED, &MainWindow::processesTreeList_OnSelectionChanged, this);
+			processesTreeList->Bind(wxEVT_TREELIST_ITEM_CONTEXT_MENU, &MainWindow::precessesTreeList_OnItemContextMenu, this);
         }
 
 		void MainWindow::timer_OnTick(wxTimerEvent& event)
@@ -79,7 +87,7 @@ namespace SystemExplorer
             SetStatusText(_T("Timer tick"));
             ReBindData();
 		}
-		void MainWindow::processTreeList_SelectionChanged(wxTreeListEvent& event)
+		void MainWindow::processesTreeList_OnSelectionChanged(wxTreeListEvent& event)
 		{
             SetStatusText(_T("Selection changed"));
             wxTreeListItem selectedItem = processesTreeList->GetSelection();
@@ -93,7 +101,13 @@ namespace SystemExplorer
 			}
 		}
 
-        void MainWindow::processesTreeList_OnKeyDown(wxKeyEvent &event)
+		void MainWindow::precessesTreeList_OnItemContextMenu(wxTreeListEvent &event)
+		{
+			processesTreeList->PopupMenu(processContextMenu);
+			SetStatusText(std::to_string(_selectedPid));
+		}
+
+        void MainWindow::processesTreeList_OnChar(wxKeyEvent &event)
         {
             int keyCode = event.GetKeyCode();
             //wxMessageBox("OnDelete", std::to_string(1), wxOK | wxICON_INFORMATION, this);
@@ -123,6 +137,14 @@ namespace SystemExplorer
                         processesTreeList->Expand(selectedItem);
 						break;
 	                default:
+						if(!event.IsKeyInCategory(WXK_CATEGORY_NAVIGATION))
+						{
+							processesSearch->AppendText(wxString(event.GetUnicodeKey()));
+						
+		            		SetStatusText(event.GetUnicodeKey());
+							processesSearch->SetFocus();
+							processesSearch->SelectNone();
+						}
 	                    event.Skip();
 	                    break;
 				}
