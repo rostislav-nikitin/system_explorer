@@ -80,6 +80,7 @@ namespace SystemExplorer
             processesSearch->Bind(wxEVT_TEXT, &MainWindow::processesSearch_Click, this);//, PROCESSES_SEARCH_ID);
 			processesTreeList->Bind(wxEVT_TREELIST_SELECTION_CHANGED, &MainWindow::processesTreeList_OnSelectionChanged, this);
 			processesTreeList->Bind(wxEVT_TREELIST_ITEM_CONTEXT_MENU, &MainWindow::precessesTreeList_OnItemContextMenu, this);
+			processesTreeList->Bind(wxEVT_MENU, &MainWindow::processesTreeList_OnMenuItem, this);
         }
 
 		void MainWindow::timer_OnTick(wxTimerEvent& event)
@@ -150,6 +151,13 @@ namespace SystemExplorer
 				}
             }
         }
+
+		void MainWindow::processesTreeList_OnMenuItem(wxCommandEvent& event)
+		{
+            wxMessageBox("Search", event.GetString(), wxOK | wxICON_INFORMATION, this);
+            //wxMessageBox("MenuItem", "Menu", wxOK | wxICON_INFORMATION, this);
+            SetStatusText(_T("Menu clicked"));
+		}
 
         void MainWindow::processesSearch_Click(wxCommandEvent &event)
         {
