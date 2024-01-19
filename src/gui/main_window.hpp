@@ -59,6 +59,7 @@ namespace SystemExplorer
 			void processesTreeList_OnSelectionChanged(wxTreeListEvent &event);
 			void precessesTreeList_OnItemContextMenu(wxTreeListEvent &event);
 			void processesTreeList_OnMenuItem(wxCommandEvent &event);
+            void processesSearch_Text(wxCommandEvent &event);
             void processesSearch_Click(wxCommandEvent &event);
 			void timer_OnTick(wxTimerEvent &event);
             
