@@ -19,6 +19,8 @@ namespace SystemExplorer
             int const PROCESSES_SEARCH_ID = 2;
             int const PROCESSES_TREE_ID = 3;
 
+			wxTreeListItems _selectedItems;
+
 			enum class ProcessContextMenuId
 			{
 				Open,

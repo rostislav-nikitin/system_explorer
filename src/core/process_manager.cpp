@@ -66,10 +66,37 @@ namespace SystemExplorer
 
         void apply_filter(ProcessTree &processTree, std::vector<Process const*> &leafs, std::string &filter)
         {
-            std::for_each(leafs.begin(), leafs.end(), [&processTree, &filter](Process const *process)
+			const std::string FILTER_DELIMITER = "|";
+			std::vector<std::string> filters = split(filter, FILTER_DELIMITER);
+		//	std::for_each(filters.begin(), filters.end(), [](std::string const &f){ std::cout << f << std::endl; });
+
+            std::for_each(leafs.begin(), leafs.end(), [&processTree, &filters](Process const *process)
             {
                 std::string name = process->GetName();
-                if(name.find(filter) == 0)
+				std::vector<std::string>::iterator found_filter = std::find_if(filters.begin(), filters.end(), [&name](std::string const &filter)
+					{
+						bool found = false;
+						const std::string PATTERN_ANY = "*";
+						if((filter.find(PATTERN_ANY) == (filter.size() - 1)) && (name.find(filter.substr(0, filter.size() - 1)) == 0))
+						{
+						//	std::cout << "-----*" << std::endl;
+							found = true;
+						}
+						else if((filter.find(PATTERN_ANY) == 0) && (name.find(filter.substr(1, filter.size() - 1)) == (name.size() - (filter.size() - 1))))
+						{
+						//	std::cout << "*------" << std::endl;
+							found = true;
+						}
+						else
+						{
+							std::cout << "*" << std::endl;
+							found = name.find(filter) == 0;
+						}
+
+						return found;
+					});
+			
+                if(found_filter != filters.end())
                 {
                     pid_t pid = process->GetPid();
                     processTree.processes[pid].SetPicked(true);
@@ -91,12 +118,65 @@ namespace SystemExplorer
                     while(parentPid > 0)
                     {
                         Process *parent = &processTree.processes[parentPid];
-                        std::string name = parent->GetName();
-                        if(isPicked || name.find(filter) == 0)
-                        {
-                            parent->SetPicked(true);
-                            isPicked = true;                        
-                        }
+						if(!isPicked && !parent->GetPicked())
+						{
+	                        std::string name = parent->GetName();
+							std::vector<std::string>::iterator found_filter = std::find_if(filters.begin(), filters.end(), [&name](std::string const &filter)
+							{
+								bool found = false;
+								const std::string PATTERN_ANY = "*";
+								if((filter.find(PATTERN_ANY) == (filter.size() - 1)) && (name.find(filter.substr(0, filter.size() - 1)) == 0))
+								{
+						//			std::cout << "-----*" << std::endl;
+									found = true;
+								}
+								else if((filter.find(PATTERN_ANY) == 0) && (name.find(filter.substr(1, filter.size() - 1)) == (name.size() - (filter.size() - 1))))
+								{
+						//			std::cout << "*------" << std::endl;
+									found = true;
+								}
+								else
+								{
+									std::cout << "*" << std::endl;
+									found = name.find(filter) == 0;
+								}
+		
+								return found;
+							});
+
+	                        if(isPicked || (found_filter != filters.end()))
+	                        {
+	                            parent->SetPicked(true);
+	                            isPicked = true;                        
+	                        }
+	                        if(found_filter != filters.end())
+							{
+								std::vector<pid_t> all_children;
+								int current_idx = 0;
+								all_children.push_back(parentPid);
+								typedef std::map<pid_t, Process>::iterator itor;
+								while(current_idx < all_children.size())
+								{
+									pid_t current_pid = all_children[current_idx++];
+									std::for_each(processTree.processes.begin(), processTree.processes.end(), 
+										[&all_children, current_pid](typename std::map<pid_t, Process>::value_type &item)
+										{
+											if(item.second.GetParentPid() == current_pid)
+											{
+												item.second.SetPicked(true);
+												all_children.push_back(item.first);
+											}
+										});
+								}
+							}
+						}
+						else
+						{
+	                        parent->SetPicked(true);
+							isPicked = true;
+						}
+
+					
                         parentPid = parent->GetParentPid();
                     }
                 }
@@ -177,6 +257,8 @@ namespace SystemExplorer
                 result.push_back(str.substr(startPos, endPos - startPos));
                 startPos = endPos + 1;                
             }
+			if(startPos < str.size())
+				result.push_back(str.substr(startPos));
 
             return result;
         }

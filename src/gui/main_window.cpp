@@ -44,7 +44,7 @@ namespace SystemExplorer
             processesSearch = new wxSearchCtrl(processesTab, PROCESSES_SEARCH_ID, _T(""), wxPoint(0,0), wxSize(100, 32));
             processesSearch->SetDescriptiveText("Filter");
 
-            processesTreeList = new wxTreeListCtrl(processesTab, PROCESSES_TREE_ID, wxPoint(0,0), wxSize(100, 800));
+            processesTreeList = new wxTreeListCtrl(processesTab, PROCESSES_TREE_ID, wxPoint(0,0), wxSize(100, 800), wxTL_MULTIPLE);
             processesTreeList->SetWindowStyle(wxBORDER_NONE);
             processesTreeList->AppendColumn(_T("Name"));
             processesTreeList->AppendColumn(_T("PID"));
@@ -91,14 +91,18 @@ namespace SystemExplorer
 		void MainWindow::processesTreeList_OnSelectionChanged(wxTreeListEvent& event)
 		{
             SetStatusText(_T("Selection changed"));
-            wxTreeListItem selectedItem = processesTreeList->GetSelection();
-			if(selectedItem.IsOk())
+			processesTreeList->GetSelections(_selectedItems);
+			if(_selectedItems.size() > 0)
 			{
-	           	wxString pidAsString = processesTreeList->GetItemText(selectedItem, 1);
-	            _selectedPid = std::stoi(pidAsString.ToStdString());
-	            //SetStatusText(std::to_string(_selectedPid));
-				bool scrollPos = processesTreeList->GetView()->HasScrollbar(wxVERTICAL);
-	            SetStatusText(std::to_string(scrollPos));
+				wxTreeListItem selectedItem = _selectedItems.back();
+				if(selectedItem.IsOk())
+				{
+		           	wxString pidAsString = processesTreeList->GetItemText(selectedItem, 1);
+		            _selectedPid = std::stoi(pidAsString.ToStdString());
+		            //SetStatusText(std::to_string(_selectedPid));
+					bool scrollPos = processesTreeList->GetView()->HasScrollbar(wxVERTICAL);
+		            SetStatusText(std::to_string(scrollPos));
+				}
 			}
 		}
 
@@ -112,30 +116,34 @@ namespace SystemExplorer
         {
             int keyCode = event.GetKeyCode();
             //wxMessageBox("OnDelete", std::to_string(1), wxOK | wxICON_INFORMATION, this);
-            wxTreeListItem selectedItem;
-            wxString selectedItemText;
-            wxString pidAsString;
-            pid_t pid;
-            
-            selectedItem = processesTreeList->GetSelection();
-			if(selectedItem.IsOk())
+            //wxTreeListItem selectedItem;
+            //wxString selectedItemText;
+            //wxString pidAsString;
+            //pid_t pid;
+			wxTreeListItems selectedItems;
+			processesTreeList->GetSelections(selectedItems);
+
+			if(selectedItems.size() > 0)
 			{
 	            switch(keyCode)
 	            {
 	                case WXK_DELETE:
 	                    //selectedItemText = processesTreeList->GetItemText(selectedItem);
-	                    pidAsString = processesTreeList->GetItemText(selectedItem, 1);
-	                    //wxMessageBox("OnDelete", std::to_string(keyCode) + "::" + selectedItemText, wxOK | wxICON_INFORMATION, this);
-	                    pid = std::stoi(pidAsString.ToStdString());
-	                    kill(pid, SIGKILL);
+	                    std::for_each(selectedItems.begin(), selectedItems.end(), [this](wxTreeListItem const &selectedItem)
+							{
+			                    wxString pidAsString = processesTreeList->GetItemText(selectedItem, 1);
+	    		                //wxMessageBox("OnDelete", std::to_string(keyCode) + "::" + selectedItemText, wxOK | wxICON_INFORMATION, this);
+	            		        pid_t pid = std::stoi(pidAsString.ToStdString());
+	                    		kill(pid, SIGKILL);
+							});
 	                    break;
 					case WXK_LEFT:
 					case WXK_NUMPAD_LEFT:
-                        processesTreeList->Collapse(selectedItem);
+                        processesTreeList->Collapse(selectedItems[0]);
 						break;
 					case WXK_RIGHT:
 					case WXK_NUMPAD_RIGHT:
-                        processesTreeList->Expand(selectedItem);
+                        processesTreeList->Expand(selectedItems[0]);
 						break;
 	                default:
 						if(!event.IsKeyInCategory(WXK_CATEGORY_NAVIGATION))
@@ -154,9 +162,10 @@ namespace SystemExplorer
 
 		void MainWindow::processesTreeList_OnMenuItem(wxCommandEvent& event)
 		{
-            wxMessageBox("Search", event.GetString(), wxOK | wxICON_INFORMATION, this);
+            std::string text = "Selected items count=" + std::to_string(_selectedItems.size());
+            wxMessageBox(text, event.GetString(), wxOK | wxICON_INFORMATION, this);
             //wxMessageBox("MenuItem", "Menu", wxOK | wxICON_INFORMATION, this);
-            SetStatusText(_T("Menu clicked"));
+            SetStatusText(std::to_string(_selectedItems.size()));
 		}
 
         void MainWindow::processesSearch_Click(wxCommandEvent &event)
@@ -227,7 +236,6 @@ namespace SystemExplorer
 				std::string name = it->second.GetName();
 				pid_t pid = it->second.GetPid();
 				pid_t parentPid = it->second.GetParentPid();
-
 
                 if(picked)
 				{
