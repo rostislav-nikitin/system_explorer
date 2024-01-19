@@ -11,6 +11,7 @@ namespace SystemExplorer
         std::string get_data(dirent *ent, std::string file_name);
         std::vector<std::string> split(std::string &str, std::string delimiter);
         std::vector<Process const*> get_leafs(ProcessTree &processTree);
+		bool name_predicate(std::string const &name, std::vector<std::string> const &filters);
         void apply_filter(ProcessTree &processTree, std::vector<Process const*> &leafs, std::string &filter);
 
         ProcessTree ProcessManager::GetProcessTree(std::string filter)
@@ -73,30 +74,8 @@ namespace SystemExplorer
             std::for_each(leafs.begin(), leafs.end(), [&processTree, &filters](Process const *process)
             {
                 std::string name = process->GetName();
-				std::vector<std::string>::iterator found_filter = std::find_if(filters.begin(), filters.end(), [&name](std::string const &filter)
-					{
-						bool found = false;
-						const std::string PATTERN_ANY = "*";
-						if((filter.find(PATTERN_ANY) == (filter.size() - 1)) && (name.find(filter.substr(0, filter.size() - 1)) == 0))
-						{
-						//	std::cout << "-----*" << std::endl;
-							found = true;
-						}
-						else if((filter.find(PATTERN_ANY) == 0) && (name.find(filter.substr(1, filter.size() - 1)) == (name.size() - (filter.size() - 1))))
-						{
-						//	std::cout << "*------" << std::endl;
-							found = true;
-						}
-						else
-						{
-							std::cout << "*" << std::endl;
-							found = name.find(filter) == 0;
-						}
-
-						return found;
-					});
 			
-                if(found_filter != filters.end())
+                if(name_predicate(name, filters))
                 {
                     pid_t pid = process->GetPid();
                     processTree.processes[pid].SetPicked(true);
@@ -121,35 +100,15 @@ namespace SystemExplorer
 						if(!isPicked && !parent->GetPicked())
 						{
 	                        std::string name = parent->GetName();
-							std::vector<std::string>::iterator found_filter = std::find_if(filters.begin(), filters.end(), [&name](std::string const &filter)
-							{
-								bool found = false;
-								const std::string PATTERN_ANY = "*";
-								if((filter.find(PATTERN_ANY) == (filter.size() - 1)) && (name.find(filter.substr(0, filter.size() - 1)) == 0))
-								{
-						//			std::cout << "-----*" << std::endl;
-									found = true;
-								}
-								else if((filter.find(PATTERN_ANY) == 0) && (name.find(filter.substr(1, filter.size() - 1)) == (name.size() - (filter.size() - 1))))
-								{
-						//			std::cout << "*------" << std::endl;
-									found = true;
-								}
-								else
-								{
-									std::cout << "*" << std::endl;
-									found = name.find(filter) == 0;
-								}
-		
-								return found;
-							});
 
-	                        if(isPicked || (found_filter != filters.end()))
+							bool name_valid = name_predicate(name, filters);
+
+	                        if(isPicked || name_valid)
 	                        {
 	                            parent->SetPicked(true);
 	                            isPicked = true;                        
 	                        }
-	                        if(found_filter != filters.end())
+	                        if(name_valid)
 							{
 								std::vector<pid_t> all_children;
 								int current_idx = 0;
@@ -189,6 +148,36 @@ namespace SystemExplorer
 			}
 */
         }
+
+		bool name_predicate(std::string const &name, std::vector<std::string> const &filters)
+		{
+
+			std::vector<std::string>::const_iterator found_filter = std::find_if(filters.begin(), filters.end(), 
+				[&name](std::string const &filter)
+				{
+					bool found = false;
+					const std::string PATTERN_ANY = "*";
+					if((filter.find(PATTERN_ANY) == (filter.size() - 1)) && (name.find(filter.substr(0, filter.size() - 1)) == 0))
+					{
+			//			std::cout << "-----*" << std::endl;
+						found = true;
+					}
+					else if((filter.find(PATTERN_ANY) == 0) && (name.find(filter.substr(1, filter.size() - 1)) == (name.size() - (filter.size() - 1))))
+					{
+			//			std::cout << "*------" << std::endl;
+						found = true;
+					}
+					else
+					{
+						std::cout << "*" << std::endl;
+						found = name.find(filter) == 0;
+					}
+				
+					return found;
+				});
+
+                return found_filter != filters.end();
+		}
 
         bool ProcessManager::IsNumber(std::string str)
         {

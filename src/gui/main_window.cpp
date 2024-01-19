@@ -146,7 +146,15 @@ namespace SystemExplorer
                         processesTreeList->Expand(selectedItems[0]);
 						break;
 	                default:
-						if(!event.IsKeyInCategory(WXK_CATEGORY_NAVIGATION))
+
+//            			wxMessageBox(wxString(std::to_string(keyCode)), "TEST", wxOK | wxICON_INFORMATION, this);
+						if(event.ControlDown() && (keyCode == 1))
+						{
+ //           				wxMessageBox("Select all", "Select all", wxOK | wxICON_INFORMATION, this);
+	           				//static int counter = 1;
+		            		//SetStatusText("Ctrl-A" + std::to_string(counter++));
+						}
+						else if(!event.IsKeyInCategory(WXK_CATEGORY_NAVIGATION))
 						{
 							processesSearch->AppendText(wxString(event.GetUnicodeKey()));
 						
@@ -154,6 +162,7 @@ namespace SystemExplorer
 							processesSearch->SetFocus();
 							processesSearch->SelectNone();
 						}
+					
 	                    event.Skip();
 	                    break;
 				}
