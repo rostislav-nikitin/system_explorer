@@ -21,6 +21,8 @@ namespace SystemExplorer
             BindData();
 
 			StartTimer();
+
+			SetFocus();
         }
 
 		void MainWindow::CreateTimer()
@@ -71,6 +73,16 @@ namespace SystemExplorer
             CreateStatusBar();
             SetStatusText(_T("Running..."));
         }
+
+		void MainWindow::SetFocus()
+		{
+            processesTreeList->SetFocus();
+			wxTreeListItem firstItem = processesTreeList->GetFirstItem();
+			if(firstItem.IsOk())
+			{
+				processesTreeList->Select(firstItem);	
+			}
+		}
 
         void MainWindow::BindEvents()
         {

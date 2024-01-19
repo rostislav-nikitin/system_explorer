@@ -45,6 +45,7 @@ namespace SystemExplorer
             void CreateProcessesTab();
             void CreateDeamonsTab();
             void CreateStatus();
+			void SetFocus();
 
             void BindEvents();
             void BindData();
