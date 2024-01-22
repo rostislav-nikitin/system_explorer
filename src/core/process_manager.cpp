@@ -156,20 +156,32 @@ namespace SystemExplorer
 				[&name](std::string const &filter)
 				{
 					bool found = false;
-					const std::string PATTERN_ANY = "*";
-					if((filter.find(PATTERN_ANY) == (filter.size() - 1)) && (name.find(filter.substr(0, filter.size() - 1)) == 0))
+					const char PATTERN_ANY = '*';
+					if((filter.size() > 2) && 
+						(filter.front() == PATTERN_ANY) && 
+						(filter.back() == PATTERN_ANY) &&
+						(name.find(filter.substr(1, filter.size() - 2), 1) != std::string::npos))
 					{
-			//			std::cout << "-----*" << std::endl;
+						std::cout << "*----*" << std::endl;
 						found = true;
 					}
-					else if((filter.find(PATTERN_ANY) == 0) && (name.find(filter.substr(1, filter.size() - 1)) == (name.size() - (filter.size() - 1))))
+					else if((filter.size() > 1) && 
+						(filter.back() == PATTERN_ANY) &&
+						(name.find(filter.substr(0, filter.size() - 1)) == 0))
 					{
-			//			std::cout << "*------" << std::endl;
+						std::cout << "-----*" << std::endl;
+						found = true;
+					}
+					else if(filter.size() > 1 &&
+						(filter.front() == PATTERN_ANY) && 
+						(name.find(filter.substr(1, filter.size() - 1), (name.size() - (filter.size() - 1))) != std::string::npos))
+					{
+						std::cout << "*------" << std::endl;
 						found = true;
 					}
 					else
 					{
-						std::cout << "*" << std::endl;
+						//std::cout << "*" << std::endl;
 						found = name.find(filter) == 0;
 					}
 				
