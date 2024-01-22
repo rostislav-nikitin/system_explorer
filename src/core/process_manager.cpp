@@ -78,6 +78,7 @@ namespace SystemExplorer
                 if(name_predicate(name, filters))
                 {
                     pid_t pid = process->GetPid();
+					processTree.processes[pid].SetNameMatched(true);
                     processTree.processes[pid].SetPicked(true);
 
                     pid_t parentPid = process->GetParentPid();
@@ -85,6 +86,7 @@ namespace SystemExplorer
                     {
                         Process *parent = &processTree.processes[parentPid];
                         processTree.processes[parentPid].SetPicked(true);
+                        processTree.processes[parentPid].SetNameMatched(name_predicate(parent->GetName(), filters));
                         parentPid = parent->GetParentPid();
                     }
 
@@ -110,6 +112,7 @@ namespace SystemExplorer
 	                        }
 	                        if(name_valid)
 							{
+								parent->SetNameMatched(true);
 								std::vector<pid_t> all_children;
 								int current_idx = 0;
 								all_children.push_back(parentPid);
@@ -118,10 +121,11 @@ namespace SystemExplorer
 								{
 									pid_t current_pid = all_children[current_idx++];
 									std::for_each(processTree.processes.begin(), processTree.processes.end(), 
-										[&all_children, current_pid](typename std::map<pid_t, Process>::value_type &item)
+										[&filters, &all_children, current_pid](typename std::map<pid_t, Process>::value_type &item)
 										{
 											if(item.second.GetParentPid() == current_pid)
 											{
+												item.second.SetNameMatched(name_predicate(item.second.GetName(), filters));
 												item.second.SetPicked(true);
 												all_children.push_back(item.first);
 											}
