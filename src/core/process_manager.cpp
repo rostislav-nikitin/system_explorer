@@ -121,11 +121,11 @@ namespace SystemExplorer
 								{
 									pid_t current_pid = all_children[current_idx++];
 									std::for_each(processTree.processes.begin(), processTree.processes.end(), 
-										[&filters, &all_children, current_pid](typename std::map<pid_t, Process>::value_type &item)
+										[&all_children, current_pid](typename std::map<pid_t, Process>::value_type &item)
 										{
 											if(item.second.GetParentPid() == current_pid)
 											{
-												item.second.SetNameMatched(name_predicate(item.second.GetName(), filters));
+												//item.second.SetNameMatched(name_predicate(item.second.GetName(), filters));
 												item.second.SetPicked(true);
 												all_children.push_back(item.first);
 											}

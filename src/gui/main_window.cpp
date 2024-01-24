@@ -48,15 +48,20 @@ namespace SystemExplorer
 
             processesTreeList = new wxTreeListCtrl(processesTab, PROCESSES_TREE_ID, wxPoint(0,0), wxSize(100, 800), wxTL_MULTIPLE);
             processesTreeList->SetWindowStyle(wxBORDER_NONE);
-            processesTreeList->AppendColumn(_T("Name"));
-            processesTreeList->AppendColumn(_T("PID"));
+            processesTreeList->AppendColumn(_T("Name"), wxCOL_WIDTH_AUTOSIZE, wxALIGN_LEFT, wxCOL_RESIZABLE | wxCOL_SORTABLE);
+            processesTreeList->AppendColumn(_T("PID"), wxCOL_WIDTH_AUTOSIZE, wxALIGN_LEFT, wxCOL_RESIZABLE | wxCOL_SORTABLE);
 
+
+			wxMenu *processSignalContextMenu = new wxMenu();
+			processSignalContextMenu->Append(static_cast<int>(ProcessContextMenuId::KillSigHup), wxT("Sig&hup"), wxT("Sighup"));
+			processSignalContextMenu->Append(static_cast<int>(ProcessContextMenuId::KillSigKill), wxT("Sig&kill"), wxT("Sigkill"));
 
 			processContextMenu = new wxMenu();
 			processContextMenu->Append(static_cast<int>(ProcessContextMenuId::Open), wxT("&Open"), wxT("Open"));
 			processContextMenu->AppendSeparator();
-			processContextMenu->Append(static_cast<int>(ProcessContextMenuId::KillSigHup), wxT("Kill(SIG&HUP)"), wxT("Kill(SIGHUP)"));
-			processContextMenu->Append(static_cast<int>(ProcessContextMenuId::KillSigKill), wxT("&Kill(SIGKILL)"), wxT("Kill(SIGKILL)"));
+			processContextMenu->AppendSubMenu(processSignalContextMenu, wxT("Send &signal"));
+			processContextMenu->Append(static_cast<int>(ProcessContextMenuId::KillSigHup), wxT("Send SIG&HUP"), wxT("Kill(SIGHUP)"));
+			processContextMenu->Append(static_cast<int>(ProcessContextMenuId::KillSigKill), wxT("Send SIG&KILL)"), wxT("Kill(SIGKILL)"));
 
             processesTabSizer = new wxBoxSizer(wxVERTICAL);
             processesTabSizer->Add(processesSearch, 0, wxEXPAND | wxALL, 0);
@@ -139,12 +144,17 @@ namespace SystemExplorer
             {
                 case WXK_DELETE:
                     //selectedItemText = processesTreeList->GetItemText(selectedItem);
-                    std::for_each(selectedItems.begin(), selectedItems.end(), [this](wxTreeListItem const &selectedItem)
+                    std::for_each(selectedItems.begin(), selectedItems.end(), [this, &event](wxTreeListItem const &selectedItem)
 						{
 		                    wxString pidAsString = processesTreeList->GetItemText(selectedItem, 1);
     		                //wxMessageBox("OnDelete", std::to_string(keyCode) + "::" + selectedItemText, wxOK | wxICON_INFORMATION, this);
             		        pid_t pid = std::stoi(pidAsString.ToStdString());
-                    		kill(pid, SIGKILL);
+							int signal;
+							if(event.ControlDown())
+								signal = SIGKILL;
+							else
+								signal = SIGTERM;
+                    		kill(pid, signal);
 						});
                     break;
 				case WXK_LEFT:
