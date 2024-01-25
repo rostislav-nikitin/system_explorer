@@ -14,17 +14,18 @@ namespace SystemExplorer
 			class Signal
 			{
 				int _id;
-				SignalType &_signalType;
-				std::string _standard;
 				std::string _alias;
+				SignalType _signalType;
+				std::string _standard;
 				std::string _description;
 			public:
-				SignalType(int id, SignalType &signalType, std::string _standard, std::string alias, std::string description);
+				Signal();
+				Signal(int id, std::string alias, SignalType signalType, std::string _standard, std::string description);
 
 				int GetId() const;
-				SignalType &GetSignalType();
-				std::string GetStandard() const;
 				std::string GetAlias() const;
+				SignalType GetSignalType();
+				std::string GetStandard() const;
 				std::string GetDescription() const;
 			};
 		}

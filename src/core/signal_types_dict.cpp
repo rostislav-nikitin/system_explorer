@@ -11,6 +11,7 @@ namespace SystemExplorer
 			_signalTypes.insert(std::make_pair("Core", SignalType(3, "Core", "Default action is to terminate the process and dump core (see core(5)).")));
 			_signalTypes.insert(std::make_pair("Stop", SignalType(4, "Stop", "Default action is to stop the process.")));
 			_signalTypes.insert(std::make_pair("Cont", SignalType(5, "Cont", "Default action is to continue the process if it is currently stopped.")));
+			//_signalTypes.insert(std::make_pair("Other", SignalType(6, "Other", "Othrt signals.")));
 		}
 
 		SignalTypesDict* SignalTypesDict::GetInstance()

@@ -10,6 +10,9 @@ namespace SystemExplorer
         {
             SetTitle(TITLE);
 
+			wxSimpleHelpProvider *helpProvider = new wxSimpleHelpProvider;
+			wxHelpProvider::Set(helpProvider);
+
 			CreateTimer();
             CreateMainBook();
             CreateProcessesTab();
@@ -43,6 +46,10 @@ namespace SystemExplorer
 
         void MainWindow::CreateProcessesTab()
         {
+			using SystemExplorer::Core::Models::SignalType;
+			using SystemExplorer::Core::Models::Signal;
+			using SystemExplorer::Core::SignalManager;
+
             processesSearch = new wxSearchCtrl(processesTab, PROCESSES_SEARCH_ID, _T(""), wxPoint(0,0), wxSize(100, 32));
             processesSearch->SetDescriptiveText("Filter");
 
@@ -52,6 +59,26 @@ namespace SystemExplorer
             processesTreeList->AppendColumn(_T("PID"), wxCOL_WIDTH_AUTOSIZE, wxALIGN_LEFT, wxCOL_RESIZABLE | wxCOL_SORTABLE);
 
 
+			wxMenu *signalTypesMenu = new wxMenu();
+
+			std::vector<SignalType> signalTypes = SignalManager::GetSignalTypes();
+			std::vector<Signal> signals = SignalManager::GetSignals();
+
+			std::for_each(signalTypes.begin(), signalTypes.end(), [signalTypesMenu, &signals](SignalType const &signalType)
+				{
+					wxMenu *signalsMenu = new wxMenu();
+
+					std::for_each(signals.begin(), signals.end(), 
+						[&signalType, signalsMenu](Signal &signal)
+						{
+							if(signal.GetSignalType().GetId() == signalType.GetId())
+								signalsMenu->Append(signal.GetId(), signal.GetAlias(), signal.GetAlias());
+						});
+					signalTypesMenu->AppendSubMenu(signalsMenu, signalType.GetAlias());
+
+				});
+
+
 			wxMenu *processSignalContextMenu = new wxMenu();
 			processSignalContextMenu->Append(static_cast<int>(ProcessContextMenuId::KillSigHup), wxT("Sig&hup"), wxT("Sighup"));
 			processSignalContextMenu->Append(static_cast<int>(ProcessContextMenuId::KillSigKill), wxT("Sig&kill"), wxT("Sigkill"));
@@ -59,7 +86,7 @@ namespace SystemExplorer
 			processContextMenu = new wxMenu();
 			processContextMenu->Append(static_cast<int>(ProcessContextMenuId::Open), wxT("&Open"), wxT("Open"));
 			processContextMenu->AppendSeparator();
-			processContextMenu->AppendSubMenu(processSignalContextMenu, wxT("Send &signal"));
+			processContextMenu->AppendSubMenu(signalTypesMenu, wxT("Send &signal"));
 			processContextMenu->Append(static_cast<int>(ProcessContextMenuId::KillSigHup), wxT("Send SIG&HUP"), wxT("Kill(SIGHUP)"));
 			processContextMenu->Append(static_cast<int>(ProcessContextMenuId::KillSigKill), wxT("Send SIG&KILL)"), wxT("Kill(SIGKILL)"));
 
@@ -67,6 +94,7 @@ namespace SystemExplorer
             processesTabSizer->Add(processesSearch, 0, wxEXPAND | wxALL, 0);
             processesTabSizer->Add(processesTreeList, 0, wxEXPAND | wxALL, 0);
             processesTab->SetSizer(processesTabSizer);
+
         }
 
         void MainWindow::CreateDeamonsTab()
@@ -76,7 +104,7 @@ namespace SystemExplorer
         void MainWindow::CreateStatus()
         {
             CreateStatusBar();
-            SetStatusText(_T("Running..."));
+            //SetStatusText(_T("Running..."));
         }
 
 		void MainWindow::SetFocus()
@@ -102,12 +130,12 @@ namespace SystemExplorer
 
 		void MainWindow::timer_OnTick(wxTimerEvent& event)
 		{
-            SetStatusText(_T("Timer tick"));
+            //SetStatusText(_T("Timer tick"));
             ReBindData();
 		}
 		void MainWindow::processesTreeList_OnSelectionChanged(wxTreeListEvent& event)
 		{
-            SetStatusText(_T("Selection changed"));
+            //SetStatusText(_T("Selection changed"));
 			processesTreeList->GetSelections(_selectedItems);
 			if(_selectedItems.size() > 0)
 			{
@@ -118,15 +146,19 @@ namespace SystemExplorer
 		            _selectedPid = std::stoi(pidAsString.ToStdString());
 		            //SetStatusText(std::to_string(_selectedPid));
 					bool scrollPos = processesTreeList->GetView()->HasScrollbar(wxVERTICAL);
-		            SetStatusText(std::to_string(scrollPos));
+		            //SetStatusText(std::to_string(scrollPos));
 				}
 			}
+			/*wxRichToolTip tt(wxT("Tooltip"), wxT("Text\nTRTRTRR\n"));
+			tt.SetIcon(wxICON_INFORMATION);
+			tt.ShowFor(this);*/
 		}
 
 		void MainWindow::precessesTreeList_OnItemContextMenu(wxTreeListEvent &event)
 		{
 			processesTreeList->PopupMenu(processContextMenu);
-			SetStatusText(std::to_string(_selectedPid));
+			//SetStatusText(std::to_string(_selectedPid));
+
 		}
 
         void MainWindow::processesTreeList_OnChar(wxKeyEvent &event)
@@ -181,7 +213,7 @@ namespace SystemExplorer
 //            			wxMessageBox(wxString(std::to_string(keyCode)), "TEST", wxOK | wxICON_INFORMATION, this);
 						processesSearch->AppendText(wxString(event.GetUnicodeKey()));
 					
-	            		SetStatusText(event.GetUnicodeKey());
+	            		//SetStatusText(event.GetUnicodeKey());
 						processesSearch->SetFocus();
 						processesSearch->SelectNone();
 					}
@@ -196,13 +228,13 @@ namespace SystemExplorer
             std::string text = "Selected items count=" + std::to_string(_selectedItems.size());
             wxMessageBox(text, event.GetString(), wxOK | wxICON_INFORMATION, this);
             //wxMessageBox("MenuItem", "Menu", wxOK | wxICON_INFORMATION, this);
-            SetStatusText(std::to_string(_selectedItems.size()));
+            //SetStatusText(std::to_string(_selectedItems.size()));
 		}
 
         void MainWindow::processesSearch_Text(wxCommandEvent &event)
         {
             //wxMessageBox("Search", event.GetString(), wxOK | wxICON_INFORMATION, this);
-            SetStatusText(event.GetString());
+            //SetStatusText(event.GetString());
             BindData();
         }
 

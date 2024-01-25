@@ -6,29 +6,31 @@ namespace SystemExplorer
 	{
 		namespace Models
 		{
-			SignalType::SignalType(int id, SignalType &signalType, std::string _standard, std::string alias, std::string description)
-				: _id(id), _signalType(signalType), _standard(standard), _alias(alias), _description(description)
+			
+			Signal::Signal() : _id(0), _signalType(), _standard(), _alias(), _description() { }
+
+			Signal::Signal(int id, std::string alias, SignalType signalType, std::string standard, std::string description)
+				: _id(id), _alias(alias), _signalType(signalType), _standard(standard), _description(description)
 			{
-				
 			}
 
-			int GetId() const
+			int Signal::GetId() const
 			{
 				return _id;
 			}
-			SignalType &GetSignalType()
+			SignalType Signal::GetSignalType()
 			{
 				return _signalType;
 			}
-			std::string GetStandard() const
+			std::string Signal::GetStandard() const
 			{
 				return _standard;
 			}
-			std::string GetAlias() const
+			std::string Signal::GetAlias() const
 			{
 				return _alias;
 			}
-			std::string GetDescription() const
+			std::string Signal::GetDescription() const
 			{
 				return _description;
 			}

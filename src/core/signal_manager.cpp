@@ -4,29 +4,26 @@ namespace SystemExplorer
 {
 	namespace Core
 	{
-		class SignalManager
+		SignalManager::SignalManager()
 		{
-		public:
-			SignalManager();
+		}
 
-			static std::map<std::string, SignalType> GetSignalTypes() const
-			{
-				return _signalTypes;
-			}
-			static std::map<std::string, Signal> GetSignals() const
-			{
-				return _signals;
-			}
+		std::vector<SignalType> SignalManager::GetSignalTypes()
+		{
+			return SignalTypesDict::GetInstance()->GetAll();
+		}
+		std::vector<Signal> SignalManager::GetSignals()
+		{
+			return SignalsDict::GetInstance()->GetAll();
+		}
+		std::vector<Signal> SignalManager::GetSignals(SignalType signalType)
+		{
+//			return _signals;
+		}
 
-			void SendSignal(pid_t pid, Signal &signal) const
-			{
-           		kill(pid, signal.GetId());
-			}
-		};
-
-		static std::map<std::string, SignalType> SignalManger::_signalTypes;
-		static std::map<std::string, Signal> SignalManger::_signals;
+		void SignalManager::SendSignal(pid_t pid, Signal &signal) const
+		{
+       		kill(pid, signal.GetId());
+		}
 	}
 }
-
-#endif

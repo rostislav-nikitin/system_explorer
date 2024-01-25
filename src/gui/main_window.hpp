@@ -5,6 +5,8 @@
 #include <wx/bookctrl.h>
 #include <wx/treelist.h>
 #include <wx/srchctrl.h>
+#include <wx/richtooltip.h>
+#include <wx/cshelp.h>
 #include <wx/timer.h>
 
 namespace SystemExplorer
@@ -27,6 +29,8 @@ namespace SystemExplorer
 				KillSigHup,
 				KillSigKill
 			};
+
+			wxSimpleHelpProvider *helpProvider;
 
             wxBookCtrl *mainBook;
             wxPanel *processesTab;
