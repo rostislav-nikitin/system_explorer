@@ -19,6 +19,7 @@ namespace SystemExplorer
             BindEvents();
 
             BindData();
+			ExpandAll();
 
 			StartTimer();
 
@@ -52,8 +53,8 @@ namespace SystemExplorer
 
             processesTreeList = new wxTreeListCtrl(processesTab, PROCESSES_TREE_ID, wxPoint(0,0), wxSize(100, 800), wxTL_MULTIPLE);
             processesTreeList->SetWindowStyle(wxBORDER_NONE);
-            processesTreeList->AppendColumn(_T("Name"), wxCOL_WIDTH_AUTOSIZE, wxALIGN_LEFT, wxCOL_RESIZABLE | wxCOL_SORTABLE);
-            processesTreeList->AppendColumn(_T("PID"), wxCOL_WIDTH_AUTOSIZE, wxALIGN_LEFT, wxCOL_RESIZABLE | wxCOL_SORTABLE);
+            processesTreeList->AppendColumn(_T("Name"),240, wxALIGN_LEFT, wxCOL_RESIZABLE | wxCOL_SORTABLE);
+            processesTreeList->AppendColumn(_T("PID"), 100, wxALIGN_LEFT, wxCOL_RESIZABLE | wxCOL_SORTABLE);
 
 
 			processContextMenu = new wxMenu();
@@ -112,7 +113,8 @@ namespace SystemExplorer
         void MainWindow::BindEvents()
         {
 			timer->Bind(wxEVT_TIMER, &MainWindow::timer_OnTick, this);			
-            processesTreeList->Bind(wxEVT_CHAR, &MainWindow::processesTreeList_OnChar, this, PROCESSES_TREE_ID);
+            processesTreeList->Bind(wxEVT_CHAR_HOOK, &MainWindow::processesTreeList_OnChar, this);
+//            processesTreeList->Bind(wxEVT_KEY_DOWN, &MainWindow::processesTreeList_OnChar, this);
             processesSearch->Bind(wxEVT_SEARCHCTRL_SEARCH_BTN, &MainWindow::processesSearch_Click, this, PROCESSES_SEARCH_ID);
             processesSearch->Bind(wxEVT_TEXT, &MainWindow::processesSearch_Text, this);//, PROCESSES_SEARCH_ID);
 			processesTreeList->Bind(wxEVT_TREELIST_SELECTION_CHANGED, &MainWindow::processesTreeList_OnSelectionChanged, this);
@@ -188,6 +190,7 @@ namespace SystemExplorer
             int keyCode = event.GetKeyCode();
 			wxTreeListItems selectedItems;
 			processesTreeList->GetSelections(selectedItems);
+			std::cout << keyCode << std::endl;
 
             switch(keyCode)
             {
@@ -199,6 +202,7 @@ namespace SystemExplorer
                     break;
 				case WXK_LEFT:
 				case WXK_NUMPAD_LEFT:
+					std::cout << "LEFT-> " <<  std::endl;
 					if(selectedItems.size() > 0)
                         processesTreeList->Collapse(selectedItems[0]);
 					break;
@@ -337,9 +341,9 @@ namespace SystemExplorer
                         wxTreeListItem process = processesTreeList->AppendItem(parent, name);
                         processesTreeList->SetItemText(process, 1, std::to_string(pid));
 						//processesTreeList->SetItemData(process, new ProcessData());
-                        processesTreeList->Expand(process);
-						if(_selectedPid == pid)
-							processesTreeList->Select(process);
+                     //   processesTreeList->Expand(process);
+					//	if(_selectedPid == pid)
+					//		processesTreeList->Select(process);
 						if(nameMatched && !filter.empty())
 							processesTreeList->Select(process);
 		
@@ -347,6 +351,15 @@ namespace SystemExplorer
                 }
             }
         }
+
+		void MainWindow::ExpandAll()
+		{
+			wxTreeListItem root = processesTreeList->GetRootItem();
+			for(wxTreeListItem current = processesTreeList->GetFirstItem(); current.IsOk(); current = processesTreeList->GetNextItem(current))
+			{
+				processesTreeList->Expand(current);
+			}
+		}
 
 		void MainWindow::ReBindData()
 		{
@@ -385,7 +398,7 @@ namespace SystemExplorer
 	                    {
     	                    wxTreeListItem process = processesTreeList->AppendItem(parent, name);
 	                        processesTreeList->SetItemText(process, 1, std::to_string(pid));
-	                        processesTreeList->Expand(process);
+//	                        processesTreeList->Expand(process);
 						}
 						else
 						{

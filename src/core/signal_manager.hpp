@@ -1,6 +1,7 @@
 #ifndef SIGNAL_MANAGER_HPP
 #define SIGNAL_MANAGER_HPP
 
+#include <vector>
 #include <map>
 
 #include "models/signal_type.hpp"

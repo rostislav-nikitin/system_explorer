@@ -4,6 +4,7 @@
 #include <signal.h>
 
 #include <map>
+#include <algorithm>
 
 #include <wx/wx.h>
 

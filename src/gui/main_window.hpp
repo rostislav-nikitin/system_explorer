@@ -80,6 +80,7 @@ namespace SystemExplorer
 
 			pid_t ExtractPid(wxTreeListItem const &item) const;
 			void SendSignalToSelectedProcesses(int signal) const;
+			void ExpandAll();
             
         public:
             MainWindow();
