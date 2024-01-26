@@ -22,6 +22,8 @@ namespace SystemExplorer
         // created initially)
         //frame->Show(true);
 
+    	if ( !wxApp::OnInit() )
+	     	return false;
 
         MainWindow *window = new MainWindow();
         window->Show(true);

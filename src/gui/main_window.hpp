@@ -1,6 +1,8 @@
 #ifndef MAIN_WINDOW_HPP
 #define MAIN_WINDOW_HPP
 
+#include <vector>
+
 #include <wx/wx.h>
 #include <wx/bookctrl.h>
 #include <wx/treelist.h>
@@ -37,8 +39,6 @@ namespace SystemExplorer
 				KillSigKill
 			};
 
-			wxSimpleHelpProvider *helpProvider;
-
             wxBookCtrl *mainBook;
             wxPanel *processesTab;
             wxPanel *deamonsTab;
@@ -67,6 +67,7 @@ namespace SystemExplorer
             wxTreeListItem FindItemByPid(pid_t pid);
 
             void processesTreeList_OnChar(wxKeyEvent &event);
+            void processesTreeList_OnAny(wxEvent &event);
 			void processesTreeList_OnSelectionChanged(wxTreeListEvent &event);
 			void precessesTreeList_OnItemContextMenu(wxTreeListEvent &event);
 			void processesTreeList_OnMenuItem(wxCommandEvent &event);
@@ -81,6 +82,12 @@ namespace SystemExplorer
 			pid_t ExtractPid(wxTreeListItem const &item) const;
 			void SendSignalToSelectedProcesses(int signal) const;
 			void ExpandAll();
+			void ExpandAll(wxTreeListItem &item);
+			void CollapseAll();
+			void CollapseAll(wxTreeListItem &item);
+			std::vector<wxTreeListItem> GetAllSubNodes(wxTreeListItem &parent);
+
+    		wxDECLARE_EVENT_TABLE();
             
         public:
             MainWindow();
