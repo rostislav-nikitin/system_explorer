@@ -18,7 +18,7 @@ namespace SystemExplorer
 				Signal(SIGLOST, "SIGLOST", SignalTypesDict::GetInstance()->Get("Term"), "", "File lock lost (unused)")));
 */
 			_signals.insert(std::make_pair("SIGHUP", 
-				Signal(SIGHUP, "P1990", SignalTypesDict::GetInstance()->Get("Term"), "P1990", "Hangup detected on controlling terminal or death of controlling process")));
+				Signal(SIGHUP, "SIGHUP", SignalTypesDict::GetInstance()->Get("Term"), "P1990", "Hangup detected on controlling terminal or death of controlling process")));
 			_signals.insert(std::make_pair("SIGINT", 
 				Signal(SIGINT, "SIGINT", SignalTypesDict::GetInstance()->Get("Term"), "P1990", "P1990")));
 			_signals.insert(std::make_pair("SIGIO", 
