@@ -21,7 +21,7 @@ namespace SystemExplorer
 			static std::vector<Signal> GetSignals();
 			static std::vector<Signal> GetSignals(SignalType signalType);
 
-			void SendSignal(pid_t pid, Signal &signal) const;
+			static void SendSignal(pid_t pid, int signal);
 		};
 	}
 }

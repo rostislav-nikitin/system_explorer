@@ -23,10 +23,17 @@ namespace SystemExplorer
 
 			wxTreeListItems _selectedItems;
 
+			const int PROCESS_CONTEXT_MENU_RANGE_SIZE = 1000;
+
+			const int PROCESS_CONTEXT_MENU_ROOT_BASE = 0;
+			const int PROCESS_CONTEXT_MENU_SIGNAL_TYPE_BASE = 1000;
+			const int PROCESS_CONTEXT_MENU_SIGNAL_BASE = 2000;
+
 			enum class ProcessContextMenuId
 			{
 				Open,
-				KillSigHup,
+				SendSignal,
+				KillSigTerm,
 				KillSigKill
 			};
 
@@ -66,6 +73,13 @@ namespace SystemExplorer
             void processesSearch_Text(wxCommandEvent &event);
             void processesSearch_Click(wxCommandEvent &event);
 			void timer_OnTick(wxTimerEvent &event);
+			void processesContextMenu_OnMenuHighlight(wxMenuEvent &event);
+			void processesContextMenu_OnMenuOpen(wxMenuEvent &event);
+			void processesContextMenu_OnMenuClose(wxMenuEvent &event);
+
+
+			pid_t ExtractPid(wxTreeListItem const &item) const;
+			void SendSignalToSelectedProcesses(int signal) const;
             
         public:
             MainWindow();

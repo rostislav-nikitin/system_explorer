@@ -21,9 +21,9 @@ namespace SystemExplorer
 //			return _signals;
 		}
 
-		void SignalManager::SendSignal(pid_t pid, Signal &signal) const
+		void SignalManager::SendSignal(pid_t pid, int signal)
 		{
-       		kill(pid, signal.GetId());
+       		kill(pid, signal);
 		}
 	}
 }
