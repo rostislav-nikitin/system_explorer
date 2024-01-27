@@ -6,6 +6,12 @@ namespace SystemExplorer
 {
     namespace Gui
     {
+		template<class T>
+		wxMenuItem *AppendMenuItem(wxMenu *parentMenu, T dataItem, int base = 0, std::string overridenName = "")
+		{
+			return parentMenu->Append(base + dataItem.GetId(), overridenName.empty() ? dataItem.GetAlias() : overridenName, dataItem.GetDescription());
+		}
+
         MainWindow::MainWindow() : wxFrame(nullptr, wxID_ANY, "System Explorer", wxPoint(-1, -1), wxSize(800, 600))
         {
 ///           SetTitle(TITLE);
@@ -74,14 +80,18 @@ namespace SystemExplorer
 						[&signalType, signalsMenu, this](Signal &signal)
 						{
 							if(signal.GetSignalType().GetId() == signalType.GetId())
-								signalsMenu->Append(PROCESS_CONTEXT_MENU_SIGNAL_BASE + signal.GetId(), signal.GetAlias(), signal.GetDescription());
+								AppendMenuItem(signalsMenu, signal, PROCESS_CONTEXT_MENU_SIGNAL_BASE);
 						});
-					signalTypesMenu->Append(PROCESS_CONTEXT_MENU_SIGNAL_TYPE_BASE + signalType.GetId(), signalType.GetAlias(), signalsMenu, signalType.GetDescription());
+					AppendMenuItem(signalTypesMenu, signalType, PROCESS_CONTEXT_MENU_SIGNAL_TYPE_BASE);
 				});
 
 			processContextMenu->Append(static_cast<int>(ProcessContextMenuId::SendSignal), wxT("Send &signal"), signalTypesMenu, wxT("Send signal to the process"));
-			processContextMenu->Append(static_cast<int>(ProcessContextMenuId::KillSigTerm), wxT("Send SIG&TERM"), wxT("Kill(SIGTERM)"));
-			processContextMenu->Append(static_cast<int>(ProcessContextMenuId::KillSigKill), wxT("Send SIG&KILL"), wxT("Kill(SIGKILL)"));
+			processContextMenu->AppendSeparator();
+			AppendMenuItem(processContextMenu,SignalManager::GetSignal("SIGTERM"),PROCESS_CONTEXT_MENU_SIGNAL_BASE, "Terminate");
+			AppendMenuItem(processContextMenu,SignalManager::GetSignal("SIGKILL"),PROCESS_CONTEXT_MENU_SIGNAL_BASE, "Kill");
+			processContextMenu->AppendSeparator();
+			AppendMenuItem(processContextMenu,SignalManager::GetSignal("SIGSTOP"),PROCESS_CONTEXT_MENU_SIGNAL_BASE, "Stop");
+			AppendMenuItem(processContextMenu,SignalManager::GetSignal("SIGCONT"),PROCESS_CONTEXT_MENU_SIGNAL_BASE, "Continue");
 
             processesTabSizer = new wxBoxSizer(wxVERTICAL);
             processesTabSizer->Add(processesSearch, 0, wxEXPAND | wxALL, 0);

@@ -20,6 +20,10 @@ namespace SystemExplorer
 		{
 //			return _signals;
 		}
+		Signal SignalManager::GetSignal(std::string const &alias)
+		{
+			return SignalsDict::GetInstance()->Get(alias);
+		}
 
 		void SignalManager::SendSignal(pid_t pid, int signal)
 		{
