@@ -19,6 +19,8 @@ namespace SystemExplorer
 	CreateProcessesTab();
 	CreateDeamonsTab();
 	CreateStatus();
+
+	CreateAcceleratorTable();	
 	
 	BindEvents();
 	
@@ -26,7 +28,17 @@ namespace SystemExplorer
 	//ExpandAll();
 	StartTimer();
 	SetFocus();
-        }
+
+      }
+
+      void MainWindow::CreateAcceleratorTable()
+      {
+	//TODO: Implement for all hot keys (think where to attach(Window|Control)?
+	wxAcceleratorEntry es[1];
+	es[0].Set(wxACCEL_CTRL, (int) 'O', static_cast<int>(ProcessContextMenuId::Open));
+	wxAcceleratorTable t(1, es);
+	processesTreeList->SetAcceleratorTable(t);
+      }
 
       void MainWindow::CreateHotKeys()
       {
@@ -105,7 +117,7 @@ namespace SystemExplorer
 		       
 		      });
 
-	processContextMenu->Append(static_cast<int>(ProcessContextMenuId::SendSignal), wxT("Send &signal"), signalTypesMenu, wxT("Send signal to the process"));
+	processContextMenu->Append(static_cast<int>(ProcessContextMenuId::SendSignal), wxT("Send &signal\tCtrl+S"), signalTypesMenu, wxT("Send signal to the process"));
 	processContextMenu->AppendSeparator();
 	AppendMenuItem(processContextMenu,SignalManager::GetSignal("SIGTERM"),PROCESS_CONTEXT_MENU_SIGNAL_BASE, "Terminate");
 	AppendMenuItem(processContextMenu,SignalManager::GetSignal("SIGKILL"),PROCESS_CONTEXT_MENU_SIGNAL_BASE, "Kill");

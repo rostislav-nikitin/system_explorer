@@ -7,6 +7,7 @@
 #include <optional>
 
 #include <wx/wx.h>
+#include <wx/accel.h>
 #include <wx/bookctrl.h>
 #include <wx/treelist.h>
 #include <wx/srchctrl.h>
@@ -56,7 +57,8 @@ namespace SystemExplorer
 
 	  pid_t _selectedPid;
 
- 
+
+	  void CreateAcceleratorTable();
 	  void CreateHotKeys();	  
 	  void CreateTimer();
 	  void CreateMainBook();
