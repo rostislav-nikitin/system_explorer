@@ -31,32 +31,52 @@ namespace SystemExplorer
 
       }
 
-      void MainWindow::CreateAcceleratorTable()
-      {
-	//TODO: Implement for all hot keys (think where to attach(Window|Control)?
-	wxAcceleratorEntry es[1];
-	es[0].Set(wxACCEL_CTRL, (int) 'O', static_cast<int>(ProcessContextMenuId::Open));
-	wxAcceleratorTable t(1, es);
-	processesTreeList->SetAcceleratorTable(t);
-      }
-
       void MainWindow::CreateHotKeys()
       {
 	using SystemExplorer::Core::SignalManager;
 	
- 	AddHotKey(PROCESS_CONTEXT_MENU_SIGNAL_BASE, SignalManager::GetSignal("SIGTERM").GetId(), "Del");
-	AddHotKey(PROCESS_CONTEXT_MENU_SIGNAL_BASE, SignalManager::GetSignal("SIGKILL").GetId(), "Ctrl+Del");
-	AddHotKey(PROCESS_CONTEXT_MENU_SIGNAL_BASE, SignalManager::GetSignal("SIGSTOP").GetId(), "Ctrl+S");
-	AddHotKey(PROCESS_CONTEXT_MENU_SIGNAL_BASE, SignalManager::GetSignal("SIGCONT").GetId(), "Ctrl+C");
+	//	AddHotKey(PROCESS_CONTEXT_MENU_ROOT_BASE, static_cast<int>(ProcessContextMenuId::Open), owxACCEL_CTRL, static_cast<wxKeyCode>('O'));
+ 	AddHotKey(PROCESS_CONTEXT_MENU_SIGNAL_BASE, SignalManager::GetSignal("SIGTERM").GetId(), wxACCEL_ALT, WXK_DELETE);
+	AddHotKey(PROCESS_CONTEXT_MENU_SIGNAL_BASE, SignalManager::GetSignal("SIGKILL").GetId(), wxACCEL_CTRL, WXK_DELETE);
+	AddHotKey(PROCESS_CONTEXT_MENU_SIGNAL_BASE, SignalManager::GetSignal("SIGSTOP").GetId(), wxACCEL_CTRL, static_cast<int>('S'));
+	AddHotKey(PROCESS_CONTEXT_MENU_SIGNAL_BASE, SignalManager::GetSignal("SIGCONT").GetId(), wxACCEL_CTRL, static_cast<int>('C'));
 			
       }
       
-      void MainWindow::AddHotKey(int menuBase, int itemId, std::string hotKey)
+      void MainWindow::AddHotKey(int menuBase, int itemId, wxAcceleratorEntryFlags flags, int key)
       {
-	_hotKeys.insert({menuBase + itemId, hotKey});
+	int menuItemId = menuBase + itemId;
+	wxAcceleratorEntry ae(flags, key, menuItemId);
+	_hotKeys.insert({menuItemId, ae});
       }
-      
-      std::optional<std::string> MainWindow::GetHotKey(int menuBase, int itemId)
+
+      void MainWindow::CreateAcceleratorTable()
+      {
+	std::vector<wxAcceleratorEntry> entries;
+	
+	std::for_each(_hotKeys.begin(), _hotKeys.end(),
+		      [&entries](typename std::map<int, wxAcceleratorEntry>::value_type const &value)
+		      {
+			entries.push_back(value.second);
+			//std::cout << value.second.ToString() << std::endl;
+		      });
+	
+	entries.push_back(wxAcceleratorEntry(wxACCEL_CTRL, (int) 'O', static_cast<int>(ProcessContextMenuId::Open)));
+	
+	//	entries.push_back(wxAcceleratorEntry(wxACCEL_CTRL, (int) 'O', static_cast<int>(ProcessContextMenuId::Open)));
+	wxAcceleratorTable table(entries.size(), &entries[0]);
+	processesTreeList->SetAcceleratorTable(table);
+	
+	//TODO: Implement for all hot keys (think where to attach(Window|Control)?
+	//wxAcceleratorEntry es[1];
+	//es[0].Set(wxACCEL_CTRL, (int) 'O', static_cast<int>(ProcessContextMenuId::Open));
+	//	std::cout << es[0].ToString() << std::endl;
+	//wxAcceleratorTable t(1, es);
+	//processesTreeList->SetAcceleratorTable(t);
+	
+      }
+    
+      std::optional<wxAcceleratorEntry> MainWindow::GetHotKey(int menuBase, int itemId)
       {
 	int menuItemId = menuBase + itemId;
 	if(_hotKeys.count(menuItemId) == 0)
@@ -117,7 +137,7 @@ namespace SystemExplorer
 		       
 		      });
 
-	processContextMenu->Append(static_cast<int>(ProcessContextMenuId::SendSignal), wxT("Send &signal\tCtrl+S"), signalTypesMenu, wxT("Send signal to the process"));
+	processContextMenu->Append(static_cast<int>(ProcessContextMenuId::SendSignal), wxT("Send signal"), signalTypesMenu, wxT("Send signal to the process"));
 	processContextMenu->AppendSeparator();
 	AppendMenuItem(processContextMenu,SignalManager::GetSignal("SIGTERM"),PROCESS_CONTEXT_MENU_SIGNAL_BASE, "Terminate");
 	AppendMenuItem(processContextMenu,SignalManager::GetSignal("SIGKILL"),PROCESS_CONTEXT_MENU_SIGNAL_BASE, "Kill");
