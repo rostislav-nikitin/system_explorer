@@ -78,17 +78,18 @@ namespace SystemExplorer
 
 	   wxTreeListItem FindItemByPid(pid_t pid);
 
-	   void processesTreeList_OnChar(wxKeyEvent &event);
-	   void processesTreeList_OnAny(wxEvent &event);
-	   void processesTreeList_OnSelectionChanged(wxTreeListEvent &event);
-	   void precessesTreeList_OnItemContextMenu(wxTreeListEvent &event);
-	   void processesTreeList_OnMenuItem(wxCommandEvent &event);
-	   void processesSearch_Text(wxCommandEvent &event);
-	   void processesSearch_Click(wxCommandEvent &event);
-	   void timer_OnTick(wxTimerEvent &event);
-	   void processesContextMenu_OnMenuHighlight(wxMenuEvent &event);
-	   void processesContextMenu_OnMenuOpen(wxMenuEvent &event);
-	   void processesContextMenu_OnMenuClose(wxMenuEvent &event);
+	  void processesTreeList_OnChar(wxKeyEvent &event);
+	  void processesTreeList_OnAny(wxEvent &event);
+	  void processesTreeList_OnSelectionChanged(wxTreeListEvent &event);
+	  void precessesTreeList_OnItemContextMenu(wxTreeListEvent &event);
+	  void processesTreeList_OnMenuItem(wxCommandEvent &event);
+	  void processesSearch_Text(wxCommandEvent &event);
+	  void processesSearch_Click(wxCommandEvent &event);
+	  void processesSearch_OnKillFocus(wxFocusEvent &event);
+	  void timer_OnTick(wxTimerEvent &event);
+	  void processesContextMenu_OnMenuHighlight(wxMenuEvent &event);
+	  void processesContextMenu_OnMenuOpen(wxMenuEvent &event);
+	  void processesContextMenu_OnMenuClose(wxMenuEvent &event);
 
 
 	   pid_t ExtractPid(wxTreeListItem const &item) const;

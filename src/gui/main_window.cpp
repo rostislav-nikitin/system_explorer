@@ -177,6 +177,7 @@ namespace SystemExplorer
 	processesTreeList->Bind(wxEVT_CHAR, &MainWindow::processesTreeList_OnChar, this);
 	processesSearch->Bind(wxEVT_SEARCHCTRL_SEARCH_BTN, &MainWindow::processesSearch_Click, this, PROCESSES_SEARCH_ID);
 	processesSearch->Bind(wxEVT_TEXT, &MainWindow::processesSearch_Text, this);//, PROCESSES_SEARCH_ID);
+	processesSearch->Bind(wxEVT_KILL_FOCUS, &MainWindow::processesSearch_OnKillFocus, this);
 	processesTreeList->Bind(wxEVT_TREELIST_SELECTION_CHANGED, &MainWindow::processesTreeList_OnSelectionChanged, this);
 	processesTreeList->Bind(wxEVT_TREELIST_ITEM_CONTEXT_MENU, &MainWindow::precessesTreeList_OnItemContextMenu, this);
 	processesTreeList->Bind(wxEVT_MENU, &MainWindow::processesTreeList_OnMenuItem, this);
@@ -284,11 +285,16 @@ namespace SystemExplorer
 	    else if(!event.IsKeyInCategory(WXK_CATEGORY_NAVIGATION) && (keyCode != WXK_TAB) && (keyCode >= WXK_SPACE))
 	      {
 		//            			wxMessageBox(wxString(std::to_string(keyCode)), "TEST", wxOK | wxICON_INFORMATION, this);
-		processesSearch->AppendText(wxString(event.GetUnicodeKey()));
+		//bool searchIsEmpty = processesSearch->GetValue() == "";
+		
+		processesSearch->SetValue(wxString(event.GetUnicodeKey()));
 					
 		//SetStatusText(event.GetUnicodeKey());
 		processesSearch->SetFocus();
+		//		if(searchIsEmpty)
+		//{
 		processesSearch->SelectNone();
+		    //}
 	      }
 					
 	    event.Skip();
@@ -367,7 +373,16 @@ namespace SystemExplorer
 
       void MainWindow::processesSearch_Click(wxCommandEvent &event)
       {
-	SetFocus();	
+	//SetFocus();
+	processesSearch->SelectAll();
+	processesTreeList->SetFocus();
+	
+      }
+
+      void MainWindow::processesSearch_OnKillFocus(wxFocusEvent &event)
+      {
+	processesSearch->SelectAll();
+	event.Skip();
       }
 
       void MainWindow::BindData()
