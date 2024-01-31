@@ -50,6 +50,12 @@ namespace SystemExplorer
 	_hotKeys.insert({menuItemId, ae});
       }
 
+      void MainWindow::AttachMenuItem(int menuItemId, wxMenuItem *menuItem)
+      {
+	wxAcceleratorEntry &current = _hotKeys[menuItemId];
+	current.Set(current.GetFlags(), current.GetKeyCode(), current.GetCommand(), menuItem);
+      }
+
       void MainWindow::CreateAcceleratorTable()
       {
 	std::vector<wxAcceleratorEntry> entries;
@@ -65,7 +71,8 @@ namespace SystemExplorer
 	
 	//	entries.push_back(wxAcceleratorEntry(wxACCEL_CTRL, (int) 'O', static_cast<int>(ProcessContextMenuId::Open)));
 	wxAcceleratorTable table(entries.size(), &entries[0]);
-	processesTreeList->SetAcceleratorTable(table);
+	//processesTreeList->SetAcceleratorTable(table);
+	processesTab->SetAcceleratorTable(table);
 	
 	//TODO: Implement for all hot keys (think where to attach(Window|Control)?
 	//wxAcceleratorEntry es[1];
@@ -180,7 +187,7 @@ namespace SystemExplorer
 	processesSearch->Bind(wxEVT_KILL_FOCUS, &MainWindow::processesSearch_OnKillFocus, this);
 	processesTreeList->Bind(wxEVT_TREELIST_SELECTION_CHANGED, &MainWindow::processesTreeList_OnSelectionChanged, this);
 	processesTreeList->Bind(wxEVT_TREELIST_ITEM_CONTEXT_MENU, &MainWindow::precessesTreeList_OnItemContextMenu, this);
-	processesTreeList->Bind(wxEVT_MENU, &MainWindow::processesTreeList_OnMenuItem, this);
+	processesTab->Bind(wxEVT_MENU, &MainWindow::processesTab_OnMenuItem, this);
 	processContextMenu->Bind(wxEVT_MENU_HIGHLIGHT, &MainWindow::processesContextMenu_OnMenuHighlight, this);
 	processContextMenu->Bind(wxEVT_MENU_OPEN, &MainWindow::processesContextMenu_OnMenuOpen, this);
 	processContextMenu->Bind(wxEVT_MENU_CLOSE, &MainWindow::processesContextMenu_OnMenuClose, this);
@@ -315,7 +322,7 @@ namespace SystemExplorer
 	return result;
       }
 
-      void MainWindow::processesTreeList_OnMenuItem(wxCommandEvent& event)
+      void MainWindow::processesTab_OnMenuItem(wxCommandEvent& event)
       {
 	wxTreeListItems selectedItems;
 	if(!processesTreeList->GetSelections(selectedItems))

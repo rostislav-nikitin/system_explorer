@@ -75,6 +75,7 @@ namespace SystemExplorer
 
 	  void AddHotKey(int menuBase, int itemId, wxAcceleratorEntryFlags flags, int key);
 	  std::optional<wxAcceleratorEntry> GetHotKey(int menuBase, int itemId);
+	  void AttachMenuItem(int menuItemId, wxMenuItem *menuItem);
 
 	   wxTreeListItem FindItemByPid(pid_t pid);
 
@@ -82,7 +83,7 @@ namespace SystemExplorer
 	  void processesTreeList_OnAny(wxEvent &event);
 	  void processesTreeList_OnSelectionChanged(wxTreeListEvent &event);
 	  void precessesTreeList_OnItemContextMenu(wxTreeListEvent &event);
-	  void processesTreeList_OnMenuItem(wxCommandEvent &event);
+	  void processesTab_OnMenuItem(wxCommandEvent &event);
 	  void processesSearch_Text(wxCommandEvent &event);
 	  void processesSearch_Click(wxCommandEvent &event);
 	  void processesSearch_OnKillFocus(wxFocusEvent &event);
@@ -108,9 +109,22 @@ namespace SystemExplorer
 	     std::string itemName = overridenName.empty() ? dataItem.GetAlias() : overridenName;
 	     std::optional<wxAcceleratorEntry> hotKey = GetHotKey(base, itemId);
 	     if(hotKey.has_value())
+	     {
 	       itemName += ("\t" + hotKey.value().ToString());
+
+	     }
 	    
-	    return parentMenu->Append(menuItemId, itemName, dataItem.GetDescription());
+	     wxMenuItem *menuItem = parentMenu->Append(menuItemId, itemName, dataItem.GetDescription());
+
+	     if(hotKey.has_value())
+	     {
+		 //		 AttachMenuItem(menuItemId, menuItem);		 
+	       wxAcceleratorEntry &current = _hotKeys[menuItemId];
+	       current.Set(current.GetFlags(), current.GetKeyCode(), current.GetCommand(), menuItem);
+	     }
+
+	    
+	     return menuItem;
 	  }
       
 	  template<class T>
