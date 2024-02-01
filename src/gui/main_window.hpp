@@ -15,6 +15,8 @@
 #include <wx/cshelp.h>
 #include <wx/timer.h>
 
+#include "processes_tree_list_item_comparator.hpp"
+
 namespace SystemExplorer
 {
     namespace Gui
@@ -45,6 +47,8 @@ namespace SystemExplorer
 
 	  std::map<int, wxAcceleratorEntry> _hotKeys;
 
+	  ProcessesTreeListItemComparator _processesTreeListItemComparator;
+	  
 	  wxBookCtrl *mainBook;
 	  wxPanel *processesTab;
 	  wxPanel *deamonsTab;

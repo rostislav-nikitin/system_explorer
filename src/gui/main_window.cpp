@@ -6,8 +6,6 @@ namespace SystemExplorer
 {
     namespace Gui
     {
-
-
       MainWindow::MainWindow() : wxFrame(nullptr, wxID_ANY, "System Explorer", wxPoint(-1, -1), wxSize(800, 600))
       {
 	///           SetTitle(TITLE);
@@ -119,6 +117,7 @@ namespace SystemExplorer
 	processesTreeList->SetWindowStyle(wxBORDER_NONE);
 	processesTreeList->AppendColumn(_T("Name"),240, wxALIGN_LEFT, wxCOL_RESIZABLE | wxCOL_SORTABLE);
 	processesTreeList->AppendColumn(_T("PID"), 100, wxALIGN_LEFT, wxCOL_RESIZABLE | wxCOL_SORTABLE);
+	processesTreeList->SetItemComparator(&_processesTreeListItemComparator);
 
 	processContextMenu = new wxMenu();
 	processContextMenu->Append(static_cast<int>(ProcessContextMenuId::Open), wxT("&Open\tCtrl+O"), wxT("Open"));
