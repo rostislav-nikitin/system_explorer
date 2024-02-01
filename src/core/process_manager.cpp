@@ -152,6 +152,18 @@ namespace SystemExplorer
 			}
 */
         }
+      
+      std::string to_lower(std::string const instr)
+      {
+	std::string result;
+	std::transform(instr.begin(), instr.end(), std::back_inserter(result),
+	  [](typename std::string::value_type c)
+	  {
+	    return std::tolower(c);
+	  });
+
+	return result;
+      }
 
 		bool name_predicate(std::string const &name, std::vector<std::string> const &filters)
 		{
@@ -159,26 +171,30 @@ namespace SystemExplorer
 			std::vector<std::string>::const_iterator found_filter = std::find_if(filters.begin(), filters.end(), 
 				[&name](std::string const &filter)
 				{
+				  std::string const lname = to_lower(name);
+				  std::string const lfilter = to_lower(filter);
+				  //std::cout << lname << "::" << lfilter << std::endl;
+				  
 					bool found = false;
 					const char PATTERN_ANY = '*';
-					if((filter.size() > 2) && 
-						(filter.front() == PATTERN_ANY) && 
-						(filter.back() == PATTERN_ANY) &&
-						(name.find(filter.substr(1, filter.size() - 2), 1) != std::string::npos))
+					if((lfilter.size() > 2) && 
+						(lfilter.front() == PATTERN_ANY) && 
+						(lfilter.back() == PATTERN_ANY) &&
+						(lname.find(lfilter.substr(1, lfilter.size() - 2), 1) != std::string::npos))
 					{
 						std::cout << "*----*" << std::endl;
 						found = true;
 					}
-					else if((filter.size() > 1) && 
-						(filter.back() == PATTERN_ANY) &&
-						(name.find(filter.substr(0, filter.size() - 1)) == 0))
+					else if((lfilter.size() > 1) && 
+						(lfilter.back() == PATTERN_ANY) &&
+						(lname.find(lfilter.substr(0, lfilter.size() - 1)) == 0))
 					{
 						std::cout << "-----*" << std::endl;
 						found = true;
 					}
-					else if(filter.size() > 1 &&
-						(filter.front() == PATTERN_ANY) && 
-						(name.find(filter.substr(1, filter.size() - 1), (name.size() - (filter.size() - 1))) != std::string::npos))
+					else if(lfilter.size() > 1 &&
+						(lfilter.front() == PATTERN_ANY) && 
+						(lname.find(lfilter.substr(1, lfilter.size() - 1), (lname.size() - (lfilter.size() - 1))) != std::string::npos))
 					{
 						std::cout << "*------" << std::endl;
 						found = true;
@@ -186,7 +202,7 @@ namespace SystemExplorer
 					else
 					{
 						//std::cout << "*" << std::endl;
-						found = name.find(filter) == 0;
+						found = lname.find(lfilter) == 0;
 					}
 				
 					return found;
