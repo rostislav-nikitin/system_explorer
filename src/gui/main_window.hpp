@@ -61,7 +61,6 @@ namespace SystemExplorer
 
 	  pid_t _selectedPid;
 
-
 	  void CreateHotKeys();
 	  void CreateAcceleratorTable();
 	  void CreateTimer();
@@ -97,38 +96,37 @@ namespace SystemExplorer
 	  void processesContextMenu_OnMenuClose(wxMenuEvent &event);
 
 
-	   pid_t ExtractPid(wxTreeListItem const &item) const;
-	   void SendSignalToSelectedProcesses(int signal) const;
-	   void ExpandAll();
-	   void ExpandAll(wxTreeListItem &item);
-	   void CollapseAll();
-	   void CollapseAll(wxTreeListItem &item);
-	   std::vector<wxTreeListItem> GetAllSubNodes(wxTreeListItem &parent);
+	  pid_t ExtractPid(wxTreeListItem const &item) const;
+	  void SendSignalToSelectedProcesses(int signal) const;
+	  void ExpandAll();
+	  void ExpandAll(wxTreeListItem &item);
+	  void CollapseAll();
+	  void CollapseAll(wxTreeListItem &item);
+	  std::vector<wxTreeListItem> GetAllSubNodes(wxTreeListItem &parent);
 
-	   template<class T>
-	   wxMenuItem *AppendMenuItem(wxMenu *parentMenu, T dataItem, int base = 0, std::string overridenName = "")
-	   {
-	     int itemId = dataItem.GetId();
-	     int menuItemId = base + itemId;
-	     std::string itemName = overridenName.empty() ? dataItem.GetAlias() : overridenName;
-	     std::optional<wxAcceleratorEntry> hotKey = GetHotKey(base, itemId);
-	     if(hotKey.has_value())
-	     {
-	       itemName += ("\t" + hotKey.value().ToString());
-
-	     }
+	  template<class T>
+	  wxMenuItem *AppendMenuItem(wxMenu *parentMenu, T dataItem, int base = 0, std::string overridenName = "")
+	  {
+	    int itemId = dataItem.GetId();
+	    int menuItemId = base + itemId;
+	    std::string itemName = overridenName.empty() ? dataItem.GetAlias() : overridenName;
+	    std::optional<wxAcceleratorEntry> hotKey = GetHotKey(base, itemId);
+	    if(hotKey.has_value())
+	    {
+	      itemName += ("\t" + hotKey.value().ToString());
+	    }
 	    
-	     wxMenuItem *menuItem = parentMenu->Append(menuItemId, itemName, dataItem.GetDescription());
+	    wxMenuItem *menuItem = parentMenu->Append(menuItemId, itemName, dataItem.GetDescription());
 
-	     if(hotKey.has_value())
-	     {
-		 //		 AttachMenuItem(menuItemId, menuItem);		 
-	       wxAcceleratorEntry &current = _hotKeys[menuItemId];
-	       current.Set(current.GetFlags(), current.GetKeyCode(), current.GetCommand(), menuItem);
-	     }
+	    if(hotKey.has_value())
+	    {
+	      //		 AttachMenuItem(menuItemId, menuItem);		 
+	      wxAcceleratorEntry &current = _hotKeys[menuItemId];
+	      current.Set(current.GetFlags(), current.GetKeyCode(), current.GetCommand(), menuItem);
+	    }
 
 	    
-	     return menuItem;
+	    return menuItem;
 	  }
       
 	  template<class T>
