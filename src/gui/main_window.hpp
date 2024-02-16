@@ -23,11 +23,11 @@ namespace SystemExplorer
     {
         class MainWindow : public wxFrame
         {
-	  const char *TITLE = "System Explorer";
-	  const int REFRESH_INTERVAL = 1000; //ms
+	  		const char *TITLE = "System Explorer";
+	  		const int REFRESH_INTERVAL = 1000; //ms
 
-	  int const PROCESSES_SEARCH_ID = 2;
-	  int const PROCESSES_TREE_ID = 3;
+	  		int const PROCESSES_SEARCH_ID = 2;
+		  int const PROCESSES_TREE_ID = 3;
 
 	  wxTreeListItems _selectedItems;
 

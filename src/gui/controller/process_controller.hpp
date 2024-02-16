@@ -3,19 +3,31 @@
 
 #include <wx/wx.h>
 
-class MainWindow;
-
-class ProcessController
+namespace SystemExplorer
 {
-    wxPanel *_processesTab;
+    namespace Gui
+    {
+        namespace Controller
+        {
+            class MainWindow;
 
-    void CreateChildControls();
-    void BindEvents();
-    void BindData();
+            class ProcessController : public ControllerBase
+            {
+            private:
+                wxPanel *_processesTab;
 
-public:
-    ProcessController(wxPanel *processesTab);
+            protected:
+                void CreateChildControls() override;
+                void BindEvents() override;
+                void BindData() override;
 
-};
+            public:
+                ProcessController(wxPanel *processesTab);
+                ~ProcessController();
+
+            };
+        }
+    }
+}
 
 #endif

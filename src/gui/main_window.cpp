@@ -91,81 +91,81 @@ namespace SystemExplorer
 
       void MainWindow::CreateTimer()
       {
-	timer = new wxTimer();
+		timer = new wxTimer();
       }
 
       void MainWindow::CreateMainBook()
       {
-	int BOOK_ID = 1;
-	mainBook = new wxBookCtrl(this, BOOK_ID);
+		int BOOK_ID = 1;
+		mainBook = new wxBookCtrl(this, BOOK_ID);
 	
-	processesTab = new wxPanel(mainBook);
-	mainBook->AddPage(processesTab, _T("Processes"), true);
-	deamonsTab= new wxPanel(mainBook);
-	mainBook->AddPage(deamonsTab, _T("Deamons"));
+		processesTab = new wxPanel(mainBook);
+		mainBook->AddPage(processesTab, _T("Processes"), true);
+		deamonsTab= new wxPanel(mainBook);
+		mainBook->AddPage(deamonsTab, _T("Deamons"));
       }
 
       void MainWindow::CreateProcessesTab()
       {
-	using SystemExplorer::Core::Models::SignalType;
-	using SystemExplorer::Core::Models::Signal;
-	using SystemExplorer::Core::SignalManager;
+		using SystemExplorer::Core::Models::SignalType;
+		using SystemExplorer::Core::Models::Signal;
+		using SystemExplorer::Core::SignalManager;
 
-	processesSearch = new wxSearchCtrl(processesTab, PROCESSES_SEARCH_ID, _T(""), wxPoint(0,0), wxSize(100, 32));
-	processesSearch->SetDescriptiveText("Filter");
-	processesTreeList = new wxTreeListCtrl(processesTab, wxID_ANY, wxPoint(0,0), wxSize(100, 800), wxTL_MULTIPLE);
-	processesTreeList->SetWindowStyle(wxBORDER_NONE);
-	processesTreeList->AppendColumn(_T("Name"),240, wxALIGN_LEFT, wxCOL_RESIZABLE | wxCOL_SORTABLE);
-	processesTreeList->AppendColumn(_T("PID"), 100, wxALIGN_LEFT, wxCOL_RESIZABLE | wxCOL_SORTABLE);
-	processesTreeList->SetItemComparator(&_processesTreeListItemComparator);
+		processesSearch = new wxSearchCtrl(processesTab, PROCESSES_SEARCH_ID, _T(""), wxPoint(0,0), wxSize(100, 32));
+		processesSearch->SetDescriptiveText("Filter");
+		processesTreeList = new wxTreeListCtrl(processesTab, wxID_ANY, wxPoint(0,0), wxSize(100, 100), wxTL_MULTIPLE);
+		processesTreeList->SetWindowStyle(wxBORDER_NONE);
+		processesTreeList->AppendColumn(_T("Name"),240, wxALIGN_LEFT, wxCOL_RESIZABLE | wxCOL_SORTABLE);
+		processesTreeList->AppendColumn(_T("PID"), 100, wxALIGN_LEFT, wxCOL_RESIZABLE | wxCOL_SORTABLE);
+		processesTreeList->SetItemComparator(&_processesTreeListItemComparator);
 
-	processContextMenu = new wxMenu();
-	processContextMenu->Append(static_cast<int>(ProcessContextMenuId::Open), wxT("&Open\tCtrl+O"), wxT("Open"));
-	processContextMenu->AppendSeparator();
+		processContextMenu = new wxMenu();
+		processContextMenu->Append(static_cast<int>(ProcessContextMenuId::Open), wxT("&Open\tCtrl+O"), wxT("Open"));
+		processContextMenu->AppendSeparator();
 
-	wxMenu *signalTypesMenu = new wxMenu();
+		wxMenu *signalTypesMenu = new wxMenu();
 
-	std::vector<SignalType> signalTypes = SignalManager::GetSignalTypes();
-	std::vector<Signal> signals = SignalManager::GetSignals();
+		std::vector<SignalType> signalTypes = SignalManager::GetSignalTypes();
+		std::vector<Signal> signals = SignalManager::GetSignals();
 
-	std::for_each(signalTypes.begin(), signalTypes.end(),
+		std::for_each(signalTypes.begin(), signalTypes.end(),
 		      [signalTypesMenu, &signals, this](SignalType const &signalType)
 		      {
-			wxMenu *signalsMenu = new wxMenu();
+				wxMenu *signalsMenu = new wxMenu();
 
-			std::for_each(signals.begin(), signals.end(), 
+				std::for_each(signals.begin(), signals.end(), 
 				      [&signalType, signalsMenu, this](Signal &signal)
 				      {
 					if(signal.GetSignalType().GetId() == signalType.GetId())
 					  AppendMenuItem(signalsMenu, signal, PROCESS_CONTEXT_MENU_SIGNAL_BASE);
 				      });
-			AppendSubMenu(signalTypesMenu, signalType, signalsMenu, PROCESS_CONTEXT_MENU_SIGNAL_TYPE_BASE);
+				AppendSubMenu(signalTypesMenu, signalType, signalsMenu, PROCESS_CONTEXT_MENU_SIGNAL_TYPE_BASE);
 		       
 		      });
 
-	processContextMenu->Append(static_cast<int>(ProcessContextMenuId::SendSignal), wxT("Send signal"), signalTypesMenu, wxT("Send signal to the process"));
-	processContextMenu->AppendSeparator();
-	AppendMenuItem(processContextMenu,SignalManager::GetSignal("SIGTERM"),PROCESS_CONTEXT_MENU_SIGNAL_BASE, "Terminate");
-	AppendMenuItem(processContextMenu,SignalManager::GetSignal("SIGKILL"),PROCESS_CONTEXT_MENU_SIGNAL_BASE, "Kill");
-	processContextMenu->AppendSeparator();
-	AppendMenuItem(processContextMenu,SignalManager::GetSignal("SIGSTOP"),PROCESS_CONTEXT_MENU_SIGNAL_BASE, "Stop");
-	AppendMenuItem(processContextMenu,SignalManager::GetSignal("SIGCONT"),PROCESS_CONTEXT_MENU_SIGNAL_BASE, "Continue");
+		processContextMenu->Append(static_cast<int>(ProcessContextMenuId::SendSignal), wxT("Send signal"), signalTypesMenu, wxT("Send signal to the process"));
+		processContextMenu->AppendSeparator();
+		AppendMenuItem(processContextMenu,SignalManager::GetSignal("SIGTERM"),PROCESS_CONTEXT_MENU_SIGNAL_BASE, "Terminate");
+		AppendMenuItem(processContextMenu,SignalManager::GetSignal("SIGKILL"),PROCESS_CONTEXT_MENU_SIGNAL_BASE, "Kill");
+		processContextMenu->AppendSeparator();
+		AppendMenuItem(processContextMenu,SignalManager::GetSignal("SIGSTOP"),PROCESS_CONTEXT_MENU_SIGNAL_BASE, "Stop");
+		AppendMenuItem(processContextMenu,SignalManager::GetSignal("SIGCONT"),PROCESS_CONTEXT_MENU_SIGNAL_BASE, "Continue");
 
-	processesTabSizer = new wxBoxSizer(wxVERTICAL);
-	processesTabSizer->Add(processesSearch, 0, wxEXPAND | wxALL, 0);
-	processesTabSizer->Add(processesTreeList, 0, wxEXPAND | wxALL, 0);
-	processesTab->SetSizer(processesTabSizer);
+		processesTabSizer = new wxBoxSizer(wxVERTICAL);
+		processesTabSizer->Add(processesSearch, 0, wxEXPAND | wxALL, 0);
+		processesTabSizer->Add(processesTreeList, 1, wxEXPAND | wxALL, 0);
+		processesTab->SetSizer(processesTabSizer);
       }
 
       void MainWindow::CreateDeamonsTab()
       {
       }
 
-      void MainWindow::CreateStatus()
-      {
-	CreateStatusBar();
+	void MainWindow::CreateStatus()
+	{
+		CreateStatusBar();
 	//SetStatusText(_T("Running..."));
-      }
+	}
 
       void MainWindow::SetFocus()
       {

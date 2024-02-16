@@ -1,14 +1,25 @@
 #ifndef ICONTROLLER_HPP
 #define ICONTROLLER_HPP
 
-class IController
+namespace SystemExplorer
 {
-protected:
-    void CreateChildControls();
-    void BindEvents();
-    void BindDate();
-public:
-    void Run();
-};
+    namespace Gui
+    {
+        namespace Controller
+        {
+            class IController
+            {
+            protected:
+                virtual void CreateChildControls() = 0;
+                virtual void BindEvents() = 0;
+                virtual void BindData() = 0;
+            public:
+                virtual void Run() = 0;
+
+                virtual ~IController() { }
+            };
+        }
+    }
+}
 
 #endif
