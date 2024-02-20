@@ -17,7 +17,7 @@ namespace SystemExplorer
             std::string GetName(dirent *ent);
             pid_t GetParentPid(dirent *ent);
         public:
-            ProcessTree GetProcessTree(std::string filter);
+            ProcessTree GetProcessTree(std::string filter = "");
         };
     }
 }

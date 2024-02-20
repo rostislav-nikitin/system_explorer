@@ -5,6 +5,7 @@
 #include <vector>
 
 #include <wx/wx.h>
+#include <wx/bookctrl.h>
 #include <wx/treelist.h>
 #include <wx/srchctrl.h>
 
@@ -21,22 +22,15 @@ namespace SystemExplorer
         wxDECLARE_EVENT(custEVT_SEARCH, wxCommandEvent);
         wxDECLARE_EVENT(custEVT_SELECTION_CHANGED, wxCommandEvent);
         wxDECLARE_EVENT(custEVT_ITEM_CONTEXT_MENU, wxCommandEvent);
-
+        wxDECLARE_EVENT(custEVT_MENU, wxCommandEvent);
+        
         namespace Control
         {
-            class SearchableTreeListControl : wxPanel
+            class SearchableTreeListControl : public wxPanel
             {
-                class SearchableTreeListItem
-                {
-                    int id;
-                    int parentId;
-                    std::string text;
-                    std::vector<std::string> other;
-                };
-
-                wxBoxSizer *bsSizer;
-	            wxSearchCtrl *scSearch;
-	            wxTreeListCtrl *tlcTreeList;
+                wxBoxSizer *_bsSizer;
+	            wxSearchCtrl *_scSearch;
+	            wxTreeListCtrl *_tlcTreeList;
 
                 void BindEvents();
 
@@ -44,18 +38,55 @@ namespace SystemExplorer
                 void tlcTreeList_OnAny(wxEvent &event);
                 void tlcTreeList_OnSelectionChanged(wxTreeListEvent &event);
                 void tlcTreeList_OnItemContextMenu(wxTreeListEvent &event);
+                void tlcTreeList_OnMenuItem(wxTreeListEvent &event);
                 void scSearch_Text(wxCommandEvent &event);
                 void scSearch_Click(wxCommandEvent &event);
                 void scSearch_OnKillFocus(wxFocusEvent &event);
+
+                void ExpandAll(wxTreeListItem &item);
+                void CollapseAll(wxTreeListItem &item);
+
+                std::vector<wxTreeListItem> GetAllSubNodes(wxTreeListItem &parent);
+                wxTreeListItem FindItemById(int id);
+
             public:
-                SearchableTreeListControl(wxWindowID Id);
+                class SearchableTreeListItem
+                {
+                    int _id;
+                    int _parentId;
+                    std::string _text;
+                    bool _selected;
+                    std::vector<std::string> _other;
+               public:
+                    SearchableTreeListItem(int id, std::string text, 
+                        int parentId = 0, bool selected = false, std::vector<std::string> other = std::vector<std::string>());
+
+                    int GetId() const;
+                    int GetParentId() const;
+                    std::string GetText() const;
+                    bool GetSelected() const;
+                    std::vector<std::string> GetOther() const;
+                };
+
+                SearchableTreeListControl(wxBookCtrl *parent, wxWindowID Id);
 
                 int AppendColumn(const wxString &title, int width=wxCOL_WIDTH_AUTOSIZE, wxAlignment align=wxALIGN_LEFT, int flags=wxCOL_RESIZABLE);
+                const wxString & GetItemText(wxTreeListItem item, unsigned int col = 0U) const;
+                unsigned int GetSelections(wxTreeListItems &selections) const;
 
-                void Bind(std::vector<SearchableTreeListItem> &dataSource);
-                void ReBind(std::vector<SearchableTreeListItem> &dataSource);
+                void DataBind(std::vector<SearchableTreeListItem> &dataSource);
+                void DataReBind(std::vector<SearchableTreeListItem> &dataSource);
+
+                void SetFocus();
+                void ExpandAll();
+                void CollapseAll();
+
+                void PopupMenu(wxMenu *menu, const wxPoint &pos = wxDefaultPosition);
 
                 void SetItemComparator(wxTreeListItemComparator *treeListItemCopmarator);
+
+
+                std::string GetSearchText() const;
             };
         }
     }

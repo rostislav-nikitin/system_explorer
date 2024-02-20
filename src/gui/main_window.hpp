@@ -16,6 +16,7 @@
 #include <wx/timer.h>
 
 #include "processes_tree_list_item_comparator.hpp"
+#include "control/searchable_treelist_control.hpp"
 
 namespace SystemExplorer
 {
@@ -50,14 +51,12 @@ namespace SystemExplorer
 	  ProcessesTreeListItemComparator _processesTreeListItemComparator;
 	  
 	  wxBookCtrl *mainBook;
-	  wxPanel *processesTab;
 	  wxPanel *deamonsTab;
 
-	  wxBoxSizer *processesTabSizer;
-	  wxSearchCtrl *processesSearch;
-	  wxTreeListCtrl *processesTreeList;
 	  wxMenu *processContextMenu;
 	  wxTimer *timer;
+
+	  Control::SearchableTreeListControl *searchableTreeList;
 
 	  pid_t _selectedPid;
 
@@ -82,27 +81,16 @@ namespace SystemExplorer
 
 	   wxTreeListItem FindItemByPid(pid_t pid);
 
-	  void processesTreeList_OnChar(wxKeyEvent &event);
-	  void processesTreeList_OnAny(wxEvent &event);
-	  void processesTreeList_OnSelectionChanged(wxTreeListEvent &event);
-	  void precessesTreeList_OnItemContextMenu(wxTreeListEvent &event);
-	  void processesTab_OnMenuItem(wxCommandEvent &event);
-	  void processesSearch_Text(wxCommandEvent &event);
-	  void processesSearch_Click(wxCommandEvent &event);
-	  void processesSearch_OnKillFocus(wxFocusEvent &event);
+	  void searchableTreeList_Search(wxCommandEvent &event);
+	  void searchableTreeList_OnItemContextMenu(wxCommandEvent &event);
+	  void searchableTreeList_OnMenuItem(wxCommandEvent &event);
 	  void timer_OnTick(wxTimerEvent &event);
 	  void processesContextMenu_OnMenuHighlight(wxMenuEvent &event);
 	  void processesContextMenu_OnMenuOpen(wxMenuEvent &event);
 	  void processesContextMenu_OnMenuClose(wxMenuEvent &event);
 
-
 	  pid_t ExtractPid(wxTreeListItem const &item) const;
 	  void SendSignalToSelectedProcesses(int signal) const;
-	  void ExpandAll();
-	  void ExpandAll(wxTreeListItem &item);
-	  void CollapseAll();
-	  void CollapseAll(wxTreeListItem &item);
-	  std::vector<wxTreeListItem> GetAllSubNodes(wxTreeListItem &parent);
 
 	  template<class T>
 	  wxMenuItem *AppendMenuItem(wxMenu *parentMenu, T dataItem, int base = 0, std::string overridenName = "")
