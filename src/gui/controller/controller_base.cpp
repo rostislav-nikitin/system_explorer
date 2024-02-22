@@ -12,6 +12,19 @@ namespace SystemExplorer
                 BindEvents();
                 BindData();
             }
+
+            void ControllerBase::CreateChildControls()
+            {
+            
+            }
+            void ControllerBase::BindEvents()
+            {
+
+            }
+            void ControllerBase::BindData()
+            {
+                
+            }
         }
     }
 }

@@ -3,6 +3,7 @@
 #include <wx/wx.h>
 
 #include "gui/main_window.hpp"
+#include "gui/controller/main_controller.hpp"
 
 namespace SystemExplorer
 {
@@ -15,6 +16,7 @@ namespace SystemExplorer
     bool App::OnInit()
     {
         using SystemExplorer::Gui::MainWindow;
+        using SystemExplorer::Gui::Controller::MainController;
 
         //wxFrame *frame = new wxFrame(nullptr, wxID_ANY, "wxComboCtrl and wxOwnerDrawnComboBox Sample");
 
@@ -26,7 +28,8 @@ namespace SystemExplorer
 	     	return false;
 
         MainWindow *window = new MainWindow();
-        window->Show(true);
+        MainController controller(window);
+        controller.Run();
 
     	return true;
     }

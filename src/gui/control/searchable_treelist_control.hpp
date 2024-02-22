@@ -38,7 +38,7 @@ namespace SystemExplorer
                 void tlcTreeList_OnAny(wxEvent &event);
                 void tlcTreeList_OnSelectionChanged(wxTreeListEvent &event);
                 void tlcTreeList_OnItemContextMenu(wxTreeListEvent &event);
-                void tlcTreeList_OnMenuItem(wxTreeListEvent &event);
+                void tlcTreeList_OnMenuItem(wxCommandEvent &event);
                 void scSearch_Text(wxCommandEvent &event);
                 void scSearch_Click(wxCommandEvent &event);
                 void scSearch_OnKillFocus(wxFocusEvent &event);

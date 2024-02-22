@@ -83,7 +83,7 @@ namespace SystemExplorer
 
 	  void searchableTreeList_Search(wxCommandEvent &event);
 	  void searchableTreeList_OnItemContextMenu(wxCommandEvent &event);
-	  void searchableTreeList_OnMenuItem(wxCommandEvent &event);
+	  void processContextMenu_OnMenuItem(wxCommandEvent &event);
 	  void timer_OnTick(wxTimerEvent &event);
 	  void processesContextMenu_OnMenuHighlight(wxMenuEvent &event);
 	  void processesContextMenu_OnMenuOpen(wxMenuEvent &event);

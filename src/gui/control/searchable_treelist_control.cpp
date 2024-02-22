@@ -62,7 +62,8 @@ namespace SystemExplorer
 	            _scSearch->Bind(wxEVT_KILL_FOCUS, &SearchableTreeListControl::scSearch_OnKillFocus, this);
                 _tlcTreeList->Bind(wxEVT_CHAR, &SearchableTreeListControl::tlcTreeList_OnChar, this);
 	            _tlcTreeList->Bind(wxEVT_TREELIST_SELECTION_CHANGED, &SearchableTreeListControl::tlcTreeList_OnSelectionChanged, this);
-	            _tlcTreeList->Bind(wxEVT_TREELIST_ITEM_CONTEXT_MENU, &SearchableTreeListControl::tlcTreeList_OnItemContextMenu, this);
+                _tlcTreeList->Bind(wxEVT_TREELIST_ITEM_CONTEXT_MENU, &SearchableTreeListControl::tlcTreeList_OnItemContextMenu, this);
+                //this->Bind(wxEVT_MENU, &SearchableTreeListControl::tlcTreeList_OnMenuItem, this);
             }
 
             int SearchableTreeListControl::AppendColumn(const wxString &title, int width, wxAlignment align, int flags)
@@ -182,16 +183,14 @@ namespace SystemExplorer
 
 	            if(!event.IsKeyInCategory(WXK_CATEGORY_NAVIGATION) 
                     && (keyCode != WXK_TAB) 
-                    && (keyCode >= WXK_SPACE))
+                    && (keyCode >= WXK_SPACE) && std::isalnum(keyCode))
 	            {
             		_scSearch->SetValue(wxString(event.GetUnicodeKey()));
                 	_scSearch->SetFocus();
             		_scSearch->SelectNone();
-                    event.Skip();
                 }
 
-                
-
+                event.Skip(); 
             }
 
             void SearchableTreeListControl::tlcTreeList_OnAny(wxEvent &event)
@@ -204,7 +203,6 @@ namespace SystemExplorer
 
             void SearchableTreeListControl::tlcTreeList_OnItemContextMenu(wxTreeListEvent &event)
             {
-                std::cout << "STREELIST::ONCONTEXT MENU" << std::endl;
                 wxCommandEvent menu_event(custEVT_ITEM_CONTEXT_MENU, GetId());
 
                 menu_event.SetEventObject(this);
@@ -213,8 +211,9 @@ namespace SystemExplorer
                 ProcessWindowEvent(menu_event);
             }
 
-            void SearchableTreeListControl::tlcTreeList_OnMenuItem(wxTreeListEvent &event)
+            void SearchableTreeListControl::tlcTreeList_OnMenuItem(wxCommandEvent &event)
             {
+                std::cout << "STREELIST::ON MENU ITEM" << std::endl;
                 wxCommandEvent menu_event(custEVT_MENU, GetId());
 
                 menu_event.SetEventObject(this);

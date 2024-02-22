@@ -2,7 +2,7 @@
 #define MAIN_CONTROLLER_HPP
 
 #include "../main_window.hpp"
-#include "icontroller.hpp"
+#include "controller_base.hpp"
 
 namespace SystemExplorer
 {
@@ -15,15 +15,11 @@ namespace SystemExplorer
             private:
                 MainWindow *_mainWindow;
 
-            protected:
-                void CreateChildControls() override;
-                void BindEvents() override;
-                void ReBindData() override;
-
             public:
-                MainController(MainWindow mainWindow);
+                MainController(MainWindow *mainWindow);
                 ~MainController();
 
+                virtual void Run() override;
             };
         }
     }

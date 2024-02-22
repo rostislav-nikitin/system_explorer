@@ -35,8 +35,10 @@ namespace SystemExplorer
 			//	AddHotKey(PROCESS_CONTEXT_MENU_ROOT_BASE, static_cast<int>(ProcessContextMenuId::Open), owxACCEL_CTRL, static_cast<wxKeyCode>('O'));
 			AddHotKey(PROCESS_CONTEXT_MENU_SIGNAL_BASE, SignalManager::GetSignal("SIGTERM").GetId(), wxACCEL_ALT, WXK_DELETE);
 			AddHotKey(PROCESS_CONTEXT_MENU_SIGNAL_BASE, SignalManager::GetSignal("SIGKILL").GetId(), wxACCEL_CTRL, WXK_DELETE);
-			AddHotKey(PROCESS_CONTEXT_MENU_SIGNAL_BASE, SignalManager::GetSignal("SIGSTOP").GetId(), wxACCEL_CTRL, static_cast<int>('S'));
-			AddHotKey(PROCESS_CONTEXT_MENU_SIGNAL_BASE, SignalManager::GetSignal("SIGCONT").GetId(), wxACCEL_CTRL, static_cast<int>('C'));
+			AddHotKey(PROCESS_CONTEXT_MENU_SIGNAL_BASE, SignalManager::GetSignal("SIGSTOP").GetId(), 
+				static_cast<wxAcceleratorEntryFlags>((int)wxACCEL_SHIFT | (int)wxACCEL_CTRL), static_cast<int>('S'));
+			AddHotKey(PROCESS_CONTEXT_MENU_SIGNAL_BASE, SignalManager::GetSignal("SIGCONT").GetId(), 
+				static_cast<wxAcceleratorEntryFlags>((int)wxACCEL_SHIFT | (int)wxACCEL_CTRL), static_cast<int>('C'));
 		}
 
 		void MainWindow::AddHotKey(int menuBase, int itemId, wxAcceleratorEntryFlags flags, int key)
@@ -63,7 +65,8 @@ namespace SystemExplorer
 							  // std::cout << value.second.ToString() << std::endl;
 						  });
 
-			entries.push_back(wxAcceleratorEntry(wxACCEL_CTRL, (int)'O', static_cast<int>(ProcessContextMenuId::Open)));
+			entries.push_back(wxAcceleratorEntry(static_cast<wxAcceleratorEntryFlags>(
+				(int)wxACCEL_CTRL | (int)wxACCEL_SHIFT), (int)'O', static_cast<int>(ProcessContextMenuId::Open)));
 
 			//	entries.push_back(wxAcceleratorEntry(wxACCEL_CTRL, (int) 'O', static_cast<int>(ProcessContextMenuId::Open)));
 			wxAcceleratorTable table(entries.size(), &entries[0]);
@@ -114,7 +117,7 @@ namespace SystemExplorer
 			using SystemExplorer::Core::Models::SignalType;
 
 			processContextMenu = new wxMenu();
-			processContextMenu->Append(static_cast<int>(ProcessContextMenuId::Open), wxT("&Open\tCtrl+O"), wxT("Open"));
+			processContextMenu->Append(static_cast<int>(ProcessContextMenuId::Open), wxT("&Open\tCtrl+Shift+O"), wxT("Open"));
 			processContextMenu->AppendSeparator();
 
 			wxMenu *signalTypesMenu = new wxMenu();
@@ -166,7 +169,8 @@ namespace SystemExplorer
 			timer->Bind(wxEVT_TIMER, &MainWindow::timer_OnTick, this);
 			searchableTreeList->Bind(custEVT_SEARCH, &MainWindow::searchableTreeList_Search, this); 
 			searchableTreeList->Bind(custEVT_ITEM_CONTEXT_MENU, &MainWindow::searchableTreeList_OnItemContextMenu, this);
-			searchableTreeList->Bind(custEVT_MENU, &MainWindow::searchableTreeList_OnMenuItem, this);
+			searchableTreeList->Bind(wxEVT_MENU, &MainWindow::processContextMenu_OnMenuItem, this);
+			processContextMenu->Bind(wxEVT_MENU, &MainWindow::processContextMenu_OnMenuItem, this);
 			processContextMenu->Bind(wxEVT_MENU_HIGHLIGHT, &MainWindow::processesContextMenu_OnMenuHighlight, this);
 			processContextMenu->Bind(wxEVT_MENU_OPEN, &MainWindow::processesContextMenu_OnMenuOpen, this);
 			processContextMenu->Bind(wxEVT_MENU_CLOSE, &MainWindow::processesContextMenu_OnMenuClose, this);
@@ -184,7 +188,6 @@ namespace SystemExplorer
 
 		void MainWindow::searchableTreeList_OnItemContextMenu(wxCommandEvent &event)
 		{
-			std::cout << "ON CONTEXT MENU" << std::endl;
 			searchableTreeList->PopupMenu(processContextMenu);
 		}
 
@@ -229,7 +232,7 @@ namespace SystemExplorer
 			return result;
 		}
 
-		void MainWindow::searchableTreeList_OnMenuItem(wxCommandEvent &event)
+		void MainWindow::processContextMenu_OnMenuItem(wxCommandEvent &event)
 		{
 			wxTreeListItems selectedItems;
 			if (!searchableTreeList->GetSelections(selectedItems))

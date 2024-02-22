@@ -8,7 +8,7 @@ namespace SystemExplorer
     {
         namespace Controller
         {
-            MainController::MainController(MainWindow mainWindow) : _mainWindow(mainWindow)
+            MainController::MainController(MainWindow *mainWindow) : _mainWindow(mainWindow)
             {
             }
 
@@ -16,20 +16,11 @@ namespace SystemExplorer
             {
             }
 
-            MainController::CreateChildControls()
+            void MainController::Run()
             {
-                std::cout << __PRETTY_FUNCTION__ << std::endl;
+                _mainWindow->Show(true);
             }
 
-            MainController::BindEvents()
-            {
-                std::cout << __PRETTY_FUNCTION__ << std::endl;
-            }
-
-            MainController::ReBindData()
-            {
-                std::cout << __PRETTY_FUNCTION__ << std::endl;            
-            }
         }
     }
 }
