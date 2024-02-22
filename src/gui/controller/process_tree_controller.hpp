@@ -1,7 +1,12 @@
-#ifndef PROCESS_CONTROLLER_HPP
-#define PROCESS_CONTROLLER_HPP
+#ifndef PROCESS_TREE_CONTROLLER_HPP
+#define PROCESS_TREE_CONTROLLER_HPP
 
 #include <wx/wx.h>
+#include <wx/accel.h>
+#include <wx/bookctrl.h>
+#include <wx/cshelp.h>
+#include <wx/timer.h>
+
 
 namespace SystemExplorer
 {
@@ -9,12 +14,10 @@ namespace SystemExplorer
     {
         namespace Controller
         {
-            class MainWindow;
-
-            class ProcessController : public ControllerBase
+            class ProcessTreeController : public ControllerBase
             {
             private:
-                wxPanel *_processesTab;
+                wxBookCtrl *_mainBook;
 
             protected:
                 void CreateChildControls() override;
@@ -22,8 +25,8 @@ namespace SystemExplorer
                 void BindData() override;
 
             public:
-                ProcessController(wxPanel *processesTab);
-                ~ProcessController();
+                ProcessTreeController(wxBookCtrl *mainBook);
+                ~ProcessTreeController();
 
             };
         }

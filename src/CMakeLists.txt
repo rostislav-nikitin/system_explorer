@@ -13,10 +13,16 @@ add_executable(system_explorer
 	core/signal_types_dict.cpp core/signals_dict.cpp core/signal_manager.cpp 
 	core/models/process.cpp core/models/process_tree.cpp 
 	core/process_manager.cpp 
+
 	gui/control/searchable_treelist_control.cpp
+
 	gui/controller/controller_base.cpp
 	gui/controller/main_controller.cpp
 	
-	gui/process_data.cpp gui/processes_tree_list_item_comparator.cpp gui/main_window.cpp app.cpp)
+	gui/process_data.cpp 
+	gui/processes_tree_list_item_comparator.cpp 
+	gui/main_window.cpp 
+	
+	app.cpp)
 
 target_link_libraries(system_explorer ${wxWidgets_LIBRARIES})

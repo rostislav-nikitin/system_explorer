@@ -12,6 +12,8 @@ namespace SystemExplorer
             class ControllerBase : public IController
             {
             protected:
+                ControllerBase();
+                
                 virtual void CreateChildControls() override;
                 virtual void BindEvents() override;
                 virtual void BindData() override;

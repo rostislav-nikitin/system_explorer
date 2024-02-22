@@ -6,11 +6,15 @@ namespace SystemExplorer
     {
         namespace Controller
         {
-            void ControllerBase::Run()
+            ControllerBase::ControllerBase()
             {
                 CreateChildControls();
                 BindEvents();
                 BindData();
+            }
+
+            void ControllerBase::Run()
+            {
             }
 
             void ControllerBase::CreateChildControls()
@@ -23,7 +27,7 @@ namespace SystemExplorer
             }
             void ControllerBase::BindData()
             {
-                
+
             }
         }
     }
