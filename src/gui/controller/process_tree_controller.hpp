@@ -7,6 +7,9 @@
 #include <wx/cshelp.h>
 #include <wx/timer.h>
 
+#include "controller_base.hpp"
+
+#include "../../core/process_manager.hpp"
 
 namespace SystemExplorer
 {
@@ -18,6 +21,7 @@ namespace SystemExplorer
             {
             private:
                 wxBookCtrl *_mainBook;
+                SystemExplorer::Core::ProcessManager _processManager;
 
             protected:
                 void CreateChildControls() override;
@@ -25,7 +29,7 @@ namespace SystemExplorer
                 void BindData() override;
 
             public:
-                ProcessTreeController(wxBookCtrl *mainBook);
+                ProcessTreeController(wxBookCtrl *mainBook, SystemExplorer::Core::ProcessManager processManager);
                 ~ProcessTreeController();
 
             };

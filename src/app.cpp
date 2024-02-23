@@ -1,9 +1,14 @@
 #include <iostream>
 
 #include <wx/wx.h>
+#include <wx/bookctrl.h>
+
+#include "core/process_manager.hpp"
 
 #include "gui/main_window.hpp"
-#include "gui/controller/main_controller.hpp"
+#include "gui/processes_tree_list_item_comparator.hpp"
+
+#include "gui/controller/process_tree_controller.hpp"
 
 namespace SystemExplorer
 {
@@ -15,8 +20,11 @@ namespace SystemExplorer
 
     bool App::OnInit()
     {
+        using SystemExplorer::Core::ProcessManager;
+
         using SystemExplorer::Gui::MainWindow;
-        using SystemExplorer::Gui::Controller::MainController;
+        using SystemExplorer::Gui::Controller::ProcessTreeController;
+        
 
         //wxFrame *frame = new wxFrame(nullptr, wxID_ANY, "wxComboCtrl and wxOwnerDrawnComboBox Sample");
 
@@ -27,9 +35,15 @@ namespace SystemExplorer
     	if ( !wxApp::OnInit() )
 	     	return false;
 
+        // Core components
+        ProcessManager processManager;
+
+        // Gui components
         MainWindow *window = new MainWindow();
-        MainController controller(window);
-        controller.Run();
+        //wxBookCtrl *mainBook = new wxBookCtrl(window, wxID_ANY);
+        //ProcessTreeController processTreeController(mainBook, processManager);
+
+        window->Show(true);
 
     	return true;
     }

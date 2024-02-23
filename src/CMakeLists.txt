@@ -17,7 +17,7 @@ add_executable(system_explorer
 	gui/control/searchable_treelist_control.cpp
 
 	gui/controller/controller_base.cpp
-	gui/controller/main_controller.cpp
+	gui/controller/process_tree_controller.cpp
 	
 	gui/process_data.cpp 
 	gui/processes_tree_list_item_comparator.cpp 
