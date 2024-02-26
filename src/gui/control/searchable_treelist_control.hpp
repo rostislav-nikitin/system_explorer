@@ -68,7 +68,7 @@ namespace SystemExplorer
                     std::vector<std::string> GetOther() const;
                 };
 
-                SearchableTreeListControl(wxBookCtrl *parent, wxWindowID Id);
+                SearchableTreeListControl(wxWindow *parent, wxWindowID Id);
 
                 int AppendColumn(const wxString &title, int width=wxCOL_WIDTH_AUTOSIZE, wxAlignment align=wxALIGN_LEFT, int flags=wxCOL_RESIZABLE);
                 const wxString & GetItemText(wxTreeListItem item, unsigned int col = 0U) const;

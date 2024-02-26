@@ -39,7 +39,7 @@ namespace SystemExplorer
             }
 
 
-            SearchableTreeListControl::SearchableTreeListControl(wxBookCtrl *parent, wxWindowID id) : wxPanel(parent)
+            SearchableTreeListControl::SearchableTreeListControl(wxWindow *parent, wxWindowID id) : wxPanel(parent)
             {
                 _scSearch = new wxSearchCtrl(this, id, _T(""), wxPoint(0,0), wxSize(100, 32));
 		        _scSearch->SetDescriptiveText("Filter");

@@ -6,9 +6,10 @@
 #include "core/process_manager.hpp"
 
 #include "gui/main_window.hpp"
+#include "gui/mvvp_main_window.hpp"
 #include "gui/processes_tree_list_item_comparator.hpp"
 
-#include "gui/controller/process_tree_controller.hpp"
+#define MVC
 
 namespace SystemExplorer
 {
@@ -23,7 +24,7 @@ namespace SystemExplorer
         using SystemExplorer::Core::ProcessManager;
 
         using SystemExplorer::Gui::MainWindow;
-        using SystemExplorer::Gui::Controller::ProcessTreeController;
+        using SystemExplorer::Gui::ViewController::ProcessTreeViewController;
         
 
         //wxFrame *frame = new wxFrame(nullptr, wxID_ANY, "wxComboCtrl and wxOwnerDrawnComboBox Sample");
@@ -38,12 +39,15 @@ namespace SystemExplorer
         // Core components
         ProcessManager processManager;
 
+#ifndef MVC
         // Gui components
         MainWindow *window = new MainWindow();
-        //wxBookCtrl *mainBook = new wxBookCtrl(window, wxID_ANY);
-        //ProcessTreeController processTreeController(mainBook, processManager);
-
         window->Show(true);
+#else
+        wxFrame *window = new MvvpMainWindow();
+        window->Show(true);
+#endif
+
 
     	return true;
     }
