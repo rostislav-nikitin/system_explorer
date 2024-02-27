@@ -50,7 +50,7 @@ namespace SystemExplorer
                 wxTreeListItem FindItemById(int id);
 
             public:
-                class SearchableTreeListItem
+                class SearchableTreeListItem : public wxClientData 
                 {
                     int _id;
                     int _parentId;

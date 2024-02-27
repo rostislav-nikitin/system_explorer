@@ -197,9 +197,8 @@ namespace SystemExplorer
             }
             void ProcessTreeViewController::processesContextMenu_OnMenuClose(wxMenuEvent &event)
             {
-                //TODO: Implement status text manipulations
-                //if (event.GetMenu() == processContextMenu)
-                    //SetStatusText(wxT(""));
+                if (event.GetMenu() == _processContextMenu)
+                    SetHelpStatusText("");
             }
 
             void ProcessTreeViewController::processesContextMenu_OnMenuHighlight(wxMenuEvent &event)
@@ -215,8 +214,7 @@ namespace SystemExplorer
                     return;
                 }
                 wxString help = menu->GetHelpString(menuId);
-                // TODO: Implement SetStatusText
-                // SetStatusText(help);
+                SetHelpStatusText(help);
             }
 
 
@@ -327,10 +325,8 @@ namespace SystemExplorer
 
                 // Get processes
                 ProcessManager pm;
-                std::cout << "RBD::01" << std::endl;
 
                 std::string searchFilter = _searchableTreeList->GetSearchText();
-                std::cout << "RBD::02" << std::endl;
                 ProcessTree processTreeToRebind = pm.GetProcessTree(searchFilter);
 
                 
@@ -354,7 +350,6 @@ namespace SystemExplorer
                     }
                 }
 
-                std::cout << "RBD::03" << std::endl;
                 _searchableTreeList->DataReBind(items);
     //			_searchableTreeList->ExpandAll();
             }

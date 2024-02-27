@@ -22,7 +22,7 @@ add_executable(system_explorer
 	gui/process_data.cpp 
 	gui/processes_tree_list_item_comparator.cpp 
 	gui/main_window.cpp 
-	gui/mvvp_main_window.cpp 
+	gui/mvc_main_window.cpp 
 	
 	app.cpp)
 

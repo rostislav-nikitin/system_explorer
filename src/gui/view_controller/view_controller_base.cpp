@@ -1,7 +1,5 @@
 #include "view_controller_base.hpp"
 
-#include <iostream>
-
 namespace SystemExplorer
 {
     namespace Gui
@@ -24,21 +22,51 @@ namespace SystemExplorer
 
             void ViewControllerBase::PostInitialize()
             {
-
             }
 
             void ViewControllerBase::CreateChildControls()
             {
-                            std::cout << "CREATE CHILD CONTROLS" << std::endl;
             }
             void ViewControllerBase::BindEvents()
             {
-
             }
             void ViewControllerBase::BindData()
             {
+            }
+
+            void ViewControllerBase::SetHelpStatusText(wxString const &text)
+            {
+                wxStatusBar *statusBar = GetStatusBar();
+
+                if(statusBar != nullptr)
+                {
+                    statusBar->SetStatusText(text);
+                }
+            }
+            wxStatusBar *ViewControllerBase::GetStatusBar() const
+            {
+                wxFrame *frame = GetTopFrame();
+
+                if(frame == nullptr)
+                    return nullptr;
+
+                return frame->GetStatusBar();
+            }
+
+            wxFrame *ViewControllerBase::GetTopFrame() const
+            {
+                wxWindow *window = _book;
+                while(window != nullptr && window->GetParent() != nullptr)
+                {
+                    window = window->GetParent();
+                }
+
+                wxFrame *frame = dynamic_cast<wxFrame *>(window);
+
+                return frame;
 
             }
+
         }
     }
 }

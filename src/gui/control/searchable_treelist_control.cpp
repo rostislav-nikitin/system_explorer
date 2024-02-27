@@ -38,7 +38,6 @@ namespace SystemExplorer
                 return _other;
             }
 
-
             SearchableTreeListControl::SearchableTreeListControl(wxWindow *parent, wxWindowID id) : wxPanel(parent)
             {
                 _scSearch = new wxSearchCtrl(this, id, _T(""), wxPoint(0,0), wxSize(100, 32));
@@ -97,7 +96,11 @@ namespace SystemExplorer
                     if(parent.IsOk())
                     {
                         wxTreeListItem treeListItem = _tlcTreeList->AppendItem(parent, item.GetText());
-                        _tlcTreeList->SetItemText(treeListItem, 1, std::to_string(item.GetId()));
+                        _tlcTreeList->SetItemData(treeListItem, new SearchableTreeListItem(item));
+                        for(int idx = 0; idx < item.GetOther().size(); ++idx)
+                        {
+                            _tlcTreeList->SetItemText(treeListItem, idx + 1, item.GetOther()[idx]);
+                        }
                         if(item.GetSelected())
                             _tlcTreeList->Select(treeListItem);  
                     }
@@ -129,12 +132,16 @@ namespace SystemExplorer
                         if(parent.IsOk())
                         {
                             wxTreeListItem processTreeListItem = _tlcTreeList->AppendItem(parent, text);
-                            _tlcTreeList->SetItemText(processTreeListItem, 1, std::to_string(id));
+                            _tlcTreeList->SetItemData(processTreeListItem, new SearchableTreeListItem(item));
+                            for(int idx = 0; idx < item.GetOther().size(); ++idx)
+                            {
+                                _tlcTreeList->SetItemText(processTreeListItem, idx + 1, item.GetOther()[idx]);
+                            }
                             _tlcTreeList->Expand(processTreeListItem);
                         }
                         else
                         {
-                        //log error
+                            //log error
                         }
                                     
                     }
@@ -322,15 +329,16 @@ namespace SystemExplorer
                 return result;
             }
 
-
             wxTreeListItem SearchableTreeListControl::FindItemById(int id)
             {
                 wxTreeListItem result;
 
                 for(wxTreeListItem current = _tlcTreeList->GetFirstItem(); current.IsOk(); current = _tlcTreeList->GetNextItem(current))
                 {
-                    wxString nodeId = _tlcTreeList->GetItemText(current, 1);
-                    if(atoi(nodeId.c_str()) == id)
+                    wxClientData *itemData = _tlcTreeList->GetItemData(current);
+                    SearchableTreeListItem *item = static_cast<SearchableTreeListItem *>(itemData);
+                    int itemId = item->GetId();
+                    if(itemId == id)
                     {
                         result = current;
                         break;

@@ -1,9 +1,11 @@
-#include "mvvp_main_window.hpp"
+#include "mvc_main_window.hpp"
 
-MvvpMainWindow::MvvpMainWindow() : wxFrame(nullptr, wxID_ANY, "System Explorer", wxPoint(-1, -1), wxSize(800, 600))
+MvcMainWindow::MvcMainWindow() : wxFrame(nullptr, wxID_ANY, "System Explorer", wxPoint(-1, -1), wxSize(800, 600))
 {
     using SystemExplorer::Core::ProcessManager;
     using SystemExplorer::Gui::ViewController::ProcessTreeViewController;
+
+    CreateStatusBar();
 
     wxBookCtrl *mainBook = new wxBookCtrl(this, wxID_ANY, wxPoint(10, 10), wxSize(800, 600));
 

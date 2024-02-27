@@ -108,8 +108,7 @@ namespace SystemExplorer
 
                 pid_t ExtractPid(wxTreeListItem const &item) const;
                 void SendSignalToSelectedProcesses(int signal) const;
-
-
+                
                 void searchableTreeList_Search(wxCommandEvent &event);
                 void searchableTreeList_OnItemContextMenu(wxCommandEvent &event);
 

@@ -24,8 +24,14 @@ namespace SystemExplorer
                 virtual void CreateChildControls() override;
                 virtual void BindEvents() override;
                 virtual void BindData() override;
-                
+
                 virtual void PostInitialize();
+
+                
+                void SetHelpStatusText(wxString const &text);
+                wxStatusBar *GetStatusBar() const;
+                wxFrame *GetTopFrame() const;
+
             public:
                 virtual void Initialize();
             };

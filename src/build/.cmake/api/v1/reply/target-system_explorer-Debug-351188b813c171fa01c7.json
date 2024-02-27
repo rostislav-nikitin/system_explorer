@@ -319,7 +319,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "gui/mvvp_main_window.cpp",
+			"path" : "gui/mvc_main_window.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
