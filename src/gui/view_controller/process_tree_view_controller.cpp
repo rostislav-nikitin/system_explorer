@@ -13,13 +13,10 @@ namespace SystemExplorer
                 bool useByDefault) 
                 : ViewControllerBase(book, title, id, useByDefault), _processManager(processManager)
             {
-                //TODO: Move code here
-                std::cout << __PRETTY_FUNCTION__ << std::endl;
-
             }
+
             ProcessTreeViewController::~ProcessTreeViewController()
             {
-            
             }
 
             void ProcessTreeViewController::CreateChildControls()
@@ -72,7 +69,6 @@ namespace SystemExplorer
                             [&entries](typename std::map<int, wxAcceleratorEntry>::value_type const &value)
                             {
                                 entries.push_back(value.second);
-                                // std::cout << value.second.ToString() << std::endl;
                             });
 
                 entries.push_back(wxAcceleratorEntry(static_cast<wxAcceleratorEntryFlags>(
@@ -110,14 +106,11 @@ namespace SystemExplorer
                 using SystemExplorer::Core::Models::Signal;
                 using SystemExplorer::Core::Models::SignalType;
 
-                std::cout << __PRETTY_FUNCTION__ << std::endl;
                 
        			_searchableTreeList = new Control::SearchableTreeListControl(this, wxID_ANY);
-                std::cout << _book << std::endl;
-                //wxPanel *panel = new wxPanel(_mainBook, )
     			
-	    		_searchableTreeList->AppendColumn(_T("Name"), 240, wxALIGN_LEFT, wxCOL_RESIZABLE | wxCOL_SORTABLE);
-		    	_searchableTreeList->AppendColumn(_T("PID"), 100, wxALIGN_LEFT, wxCOL_RESIZABLE | wxCOL_SORTABLE);
+	    		_searchableTreeList->AppendColumn(_T("Name"), 400, wxALIGN_LEFT, wxCOL_RESIZABLE | wxCOL_SORTABLE);
+		    	_searchableTreeList->AppendColumn(_T("PID"), 64, wxALIGN_LEFT, wxCOL_RESIZABLE | wxCOL_SORTABLE);
 			    _searchableTreeList->SetItemComparator(&_processesTreeListItemComparator);
 
                 _bsSizer = new wxBoxSizer(wxVERTICAL);
@@ -175,15 +168,11 @@ namespace SystemExplorer
 
             void ProcessTreeViewController::timer_OnTick(wxTimerEvent &event)
             {
-                std::cout << __PRETTY_FUNCTION__ << std::endl;
-                std::cout << typeid(this->_searchableTreeList).name() << std::endl;
-                std::cout << __PRETTY_FUNCTION__ << std::endl;
                 ReBindData();
             }
 
             void ProcessTreeViewController::searchableTreeList_Search(wxCommandEvent &event)
             {
-                std::cout << __PRETTY_FUNCTION__ << std::endl;
                 BindData();
             }
 
@@ -238,7 +227,7 @@ namespace SystemExplorer
                     return;
 
                 int menuItemId = event.GetId();
-                std::cout << "OnMenuItem" << menuItemId << std::endl;
+                //std::cout << "OnMenuItem" << menuItemId << std::endl;
 
                 if ((menuItemId >= PROCESS_CONTEXT_MENU_ROOT_BASE) && (menuItemId < (PROCESS_CONTEXT_MENU_ROOT_BASE + PROCESS_CONTEXT_MENU_RANGE_SIZE)))
                 {
@@ -369,7 +358,6 @@ namespace SystemExplorer
                     _timer->Stop();
                 }
             }
-
         }
     }
 }

@@ -52,7 +52,7 @@
 			{
 				"command" : 3,
 				"file" : 0,
-				"line" : 29,
+				"line" : 26,
 				"parent" : 0
 			},
 			{
@@ -122,9 +122,7 @@
 				10,
 				11,
 				12,
-				13,
-				14,
-				15
+				13
 			]
 		}
 	],
@@ -224,9 +222,7 @@
 				10,
 				11,
 				12,
-				13,
-				14,
-				15
+				13
 			]
 		}
 	],
@@ -295,31 +291,19 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
+			"path" : "gui/view_controller/root_view_controller.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "gui/view_controller/processes_tree_list_item_comparator.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
 			"path" : "gui/view_controller/process_tree_view_controller.cpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "gui/process_data.cpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "gui/processes_tree_list_item_comparator.cpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "gui/main_window.cpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "gui/mvc_main_window.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{

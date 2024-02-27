@@ -16,11 +16,10 @@
 #include "../../core/signal_manager.hpp"
 
 #include "../control/searchable_treelist_control.hpp"
-#include "../processes_tree_list_item_comparator.hpp"
 
 #include "view_controller_base.hpp"
+#include "processes_tree_list_item_comparator.hpp"
 
-#include "../../core/process_manager.hpp"
 
 namespace SystemExplorer
 {
@@ -51,7 +50,7 @@ namespace SystemExplorer
 
 	            std::map<int, wxAcceleratorEntry> _hotKeys;
 
-                SystemExplorer::Gui::ProcessesTreeListItemComparator _processesTreeListItemComparator;
+                ProcessesTreeListItemComparator _processesTreeListItemComparator;
 	  
                 wxMenu *_processContextMenu;
 	            wxTimer *_timer;

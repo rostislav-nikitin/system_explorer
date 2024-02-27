@@ -5,11 +5,7 @@
 
 #include "core/process_manager.hpp"
 
-#include "gui/main_window.hpp"
-#include "gui/mvc_main_window.hpp"
-#include "gui/processes_tree_list_item_comparator.hpp"
-
-#define MVC
+#include "gui/view_controller/root_view_controller.hpp"
 
 namespace SystemExplorer
 {
@@ -21,33 +17,11 @@ namespace SystemExplorer
 
     bool App::OnInit()
     {
-        using SystemExplorer::Core::ProcessManager;
-
-        using SystemExplorer::Gui::MainWindow;
-        //using SystemExplorer::Gui::ViewController::ProcessTreeViewController;
-        
-
-        //wxFrame *frame = new wxFrame(nullptr, wxID_ANY, "wxComboCtrl and wxOwnerDrawnComboBox Sample");
-
-        // and show it (the frames, unlike simple controls, are not shown when
-        // created initially)
-        //frame->Show(true);
-
     	if ( !wxApp::OnInit() )
 	     	return false;
 
-        // Core components
-        ProcessManager processManager;
-
-#ifndef MVC
-        // Gui components
-        MainWindow *window = new MainWindow();
+        wxFrame *window = new SystemExplorer::Gui::ViewController::RootViewController();
         window->Show(true);
-#else
-        wxFrame *window = new MvcMainWindow();
-        window->Show(true);
-#endif
-
 
     	return true;
     }
