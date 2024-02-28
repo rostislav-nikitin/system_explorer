@@ -194,7 +194,7 @@ namespace SystemExplorer
 
 	            if(!event.IsKeyInCategory(WXK_CATEGORY_NAVIGATION) 
                     && (keyCode != WXK_TAB) 
-                    && (keyCode >= WXK_SPACE) && std::isalnum(keyCode))
+                    && (keyCode >= WXK_SPACE) && (std::isalnum(keyCode) || std::ispunct(keyCode)))
 	            {
             		_scSearch->SetValue(wxString(event.GetUnicodeKey()));
                 	_scSearch->SetFocus();
