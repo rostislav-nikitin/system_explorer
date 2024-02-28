@@ -118,6 +118,7 @@ namespace SystemExplorer
                     std::string text = item.GetText();
                     pid_t id = item.GetId();
                     pid_t parentId = item.GetParentId();
+                    bool selected = item.GetSelected();
 
                     wxTreeListItem treeListItem = FindItemById(id);
                     if(!treeListItem.IsOk())
@@ -137,6 +138,9 @@ namespace SystemExplorer
                             {
                                 _tlcTreeList->SetItemText(processTreeListItem, idx + 1, item.GetOther()[idx]);
                             }
+                            if(selected)
+                                _tlcTreeList->Select(processTreeListItem);
+
                             _tlcTreeList->Expand(processTreeListItem);
                         }
                         else

@@ -8,6 +8,12 @@ if(wxWidgets_USE_FILE)
         include(${wxWidgets_USE_FILE})
 endif()
 
+#add_subdirectory(libs/wild_card_expr)
+include_directories(libs/wild_card_expr/include)
+#link_directories(libs/wild_card_expr)
+
+add_library(wild_card_expr libs/wild_card_expr/src/wild_card_expr.cpp)
+
 add_executable(system_explorer 
 	core/models/signal_type.cpp core/models/signal.cpp  
 	core/signal_types_dict.cpp core/signals_dict.cpp core/signal_manager.cpp 
@@ -23,4 +29,4 @@ add_executable(system_explorer
 	
 	app.cpp)
 
-target_link_libraries(system_explorer ${wxWidgets_LIBRARIES})
+target_link_libraries(system_explorer wild_card_expr ${wxWidgets_LIBRARIES})

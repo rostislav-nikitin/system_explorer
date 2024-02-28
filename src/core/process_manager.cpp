@@ -12,6 +12,7 @@ namespace SystemExplorer
         std::vector<std::string> split(std::string &str, std::string delimiter);
         std::vector<Process const*> get_leafs(ProcessTree &processTree);
 		bool name_predicate(std::string const &name, std::vector<std::string> const &filters);
+		bool wild_card_name_predicate(std::string const &name, std::vector<std::string> const &filters);
         void apply_filter(ProcessTree &processTree, std::vector<Process const*> &leafs, std::string &filter);
 
         ProcessTree ProcessManager::GetProcessTree(std::string filter)
@@ -75,7 +76,7 @@ namespace SystemExplorer
             {
                 std::string name = process->GetName();
 			
-                if(name_predicate(name, filters))
+                if(wild_card_name_predicate(name, filters))
                 {
                     pid_t pid = process->GetPid();
 					processTree.processes[pid].SetNameMatched(true);
@@ -86,7 +87,7 @@ namespace SystemExplorer
                     {
                         Process *parent = &processTree.processes[parentPid];
                         processTree.processes[parentPid].SetPicked(true);
-                        processTree.processes[parentPid].SetNameMatched(name_predicate(parent->GetName(), filters));
+                        processTree.processes[parentPid].SetNameMatched(wild_card_name_predicate(parent->GetName(), filters));
                         parentPid = parent->GetParentPid();
                     }
 
@@ -103,7 +104,7 @@ namespace SystemExplorer
 						{
 	                        std::string name = parent->GetName();
 
-							bool name_valid = name_predicate(name, filters);
+							bool name_valid = wild_card_name_predicate(name, filters);
 
 	                        if(isPicked || name_valid)
 	                        {
@@ -125,7 +126,7 @@ namespace SystemExplorer
 										{
 											if(item.second.GetParentPid() == current_pid)
 											{
-												//item.second.SetNameMatched(name_predicate(item.second.GetName(), filters));
+												//item.second.SetNameMatched(wild_card_name_predicate(item.second.GetName(), filters));
 												item.second.SetPicked(true);
 												all_children.push_back(item.first);
 											}
@@ -183,6 +184,22 @@ namespace SystemExplorer
 	  return false;
 	}
 
+	bool wild_card_name_predicate(std::string const &name, std::vector<std::string> const &filters)
+	{
+		std::string const lname = to_lower(name);
+
+		std::vector<std::string>::const_iterator found_filter = 
+			std::find_if(filters.begin(), filters.end(),
+			[&lname](std::string const &filter)
+			{
+				WildCardExpr wcExpr(filter);
+				//return wcExpr.find(lname) != std::string::npos;
+				return wcExpr.find(lname) == 0;
+			});
+
+		return found_filter != filters.end();
+	}
+	
       bool name_predicate(std::string const &name, std::vector<std::string> const &filters)
       {
 	std::string const lname = to_lower(name);

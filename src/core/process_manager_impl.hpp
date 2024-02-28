@@ -9,6 +9,8 @@
 
 #include <algorithm>
 
+#include <wild_card_expr/wild_card_expr.hpp>
+
 #include "models/process.hpp"
 
 #include "process_manager.hpp"

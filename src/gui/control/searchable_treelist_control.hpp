@@ -9,6 +9,8 @@
 #include <wx/treelist.h>
 #include <wx/srchctrl.h>
 
+#include <wild_card_expr/wild_card_expr.hpp>
+
 // RESPONSIBILITIES:
 //  1. Show process data in a treelist
 //  2. Generate EVT_SEARCH events when user typing text in a search box

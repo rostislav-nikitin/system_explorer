@@ -30,7 +30,7 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 11,
+				"line" : 17,
 				"parent" : 0
 			},
 			{
@@ -52,7 +52,7 @@
 			{
 				"command" : 3,
 				"file" : 0,
-				"line" : 26,
+				"line" : 32,
 				"parent" : 0
 			},
 			{
@@ -60,6 +60,12 @@
 				"file" : 1,
 				"line" : 55,
 				"parent" : 3
+			},
+			{
+				"command" : 5,
+				"file" : 0,
+				"line" : 12,
+				"parent" : 0
 			},
 			{
 				"command" : 5,
@@ -97,11 +103,15 @@
 			[
 				{
 					"backtrace" : 7,
+					"path" : "/home/s0lid/sources/github/system_explorer/src/libs/wild_card_expr/include"
+				},
+				{
+					"backtrace" : 8,
 					"isSystem" : true,
 					"path" : "/usr/local/lib/wx/include/gtk3-unicode-3.3"
 				},
 				{
-					"backtrace" : 7,
+					"backtrace" : 8,
 					"isSystem" : true,
 					"path" : "/usr/local/include/wx-3.3"
 				}
@@ -126,6 +136,13 @@
 			]
 		}
 	],
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 5,
+			"id" : "wild_card_expr::@6890427a1f51a3e7e1df"
+		}
+	],
 	"id" : "system_explorer::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
@@ -146,6 +163,11 @@
 			},
 			{
 				"fragment" : "-Wl,-rpath,/usr/local/lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "libwild_card_expr.a",
 				"role" : "libraries"
 			},
 			{
