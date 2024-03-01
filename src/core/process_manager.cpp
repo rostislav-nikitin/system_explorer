@@ -32,6 +32,7 @@ namespace SystemExplorer
                     std::string processName = GetName(ent);
                     pid_t pid = atoi(ent->d_name);
                     pid_t parentPid = GetParentPid(ent);
+					// Read /proc/{pid}/stat
                     Process process(processName, pid, parentPid, !filtering);
                     result.processes.insert(std::make_pair(pid, process));
                 }

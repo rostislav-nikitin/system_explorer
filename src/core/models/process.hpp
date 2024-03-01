@@ -12,11 +12,18 @@ namespace SystemExplorer
         {
             class Process
             {
-                std::string _name;
+                // From /proc/{pid}/stat
                 pid_t _pid;
+                std::string _name;
+                char _state;
                 pid_t _parentPid;
+                
+                //Additional
                 bool _picked;
 				bool _nameMatched;
+                //TODO: Add stat queue
+                //TODO: get/set stat queue size (for detailed process view with long time mon)
+                //TODO: DEFAULT_QUEUE_SIZE (default has 2: prev/current to calc dx/dt)
 
             public:
                 Process();

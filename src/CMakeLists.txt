@@ -8,16 +8,34 @@ if(wxWidgets_USE_FILE)
         include(${wxWidgets_USE_FILE})
 endif()
 
-#add_subdirectory(libs/wild_card_expr)
-include_directories(libs/wild_card_expr/include)
-#link_directories(libs/wild_card_expr)
+include(FetchContent)
 
+FetchContent_Declare(googletest
+	GIT_REPOSITORY https://github.com/google/googletest
+	GIT_TAG v1.14.0
+)
+
+FetchContent_GetProperties(googletest)
+
+if(NOT FetchContent_Populated)
+	FetchContent_Populate(googletest)
+	add_subdirectory(${googletest_SOURCE_DIR} ${googletest_BUILD_DIR})
+endif()
+
+
+#Libs
+include_directories(libs/wild_card_expr/include)
 add_library(wild_card_expr libs/wild_card_expr/src/wild_card_expr.cpp)
 
+#App
 add_executable(system_explorer 
-	core/models/signal_type.cpp core/models/signal.cpp  
-	core/signal_types_dict.cpp core/signals_dict.cpp core/signal_manager.cpp 
-	core/models/process.cpp core/models/process_tree.cpp 
+	core/models/signal_type.cpp 
+	core/models/signal.cpp  
+	core/signal_types_dict.cpp 
+	core/signals_dict.cpp 
+	core/signal_manager.cpp 
+	core/models/process.cpp
+	core/models/process_tree.cpp 
 	core/process_manager.cpp 
 
 	gui/control/searchable_treelist_control.cpp
@@ -26,7 +44,27 @@ add_executable(system_explorer
 	gui/view_controller/root_view_controller.cpp
 	gui/view_controller/processes_tree_list_item_comparator.cpp 
 	gui/view_controller/process_tree_view_controller.cpp
-	
+
 	app.cpp)
 
 target_link_libraries(system_explorer wild_card_expr ${wxWidgets_LIBRARIES})
+
+# Tests
+
+#add_executable(process_manager_test_runner 
+#	core/process_manager.cpp
+#	tests/core/process_manager_test_runner.cpp)
+#target_link_libraries(process_manager_test_runner gmock gtest ${googletest_LIBRARIES})
+
+add_executable(proc_stat_parser_test_runner 
+	core/proc_stat_parser.cpp
+	tests/core/proc_stat_parser_test_runner.cpp)
+
+target_link_libraries(proc_stat_parser_test_runner gmock gtest ${googletest_LIBRARIES})
+
+add_executable(proc_process_stat_parser_test_runner 
+	core/proc_process_stat_parser.cpp
+	tests/core/proc_process_stat_parser_test_runner.cpp)
+
+target_link_libraries(proc_process_stat_parser_test_runner gmock gtest ${googletest_LIBRARIES})
+
