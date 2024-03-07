@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "proc_stat_parser_test_runner"
+			"path" : "proc_process_stat_parser_test_runner"
 		}
 	],
 	"backtrace" : 1,
@@ -30,13 +30,13 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 59,
+				"line" : 77,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 8,
+				"line" : 9,
 				"parent" : 0
 			},
 			{
@@ -52,7 +52,7 @@
 			{
 				"command" : 3,
 				"file" : 0,
-				"line" : 63,
+				"line" : 81,
 				"parent" : 0
 			},
 			{
@@ -64,7 +64,13 @@
 			{
 				"command" : 5,
 				"file" : 0,
-				"line" : 27,
+				"line" : 29,
+				"parent" : 0
+			},
+			{
+				"command" : 5,
+				"file" : 0,
+				"line" : 32,
 				"parent" : 0
 			},
 			{
@@ -107,11 +113,15 @@
 				},
 				{
 					"backtrace" : 8,
+					"path" : "/home/s0lid/sources/github/system_explorer/src/libs/fs/include"
+				},
+				{
+					"backtrace" : 9,
 					"isSystem" : true,
 					"path" : "/usr/local/lib/wx/include/gtk3-unicode-3.3"
 				},
 				{
-					"backtrace" : 8,
+					"backtrace" : 9,
 					"isSystem" : true,
 					"path" : "/usr/local/include/wx-3.3"
 				},
@@ -155,7 +165,7 @@
 			"id" : "gtest::@03b4549fe4063facc5e2"
 		}
 	],
-	"id" : "proc_stat_parser_test_runner::@6890427a1f51a3e7e1df",
+	"id" : "proc_process_stat_parser_test_runner::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -190,8 +200,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "proc_stat_parser_test_runner",
-	"nameOnDisk" : "proc_stat_parser_test_runner",
+	"name" : "proc_process_stat_parser_test_runner",
+	"nameOnDisk" : "proc_process_stat_parser_test_runner",
 	"paths" : 
 	{
 		"build" : ".",
@@ -213,13 +223,13 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "core/proc_stat_parser.cpp",
+			"path" : "core/parsers/proc_process_stat_parser.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "tests/core/proc_stat_parser_test_runner.cpp",
+			"path" : "tests/core/proc_process_stat_parser_test_runner.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

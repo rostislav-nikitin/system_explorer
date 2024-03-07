@@ -2,12 +2,14 @@ cmake_minimum_required(VERSION 3.24)
 
 project(system_explorer)
 
+# wxWidgest
 find_package(wxWidgets)
 
 if(wxWidgets_USE_FILE)
         include(${wxWidgets_USE_FILE})
 endif()
 
+# google test
 include(FetchContent)
 
 FetchContent_Declare(googletest
@@ -27,6 +29,9 @@ endif()
 include_directories(libs/wild_card_expr/include)
 add_library(wild_card_expr libs/wild_card_expr/src/wild_card_expr.cpp)
 
+include_directories(libs/fs/include)
+add_library(fs libs/fs/src/fs.cpp)
+
 #App
 add_executable(system_explorer 
 	core/models/signal_type.cpp 
@@ -34,9 +39,16 @@ add_executable(system_explorer
 	core/signal_types_dict.cpp 
 	core/signals_dict.cpp 
 	core/signal_manager.cpp 
+
 	core/models/process.cpp
 	core/models/process_tree.cpp 
-	core/process_manager.cpp 
+	core/process_manager.cpp
+
+	core/proc_tree_stat_manager.cpp
+	core/processes_stat_manager.cpp
+	
+	core/parsers/proc_stat_parser.cpp
+	core/parsers/proc_process_stat_parser.cpp
 
 	gui/control/searchable_treelist_control.cpp
 
@@ -47,7 +59,7 @@ add_executable(system_explorer
 
 	app.cpp)
 
-target_link_libraries(system_explorer wild_card_expr ${wxWidgets_LIBRARIES})
+target_link_libraries(system_explorer wild_card_expr fs ${wxWidgets_LIBRARIES})
 
 # Tests
 
@@ -57,13 +69,13 @@ target_link_libraries(system_explorer wild_card_expr ${wxWidgets_LIBRARIES})
 #target_link_libraries(process_manager_test_runner gmock gtest ${googletest_LIBRARIES})
 
 add_executable(proc_stat_parser_test_runner 
-	core/proc_stat_parser.cpp
+	core/parsers/proc_stat_parser.cpp
 	tests/core/proc_stat_parser_test_runner.cpp)
 
 target_link_libraries(proc_stat_parser_test_runner gmock gtest ${googletest_LIBRARIES})
 
 add_executable(proc_process_stat_parser_test_runner 
-	core/proc_process_stat_parser.cpp
+	core/parsers/proc_process_stat_parser.cpp
 	tests/core/proc_process_stat_parser_test_runner.cpp)
 
 target_link_libraries(proc_process_stat_parser_test_runner gmock gtest ${googletest_LIBRARIES})

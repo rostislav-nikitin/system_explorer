@@ -29,13 +29,13 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 28,
+				"line" : 30,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 8,
+				"line" : 9,
 				"parent" : 0
 			},
 			{
@@ -51,7 +51,13 @@
 			{
 				"command" : 3,
 				"file" : 0,
-				"line" : 27,
+				"line" : 29,
+				"parent" : 0
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 32,
 				"parent" : 0
 			},
 			{
@@ -94,11 +100,15 @@
 				},
 				{
 					"backtrace" : 6,
+					"path" : "/home/s0lid/sources/github/system_explorer/src/libs/fs/include"
+				},
+				{
+					"backtrace" : 7,
 					"isSystem" : true,
 					"path" : "/usr/local/lib/wx/include/gtk3-unicode-3.3"
 				},
 				{
-					"backtrace" : 6,
+					"backtrace" : 7,
 					"isSystem" : true,
 					"path" : "/usr/local/include/wx-3.3"
 				}

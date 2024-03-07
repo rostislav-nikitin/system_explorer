@@ -155,168 +155,170 @@ namespace SystemExplorer
 */
         }
       
-      std::string to_lower(std::string const instr)
-      {
-	std::string result;
-	std::transform(instr.begin(), instr.end(), std::back_inserter(result),
-	  [](typename std::string::value_type c)
-	  {
-	    return std::tolower(c);
-	  });
-
-	return result;
-      }
-
-      enum class StringComparison
-      {
-	CaseSensitive,
-	CaseInsensitive
-      };
-	
-	bool equals(std::string const &lh, std::string const &rh, StringComparison options)
-	{
-	  switch(options)
-	  {
-	  case StringComparison::CaseSensitive:
-	    return lh == rh;
-	  case StringComparison::CaseInsensitive:
-	    return to_lower(lh) == to_lower(rh);
-	  }
-	  return false;
-	}
-
-	bool wild_card_name_predicate(std::string const &name, std::vector<std::string> const &filters)
-	{
-		std::string const lname = to_lower(name);
-
-		std::vector<std::string>::const_iterator found_filter = 
-			std::find_if(filters.begin(), filters.end(),
-			[&lname](std::string const &filter)
+		std::string to_lower(std::string const instr)
+		{
+			std::string result;
+			std::transform(instr.begin(), instr.end(), std::back_inserter(result),
+			[](typename std::string::value_type c)
 			{
-				WildCardExpr wcExpr(filter);
-				//return wcExpr.find(lname) != std::string::npos;
-				return wcExpr.find(lname) == 0;
+				return std::tolower(c);
 			});
 
-		return found_filter != filters.end();
+			return result;
+		}
+
+		enum class StringComparison
+		{
+			CaseSensitive,
+			CaseInsensitive
+		};
+		
+		bool equals(std::string const &lh, std::string const &rh, StringComparison options)
+		{
+			switch(options)
+			{
+				case StringComparison::CaseSensitive:
+					return lh == rh;
+				case StringComparison::CaseInsensitive:
+					return to_lower(lh) == to_lower(rh);
+			}
+
+			return false;
+		}
+
+		bool wild_card_name_predicate(std::string const &name, std::vector<std::string> const &filters)
+		{
+			std::string const lname = to_lower(name);
+
+			std::vector<std::string>::const_iterator found_filter = 
+				std::find_if(filters.begin(), filters.end(),
+				[&lname](std::string const &filter)
+				{
+					WildCardExpr wcExpr(filter);
+					//return wcExpr.find(lname) != std::string::npos;
+					return wcExpr.find(lname) == 0;
+				});
+
+			return found_filter != filters.end();
+		}
+		
+		bool name_predicate(std::string const &name, std::vector<std::string> const &filters)
+		{
+			std::string const lname = to_lower(name);
+			std::vector<std::string>::const_iterator found_filter = std::find_if(filters.begin(), filters.end(), 
+				[&lname](std::string const &filter)
+				{
+					std::string const lfilter = to_lower(filter);
+					//std::cout << lname << "::" << lfilter << std::endl;
+					
+					bool found = false;
+					const char PATTERN_ANY = '*';
+					if((lfilter.size() > 2) && 
+						(lfilter.front() == PATTERN_ANY) && 
+						(lfilter.back() == PATTERN_ANY) &&
+						(lname.find(lfilter.substr(1, lfilter.size() - 2), 1) != std::string::npos))
+					{
+						std::cout << "*----*" << std::endl;
+						found = true;
+					}
+					else if((lfilter.size() > 1) && 
+						(lfilter.back() == PATTERN_ANY) &&
+						(lname.find(lfilter.substr(0, lfilter.size() - 1)) == 0))
+					{
+						std::cout << "-----*" << std::endl;
+						found = true;
+					}
+					else if(lfilter.size() > 1 &&
+						(lfilter.front() == PATTERN_ANY) && 
+						(lname.find(lfilter.substr(1, lfilter.size() - 1), (lname.size() - (lfilter.size() - 1))) != std::string::npos))
+					{
+						std::cout << "*------" << std::endl;
+						found = true;
+					}
+					else
+					{
+						//std::cout << "*" << std::endl;
+						found = lname.find(lfilter) == 0;
+					}
+					
+					return found;
+				});
+
+			return found_filter != filters.end();
+		}
+
+		bool ProcessManager::IsNumber(std::string str)
+		{
+			std::string::const_iterator it = std::find_if(str.begin(), str.end(), [](char ch) { return !std::isdigit(ch);  });
+			return it == str.end();
+		}
+
+		std::string ProcessManager::GetName(dirent *ent)
+		{
+			std::string result = get_data(ent, "comm");
+			
+			return result;
+		}
+
+		pid_t ProcessManager::GetParentPid(dirent *ent)
+		{
+			std::string data = get_data(ent, "stat");
+			
+			std::vector<std::string> parts = split(data, " ");
+			if(parts.size() > 3)
+			return atoi(parts[3].c_str());
+
+			return 0;
+		}
+
+		std::string get_data(dirent *ent, std::string file_name)
+		{
+			std::string result;
+
+			FILE *file = fopen((std::string("/proc/") + std::string(ent->d_name) + std::string("/") + file_name).c_str(), "r");
+			if(file != NULL)
+			{
+			size_t buffer_size = 1024;
+			char buffer[buffer_size + 1];
+			char *buffer_ptr = reinterpret_cast<char *>(buffer);
+			ssize_t size = getline(&buffer_ptr, &buffer_size, file);
+			if(size > buffer_size)
+			{
+				size = buffer_size;
+			}
+			if(size > 0)
+			{
+				buffer[size - 1] = '\0';
+			}
+			else
+			{
+				buffer[0] = '\0';
+			}
+
+			//std::cout << buffer << std::endl;
+			fclose(file);
+
+			result = std::string(buffer);
+			}
+			return result;
+		}
+
+		std::vector<std::string> split(std::string &str, std::string delimiter)
+		{
+			std::vector<std::string> result;
+
+			int startPos = 0;
+			int endPos = 0;
+			while((endPos = str.find(delimiter, startPos)) != std::string::npos)
+			{
+				result.push_back(str.substr(startPos, endPos - startPos));
+				startPos = endPos + 1;                
+				}
+			if(startPos < str.size())
+				result.push_back(str.substr(startPos));
+
+			return result;
+		}
+
 	}
-	
-      bool name_predicate(std::string const &name, std::vector<std::string> const &filters)
-      {
-	std::string const lname = to_lower(name);
-	std::vector<std::string>::const_iterator found_filter = std::find_if(filters.begin(), filters.end(), 
-         [&lname](std::string const &filter)
-	 {
-	   std::string const lfilter = to_lower(filter);
-	   //std::cout << lname << "::" << lfilter << std::endl;
-	   
-	   bool found = false;
-	   const char PATTERN_ANY = '*';
-	   if((lfilter.size() > 2) && 
-	      (lfilter.front() == PATTERN_ANY) && 
-	      (lfilter.back() == PATTERN_ANY) &&
-	      (lname.find(lfilter.substr(1, lfilter.size() - 2), 1) != std::string::npos))
-	   {
-	     std::cout << "*----*" << std::endl;
-	     found = true;
-	   }
-	   else if((lfilter.size() > 1) && 
-		   (lfilter.back() == PATTERN_ANY) &&
-		   (lname.find(lfilter.substr(0, lfilter.size() - 1)) == 0))
-	   {
-	     std::cout << "-----*" << std::endl;
-	     found = true;
-	   }
-	   else if(lfilter.size() > 1 &&
-		   (lfilter.front() == PATTERN_ANY) && 
-		   (lname.find(lfilter.substr(1, lfilter.size() - 1), (lname.size() - (lfilter.size() - 1))) != std::string::npos))
-	   {
-	     std::cout << "*------" << std::endl;
-	     found = true;
-	   }
-	   else
-	   {
-	     //std::cout << "*" << std::endl;
-	     found = lname.find(lfilter) == 0;
-	   }
-	   
-	   return found;
-	 });
-
-	return found_filter != filters.end();
-      }
-
-      bool ProcessManager::IsNumber(std::string str)
-      {
-	std::string::const_iterator it = std::find_if(str.begin(), str.end(), [](char ch) { return !std::isdigit(ch);  });
-	return it == str.end();
-      }
-
-      std::string ProcessManager::GetName(dirent *ent)
-      {
-	std::string result = get_data(ent, "comm");
-	
-	return result;
-      }
-
-      pid_t ProcessManager::GetParentPid(dirent *ent)
-      {
-	std::string data = get_data(ent, "stat");
-	
-	std::vector<std::string> parts = split(data, " ");
-	if(parts.size() > 3)
-	  return atoi(parts[3].c_str());
-
-	return 0;
-      }
-
-      std::string get_data(dirent *ent, std::string file_name)
-      {
-	std::string result;
-
-	FILE *file = fopen((std::string("/proc/") + std::string(ent->d_name) + std::string("/") + file_name).c_str(), "r");
-	if(file != NULL)
-	{
-	  size_t buffer_size = 1024;
-	  char buffer[buffer_size + 1];
-	  char *buffer_ptr = reinterpret_cast<char *>(buffer);
-	  ssize_t size = getline(&buffer_ptr, &buffer_size, file);
-	  if(size > buffer_size)
-	  {
-	    size = buffer_size;
-	  }
-	  if(size > 0)
-	  {
-	    buffer[size - 1] = '\0';
-	  }
-	  else
-	  {
-	    buffer[0] = '\0';
-	  }
-
-	  //std::cout << buffer << std::endl;
-	  fclose(file);
-
-	  result = std::string(buffer);
-	}
-	return result;
-      }
-
-      std::vector<std::string> split(std::string &str, std::string delimiter)
-      {
-	std::vector<std::string> result;
-
-	int startPos = 0;
-	int endPos = 0;
-	while((endPos = str.find(delimiter, startPos)) != std::string::npos)
-	{
-	  result.push_back(str.substr(startPos, endPos - startPos));
-	  startPos = endPos + 1;                
-	}
-	if(startPos < str.size())
-	  result.push_back(str.substr(startPos));
-
-	return result;
-      }
-    }
 }

@@ -168,6 +168,9 @@ namespace SystemExplorer
 
             void ProcessTreeViewController::timer_OnTick(wxTimerEvent &event)
             {
+                // Recalculate processes statistics like a CPU load, etc.
+                _processesStatManager.Tick();
+                // Rebind data to show new processes tree/stat
                 ReBindData();
             }
 
@@ -279,6 +282,8 @@ namespace SystemExplorer
 
                 ProcessManager pm;
                 std::string searchFilter = _searchableTreeList->GetSearchText();
+                if(searchFilter.length() > 0)
+                    searchFilter.append(1, '*');
                 ProcessTree processes = pm.GetProcessTree(searchFilter);
 
                 std::vector<Control::SearchableTreeListControl::SearchableTreeListItem> items;
@@ -316,9 +321,10 @@ namespace SystemExplorer
                 ProcessManager pm;
 
                 std::string searchFilter = _searchableTreeList->GetSearchText();
+                if(searchFilter.length() > 0)
+                    searchFilter.append(1, '*');
                 ProcessTree processTreeToRebind = pm.GetProcessTree(searchFilter);
-
-                
+              
 
                 std::vector<Control::SearchableTreeListControl::SearchableTreeListItem> items;
                 for (std::map<pid_t, Process>::const_iterator it = processTreeToRebind.processes.begin(); it != processTreeToRebind.processes.end(); ++it)

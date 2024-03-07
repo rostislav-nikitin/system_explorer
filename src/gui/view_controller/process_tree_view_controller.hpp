@@ -13,6 +13,7 @@
 #include <wx/timer.h>
 
 #include "../../core/process_manager.hpp"
+#include "../../core/processes_stat_manager.hpp"
 #include "../../core/signal_manager.hpp"
 
 #include "../control/searchable_treelist_control.hpp"
@@ -57,6 +58,7 @@ namespace SystemExplorer
 	            Control::SearchableTreeListControl *_searchableTreeList;
 
                 SystemExplorer::Core::ProcessManager _processManager;
+                SystemExplorer::Core::ProcessesStatManager _processesStatManager;
 
                 wxBoxSizer *_bsSizer;
 

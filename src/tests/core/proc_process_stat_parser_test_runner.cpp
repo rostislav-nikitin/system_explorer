@@ -4,7 +4,7 @@
 #include <string>
 #include <sstream>
 
-#include "../../core/proc_process_stat_parser.hpp"
+#include "../../core/parsers/proc_process_stat_parser.hpp"
 
 namespace Tests
 {
@@ -12,8 +12,8 @@ namespace Tests
     {
         TEST(ProcProcessStatParserTestSuite, WhenProcProcessStatStreamCorreclyParsedThenSuccess)
         {
-            using SystemExplorer::Core::ProcProcessStat;
-            using SystemExplorer::Core::ProcProcessStatParser;
+            using SystemExplorer::Core::Models::ProcProcessStat;
+            using SystemExplorer::Core::Parsers::ProcProcessStatParser;
 
             //  Arrage
             std::string test_data = "21953 (system explorer) R 11879 21953 11879 34819 21953 4194304 91 0 2 0 0 0 0 0 20 0 1 0 9019927 227045376 384 18446744073709551615 94022324645888 94022324662561 140734852468400 0 0 0 0 0 0 0 0 0 17 3 0 0 0 0 0 94022324677264 94022324678760 94022344351744 140734852473747 140734852473767 140734852473767 140734852476907 0";

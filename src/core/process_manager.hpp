@@ -5,6 +5,7 @@
 #include <dirent.h>
 
 #include "models/process_tree.hpp"
+#include "models/processes_stat.hpp"
 
 namespace SystemExplorer
 {
@@ -25,7 +26,6 @@ namespace SystemExplorer
             
         public:
             ProcessTree GetProcessTree(std::string filter = "");
-            //void Tick();
         };
     }
 }
