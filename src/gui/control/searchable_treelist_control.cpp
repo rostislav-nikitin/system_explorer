@@ -149,6 +149,13 @@ namespace SystemExplorer
                         }
                                     
                     }
+                    else
+                    {
+                        for(int idx = 0; idx < item.GetOther().size(); ++idx)
+                        {
+                            _tlcTreeList->SetItemText(treeListItem, idx + 1, item.GetOther()[idx]);
+                        }
+                    }
                 }
 
                 // 2. Item not returned

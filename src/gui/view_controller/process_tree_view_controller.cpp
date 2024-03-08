@@ -1,4 +1,5 @@
 #include "process_tree_view_controller.hpp"
+#include <sstream>
 
 namespace SystemExplorer
 {
@@ -111,6 +112,7 @@ namespace SystemExplorer
     			
 	    		_searchableTreeList->AppendColumn(_T("Name"), 400, wxALIGN_LEFT, wxCOL_RESIZABLE | wxCOL_SORTABLE);
 		    	_searchableTreeList->AppendColumn(_T("PID"), 64, wxALIGN_LEFT, wxCOL_RESIZABLE | wxCOL_SORTABLE);
+                _searchableTreeList->AppendColumn(_T("%CPU"), 64, wxALIGN_LEFT, wxCOL_RESIZABLE | wxCOL_SORTABLE);
 			    _searchableTreeList->SetItemComparator(&_processesTreeListItemComparator);
 
                 _bsSizer = new wxBoxSizer(wxVERTICAL);
@@ -271,7 +273,14 @@ namespace SystemExplorer
                                 SystemExplorer::Core::SignalManager::SendSignal(pid, signal);
                             });
             }
-
+            template <typename T>
+            std::string to_string_with_precision(const T a_value, const int n = 6)
+            {
+                std::ostringstream out;
+                out.precision(n);
+                out << std::fixed << a_value;
+                return std::move(out).str();
+            }
 
             void ProcessTreeViewController::BindData()
             {
@@ -279,11 +288,11 @@ namespace SystemExplorer
                 using SystemExplorer::Core::ProcessManager;
                 using SystemExplorer::Core::Models::Process;
                 using SystemExplorer::Core::Models::ProcessTree;
-
+                using SystemExplorer::Core::Models::ProcessesStat;
+                
+                ProcessesStat processesStat = _processesStatManager.GetProcessesStat();
                 ProcessManager pm;
                 std::string searchFilter = _searchableTreeList->GetSearchText();
-                if(searchFilter.length() > 0)
-                    searchFilter.append(1, '*');
                 ProcessTree processes = pm.GetProcessTree(searchFilter);
 
                 std::vector<Control::SearchableTreeListControl::SearchableTreeListItem> items;
@@ -297,7 +306,11 @@ namespace SystemExplorer
                     std::string text = (*it).second.GetName();
                     bool matched = (*it).second.GetNameMatched();
                     bool picked = (*it).second.GetPicked();
-                    std::vector<std::string> other({std::to_string(pid)});
+                    float cpu_load = -1.0f;
+                    if(processesStat.processes_stat.find(pid) != processesStat.processes_stat.end())
+                        cpu_load = processesStat.processes_stat[pid].cpu_stat.cpu_usage_per_all_cores;
+
+                    std::vector<std::string> other({std::to_string(pid), to_string_with_precision((cpu_load < 0.0f)?0.0f:cpu_load, 2)});
 
                     if (picked)
                     {
@@ -316,13 +329,13 @@ namespace SystemExplorer
                 using SystemExplorer::Core::ProcessManager;
                 using SystemExplorer::Core::Models::Process;
                 using SystemExplorer::Core::Models::ProcessTree;
+                using SystemExplorer::Core::Models::ProcessesStat;
 
                 // Get processes
                 ProcessManager pm;
+                ProcessesStat processesStat = _processesStatManager.GetProcessesStat();
 
                 std::string searchFilter = _searchableTreeList->GetSearchText();
-                if(searchFilter.length() > 0)
-                    searchFilter.append(1, '*');
                 ProcessTree processTreeToRebind = pm.GetProcessTree(searchFilter);
               
 
@@ -336,7 +349,12 @@ namespace SystemExplorer
                     std::string text = (*it).second.GetName();
                     bool matched = (*it).second.GetNameMatched();
                     bool picked = (*it).second.GetPicked();
-                    std::vector<std::string> other({std::to_string(pid)});
+
+                    float cpu_load = -1.0f;
+                    if(processesStat.processes_stat.find(pid) != processesStat.processes_stat.end())
+                        cpu_load = processesStat.processes_stat[pid].cpu_stat.cpu_usage_per_all_cores;
+
+                    std::vector<std::string> other({std::to_string(pid), to_string_with_precision(((cpu_load < 0) ? 0 : cpu_load), 2)});
 
                     if (picked)
                     {

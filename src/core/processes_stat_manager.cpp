@@ -20,8 +20,8 @@ namespace SystemExplorer
 
             if(stat.proc_stat.size() > 1)
             {
-                avg_cpu_load_last = stat.proc_stat[0].proc_cpu_stat[0].get_avg_cpu_load();
-                avg_cpu_load_before_last = stat.proc_stat[1].proc_cpu_stat[0].get_avg_cpu_load();
+                avg_cpu_load_last = stat.proc_stat[0].proc_cpu_stat[0].get_total_cpu_work_time();
+                avg_cpu_load_before_last = stat.proc_stat[1].proc_cpu_stat[0].get_total_cpu_work_time();
                 cpu_load = avg_cpu_load_last - avg_cpu_load_before_last;
             }
 

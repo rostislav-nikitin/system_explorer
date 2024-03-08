@@ -71,6 +71,12 @@ namespace SystemExplorer
         {
 			const std::string FILTER_DELIMITER = "|";
 			std::vector<std::string> filters = split(filter, FILTER_DELIMITER);
+			std::for_each(filters.begin(), filters.end(), 
+				[](std::string &filter)
+				{
+                	if(filter.length() > 0)
+                    	filter.append(1, '*');
+				});
 		//	std::for_each(filters.begin(), filters.end(), [](std::string const &f){ std::cout << f << std::endl; });
 
             std::for_each(leafs.begin(), leafs.end(), [&processTree, &filters](Process const *process)

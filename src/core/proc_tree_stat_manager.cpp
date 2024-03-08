@@ -66,7 +66,7 @@ namespace SystemExplorer
             std::for_each(pids.begin(), pids.end(), 
             [&result, this](pid_t pid)
             {
-                std::cout << pid << std::endl;
+ //               std::cout << pid << std::endl;
                 Models::ProcProcessStat stat = GetProcessStat(pid);
                 result.push_back(stat);
             });
@@ -82,7 +82,21 @@ namespace SystemExplorer
 
         void ProcTreeStatManager::Tick()
         {   
-            //std::vector<Models::ProcProcessStat> stat = GetProcesssesStat();
+            Models::ProcStat proc_stat = GetProcStat();
+            _proc_tree_stat.proc_stat.push_front(proc_stat);
+            if(_proc_tree_stat.proc_stat.size() > 2)
+                _proc_tree_stat.proc_stat.pop_back();
+
+            std::vector<Models::ProcProcessStat> proc_processes_stat = GetProcesssesStat();
+            std::for_each(proc_processes_stat.begin(), proc_processes_stat.end(),
+                [this](Models::ProcProcessStat const &proc_process_stat)
+                {
+                    _proc_tree_stat
+                        .proc_processes_stat[proc_process_stat.pid].push_front(proc_process_stat);
+
+                    if(_proc_tree_stat.proc_processes_stat[proc_process_stat.pid].size() > 2)
+                        _proc_tree_stat.proc_processes_stat[proc_process_stat.pid].pop_back();
+                });
         }    
     }
 }
