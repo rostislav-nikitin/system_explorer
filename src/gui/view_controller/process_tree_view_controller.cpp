@@ -113,6 +113,7 @@ namespace SystemExplorer
 	    		_searchableTreeList->AppendColumn(_T("Name"), 400, wxALIGN_LEFT, wxCOL_RESIZABLE | wxCOL_SORTABLE);
 		    	_searchableTreeList->AppendColumn(_T("PID"), 64, wxALIGN_LEFT, wxCOL_RESIZABLE | wxCOL_SORTABLE);
                 _searchableTreeList->AppendColumn(_T("%CPU"), 64, wxALIGN_LEFT, wxCOL_RESIZABLE | wxCOL_SORTABLE);
+
 			    _searchableTreeList->SetItemComparator(&_processesTreeListItemComparator);
 
                 _bsSizer = new wxBoxSizer(wxVERTICAL);
@@ -334,6 +335,7 @@ namespace SystemExplorer
                 // Get processes
                 ProcessManager pm;
                 ProcessesStat processesStat = _processesStatManager.GetProcessesStat();
+                float x = 0.0;
 
                 std::string searchFilter = _searchableTreeList->GetSearchText();
                 ProcessTree processTreeToRebind = pm.GetProcessTree(searchFilter);
