@@ -16,6 +16,7 @@ namespace SystemExplorer
             {
                 CreateChildControls();
                 BindEvents();
+                BindData_Before();
                 BindData();
                 PostInitialize();
             }
@@ -28,6 +29,9 @@ namespace SystemExplorer
             {
             }
             void ViewControllerBase::BindEvents()
+            {
+            }
+            void ViewControllerBase::BindData_Before()
             {
             }
             void ViewControllerBase::BindData()

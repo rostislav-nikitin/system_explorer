@@ -14,6 +14,7 @@ namespace SystemExplorer
 
             Models::ProcTreeStat &stat = _proc_tree_stat_manager.GetProcTreeStat();
 
+            // CPU stat
             float avg_cpu_load_last = -1;
             float avg_cpu_load_before_last = -1;
             float cpu_load = -1;
@@ -42,6 +43,24 @@ namespace SystemExplorer
                 {
                     result.cpu_stat.cpu_usage_per_all_cores = -1;
                 }
+            }
+
+            // Process state
+            if(stat.proc_processes_stat[pid].size() > 0)
+            {
+                Models::ProcProcessStat &pstat = stat.proc_processes_stat[pid][0];
+
+                result.state = Models::GetProcessState(pstat.state);
+                result.threads = pstat.num_threads;
+
+                result.priority = pstat.priority;
+                result.nice = pstat.nice;
+
+                result.mem_vsize = float(pstat.vsize) / 1024 / 1024;
+                result.mem_rss = float(pstat.rss) * 4096 / 1024 / 1024;
+                result.mem_pages_swapped = float(pstat.snwap) * 4096 / 1024 / 1024;
+                result.processor = pstat.processor;
+
             }
 
             return result;

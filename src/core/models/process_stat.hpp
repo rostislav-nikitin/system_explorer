@@ -4,6 +4,7 @@
 #include <wait.h>
 
 #include "process_cpu_stat.hpp"
+#include "process_state.hpp"
 
 namespace SystemExplorer
 {
@@ -16,6 +17,17 @@ namespace SystemExplorer
             public:
                 pid_t pid;
                 ProcessCpuStat cpu_stat;
+                ProcessState state;
+                long threads;
+
+                long priority;
+                long nice;
+
+                float mem_vsize;
+                float mem_rss;
+                float mem_pages_swapped;
+                int processor;
+
             };
         }
     }

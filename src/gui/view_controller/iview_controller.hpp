@@ -12,6 +12,7 @@ namespace SystemExplorer
             protected:
                 virtual void CreateChildControls() = 0;
                 virtual void BindEvents() = 0;
+                virtual void BindData_Before() = 0;
                 virtual void BindData() = 0;
             public:
                 virtual ~IViewController() { }

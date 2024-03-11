@@ -23,6 +23,7 @@ namespace SystemExplorer
 
                 virtual void CreateChildControls() override;
                 virtual void BindEvents() override;
+                virtual void BindData_Before() override;
                 virtual void BindData() override;
 
                 virtual void PostInitialize();

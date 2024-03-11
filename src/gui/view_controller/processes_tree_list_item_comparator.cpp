@@ -16,24 +16,30 @@ namespace SystemExplorer
         wxString 
           first_text = treelist->GetItemText(first, column),
           second_text = treelist->GetItemText(second, column);
-      
+
+     
         switch(column)
         {
         // Process name
           case 0:
+          case 3:
             return first_text.CmpNoCase(second_text);
-          case 2:
-            //std::cout << atoi(first_text.c_str()) << "::" << atoi(second_text.c_str()) << std::endl;
+
+          case 1:
+          case 7:
+          case 8:
+          case 9:
+          case 10:
             if(atoi(first_text.c_str()) < atoi(second_text.c_str()))
               return  -1;
             else if(atoi(first_text.c_str()) > atoi(second_text.c_str()))
               return  1;
             else
               return 0;
-
-          case 1:
-            //if((std::atof(first_text.c_str()) > 0.0f) || (std::atof(second_text.c_str()) > 0.0f))
-              //std::cout << std::setprecision(2) << "F" << std::atof(first_text.c_str()) << "::" << std::atof(second_text.c_str()) << std::endl;
+          case 2:
+          case 4:
+          case 5:
+          case 6:
               if(std::atof(first_text.c_str()) < std::atof(second_text.c_str()))
                 return -1;
               else if(std::atof(first_text.c_str()) > std::atof(second_text.c_str()))
@@ -42,7 +48,7 @@ namespace SystemExplorer
                 return 0;
         }
 
-        return 0;
+        return first_text.CmpNoCase(second_text);
       }
     }
   }

@@ -40,6 +40,7 @@ add_executable(system_explorer
 	core/signals_dict.cpp 
 	core/signal_manager.cpp 
 
+	core/models/process_state_helpers.cpp
 	core/models/process.cpp
 	core/models/process_tree.cpp 
 	core/process_manager.cpp

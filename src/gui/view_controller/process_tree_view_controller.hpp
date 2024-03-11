@@ -15,11 +15,15 @@
 #include "../../core/process_manager.hpp"
 #include "../../core/processes_stat_manager.hpp"
 #include "../../core/signal_manager.hpp"
+#include "../../core/models/process_state.hpp"
+#include "../../core/models/process_state_helpers.hpp"
+
 
 #include "../control/searchable_treelist_control.hpp"
 
 #include "view_controller_base.hpp"
 #include "processes_tree_list_item_comparator.hpp"
+
 
 
 namespace SystemExplorer
@@ -123,6 +127,7 @@ namespace SystemExplorer
             protected:
                 virtual void CreateChildControls() override;
                 virtual void BindEvents() override;
+                virtual void BindData_Before() override;
                 virtual void BindData() override;
 
                 virtual void PostInitialize() override;

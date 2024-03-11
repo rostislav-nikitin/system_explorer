@@ -110,10 +110,20 @@ namespace SystemExplorer
                 
        			_searchableTreeList = new Control::SearchableTreeListControl(this, wxID_ANY);
     			
-	    		_searchableTreeList->AppendColumn(_T("Name"), 400, wxALIGN_LEFT, wxCOL_RESIZABLE | wxCOL_SORTABLE);
-		    	_searchableTreeList->AppendColumn(_T("PID"), 64, wxALIGN_LEFT, wxCOL_RESIZABLE | wxCOL_SORTABLE);
-                _searchableTreeList->AppendColumn(_T("%CPU"), 64, wxALIGN_LEFT, wxCOL_RESIZABLE | wxCOL_SORTABLE);
+	    		_searchableTreeList->AppendColumn(_T("Name"), 300, wxALIGN_LEFT, wxCOL_RESIZABLE | wxCOL_SORTABLE);
+		    	_searchableTreeList->AppendColumn(_T("PID"), 64, wxALIGN_RIGHT, wxCOL_RESIZABLE | wxCOL_SORTABLE);
+                _searchableTreeList->AppendColumn(_T("CPU, %"), 88, wxALIGN_RIGHT, wxCOL_RESIZABLE | wxCOL_SORTABLE);
+                _searchableTreeList->AppendColumn(_T("State"), 72, wxALIGN_LEFT, wxCOL_RESIZABLE | wxCOL_SORTABLE);
+                _searchableTreeList->AppendColumn(_T("VM, Mb"), 84, wxALIGN_RIGHT, wxCOL_RESIZABLE | wxCOL_SORTABLE);
+                _searchableTreeList->AppendColumn(_T("Resident, Mb"), 116, wxALIGN_RIGHT, wxCOL_RESIZABLE | wxCOL_SORTABLE);
+                _searchableTreeList->AppendColumn(_T("Swapped, Mb"), 120, wxALIGN_RIGHT, wxCOL_RESIZABLE | wxCOL_SORTABLE);
+                _searchableTreeList->AppendColumn(_T("Threads"), 88, wxALIGN_RIGHT, wxCOL_RESIZABLE | wxCOL_SORTABLE);
+                _searchableTreeList->AppendColumn(_T("Priority"), 84, wxALIGN_RIGHT, wxCOL_RESIZABLE | wxCOL_SORTABLE);
+                _searchableTreeList->AppendColumn(_T("Nice"), 64, wxALIGN_RIGHT, wxCOL_RESIZABLE | wxCOL_SORTABLE);
+                _searchableTreeList->AppendColumn(_T("CPU, #"), 88, wxALIGN_RIGHT, wxCOL_RESIZABLE | wxCOL_SORTABLE);
+                _searchableTreeList->AppendColumn(_T(""), 64, wxALIGN_RIGHT);
 
+                
 			    _searchableTreeList->SetItemComparator(&_processesTreeListItemComparator);
 
                 _bsSizer = new wxBoxSizer(wxVERTICAL);
@@ -283,6 +293,10 @@ namespace SystemExplorer
                 return std::move(out).str();
             }
 
+            void ProcessTreeViewController::BindData_Before()
+            {
+                _processesStatManager.Tick();
+            }
             void ProcessTreeViewController::BindData()
             {
 
@@ -311,7 +325,16 @@ namespace SystemExplorer
                     if(processesStat.processes_stat.find(pid) != processesStat.processes_stat.end())
                         cpu_load = processesStat.processes_stat[pid].cpu_stat.cpu_usage_per_all_cores;
 
-                    std::vector<std::string> other({std::to_string(pid), to_string_with_precision((cpu_load < 0.0f)?0.0f:cpu_load, 2)});
+                    std::vector<std::string> other({std::to_string(pid), 
+                        to_string_with_precision((cpu_load < 0.0f)?0.0f:cpu_load, 2),
+                        to_string(processesStat.processes_stat[pid].state),
+                        to_string_with_precision(processesStat.processes_stat[pid].mem_vsize, 2),
+                        to_string_with_precision(processesStat.processes_stat[pid].mem_rss, 2),
+                        to_string_with_precision(processesStat.processes_stat[pid].mem_pages_swapped, 2),
+                        std::to_string(processesStat.processes_stat[pid].threads),
+                        std::to_string(processesStat.processes_stat[pid].priority),
+                        std::to_string(processesStat.processes_stat[pid].nice),
+                        std::to_string(processesStat.processes_stat[pid].processor)});
 
                     if (picked)
                     {
@@ -356,8 +379,16 @@ namespace SystemExplorer
                     if(processesStat.processes_stat.find(pid) != processesStat.processes_stat.end())
                         cpu_load = processesStat.processes_stat[pid].cpu_stat.cpu_usage_per_all_cores;
 
-                    std::vector<std::string> other({std::to_string(pid), to_string_with_precision(((cpu_load < 0) ? 0 : cpu_load), 2)});
-
+                    std::vector<std::string> other({std::to_string(pid), 
+                        to_string_with_precision(((cpu_load < 0) ? 0 : cpu_load), 2),
+                        to_string(processesStat.processes_stat[pid].state),
+                        to_string_with_precision(processesStat.processes_stat[pid].mem_vsize, 2),
+                        to_string_with_precision(processesStat.processes_stat[pid].mem_rss, 2),
+                        to_string_with_precision(processesStat.processes_stat[pid].mem_pages_swapped, 2),
+                        std::to_string(processesStat.processes_stat[pid].threads),
+                        std::to_string(processesStat.processes_stat[pid].priority),
+                        std::to_string(processesStat.processes_stat[pid].nice),
+                        std::to_string(processesStat.processes_stat[pid].processor)});
                     if (picked)
                     {
                         Control::SearchableTreeListControl::SearchableTreeListItem item(pid, text, parentPid, matched, other);
