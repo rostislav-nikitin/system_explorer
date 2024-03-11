@@ -9,6 +9,18 @@ namespace SystemExplorer
   {
     namespace ViewController
     {
+
+      template<class T>
+      int cmp(T a, T b)
+      {
+        if(a < b)
+          return -1;
+        else if(a > b)
+          return 1;
+        else
+          return 0;
+      }
+
       int ProcessesTreeListItemComparator::Compare (wxTreeListCtrl *treelist, unsigned column, wxTreeListItem first, wxTreeListItem second)
       {
         int result;
@@ -17,14 +29,18 @@ namespace SystemExplorer
           first_text = treelist->GetItemText(first, column),
           second_text = treelist->GetItemText(second, column);
 
-     
         switch(column)
         {
         // Process name
           case 0:
           case 3:
-            return first_text.CmpNoCase(second_text);
-
+            result = first_text.CmpNoCase(second_text);
+            if(result != 0)
+              return result;
+            else
+              return cmp(
+                atoi(treelist->GetItemText(first, 1)), 
+                atoi(treelist->GetItemText(second, 1)));
           case 1:
           case 7:
           case 8:
@@ -35,7 +51,9 @@ namespace SystemExplorer
             else if(atoi(first_text.c_str()) > atoi(second_text.c_str()))
               return  1;
             else
-              return 0;
+              return cmp(
+                atoi(treelist->GetItemText(first, 1)), 
+                atoi(treelist->GetItemText(second, 1)));
           case 2:
           case 4:
           case 5:
@@ -45,7 +63,9 @@ namespace SystemExplorer
               else if(std::atof(first_text.c_str()) > std::atof(second_text.c_str()))
                 return 1;
               else
-                return 0;
+                return cmp(
+                  atoi(treelist->GetItemText(first, 1)), 
+                  atoi(treelist->GetItemText(second, 1)));;
         }
 
         return first_text.CmpNoCase(second_text);
