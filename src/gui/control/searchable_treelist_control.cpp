@@ -12,11 +12,13 @@ namespace SystemExplorer
         namespace Control
         {
             SearchableTreeListControl::SearchableTreeListItem::
-                SearchableTreeListItem(int id, std::string text, int parentId, bool selected, std::vector<std::string> other)
-                    :_id(id), _text(text), _parentId(parentId), _selected(selected), _other(other)
+                SearchableTreeListItem(int id, std::string text, int parentId, bool selected, 
+                        std::vector<std::string> other, int iconIndex, wxColour bgColour)
+                    :_id(id), _text(text), _parentId(parentId), _selected(selected), 
+                        _other(other), _iconIndex(iconIndex), _bgColour(bgColour)
             {
-        
             }
+
             int SearchableTreeListControl::SearchableTreeListItem::GetId() const
             {
                 return _id;
@@ -37,13 +39,24 @@ namespace SystemExplorer
             {
                 return _other;
             }
+            int SearchableTreeListControl::SearchableTreeListItem::GetIconIndex() const
+            {
+                return _iconIndex;
+            }
+            wxColour SearchableTreeListControl::SearchableTreeListItem::GetBgColour() const
+            {
+                return _bgColour;
+            }
 
-            SearchableTreeListControl::SearchableTreeListControl(wxWindow *parent, wxWindowID id) : wxPanel(parent)
+            SearchableTreeListControl::SearchableTreeListControl(
+                wxWindow *parent, wxWindowID id, wxImageList *imageList) 
+                    : wxPanel(parent), _imageList(imageList)
             {
                 _scSearch = new wxSearchCtrl(this, id, _T(""), wxPoint(0,0), wxSize(100, 32));
 		        _scSearch->SetDescriptiveText("Filter");
 
 		        _tlcTreeList = new wxTreeListCtrl(this, wxID_ANY, wxPoint(0,0), wxSize(100, 100), wxTL_MULTIPLE);
+                _tlcTreeList->SetImageList(_imageList);
 		        _tlcTreeList->SetWindowStyle(wxBORDER_NONE);
 
                 _bsSizer = new wxBoxSizer(wxVERTICAL);
@@ -97,6 +110,8 @@ namespace SystemExplorer
                     {
                         wxTreeListItem treeListItem = _tlcTreeList->AppendItem(parent, item.GetText());
                         _tlcTreeList->SetItemData(treeListItem, new SearchableTreeListItem(item));
+                        _tlcTreeList->SetItemImage(treeListItem, item.GetIconIndex(), item.GetIconIndex());
+                        //std::cout << "ITEMINDEX=" << item.GetIconIndex() << std::endl;
                         for(int idx = 0; idx < item.GetOther().size(); ++idx)
                         {
                             _tlcTreeList->SetItemText(treeListItem, idx + 1, item.GetOther()[idx]);
@@ -134,6 +149,7 @@ namespace SystemExplorer
                         {
                             wxTreeListItem processTreeListItem = _tlcTreeList->AppendItem(parent, text);
                             _tlcTreeList->SetItemData(processTreeListItem, new SearchableTreeListItem(item));
+                            _tlcTreeList->SetItemImage(processTreeListItem, item.GetIconIndex(), item.GetIconIndex());
                             for(int idx = 0; idx < item.GetOther().size(); ++idx)
                             {
                                 _tlcTreeList->SetItemText(processTreeListItem, idx + 1, item.GetOther()[idx]);

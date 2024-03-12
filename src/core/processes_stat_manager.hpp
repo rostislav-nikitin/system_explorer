@@ -7,6 +7,7 @@
 
 #include "models/process_stat.hpp"
 #include "models/processes_stat.hpp"
+#include "models/processes_stat_common.hpp"
 
 namespace SystemExplorer
 {
@@ -17,6 +18,9 @@ namespace SystemExplorer
         private:
             ProcTreeStatManager _proc_tree_stat_manager;
         public:
+            // Get processes stat common like cpu load, etc.
+            Models::ProcessesStatCommon GetProcessesStatCommon();
+            
             // Get single process stat
             Models::ProcessStat GetProcessStat(pid_t pid);
 

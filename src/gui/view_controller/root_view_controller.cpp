@@ -10,7 +10,8 @@ namespace SystemExplorer
                 using SystemExplorer::Core::ProcessManager;
                 using SystemExplorer::Gui::ViewController::ProcessTreeViewController;
 
-                CreateStatusBar();
+                CreateStatusBar(1, wxSTB_SIZEGRIP|wxSTB_ELLIPSIZE_END|wxSTB_SHOW_TIPS|wxFULL_REPAINT_ON_RESIZE);
+
 
                 wxBookCtrl *mainBook = new wxBookCtrl(this, wxID_ANY, wxPoint(10, 10), wxSize(800, 600));
 

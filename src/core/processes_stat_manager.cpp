@@ -7,6 +7,43 @@ namespace SystemExplorer
 {
     namespace Core
     {
+        Models::ProcessesStatCommon ProcessesStatManager::GetProcessesStatCommon()
+        {
+            Models::ProcessesStatCommon result {0.0f, 0, 0};
+
+            Models::ProcTreeStat &stat = _proc_tree_stat_manager.GetProcTreeStat();
+
+            // CPU stat
+            if(stat.proc_stat.size() > 1)
+            {
+                int avg_cpu_total_load_last = stat.proc_stat[0].proc_cpu_stat[0].get_total_cpu_work_time();
+                int avg_cpu_total_load_before_last = stat.proc_stat[1].proc_cpu_stat[0].get_total_cpu_work_time();
+
+                int avg_cpu_effective_load_last = stat.proc_stat[0].proc_cpu_stat[0].get_effective_cpu_work_time();
+                int avg_cpu_effective_load_before_last = stat.proc_stat[1].proc_cpu_stat[0].get_effective_cpu_work_time();
+
+                result.cpu_load = 
+                    float(avg_cpu_effective_load_last - avg_cpu_effective_load_before_last)
+                    / float(avg_cpu_total_load_last - avg_cpu_total_load_before_last);
+            }
+
+            std::for_each(stat.proc_processes_stat.begin(), stat.proc_processes_stat.end(),
+                [&result](std::map<pid_t, std::deque<Models::ProcProcessStat>>::value_type const &item)
+                {
+                    if(item.second.size() > 0)
+                    {
+                        result.rss += item.second[0].rss;
+                        result.vmsize += item.second[0].vsize;
+                    }
+                });
+
+            result.rss = result.rss * 4096 / 1024 / 1024 / 1024;
+            result.vmsize = result.vmsize  / 1024 / 1024 / 1024 / 1024;
+
+            return result;
+            
+        }
+
         // Get single process stat
         Models::ProcessStat ProcessesStatManager::GetProcessStat(pid_t pid)
         {
@@ -70,6 +107,8 @@ namespace SystemExplorer
         Models::ProcessesStat ProcessesStatManager::GetProcessesStat()
         {
             Models::ProcessesStat result;
+
+            result.processes_stat_common = GetProcessesStatCommon();
 
             Models::ProcTreeStat &stat = _proc_tree_stat_manager.GetProcTreeStat();
 

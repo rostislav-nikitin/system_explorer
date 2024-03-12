@@ -12,7 +12,9 @@ namespace SystemExplorer
                 std::string title,
                 wxWindowID id,
                 bool useByDefault) 
-                : ViewControllerBase(book, title, id, useByDefault), _processManager(processManager)
+                : ViewControllerBase(book, title, id, useByDefault), 
+                    _processManager(processManager),
+                    _sbStatIndex(-1)
             {
             }
 
@@ -22,6 +24,7 @@ namespace SystemExplorer
 
             void ProcessTreeViewController::CreateChildControls()
             {
+                CreateStatusBarField();
             	CreateHotKeys();
 
 			    CreateTimer();
@@ -35,6 +38,25 @@ namespace SystemExplorer
     			SetFocus();
             }
 
+            void ProcessTreeViewController::CreateStatusBarField()
+            {
+                wxStatusBar *statusBar = GetStatusBar();
+                if(statusBar == nullptr)
+                {
+                    wxFrame *topFrame = GetTopFrame();
+                    topFrame->CreateStatusBar();
+                }
+
+                int oldFieldsCount = statusBar->GetFieldsCount();
+                int fieldsCount = oldFieldsCount + 3;
+
+                _sbStatIndex = oldFieldsCount;
+
+                int widths_field[fieldsCount];
+                std::fill_n(&widths_field[0], fieldsCount, -1);
+                widths_field[0] = -3;
+                statusBar->SetFieldsCount(fieldsCount, &widths_field[0]);
+            }
 
        		void ProcessTreeViewController::CreateHotKeys()
             {
@@ -107,8 +129,13 @@ namespace SystemExplorer
                 using SystemExplorer::Core::Models::Signal;
                 using SystemExplorer::Core::Models::SignalType;
 
-                
-       			_searchableTreeList = new Control::SearchableTreeListControl(this, wxID_ANY);
+                _imageList = new wxImageList(16, 16, false);
+                _imageList->Add(wxBitmap("./resources/normal-01.png", wxBITMAP_TYPE_PNG));
+                _imageList->Add(wxBitmap("./resources/realtime-01.png", wxBITMAP_TYPE_PNG));
+                _imageList->Add(wxBitmap("./resources/not_nice-01.png", wxBITMAP_TYPE_PNG));
+                _imageList->Add(wxBitmap("./resources/nice-01.png", wxBITMAP_TYPE_PNG));
+
+       			_searchableTreeList = new Control::SearchableTreeListControl(this, wxID_ANY, _imageList);
     			
 	    		_searchableTreeList->AppendColumn(_T("Name"), 300, wxALIGN_LEFT, wxCOL_RESIZABLE | wxCOL_SORTABLE);
 		    	_searchableTreeList->AppendColumn(_T("PID"), 64, wxALIGN_RIGHT, wxCOL_RESIZABLE | wxCOL_SORTABLE);
@@ -336,9 +363,11 @@ namespace SystemExplorer
                         std::to_string(processesStat.processes_stat[pid].nice),
                         std::to_string(processesStat.processes_stat[pid].processor)});
 
+                    int iconIndex = MapProcessStatToIconIndex(processesStat.processes_stat[pid]);
+
                     if (picked)
                     {
-                        Control::SearchableTreeListControl::SearchableTreeListItem item(pid, text, parentPid, matched, other);
+                        Control::SearchableTreeListControl::SearchableTreeListItem item(pid, text, parentPid, matched, other, iconIndex);
                         items.push_back(item);
                     }
                 }
@@ -389,15 +418,66 @@ namespace SystemExplorer
                         std::to_string(processesStat.processes_stat[pid].priority),
                         std::to_string(processesStat.processes_stat[pid].nice),
                         std::to_string(processesStat.processes_stat[pid].processor)});
+
+                    int iconIndex = MapProcessStatToIconIndex(processesStat.processes_stat[pid]);
+
                     if (picked)
                     {
-                        Control::SearchableTreeListControl::SearchableTreeListItem item(pid, text, parentPid, matched, other);
+                        Control::SearchableTreeListControl::SearchableTreeListItem item(pid, text, parentPid, matched, other, iconIndex);
                         items.push_back(item);
                     }
                 }
 
                 _searchableTreeList->DataReBind(items);
+                UpdateStatusBarStatistics(processesStat);
     //			_searchableTreeList->ExpandAll();
+            }
+
+            void ProcessTreeViewController::UpdateStatusBarStatistics(Core::Models::ProcessesStat const &processesStat)
+            {
+                if(_sbStatIndex < 0)
+                    return;
+
+                wxStatusBar *statusBar = GetStatusBar();
+                if(statusBar == nullptr)
+                    return;
+
+                std::ostringstream text_cpu;
+                text_cpu << " | CPU: " << std::setprecision(2) << std::fixed << std::setw(12) << processesStat.processes_stat_common.cpu_load;
+                statusBar->SetStatusText(text_cpu.str(), _sbStatIndex);
+
+                std::ostringstream text_rss;
+                text_rss << " | RSS: " << std::setprecision(2) << std::fixed << std::setw(12) << processesStat.processes_stat_common.rss << " Gib";
+                statusBar->SetStatusText(text_rss.str(), _sbStatIndex + 1);
+
+                std::ostringstream text_vm;
+                text_vm << " | VM: " << std::setprecision(2) << std::fixed << std::setw(12) << processesStat.processes_stat_common.vmsize << " Tib";
+                statusBar->SetStatusText(text_vm.str(), _sbStatIndex + 2);
+
+
+                
+
+            }
+
+            int ProcessTreeViewController::MapProcessStatToIconIndex(Core::Models::ProcessStat processStat)
+            {
+                
+                const int ICON_INDEX_REALTIME = 1;
+                const int ICON_INDEX_NOT_NICE = 2;
+                const int ICON_INDEX_NORMAL = 0;
+                const int ICON_INDEX_NICE = 3;
+                
+
+                int result = ICON_INDEX_NORMAL;
+
+                if(processStat.priority < 0)
+                    result = ICON_INDEX_REALTIME;
+                else if(processStat.priority > 0 && processStat.priority < 20)
+                    result = ICON_INDEX_NOT_NICE;
+                else if(processStat.priority > 20)
+                    result = ICON_INDEX_NICE;
+
+                return result;
             }
 
             void ProcessTreeViewController::StartTimer()

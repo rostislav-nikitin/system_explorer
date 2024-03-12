@@ -5,6 +5,7 @@
 #include <wait.h>
 
 #include "process_stat.hpp"
+#include "processes_stat_common.hpp"
 
 namespace SystemExplorer
 {
@@ -15,6 +16,7 @@ namespace SystemExplorer
             class ProcessesStat
             {
             public:
+                ProcessesStatCommon processes_stat_common;
                 std::map<pid_t, ProcessStat> processes_stat;
             };
         }

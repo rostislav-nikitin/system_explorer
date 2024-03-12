@@ -1,0 +1,7 @@
+Colors in Palette
+Color	Hex	RGB
+RED	#ffb3ba	(255,179,186)
+ORANGE	#ffdfba	(255,223,186)
+YELLOW	#ffffba	(255,255,186)
+GREEN	#baffc9	(186,255,201)
+BLUE	#bae1ff	(186,225,255)

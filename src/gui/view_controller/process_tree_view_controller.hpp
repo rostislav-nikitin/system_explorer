@@ -5,16 +5,20 @@
 #include <vector>
 #include <map>
 #include <optional>
+#include <iomanip>
+#include <sstream>
 
 #include <wx/wx.h>
 #include <wx/accel.h>
 #include <wx/bookctrl.h>
 #include <wx/cshelp.h>
 #include <wx/timer.h>
+#include <wx/imaglist.h>
 
 #include "../../core/process_manager.hpp"
 #include "../../core/processes_stat_manager.hpp"
 #include "../../core/signal_manager.hpp"
+#include "../../core/models/process_stat.hpp"
 #include "../../core/models/process_state.hpp"
 #include "../../core/models/process_state_helpers.hpp"
 
@@ -53,10 +57,12 @@ namespace SystemExplorer
                 };
 
 
+                int _sbStatIndex;
 	            std::map<int, wxAcceleratorEntry> _hotKeys;
 
                 ProcessesTreeListItemComparator _processesTreeListItemComparator;
 	  
+                wxImageList *_imageList;
                 wxMenu *_processContextMenu;
 	            wxTimer *_timer;
 	            Control::SearchableTreeListControl *_searchableTreeList;
@@ -66,6 +72,7 @@ namespace SystemExplorer
 
                 wxBoxSizer *_bsSizer;
 
+                void CreateStatusBarField();
                 void CreateHotKeys();
 	            void CreateAcceleratorTable();
 	            void CreateTimer();
@@ -113,6 +120,10 @@ namespace SystemExplorer
 
                 pid_t ExtractPid(wxTreeListItem const &item) const;
                 void SendSignalToSelectedProcesses(int signal) const;
+
+                void UpdateStatusBarStatistics(Core::Models::ProcessesStat const &processesStat);
+
+                int MapProcessStatToIconIndex(Core::Models::ProcessStat processStat);
                 
                 void searchableTreeList_Search(wxCommandEvent &event);
                 void searchableTreeList_OnItemContextMenu(wxCommandEvent &event);

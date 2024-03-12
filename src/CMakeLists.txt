@@ -81,3 +81,4 @@ add_executable(proc_process_stat_parser_test_runner
 
 target_link_libraries(proc_process_stat_parser_test_runner gmock gtest ${googletest_LIBRARIES})
 
+file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/resources DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
