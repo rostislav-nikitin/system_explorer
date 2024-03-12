@@ -97,6 +97,30 @@ namespace SystemExplorer
                     if(_proc_tree_stat.proc_processes_stat[proc_process_stat.pid].size() > 2)
                         _proc_tree_stat.proc_processes_stat[proc_process_stat.pid].pop_back();
                 });
+
+            std::vector<pid_t> pids_to_delete;
+
+            std::for_each(_proc_tree_stat.proc_processes_stat.begin(), 
+                _proc_tree_stat.proc_processes_stat.end(),
+                [&proc_processes_stat, &pids_to_delete](std::map<pid_t, std::deque<Models::ProcProcessStat>>::value_type const &item)
+                {
+                    if(
+                        std::find_if(proc_processes_stat.begin(), proc_processes_stat.end(), 
+                            [&item](std::vector<Models::ProcProcessStat>::value_type &proc_process_stat)
+                            {
+                                return proc_process_stat.pid == item.first;
+                            }) 
+                            == proc_processes_stat.end())
+                    {
+                        pids_to_delete.push_back(item.first);
+                    }
+                            
+                });
+            std::for_each(pids_to_delete.begin(), pids_to_delete.end(),
+                [this](pid_t pid)
+                {
+                    _proc_tree_stat.proc_processes_stat.erase(pid);
+                });
         }    
     }
 }
