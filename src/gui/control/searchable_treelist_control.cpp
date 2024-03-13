@@ -109,6 +109,7 @@ namespace SystemExplorer
                     if(parent.IsOk())
                     {
                         wxTreeListItem treeListItem = _tlcTreeList->AppendItem(parent, item.GetText());
+                        
                         _tlcTreeList->SetItemData(treeListItem, new SearchableTreeListItem(item));
                         _tlcTreeList->SetItemImage(treeListItem, item.GetIconIndex(), item.GetIconIndex());
                         //std::cout << "ITEMINDEX=" << item.GetIconIndex() << std::endl;
@@ -116,11 +117,25 @@ namespace SystemExplorer
                         {
                             _tlcTreeList->SetItemText(treeListItem, idx + 1, item.GetOther()[idx]);
                         }
-                        if(item.GetSelected())
-                            _tlcTreeList->Select(treeListItem);  
+                        //if(treeListItem.IsOk() && item.GetSelected())
+                            //  _tlcTreeList->Select(treeListItem);
+                       
                     }
             
                 }
+
+                for(std::vector<SearchableTreeListItem>::const_iterator it = dataSource.begin(); it != dataSource.end(); ++it)
+                {
+                    SearchableTreeListItem item = *it;
+
+                    if(item.GetSelected())
+                    {
+                        wxTreeListItem treeListItem = FindItemById(item.GetId());
+                        if(treeListItem.IsOk())
+                            _tlcTreeList->Select(treeListItem);
+                    }
+                }
+
             }
 
             void SearchableTreeListControl::DataReBind(std::vector<SearchableTreeListItem> &dataSource)
@@ -172,6 +187,7 @@ namespace SystemExplorer
                             _tlcTreeList->SetItemText(treeListItem, idx + 1, item.GetOther()[idx]);
                         }
                     }
+                    
                 }
 
                 // 2. Item not returned

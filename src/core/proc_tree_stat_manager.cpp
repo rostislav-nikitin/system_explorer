@@ -6,7 +6,7 @@ namespace SystemExplorer
 {
     namespace Core
     {
-        
+        // Get proc stat
         Models::ProcStat ProcTreeStatManager::GetProcStat()
         {
             std::ifstream proc_stat_file("/proc/stat");
@@ -17,6 +17,7 @@ namespace SystemExplorer
             return result;
         }
 
+        // Get all running processes(pids) in the system
         std::vector<pid_t> ProcTreeStatManager::GetProcesses()
         {
             std::vector<pid_t> result;
@@ -39,12 +40,14 @@ namespace SystemExplorer
 
         }
 
+        // Check string is number?
         bool ProcTreeStatManager::IsNumber(std::string str) const
 		{
 			std::string::const_iterator it = std::find_if(str.begin(), str.end(), [](char ch) { return !std::isdigit(ch);  });
 			return it == str.end();
 		}
 
+        // Get particular process stat
         Models::ProcProcessStat ProcTreeStatManager::GetProcessStat(pid_t pid)
         {
             std::ifstream process_stat_file(
@@ -57,6 +60,7 @@ namespace SystemExplorer
             return result;
         }
 
+        // Get all processes stat
         std::vector<Models::ProcProcessStat> ProcTreeStatManager::GetProcesssesStat()
         {
             std::vector<Models::ProcProcessStat> result;
@@ -66,7 +70,6 @@ namespace SystemExplorer
             std::for_each(pids.begin(), pids.end(), 
             [&result, this](pid_t pid)
             {
- //               std::cout << pid << std::endl;
                 Models::ProcProcessStat stat = GetProcessStat(pid);
                 result.push_back(stat);
             });
@@ -82,11 +85,13 @@ namespace SystemExplorer
 
         void ProcTreeStatManager::Tick()
         {   
+            // Add next proc stat to queue
             Models::ProcStat proc_stat = GetProcStat();
             _proc_tree_stat.proc_stat.push_front(proc_stat);
             if(_proc_tree_stat.proc_stat.size() > 2)
                 _proc_tree_stat.proc_stat.pop_back();
 
+            // Add next proc processes stat to queue
             std::vector<Models::ProcProcessStat> proc_processes_stat = GetProcesssesStat();
             std::for_each(proc_processes_stat.begin(), proc_processes_stat.end(),
                 [this](Models::ProcProcessStat const &proc_process_stat)
@@ -98,6 +103,7 @@ namespace SystemExplorer
                         _proc_tree_stat.proc_processes_stat[proc_process_stat.pid].pop_back();
                 });
 
+            // Delete killed/closed/etc.(not exiting anymore) processes
             std::vector<pid_t> pids_to_delete;
 
             std::for_each(_proc_tree_stat.proc_processes_stat.begin(), 

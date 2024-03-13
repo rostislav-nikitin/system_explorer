@@ -25,6 +25,9 @@ namespace SystemExplorer
       {
         int result;
 
+        if(column > 10)
+          return 0;
+
         wxString 
           first_text = treelist->GetItemText(first, column),
           second_text = treelist->GetItemText(second, column);

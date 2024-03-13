@@ -24,6 +24,7 @@ namespace SystemExplorer
 
             void ProcessTreeViewController::CreateChildControls()
             {
+                _processesStatManager.Tick();
                 CreateStatusBarField();
             	CreateHotKeys();
 
@@ -36,26 +37,60 @@ namespace SystemExplorer
             {
        			StartTimer();
     			SetFocus();
+                _processesStatManager.Tick();
             }
 
             void ProcessTreeViewController::CreateStatusBarField()
             {
-                wxStatusBar *statusBar = GetStatusBar();
-                if(statusBar == nullptr)
+                _statusBar = GetStatusBar();
+                if(_statusBar == nullptr)
                 {
                     wxFrame *topFrame = GetTopFrame();
                     topFrame->CreateStatusBar();
                 }
 
-                int oldFieldsCount = statusBar->GetFieldsCount();
-                int fieldsCount = oldFieldsCount + 3;
+                int oldFieldsCount = _statusBar->GetFieldsCount();
+                int fieldsCount = oldFieldsCount + 2;
 
                 _sbStatIndex = oldFieldsCount;
 
                 int widths_field[fieldsCount];
-                std::fill_n(&widths_field[0], fieldsCount, -1);
-                widths_field[0] = -3;
-                statusBar->SetFieldsCount(fieldsCount, &widths_field[0]);
+                //std::fill_n(&widths_field[0], fieldsCount, 160);
+                widths_field[0] = -1;
+                widths_field[1] = 160;
+                widths_field[2] = 160;
+                _statusBar->SetFieldsCount(fieldsCount, &widths_field[0]);
+
+                wxRect rect_cpu;
+                _statusBar->GetFieldRect(1, rect_cpu);
+
+                //wxPoint point(rect.GetPosition().x, rect.GetPosition().y - 0);
+                wxPoint point_cpu(rect_cpu.GetPosition());
+                point_cpu.x += 14;
+                point_cpu.y += 1;
+                wxSize size_cpu(rect_cpu.GetSize());
+                size_cpu.SetWidth(size_cpu.GetWidth() - 14);
+                //rect.SetPosition(point);
+	            
+	            _gProgressBarCpu = new wxGauge(_statusBar, wxID_ANY, 100, point_cpu, size_cpu, wxGA_SMOOTH);
+                _gProgressBarCpu->SetBackgroundColour(wxTransparentColour);
+                _gProgressBarCpu->SetForegroundColour(wxColour(186, 255, 255, wxALPHA_TRANSPARENT));
+                _gProgressBarCpu->SetValue(50);
+
+                wxRect rect_rss;
+                _statusBar->GetFieldRect(2, rect_rss);
+                wxPoint point_rss(rect_rss.GetPosition());
+                point_rss.x += 14;
+                point_rss.y += 1;
+                wxSize size_rss(rect_rss.GetSize());
+                size_rss.SetWidth(size_rss.GetWidth() - 14);
+
+                _gProgressBarRss = new wxGauge(_statusBar, wxID_ANY, 100, point_rss, size_rss, wxGA_SMOOTH);
+                _gProgressBarRss->SetBackgroundColour(wxTransparentColour);
+                _gProgressBarRss->SetForegroundColour(wxColour(225, 223, 255, 255));
+                _gProgressBarRss->SetValue(25);
+
+                //new wxStaticBitmap(sbar, -1, wxBITMAP(IDC_BMP_ERROR));
             }
 
        		void ProcessTreeViewController::CreateHotKeys()
@@ -197,6 +232,7 @@ namespace SystemExplorer
 
             void ProcessTreeViewController::BindEvents()
             {
+                this->Bind(wxEVT_SIZE, &ProcessTreeViewController::window_OnSize, this);
                 _searchableTreeList->Bind(custEVT_SEARCH, &ProcessTreeViewController::searchableTreeList_Search, this); 
                 _searchableTreeList->Bind(custEVT_ITEM_CONTEXT_MENU, &ProcessTreeViewController::searchableTreeList_OnItemContextMenu, this);
                 _searchableTreeList->Bind(wxEVT_MENU, &ProcessTreeViewController::processesContextMenu_OnMenuItem, this);
@@ -204,6 +240,41 @@ namespace SystemExplorer
                 _processContextMenu->Bind(wxEVT_MENU_OPEN, &ProcessTreeViewController::processesContextMenu_OnMenuOpen, this);
                 _processContextMenu->Bind(wxEVT_MENU_CLOSE, &ProcessTreeViewController::processesContextMenu_OnMenuClose, this);
                 _timer->Bind(wxEVT_TIMER, &ProcessTreeViewController::timer_OnTick, this);
+            }
+
+            void ProcessTreeViewController::window_OnSize(wxSizeEvent &event)
+            {
+                
+                if(_statusBar == nullptr)
+                {
+                    event.Skip();
+                    return;
+                }
+
+                wxRect rect_cpu;
+                _statusBar->GetFieldRect(1, rect_cpu);
+
+                wxPoint point_cpu(rect_cpu.GetPosition());
+                point_cpu.x += 14;
+                point_cpu.y += 1;
+                wxSize size_cpu(rect_cpu.GetSize());
+                size_cpu.SetWidth(size_cpu.GetWidth() - 14);
+                //rect.SetPosition(point);
+                _gProgressBarCpu->SetPosition(point_cpu);
+
+
+                wxRect rect_rss;
+                _statusBar->GetFieldRect(2, rect_rss);
+
+                wxPoint point_rss(rect_rss.GetPosition());
+                point_rss.x += 14;
+                point_rss.y += 1;
+                wxSize size_rss(rect_rss.GetSize());
+                size_rss.SetWidth(size_rss.GetWidth() - 14);
+                //rect.SetPosition(point);
+                _gProgressBarRss->SetPosition(point_rss);
+
+                event.Skip();
             }
 
             void ProcessTreeViewController::timer_OnTick(wxTimerEvent &event)
@@ -322,7 +393,6 @@ namespace SystemExplorer
 
             void ProcessTreeViewController::BindData_Before()
             {
-                _processesStatManager.Tick();
             }
             void ProcessTreeViewController::BindData()
             {
@@ -374,6 +444,8 @@ namespace SystemExplorer
 
                 _searchableTreeList->DataBind(items);
                 _searchableTreeList->ExpandAll();
+
+                UpdateStatusBarStatistics(processesStat);
             }
 
 
@@ -444,19 +516,19 @@ namespace SystemExplorer
 
                 std::ostringstream text_cpu;
                 text_cpu << " | CPU: " << std::setprecision(2) << std::fixed << std::setw(12) << processesStat.processes_stat_common.cpu_load;
+                _gProgressBarCpu->SetValue(processesStat.processes_stat_common.cpu_load * 100);
+                _gProgressBarCpu->SetHelpText("HH");
+                _gProgressBarCpu->Update();
+                _gProgressBarCpu->UpdateWindowUI();
                 statusBar->SetStatusText(text_cpu.str(), _sbStatIndex);
 
                 std::ostringstream text_rss;
                 text_rss << " | RSS: " << std::setprecision(2) << std::fixed << std::setw(12) << processesStat.processes_stat_common.rss << " Gib";
+                _gProgressBarRss->SetValue(processesStat.processes_stat_common.rss / 16.0f * 100);
+                _gProgressBarRss->Update();
+                _gProgressBarRss->UpdateWindowUI();
                 statusBar->SetStatusText(text_rss.str(), _sbStatIndex + 1);
-
-                std::ostringstream text_vm;
-                text_vm << " | VM: " << std::setprecision(2) << std::fixed << std::setw(12) << processesStat.processes_stat_common.vmsize << " Tib";
-                statusBar->SetStatusText(text_vm.str(), _sbStatIndex + 2);
-
-
                 
-
             }
 
             int ProcessTreeViewController::MapProcessStatToIconIndex(Core::Models::ProcessStat processStat)

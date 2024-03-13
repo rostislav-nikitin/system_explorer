@@ -57,6 +57,7 @@ namespace SystemExplorer
                 };
 
 
+                wxStatusBar *_statusBar;
                 int _sbStatIndex;
 	            std::map<int, wxAcceleratorEntry> _hotKeys;
 
@@ -71,6 +72,9 @@ namespace SystemExplorer
                 SystemExplorer::Core::ProcessesStatManager _processesStatManager;
 
                 wxBoxSizer *_bsSizer;
+
+                wxGauge *_gProgressBarCpu;
+                wxGauge *_gProgressBarRss;
 
                 void CreateStatusBarField();
                 void CreateHotKeys();
@@ -125,6 +129,8 @@ namespace SystemExplorer
 
                 int MapProcessStatToIconIndex(Core::Models::ProcessStat processStat);
                 
+                void window_OnSize(wxSizeEvent& event);
+
                 void searchableTreeList_Search(wxCommandEvent &event);
                 void searchableTreeList_OnItemContextMenu(wxCommandEvent &event);
 
