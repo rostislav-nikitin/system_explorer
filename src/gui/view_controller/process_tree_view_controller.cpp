@@ -57,8 +57,8 @@ namespace SystemExplorer
                 int widths_field[fieldsCount];
                 //std::fill_n(&widths_field[0], fieldsCount, 160);
                 widths_field[0] = -1;
-                widths_field[1] = 160;
-                widths_field[2] = 160;
+                widths_field[1] = 180;
+                widths_field[2] = 200;
                 _statusBar->SetFieldsCount(fieldsCount, &widths_field[0]);
 
                 wxRect rect_cpu;
@@ -514,16 +514,52 @@ namespace SystemExplorer
                 if(statusBar == nullptr)
                     return;
 
+
+                float selected_total_cpu = 0.0f;
+                float selected_total_rss = 0.0f;
+
+                wxTreeListItems selectedItems;
+                if(_searchableTreeList->GetSelections(selectedItems))
+                {
+                    std::for_each(selectedItems.begin(), selectedItems.end(), 
+                        [&processesStat, &selected_total_cpu, &selected_total_rss, this](wxTreeListItem const &treeListItem)
+                        {
+                            if(treeListItem.IsOk())
+                            {
+                                pid_t pid = ExtractPid(treeListItem);
+                                if(processesStat.processes_stat.find(pid) 
+                                    != processesStat.processes_stat.end())
+                                {
+                                    selected_total_cpu += 
+                                        processesStat.processes_stat.at(pid).cpu_stat.cpu_usage_per_all_cores;
+                                    selected_total_rss += 
+                                        processesStat.processes_stat.at(pid).mem_rss;
+                                }
+                            }
+                        });
+                }
+
+                // Gib
+                selected_total_rss /= 1024;
+
+                
+                //GetSelectedItemsTotalStat();
+
                 std::ostringstream text_cpu;
-                text_cpu << " | CPU: " << std::setprecision(2) << std::fixed << std::setw(12) << processesStat.processes_stat_common.cpu_load;
+                text_cpu << " | CPU: " << std::setprecision(2) << std::fixed << std::setw(12) 
+                    << processesStat.processes_stat_common.cpu_load
+                    << "(" << selected_total_cpu << ")"
+                    << " %";
                 _gProgressBarCpu->SetValue(processesStat.processes_stat_common.cpu_load * 100);
-                _gProgressBarCpu->SetHelpText("HH");
                 _gProgressBarCpu->Update();
                 _gProgressBarCpu->UpdateWindowUI();
                 statusBar->SetStatusText(text_cpu.str(), _sbStatIndex);
 
                 std::ostringstream text_rss;
-                text_rss << " | RSS: " << std::setprecision(2) << std::fixed << std::setw(12) << processesStat.processes_stat_common.rss << " Gib";
+                text_rss << " | RSS: " << std::setprecision(2) << std::fixed << std::setw(12) 
+                    << processesStat.processes_stat_common.rss 
+                    << "(" << selected_total_rss << ")"
+                    << " Gib";
                 _gProgressBarRss->SetValue(processesStat.processes_stat_common.rss / 16.0f * 100);
                 _gProgressBarRss->Update();
                 _gProgressBarRss->UpdateWindowUI();
