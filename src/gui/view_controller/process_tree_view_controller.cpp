@@ -63,6 +63,12 @@ namespace SystemExplorer
 
                 wxRect rect_cpu;
                 _statusBar->GetFieldRect(1, rect_cpu);
+                
+                wxVector<wxBitmap> bitmaps;
+                bitmaps.push_back(wxBitmap("./resources/cpu.png"));
+
+                wxStaticBitmap *bitmap_status = new wxStaticBitmap(_statusBar, wxID_ANY, wxBitmapBundle::FromBitmaps(bitmaps));
+                bitmap_status->SetPosition(rect_cpu.GetPosition());
 
                 //wxPoint point(rect.GetPosition().x, rect.GetPosition().y - 0);
                 wxPoint point_cpu(rect_cpu.GetPosition());
@@ -164,11 +170,44 @@ namespace SystemExplorer
                 using SystemExplorer::Core::Models::Signal;
                 using SystemExplorer::Core::Models::SignalType;
 
-                _imageList = new wxImageList(16, 16, false);
-                _imageList->Add(wxBitmap("./resources/normal-01.png", wxBITMAP_TYPE_PNG));
-                _imageList->Add(wxBitmap("./resources/realtime-01.png", wxBITMAP_TYPE_PNG));
-                _imageList->Add(wxBitmap("./resources/not_nice-01.png", wxBITMAP_TYPE_PNG));
-                _imageList->Add(wxBitmap("./resources/nice-01.png", wxBITMAP_TYPE_PNG));
+                _imageList = new wxImageList(16, 16, false, 32);
+                // N/A
+                _imageList->Add(wxBitmap("./resources/realtime.png", wxBITMAP_TYPE_PNG));
+                _imageList->Add(wxBitmap("./resources/not_nice.png", wxBITMAP_TYPE_PNG));
+                _imageList->Add(wxBitmap("./resources/normal.png", wxBITMAP_TYPE_PNG));
+                _imageList->Add(wxBitmap("./resources/nice.png", wxBITMAP_TYPE_PNG));
+                // Sleeping
+                _imageList->Add(wxBitmap("./resources/realtime-sleeping.png", wxBITMAP_TYPE_PNG));
+                _imageList->Add(wxBitmap("./resources/not_nice-sleeping.png", wxBITMAP_TYPE_PNG));
+                _imageList->Add(wxBitmap("./resources/normal-sleeping.png", wxBITMAP_TYPE_PNG));
+                _imageList->Add(wxBitmap("./resources/nice-sleeping.png", wxBITMAP_TYPE_PNG));
+                // Waiting
+                _imageList->Add(wxBitmap("./resources/realtime-waiting.png", wxBITMAP_TYPE_PNG));
+                _imageList->Add(wxBitmap("./resources/not_nice-waiting.png", wxBITMAP_TYPE_PNG));
+                _imageList->Add(wxBitmap("./resources/normal-waiting.png", wxBITMAP_TYPE_PNG));
+                _imageList->Add(wxBitmap("./resources/nice-waiting.png", wxBITMAP_TYPE_PNG));
+                // Idle
+                _imageList->Add(wxBitmap("./resources/realtime-idle.png", wxBITMAP_TYPE_PNG));
+                _imageList->Add(wxBitmap("./resources/not_nice-idle.png", wxBITMAP_TYPE_PNG));
+                _imageList->Add(wxBitmap("./resources/normal-idle.png", wxBITMAP_TYPE_PNG));
+                _imageList->Add(wxBitmap("./resources/nice-idle.png", wxBITMAP_TYPE_PNG));
+                // Running
+                _imageList->Add(wxBitmap("./resources/realtime-running.png", wxBITMAP_TYPE_PNG));
+                _imageList->Add(wxBitmap("./resources/not_nice-running.png", wxBITMAP_TYPE_PNG));
+                _imageList->Add(wxBitmap("./resources/normal-running.png", wxBITMAP_TYPE_PNG));
+                _imageList->Add(wxBitmap("./resources/nice-running.png", wxBITMAP_TYPE_PNG));
+                // Stopped
+                
+                _imageList->Add(wxBitmap("./resources/realtime-stopped.png", wxBITMAP_TYPE_PNG));
+                _imageList->Add(wxBitmap("./resources/not_nice-stopped.png", wxBITMAP_TYPE_PNG));
+                _imageList->Add(wxBitmap("./resources/normal-stopped.png", wxBITMAP_TYPE_PNG));
+                _imageList->Add(wxBitmap("./resources/nice-stopped.png", wxBITMAP_TYPE_PNG));
+                
+                // Killed
+                _imageList->Add(wxBitmap("./resources/realtime-killed.png", wxBITMAP_TYPE_PNG));
+                _imageList->Add(wxBitmap("./resources/not_nice-killed.png", wxBITMAP_TYPE_PNG));
+                _imageList->Add(wxBitmap("./resources/normal-killed.png", wxBITMAP_TYPE_PNG));
+                _imageList->Add(wxBitmap("./resources/nice-killed.png", wxBITMAP_TYPE_PNG));
 
        			_searchableTreeList = new Control::SearchableTreeListControl(this, wxID_ANY, _imageList);
     			
@@ -546,7 +585,7 @@ namespace SystemExplorer
                 //GetSelectedItemsTotalStat();
 
                 std::ostringstream text_cpu;
-                text_cpu << " | CPU: " << std::setprecision(2) << std::fixed << std::setw(12) 
+                text_cpu << "     CPU: " << std::setprecision(2) << std::fixed << std::setw(12) 
                     << processesStat.processes_stat_common.cpu_load
                     << "(" << selected_total_cpu << ")"
                     << " %";
@@ -560,7 +599,7 @@ namespace SystemExplorer
                     << processesStat.processes_stat_common.rss 
                     << "(" << selected_total_rss << ")"
                     << " Gib";
-                _gProgressBarRss->SetValue(processesStat.processes_stat_common.rss / 16.0f * 100);
+                _gProgressBarRss->SetValue(processesStat.processes_stat_common.rss / 32.0f * 100);
                 _gProgressBarRss->Update();
                 _gProgressBarRss->UpdateWindowUI();
                 statusBar->SetStatusText(text_rss.str(), _sbStatIndex + 1);
@@ -569,11 +608,25 @@ namespace SystemExplorer
 
             int ProcessTreeViewController::MapProcessStatToIconIndex(Core::Models::ProcessStat processStat)
             {
-                
-                const int ICON_INDEX_REALTIME = 1;
-                const int ICON_INDEX_NOT_NICE = 2;
-                const int ICON_INDEX_NORMAL = 0;
+                const int ICON_INDEX_REALTIME = 0;
+                const int ICON_INDEX_NOT_NICE = 1;
+                const int ICON_INDEX_NORMAL = 2;
                 const int ICON_INDEX_NICE = 3;
+
+                std::map<Core::Models::ProcessState, int> processStateMap(
+                    {
+                        {Core::Models::ProcessState::Sleeping, 1},
+                        {Core::Models::ProcessState::Waiting, 2},
+                        {Core::Models::ProcessState::Idle, 3},
+                        {Core::Models::ProcessState::Running, 4},
+                        {Core::Models::ProcessState::Stopped, 5}
+                    });
+
+                int STATE_INDEX = 0;
+                if(processStateMap.find(processStat.state) != processStateMap.end())
+                {
+                    STATE_INDEX = processStateMap[processStat.state];
+                }
                 
 
                 int result = ICON_INDEX_NORMAL;
@@ -584,6 +637,8 @@ namespace SystemExplorer
                     result = ICON_INDEX_NOT_NICE;
                 else if(processStat.priority > 20)
                     result = ICON_INDEX_NICE;
+
+                result += STATE_INDEX * 4;
 
                 return result;
             }

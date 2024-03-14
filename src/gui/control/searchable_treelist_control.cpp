@@ -182,10 +182,12 @@ namespace SystemExplorer
                     }
                     else
                     {
+                        _tlcTreeList->SetItemImage(treeListItem, item.GetIconIndex(), item.GetIconIndex());
                         for(int idx = 0; idx < item.GetOther().size(); ++idx)
                         {
                             _tlcTreeList->SetItemText(treeListItem, idx + 1, item.GetOther()[idx]);
                         }
+                        
                     }
                     
                 }
