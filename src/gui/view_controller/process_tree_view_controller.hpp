@@ -23,6 +23,7 @@
 #include "../../core/models/process_state_helpers.hpp"
 
 
+#include "../control/icon_control.hpp"
 #include "../control/searchable_treelist_control.hpp"
 
 #include "view_controller_base.hpp"
@@ -73,6 +74,9 @@ namespace SystemExplorer
 
                 wxBoxSizer *_bsSizer;
 
+                Control::IconControl *_cpuStat;
+                Control::IconControl *_ramStat;
+            
                 wxGauge *_gProgressBarCpu;
                 wxGauge *_gProgressBarRss;
 

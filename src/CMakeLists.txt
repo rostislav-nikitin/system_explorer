@@ -51,6 +51,7 @@ add_executable(system_explorer
 	core/parsers/proc_stat_parser.cpp
 	core/parsers/proc_process_stat_parser.cpp
 
+	gui/control/icon_control.cpp
 	gui/control/searchable_treelist_control.cpp
 
 	gui/view_controller/view_controller_base.cpp

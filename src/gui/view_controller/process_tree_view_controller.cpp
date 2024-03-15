@@ -57,46 +57,41 @@ namespace SystemExplorer
                 int widths_field[fieldsCount];
                 //std::fill_n(&widths_field[0], fieldsCount, 160);
                 widths_field[0] = -1;
-                widths_field[1] = 180;
-                widths_field[2] = 200;
+                widths_field[1] = 144;
+                widths_field[2] = 176;
                 _statusBar->SetFieldsCount(fieldsCount, &widths_field[0]);
 
                 wxRect rect_cpu;
                 _statusBar->GetFieldRect(1, rect_cpu);
-                
-                wxVector<wxBitmap> bitmaps;
-                bitmaps.push_back(wxBitmap("./resources/cpu.png"));
-
-                wxStaticBitmap *bitmap_status = new wxStaticBitmap(_statusBar, wxID_ANY, wxBitmapBundle::FromBitmaps(bitmaps));
-                bitmap_status->SetPosition(rect_cpu.GetPosition());
-
-                //wxPoint point(rect.GetPosition().x, rect.GetPosition().y - 0);
+                /*
                 wxPoint point_cpu(rect_cpu.GetPosition());
-                point_cpu.x += 14;
-                point_cpu.y += 1;
+                point_cpu.x += 30;
+                point_cpu.y += 2;
                 wxSize size_cpu(rect_cpu.GetSize());
-                size_cpu.SetWidth(size_cpu.GetWidth() - 14);
-                //rect.SetPosition(point);
+                size_cpu.SetWidth(size_cpu.GetWidth() - 64);
 	            
-	            _gProgressBarCpu = new wxGauge(_statusBar, wxID_ANY, 100, point_cpu, size_cpu, wxGA_SMOOTH);
+	            _gProgressBarCpu = new wxGauge(_statusBar, wxID_ANY, 100, point_cpu, size_cpu);
                 _gProgressBarCpu->SetBackgroundColour(wxTransparentColour);
                 _gProgressBarCpu->SetForegroundColour(wxColour(186, 255, 255, wxALPHA_TRANSPARENT));
                 _gProgressBarCpu->SetValue(50);
-
-                wxRect rect_rss;
-                _statusBar->GetFieldRect(2, rect_rss);
-                wxPoint point_rss(rect_rss.GetPosition());
+                */
+                wxRect rect_ram;
+                _statusBar->GetFieldRect(2, rect_ram);
+                /*
+                wxPoint point_rss(rect_ram.GetPosition());
                 point_rss.x += 14;
                 point_rss.y += 1;
-                wxSize size_rss(rect_rss.GetSize());
-                size_rss.SetWidth(size_rss.GetWidth() - 14);
+                wxSize size_rss(rect_ram.GetSize());
+                size_rss.SetWidth(rect_ram.GetWidth() - 14);
 
                 _gProgressBarRss = new wxGauge(_statusBar, wxID_ANY, 100, point_rss, size_rss, wxGA_SMOOTH);
                 _gProgressBarRss->SetBackgroundColour(wxTransparentColour);
                 _gProgressBarRss->SetForegroundColour(wxColour(225, 223, 255, 255));
                 _gProgressBarRss->SetValue(25);
+                */
 
-                //new wxStaticBitmap(sbar, -1, wxBITMAP(IDC_BMP_ERROR));
+                _cpuStat = new Control::IconControl(_statusBar, wxID_ANY, "./resources/cpu.png", "CPU: N/A", rect_cpu.GetPosition(), wxSize(144, 24));
+                _ramStat = new Control::IconControl(_statusBar, wxID_ANY, "./resources/ram.png", "RAM: N/A", rect_ram.GetPosition(), wxSize(176, 24));
             }
 
        		void ProcessTreeViewController::CreateHotKeys()
@@ -209,6 +204,12 @@ namespace SystemExplorer
                 _imageList->Add(wxBitmap("./resources/normal-killed.png", wxBITMAP_TYPE_PNG));
                 _imageList->Add(wxBitmap("./resources/nice-killed.png", wxBITMAP_TYPE_PNG));
 
+                // Zombie
+                _imageList->Add(wxBitmap("./resources/realtime-zombie.png", wxBITMAP_TYPE_PNG));
+                _imageList->Add(wxBitmap("./resources/not_nice-zombie.png", wxBITMAP_TYPE_PNG));
+                _imageList->Add(wxBitmap("./resources/normal-zombie.png", wxBITMAP_TYPE_PNG));
+                _imageList->Add(wxBitmap("./resources/nice-zombie.png", wxBITMAP_TYPE_PNG));
+
        			_searchableTreeList = new Control::SearchableTreeListControl(this, wxID_ANY, _imageList);
     			
 	    		_searchableTreeList->AppendColumn(_T("Name"), 300, wxALIGN_LEFT, wxCOL_RESIZABLE | wxCOL_SORTABLE);
@@ -290,9 +291,11 @@ namespace SystemExplorer
                     return;
                 }
 
+
                 wxRect rect_cpu;
                 _statusBar->GetFieldRect(1, rect_cpu);
-
+                _cpuStat->SetPosition(rect_cpu.GetPosition());
+/*
                 wxPoint point_cpu(rect_cpu.GetPosition());
                 point_cpu.x += 14;
                 point_cpu.y += 1;
@@ -301,18 +304,19 @@ namespace SystemExplorer
                 //rect.SetPosition(point);
                 _gProgressBarCpu->SetPosition(point_cpu);
 
-
-                wxRect rect_rss;
-                _statusBar->GetFieldRect(2, rect_rss);
-
-                wxPoint point_rss(rect_rss.GetPosition());
-                point_rss.x += 14;
-                point_rss.y += 1;
-                wxSize size_rss(rect_rss.GetSize());
-                size_rss.SetWidth(size_rss.GetWidth() - 14);
+*/
+                wxRect rect_ram;
+                _statusBar->GetFieldRect(2, rect_ram);
+                _ramStat->SetPosition(rect_ram.GetPosition());
+/*
+                wxPoint point_ram(rect_ram.GetPosition());
+                point_ram.x += 14;
+                point_ram.y += 1;
+                wxSize size_ram(rect_ram.GetSize());
+                size_ram.SetWidth(size_ram.GetWidth() - 14);
                 //rect.SetPosition(point);
-                _gProgressBarRss->SetPosition(point_rss);
-
+                _gProgressBarRss->SetPosition(point_ram);
+*/
                 event.Skip();
             }
 
@@ -585,25 +589,30 @@ namespace SystemExplorer
                 //GetSelectedItemsTotalStat();
 
                 std::ostringstream text_cpu;
-                text_cpu << "     CPU: " << std::setprecision(2) << std::fixed << std::setw(12) 
+                text_cpu << "CPU: " << std::setprecision(2) << std::fixed << std::setw(6) 
                     << processesStat.processes_stat_common.cpu_load
-                    << "(" << selected_total_cpu << ")"
-                    << " %";
+                    << "(" << selected_total_cpu << ")";
+                //    << " %";
+                /*
                 _gProgressBarCpu->SetValue(processesStat.processes_stat_common.cpu_load * 100);
                 _gProgressBarCpu->Update();
                 _gProgressBarCpu->UpdateWindowUI();
-                statusBar->SetStatusText(text_cpu.str(), _sbStatIndex);
-
+                //statusBar->SetStatusText(text_cpu.str(), _sbStatIndex);
+                */
                 std::ostringstream text_rss;
-                text_rss << " | RSS: " << std::setprecision(2) << std::fixed << std::setw(12) 
+                text_rss << "RAM: " << std::setprecision(2) << std::fixed << std::setw(6) 
                     << processesStat.processes_stat_common.rss 
                     << "(" << selected_total_rss << ")"
                     << " Gib";
+                /*
                 _gProgressBarRss->SetValue(processesStat.processes_stat_common.rss / 32.0f * 100);
                 _gProgressBarRss->Update();
                 _gProgressBarRss->UpdateWindowUI();
-                statusBar->SetStatusText(text_rss.str(), _sbStatIndex + 1);
-                
+                //statusBar->SetStatusText(text_rss.str(), _sbStatIndex + 1);
+                */
+                _cpuStat->SetText(text_cpu.str());
+                _ramStat->SetText(text_rss.str()); 
+
             }
 
             int ProcessTreeViewController::MapProcessStatToIconIndex(Core::Models::ProcessStat processStat)
@@ -619,7 +628,10 @@ namespace SystemExplorer
                         {Core::Models::ProcessState::Waiting, 2},
                         {Core::Models::ProcessState::Idle, 3},
                         {Core::Models::ProcessState::Running, 4},
-                        {Core::Models::ProcessState::Stopped, 5}
+                        {Core::Models::ProcessState::Stopped, 5},
+                        {Core::Models::ProcessState::Dead1, 5},
+                        {Core::Models::ProcessState::Dead2, 5},
+                        {Core::Models::ProcessState::Zombie, 6}
                     });
 
                 int STATE_INDEX = 0;
