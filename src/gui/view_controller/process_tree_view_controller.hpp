@@ -22,12 +22,12 @@
 #include "../../core/models/process_state.hpp"
 #include "../../core/models/process_state_helpers.hpp"
 
-
 #include "../control/icon_control.hpp"
 #include "../control/searchable_treelist_control.hpp"
 
 #include "view_controller_base.hpp"
 #include "processes_tree_list_item_comparator.hpp"
+#include "about_dialog_view_controller.hpp"
 
 
 
@@ -52,6 +52,10 @@ namespace SystemExplorer
                 enum class ProcessContextMenuId
                 {
                     Open,
+                    ExpandAll,
+                    CollapseAll,
+                    About,
+                    Close,
                     SendSignal,
                     KillSigTerm,
                     KillSigKill

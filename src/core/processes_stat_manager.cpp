@@ -93,7 +93,7 @@ namespace SystemExplorer
                 result.priority = pstat.priority;
                 result.nice = pstat.nice;
 
-                result.mem_vsize = float(pstat.vsize) / 1024 / 1024;
+                result.mem_vsize = float(pstat.vsize) / 1024 / 1024 / 1024;
                 result.mem_rss = float(pstat.rss) * 4096 / 1024 / 1024;
                 result.mem_pages_swapped = float(pstat.snwap) * 4096 / 1024 / 1024;
                 result.processor = pstat.processor;

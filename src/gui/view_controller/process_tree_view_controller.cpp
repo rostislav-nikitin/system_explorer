@@ -132,6 +132,14 @@ namespace SystemExplorer
 
                 entries.push_back(wxAcceleratorEntry(static_cast<wxAcceleratorEntryFlags>(
                     (int)wxACCEL_CTRL | (int)wxACCEL_SHIFT), (int)'O', static_cast<int>(ProcessContextMenuId::Open)));
+                entries.push_back(wxAcceleratorEntry(static_cast<wxAcceleratorEntryFlags>(
+                    (int)wxACCEL_CTRL | (int)wxACCEL_SHIFT), (int)'X', static_cast<int>(ProcessContextMenuId::ExpandAll)));
+                entries.push_back(wxAcceleratorEntry(static_cast<wxAcceleratorEntryFlags>(
+                    (int)wxACCEL_CTRL | (int)wxACCEL_SHIFT), (int)'L', static_cast<int>(ProcessContextMenuId::CollapseAll)));
+                entries.push_back(wxAcceleratorEntry(static_cast<wxAcceleratorEntryFlags>(
+                    (int)wxACCEL_CTRL | (int)wxACCEL_SHIFT), (int)'A', static_cast<int>(ProcessContextMenuId::About)));
+                entries.push_back(wxAcceleratorEntry(static_cast<wxAcceleratorEntryFlags>(
+                    (int)wxACCEL_ALT), WXK_F4, static_cast<int>(ProcessContextMenuId::Close)));
 
                 //	entries.push_back(wxAcceleratorEntry(wxACCEL_CTRL, (int) 'O', static_cast<int>(ProcessContextMenuId::Open)));
                 wxAcceleratorTable table(entries.size(), &entries[0]);
@@ -216,7 +224,7 @@ namespace SystemExplorer
 		    	_searchableTreeList->AppendColumn(_T("PID"), 64, wxALIGN_RIGHT, wxCOL_RESIZABLE | wxCOL_SORTABLE);
                 _searchableTreeList->AppendColumn(_T("CPU, %"), 88, wxALIGN_RIGHT, wxCOL_RESIZABLE | wxCOL_SORTABLE);
                 _searchableTreeList->AppendColumn(_T("State"), 72, wxALIGN_LEFT, wxCOL_RESIZABLE | wxCOL_SORTABLE);
-                _searchableTreeList->AppendColumn(_T("VM, Mb"), 84, wxALIGN_RIGHT, wxCOL_RESIZABLE | wxCOL_SORTABLE);
+                _searchableTreeList->AppendColumn(_T("VM, Gib"), 84, wxALIGN_RIGHT, wxCOL_RESIZABLE | wxCOL_SORTABLE);
                 _searchableTreeList->AppendColumn(_T("Resident, Mb"), 116, wxALIGN_RIGHT, wxCOL_RESIZABLE | wxCOL_SORTABLE);
                 _searchableTreeList->AppendColumn(_T("Swapped, Mb"), 120, wxALIGN_RIGHT, wxCOL_RESIZABLE | wxCOL_SORTABLE);
                 _searchableTreeList->AppendColumn(_T("Threads"), 88, wxALIGN_RIGHT, wxCOL_RESIZABLE | wxCOL_SORTABLE);
@@ -263,6 +271,13 @@ namespace SystemExplorer
                 AppendMenuItem(_processContextMenu, SignalManager::GetSignal("SIGSTOP"), PROCESS_CONTEXT_MENU_SIGNAL_BASE, "Stop");
                 AppendMenuItem(_processContextMenu, SignalManager::GetSignal("SIGCONT"), PROCESS_CONTEXT_MENU_SIGNAL_BASE, "Continue");
 
+                _processContextMenu->AppendSeparator();
+                _processContextMenu->Append(static_cast<int>(ProcessContextMenuId::ExpandAll), wxT("&Expand All\tCtrl+Shift+X"), wxT("Expand All"));
+                _processContextMenu->Append(static_cast<int>(ProcessContextMenuId::CollapseAll), wxT("&Collapse All\tCtrl+Shift+L"), wxT("Collapse All"));
+                _processContextMenu->AppendSeparator();
+                _processContextMenu->Append(static_cast<int>(ProcessContextMenuId::About), wxT("&About\tCtrl+Shift+A"), wxT("About"));
+                _processContextMenu->AppendSeparator();
+                _processContextMenu->Append(static_cast<int>(ProcessContextMenuId::Close), wxT("&Close\tAlt+F4"), wxT("Close"));
             }
 
             void ProcessTreeViewController::SetFocus()
@@ -385,6 +400,7 @@ namespace SystemExplorer
 
                 int menuItemId = event.GetId();
                 //std::cout << "OnMenuItem" << menuItemId << std::endl;
+                AboutDialogViewController *dlgAbout;
 
                 if ((menuItemId >= PROCESS_CONTEXT_MENU_ROOT_BASE) && (menuItemId < (PROCESS_CONTEXT_MENU_ROOT_BASE + PROCESS_CONTEXT_MENU_RANGE_SIZE)))
                 {
@@ -392,6 +408,21 @@ namespace SystemExplorer
                     {
                     case ProcessContextMenuId::Open:
                         wxMessageBox("Open Process Details", "Not Implemented Yet.", wxOK | wxICON_INFORMATION, this->_book->GetParent());
+                        break;
+                    case ProcessContextMenuId::ExpandAll:
+                        _searchableTreeList->ExpandAll();
+                        break;
+                    case ProcessContextMenuId::CollapseAll:
+                        _searchableTreeList->CollapseAll();
+                        break;
+                    case ProcessContextMenuId::About:
+                        //wxMessageBox("About", "Not Implemented Yet.", wxOK | wxICON_INFORMATION, this->_book->GetParent());
+                        dlgAbout = new AboutDialogViewController(GetTopFrame());
+                        dlgAbout->ShowModal();
+
+                        break;
+                    case ProcessContextMenuId::Close:
+                        GetTopFrame()->Close(true);
                         break;
                     case ProcessContextMenuId::KillSigTerm:
                         SendSignalToSelectedProcesses(SIGTERM);
