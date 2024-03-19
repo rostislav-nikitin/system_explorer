@@ -3,6 +3,7 @@
 
 #include <string>
 #include <vector>
+#include <algorithm>
 
 #include <wx/wx.h>
 #include <wx/bookctrl.h>
