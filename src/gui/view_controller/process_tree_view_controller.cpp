@@ -131,11 +131,11 @@ namespace SystemExplorer
                             });
 
                 entries.push_back(wxAcceleratorEntry(static_cast<wxAcceleratorEntryFlags>(
-                    (int)wxACCEL_CTRL | (int)wxACCEL_SHIFT), (int)'O', static_cast<int>(ProcessContextMenuId::Open)));
+                    (int)wxACCEL_CTRL), (int)'O', static_cast<int>(ProcessContextMenuId::Open)));
                 entries.push_back(wxAcceleratorEntry(static_cast<wxAcceleratorEntryFlags>(
-                    (int)wxACCEL_CTRL | (int)wxACCEL_SHIFT), (int)'X', static_cast<int>(ProcessContextMenuId::ExpandAll)));
+                    (int)wxACCEL_CTRL), (int)'E', static_cast<int>(ProcessContextMenuId::ExpandAll)));
                 entries.push_back(wxAcceleratorEntry(static_cast<wxAcceleratorEntryFlags>(
-                    (int)wxACCEL_CTRL | (int)wxACCEL_SHIFT), (int)'L', static_cast<int>(ProcessContextMenuId::CollapseAll)));
+                    (int)wxACCEL_CTRL), (int)'L', static_cast<int>(ProcessContextMenuId::CollapseAll)));
                 entries.push_back(wxAcceleratorEntry(static_cast<wxAcceleratorEntryFlags>(
                     (int)wxACCEL_CTRL | (int)wxACCEL_SHIFT), (int)'A', static_cast<int>(ProcessContextMenuId::About)));
                 entries.push_back(wxAcceleratorEntry(static_cast<wxAcceleratorEntryFlags>(
@@ -241,7 +241,7 @@ namespace SystemExplorer
                 this->SetSizer(_bsSizer);
 
                 _processContextMenu = new wxMenu();
-                _processContextMenu->Append(static_cast<int>(ProcessContextMenuId::Open), wxT("&Open\tCtrl+Shift+O"), wxT("Open"));
+                _processContextMenu->Append(static_cast<int>(ProcessContextMenuId::Open), wxT("&Open\tCtrl+O"), wxT("Open"));
                 _processContextMenu->AppendSeparator();
 
                 wxMenu *signalTypesMenu = new wxMenu();
@@ -272,8 +272,8 @@ namespace SystemExplorer
                 AppendMenuItem(_processContextMenu, SignalManager::GetSignal("SIGCONT"), PROCESS_CONTEXT_MENU_SIGNAL_BASE, "Continue");
 
                 _processContextMenu->AppendSeparator();
-                _processContextMenu->Append(static_cast<int>(ProcessContextMenuId::ExpandAll), wxT("&Expand All\tCtrl+Shift+X"), wxT("Expand All"));
-                _processContextMenu->Append(static_cast<int>(ProcessContextMenuId::CollapseAll), wxT("&Collapse All\tCtrl+Shift+L"), wxT("Collapse All"));
+                _processContextMenu->Append(static_cast<int>(ProcessContextMenuId::ExpandAll), wxT("&Expand All\tCtrl+E"), wxT("Expand All"));
+                _processContextMenu->Append(static_cast<int>(ProcessContextMenuId::CollapseAll), wxT("&Collapse All\tCtrl+L"), wxT("Collapse All"));
                 _processContextMenu->AppendSeparator();
                 _processContextMenu->Append(static_cast<int>(ProcessContextMenuId::About), wxT("&About\tCtrl+Shift+A"), wxT("About"));
                 _processContextMenu->AppendSeparator();
