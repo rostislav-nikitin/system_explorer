@@ -54,7 +54,7 @@ namespace SystemExplorer
             {
                 _scSearch = new wxSearchCtrl(this, id, _T(""), wxPoint(0,0), wxSize(100, 32));
 		        _scSearch->SetDescriptiveText("Filter");
-
+                
 		        _tlcTreeList = new wxTreeListCtrl(this, wxID_ANY, wxPoint(0,0), wxSize(100, 100), wxTL_MULTIPLE);
                 _tlcTreeList->SetImageList(_imageList);
 		        _tlcTreeList->SetWindowStyle(wxBORDER_NONE);
@@ -65,6 +65,11 @@ namespace SystemExplorer
 		        this->SetSizer(_bsSizer);
 
                 BindEvents();
+            }
+
+            void SearchableTreeListControl::AutoComplete(wxArrayString choices)
+            {
+                _scSearch->AutoComplete(choices);
             }
 
             void SearchableTreeListControl::BindEvents()

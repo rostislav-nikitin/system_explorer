@@ -18,11 +18,16 @@ namespace FS
         std::string get_name() const;
         std::string get_path() const;
         std::string get_full_name() const;
+
+        static bool exists(std::string path);
     };
 
     class Directory
     {
     public:
+        static std::string get_home_directory();
+        static bool exists(std::string path);
+        static void create(std::string path);
         static std::vector<File> get_files(std::string path);
     };
 }

@@ -5,6 +5,8 @@
 #include <sys/stat.h>
 #include <dirent.h>
 #include <fcntl.h>
+#include <unistd.h>
+#include <pwd.h>
 #include <stdio.h>
 
 #include <algorithm>

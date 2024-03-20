@@ -22,9 +22,88 @@ namespace SystemExplorer
             {
             }
 
+            void ProcessTreeViewController::LoadUserProfile()
+            {
+                LoadUserProfileAutoCompletionChoices();
+            }
+
+            std::string ProcessTreeViewController::GetConfigPath() const
+            {
+                return FS::Directory::get_home_directory() 
+                    + "/" + std::string(RELATIVE_CONFIG_PATH);
+            }
+            std::string ProcessTreeViewController::GetProcessesAutoCompleteChoicesPath() const
+            {
+                return GetConfigPath() + "/" + std::string(PROCESSES_AUTOCOMPLETE_CHOICES_PATH);
+
+            }
+            void ProcessTreeViewController::LoadUserProfileAutoCompletionChoices()
+            {
+                // 01. Check user/system_explorer dir exists ~/.system_explorer/
+                std::string processes_autocomplete_choices_path = GetProcessesAutoCompleteChoicesPath();
+
+                if(FS::File::exists(processes_autocomplete_choices_path))
+                {
+                    std::ifstream config (processes_autocomplete_choices_path);
+                    std::string choice;
+                    while(config >> choice)
+                    {
+                        _autoCompleteChoices.insert(choice);
+                        //std::cout << choice << std::endl;
+                    }
+                }
+                // 02. If processes_autocomplete_choices.dat exists
+                // 03. Then load data to set
+                // [On autocomplete setup] Set -> wxArrayString
+            }
+
+            bool ProcessTreeViewController::UpdateAutoCompleteChoices()
+            {
+                bool result = false;
+
+                if(_autoCompleteChoices.find(_searchableTreeList->GetSearchText()) == _autoCompleteChoices.end())
+                {
+                    _autoCompleteChoices.insert(_searchableTreeList->GetSearchText());
+                    result = true;
+                }
+
+                //std::cout << __PRETTY_FUNCTION__ <<"; result=" << result << std::endl;
+
+                return result;
+            }
+            void ProcessTreeViewController::SaveAutoCompleteChoices()
+            {
+                //std::cout << __PRETTY_FUNCTION__  << std::endl;
+                std::string autocompleteChoicesPath = GetProcessesAutoCompleteChoicesPath();
+                if(!FS::File::exists(autocompleteChoicesPath))
+                {
+                    //std::cout << "File not exists" << "::" << GetConfigPath() << std::endl;
+                    if(!FS::Directory::exists(GetConfigPath()))
+                    {
+                        //std::cout << "Create dir" << std::endl;
+                        FS::Directory::create(GetConfigPath());
+                    }
+                }
+
+                std::ofstream autoCompleteChoices(autocompleteChoicesPath);
+                std::copy(_autoCompleteChoices.begin(), _autoCompleteChoices.end(), 
+                std::ostream_iterator<std::string>(autoCompleteChoices, "\n"));
+            }
+
+            void ProcessTreeViewController::SetAutoCompleteChoices()
+            {
+                wxArrayString autoCompleteChoices;
+                std::copy(_autoCompleteChoices.begin(), _autoCompleteChoices.end(), std::back_inserter(autoCompleteChoices));
+                if(autoCompleteChoices.size() > 0)
+                    _searchableTreeList->AutoComplete(autoCompleteChoices);
+
+            }
+
             void ProcessTreeViewController::CreateChildControls()
             {
                 _processesStatManager.Tick();
+
+                LoadUserProfile();
 
                 CreateStatusBarField();
             	CreateHotKeys();
@@ -236,6 +315,8 @@ namespace SystemExplorer
                 
 			    _searchableTreeList->SetItemComparator(&_processesTreeListItemComparator);
 
+                SetAutoCompleteChoices();
+
                 _bsSizer = new wxBoxSizer(wxVERTICAL);
                 _bsSizer->Add(_searchableTreeList, 1, wxEXPAND | wxALL, 0);
                 this->SetSizer(_bsSizer);
@@ -397,6 +478,13 @@ namespace SystemExplorer
                 wxTreeListItems selectedItems;
                 if (!_searchableTreeList->GetSelections(selectedItems))
                     return;
+
+                if(UpdateAutoCompleteChoices())
+                {
+                    SetAutoCompleteChoices();
+                    SaveAutoCompleteChoices();
+                }
+                
 
                 int menuItemId = event.GetId();
                 //std::cout << "OnMenuItem" << menuItemId << std::endl;

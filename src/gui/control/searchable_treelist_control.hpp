@@ -87,6 +87,8 @@ namespace SystemExplorer
                 const wxString & GetItemText(wxTreeListItem item, unsigned int col = 0U) const;
                 unsigned int GetSelections(wxTreeListItems &selections) const;
 
+                void AutoComplete(wxArrayString choices);
+
                 void DataBind(std::vector<SearchableTreeListItem> &dataSource);
                 void DataReBind(std::vector<SearchableTreeListItem> &dataSource);
 

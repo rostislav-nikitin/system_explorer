@@ -4,8 +4,12 @@
 #include <string>
 #include <vector>
 #include <map>
+#include <set>
+#include <iterator>
 #include <optional>
 #include <iomanip>
+#include <istream>
+#include <fstream>
 #include <sstream>
 
 #include <wx/wx.h>
@@ -14,6 +18,8 @@
 #include <wx/cshelp.h>
 #include <wx/timer.h>
 #include <wx/imaglist.h>
+
+#include <fs/fs.hpp>
 
 #include "../../core/process_manager.hpp"
 #include "../../core/processes_stat_manager.hpp"
@@ -40,6 +46,9 @@ namespace SystemExplorer
             class ProcessTreeViewController : public ViewControllerBase
             {
             private:
+
+                const char * RELATIVE_CONFIG_PATH = ".system_explorer";
+                const char * PROCESSES_AUTOCOMPLETE_CHOICES_PATH = "processes_autocomplete_choices.dat";
             
 	  		    const int REFRESH_INTERVAL = 1000; //ms
 
@@ -62,6 +71,8 @@ namespace SystemExplorer
                 };
 
 
+                std::set<std::string> _autoCompleteChoices;
+
                 wxStatusBar *_statusBar;
                 int _sbStatIndex;
 	            std::map<int, wxAcceleratorEntry> _hotKeys;
@@ -83,6 +94,15 @@ namespace SystemExplorer
             
                 wxGauge *_gProgressBarCpu;
                 wxGauge *_gProgressBarRss;
+
+                void LoadUserProfile();
+                std::string GetConfigPath() const;
+                std::string GetProcessesAutoCompleteChoicesPath() const;
+                void LoadUserProfileAutoCompletionChoices();
+
+                void SetAutoCompleteChoices();
+                bool UpdateAutoCompleteChoices();
+                void SaveAutoCompleteChoices();
 
                 void CreateStatusBarField();
                 void CreateHotKeys();

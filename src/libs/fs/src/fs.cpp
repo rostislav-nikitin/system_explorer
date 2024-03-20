@@ -20,6 +20,44 @@ namespace FS
         return _path + std::string(1, '/') + _name;
     }
 
+    bool File::exists(std::string path)
+    {
+        bool result = access(path.c_str(), F_OK) == 0;
+
+        return result;
+    }
+
+    std::string Directory::get_home_directory()
+    {
+        struct passwd *pw = getpwuid(getuid());
+
+        const char *homedir = pw->pw_dir;
+
+        return std::string(homedir);
+    }
+
+    bool Directory::exists(std::string path)
+    {
+        bool result = false;
+
+        DIR* dir = opendir(path.c_str());
+        if (dir) 
+        {
+            result = true;
+            closedir(dir);
+        }
+
+        return result;
+    }
+
+    void Directory::create(std::string path)
+    {
+        struct stat st = {0};
+
+        if (stat(path.c_str(), &st) == -1) {
+            mkdir(path.c_str(), 0700);
+        }
+    }
     std::vector<File> Directory::get_files(std::string path)
     {
         std::vector<File> result;
