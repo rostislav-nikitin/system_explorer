@@ -182,9 +182,9 @@ namespace SystemExplorer
                 AddHotKey(PROCESS_CONTEXT_MENU_SIGNAL_BASE, SignalManager::GetSignal("SIGTERM").GetId(), wxACCEL_ALT, WXK_DELETE);
                 AddHotKey(PROCESS_CONTEXT_MENU_SIGNAL_BASE, SignalManager::GetSignal("SIGKILL").GetId(), wxACCEL_CTRL, WXK_DELETE);
                 AddHotKey(PROCESS_CONTEXT_MENU_SIGNAL_BASE, SignalManager::GetSignal("SIGSTOP").GetId(), 
-                    static_cast<wxAcceleratorEntryFlags>((int)wxACCEL_SHIFT | (int)wxACCEL_CTRL), static_cast<int>('S'));
+                    static_cast<wxAcceleratorEntryFlags>((int)wxACCEL_CTRL), static_cast<int>('P'));
                 AddHotKey(PROCESS_CONTEXT_MENU_SIGNAL_BASE, SignalManager::GetSignal("SIGCONT").GetId(), 
-                    static_cast<wxAcceleratorEntryFlags>((int)wxACCEL_SHIFT | (int)wxACCEL_CTRL), static_cast<int>('C'));
+                    static_cast<wxAcceleratorEntryFlags>((int)wxACCEL_CTRL), static_cast<int>('U'));
             }
 
             void ProcessTreeViewController::AddHotKey(int menuBase, int itemId, wxAcceleratorEntryFlags flags, int key)
