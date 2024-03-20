@@ -1,0 +1,37 @@
+#!/bin/bash
+# SPDX-License-Identifier: MIT
+#
+#	mod2opus
+#	written by Jan Engelhardt, 2004-2007,2017
+#
+#	MP3 players still lack MOD/XM/IT/MID/etc. support,
+#	but at least an OGG player was affordable.
+
+usage()
+{
+	echo "Usage:   mod2opus inputfile[...]";
+	echo "Example: mod2opus this.it";
+	exit 1;
+}
+
+qual="--bitrate 160";
+if [ -z "$1" ]; then
+	usage;
+fi;
+
+prog=$(which timidity 2>/dev/null)
+if [ -n "$prog" ]; then
+	prog="timidity -Ow1sl -idt -o-"
+fi
+if [ -z "$prog" ]; then
+	prog=$(which xmp 2>/dev/null)
+	if [ -n "$prog" ]; then
+		prog="xmp -i nearest -o-"
+	fi
+fi
+if [ -z "$prog" ]; then
+	echo "No suitable decoder found. Need timidity or xmp."
+fi
+for i in "$@"; do
+	$prog "$i" | opusenc $qual --framesize 60 - "$i.opus"
+done;

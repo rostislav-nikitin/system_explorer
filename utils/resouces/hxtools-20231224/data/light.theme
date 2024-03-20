@@ -1,0 +1,6 @@
+[Scheme]
+Name=light
+Description=Gray background with suitably-adjusted foreground colors
+ColorForeground=#000000
+ColorBackground=#c0c0c0
+ColorPalette=#000000;#800000;#006000;#804000;#000080;#800080;#006060;#999999;#555555;#c00000;#00f000;#f0f000;#0000ff;#f000f0;#00ffff;#ffffff

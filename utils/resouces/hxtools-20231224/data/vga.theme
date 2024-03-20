@@ -1,0 +1,8 @@
+# slight modification for blue (due to backgrounds)
+[Scheme]
+Name=vga
+Description=VGA
+ColorForeground=#999999
+ColorBackground=#000000
+ColorBold=#c0c0c0
+ColorPalette=#000000;#aa0000;#00aa00;#aa5500;#000099;#aa00aa;#00aaaa;#aaaaaa;#555555;#ff5555;#55ff55;#ffff55;#5555ff;#ff55ff;#55ffff;#ffffff

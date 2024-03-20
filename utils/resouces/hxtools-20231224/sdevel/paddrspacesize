@@ -1,0 +1,32 @@
+#!/usr/bin/perl
+# SPDX-License-Identifier: MIT
+#
+#	Print size of adress space
+#	written by Jan Engelhardt, 2007
+
+use strict;
+use warnings;
+our $COMPAT_PROC = ""; # FreeBSD:/compat/linux
+local *FH;
+
+print "#### This script uses a heuristic, so may not be accurate\n";
+
+my @list = `ps afhx -o pid,command`;
+foreach my $line (@list) {
+	my($pid, $reset) = ($line =~ /^\s*(\d+)\s+(.*)/);
+	my $bitness = 0;
+
+	if (!open(FH, "< $COMPAT_PROC/proc/$pid/maps")) {
+		next;
+	}
+
+	while (defined(my $subline = <FH>)) {
+		$subline =~ /^([0-9a-f]+)/i;
+		if ($bitness < length($1)) {
+			$bitness = length($1);
+		}
+	}
+
+	printf "[%2s] %s", $bitness == 0 ? "--" : 4 * $bitness, $line;
+	close FH;
+}

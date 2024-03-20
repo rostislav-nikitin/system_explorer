@@ -1,0 +1,419 @@
+#!/usr/bin/perl
+# SPDX-License-Identifier: MIT
+# SPDX-FileCopyrightText: 2010 Jan Engelhardt
+#
+#	gpsh
+#	A script to start playing files from your music archive
+#	by grepping on their filename, or title (in case of mixes).
+
+use Data::Dumper;
+use lib qw(.);
+use File::Find::Rule;
+use Getopt::Long;
+use strict;
+my @opt_mplayer;
+my $opt_nomixes;
+my $opt_verbose;
+my @meta_exts = qw(.txt .m3u .tls .lyr .lop .cue .inf);
+
+&main();
+
+sub main
+{
+	my $opt_idxfile = "index.m9u",
+	my $opt_shuffle = 1;
+	my $opt_listonly;
+	my $rebuild_index;
+	my $index;
+	my $queue;
+
+	$SIG{INT} = $SIG{QUIT} = sub { exit(0); };
+
+	&Getopt::Long::Configure(qw(bundling pass_through));
+	&GetOptions(
+		"F" => \$opt_idxfile,
+		"b" => \$rebuild_index,
+		"l" => \$opt_listonly,
+		"x" => \$opt_nomixes,
+		"z" => sub { $opt_shuffle = 0 },
+		"v" => \$opt_verbose,
+		"af=s" => sub {
+			push(@opt_mplayer, "-af", $_[1]);
+		},
+		"loop=s" => sub {
+			push(@opt_mplayer, "-loop", $_[1]);
+		},
+		"O=s" => sub {
+			if ($_[1] =~ s/^M,//) {
+				push(@opt_mplayer, split(/[\t\n]/s, $_[1]));
+			}
+		},
+	);
+	if ($opt_listonly) {
+		$opt_verbose = 1;
+	}
+	if (scalar(@ARGV) == 0) {
+		@ARGV = ("");
+	}
+	foreach my $arg (@ARGV) {
+		if (substr($arg, 0, 1) ne "-") {
+			next;
+		}
+		print STDERR "\"$arg\" not recognized as option, ",
+			"interpreting it as search keyword instead.\n";
+	}
+
+	if ($rebuild_index) {
+		$index = &index_rebuild($opt_idxfile);
+	} elsif (!-e $opt_idxfile) {
+		print STDERR "[$$] No index file found at current level\n";
+		$index = &index_rebuild($opt_idxfile);
+	} elsif (-M $opt_idxfile > 1 && $opt_listonly) {
+		print STDERR "[$$] Index file older than a day\n";
+		$index = &index_rebuild($opt_idxfile);
+	} elsif (-M $opt_idxfile > 1) {
+		$index = &index_read($opt_idxfile);
+		$queue = &queue_select($index, \@ARGV);
+		# Avoid backgrounding if we have nothing to play
+		if (scalar(@$queue) > 0) {
+			print STDERR "[$$] Index file older than a day\n";
+			# It's ok to let this stick around as zombie
+			# until the exit of gpsh.
+			&schedule(\&index_rebuild, $opt_idxfile);
+		} else {
+			$index = &index_rebuild($opt_idxfile);
+			$queue = &queue_select($index, \@ARGV);
+		}
+	} else {
+		$index = &index_read($opt_idxfile);
+	}
+
+	if (!defined($queue)) {
+		$queue = &queue_select($index, \@ARGV);
+	}
+	if ($opt_listonly) {
+		return;
+	}
+	if ($opt_shuffle) {
+		@$queue = sort s_random sort { $a cmp $b } @$queue;
+	}
+	&queue_play($index, $queue);
+}
+
+sub basename
+{
+	my $s = shift @_;
+	$s =~ s{.*/}{}s;
+	return $s;
+}
+
+sub queue_select
+{
+	my($index, $argv) = @_;
+	my $queue = [];
+
+	print "[$$] Index has ", scalar(keys %$index), " entries\n";
+	foreach my $arg (@$argv) {
+		push(@$queue, sort grep {
+			($_ =~ /$arg/i || $arg eq $index->{$_}->{file}) &&
+			(!$opt_nomixes || !exists($index->{$_}->{"ofs"}))
+		} keys %$index);
+	}
+	if ($opt_verbose) {
+		foreach (@$queue) {
+			print "[$$]   \\_ $_\n";
+		}
+	}
+	print "[$$] Queue has ", scalar(keys @$queue), " entries\n";
+	return $queue;
+}
+
+sub filename_nonext
+{
+	my $ext = ($_[0] =~ /^(.*)\.[^\.]+$/)[0];
+	return defined($ext) ? $ext : $_[0];
+}
+
+sub filename_ext
+{
+	my($ext) = (shift(@_) =~ /(\.[^\.]+)$/);
+	return $ext;
+}
+
+sub filename_meta
+{
+	my $ext = shift @_;
+
+	foreach my $t (@meta_exts) {
+		if ($ext eq $t) {
+			return 1;
+		}
+	}
+	return 0;
+}
+
+sub filename_timidity
+{
+	my $ext = lc shift @_;
+
+	foreach my $t (qw(.mid .mus .rmi)) {
+		if ($ext eq $t) {
+			return 1;
+		}
+	}
+	return 0;
+}
+
+sub filename_xmp
+{
+	my $ext = lc shift @_;
+
+	foreach my $t (qw(.it .s3m .xm .mod .xm2 .j2b .psm)) {
+		if ($ext eq $t) {
+			return 1;
+		}
+	}
+	return 0;
+}
+
+sub queue_play
+{
+	my $index = shift @_;
+	my $queue = shift @_;
+
+	foreach my $title (@$queue) {
+		my $entry = $index->{$title};
+		my $ofs = 0;
+
+		if (exists $entry->{ofs}) {
+			$ofs = $entry->{ofs};
+		}
+		if (exists $entry->{parent}) {
+			$entry = $entry->{parent};
+		}
+
+		my $file = $entry->{file};
+		my $ext = &filename_ext($file);
+		$ext = lc $ext;
+
+		&print_lyr($title);
+		print STDERR "\e[1;31m$title\e[0m\n"; # ]]
+		if (&filename_timidity($ext)) {
+			# my $t = $opt_verbose ? "t" : "";
+			system "timidity", "-Os", "-idt", $file;
+			next;
+		} elsif (&filename_xmp($ext)) {
+			system "xmp", $file;
+			next;
+		}
+		if ($ext eq ".mp3" && exists($entry->{vbr})) {
+			if ($opt_nomixes) {
+				print STDERR "\e[31m(VBR file and reindexing disabled)\e[0m\n";
+			} else {
+				$file = &workaround_mp3vbr($file);
+			}
+		}
+		if ($ofs > 0) {
+			--$ofs;
+		}
+		system "mplayer", "-vo", "null", $file, "-ss", $ofs, @opt_mplayer;
+	}
+}
+
+sub print_lyr
+{
+	# A lyr file for a version may be available in a basename.
+	# If so, print a line notifying about its existence.
+	my $title = shift @_;
+	my $title2 = $title;
+	do {
+		if (-e "$title2.lyr") {
+			print STDERR "\e[1;32m[lyr]\e[0m "; # ]]
+			return;
+		}
+	} while ($title2 =~ s{\s*(?:\([^\)]+\)|\[[^\]]+\])$}{});
+	if (-e "$title.lyr") {
+		print STDERR "\e[1;32m[lyr]\e[0m "; # ]]
+	}
+}
+
+sub workaround_mp3vbr
+{
+	# MP3 ABR/VBR files have no seek index. Players fall back to computing
+	# the position using CBR semantics. (That is faster than reindexing it
+	# *everytime*, and thus a reasonable default.) However, accessing mixes
+	# requires a functional seek index, so reindex the audio file *and
+	# keep it* (which players doing on-the-fly-reindex don't - which would
+	# make it even more costly).
+	my $ifile = shift @_;
+	my $ofile = $ifile;
+	my $tmpdir = "/var/tmp/psh.$>";
+	my @stat = stat($ifile);
+
+	if (!defined($stat[0])) {
+		return $ifile;
+	}
+	#
+	# Use a path-independent name, so that gpsh can be run from
+	# subdirectories and not cause remuxing a file.
+	#
+	$ofile = "$tmpdir/$stat[0].$stat[1]";
+	if (-e $ofile) {
+		return $ofile;
+	}
+	if (!-e $tmpdir) {
+		if (!mkdir($tmpdir)) {
+			print "[$$] Could not create $tmpdir: $!\n";
+			return $ifile;
+		}
+	}
+	my $ret = system("mkvmerge", "-o", $ofile, $ifile);
+	if ($ret == -1) {
+		print "\e[31m", "mkvmerge was not found.", "\e[0m\n";
+	} elsif ($ret != 0) {
+		print "mkvmerge failed to run.\n";
+	}
+	return $ofile;
+}
+
+sub play_umx
+{
+	my $name = shift @_;
+	my $buffer;
+
+	if (!open(IN, "< $name")) {
+		warn "[$$] Could not open $name: $!\n";
+		return;
+	}
+
+	my $of = "/var/tmp/playmuch-$$.it";
+	open(OUT, "> $of");
+	read(IN, $buffer, 256);
+	$buffer =~ s{^.*?(?=IMP|SCRM|Extended Module)}{}ogs;
+	print OUT $buffer;
+	while (read(IN, $buffer, 65536)) {
+		print OUT $buffer;
+	}
+	close IN;
+	close OUT;
+
+	system "timidity", "-Os", "-id".($opt_verbose ? "t" : ""), $of;
+	unlink $of;
+}
+
+#
+# Run a sub in the background.
+#
+sub schedule
+{
+	my $sub = shift @_;
+	my $pid = fork();
+
+	if (!defined($pid)) {
+		die "[$$] Could not schedule subprocess: $!";
+		return 0;
+	} elsif ($pid == 0) {
+		&$sub(@_);
+		exit(0);
+	}
+	return $pid;
+}
+
+sub audio_file_for
+{
+	my($file) = (shift(@_) =~ m{([^/]*)\.tls$});
+	my $dir = $`;
+	if ($dir eq "") {
+		$dir = ".";
+	}
+	my $obj = File::Find::Rule->file();
+	foreach my $t (@meta_exts) {
+		$obj->not_name("*$t");
+	}
+	my @a = $obj->name("$file.*")->in($dir);
+	return shift @a;
+}
+
+sub index_rebuild
+{
+	my $idxfile = shift @_;
+	local(*DB, *FH);
+	my @audio;
+	my $track_list = {};
+
+	print "[$$] Rebuilding index\n";
+	@audio = File::Find::Rule->not_symlink()->file()->in(".");
+
+	foreach my $file (@audio) {
+		my $ext = &filename_ext($file);
+		if ($file =~ m{_noindex/}) {
+			next;
+		}
+		if (&filename_meta($ext)) {
+			next;
+		}
+		my $title = &filename_nonext($file);
+		# Collect with extension to enable tabbing on the shell
+		$track_list->{$title} = {"file" => $file};
+	}
+
+	foreach my $file (grep(/\.tls$/, @audio)) {
+		my $af = &audio_file_for($file);
+		if (!defined($af)) {
+			print "[$$]  \\__ No audio for $file\n";
+			next;
+		}
+
+		# Mark this title as being a mix and/or part of a mix.
+		# In this case, we do not want the extension,
+		# to facilitate grepping for e.g. "mix 01,02".
+		my $parent_title = &filename_nonext($af);
+		$track_list->{$parent_title}->{"ofs"} = 0;
+
+		if (!open(FH, "< $file")) {
+			next;
+		}
+		while (defined(my $line = <FH>)) {
+			chomp $line;
+			if ($line =~ m{^<<VBR>>}) {
+				# vivify hash entry, but don't waste
+				# memory for a value like 1
+				$track_list->{$parent_title}->{"vbr"} = undef;
+				next;
+			}
+			my($h, $m, $s, $title) =
+			    ($line =~ m{^\[\s*(?:(\d+):)?(\d+):(\d+)\]\s+(.+)});
+			if (!defined($title)) {
+				next;
+			}
+			$s = $h * 3600 + $m * 60 + $s;
+			$track_list->{"$parent_title,$title"} = {
+				"ofs" => $s,
+				"parent" => $track_list->{$parent_title},
+			};
+		}
+		close FH;
+	}
+
+	if (!open(DB, "> $idxfile")) {
+		die "[$$] Could not write to $idxfile: $!\n";
+	}
+	$Data::Dumper::Indent = 0;
+	$Data::Dumper::Purity = 1;
+	print DB Dumper($track_list);
+	close DB;
+	return $track_list;
+}
+
+sub index_read
+{
+	my $idxfile = shift @_;
+	do $idxfile || die "[$$] Could not read from $idxfile: $!\n";
+	return $::VAR1;
+}
+
+sub s_random
+{
+	return int(rand 2) ? 1 - (int(rand(256 ** 4)) % 3) :
+	       ((time() ^ $$ ^ int(rand(256 ** 4))) % 3) - 1;
+}

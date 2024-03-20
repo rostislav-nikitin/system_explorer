@@ -1,0 +1,23 @@
+.TH fxterm 1 "2008-02-06" "hxtools" "hxtools"
+.SH Name
+fxterm \(em start xterm with VGA color palette
+.SH Syntax
+\fBfxterm\fP [options]
+.SH Description
+A shortcut for the author's favorite xterm parameters:
+.IP "\(bu" 4
+VGA console color selection (but full saturated)
+.IP "\(bu" 4
+80x25 screen
+.IP "\(bu" 4
+visual bell
+.IP "\(bu" 4
+scrollbar invisible
+.IP "\(bu" 4
+optional font
+.SH Options
+All options are passed through to xterm. See \fBxterm\fP(1) for details.
+Using \fB\-f\fP \fIname\fP, an X bitmap font is chosen; with \fB\-fa\fP
+\fIname\fP, a fontconfig/freetype descriptor.
+.SH See also
+\fBhxtools\fP(7), \fBxterm\fP(1)

@@ -8,7 +8,7 @@ namespace SystemExplorer
         namespace Control
         {
             IconControl::IconControl(wxWindow *parent, wxWindowID id, 
-                wxString fileName, wxString labelText, wxPoint position, wxSize size) 
+                wxBitmap icon, wxString labelText, wxPoint position, wxSize size) 
                     : wxPanel(parent, id, position, size)
                 {
                     int ICON_WIDTH = 16 + 2 + 2;
@@ -20,7 +20,7 @@ namespace SystemExplorer
                     _label = new wxStaticText(this, wxID_ANY, labelText, labelPos, labelSize);
 
                     wxVector<wxBitmap> bitmaps;
-                    bitmaps.push_back(wxBitmap(fileName));
+                    bitmaps.push_back(icon);
 
                     _icon = new wxStaticBitmap(this, wxID_ANY, wxBitmapBundle::FromBitmaps(bitmaps));
 

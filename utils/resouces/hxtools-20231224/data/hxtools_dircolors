@@ -1,0 +1,161 @@
+# This mimics colors found in SUSE 5.x-8.0
+# A lot changed in https://github.com/openSUSE/aaa_base
+# commit 0fb141dad280eac5710d15e9626715e2d7cef9d1
+
+NORMAL		0	# anything else [coreutils]
+FILE		0	# file [coreutils]
+DIR		1;34	# directory [coreutils]
+LINK		1;37	# symlink; [SUSE5]
+ORPHAN		1;30	# dead link, source part; [j.eng]
+MISSING		0	# dead link, target part; [j.eng]
+FIFO		0;33	# pipe [coreutils/j.eng]
+SOCK		1;35	# socket [coreutils]
+BLOCK		40;1;33	# block device [coreutils]
+CHAR		40;1;33	# character device [coreutils]
+EXEC		1;31	# [SUSE5]
+
+# the following remain empty! (their color depends on above types then)
+# regular coreutils does not get it right, so this needs
+# coreutils(vendor:jengelh) to work
+#SUID
+#SGID
+#STICKY
+#OWR
+#OWT
+
+
+# Not-so-important (mostly historic) file extensions have been
+# commented/deleted to make processing faster
+
+#
+# Usually unneeded files [j.eng]
+#
+*~	1;30	# backups
+.bak	1;30	# backups
+
+#
+# Archives (red) [SUSE5]
+#
+.7z	0;31	# 7zip
+.Z	0;31	# LZ77/78 old-style "compress" files
+.arj	0;31	# Arj
+.bz2	0;31	# BZip2
+.cab	0;31	# Microsoft Cabinet file
+.cpio	0;31	# a different kind of tape archive
+.deb	0;31	# An .a file with cpio.gz in it
+.gz	0;31	# gzip
+# BIN/CUE explicitly not marked
+.iso	0;31	# ISO-9660 and UDF images
+.jar	0;31	# Jar (Jung Archiver, a new ARJ). Also: ZIP for Java
+.lz	0;31	# lzip compressed file
+.msi	0;31	# Microsoft installer package
+.pk3	0;31	# ZIP for Quake3 and other games
+.pkg	0;31	# Solaris-style .pkg archives
+.rpm	0;31	# RPM
+.tar	0;31	# Tape Archive
+.tgz	0;31	# tape archive with gzip compression
+.tlz	0;31	# tape archive with lzip compression
+.xz	0;31	# tukaani xz
+.zip	0;31	# classic PKZIP, Zip, etc.
+.zst	0;31	# Zstandard
+
+#
+# Logically executable (brightred) [j.eng]
+#
+# The +x bit is inconsistently set for MS platform files,
+# so at least let them appear similarly.
+#
+.bat	01;31	# MS-DOS: BAT
+.com	01;31	# MS-DOS: COM
+.exe	01;31	# MS-DOS: EXE
+.dll	01;31
+.so	01;31	# UNIX shared object
+
+#
+# Source codes (green) [j.eng]
+#
+.C	0;32	# C++ program
+.H	0;32	# C++ include files
+.S	0;32	# unpreprocessed GNU Assembler source
+.asm	0;32	# assembler code
+.c	0;32	# C program
+.cc	0;32	# C++ program
+.cpp	0;32	# C++ program
+.cxx	0;32	# C++ program
+.h	0;32	# C include files
+.hh	0;32	# C++ include files
+.hpp	0;32	# C++ include files
+.js	0;32	# JavaScript file
+.php	0;32	# PHP
+.pl	0;32	# Perl programs
+.pm	0;32	# Perl modules
+.py	0;32	# Python
+.rb	0;32	# Ruby
+.rs	0;32	# Rust
+.s	0;32	# Precompiled assembler source
+.sh	0;32	# Shell script
+
+#
+# Documents (cyan) [j.eng]
+#
+.css	0;36	# Cascading style sheet
+.csv	0;36	# CSV:comma separated values
+.doc	0;36	# Word document
+.docx	0;36	# Word document
+.htm	0;36	# HTML file
+.html	0;36	# HTML file
+.ldif	0;36	# LDAP Interchange Format
+.odt	0;36	# OpenDocument text
+.ods	0;36	# OpenDocument spreadsheet
+.odp	0;36	# OpenDocument presentation
+.pdf	0;36
+.po	0;36	# Translations
+.ps	0;36	# Postscript
+.ppt	0;36	# Powerpoint presentation/document
+.pptx	0;36	# Powerpoint presentation/document
+.rtf	0;36	# Rich Text Format
+.tex	0;36	# latex doc
+.txt	0;36	# text file
+.xls	0;36	# Excel table/document
+.xlsx	0;36	# Excel table/document
+.xml	0;36	# XML
+
+#
+# Multimedia (cyan) [j.eng]
+#
+.avi	0;36	# Audio-Video Interleaved
+.bmp	0;36	# Windows bitmap
+.flac	0;36	# Free Lossless Audio
+.gif	0;36	# CompuServer Graphics Interchange Format
+.ico	0;36	# Microsoft bitmap Icon
+.it	0;36	# Impulse Tracker Module
+.jpeg	0;36
+.JPG	0;36	# JPEG
+.jpg	0;36	# JPEG
+.m4a	0;36	# MPEG4 container with just audio
+.mid	0;36	# MIDI file
+.mka	0;36	# Matroska container (used for audio-only)
+.mkv	0;36	# Matroska container (used for video)
+.mod	0;36	# Fast Tracker Module
+.mp3	0;36	# MPEG-1 layer 3 audio
+.mp4	0;36	# MPEG-4 video
+.mpeg	0;36
+.mpg	0;36	# MPEG video
+.ogg	0;36	# OGG container (usually with Vorbis audio stream)
+.opus	0;36	# OGG container with Opus audio stream
+.otf	0;36	# OpenType CFF font
+.pbm	0;36	# Portable Bitmap
+.pgm	0;36	# Portable graymap
+.png	0;36	# Portable Network Graphics
+.ppm	0;36	# Portable Pixelmap
+.s3m	0;36	# Scream-Tracker Module
+.svg	0;36	# Scalable vector graphics
+.tif	0;36	# Tagged Image File Format
+.tiff	0;36
+.ttc	0;36	# TrueType font collection
+.ttf	0;36	# TrueType font
+.VOB	0;36	# MPEG-2 DVD Video
+.vob	0;36	# MPEG-2 DVD Video
+.wav	0;36	# RIFF Wave file
+.xm	0;36	# Fast Tracker Module
+.xpm	0;36	# X Pixmap

@@ -1,0 +1,17 @@
+.TH rezip 1 "2017-01-13" "hxtools" "hxtools"
+.SH Name
+rezip \(em recompress everything recursively
+.SH Syntax
+\fBrezip\fP \fI{ziparchive|directory}\fP...
+.SH Description
+rezip recompresses ZIP archives (including those disguised as JAR,
+and OpenDocuments), PNG and JPEG images with maximum lossless
+compression settings. It is used to improve on files which have
+originally only compressed with default settings, which are usually
+lower than maximum.
+.SH Options
+rezip takes directory names or ZIP archives as input. Passing a file
+object that is not ZIP is not supported and will leave that file
+unprocessed.
+.SH See also
+\fBhxtools\fP(7)

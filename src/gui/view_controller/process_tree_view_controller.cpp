@@ -25,6 +25,7 @@ namespace SystemExplorer
             void ProcessTreeViewController::CreateChildControls()
             {
                 _processesStatManager.Tick();
+
                 CreateStatusBarField();
             	CreateHotKeys();
 
@@ -90,8 +91,8 @@ namespace SystemExplorer
                 _gProgressBarRss->SetValue(25);
                 */
 
-                _cpuStat = new Control::IconControl(_statusBar, wxID_ANY, "./resources/cpu.png", "CPU: N/A", rect_cpu.GetPosition(), wxSize(144, 24));
-                _ramStat = new Control::IconControl(_statusBar, wxID_ANY, "./resources/ram.png", "RAM: N/A", rect_ram.GetPosition(), wxSize(176, 24));
+                _cpuStat = new Control::IconControl(_statusBar, wxID_ANY, *bin2c_cpu_png, "CPU: N/A", rect_cpu.GetPosition(), wxSize(144, 24));
+                _ramStat = new Control::IconControl(_statusBar, wxID_ANY, *bin2c_ram_png, "RAM: N/A", rect_ram.GetPosition(), wxSize(176, 24));
             }
 
        		void ProcessTreeViewController::CreateHotKeys()
@@ -175,48 +176,47 @@ namespace SystemExplorer
 
                 _imageList = new wxImageList(16, 16, false, 32);
                 // N/A
-                _imageList->Add(wxBitmap("./resources/realtime.png", wxBITMAP_TYPE_PNG));
-                _imageList->Add(wxBitmap("./resources/not_nice.png", wxBITMAP_TYPE_PNG));
-                _imageList->Add(wxBitmap("./resources/normal.png", wxBITMAP_TYPE_PNG));
-                _imageList->Add(wxBitmap("./resources/nice.png", wxBITMAP_TYPE_PNG));
+                _imageList->Add(*bin2c_realtime_png);
+                _imageList->Add(*bin2c_not_nice_png);
+                _imageList->Add(*bin2c_normal_png);
+                _imageList->Add(*bin2c_nice_png);
                 // Sleeping
-                _imageList->Add(wxBitmap("./resources/realtime-sleeping.png", wxBITMAP_TYPE_PNG));
-                _imageList->Add(wxBitmap("./resources/not_nice-sleeping.png", wxBITMAP_TYPE_PNG));
-                _imageList->Add(wxBitmap("./resources/normal-sleeping.png", wxBITMAP_TYPE_PNG));
-                _imageList->Add(wxBitmap("./resources/nice-sleeping.png", wxBITMAP_TYPE_PNG));
+                _imageList->Add(*bin2c_realtime_sleeping_png);
+                _imageList->Add(*bin2c_not_nice_sleeping_png);
+                _imageList->Add(*bin2c_normal_sleeping_png);
+                _imageList->Add(*bin2c_nice_sleeping_png);
                 // Waiting
-                _imageList->Add(wxBitmap("./resources/realtime-waiting.png", wxBITMAP_TYPE_PNG));
-                _imageList->Add(wxBitmap("./resources/not_nice-waiting.png", wxBITMAP_TYPE_PNG));
-                _imageList->Add(wxBitmap("./resources/normal-waiting.png", wxBITMAP_TYPE_PNG));
-                _imageList->Add(wxBitmap("./resources/nice-waiting.png", wxBITMAP_TYPE_PNG));
+                _imageList->Add(*bin2c_realtime_waiting_png);
+                _imageList->Add(*bin2c_not_nice_waiting_png);
+                _imageList->Add(*bin2c_normal_waiting_png);
+                _imageList->Add(*bin2c_nice_waiting_png);
                 // Idle
-                _imageList->Add(wxBitmap("./resources/realtime-idle.png", wxBITMAP_TYPE_PNG));
-                _imageList->Add(wxBitmap("./resources/not_nice-idle.png", wxBITMAP_TYPE_PNG));
-                _imageList->Add(wxBitmap("./resources/normal-idle.png", wxBITMAP_TYPE_PNG));
-                _imageList->Add(wxBitmap("./resources/nice-idle.png", wxBITMAP_TYPE_PNG));
+                _imageList->Add(*bin2c_realtime_idle_png);
+                _imageList->Add(*bin2c_not_nice_idle_png);
+                _imageList->Add(*bin2c_normal_idle_png);
+                _imageList->Add(*bin2c_nice_idle_png);
                 // Running
-                _imageList->Add(wxBitmap("./resources/realtime-running.png", wxBITMAP_TYPE_PNG));
-                _imageList->Add(wxBitmap("./resources/not_nice-running.png", wxBITMAP_TYPE_PNG));
-                _imageList->Add(wxBitmap("./resources/normal-running.png", wxBITMAP_TYPE_PNG));
-                _imageList->Add(wxBitmap("./resources/nice-running.png", wxBITMAP_TYPE_PNG));
+                _imageList->Add(*bin2c_realtime_running_png);
+                _imageList->Add(*bin2c_not_nice_running_png);
+                _imageList->Add(*bin2c_normal_running_png);
+                _imageList->Add(*bin2c_nice_running_png);
                 // Stopped
-                
-                _imageList->Add(wxBitmap("./resources/realtime-stopped.png", wxBITMAP_TYPE_PNG));
-                _imageList->Add(wxBitmap("./resources/not_nice-stopped.png", wxBITMAP_TYPE_PNG));
-                _imageList->Add(wxBitmap("./resources/normal-stopped.png", wxBITMAP_TYPE_PNG));
-                _imageList->Add(wxBitmap("./resources/nice-stopped.png", wxBITMAP_TYPE_PNG));
+                _imageList->Add(*bin2c_realtime_stopped_png);
+                _imageList->Add(*bin2c_not_nice_stopped_png);
+                _imageList->Add(*bin2c_normal_stopped_png);
+                _imageList->Add(*bin2c_nice_stopped_png);
                 
                 // Killed
-                _imageList->Add(wxBitmap("./resources/realtime-killed.png", wxBITMAP_TYPE_PNG));
-                _imageList->Add(wxBitmap("./resources/not_nice-killed.png", wxBITMAP_TYPE_PNG));
-                _imageList->Add(wxBitmap("./resources/normal-killed.png", wxBITMAP_TYPE_PNG));
-                _imageList->Add(wxBitmap("./resources/nice-killed.png", wxBITMAP_TYPE_PNG));
+                _imageList->Add(*bin2c_realtime_killed_png);
+                _imageList->Add(*bin2c_not_nice_killed_png);
+                _imageList->Add(*bin2c_normal_killed_png);
+                _imageList->Add(*bin2c_nice_killed_png);
 
                 // Zombie
-                _imageList->Add(wxBitmap("./resources/realtime-zombie.png", wxBITMAP_TYPE_PNG));
-                _imageList->Add(wxBitmap("./resources/not_nice-zombie.png", wxBITMAP_TYPE_PNG));
-                _imageList->Add(wxBitmap("./resources/normal-zombie.png", wxBITMAP_TYPE_PNG));
-                _imageList->Add(wxBitmap("./resources/nice-zombie.png", wxBITMAP_TYPE_PNG));
+                _imageList->Add(*bin2c_realtime_zombie_png);
+                _imageList->Add(*bin2c_not_nice_zombie_png);
+                _imageList->Add(*bin2c_normal_zombie_png);
+                _imageList->Add(*bin2c_nice_zombie_png);
 
        			_searchableTreeList = new Control::SearchableTreeListControl(this, wxID_ANY, _imageList);
     			

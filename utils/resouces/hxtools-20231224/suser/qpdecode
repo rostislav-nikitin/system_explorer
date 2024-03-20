@@ -1,0 +1,3 @@
+#!/usr/bin/perl -lp
+# SPDX-License-Identifier: MIT
+s{=(..)}{pack("H*",$1)}egs;

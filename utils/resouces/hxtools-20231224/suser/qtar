@@ -1,0 +1,141 @@
+#!/usr/bin/perl
+# SPDX-License-Identifier: MIT
+#
+#	quicker tar + better defaults
+#	written by Jan Engelhardt, 2007-2010
+#
+#	Achieves higher compression by using dedicated file sorting
+#	to put similar blocks next to each other.
+
+use File::Find;
+use Getopt::Long;
+use IPC::Open2;
+use strict;
+
+my @excludes = ();
+my $strategy = "by_normal";
+my $packer = undef;
+my @result;
+&main();
+
+sub main
+{
+	Getopt::Long::Configure(qw(bundling pass_through));
+	GetOptions(
+		"x"   => sub { push(@excludes, qr{(?:^|/)(?:\.git|\.svn|\.bzr|\.hg|CVS)(?:/|$)}); },
+		"svn" => sub { $strategy = "by_basename";  }, # lame alias I agree
+		"ext" => sub { $strategy = "by_extension"; },
+		"use=s" => sub { $packer = $_[1]; },
+	);
+
+	if (scalar(@ARGV) == 0) {
+		die "No output file. What gives?\n";
+	}
+
+	my $archive = shift @ARGV;
+	if (!defined($packer)) {
+		if (substr($archive, -3, 3) eq ".xz" ||
+		    substr($archive, -4, 4) eq ".txz") {
+			$packer = "xz";
+		} elsif (substr($archive, -4, 4) eq ".bz2" ||
+		    substr($archive, -5, 5) eq ".tbz2") {
+			$packer = "bzip2";
+		} elsif (substr($archive, -3, 3) eq ".gz" ||
+		    substr($archive, -4, 4) eq ".tgz") {
+			$packer = "gzip";
+		} elsif (substr($archive, -4, 4) eq ".tar") {
+			$packer = undef;
+		} elsif (substr($archive, -3, 3) eq ".lz") {
+			$packer = "lzip";
+		} elsif (substr($archive, -4, 4) eq ".zst") {
+			$packer = "zstd";
+		}
+	}
+
+	my @targets = grep(/^[^-]/, @ARGV);
+	if (scalar(@targets) == 0) {
+		die "No input directories. What gives?\n";
+	}
+	foreach (@targets) {
+		if (!-e $_) {
+			warn "WARNING: Cannot find \"$_\": $!\n";
+		}
+	}
+	File::Find::find({
+		wanted => \&collect,
+		no_chdir => 1,
+	}, @targets);
+	@ARGV   = grep /^-/, @ARGV;
+	@result = sort $strategy @result;
+
+	&push_files($archive, \@result, \@ARGV);
+}
+
+sub by_normal
+{
+	return $a cmp $b;
+}
+
+sub by_basename
+{
+	my($p, $q) = ($a, $b);
+	if (-d $p && !-d $q) {
+		return -1;
+	}
+	if (!-d $p && -d $q) {
+		return 1;
+	}
+	$p =~ s{.*/}{}g;
+	$q =~ s{.*/}{}g;
+	return $p cmp $q;
+}
+
+sub by_extension
+{
+	my($p, $q) = ($a, $b);
+	if (-d $p && !-d $q) {
+		return -1;
+	}
+	if (!-d $p && -d $q) {
+		return 1;
+	}
+	if (-d $p && -d $q) {
+		return &by_basename();
+	}
+	# Both are files:
+	$p =~ s{.*\.(\w+)$}{$1};
+	$q =~ s{.*\.(\w+)$}{$1};
+	if ($p ne $q) {
+		return $p cmp $q;
+	}
+	# Same extension
+	return &by_basename();
+}
+
+sub collect
+{
+	foreach my $regex (@excludes) {
+		if ($_ =~ $regex) {
+			return;
+		}
+	}
+	push(@result, $_);
+}
+
+sub push_files
+{
+	local *COUT;
+	my @args = (
+		"tar", "--no-recursion", "--null", "-T-",
+		defined($packer) ? "--use=$packer" : (),
+		"--owner=root", "--group=root",
+		"-cvf", $_[0], @{$_[2]},
+	);
+
+	if (!open(\*COUT, "|-", @args)) {
+		die "Could not run tar: $!\n";
+	}
+	print COUT join("\x00", @{$_[1]});
+	close COUT;
+	return 0;
+}

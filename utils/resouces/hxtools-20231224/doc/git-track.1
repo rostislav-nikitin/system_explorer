@@ -1,0 +1,14 @@
+.TH git-track 1 "2008-11-18" "hxtools" "hxtools"
+.SH Name
+git-track \(em set up branch for tracking a remote
+.SH Syntax
+\fBgit\-track\fP \fIremote\fP\fB/\fP\fIbranch\fP
+.SH Description
+Wrapper to call
+.PP
+.nf
+	git config branch.<current>.remote = <nickname>
+	git config branch.<current>.merge = <remote-ref>
+.fi
+.SH See also
+\fBhxtools\fP(7)

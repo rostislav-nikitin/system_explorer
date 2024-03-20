@@ -1,0 +1,73 @@
+.TH gpsh 1 "2015-03-11" "hxtools" "hxtools"
+.SH Name
+gpsh \(em select audio files by name and play them
+.SH Syntax
+\fBgpsh\fP [\fB\-F\fP \fIindex.m9u\fP] [\fB-OM,\fP\fIopt\fP]
+[\fB\-blvxz\fP] \fIpatterns\fP...
+.SH Description
+gpsh is a utility that will search the current directory for audio/video files
+by matching their path and filename with regular expression patterns presented
+on the command line, and feeding them to a multimedia player. gpsh is capable
+of reading special tracklist files which contain subtrack names and their
+associated time positions.
+.PP
+When no pattern is given, all entries are selected. By default, all entries
+which matched a particular pattern are played back in random order, but order
+between patterns is retained.
+.SH Options
+.TP
+\fB\-F\fP \fIindex.m9u\fP
+Give the path to the master index file. It is just a dump of the internal array
+state in Perl form, so M9U is not exactly a format of its own. This index
+contains: filename, and title and offset (for subtracks inside mixes).
+.TP
+\fB\-OM,\fP\fImplayer_opt\fP
+Pass an extra argument to mplayer.
+.TP
+\fB\-b\fP
+Do index rebuild in foreground.
+.TP
+\fB\-l\fP
+Only grep the database.
+.TP
+\fB\-v\fP
+Do print the playlist (can be very long).
+.TP
+\fB\-x\fP
+Ignore subtracks in a mix, and also avoid reindexing of VBR files.
+.TP
+\fB\-z\fP
+Do not shuffle the play queue / play back in lexicographic order.
+.TP
+\fB\-\-loop\fP \fIn\fP
+Passes the -loop option to mplayer. Note that the option has \fBtwo\fP
+dashes for gpsh.
+.SH Index
+gpsh keeps an index cache, and refreshes it in the background when it is older
+than a day. If there is no index yet, playing files will be delayed until it
+exists. Directories and files whose name without extension ends in "_noindex"
+will be skipped.
+.SH Tracklists for mixes
+gpsh scans all .tls files for the following pattern used to denote a subtrack
+in a big mix of the same basename:
+.PP
+/^\\[(?:(\d+):)?(\d+):(\d+)\\](.*)/
+.PP
+Example: Audio file: "DJ Doboy - Trancequility volume 01.mp3",
+Tracklist: "DJ Doboy - Trancequility volume 01.tls",
+TL content: "[48:29] Paul van Dyk - For an angel".
+.SH Regex search
+gpsh uses a Perl regular expression search across file name (mix name, if any)
+and subtrack name.
+.PP
+Example: gpsh 'doboy.*trancequility.*paul.van.dyk'
+.PP
+Would cause gpsh to search for all PVD tracks in Doboy's Trancequility
+mixes. mplayer will be invoked on "DJ Doboy - Trancequility volume 01.mp3"
+with automatic seeking to position 48:29, for example.
+.SH Extra options
+gpsh \-OM,\-af\-clr chillout
+.PP
+Will invoke mplayer instances with the "\-af\-clr" option.
+.SH See also
+\fBhxtools\fP(7)

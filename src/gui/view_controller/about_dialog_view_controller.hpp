@@ -3,6 +3,7 @@
 
 #include <wx/dialog.h>
 
+#include "../../resources/resources.icons.h"
 #include "view_controller_base.hpp"
 
 namespace SystemExplorer

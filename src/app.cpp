@@ -3,8 +3,9 @@
 #include <wx/wx.h>
 #include <wx/bookctrl.h>
 
-#include "core/process_manager.hpp"
+#include "resources/resources.icons.h"
 
+#include "core/process_manager.hpp"
 #include "gui/view_controller/root_view_controller.hpp"
 
 namespace SystemExplorer
@@ -17,6 +18,9 @@ namespace SystemExplorer
 
     bool App::OnInit()
     {
+        wxImage::AddHandler(new wxPNGHandler()); /* plus any others needed, e.g. JPG */
+        bin2c_init_RESOURCES_ICONS_H();
+
     	if ( !wxApp::OnInit() )
 	     	return false;
 

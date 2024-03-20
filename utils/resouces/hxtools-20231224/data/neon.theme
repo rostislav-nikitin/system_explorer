@@ -1,0 +1,7 @@
+[Scheme]
+Name=neon
+Description=Offcenter colors
+ColorForeground=#aaaaaa
+ColorBackground=#080808
+ColorCursor=#afaf00
+ColorPalette=#000000;#aa0033;#81b024;#b06915;#003080;#7b5ab3;#4593a2;#91918b;#74705e;#ff2050;#a7e32e;#fdc11e;#0080ff;#af81ff;#66d9ef;#f9f9f3

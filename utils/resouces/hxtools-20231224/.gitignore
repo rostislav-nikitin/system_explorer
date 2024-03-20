@@ -1,0 +1,17 @@
+*.exe
+*.la
+*.lo
+*.o
+.deps/
+.libs/
+Makefile
+Makefile.in
+
+/aclocal.m4
+/autom4te.cache/
+/build-aux/
+/config.*
+/configure
+/configure~
+/libtool
+/stamp-h1

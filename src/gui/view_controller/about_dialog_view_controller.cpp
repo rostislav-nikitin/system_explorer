@@ -15,13 +15,11 @@ namespace SystemExplorer
             void AboutDialogViewController::CreateChildControls()
             {
                 // Main logo
-                wxBitmap *imageLogo = new wxBitmap("./resources/nut-64x64.png");
-                wxBitmapBundle *bundleLogo = new wxBitmapBundle(*imageLogo);
+                wxBitmapBundle *bundleLogo = new wxBitmapBundle(*bin2c_nut_64x64_png);
                 wxStaticBitmap *iconLogo = new wxStaticBitmap(this, wxID_ANY, *bundleLogo);
 
                 // wxWidgets logo
-                wxBitmap *imageWxLogo = new wxBitmap("./resources/wxwidgets_logo-64x48.png");
-                wxBitmapBundle *bundleWxLogo = new wxBitmapBundle(*imageWxLogo);
+                wxBitmapBundle *bundleWxLogo = new wxBitmapBundle(*bin2c_wxwidgets_logo_64x48_png);
                 wxStaticBitmap *iconWxLogo = new wxStaticBitmap(this, wxID_ANY, *bundleWxLogo);
 
                 wxBoxSizer *mainSizer = new wxBoxSizer(wxVERTICAL);

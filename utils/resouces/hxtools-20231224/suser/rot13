@@ -1,0 +1,12 @@
+#!/bin/sh
+# SPDX-License-Identifier: MIT
+#
+#	do ROT13 substituion cipher
+
+if [ "$#" -gt 1 ]; then
+	cat "$@" | tr 'A-Za-z' 'N-ZA-Mn-za-m';
+elif [ "$#" -eq 1 ]; then
+	exec tr 'A-Za-z' 'N-ZA-Mn-za-m' <"$1";
+else
+	exec tr 'A-Za-z' 'N-ZA-Mn-za-m';
+fi;

@@ -1,0 +1,85 @@
+
+== VC FONTS ==
+
+The .fnt files are to be used for the virtual console (vc, also known as
+/dev/tty1 ... tty63). These raw font files come without an explicit
+Unicode map, and are commonly using a cp437 mapping. Use
+
+	setfont xxx.fnt -u /usr/share/kbd/unimaps/cp437.uni
+
+to load it.
+
+
+== SUSE users ==
+
+You can edit /etc/sysconfig/console and set CONSOLE_FONT to the desired
+font and CONSOLE_UNICODEMAP to /usr/share/kbd/unimaps/cp437.uni.
+
+
+== KEYBOARD MAPS ==
+
+The .map files are (additional!) keyboard maps. They build up upon
+certain keyboard definitions from the "kbd" package and make some more
+keys available. If you want to load one at boot-up in openSUSE, use
+KEYTABLE in /etc/sysconfig/keyboard.
+
+de_jeng.map
+	German keymap addon:
+	- Compose key
+	- left/right tty switch using WinLeft/WinRight
+us_jeng.map:
+	US keymap addon:
+	- Compose key
+	- left/right tty switch using WinLeft/WinRight
+	- German glyphs reachable through AltGr
+us_jeng_sonyvaiou3.map
+	US keymap addon:
+	- Compose key
+	- left/right tty switch
+	- adjusted for SONY VAIO U3 keycodes
+
+
+== FONT OVERVIEW ==
+
+Unless otherwise noted,
+ - the font glyph cells are 8 pixels wide and 16 pixels high
+ - the actual font glyphs may use all of these 8 pixels
+ - the fonts were designed for a 9 pixel wide character cell
+   (IBM-style text mode, where the 9th column is a clone of
+   the 8th for positions 0xB0-0xDF, and otherwise blank)
+
+Linux fbdev makes the character cells as big as the glyph cells,
+which may make some fonts look squashed together.
+The vfontas(1) tool may be used to convert an 8x16 font to a 9x16
+font, IBM-style, for use with fbdev.
+
+
+A1.fnt
+	A font with a somewhat angular shape for the upper-case
+	and digit glyphs.
+	To be used with cp437AB.uni.
+B1.fnt
+	A font with more soft roundings in upper-case and digit glyphs.
+	To be used with cp437AB.uni.
+E1.fnt
+	a Eurostile-inspired geometric, sans-serif font with serifs
+	placed on a few select glyphs, reuses some dingbat glyphs from mu.
+mu0.fnt
+	sans-serif font
+	mu.fnt from the SUSE "kbd" package
+
+uefi.psf
+	Font from EFI Development Kit; license is BSD-2-Clause-Patent,
+	licensor is Intel. They seem to have derived this from
+	AST (AST Research) PremiumExec 386 laptop.
+	The font makes an appearance in some AST2x00 chips
+	(ASPEED Technologies; unrelated to AST Research),
+	and in the Getaway PC (https://youtu.be/8xcFhoYoFXE )
+
+	The font is 19 pixels high, but is designed with a pixel aspect ratio
+	of 1.0. (The regular IBM VGA 9x16 font has 0.74.)
+
+	A 80x25 screenful occupies 640x475 pixels, close enough to 640x480.
+	EFIDK also offers 100x31 (900x589) and 128x41 (1152x760), which make
+	less sense because the next standard resolutions are XGA at 1024x768
+	and XGA+ at 1152x864.

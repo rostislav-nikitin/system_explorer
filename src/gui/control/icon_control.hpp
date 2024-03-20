@@ -19,9 +19,9 @@ namespace SystemExplorer
             public:
                 IconControl(
                     wxWindow *parent, 
-                    wxWindowID id = wxID_ANY, 
-                    wxString fileName = "", 
-                    wxString labelText = "",
+                    wxWindowID id,
+                    wxBitmap icon, 
+                    wxString labelText,
                     wxPoint position = wxDefaultPosition, 
                     wxSize size = wxDefaultSize);
 

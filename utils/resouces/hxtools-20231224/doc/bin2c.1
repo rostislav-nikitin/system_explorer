@@ -1,0 +1,78 @@
+.TH bin2c 1 "2013-09-29" "hxtools" "hxtools"
+.SH Name
+bin2c \(em embed data files into C as variables
+.SH Syntax
+\fBbin2c\fP [\fB\-C\fP \fIprogram-file\fP] [\fB\-D\fP \fIdir_prefix\fP]
+[\fB\-H\fP \fIheader-file\fP] [\fB\-G\fP \fIguard-name\fP]
+[\fB\-p\fP \fInum\fP] [\fB\-v\fP] [\fB\-\-ultra\fP] [\fB\-\-wxbitmap\fP]
+\fIfile\fP...
+.SH Description
+bin2c converts files to C variables. It does so by reading the contents of each
+file supplied on the argument line and writes out C program code that defines a
+variable with the file's contents.
+.PP
+hxtools's bin2c implementation supports:
+.IP \(bu 4
+space-efficient encoding of the arbitrary data
+.IP \(bu 4
+multiple input files
+.IP \(bu 4
+creation of either a standalone .h file, or a .c/.h file pair. (See
+examples below.)
+.SH Options
+.TP
+\fB\-C\fP \fIfile\fP
+If specified, causes the variable \fBdefinition\fP to be emitted to the given
+filename.
+.TP
+\fB\-D\fP \fIdir_prefix\fP
+All filenames on the command line will be prefixed with the given directory.
+This has the implication that files will be searched relative to
+\fIdir_prefix\fP, while the variable name ending up in the C source for an
+image will remain non-prefixed.
+.TP
+\fB\-G\fP \fIname\fP
+Request that an include guard by the identifier \fIguard-name\fP is emitted
+into the header file. If \-C was specified and a .c/.h pair is generated, an
+include guard is always emitted, and the \-G option can be used to set that
+name.
+.TP
+\fB\-H\fP \fIfile\fP
+The file where the variable \fBdeclarations\fP will be emitted to. If \fB\-C\fP
+was not specified, \fIh-file\fP will not contain any header guard by default,
+and it will contain the variable definition, the latter of which will be marked
+as \fBstatic\fP (file scope).
+.TP
+\fB\-p\fP \fInum\fP
+Strip \fInum\fP leading path components when transforming input paths to
+variable names. If \fInum\fP is negative, that many trailing path components
+are \fBretained\fP. If \fB\-p\fP is not specified, the default is -1.
+.TP
+\fB\-v\fP
+Be verbose. Show all the names and filenames that bin2c will write.
+.TP
+\fB\-\-ultra\fP
+Writeout the raw data as a string literal. As the literal contains a trailing
+NUL byte, the size of the array is necessarily also one byte longer than the
+raw data, which you need to account for. (In C, it would be possible to write
+char x[3] = "ABC", but this leads to an error in C++ where x[4] is required.)
+.TP
+\fB\-\-wxbitmap\fP
+Generate C++ code that generates wxBitmap objects. (Implies Ultra encoding,
+and deals with it appropriately, too.)
+.SH Examples
+To generate a single C header file that behaves like XPM files and which is
+suitable for inclusion into a C program file of your own:
+.PP
+bin2c \-H images.h foo.png bar.png
+.PP
+To generate a .c/.h pair instead, the invocation is:
+.PP
+bin2c \-C images.c foo.png bar.png
+.PP
+This will create a C program file "images.c" containing all the definitions
+and a "images.h" that your code can use to get ahold of the declarations.
+.SH History
+hxtools's bin2c developed from the earlier png2wx.pl utility.
+.SH See also
+\fBhxtools\fP(7)

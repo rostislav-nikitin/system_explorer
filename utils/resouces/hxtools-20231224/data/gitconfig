@@ -1,0 +1,53 @@
+[core]
+	pager = less -MRSXi
+
+[color]
+	status = auto
+	branch = auto
+	diff = auto
+
+[color "branch"]
+	current = bold white
+
+[color "diff"]
+	commit = bold white blue
+	frag = magenta
+	meta = bold white blue
+
+[color "decorate"]
+	branch = bold green
+	remotebranch = bold magenta
+	tag = bold yellow
+	stash = bold blue
+	HEAD = bold cyan
+
+[alias]
+	ac = commit --amend
+	br = branch
+	ci = commit
+	co = checkout
+	cp = cherry-pick
+	dc = diff --cached
+	lg = log --oneline
+	rc = rebase --continue
+	re = rebase
+	st = status
+	up = remote update -p
+
+[push]
+	default = current
+
+[sendemail]
+	chainreplyto = 0
+	suppressfrom = 1
+	suppresscc = all
+	thread = 1
+
+[grep]
+	patternType = perl
+
+[merge]
+	conflictstyle = diff3
+
+[diff]
+	algorithm = histogram

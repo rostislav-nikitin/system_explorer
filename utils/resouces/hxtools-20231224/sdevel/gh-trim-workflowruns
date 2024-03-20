@@ -1,0 +1,10 @@
+#!/bin/bash
+if [ -z "$1" ]; then
+	echo "Usage: $0 ghuser/ghrepo"
+	exit 1
+fi
+gh api "repos/$1/actions/runs" --paginate -q '.workflow_runs[] | "\(.id)"' | \
+tail -n +2 |
+xargs -I% gh api "repos/$1/actions/runs/%" -X DELETE | \
+cat
+# needs cat to un-tty-ify stdout (else it tries to run $PAGER)

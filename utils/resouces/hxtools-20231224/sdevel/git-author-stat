@@ -1,0 +1,9 @@
+#!/bin/bash
+# SPDX-License-Identifier: MIT
+#
+#	written up by Jan Engelhardt, 2008
+#
+git shortlog "$@" | \
+perl -ne 's/(.*)\((\d+)\).*/$2: $1/,print if/^\S+/' | \
+sort -gr | \
+less -MSi;

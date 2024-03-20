@@ -1,0 +1,12 @@
+[Scheme]
+Name=amber
+Description=Amber CRT tint
+ColorForeground=#ee941b
+ColorBackground=#1a0901
+#ef951d base
+ColorPalette=#000000;#883e00;#d27c00;#a75800;#581200;#954900;#d98200;#ee941b;#893f00;#bf6c00;#ffc552;#ffe16d;#773000;#d17b00;#ffcd5a;#ffe873
+ColorBold=#ffe873
+#FG L=69.6/100
+#BG L=3.9
+#PAL 0=0    1=35.7  2=60.6  3=46.4  4=17.5  5=40.3  6=62.8  7=69.6
+#PAL 8=36.1 9=54.4 10=87.8 11=97.6 12=29.7 13=60.2 14=90.6 15=100

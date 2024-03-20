@@ -24,6 +24,11 @@ if(NOT FetchContent_Populated)
 	add_subdirectory(${googletest_SOURCE_DIR} ${googletest_BUILD_DIR})
 endif()
 
+#Resources
+add_custom_target(BuildResourcesIcons ALLDEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/resources/resources.icons.cpp)
+add_custom_command (OUTPUT ${CMAKE_CURRENT_SOURCE_DIR}/resources/resources.icons.cpp
+                     COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/build_icons_resouces.sh
+                     WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/)
 
 #Libs
 include_directories(libs/wild_card_expr/include)
@@ -34,6 +39,7 @@ add_library(fs libs/fs/src/fs.cpp)
 
 #App
 add_executable(system_explorer 
+	resources/resources.icons.cpp
 	core/models/signal_type.cpp 
 	core/models/signal.cpp  
 	core/signal_types_dict.cpp 
@@ -83,4 +89,4 @@ add_executable(proc_process_stat_parser_test_runner
 
 target_link_libraries(proc_process_stat_parser_test_runner gmock gtest ${googletest_LIBRARIES})
 
-file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/resources DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+#file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/assets DESTINATION ${CMAKE_CURRENT_BINARY_DIR})

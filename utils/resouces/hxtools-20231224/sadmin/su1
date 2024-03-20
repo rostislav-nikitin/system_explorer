@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if [[ -z "$XAUTHORITY" ]]; then
+	export XAUTHORITY="$HOME/.Xauthority";
+fi;
+
+exec /usr/bin/sudo -H -u root \
+	--preserve-env=SSH_AUTH_SOCK,DISPLAY,XAUTHORITY -- /bin/bash

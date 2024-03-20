@@ -1,0 +1,12 @@
+#set auto-load safe-path /
+handle SIGPIPE nostop nopass
+handle SIGTSTP nostop nopass
+set style address foreground black
+set style address intensity bold
+set style function foreground white
+set style function intensity bold
+set style filename foreground cyan
+set style variable foreground magenta
+set style variable intensity normal
+#set style sources off
+set pagination off
