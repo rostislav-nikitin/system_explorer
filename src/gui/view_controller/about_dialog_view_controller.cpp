@@ -7,7 +7,7 @@ namespace SystemExplorer
         namespace ViewController
         {
             AboutDialogViewController::AboutDialogViewController(wxWindow *parent, wxWindowID id)
-                : wxDialog(parent, id, "About", wxDefaultPosition, wxSize(540, 540))
+                : wxDialog(parent, id, "About", wxDefaultPosition, wxSize(600, 540))
             {
                 CreateChildControls();
             }
@@ -21,6 +21,10 @@ namespace SystemExplorer
                 // wxWidgets logo
                 wxBitmapBundle *bundleWxLogo = new wxBitmapBundle(*bin2c_wxwidgets_logo_64x48_png);
                 wxStaticBitmap *iconWxLogo = new wxStaticBitmap(this, wxID_ANY, *bundleWxLogo);
+
+                // UA logo
+                wxBitmapBundle *bundleUaLogo = new wxBitmapBundle(*bin2c_ua_64x43_png);
+                wxStaticBitmap *iconUaLogo = new wxStaticBitmap(this, wxID_ANY, *bundleUaLogo);
 
                 wxBoxSizer *mainSizer = new wxBoxSizer(wxVERTICAL);
 
@@ -36,7 +40,7 @@ Under the following terms:\n\
 \tAttribution - You must give appropriate credit , provide a link to the license, and indicate if changes were made .\n\
 \tNonCommercial - You may not use the material for commercial purposes.");
                 wxSize szLicense = stLicense->GetSize();
-                szLicense.SetHeight(190);
+                szLicense.SetHeight(150);
                 stLicense->SetMinSize(szLicense);
                 headerLeftSizer->Add(stLicense, 0, wxALL | wxALIGN_LEFT, 8);
 
@@ -45,20 +49,29 @@ Under the following terms:\n\
 
 
                 // Footer
-                wxBoxSizer *footerSizer = new wxBoxSizer(wxHORIZONTAL);
-                wxBoxSizer *footerRightSizer = new wxBoxSizer(wxVERTICAL);
+                wxBoxSizer *poweredSizer = new wxBoxSizer(wxHORIZONTAL);
+                wxBoxSizer *poweredRightSizer = new wxBoxSizer(wxVERTICAL);
 
-                footerRightSizer->Add(new wxStaticText(this, wxID_ANY, "Powered By: wxWidgets"), 0, wxALIGN_RIGHT | wxALL, 8);
-                footerRightSizer->Add(new wxStaticText(this, wxID_ANY, "Author: Rostyslav Nikitin"), 0, wxALIGN_RIGHT | wxALL, 8);
-                footerRightSizer->Add(new wxStaticText(this, wxID_ANY, "E-mail: rostislav.nikitin@gmail.com"), 0, wxALIGN_RIGHT | wxALL, 8);
+                poweredRightSizer->Add(new wxStaticText(this, wxID_ANY, "Powered By: wxWidgets"), 0, wxALIGN_RIGHT | wxALL, 8);
 
-                footerSizer->Add(iconWxLogo, 0, wxALL, 8);
-                footerSizer->Add(footerRightSizer, 1, wxEXPAND | wxALL, 8);
+                poweredSizer->Add(iconWxLogo, 0, wxALL, 8);
+                poweredSizer->Add(poweredRightSizer, 1, wxEXPAND | wxALL, 8);
+
+                // Author
+                wxBoxSizer *authorSizer = new wxBoxSizer(wxHORIZONTAL);
+                wxBoxSizer *authroRightSizer = new wxBoxSizer(wxVERTICAL);
+
+                authroRightSizer->Add(new wxStaticText(this, wxID_ANY, "Author: Rostyslav Nikitin"), 0, wxALIGN_RIGHT | wxALL, 8);
+                authroRightSizer->Add(new wxStaticText(this, wxID_ANY, "E-mail: rostislav.nikitin@gmail.com"), 0, wxALIGN_RIGHT | wxALL, 8);
+
+                authorSizer->Add(iconUaLogo, 0, wxALL, 8);
+                authorSizer->Add(authroRightSizer, 1, wxEXPAND | wxALL, 8);
 
                 wxSizer *buttonSizer = this->CreateSeparatedButtonSizer(wxCLOSE);
 
                 mainSizer->Add(headerSizer, 0, wxEXPAND | wxALL, 8);
-                mainSizer->Add(footerSizer, 0, wxEXPAND | wxALL, 8);
+                mainSizer->Add(poweredSizer, 0, wxEXPAND | wxALL, 8);
+                mainSizer->Add(authorSizer, 0, wxEXPAND | wxALL, 8);
                 mainSizer->Add(buttonSizer, 0, wxEXPAND | wxALL, 8);
                 this->SetSizer(mainSizer);
                 //this->CreateButtonSizer(wxCLOSE);

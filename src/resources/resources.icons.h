@@ -41,6 +41,7 @@ extern wxBitmap *bin2c_realtime_sleeping_png;
 extern wxBitmap *bin2c_realtime_stopped_png;
 extern wxBitmap *bin2c_realtime_waiting_png;
 extern wxBitmap *bin2c_realtime_zombie_png;
+extern wxBitmap *bin2c_ua_64x43_png;
 extern wxBitmap *bin2c_wxwidgets_logo_64x48_png;
 
 
