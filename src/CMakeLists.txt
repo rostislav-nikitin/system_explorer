@@ -44,6 +44,7 @@ add_executable(system_explorer
 	config/config.cpp
 	config/user_config.cpp
 
+	
 	core/models/signal_type.cpp 
 	core/models/signal.cpp  
 	core/signal_types_dict.cpp 
@@ -61,6 +62,8 @@ add_executable(system_explorer
 	core/parsers/proc_stat_parser.cpp
 	core/parsers/proc_process_stat_parser.cpp
 
+	gui/control/control_base.cpp
+	gui/control/searchable_control_base.cpp
 	gui/control/icon_control.cpp
 	gui/control/searchable_treelist_control.cpp
 

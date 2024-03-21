@@ -1,86 +1,46 @@
 #include "searchable_treelist_control.hpp"
+#include <iostream>
 
 namespace SystemExplorer
 {
     namespace Gui
     {
-        wxDEFINE_EVENT(custEVT_SEARCH, wxCommandEvent);
-        wxDEFINE_EVENT(custEVT_SELECTION_CHANGED, wxCommandEvent);
+        //wxDEFINE_EVENT(custEVT_SEARCH, wxCommandEvent);
+        //wxDEFINE_EVENT(custEVT_SELECTION_CHANGED, wxCommandEvent);
         wxDEFINE_EVENT(custEVT_ITEM_CONTEXT_MENU, wxCommandEvent);
-        wxDEFINE_EVENT(custEVT_MENU, wxCommandEvent);
+        //wxDEFINE_EVENT(custEVT_MENU, wxCommandEvent);
+        
 
         namespace Control
         {
-            SearchableTreeListControl::SearchableTreeListItem::
-                SearchableTreeListItem(int id, std::string text, int parentId, bool selected, 
-                        std::vector<std::string> other, int iconIndex, wxColour bgColour)
-                    :_id(id), _text(text), _parentId(parentId), _selected(selected), 
-                        _other(other), _iconIndex(iconIndex), _bgColour(bgColour)
-            {
-            }
-
-            int SearchableTreeListControl::SearchableTreeListItem::GetId() const
-            {
-                return _id;
-            }
-            int SearchableTreeListControl::SearchableTreeListItem::GetParentId() const
-            {
-                return _parentId;
-            }
-            std::string SearchableTreeListControl::SearchableTreeListItem::GetText() const
-            {
-                return _text;
-            }
-            bool SearchableTreeListControl::SearchableTreeListItem::GetSelected() const
-            {
-                return _selected;
-            }
-            std::vector<std::string> SearchableTreeListControl::SearchableTreeListItem::GetOther() const
-            {
-                return _other;
-            }
-            int SearchableTreeListControl::SearchableTreeListItem::GetIconIndex() const
-            {
-                return _iconIndex;
-            }
-            wxColour SearchableTreeListControl::SearchableTreeListItem::GetBgColour() const
-            {
-                return _bgColour;
-            }
-
             SearchableTreeListControl::SearchableTreeListControl(
                 wxWindow *parent, wxWindowID id, wxImageList *imageList) 
-                    : wxPanel(parent), _imageList(imageList)
+                    : SearchableControlBase(parent, wxID_ANY, imageList)
             {
-                _scSearch = new wxSearchCtrl(this, id, _T(""), wxPoint(0,0), wxSize(100, 32));
-		        _scSearch->SetDescriptiveText("Filter");
+                Initialize();
+            }
+
+            void SearchableTreeListControl::CreateChildControls()
+            {
+                SearchableControlBase::CreateChildControls();
                 
 		        _tlcTreeList = new wxTreeListCtrl(this, wxID_ANY, wxPoint(0,0), wxSize(100, 100), wxTL_MULTIPLE);
                 _tlcTreeList->SetImageList(_imageList);
 		        _tlcTreeList->SetWindowStyle(wxBORDER_NONE);
 
+                //std::cout << (_tlcTreeList->GetParent() == nullptr) << std::endl;
                 _bsSizer = new wxBoxSizer(wxVERTICAL);
 		        _bsSizer->Add(_scSearch, 0, wxEXPAND | wxALL, 0);
 		        _bsSizer->Add(_tlcTreeList, 1, wxEXPAND | wxALL, 0);
 		        this->SetSizer(_bsSizer);
-
-                BindEvents();
-            }
-
-            void SearchableTreeListControl::AutoComplete(wxArrayString choices)
-            {
-                _scSearch->AutoComplete(choices);
             }
 
             void SearchableTreeListControl::BindEvents()
             {
-	            _scSearch->Bind(wxEVT_SEARCHCTRL_SEARCH_BTN, &SearchableTreeListControl::scSearch_Click, this);
-	            _scSearch->Bind(wxEVT_TEXT, &SearchableTreeListControl::scSearch_Text, this);
-	            _scSearch->Bind(wxEVT_KILL_FOCUS, &SearchableTreeListControl::scSearch_OnKillFocus, this);
+                SearchableControlBase::BindEvents();
+
                 _tlcTreeList->Bind(wxEVT_CHAR, &SearchableTreeListControl::tlcTreeList_OnChar, this);
-	            _tlcTreeList->Bind(wxEVT_TREELIST_SELECTION_CHANGED, &SearchableTreeListControl::tlcTreeList_OnSelectionChanged, this);
                 _tlcTreeList->Bind(wxEVT_TREELIST_ITEM_CONTEXT_MENU, &SearchableTreeListControl::tlcTreeList_OnItemContextMenu, this);
-                //this->Bind(wxEVT_MENU, &SearchableTreeListControl::tlcTreeList_OnMenuItem, this);
             }
 
             int SearchableTreeListControl::AppendColumn(const wxString &title, int width, wxAlignment align, int flags)
@@ -88,23 +48,34 @@ namespace SystemExplorer
                 return _tlcTreeList->AppendColumn(title, width, align, flags);
             }
 
-            const wxString & SearchableTreeListControl::GetItemText(wxTreeListItem item, unsigned int col) const
+
+            unsigned int SearchableTreeListControl::GetSelections(std::vector<SearchableItem> &selections) const
             {
-                return _tlcTreeList->GetItemText(item, col);
+                std::vector<SearchableItem> searchableItems;
+
+                wxTreeListItems treeListItems;
+                int result = _tlcTreeList->GetSelections(treeListItems);
+                
+
+                std::for_each(treeListItems.begin(), treeListItems.end(), 
+                [&searchableItems, this](wxTreeListItem const &treeListItem)
+                {
+                    SearchableItem *searchableItem = 
+                        (SearchableItem *)_tlcTreeList->GetItemData(treeListItem);
+                    searchableItems.push_back(*searchableItem);
+                });
+
+                return result;
+
             }
 
-            unsigned int SearchableTreeListControl::GetSelections(wxTreeListItems &selections) const
-            {
-                return _tlcTreeList->GetSelections(selections);
-            }
-
-            void SearchableTreeListControl::DataBind(std::vector<SearchableTreeListItem> &dataSource)
+            void SearchableTreeListControl::BindData(std::vector<SearchableItem> &dataSource)
             {
                	_tlcTreeList->DeleteAllItems();
 
-                for(std::vector<SearchableTreeListItem>::const_iterator it = dataSource.begin(); it != dataSource.end(); ++it)
+                for(std::vector<SearchableItem>::const_iterator it = dataSource.begin(); it != dataSource.end(); ++it)
                 {
-                    SearchableTreeListItem item = *it;
+                    SearchableItem item = *it;
                     wxTreeListItem parent;
                     if(item.GetParentId() == 0)
                         parent = _tlcTreeList->GetRootItem();
@@ -115,7 +86,7 @@ namespace SystemExplorer
                     {
                         wxTreeListItem treeListItem = _tlcTreeList->AppendItem(parent, item.GetText());
                         
-                        _tlcTreeList->SetItemData(treeListItem, new SearchableTreeListItem(item));
+                        _tlcTreeList->SetItemData(treeListItem, new SearchableItem(item));
                         _tlcTreeList->SetItemImage(treeListItem, item.GetIconIndex(), item.GetIconIndex());
                         //std::cout << "ITEMINDEX=" << item.GetIconIndex() << std::endl;
                         for(int idx = 0; idx < item.GetOther().size(); ++idx)
@@ -129,9 +100,9 @@ namespace SystemExplorer
             
                 }
 
-                for(std::vector<SearchableTreeListItem>::const_iterator it = dataSource.begin(); it != dataSource.end(); ++it)
+                for(std::vector<SearchableItem>::const_iterator it = dataSource.begin(); it != dataSource.end(); ++it)
                 {
-                    SearchableTreeListItem item = *it;
+                    SearchableItem item = *it;
 
                     if(item.GetSelected())
                     {
@@ -143,13 +114,13 @@ namespace SystemExplorer
 
             }
 
-            void SearchableTreeListControl::DataReBind(std::vector<SearchableTreeListItem> &dataSource)
+            void SearchableTreeListControl::ReBindData(std::vector<SearchableItem> &dataSource)
             {
                 // Cases
                 // 1. Item retured
-                for(std::vector<SearchableTreeListItem>::const_iterator it = dataSource.begin(); it != dataSource.end(); ++it)
+                for(std::vector<SearchableItem>::const_iterator it = dataSource.begin(); it != dataSource.end(); ++it)
                 {
-                    SearchableTreeListItem item = *it;
+                    SearchableItem item = *it;
                     std::string text = item.GetText();
                     pid_t id = item.GetId();
                     pid_t parentId = item.GetParentId();
@@ -168,7 +139,7 @@ namespace SystemExplorer
                         if(parent.IsOk())
                         {
                             wxTreeListItem processTreeListItem = _tlcTreeList->AppendItem(parent, text);
-                            _tlcTreeList->SetItemData(processTreeListItem, new SearchableTreeListItem(item));
+                            _tlcTreeList->SetItemData(processTreeListItem, new SearchableItem(item));
                             _tlcTreeList->SetItemImage(processTreeListItem, item.GetIconIndex(), item.GetIconIndex());
                             for(int idx = 0; idx < item.GetOther().size(); ++idx)
                             {
@@ -208,7 +179,7 @@ namespace SystemExplorer
                     int id = atoi(nodePid.c_str());
 
                     auto item = std::find_if(dataSource.begin(), dataSource.end(), 
-                        [id](SearchableTreeListItem const &item){ return item.GetId() == id;  });
+                        [id](SearchableItem const &item){ return item.GetId() == id;  });
 
                     if(item == dataSource.end())
                     {
@@ -265,13 +236,6 @@ namespace SystemExplorer
                 event.Skip(); 
             }
 
-            void SearchableTreeListControl::tlcTreeList_OnAny(wxEvent &event)
-            {
-            }
-
-            void SearchableTreeListControl::tlcTreeList_OnSelectionChanged(wxTreeListEvent &event)
-            {
-            }
 
             void SearchableTreeListControl::tlcTreeList_OnItemContextMenu(wxTreeListEvent &event)
             {
@@ -282,7 +246,7 @@ namespace SystemExplorer
 
                 ProcessWindowEvent(menu_event);
             }
-
+/*
             void SearchableTreeListControl::tlcTreeList_OnMenuItem(wxCommandEvent &event)
             {
                 std::cout << "STREELIST::ON MENU ITEM" << std::endl;
@@ -293,28 +257,13 @@ namespace SystemExplorer
 
                 ProcessWindowEvent(menu_event);
             }
-
-            void SearchableTreeListControl::scSearch_Text(wxCommandEvent &event)
+*/
+            void SearchableTreeListControl::OnSearchTextClick()
             {
-                wxCommandEvent search_event(custEVT_SEARCH, GetId());
-
-                search_event.SetEventObject(this);
-                search_event.SetString("Send Clicked!");
-
-                ProcessWindowEvent(search_event);
-            }
-
-            void SearchableTreeListControl::scSearch_Click(wxCommandEvent &event)
-            {
-                _scSearch->SelectAll();
+                SearchableControlBase::OnSearchTextClick();
 	            _tlcTreeList->SetFocus();
             }
 
-            void SearchableTreeListControl::scSearch_OnKillFocus(wxFocusEvent &event)
-            {
-                _scSearch->SelectAll();
-                event.Skip();
-            }
 
             void SearchableTreeListControl::SetFocus()
             {
@@ -401,7 +350,7 @@ namespace SystemExplorer
                 for(wxTreeListItem current = _tlcTreeList->GetFirstItem(); current.IsOk(); current = _tlcTreeList->GetNextItem(current))
                 {
                     wxClientData *itemData = _tlcTreeList->GetItemData(current);
-                    SearchableTreeListItem *item = static_cast<SearchableTreeListItem *>(itemData);
+                    SearchableItem *item = static_cast<SearchableItem *>(itemData);
                     int itemId = item->GetId();
                     if(itemId == id)
                     {
@@ -413,11 +362,6 @@ namespace SystemExplorer
                 return result;
             }
 
-            std::string SearchableTreeListControl::GetSearchText() const
-            {
-                return _scSearch->GetValue().ToStdString();
-            }
-
-        }
+         }
     }
 }

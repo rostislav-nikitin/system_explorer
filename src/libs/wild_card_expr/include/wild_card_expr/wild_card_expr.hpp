@@ -1,3 +1,7 @@
+#ifndef WILD_CARD_EXPR
+#define WILD_CARD_EXPR
+
+
 #include <string>
 #include <vector>
 #include <map>
@@ -30,3 +34,5 @@ public:
 
 	size_t find(std::string const &in_str, size_t in_pos = 0);
 };
+
+#endif

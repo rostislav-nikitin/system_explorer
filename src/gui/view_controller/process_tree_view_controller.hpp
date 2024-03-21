@@ -31,6 +31,7 @@
 #include "../../core/models/process_state_helpers.hpp"
 
 #include "../control/icon_control.hpp"
+#include "../control/searchable_control_base.hpp"
 #include "../control/searchable_treelist_control.hpp"
 
 #include "view_controller_base.hpp"

@@ -414,23 +414,9 @@ namespace SystemExplorer
                 SetHelpStatusText(help);
             }
 
-
-            pid_t ProcessTreeViewController::ExtractPid(wxTreeListItem const &item) const
-            {
-                pid_t result = 0;
-
-                if (item.IsOk())
-                {
-                    wxString pidAsString = _searchableTreeList->GetItemText(item, 1);
-                    result = std::stoi(pidAsString.ToStdString());
-                }
-
-                return result;
-            }
-
             void ProcessTreeViewController::processesContextMenu_OnMenuItem(wxCommandEvent &event)
             {
-                wxTreeListItems selectedItems;
+                std::vector<Control::SearchableControlBase::SearchableItem> selectedItems;
                 if (!_searchableTreeList->GetSelections(selectedItems))
                     return;
 
@@ -487,17 +473,15 @@ namespace SystemExplorer
 
             void ProcessTreeViewController::SendSignalToSelectedProcesses(int signal) const
             {
-                wxTreeListItems selectedItems;
+                std::vector<Control::SearchableControlBase::SearchableItem> selectedItems;
                 if (!_searchableTreeList->GetSelections(selectedItems))
                     return;
 
                 std::for_each(selectedItems.begin(), selectedItems.end(),
-                            [signal, this](wxTreeListItem const &selectedItem)
-                            {
-                                pid_t pid = ExtractPid(selectedItem);
-                                ;
-                                SystemExplorer::Core::SignalManager::SendSignal(pid, signal);
-                            });
+                    [signal, this](Control::SearchableControlBase::SearchableItem const &selectedItem)
+                    {
+                        SystemExplorer::Core::SignalManager::SendSignal(selectedItem.GetId(), signal);
+                    });
             }
             template <typename T>
             std::string to_string_with_precision(const T a_value, const int n = 6)
@@ -524,7 +508,7 @@ namespace SystemExplorer
                 std::string searchFilter = _searchableTreeList->GetSearchText();
                 ProcessTree processes = pm.GetProcessTree(searchFilter);
 
-                std::vector<Control::SearchableTreeListControl::SearchableTreeListItem> items;
+                std::vector<Control::SearchableControlBase::SearchableItem> items;
 
                 for (std::map<pid_t, Process>::const_iterator it = processes.processes.begin(); it != processes.processes.end(); ++it)
                 {
@@ -554,12 +538,12 @@ namespace SystemExplorer
 
                     if (picked)
                     {
-                        Control::SearchableTreeListControl::SearchableTreeListItem item(pid, text, parentPid, matched, other, iconIndex);
+                        Control::SearchableControlBase::SearchableItem item(pid, text, parentPid, matched, other, iconIndex);
                         items.push_back(item);
                     }
                 }
 
-                _searchableTreeList->DataBind(items);
+                _searchableTreeList->BindData(items);
                 _searchableTreeList->ExpandAll();
 
                 UpdateStatusBarStatistics(processesStat);
@@ -582,10 +566,9 @@ namespace SystemExplorer
                 ProcessTree processTreeToRebind = pm.GetProcessTree(searchFilter);
               
 
-                std::vector<Control::SearchableTreeListControl::SearchableTreeListItem> items;
+                std::vector<Control::SearchableControlBase::SearchableItem> items;
                 for (std::map<pid_t, Process>::const_iterator it = processTreeToRebind.processes.begin(); it != processTreeToRebind.processes.end(); ++it)
                 {
-
                     // TODO: Fill items with data
                     pid_t pid = (*it).first;
                     pid_t parentPid = (*it).second.GetParentPid();
@@ -612,12 +595,12 @@ namespace SystemExplorer
 
                     if (picked)
                     {
-                        Control::SearchableTreeListControl::SearchableTreeListItem item(pid, text, parentPid, matched, other, iconIndex);
+                        Control::SearchableControlBase::SearchableItem item(pid, text, parentPid, matched, other, iconIndex);
                         items.push_back(item);
                     }
                 }
 
-                _searchableTreeList->DataReBind(items);
+                _searchableTreeList->ReBindData(items);
                 UpdateStatusBarStatistics(processesStat);
     //			_searchableTreeList->ExpandAll();
             }
@@ -631,27 +614,25 @@ namespace SystemExplorer
                 if(statusBar == nullptr)
                     return;
 
-
                 float selected_total_cpu = 0.0f;
                 float selected_total_rss = 0.0f;
 
-                wxTreeListItems selectedItems;
+                std::vector<Control::SearchableControlBase::SearchableItem> selectedItems;
                 if(_searchableTreeList->GetSelections(selectedItems))
                 {
                     std::for_each(selectedItems.begin(), selectedItems.end(), 
-                        [&processesStat, &selected_total_cpu, &selected_total_rss, this](wxTreeListItem const &treeListItem)
+                        [&processesStat, &selected_total_cpu, &selected_total_rss, this]
+                            (Control::SearchableControlBase::SearchableItem const &searchableItem)
                         {
-                            if(treeListItem.IsOk())
+                            pid_t pid = searchableItem.GetId();
+
+                            if(processesStat.processes_stat.find(pid) 
+                                != processesStat.processes_stat.end())
                             {
-                                pid_t pid = ExtractPid(treeListItem);
-                                if(processesStat.processes_stat.find(pid) 
-                                    != processesStat.processes_stat.end())
-                                {
-                                    selected_total_cpu += 
-                                        processesStat.processes_stat.at(pid).cpu_stat.cpu_usage_per_all_cores;
-                                    selected_total_rss += 
-                                        processesStat.processes_stat.at(pid).mem_rss;
-                                }
+                                selected_total_cpu += 
+                                    processesStat.processes_stat.at(pid).cpu_stat.cpu_usage_per_all_cores;
+                                selected_total_rss += 
+                                    processesStat.processes_stat.at(pid).mem_rss;
                             }
                         });
                 }
