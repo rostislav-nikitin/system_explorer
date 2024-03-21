@@ -40,6 +40,10 @@ add_library(fs libs/fs/src/fs.cpp)
 #App
 add_executable(system_explorer 
 	resources/resources.icons.cpp
+
+	config/config.cpp
+	config/user_config.cpp
+
 	core/models/signal_type.cpp 
 	core/models/signal.cpp  
 	core/signal_types_dict.cpp 

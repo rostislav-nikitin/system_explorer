@@ -238,6 +238,21 @@ namespace SystemExplorer
 	            wxTreeListItems selectedItems;
 	            //std::cout << keyCode << std::endl;
 
+                if(event.IsKeyInCategory(WXK_CATEGORY_NAVIGATION))
+                {
+                    wxTreeListItem selectedItem = _tlcTreeList->GetSelection();
+                    if(selectedItem.IsOk())
+                    {
+                        if(keyCode == WXK_LEFT)
+                        {
+                            _tlcTreeList->Collapse(selectedItem);
+                        }
+                        else if(keyCode == WXK_RIGHT)
+                        {
+                            _tlcTreeList->Expand(selectedItem);
+                        }
+                    }
+                }
 	            if(!event.IsKeyInCategory(WXK_CATEGORY_NAVIGATION) 
                     && (keyCode != WXK_TAB) 
                     && (keyCode >= WXK_SPACE) && (std::isalnum(keyCode) || std::ispunct(keyCode)))

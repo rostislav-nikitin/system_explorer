@@ -5,6 +5,8 @@
 
 #include "resources/resources.icons.h"
 
+#include "config/config.hpp"
+
 #include "core/process_manager.hpp"
 #include "gui/view_controller/root_view_controller.hpp"
 
@@ -24,8 +26,12 @@ namespace SystemExplorer
     	if ( !wxApp::OnInit() )
 	     	return false;
 
-        wxFrame *window = new SystemExplorer::Gui::ViewController::RootViewController();
+        Config::Config config;
+
+        wxFrame *window = new SystemExplorer::Gui::ViewController::RootViewController(config);
         window->Show(true);
+
+        std::cout << "NEXT" << std::endl;
 
     	return true;
     }

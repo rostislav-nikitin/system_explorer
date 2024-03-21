@@ -25,6 +25,8 @@ namespace FS
     class Directory
     {
     public:
+        static std::string PathSeparator;
+
         static std::string get_home_directory();
         static bool exists(std::string path);
         static void create(std::string path);

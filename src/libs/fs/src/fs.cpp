@@ -27,6 +27,8 @@ namespace FS
         return result;
     }
 
+    std::string Directory::PathSeparator = "/";
+
     std::string Directory::get_home_directory()
     {
         struct passwd *pw = getpwuid(getuid());

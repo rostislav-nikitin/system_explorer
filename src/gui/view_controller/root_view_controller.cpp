@@ -5,7 +5,9 @@ namespace SystemExplorer
     {
         namespace ViewController
         {
-            RootViewController::RootViewController() : wxFrame(nullptr, wxID_ANY, "System Explorer", wxPoint(-1, -1), wxSize(800, 600))
+            RootViewController::RootViewController(Config::Config config) 
+                : wxFrame(nullptr, wxID_ANY, "System Explorer", wxPoint(-1, -1), wxSize(800, 600)),
+                _config(config)
             {
                 using SystemExplorer::Core::ProcessManager;
                 using SystemExplorer::Gui::ViewController::ProcessTreeViewController;
@@ -18,7 +20,7 @@ namespace SystemExplorer
                 ProcessManager processManager;
 
                 _processTreeViewController = new ProcessTreeViewController(
-                    mainBook, processManager, "Processes", wxID_ANY, true);
+                    mainBook, processManager, "Processes", _config.GetUserConfig(), wxID_ANY, true);
                 _processTreeViewController->Initialize();
             }
         }

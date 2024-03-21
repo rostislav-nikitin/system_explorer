@@ -21,6 +21,8 @@
 
 #include <fs/fs.hpp>
 
+#include "../../config/user_config.hpp"
+
 #include "../../core/process_manager.hpp"
 #include "../../core/processes_stat_manager.hpp"
 #include "../../core/signal_manager.hpp"
@@ -71,7 +73,7 @@ namespace SystemExplorer
                 };
 
 
-                std::set<std::string> _autoCompleteChoices;
+                Config::UserConfig &_userConfig;
 
                 wxStatusBar *_statusBar;
                 int _sbStatIndex;
@@ -95,14 +97,8 @@ namespace SystemExplorer
                 wxGauge *_gProgressBarCpu;
                 wxGauge *_gProgressBarRss;
 
-                void LoadUserProfile();
-                std::string GetConfigPath() const;
-                std::string GetProcessesAutoCompleteChoicesPath() const;
-                void LoadUserProfileAutoCompletionChoices();
-
                 void SetAutoCompleteChoices();
                 bool UpdateAutoCompleteChoices();
-                void SaveAutoCompleteChoices();
 
                 void CreateStatusBarField();
                 void CreateHotKeys();
@@ -178,7 +174,12 @@ namespace SystemExplorer
                 virtual void PostInitialize() override;
 
             public:
-                ProcessTreeViewController(wxBookCtrl *book, SystemExplorer::Core::ProcessManager processManager, std::string title, wxWindowID id = wxID_ANY, bool useByDefault = false);
+                ProcessTreeViewController(wxBookCtrl *book, 
+                    SystemExplorer::Core::ProcessManager processManager, 
+                    std::string title, 
+                    Config::UserConfig &userConfig,
+                    wxWindowID id = wxID_ANY, 
+                    bool useByDefault = false);
                 ~ProcessTreeViewController();
             };
         }
