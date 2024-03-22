@@ -33,6 +33,7 @@
 #include "../control/icon_control.hpp"
 #include "../control/searchable_control_base.hpp"
 #include "../control/searchable_treelist_control.hpp"
+#include "../control/searchable_list_control.hpp"
 
 #include "view_controller_base.hpp"
 #include "processes_tree_list_item_comparator.hpp"
@@ -66,6 +67,7 @@ namespace SystemExplorer
                     Open,
                     ExpandAll,
                     CollapseAll,
+                    ToggleView,
                     About,
                     Close,
                     SendSignal,
@@ -73,8 +75,15 @@ namespace SystemExplorer
                     KillSigKill
                 };
 
+                enum class ViewState
+                {
+                    Tree,
+                    List
+                };
+
 
                 Config::UserConfig &_userConfig;
+                ViewState _viewState;
 
                 wxStatusBar *_statusBar;
                 int _sbStatIndex;
@@ -85,7 +94,8 @@ namespace SystemExplorer
                 wxImageList *_imageList;
                 wxMenu *_processContextMenu;
 	            wxTimer *_timer;
-	            Control::SearchableTreeListControl *_searchableTreeList;
+	            //Control::SearchableTreeListControl *_processesListControl;
+                Control::SearchableListControl *_processesListControl;
 
                 SystemExplorer::Core::ProcessManager _processManager;
                 SystemExplorer::Core::ProcessesStatManager _processesStatManager;
@@ -112,6 +122,8 @@ namespace SystemExplorer
                 void StartTimer();
                 void StopTimer();
                 void ReBindData();
+
+                void ToggleView();
 
            	    void AddHotKey(int menuBase, int itemId, wxAcceleratorEntryFlags flags, int key);
         	    std::optional<wxAcceleratorEntry> GetHotKey(int menuBase, int itemId);
@@ -156,8 +168,8 @@ namespace SystemExplorer
                 
                 void window_OnSize(wxSizeEvent& event);
 
-                void searchableTreeList_Search(wxCommandEvent &event);
-                void searchableTreeList_OnItemContextMenu(wxCommandEvent &event);
+                void processesListControl_Search(wxCommandEvent &event);
+                void processesListControl_OnItemContextMenu(wxCommandEvent &event);
 
                 void processesContextMenu_OnMenuItem(wxCommandEvent &event);
                 void processesContextMenu_OnMenuHighlight(wxMenuEvent &event);

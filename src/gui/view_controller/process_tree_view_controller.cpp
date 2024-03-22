@@ -16,7 +16,8 @@ namespace SystemExplorer
                 : ViewControllerBase(book, title, id, useByDefault), 
                     _processManager(processManager),
                     _userConfig(userConfig),
-                    _sbStatIndex(-1)
+                    _sbStatIndex(-1),
+                    _viewState(ViewState::Tree)
             {
             }
 
@@ -31,9 +32,9 @@ namespace SystemExplorer
                 std::set<std::string> _autoCompleteChoices = _userConfig.GetProcessesAutoCompleteChoices();
 
                 if(_autoCompleteChoices.find(
-                    _searchableTreeList->GetSearchText()) == _autoCompleteChoices.end())
+                    _processesListControl->GetSearchText()) == _autoCompleteChoices.end())
                 {
-                    _autoCompleteChoices.insert(_searchableTreeList->GetSearchText());
+                    _autoCompleteChoices.insert(_processesListControl->GetSearchText());
                     result = true;
                 }
 
@@ -53,7 +54,7 @@ namespace SystemExplorer
                     std::back_inserter(autoCompleteChoicesArray));
 
                 if(autoCompleteChoicesArray.size() > 0)
-                    _searchableTreeList->AutoComplete(autoCompleteChoicesArray);
+                    _processesListControl->AutoComplete(autoCompleteChoicesArray);
             }
 
             void ProcessTreeViewController::CreateChildControls()
@@ -170,6 +171,8 @@ namespace SystemExplorer
                 entries.push_back(wxAcceleratorEntry(static_cast<wxAcceleratorEntryFlags>(
                     (int)wxACCEL_CTRL), (int)'E', static_cast<int>(ProcessContextMenuId::ExpandAll)));
                 entries.push_back(wxAcceleratorEntry(static_cast<wxAcceleratorEntryFlags>(
+                    (int)wxACCEL_CTRL), (int)'T', static_cast<int>(ProcessContextMenuId::ToggleView)));
+                entries.push_back(wxAcceleratorEntry(static_cast<wxAcceleratorEntryFlags>(
                     (int)wxACCEL_CTRL), (int)'L', static_cast<int>(ProcessContextMenuId::CollapseAll)));
                 entries.push_back(wxAcceleratorEntry(static_cast<wxAcceleratorEntryFlags>(
                     (int)wxACCEL_CTRL | (int)wxACCEL_SHIFT), (int)'A', static_cast<int>(ProcessContextMenuId::About)));
@@ -179,7 +182,7 @@ namespace SystemExplorer
                 //	entries.push_back(wxAcceleratorEntry(wxACCEL_CTRL, (int) 'O', static_cast<int>(ProcessContextMenuId::Open)));
                 wxAcceleratorTable table(entries.size(), &entries[0]);
                 // processesTreeList->SetAcceleratorTable(table);
-                _searchableTreeList->SetAcceleratorTable(table);
+                _processesListControl->SetAcceleratorTable(table);
 
                 // TODO: Implement for all hot keys (think where to attach(Window|Control)?
                 // wxAcceleratorEntry es[1];
@@ -252,28 +255,30 @@ namespace SystemExplorer
                 _imageList->Add(*bin2c_normal_zombie_png);
                 _imageList->Add(*bin2c_nice_zombie_png);
 
-       			_searchableTreeList = new Control::SearchableTreeListControl(this, wxID_ANY, _imageList);
+       			//_processesListControl = new Control::SearchableTreeListControl(this, wxID_ANY, _imageList);
+                _processesListControl = new Control::SearchableListControl(this, wxID_ANY, _imageList);
     			
-	    		_searchableTreeList->AppendColumn(_T("Name"), 300, wxALIGN_LEFT, wxCOL_RESIZABLE | wxCOL_SORTABLE);
-		    	_searchableTreeList->AppendColumn(_T("PID"), 64, wxALIGN_RIGHT, wxCOL_RESIZABLE | wxCOL_SORTABLE);
-                _searchableTreeList->AppendColumn(_T("CPU, %"), 88, wxALIGN_RIGHT, wxCOL_RESIZABLE | wxCOL_SORTABLE);
-                _searchableTreeList->AppendColumn(_T("State"), 72, wxALIGN_LEFT, wxCOL_RESIZABLE | wxCOL_SORTABLE);
-                _searchableTreeList->AppendColumn(_T("VM, Gib"), 84, wxALIGN_RIGHT, wxCOL_RESIZABLE | wxCOL_SORTABLE);
-                _searchableTreeList->AppendColumn(_T("Resident, Mb"), 116, wxALIGN_RIGHT, wxCOL_RESIZABLE | wxCOL_SORTABLE);
-                _searchableTreeList->AppendColumn(_T("Swapped, Mb"), 120, wxALIGN_RIGHT, wxCOL_RESIZABLE | wxCOL_SORTABLE);
-                _searchableTreeList->AppendColumn(_T("Threads"), 88, wxALIGN_RIGHT, wxCOL_RESIZABLE | wxCOL_SORTABLE);
-                _searchableTreeList->AppendColumn(_T("Priority"), 84, wxALIGN_RIGHT, wxCOL_RESIZABLE | wxCOL_SORTABLE);
-                _searchableTreeList->AppendColumn(_T("Nice"), 64, wxALIGN_RIGHT, wxCOL_RESIZABLE | wxCOL_SORTABLE);
-                _searchableTreeList->AppendColumn(_T("CPU, #"), 88, wxALIGN_RIGHT, wxCOL_RESIZABLE | wxCOL_SORTABLE);
-                _searchableTreeList->AppendColumn(_T(""), 64, wxALIGN_RIGHT);
+	    		_processesListControl->AppendColumn(_T("Name"), 300, wxALIGN_LEFT, wxCOL_RESIZABLE | wxCOL_SORTABLE);
+		    	_processesListControl->AppendColumn(_T("PID"), 64, wxALIGN_RIGHT, wxCOL_RESIZABLE | wxCOL_SORTABLE);
+                _processesListControl->AppendColumn(_T("CPU, %"), 88, wxALIGN_RIGHT, wxCOL_RESIZABLE | wxCOL_SORTABLE);
+                _processesListControl->AppendColumn(_T("State"), 72, wxALIGN_LEFT, wxCOL_RESIZABLE | wxCOL_SORTABLE);
+                _processesListControl->AppendColumn(_T("VM, Gib"), 84, wxALIGN_RIGHT, wxCOL_RESIZABLE | wxCOL_SORTABLE);
+                _processesListControl->AppendColumn(_T("Resident, Mb"), 116, wxALIGN_RIGHT, wxCOL_RESIZABLE | wxCOL_SORTABLE);
+                _processesListControl->AppendColumn(_T("Swapped, Mb"), 120, wxALIGN_RIGHT, wxCOL_RESIZABLE | wxCOL_SORTABLE);
+                _processesListControl->AppendColumn(_T("Threads"), 88, wxALIGN_RIGHT, wxCOL_RESIZABLE | wxCOL_SORTABLE);
+                _processesListControl->AppendColumn(_T("Priority"), 84, wxALIGN_RIGHT, wxCOL_RESIZABLE | wxCOL_SORTABLE);
+                _processesListControl->AppendColumn(_T("Nice"), 64, wxALIGN_RIGHT, wxCOL_RESIZABLE | wxCOL_SORTABLE);
+                _processesListControl->AppendColumn(_T("CPU, #"), 88, wxALIGN_RIGHT, wxCOL_RESIZABLE | wxCOL_SORTABLE);
+                _processesListControl->AppendColumn(_T(""), 64, wxALIGN_RIGHT);
 
                 
-			    _searchableTreeList->SetItemComparator(&_processesTreeListItemComparator);
+                //TODO: Uncomment this
+			    //_processesListControl->SetItemComparator(&_processesTreeListItemComparator);
 
                 SetAutoCompleteChoices();
 
                 _bsSizer = new wxBoxSizer(wxVERTICAL);
-                _bsSizer->Add(_searchableTreeList, 1, wxEXPAND | wxALL, 0);
+                _bsSizer->Add(_processesListControl, 1, wxEXPAND | wxALL, 0);
                 this->SetSizer(_bsSizer);
 
                 _processContextMenu = new wxMenu();
@@ -311,6 +316,8 @@ namespace SystemExplorer
                 _processContextMenu->Append(static_cast<int>(ProcessContextMenuId::ExpandAll), wxT("&Expand All\tCtrl+E"), wxT("Expand All"));
                 _processContextMenu->Append(static_cast<int>(ProcessContextMenuId::CollapseAll), wxT("&Collapse All\tCtrl+L"), wxT("Collapse All"));
                 _processContextMenu->AppendSeparator();
+                _processContextMenu->Append(static_cast<int>(ProcessContextMenuId::ToggleView), wxT("&Toggle Tree/List\tCtrl+T"), wxT("Expand All"));
+                _processContextMenu->AppendSeparator();
                 _processContextMenu->Append(static_cast<int>(ProcessContextMenuId::About), wxT("&About\tCtrl+Shift+A"), wxT("About"));
                 _processContextMenu->AppendSeparator();
                 _processContextMenu->Append(static_cast<int>(ProcessContextMenuId::Close), wxT("&Close\tAlt+F4"), wxT("Close"));
@@ -318,15 +325,15 @@ namespace SystemExplorer
 
             void ProcessTreeViewController::SetFocus()
             {
-                _searchableTreeList->SetFocus();
+                _processesListControl->SetFocus();
             }
 
             void ProcessTreeViewController::BindEvents()
             {
                 this->Bind(wxEVT_SIZE, &ProcessTreeViewController::window_OnSize, this);
-                _searchableTreeList->Bind(custEVT_SEARCH, &ProcessTreeViewController::searchableTreeList_Search, this); 
-                _searchableTreeList->Bind(custEVT_ITEM_CONTEXT_MENU, &ProcessTreeViewController::searchableTreeList_OnItemContextMenu, this);
-                _searchableTreeList->Bind(wxEVT_MENU, &ProcessTreeViewController::processesContextMenu_OnMenuItem, this);
+                _processesListControl->Bind(custEVT_SEARCH, &ProcessTreeViewController::processesListControl_Search, this); 
+                _processesListControl->Bind(custEVT_ITEM_CONTEXT_MENU, &ProcessTreeViewController::processesListControl_OnItemContextMenu, this);
+                _processesListControl->Bind(wxEVT_MENU, &ProcessTreeViewController::processesContextMenu_OnMenuItem, this);
                 _processContextMenu->Bind(wxEVT_MENU_HIGHLIGHT, &ProcessTreeViewController::processesContextMenu_OnMenuHighlight, this);
                 _processContextMenu->Bind(wxEVT_MENU_OPEN, &ProcessTreeViewController::processesContextMenu_OnMenuOpen, this);
                 _processContextMenu->Bind(wxEVT_MENU_CLOSE, &ProcessTreeViewController::processesContextMenu_OnMenuClose, this);
@@ -379,14 +386,14 @@ namespace SystemExplorer
                 ReBindData();
             }
 
-            void ProcessTreeViewController::searchableTreeList_Search(wxCommandEvent &event)
+            void ProcessTreeViewController::processesListControl_Search(wxCommandEvent &event)
             {
                 BindData();
             }
 
-            void ProcessTreeViewController::searchableTreeList_OnItemContextMenu(wxCommandEvent &event)
+            void ProcessTreeViewController::processesListControl_OnItemContextMenu(wxCommandEvent &event)
             {
-                _searchableTreeList->PopupMenu(_processContextMenu);
+                _processesListControl->PopupMenu(_processContextMenu);
             }
 
             void ProcessTreeViewController::processesContextMenu_OnMenuOpen(wxMenuEvent &event)
@@ -414,11 +421,22 @@ namespace SystemExplorer
                 SetHelpStatusText(help);
             }
 
+            void ProcessTreeViewController::ToggleView()
+            {
+                this->_processesListControl->Destroy();
+                this->_processesListControl = nullptr;
+                if(_viewState == ViewState::Tree)
+                    _viewState = ViewState::List;
+                else if(_viewState == ViewState::List)
+                    _viewState = ViewState::Tree;
+
+                wxMessageBox("Toggle View::I am done", "Not Implemented Yet.", wxOK | wxICON_INFORMATION, this->_book->GetParent());
+            }
+
             void ProcessTreeViewController::processesContextMenu_OnMenuItem(wxCommandEvent &event)
             {
                 std::vector<Control::SearchableControlBase::SearchableItem> selectedItems;
-                if (!_searchableTreeList->GetSelections(selectedItems))
-                    return;
+                if (!_processesListControl->GetSelections(selectedItems))
 
                 if(UpdateAutoCompleteChoices())
                 {
@@ -439,10 +457,14 @@ namespace SystemExplorer
                         wxMessageBox("Open Process Details", "Not Implemented Yet.", wxOK | wxICON_INFORMATION, this->_book->GetParent());
                         break;
                     case ProcessContextMenuId::ExpandAll:
-                        _searchableTreeList->ExpandAll();
+                        _processesListControl->ExpandAll();
                         break;
                     case ProcessContextMenuId::CollapseAll:
-                        _searchableTreeList->CollapseAll();
+                        _processesListControl->CollapseAll();
+                        break;
+                    case ProcessContextMenuId::ToggleView:
+                        //wxMessageBox("Toggle View", "Not Implemented Yet.", wxOK | wxICON_INFORMATION, this->_book->GetParent());
+                        ToggleView();
                         break;
                     case ProcessContextMenuId::About:
                         //wxMessageBox("About", "Not Implemented Yet.", wxOK | wxICON_INFORMATION, this->_book->GetParent());
@@ -474,7 +496,7 @@ namespace SystemExplorer
             void ProcessTreeViewController::SendSignalToSelectedProcesses(int signal) const
             {
                 std::vector<Control::SearchableControlBase::SearchableItem> selectedItems;
-                if (!_searchableTreeList->GetSelections(selectedItems))
+                if (!_processesListControl->GetSelections(selectedItems))
                     return;
 
                 std::for_each(selectedItems.begin(), selectedItems.end(),
@@ -505,7 +527,7 @@ namespace SystemExplorer
                 
                 ProcessesStat processesStat = _processesStatManager.GetProcessesStat();
                 ProcessManager pm;
-                std::string searchFilter = _searchableTreeList->GetSearchText();
+                std::string searchFilter = _processesListControl->GetSearchText();
                 ProcessTree processes = pm.GetProcessTree(searchFilter);
 
                 std::vector<Control::SearchableControlBase::SearchableItem> items;
@@ -543,8 +565,8 @@ namespace SystemExplorer
                     }
                 }
 
-                _searchableTreeList->BindData(items);
-                _searchableTreeList->ExpandAll();
+                _processesListControl->BindData(items);
+                _processesListControl->ExpandAll();
 
                 UpdateStatusBarStatistics(processesStat);
             }
@@ -562,7 +584,7 @@ namespace SystemExplorer
                 ProcessesStat processesStat = _processesStatManager.GetProcessesStat();
                 float x = 0.0;
 
-                std::string searchFilter = _searchableTreeList->GetSearchText();
+                std::string searchFilter = _processesListControl->GetSearchText();
                 ProcessTree processTreeToRebind = pm.GetProcessTree(searchFilter);
               
 
@@ -600,9 +622,9 @@ namespace SystemExplorer
                     }
                 }
 
-                _searchableTreeList->ReBindData(items);
+                _processesListControl->ReBindData(items);
                 UpdateStatusBarStatistics(processesStat);
-    //			_searchableTreeList->ExpandAll();
+    //			_processesListControl->ExpandAll();
             }
 
             void ProcessTreeViewController::UpdateStatusBarStatistics(Core::Models::ProcessesStat const &processesStat)
@@ -618,7 +640,7 @@ namespace SystemExplorer
                 float selected_total_rss = 0.0f;
 
                 std::vector<Control::SearchableControlBase::SearchableItem> selectedItems;
-                if(_searchableTreeList->GetSelections(selectedItems))
+                if(_processesListControl->GetSelections(selectedItems))
                 {
                     std::for_each(selectedItems.begin(), selectedItems.end(), 
                         [&processesStat, &selected_total_cpu, &selected_total_rss, this]
