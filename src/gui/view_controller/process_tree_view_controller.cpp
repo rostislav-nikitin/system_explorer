@@ -476,9 +476,10 @@ namespace SystemExplorer
                 std::string sarchText = _processesListControl->GetSearchText();
 
                 this->_bsSizer->Clear(true);
-                
-                if(_viewState == ViewState::Tree)
-                    CreateImageList();
+
+                //!IMPORTANT: Uncomment in case of ListView usage (it destroys image view and it should be re-created before new usage)
+                //if(_viewState == ViewState::Tree)
+                //    CreateImageList();
 
                 CreateProcessesTreeList();
                 CreateAcceleratorTable();
