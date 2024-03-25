@@ -59,6 +59,8 @@ namespace SystemExplorer
                 void ExpandAll();
                 void CollapseAll();
 
+                bool FilterEmpty() const;
+
                 void PopupMenu(wxMenu *menu, const wxPoint &pos = wxDefaultPosition);
 
                 virtual void SetItemComparator(wxTreeListItemComparator *treeListItemCopmarator) override;

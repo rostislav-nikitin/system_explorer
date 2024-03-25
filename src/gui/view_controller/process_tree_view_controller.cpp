@@ -477,8 +477,8 @@ namespace SystemExplorer
 
                 this->_bsSizer->Clear(true);
                 
-                //if(_viewState == ViewState::Tree)
-                CreateImageList();
+                if(_viewState == ViewState::Tree)
+                    CreateImageList();
 
                 CreateProcessesTreeList();
                 CreateAcceleratorTable();

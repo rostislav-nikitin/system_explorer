@@ -51,22 +51,25 @@ namespace SystemExplorer
 
             unsigned int SearchableListControl::GetSelections(std::vector<SearchableItem> &selections) const
             {
-                std::vector<SearchableItem> searchableItems;
-
                 wxTreeListItems treeListItems;
                 int result = _tlcTreeList->GetSelections(treeListItems);
                 
 
                 std::for_each(treeListItems.begin(), treeListItems.end(), 
-                [&searchableItems, this](wxTreeListItem const &treeListItem)
+                [&selections, this](wxTreeListItem const &treeListItem)
                 {
                     SearchableItem *searchableItem = 
                         (SearchableItem *)_tlcTreeList->GetItemData(treeListItem);
-                    searchableItems.push_back(*searchableItem);
+                    selections.push_back(*searchableItem);
                 });
 
-                return result;
+                return selections.size();
 
+            }
+
+            bool SearchableListControl::FilterEmpty() const
+            {
+                return GetSearchText().empty();
             }
 
             void SearchableListControl::BindData(std::vector<SearchableItem> &dataSource)
@@ -79,7 +82,7 @@ namespace SystemExplorer
                     wxTreeListItem parent;
                     parent = _tlcTreeList->GetRootItem();
 
-                    if(parent.IsOk())
+                    if(item.GetSelected() || FilterEmpty())
                     {
                         wxTreeListItem treeListItem = _tlcTreeList->AppendItem(parent, item.GetText());
                         
@@ -130,7 +133,7 @@ namespace SystemExplorer
                         wxTreeListItem parent;
                         parent = _tlcTreeList->GetRootItem();
 
-                        if(parent.IsOk())
+                        if(item.GetSelected() || FilterEmpty())
                         {
                             wxTreeListItem processTreeListItem = _tlcTreeList->AppendItem(parent, text);
                             _tlcTreeList->SetItemData(processTreeListItem, new SearchableItem(item));

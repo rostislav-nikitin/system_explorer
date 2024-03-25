@@ -51,21 +51,19 @@ namespace SystemExplorer
 
             unsigned int SearchableTreeListControl::GetSelections(std::vector<SearchableItem> &selections) const
             {
-                std::vector<SearchableItem> searchableItems;
-
                 wxTreeListItems treeListItems;
                 int result = _tlcTreeList->GetSelections(treeListItems);
                 
 
                 std::for_each(treeListItems.begin(), treeListItems.end(), 
-                [&searchableItems, this](wxTreeListItem const &treeListItem)
+                [&selections, this](wxTreeListItem const &treeListItem)
                 {
                     SearchableItem *searchableItem = 
                         (SearchableItem *)_tlcTreeList->GetItemData(treeListItem);
-                    searchableItems.push_back(*searchableItem);
+                    selections.push_back(*searchableItem);
                 });
 
-                return result;
+                return selections.size();
 
             }
 
