@@ -58,8 +58,6 @@ namespace SystemExplorer
 
             unsigned int SearchableListControl::GetSelections(std::vector<SearchableItem> &selections) const
             {
-                std::vector<SearchableItem> searchableItems;
-
 
                 for(long item_index = _lvProcesses->GetFirstSelected();
                     item_index != -1; item_index = _lvProcesses->GetNextSelected(item_index))
@@ -67,10 +65,10 @@ namespace SystemExplorer
 
                         SearchableItem *searchableItem = 
                             (SearchableItem *)_lvProcesses->GetItemData(item_index);
-                        searchableItems.push_back(*searchableItem);
+                        selections.push_back(*searchableItem);
                     }
 
-                return searchableItems.size();
+                return selections.size();
 
             }
 
@@ -126,7 +124,7 @@ namespace SystemExplorer
             {
                 // Cases
                 // 1. Item retured
-                int insertIndex = 0;
+                int insertIndex = _lvProcesses->GetItemCount();
                 for(std::vector<SearchableItem>::const_iterator it = dataSource.begin(); it != dataSource.end(); ++it)
                 {
                     SearchableItem item = *it;

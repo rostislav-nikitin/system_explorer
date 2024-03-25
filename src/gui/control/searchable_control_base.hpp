@@ -85,6 +85,9 @@ namespace SystemExplorer
                 virtual void PopupMenu(wxMenu *menu, const wxPoint &pos = wxDefaultPosition) = 0;
 
                 std::string GetSearchText() const;
+
+                virtual void ExpandAll() = 0;
+                virtual void CollapseAll() = 0;
             };
         }
     }

@@ -17,7 +17,7 @@ namespace SystemExplorer
                     _processManager(processManager),
                     _userConfig(userConfig),
                     _sbStatIndex(-1),
-                    _viewState(ViewState::Tree)
+                    _viewState(ViewState::List)
             {
             }
 
@@ -65,7 +65,10 @@ namespace SystemExplorer
             	CreateHotKeys();
 
 			    CreateTimer();
+                CreateImageList();
 				CreateProcessesTreeList();
+                CreateMainSizer();
+                CreateContextMenu();
 				CreateAcceleratorTable();
             }
 
@@ -205,12 +208,8 @@ namespace SystemExplorer
                 _timer = new wxTimer();
             }
 
-            void ProcessTreeViewController::CreateProcessesTreeList()
+            void ProcessTreeViewController::CreateImageList()
             {
-                using SystemExplorer::Core::SignalManager;
-                using SystemExplorer::Core::Models::Signal;
-                using SystemExplorer::Core::Models::SignalType;
-
                 _imageList = new wxImageList(16, 16, false, 32);
                 // N/A
                 _imageList->Add(*bin2c_realtime_png);
@@ -255,8 +254,15 @@ namespace SystemExplorer
                 _imageList->Add(*bin2c_normal_zombie_png);
                 _imageList->Add(*bin2c_nice_zombie_png);
 
-       			//_processesListControl = new Control::SearchableTreeListControl(this, wxID_ANY, _imageList);
-                _processesListControl = new Control::SearchableListControl(this, wxID_ANY, _imageList);
+            }
+
+            void ProcessTreeViewController::CreateProcessesTreeList()
+            {
+
+                if(_viewState == ViewState::Tree)
+       			    _processesListControl = new Control::SearchableTreeListControl(this, wxID_ANY, _imageList);
+                else if(_viewState == ViewState::List)
+                    _processesListControl = new Control::SearchableListControl(this, wxID_ANY, _imageList);
     			
 	    		_processesListControl->AppendColumn(_T("Name"), 300, wxALIGN_LEFT, wxCOL_RESIZABLE | wxCOL_SORTABLE);
 		    	_processesListControl->AppendColumn(_T("PID"), 64, wxALIGN_RIGHT, wxCOL_RESIZABLE | wxCOL_SORTABLE);
@@ -277,9 +283,20 @@ namespace SystemExplorer
 
                 SetAutoCompleteChoices();
 
+            }
+
+            void ProcessTreeViewController::CreateMainSizer()
+            {
                 _bsSizer = new wxBoxSizer(wxVERTICAL);
                 _bsSizer->Add(_processesListControl, 1, wxEXPAND | wxALL, 0);
                 this->SetSizer(_bsSizer);
+            }
+
+            void ProcessTreeViewController::CreateContextMenu()
+            {
+                using SystemExplorer::Core::SignalManager;
+                using SystemExplorer::Core::Models::Signal;
+                using SystemExplorer::Core::Models::SignalType;
 
                 _processContextMenu = new wxMenu();
                 _processContextMenu->Append(static_cast<int>(ProcessContextMenuId::Open), wxT("&Open\tCtrl+O"), wxT("Open"));
@@ -321,6 +338,7 @@ namespace SystemExplorer
                 _processContextMenu->Append(static_cast<int>(ProcessContextMenuId::About), wxT("&About\tCtrl+Shift+A"), wxT("About"));
                 _processContextMenu->AppendSeparator();
                 _processContextMenu->Append(static_cast<int>(ProcessContextMenuId::Close), wxT("&Close\tAlt+F4"), wxT("Close"));
+
             }
 
             void ProcessTreeViewController::SetFocus()
@@ -331,14 +349,31 @@ namespace SystemExplorer
             void ProcessTreeViewController::BindEvents()
             {
                 this->Bind(wxEVT_SIZE, &ProcessTreeViewController::window_OnSize, this);
+                BindProcessesListControlEvents();
+                BindContextMenuEvents();
+                BindTimerEvents();
+            }
+
+            void ProcessTreeViewController::BindProcessesListControlEvents()
+            {
                 _processesListControl->Bind(custEVT_SEARCH, &ProcessTreeViewController::processesListControl_Search, this); 
                 _processesListControl->Bind(custEVT_ITEM_CONTEXT_MENU, &ProcessTreeViewController::processesListControl_OnItemContextMenu, this);
                 _processesListControl->Bind(wxEVT_MENU, &ProcessTreeViewController::processesContextMenu_OnMenuItem, this);
+
+            }
+
+            void ProcessTreeViewController::BindContextMenuEvents()
+            {
                 _processContextMenu->Bind(wxEVT_MENU_HIGHLIGHT, &ProcessTreeViewController::processesContextMenu_OnMenuHighlight, this);
                 _processContextMenu->Bind(wxEVT_MENU_OPEN, &ProcessTreeViewController::processesContextMenu_OnMenuOpen, this);
                 _processContextMenu->Bind(wxEVT_MENU_CLOSE, &ProcessTreeViewController::processesContextMenu_OnMenuClose, this);
+            }
+
+            void ProcessTreeViewController::BindTimerEvents()
+            {
                 _timer->Bind(wxEVT_TIMER, &ProcessTreeViewController::timer_OnTick, this);
             }
+
 
             void ProcessTreeViewController::window_OnSize(wxSizeEvent &event)
             {
@@ -423,14 +458,41 @@ namespace SystemExplorer
 
             void ProcessTreeViewController::ToggleView()
             {
-                this->_processesListControl->Destroy();
-                this->_processesListControl = nullptr;
+                StopTimer();
+                std::cout << "Before clear" << std::endl;
+                this->_bsSizer->Clear(true);
+                //this->_processesListControl->Destroy();
+                //this->_processesListControl = nullptr;
+                
+                std::cout << "Before create" << std::endl;
                 if(_viewState == ViewState::Tree)
+                {
                     _viewState = ViewState::List;
-                else if(_viewState == ViewState::List)
-                    _viewState = ViewState::Tree;
+                    CreateProcessesTreeList();
+                    CreateAcceleratorTable();
 
-                wxMessageBox("Toggle View::I am done", "Not Implemented Yet.", wxOK | wxICON_INFORMATION, this->_book->GetParent());
+                }
+                else if(_viewState == ViewState::List)
+                {
+                    _viewState = ViewState::Tree;
+                    // List view deletes image list so it should be re-created
+                    CreateImageList();
+                    CreateProcessesTreeList();
+                }
+
+                CreateAcceleratorTable();
+                BindProcessesListControlEvents();
+                SetFocus();
+                
+
+                _bsSizer->Add(_processesListControl, 1, wxEXPAND | wxALL, 0);
+                _bsSizer->Layout();
+
+                StartTimer();
+
+                BindData();
+
+                //wxMessageBox("Toggle View::I am done", "Not Implemented Yet.", wxOK | wxICON_INFORMATION, this->_book->GetParent());
             }
 
             void ProcessTreeViewController::processesContextMenu_OnMenuItem(wxCommandEvent &event)
@@ -495,9 +557,12 @@ namespace SystemExplorer
 
             void ProcessTreeViewController::SendSignalToSelectedProcesses(int signal) const
             {
+                std::cout << __PRETTY_FUNCTION__ << std::endl;
                 std::vector<Control::SearchableControlBase::SearchableItem> selectedItems;
                 if (!_processesListControl->GetSelections(selectedItems))
                     return;
+
+                std::cout << "selectedItems.size()=" << selectedItems.size() << std::endl;
 
                 std::for_each(selectedItems.begin(), selectedItems.end(),
                     [signal, this](Control::SearchableControlBase::SearchableItem const &selectedItem)

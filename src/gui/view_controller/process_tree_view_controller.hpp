@@ -94,8 +94,8 @@ namespace SystemExplorer
                 wxImageList *_imageList;
                 wxMenu *_processContextMenu;
 	            wxTimer *_timer;
-	            //Control::SearchableTreeListControl *_processesListControl;
-                Control::SearchableListControl *_processesListControl;
+	            Control::SearchableControlBase *_processesListControl;
+                //Control::SearchableListControl *_processesListControl;
 
                 SystemExplorer::Core::ProcessManager _processManager;
                 SystemExplorer::Core::ProcessesStatManager _processesStatManager;
@@ -116,7 +116,14 @@ namespace SystemExplorer
 	            void CreateAcceleratorTable();
 	            void CreateTimer();
 
+                void CreateImageList();
 	            void CreateProcessesTreeList();
+                void CreateMainSizer();
+                void CreateContextMenu();
+
+                void BindProcessesListControlEvents();
+                void BindContextMenuEvents();
+                void BindTimerEvents();
 
                 void SetFocus();
                 void StartTimer();
