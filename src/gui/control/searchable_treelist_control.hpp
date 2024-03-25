@@ -61,7 +61,7 @@ namespace SystemExplorer
 
                 void PopupMenu(wxMenu *menu, const wxPoint &pos = wxDefaultPosition);
 
-                void SetItemComparator(wxTreeListItemComparator *treeListItemCopmarator);
+                virtual void SetItemComparator(wxTreeListItemComparator *treeListItemCopmarator) override;
             };
         }
     }

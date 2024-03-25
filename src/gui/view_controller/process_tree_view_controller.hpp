@@ -32,8 +32,9 @@
 
 #include "../control/icon_control.hpp"
 #include "../control/searchable_control_base.hpp"
-#include "../control/searchable_treelist_control.hpp"
 #include "../control/searchable_list_control.hpp"
+#include "../control/searchable_treelist_control.hpp"
+#include "../control/searchable_listview_control.hpp"
 
 #include "view_controller_base.hpp"
 #include "processes_tree_list_item_comparator.hpp"
@@ -130,7 +131,8 @@ namespace SystemExplorer
                 void StopTimer();
                 void ReBindData();
 
-                void ToggleView();
+                void ToggleViewState();
+                void UpdateView();
 
            	    void AddHotKey(int menuBase, int itemId, wxAcceleratorEntryFlags flags, int key);
         	    std::optional<wxAcceleratorEntry> GetHotKey(int menuBase, int itemId);

@@ -5,7 +5,7 @@ namespace SystemExplorer
     namespace Gui
     {
         wxDEFINE_EVENT(custEVT_SEARCH, wxCommandEvent);
-        //wxDEFINE_EVENT(custEVT_ITEM_CONTEXT_MENU, wxCommandEvent);
+        wxDEFINE_EVENT(custEVT_ITEM_CONTEXT_MENU, wxCommandEvent);
 
         namespace Control
         {
@@ -103,6 +103,16 @@ namespace SystemExplorer
             std::string SearchableControlBase::GetSearchText() const
             {
                 return _scSearch->GetValue().ToStdString();
+            }
+
+            void SearchableControlBase::SetSearchText(std::string value)
+            {
+                _scSearch->SetValue(value);
+            }
+
+            void SearchableControlBase::SetItemComparator(wxTreeListItemComparator *treeListItemCopmarator)
+            {
+                //TODO: Not Implemented in base. Should be implemented in concrete control
             }
 
        }

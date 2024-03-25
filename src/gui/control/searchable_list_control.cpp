@@ -24,17 +24,14 @@ namespace SystemExplorer
             {
                 SearchableControlBase::CreateChildControls();
                 
-		        _lvProcesses = new wxListView(this, wxID_ANY, wxPoint(0,0), wxSize(100, 100), wxLC_REPORT | wxBORDER_NONE);
-                //_lvProcesses->SetSingleStyle(wxLC_REPORT, false);
-                //TODO: Uncomment
-                _lvProcesses->AssignImageList(_imageList, wxIMAGE_LIST_SMALL);
-		        //_lvProcesses->SetWindowStyle(wxBORDER_NONE);
+		        _tlcTreeList = new wxTreeListCtrl(this, wxID_ANY, wxPoint(0,0), wxSize(100, 100), wxTL_MULTIPLE);
+                _tlcTreeList->SetImageList(_imageList);
+		        _tlcTreeList->SetWindowStyle(wxBORDER_NONE);
 
-                //std::cout << (_lvProcesses->GetParent() == nullptr) << std::endl;
+                //std::cout << (_tlcTreeList->GetParent() == nullptr) << std::endl;
                 _bsSizer = new wxBoxSizer(wxVERTICAL);
 		        _bsSizer->Add(_scSearch, 0, wxEXPAND | wxALL, 0);
-		        _bsSizer->Add(_lvProcesses, 1, wxEXPAND | wxALL, 0);
-
+		        _bsSizer->Add(_tlcTreeList, 1, wxEXPAND | wxALL, 0);
 		        this->SetSizer(_bsSizer);
             }
 
@@ -42,143 +39,143 @@ namespace SystemExplorer
             {
                 SearchableControlBase::BindEvents();
 
-                _lvProcesses->Bind(wxEVT_CHAR, &SearchableListControl::lvProcesses_OnChar, this);
-                _lvProcesses->Bind(wxEVT_LIST_ITEM_RIGHT_CLICK, &SearchableListControl::lvProcesses_OnItemContextMenu, this);
+                _tlcTreeList->Bind(wxEVT_CHAR, &SearchableListControl::tlcTreeList_OnChar, this);
+                _tlcTreeList->Bind(wxEVT_TREELIST_ITEM_CONTEXT_MENU, &SearchableListControl::tlcTreeList_OnItemContextMenu, this);
             }
 
             int SearchableListControl::AppendColumn(const wxString &title, int width, wxAlignment align, int flags)
             {
-                wxListColumnFormat format = wxListColumnFormat::wxLIST_FORMAT_LEFT;
-                if(align == wxAlignment::wxALIGN_RIGHT)
-                    format = wxListColumnFormat::wxLIST_FORMAT_RIGHT;
-
-                return _lvProcesses->AppendColumn(title, format, width);
+                return _tlcTreeList->AppendColumn(title, width, align, flags);
             }
 
 
             unsigned int SearchableListControl::GetSelections(std::vector<SearchableItem> &selections) const
             {
+                std::vector<SearchableItem> searchableItems;
 
-                for(long item_index = _lvProcesses->GetFirstSelected();
-                    item_index != -1; item_index = _lvProcesses->GetNextSelected(item_index))
-                    {
+                wxTreeListItems treeListItems;
+                int result = _tlcTreeList->GetSelections(treeListItems);
+                
 
-                        SearchableItem *searchableItem = 
-                            (SearchableItem *)_lvProcesses->GetItemData(item_index);
-                        selections.push_back(*searchableItem);
-                    }
+                std::for_each(treeListItems.begin(), treeListItems.end(), 
+                [&searchableItems, this](wxTreeListItem const &treeListItem)
+                {
+                    SearchableItem *searchableItem = 
+                        (SearchableItem *)_tlcTreeList->GetItemData(treeListItem);
+                    searchableItems.push_back(*searchableItem);
+                });
 
-                return selections.size();
+                return result;
 
             }
 
             void SearchableListControl::BindData(std::vector<SearchableItem> &dataSource)
             {
-               	_lvProcesses->DeleteAllItems();
+               	_tlcTreeList->DeleteAllItems();
 
-                int insertIndex = 0;
                 for(std::vector<SearchableItem>::const_iterator it = dataSource.begin(); it != dataSource.end(); ++it)
                 {
                     SearchableItem item = *it;
+                    wxTreeListItem parent;
+                    parent = _tlcTreeList->GetRootItem();
 
-                    if(item.GetSelected() || FilterEmpty())
+                    if(parent.IsOk())
                     {
-                        wxListItem listItem;
-
-                        //listItem.SetId(item.GetId());
-                        //listItem.SetText(item.GetText());
-                        //listItem.SetImage(item.GetIconIndex());
-                        int listItemIndex = _lvProcesses->InsertItem(insertIndex++, item.GetText(), item.GetIconIndex());
-                        SearchableItem *dataItem = new SearchableItem(item);
-                        _lvProcesses->SetItemPtrData(listItemIndex, (wxUIntPtr)dataItem);
+                        wxTreeListItem treeListItem = _tlcTreeList->AppendItem(parent, item.GetText());
                         
+                        _tlcTreeList->SetItemData(treeListItem, new SearchableItem(item));
+                        _tlcTreeList->SetItemImage(treeListItem, item.GetIconIndex(), item.GetIconIndex());
+                        //std::cout << "ITEMINDEX=" << item.GetIconIndex() << std::endl;
                         for(int idx = 0; idx < item.GetOther().size(); ++idx)
                         {
-                            _lvProcesses->SetItem(listItemIndex, idx + 1, item.GetOther()[idx]);
+                            _tlcTreeList->SetItemText(treeListItem, idx + 1, item.GetOther()[idx]);
                         }
-                        if(item.GetSelected())
-                            _lvProcesses->Select(listItemIndex, true);
+                        //if(treeListItem.IsOk() && item.GetSelected())
+                            //  _tlcTreeList->Select(treeListItem);
+                       
                     }
+            
                 }
-/*
+
                 for(std::vector<SearchableItem>::const_iterator it = dataSource.begin(); it != dataSource.end(); ++it)
                 {
                     SearchableItem item = *it;
 
                     if(item.GetSelected())
                     {
-                        long listItemIndex = FindItemById(item.GetId());
-                        if(listItemIndex != -1)
-                            _lvProcesses->Select(listItemIndex, true);
+                        wxTreeListItem treeListItem = FindItemById(item.GetId());
+                        if(treeListItem.IsOk())
+                            _tlcTreeList->Select(treeListItem);
                     }
                 }
-*/
-            }
 
-            bool SearchableListControl::FilterEmpty() const
-            {
-                return GetSearchText().empty();
             }
 
             void SearchableListControl::ReBindData(std::vector<SearchableItem> &dataSource)
             {
                 // Cases
                 // 1. Item retured
-                int insertIndex = _lvProcesses->GetItemCount();
                 for(std::vector<SearchableItem>::const_iterator it = dataSource.begin(); it != dataSource.end(); ++it)
                 {
                     SearchableItem item = *it;
-                    if(item.GetSelected() || FilterEmpty())
-                    {
-                        std::string text = item.GetText();
-                        pid_t id = item.GetId();
-                        pid_t parentId = item.GetParentId();
-                        bool selected = item.GetSelected();
+                    std::string text = item.GetText();
+                    pid_t id = item.GetId();
+                    pid_t parentId = item.GetParentId();
+                    bool selected = item.GetSelected();
 
-                        long listItemIndex = FindItemById(id);
-                        if(listItemIndex == -1)
+                    wxTreeListItem treeListItem = FindItemById(id);
+                    if(!treeListItem.IsOk())
+                    {
+                        //	1.1. Picekd and not exists -- create(item)
+                        wxTreeListItem parent;
+                        parent = _tlcTreeList->GetRootItem();
+
+                        if(parent.IsOk())
                         {
-                            int listItemIndex = _lvProcesses->InsertItem(insertIndex++, item.GetText(), item.GetIconIndex());
-                            SearchableItem *dataItem = new SearchableItem(item);
-                            _lvProcesses->SetItemPtrData(listItemIndex, (wxUIntPtr)dataItem);
-                    
+                            wxTreeListItem processTreeListItem = _tlcTreeList->AppendItem(parent, text);
+                            _tlcTreeList->SetItemData(processTreeListItem, new SearchableItem(item));
+                            _tlcTreeList->SetItemImage(processTreeListItem, item.GetIconIndex(), item.GetIconIndex());
                             for(int idx = 0; idx < item.GetOther().size(); ++idx)
                             {
-                                _lvProcesses->SetItem(listItemIndex, idx + 1, item.GetOther()[idx]);
+                                _tlcTreeList->SetItemText(processTreeListItem, idx + 1, item.GetOther()[idx]);
                             }
-
                             if(selected)
-                                _lvProcesses->Select(listItemIndex);
+                                _tlcTreeList->Select(processTreeListItem);
+
+                            _tlcTreeList->Expand(processTreeListItem);
                         }
                         else
                         {
-                            _lvProcesses->SetItemImage (listItemIndex, item.GetIconIndex(), item.GetIconIndex());
-
-                            for(int idx = 0; idx < item.GetOther().size(); ++idx)
-                            {
-                                _lvProcesses->SetItem(listItemIndex, idx + 1, item.GetOther()[idx]);
-                            }
-                            
+                            //log error
                         }
+                                    
                     }
+                    else
+                    {
+                        _tlcTreeList->SetItemImage(treeListItem, item.GetIconIndex(), item.GetIconIndex());
+                        for(int idx = 0; idx < item.GetOther().size(); ++idx)
+                        {
+                            _tlcTreeList->SetItemText(treeListItem, idx + 1, item.GetOther()[idx]);
+                        }
+                        
+                    }
+                    
                 }
 
                 // 2. Item not returned
                 // 	2.1. Exists in tree -- detele
+                wxTreeListItem result;
                 std::vector<int> toDelete;
 
-                for(
-                    long current = _lvProcesses->GetNextItem(-1, wxLIST_NEXT_ALL); 
-                    current != -1;
-                    current = _lvProcesses->GetNextItem(current, wxLIST_NEXT_ALL))
+                for(wxTreeListItem current = _tlcTreeList->GetFirstItem(); current.IsOk(); current = _tlcTreeList->GetNextItem(current))
                 {
-                    SearchableItem *searchableItem = (SearchableItem *)_lvProcesses->GetItemData(current);
-                    int id = searchableItem->GetId();
+                    wxString nodePid = _tlcTreeList->GetItemText(current, 1);
+                    int id = atoi(nodePid.c_str());
 
                     auto item = std::find_if(dataSource.begin(), dataSource.end(), 
                         [id](SearchableItem const &item){ return item.GetId() == id;  });
 
-                    if(item == dataSource.end() || (!(*item).GetSelected() && !FilterEmpty()))
+                    if(item == dataSource.end())
                     {
                         toDelete.push_back(id);					
                     }
@@ -186,25 +183,41 @@ namespace SystemExplorer
 
                 for(std::vector<int>::iterator it = toDelete.begin(); it != toDelete.end(); ++it)
                 {
-                    long listItemIndex = FindItemById(*it);
-                    if(listItemIndex != -1)
+                    wxTreeListItem item = FindItemById(*it);
+                    if(item.IsOk())
                     {
-                        _lvProcesses->DeleteItem(listItemIndex);
+                        _tlcTreeList->DeleteItem(item);
                     }
                 }
             }                        
 
-            /*void SearchableListControl::SetItemComparator(wxTreeListItemComparator *treeListItemCopmarator)
+            void SearchableListControl::SetItemComparator(wxTreeListItemComparator *treeListItemCopmarator)
             {
-                _lvProcesses->SetItemComparator(treeListItemCopmarator);
-            }*/
+                _tlcTreeList->SetItemComparator(treeListItemCopmarator);
+            }
 
-            void SearchableListControl::lvProcesses_OnChar(wxKeyEvent &event)
+            void SearchableListControl::tlcTreeList_OnChar(wxKeyEvent &event)
             {
                 	//TODO: Implement ALT-Letter to focus on search
 	            int keyCode = event.GetKeyCode();
+	            wxTreeListItems selectedItems;
 	            //std::cout << keyCode << std::endl;
 
+                if(event.IsKeyInCategory(WXK_CATEGORY_NAVIGATION))
+                {
+                    wxTreeListItem selectedItem = _tlcTreeList->GetSelection();
+                    if(selectedItem.IsOk())
+                    {
+                        if(keyCode == WXK_LEFT)
+                        {
+                            _tlcTreeList->Collapse(selectedItem);
+                        }
+                        else if(keyCode == WXK_RIGHT)
+                        {
+                            _tlcTreeList->Expand(selectedItem);
+                        }
+                    }
+                }
 	            if(!event.IsKeyInCategory(WXK_CATEGORY_NAVIGATION) 
                     && (keyCode != WXK_TAB) 
                     && (keyCode >= WXK_SPACE) && (std::isalnum(keyCode) || std::ispunct(keyCode)))
@@ -218,7 +231,7 @@ namespace SystemExplorer
             }
 
 
-            void SearchableListControl::lvProcesses_OnItemContextMenu(wxListEvent &event)
+            void SearchableListControl::tlcTreeList_OnItemContextMenu(wxTreeListEvent &event)
             {
                 wxCommandEvent menu_event(custEVT_ITEM_CONTEXT_MENU, GetId());
 
@@ -227,47 +240,111 @@ namespace SystemExplorer
 
                 ProcessWindowEvent(menu_event);
             }
+/*
+            void SearchableListControl::tlcTreeList_OnMenuItem(wxCommandEvent &event)
+            {
+                std::cout << "STREELIST::ON MENU ITEM" << std::endl;
+                wxCommandEvent menu_event(custEVT_MENU, GetId());
 
+                menu_event.SetEventObject(this);
+                menu_event.SetString("Menu Item!");
+
+                ProcessWindowEvent(menu_event);
+            }
+*/
             void SearchableListControl::OnSearchTextClick()
             {
                 SearchableControlBase::OnSearchTextClick();
-	            _lvProcesses->SetFocus();
+	            _tlcTreeList->SetFocus();
             }
 
 
             void SearchableListControl::SetFocus()
             {
-                _lvProcesses->SetFocus();
-                long firstItem = _lvProcesses->GetNextItem(-1);
-                if (firstItem != -1)
+                _tlcTreeList->SetFocus();
+                wxTreeListItem firstItem = _tlcTreeList->GetFirstItem();
+                if (firstItem.IsOk())
                 {
-                    _lvProcesses->Select(firstItem);
+                    _tlcTreeList->Select(firstItem);
                 }
             }
 
             void SearchableListControl::ExpandAll()
             {
+                wxTreeListItem itemToExpand = _tlcTreeList->GetRootItem();
+
+                if(itemToExpand.IsOk())
+                    ExpandAll(itemToExpand);
             }
 
             void SearchableListControl::CollapseAll()
             {
+                wxTreeListItem itemToExpand = _tlcTreeList->GetRootItem();
+
+                if(itemToExpand.IsOk())
+                    CollapseAll(itemToExpand);
             }
 
             void SearchableListControl::PopupMenu(wxMenu *menu, const wxPoint &pos)
             {
-                _lvProcesses->PopupMenu(menu, pos);
+                _tlcTreeList->PopupMenu(menu, pos);
             }
 
 
             // Private
-
-            long SearchableListControl::FindItemById(int id)
+            void SearchableListControl::ExpandAll(wxTreeListItem &item)
             {
-                long result = -1;
-
-                for(long current = _lvProcesses->GetNextItem(-1); current != -1; current = _lvProcesses->GetNextItem(current))
+                std::vector<wxTreeListItem> nodes = GetAllSubNodes(item);
+                std::for_each(nodes.begin(), nodes.end(), [this] (wxTreeListItem &item)
                 {
-                    SearchableItem *item = (SearchableItem *)_lvProcesses->GetItemData(current);
+                    _tlcTreeList->Expand(item);
+                });
+            }
+
+            void SearchableListControl::CollapseAll(wxTreeListItem &item)
+            {
+                std::vector<wxTreeListItem> nodes = GetAllSubNodes(item);
+                std::for_each(nodes.begin(), nodes.end(), [this] (wxTreeListItem &item)
+                {
+                    _tlcTreeList->Collapse(item);
+                });
+            }
+
+            std::vector<wxTreeListItem> SearchableListControl::GetAllSubNodes(wxTreeListItem &parent)
+            {
+                std::vector<wxTreeListItem> result;
+
+                if(!parent.IsOk())
+                    return result;
+
+                result.push_back(parent);
+                size_t current_index = 0;
+                while(current_index < result.size())
+                {
+                    for(wxTreeListItem current = _tlcTreeList->GetFirstChild(result[current_index]); 
+                        current.IsOk(); 
+                        current = _tlcTreeList->GetNextSibling(current))
+                    {
+                        if(_tlcTreeList->GetFirstChild(current).IsOk())
+                        {
+                            result.push_back(current);
+                        }
+                    }
+
+                    ++current_index;
+                }
+
+                return result;
+            }
+
+            wxTreeListItem SearchableListControl::FindItemById(int id)
+            {
+                wxTreeListItem result;
+
+                for(wxTreeListItem current = _tlcTreeList->GetFirstItem(); current.IsOk(); current = _tlcTreeList->GetNextItem(current))
+                {
+                    wxClientData *itemData = _tlcTreeList->GetItemData(current);
+                    SearchableItem *item = static_cast<SearchableItem *>(itemData);
                     int itemId = item->GetId();
                     if(itemId == id)
                     {

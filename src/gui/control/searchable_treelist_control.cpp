@@ -7,7 +7,7 @@ namespace SystemExplorer
     {
         //wxDEFINE_EVENT(custEVT_SEARCH, wxCommandEvent);
         //wxDEFINE_EVENT(custEVT_SELECTION_CHANGED, wxCommandEvent);
-        wxDEFINE_EVENT(custEVT_ITEM_CONTEXT_MENU, wxCommandEvent);
+        //wxDEFINE_EVENT(custEVT_ITEM_CONTEXT_MENU, wxCommandEvent);
         //wxDEFINE_EVENT(custEVT_MENU, wxCommandEvent);
         
 

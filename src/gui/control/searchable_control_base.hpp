@@ -10,10 +10,12 @@
 #include <wx/bookctrl.h>
 #include <wx/srchctrl.h>
 #include <wx/imaglist.h>
+#include <wx/treelist.h>
 
 #include "control_base.hpp"
 
 #include <wild_card_expr/wild_card_expr.hpp>
+
 
 // RESPONSIBILITIES:
 //  1. Show process data in a treelist
@@ -84,10 +86,14 @@ namespace SystemExplorer
                 virtual void SetFocus() = 0;
                 virtual void PopupMenu(wxMenu *menu, const wxPoint &pos = wxDefaultPosition) = 0;
 
-                std::string GetSearchText() const;
+                virtual std::string GetSearchText() const;
+                virtual void SetSearchText(std::string value);
 
                 virtual void ExpandAll() = 0;
                 virtual void CollapseAll() = 0;
+
+                virtual void SetItemComparator(wxTreeListItemComparator *treeListItemCopmarator);
+
             };
         }
     }

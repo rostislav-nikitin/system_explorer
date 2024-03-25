@@ -279,7 +279,7 @@ namespace SystemExplorer
 
                 
                 //TODO: Uncomment this
-			    //_processesListControl->SetItemComparator(&_processesTreeListItemComparator);
+			    _processesListControl->SetItemComparator(&_processesTreeListItemComparator);
 
                 SetAutoCompleteChoices();
 
@@ -456,43 +456,43 @@ namespace SystemExplorer
                 SetHelpStatusText(help);
             }
 
-            void ProcessTreeViewController::ToggleView()
+            void ProcessTreeViewController::ToggleViewState()
             {
-                StopTimer();
-                std::cout << "Before clear" << std::endl;
-                this->_bsSizer->Clear(true);
-                //this->_processesListControl->Destroy();
-                //this->_processesListControl = nullptr;
-                
-                std::cout << "Before create" << std::endl;
                 if(_viewState == ViewState::Tree)
                 {
                     _viewState = ViewState::List;
-                    CreateProcessesTreeList();
-                    CreateAcceleratorTable();
 
                 }
                 else if(_viewState == ViewState::List)
                 {
                     _viewState = ViewState::Tree;
-                    // List view deletes image list so it should be re-created
-                    CreateImageList();
-                    CreateProcessesTreeList();
                 }
+            
+            }
+            void ProcessTreeViewController::UpdateView()
+            {
+                StopTimer();
 
+                std::string sarchText = _processesListControl->GetSearchText();
+
+                this->_bsSizer->Clear(true);
+                
+                //if(_viewState == ViewState::Tree)
+                CreateImageList();
+
+                CreateProcessesTreeList();
                 CreateAcceleratorTable();
                 BindProcessesListControlEvents();
                 SetFocus();
                 
-
                 _bsSizer->Add(_processesListControl, 1, wxEXPAND | wxALL, 0);
                 _bsSizer->Layout();
 
-                StartTimer();
+                _processesListControl->SetSearchText(sarchText);
 
                 BindData();
 
-                //wxMessageBox("Toggle View::I am done", "Not Implemented Yet.", wxOK | wxICON_INFORMATION, this->_book->GetParent());
+                StartTimer();
             }
 
             void ProcessTreeViewController::processesContextMenu_OnMenuItem(wxCommandEvent &event)
@@ -526,7 +526,8 @@ namespace SystemExplorer
                         break;
                     case ProcessContextMenuId::ToggleView:
                         //wxMessageBox("Toggle View", "Not Implemented Yet.", wxOK | wxICON_INFORMATION, this->_book->GetParent());
-                        ToggleView();
+                        ToggleViewState();
+                        UpdateView();
                         break;
                     case ProcessContextMenuId::About:
                         //wxMessageBox("About", "Not Implemented Yet.", wxOK | wxICON_INFORMATION, this->_book->GetParent());
@@ -557,12 +558,9 @@ namespace SystemExplorer
 
             void ProcessTreeViewController::SendSignalToSelectedProcesses(int signal) const
             {
-                std::cout << __PRETTY_FUNCTION__ << std::endl;
                 std::vector<Control::SearchableControlBase::SearchableItem> selectedItems;
                 if (!_processesListControl->GetSelections(selectedItems))
                     return;
-
-                std::cout << "selectedItems.size()=" << selectedItems.size() << std::endl;
 
                 std::for_each(selectedItems.begin(), selectedItems.end(),
                     [signal, this](Control::SearchableControlBase::SearchableItem const &selectedItem)
@@ -787,7 +785,7 @@ namespace SystemExplorer
 
                 if(processStat.priority < 0)
                     result = ICON_INDEX_REALTIME;
-                else if(processStat.priority > 0 && processStat.priority < 20)
+                else if(processStat.priority >= 0 && processStat.priority < 20)
                     result = ICON_INDEX_NOT_NICE;
                 else if(processStat.priority > 20)
                     result = ICON_INDEX_NICE;

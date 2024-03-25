@@ -7,7 +7,7 @@
 
 #include <wx/wx.h>
 #include <wx/bookctrl.h>
-#include <wx/listctrl.h>
+#include <wx/treelist.h>
 #include <wx/srchctrl.h>
 #include <wx/imaglist.h>
 
@@ -29,17 +29,20 @@ namespace SystemExplorer
             class SearchableListControl : public SearchableControlBase
             {
                 wxBoxSizer *_bsSizer;
-	            wxListView *_lvProcesses;
+	            wxTreeListCtrl *_tlcTreeList;
 
                 virtual void CreateChildControls() override;
                 virtual void BindEvents() override;
 
-                void lvProcesses_OnChar(wxKeyEvent &event);
-                void lvProcesses_OnItemContextMenu(wxListEvent &event);
-                void lvProcesses_OnMenuItem(wxCommandEvent &event);
+                void tlcTreeList_OnChar(wxKeyEvent &event);
+                void tlcTreeList_OnItemContextMenu(wxTreeListEvent &event);
+                void tlcTreeList_OnMenuItem(wxCommandEvent &event);
 
-                bool FilterEmpty() const;
-                long FindItemById(int id);
+                void ExpandAll(wxTreeListItem &item);
+                void CollapseAll(wxTreeListItem &item);
+
+                std::vector<wxTreeListItem> GetAllSubNodes(wxTreeListItem &parent);
+                wxTreeListItem FindItemById(int id);
 
             public:
                 SearchableListControl(wxWindow *parent, wxWindowID Id, wxImageList *imageList = nullptr);
@@ -58,7 +61,7 @@ namespace SystemExplorer
 
                 void PopupMenu(wxMenu *menu, const wxPoint &pos = wxDefaultPosition);
 
-                //void SetItemComparator(wxTreeListItemComparator *treeListItemCopmarator);
+                virtual void SetItemComparator(wxTreeListItemComparator *treeListItemCopmarator) override;
             };
         }
     }
