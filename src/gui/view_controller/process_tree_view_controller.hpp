@@ -11,6 +11,9 @@
 #include <istream>
 #include <fstream>
 #include <sstream>
+#include <optional>
+
+#include <unistd.h>
 
 #include <wx/wx.h>
 #include <wx/accel.h>
@@ -69,6 +72,7 @@ namespace SystemExplorer
                     ExpandAll,
                     CollapseAll,
                     ToggleView,
+                    ShowAllProcesses,
                     About,
                     Close,
                     SendSignal,
@@ -109,6 +113,11 @@ namespace SystemExplorer
                 wxGauge *_gProgressBarCpu;
                 wxGauge *_gProgressBarRss;
 
+                wxMenuItem *_miExpandAll;
+                wxMenuItem *_miCollapseAll;
+                wxMenuItem *_miToggleView;
+                wxMenuItem *_miShowAllProcesses;
+
                 void SetAutoCompleteChoices();
                 bool UpdateAutoCompleteChoices();
 
@@ -126,6 +135,8 @@ namespace SystemExplorer
                 void BindContextMenuEvents();
                 void BindTimerEvents();
 
+                void UpdateContextMenu();
+
                 void SetFocus();
                 void StartTimer();
                 void StopTimer();
@@ -135,10 +146,12 @@ namespace SystemExplorer
                 void UpdateView();
 
            	    void AddHotKey(int menuBase, int itemId, wxAcceleratorEntryFlags flags, int key);
+
         	    std::optional<wxAcceleratorEntry> GetHotKey(int menuBase, int itemId);
 	            void AttachMenuItem(int menuItemId, wxMenuItem *menuItem);
+
                 template<class T>
-                wxMenuItem *AppendMenuItem(wxMenu *parentMenu, T dataItem, int base = 0, std::string overridenName = "")
+                wxMenuItem *AppendMenuItem(wxMenu *parentMenu, T dataItem, int base = 0, std::string overridenName = "", wxItemKind kind = wxITEM_NORMAL)
                 {
                     int itemId = dataItem.GetId();
                     int menuItemId = base + itemId;
@@ -146,16 +159,16 @@ namespace SystemExplorer
                     std::optional<wxAcceleratorEntry> hotKey = GetHotKey(base, itemId);
                     if(hotKey.has_value())
                     {
-                    itemName += ("\t" + hotKey.value().ToString());
+                        itemName += ("\t" + hotKey.value().ToString());
                     }
                     
-                    wxMenuItem *menuItem = parentMenu->Append(menuItemId, itemName, dataItem.GetDescription());
+                    wxMenuItem *menuItem = parentMenu->Append(menuItemId, itemName, dataItem.GetDescription(), kind);
 
                     if(hotKey.has_value())
                     {
                     //		 AttachMenuItem(menuItemId, menuItem);		 
-                    wxAcceleratorEntry &current = _hotKeys[menuItemId];
-                    current.Set(current.GetFlags(), current.GetKeyCode(), current.GetCommand(), menuItem);
+                        wxAcceleratorEntry &current = _hotKeys[menuItemId];
+                        current.Set(current.GetFlags(), current.GetKeyCode(), current.GetCommand(), menuItem);
                     }
 
                     

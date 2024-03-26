@@ -8,6 +8,8 @@
 #include "models/process_state.hpp"
 #include "models/process_state_helpers.hpp"
 
+#include <string>
+#include <vector>
 #include <deque>
 #include <algorithm>
 

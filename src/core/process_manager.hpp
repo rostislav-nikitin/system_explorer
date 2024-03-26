@@ -2,7 +2,10 @@
 #define PROCESS_MANAGER_HPP
 
 #include <string>
+#include <optional>
 #include <dirent.h>
+#include <pwd.h>
+#include <grp.h>
 
 #include "models/process_tree.hpp"
 #include "models/processes_stat.hpp"
@@ -25,7 +28,7 @@ namespace SystemExplorer
             //  Fill Current with new
             
         public:
-            ProcessTree GetProcessTree(std::string filter = "");
+            ProcessTree GetProcessTree(std::string filter = "", std::optional<unsigned long> filterUserId = std::nullopt);
         };
     }
 }

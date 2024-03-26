@@ -74,9 +74,24 @@ namespace SystemExplorer
 
             void ProcessTreeViewController::PostInitialize()
             {
+                UpdateContextMenu();
        			StartTimer();
     			SetFocus();
                 _processesStatManager.Tick();
+            }
+
+            void ProcessTreeViewController::UpdateContextMenu()
+            {
+                if(_viewState == ViewState::List)
+                {
+                    _miExpandAll->Enable(false);
+                    _miCollapseAll->Enable(false);
+                }
+                else
+                {
+                    _miExpandAll->Enable(true);
+                    _miCollapseAll->Enable(true);                    
+                }
             }
 
             void ProcessTreeViewController::CreateStatusBarField()
@@ -174,11 +189,13 @@ namespace SystemExplorer
                 entries.push_back(wxAcceleratorEntry(static_cast<wxAcceleratorEntryFlags>(
                     (int)wxACCEL_CTRL), (int)'E', static_cast<int>(ProcessContextMenuId::ExpandAll)));
                 entries.push_back(wxAcceleratorEntry(static_cast<wxAcceleratorEntryFlags>(
-                    (int)wxACCEL_CTRL), (int)'T', static_cast<int>(ProcessContextMenuId::ToggleView)));
-                entries.push_back(wxAcceleratorEntry(static_cast<wxAcceleratorEntryFlags>(
                     (int)wxACCEL_CTRL), (int)'L', static_cast<int>(ProcessContextMenuId::CollapseAll)));
                 entries.push_back(wxAcceleratorEntry(static_cast<wxAcceleratorEntryFlags>(
-                    (int)wxACCEL_CTRL | (int)wxACCEL_SHIFT), (int)'A', static_cast<int>(ProcessContextMenuId::About)));
+                    (int)wxACCEL_CTRL), (int)'T', static_cast<int>(ProcessContextMenuId::ToggleView)));
+                entries.push_back(wxAcceleratorEntry(static_cast<wxAcceleratorEntryFlags>(
+                    (int)wxACCEL_CTRL | (int)wxACCEL_SHIFT), (int)'A', static_cast<int>(ProcessContextMenuId::ShowAllProcesses)));
+                entries.push_back(wxAcceleratorEntry(static_cast<wxAcceleratorEntryFlags>(
+                    (int)wxACCEL_CTRL | (int)wxACCEL_SHIFT), (int)'I', static_cast<int>(ProcessContextMenuId::About)));
                 entries.push_back(wxAcceleratorEntry(static_cast<wxAcceleratorEntryFlags>(
                     (int)wxACCEL_ALT), WXK_F4, static_cast<int>(ProcessContextMenuId::Close)));
 
@@ -260,9 +277,13 @@ namespace SystemExplorer
             {
 
                 if(_viewState == ViewState::Tree)
+                {
        			    _processesListControl = new Control::SearchableTreeListControl(this, wxID_ANY, _imageList);
+                }
                 else if(_viewState == ViewState::List)
+                {
                     _processesListControl = new Control::SearchableListControl(this, wxID_ANY, _imageList);
+                }
     			
 	    		_processesListControl->AppendColumn(_T("Name"), 300, wxALIGN_LEFT, wxCOL_RESIZABLE | wxCOL_SORTABLE);
 		    	_processesListControl->AppendColumn(_T("PID"), 64, wxALIGN_RIGHT, wxCOL_RESIZABLE | wxCOL_SORTABLE);
@@ -330,12 +351,14 @@ namespace SystemExplorer
                 AppendMenuItem(_processContextMenu, SignalManager::GetSignal("SIGCONT"), PROCESS_CONTEXT_MENU_SIGNAL_BASE, "Continue");
 
                 _processContextMenu->AppendSeparator();
-                _processContextMenu->Append(static_cast<int>(ProcessContextMenuId::ExpandAll), wxT("&Expand All\tCtrl+E"), wxT("Expand All"));
-                _processContextMenu->Append(static_cast<int>(ProcessContextMenuId::CollapseAll), wxT("&Collapse All\tCtrl+L"), wxT("Collapse All"));
+                _miExpandAll = _processContextMenu->Append(static_cast<int>(ProcessContextMenuId::ExpandAll), wxT("&Expand All\tCtrl+E"), wxT("Expand All"));
+                _miCollapseAll = _processContextMenu->Append(static_cast<int>(ProcessContextMenuId::CollapseAll), wxT("&Collapse All\tCtrl+L"), wxT("Collapse All"));
                 _processContextMenu->AppendSeparator();
-                _processContextMenu->Append(static_cast<int>(ProcessContextMenuId::ToggleView), wxT("&Toggle Tree/List\tCtrl+T"), wxT("Expand All"));
+                _miToggleView = _processContextMenu->Append(static_cast<int>(ProcessContextMenuId::ToggleView), wxT("&Toggle Tree/List\tCtrl+T"), wxT("Toggle Tree/List"));
                 _processContextMenu->AppendSeparator();
-                _processContextMenu->Append(static_cast<int>(ProcessContextMenuId::About), wxT("&About\tCtrl+Shift+A"), wxT("About"));
+                _processContextMenu->AppendSeparator();
+                _miShowAllProcesses = _processContextMenu->Append(static_cast<int>(ProcessContextMenuId::ShowAllProcesses), wxT("&Show All Processes\tCtrl+Shift+A"), wxT("Show All Processes"), wxITEM_CHECK);
+                _processContextMenu->Append(static_cast<int>(ProcessContextMenuId::About), wxT("&About\tCtrl+Shift+I"), wxT("About"));
                 _processContextMenu->AppendSeparator();
                 _processContextMenu->Append(static_cast<int>(ProcessContextMenuId::Close), wxT("&Close\tAlt+F4"), wxT("Close"));
 
@@ -530,6 +553,9 @@ namespace SystemExplorer
                         ToggleViewState();
                         UpdateView();
                         break;
+                    case ProcessContextMenuId::ShowAllProcesses:
+                        BindData();
+                        break;
                     case ProcessContextMenuId::About:
                         //wxMessageBox("About", "Not Implemented Yet.", wxOK | wxICON_INFORMATION, this->_book->GetParent());
                         dlgAbout = new AboutDialogViewController(GetTopFrame());
@@ -588,11 +614,16 @@ namespace SystemExplorer
                 using SystemExplorer::Core::Models::Process;
                 using SystemExplorer::Core::Models::ProcessTree;
                 using SystemExplorer::Core::Models::ProcessesStat;
+
+                unsigned long currentUserId = geteuid();
+                std::optional<unsigned long> filterUserId = std::nullopt;
+                if(!_miShowAllProcesses->IsChecked())
+                    filterUserId = currentUserId;
                 
                 ProcessesStat processesStat = _processesStatManager.GetProcessesStat();
                 ProcessManager pm;
                 std::string searchFilter = _processesListControl->GetSearchText();
-                ProcessTree processes = pm.GetProcessTree(searchFilter);
+                ProcessTree processes = pm.GetProcessTree(searchFilter, filterUserId);
 
                 std::vector<Control::SearchableControlBase::SearchableItem> items;
 
@@ -643,13 +674,17 @@ namespace SystemExplorer
                 using SystemExplorer::Core::Models::ProcessTree;
                 using SystemExplorer::Core::Models::ProcessesStat;
 
+                unsigned long currentUserId = geteuid();
+                std::optional<unsigned long> filterUserId = std::nullopt;
+                if(!_miShowAllProcesses->IsChecked())
+                    filterUserId = currentUserId;
                 // Get processes
                 ProcessManager pm;
                 ProcessesStat processesStat = _processesStatManager.GetProcessesStat();
                 float x = 0.0;
 
                 std::string searchFilter = _processesListControl->GetSearchText();
-                ProcessTree processTreeToRebind = pm.GetProcessTree(searchFilter);
+                ProcessTree processTreeToRebind = pm.GetProcessTree(searchFilter, filterUserId);
               
 
                 std::vector<Control::SearchableControlBase::SearchableItem> items;

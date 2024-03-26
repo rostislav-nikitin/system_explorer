@@ -1,7 +1,6 @@
 #include "process_manager_impl.hpp"
 
 #include <iostream>
-#include <vector>
 
 namespace SystemExplorer
 {
@@ -11,11 +10,16 @@ namespace SystemExplorer
         std::string get_data(dirent *ent, std::string file_name);
         std::vector<std::string> split(std::string &str, std::string delimiter);
         std::vector<Process const*> get_leafs(ProcessTree &processTree);
+		std::string to_lower(std::string const &instr);
 		bool name_predicate(std::string const &name, std::vector<std::string> const &filters);
 		bool wild_card_name_predicate(std::string const &name, std::vector<std::string> const &filters);
-        void apply_filter(ProcessTree &processTree, std::vector<Process const*> &leafs, std::string &filter);
+		bool user_predicate(unsigned long userId, std::optional<unsigned long> filterUserId);
+        void apply_filter(ProcessTree &processTree, 
+			std::vector<Process const*> &leafs, 
+			std::string &filter,
+			std::optional<unsigned long> filterUserId);
 
-        ProcessTree ProcessManager::GetProcessTree(std::string filter)
+        ProcessTree ProcessManager::GetProcessTree(std::string filter, std::optional<unsigned long> filterUserId)
         {
             ProcessTree result;
             bool filtering = filter != "";
@@ -25,15 +29,29 @@ namespace SystemExplorer
             dir = opendir("/proc");
          
             dirent *ent;
+			std::string procPath ("/proc");
             while((ent = readdir(dir)) != NULL)
             {
                 if(IsNumber(ent->d_name))
                 {
+					std::string fileName = procPath + "/" + std::string(ent->d_name);
+					struct stat info;
+					stat(fileName.c_str(), &info);  // Error check omitted
+					unsigned long userId = info.st_uid;
+					unsigned long groupId = info.st_gid;
+					struct passwd *pw = getpwuid(userId);
+					struct group  *gr = getgrgid(groupId);
+					std::string userName(pw->pw_name);
+					std::string groupName(gr->gr_name);
+
                     std::string processName = GetName(ent);
                     pid_t pid = atoi(ent->d_name);
                     pid_t parentPid = GetParentPid(ent);
 					// Read /proc/{pid}/stat
-                    Process process(processName, pid, parentPid, !filtering);
+                    Process process(processName, pid, parentPid, 
+						userId, userName, groupId, groupName, 
+						!filtering && (!filterUserId.has_value() || userId == filterUserId) );
+						
                     result.processes.insert(std::make_pair(pid, process));
                 }
             }
@@ -41,7 +59,7 @@ namespace SystemExplorer
             closedir(dir);
 
             std::vector<Process const*> leafs = get_leafs(result);
-            apply_filter(result, leafs, filter);
+            apply_filter(result, leafs, filter, filterUserId);
 
             return result;
         }
@@ -67,10 +85,14 @@ namespace SystemExplorer
             return result;
         }
 
-        void apply_filter(ProcessTree &processTree, std::vector<Process const*> &leafs, std::string &filter)
+        void apply_filter(ProcessTree &processTree, 
+			std::vector<Process const*> &leafs, 
+			std::string &filter,
+			std::optional<unsigned long> filterUserId)
         {
 			const std::string FILTER_DELIMITER = "|";
 			std::vector<std::string> filters = split(filter, FILTER_DELIMITER);
+			std::transform(filters.begin(), filters.end(), filters.begin(), to_lower);
 			std::for_each(filters.begin(), filters.end(), 
 				[](std::string &filter)
 				{
@@ -79,11 +101,12 @@ namespace SystemExplorer
 				});
 		//	std::for_each(filters.begin(), filters.end(), [](std::string const &f){ std::cout << f << std::endl; });
 
-            std::for_each(leafs.begin(), leafs.end(), [&processTree, &filters](Process const *process)
+            std::for_each(leafs.begin(), leafs.end(), [&processTree, &filters, &filterUserId](Process const *process)
             {
                 std::string name = process->GetName();
-			
-                if(wild_card_name_predicate(name, filters))
+				unsigned long userId = process->GetUserId();
+
+                if(wild_card_name_predicate(name, filters) && user_predicate(userId, filterUserId))
                 {
                     pid_t pid = process->GetPid();
 					processTree.processes[pid].SetNameMatched(true);
@@ -110,15 +133,17 @@ namespace SystemExplorer
 						if(!isPicked && !parent->GetPicked())
 						{
 	                        std::string name = parent->GetName();
+							unsigned long userId = parent->GetUserId();
 
 							bool name_valid = wild_card_name_predicate(name, filters);
+							bool userId_valid = user_predicate(userId, filterUserId);
 
-	                        if(isPicked || name_valid)
+	                        if(isPicked || (name_valid && userId_valid))
 	                        {
 	                            parent->SetPicked(true);
 	                            isPicked = true;                        
 	                        }
-	                        if(name_valid)
+	                        if(name_valid && userId_valid)
 							{
 								parent->SetNameMatched(true);
 								std::vector<pid_t> all_children;
@@ -161,7 +186,7 @@ namespace SystemExplorer
 */
         }
       
-		std::string to_lower(std::string const instr)
+		std::string to_lower(std::string const &instr)
 		{
 			std::string result;
 			std::transform(instr.begin(), instr.end(), std::back_inserter(result),
@@ -251,6 +276,14 @@ namespace SystemExplorer
 				});
 
 			return found_filter != filters.end();
+		}
+
+		bool user_predicate(unsigned long userId, std::optional<unsigned long> filterUserId)
+		{
+			if(!filterUserId.has_value())
+				return true;
+			
+			return userId == filterUserId;
 		}
 
 		bool ProcessManager::IsNumber(std::string str)
