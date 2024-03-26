@@ -554,6 +554,7 @@ namespace SystemExplorer
                         UpdateView();
                         break;
                     case ProcessContextMenuId::ShowAllProcesses:
+                        _miShowAllProcesses->Check(!_miShowAllProcesses->IsChecked());
                         BindData();
                         break;
                     case ProcessContextMenuId::About:
