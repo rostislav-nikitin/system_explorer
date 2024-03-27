@@ -48,7 +48,7 @@ namespace SystemExplorer
           case 1:
           case 8:
           case 9:
-          case 19:
+          case 10:
           case 11:
             if(atoi(first_text.c_str()) < atoi(second_text.c_str()))
               return  -1;
