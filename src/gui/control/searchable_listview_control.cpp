@@ -258,6 +258,11 @@ namespace SystemExplorer
                 _lvListView->PopupMenu(menu, pos);
             }
 
+             void SearchableListViewControl::Sort()
+             {
+                
+             }
+
 
             // Private
 

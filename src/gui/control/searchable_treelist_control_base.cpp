@@ -15,7 +15,8 @@ namespace SystemExplorer
         {
             SearchableTreeListControlBase::SearchableTreeListControlBase(
                 wxWindow *parent, wxWindowID id, wxImageList *imageList) 
-                    : SearchableControlBase(parent, wxID_ANY, imageList)
+                    : SearchableControlBase(parent, wxID_ANY, imageList),
+                    _currentSortingColumn(0), _currentSortingOrder(1)
             {
             }
 
@@ -70,6 +71,22 @@ namespace SystemExplorer
             void SearchableTreeListControlBase::SetItemComparator(wxTreeListItemComparator *treeListItemCopmarator)
             {
                 _tlcTreeList->SetItemComparator(treeListItemCopmarator);
+            }
+
+            
+            void SearchableTreeListControlBase::Sort()
+            {
+                unsigned int currentSortingColumn;
+                bool currentSortingOrder;
+                if(_tlcTreeList->GetSortColumn(&currentSortingColumn, &currentSortingOrder))
+                {
+                    _currentSortingColumn = currentSortingColumn;
+                    _currentSortingOrder = currentSortingOrder;
+                }
+
+                //std::cout << "[SORTING]" << _currentSortingColumn << "::" << _currentSortingOrder << std::endl;
+                _tlcTreeList->SetSortColumn(_currentSortingColumn, _currentSortingOrder);
+                //_tlcTreeList->SetSortColumn(currentSortingColumn, currentSortingOrder);
             }
 
             void SearchableTreeListControlBase::tlcTreeList_OnChar(wxKeyEvent &event)

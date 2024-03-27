@@ -94,6 +94,7 @@ namespace SystemExplorer
                 virtual void CollapseAll() = 0;
 
                 virtual void SetItemComparator(wxTreeListItemComparator *treeListItemCopmarator);
+                virtual void Sort() = 0;
 
             };
         }

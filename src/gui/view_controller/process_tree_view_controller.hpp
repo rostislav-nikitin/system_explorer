@@ -72,6 +72,7 @@ namespace SystemExplorer
                     ExpandAll,
                     CollapseAll,
                     ToggleView,
+                    AutoSort,
                     ShowAllProcesses,
                     About,
                     Close,
@@ -116,6 +117,7 @@ namespace SystemExplorer
                 wxMenuItem *_miExpandAll;
                 wxMenuItem *_miCollapseAll;
                 wxMenuItem *_miToggleView;
+                wxMenuItem *_miAutoSort;
                 wxMenuItem *_miShowAllProcesses;
 
                 void SetAutoCompleteChoices();
@@ -187,6 +189,8 @@ namespace SystemExplorer
                 void UpdateStatusBarStatistics(Core::Models::ProcessesStat const &processesStat);
 
                 int MapProcessStatToIconIndex(Core::Models::ProcessStat processStat);
+
+                void Sort();
                 
                 void window_OnSize(wxSizeEvent& event);
 

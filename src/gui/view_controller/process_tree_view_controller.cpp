@@ -193,7 +193,9 @@ namespace SystemExplorer
                 entries.push_back(wxAcceleratorEntry(static_cast<wxAcceleratorEntryFlags>(
                     (int)wxACCEL_CTRL), (int)'W', static_cast<int>(ProcessContextMenuId::ToggleView)));
                 entries.push_back(wxAcceleratorEntry(static_cast<wxAcceleratorEntryFlags>(
-                    (int)wxACCEL_CTRL), (int)'S', static_cast<int>(ProcessContextMenuId::ShowAllProcesses)));
+                    (int)wxACCEL_CTRL), (int)'S', static_cast<int>(ProcessContextMenuId::AutoSort)));
+                entries.push_back(wxAcceleratorEntry(static_cast<wxAcceleratorEntryFlags>(
+                    (int)wxACCEL_CTRL), (int)'P', static_cast<int>(ProcessContextMenuId::ShowAllProcesses)));
                 entries.push_back(wxAcceleratorEntry(static_cast<wxAcceleratorEntryFlags>(
                     (int)wxACCEL_CTRL), (int)'I', static_cast<int>(ProcessContextMenuId::About)));
                 entries.push_back(wxAcceleratorEntry(static_cast<wxAcceleratorEntryFlags>(
@@ -358,7 +360,9 @@ namespace SystemExplorer
                 _miToggleView = _processContextMenu->Append(static_cast<int>(ProcessContextMenuId::ToggleView), wxT("&Toggle Tree/List\tCtrl+W"), wxT("Toggle Tree/List"));
                 _processContextMenu->AppendSeparator();
                 _processContextMenu->AppendSeparator();
-                _miShowAllProcesses = _processContextMenu->Append(static_cast<int>(ProcessContextMenuId::ShowAllProcesses), wxT("&Show All Processes\tCtrl+S"), wxT("Show All Processes"), wxITEM_CHECK);
+                _miAutoSort = _processContextMenu->Append(static_cast<int>(ProcessContextMenuId::AutoSort), wxT("&Auto Sort\tCtrl+S"), wxT("Auto Sort"), wxITEM_CHECK);
+                _miAutoSort->Check(true);
+                _miShowAllProcesses = _processContextMenu->Append(static_cast<int>(ProcessContextMenuId::ShowAllProcesses), wxT("&Show All Processes\tCtrl+P"), wxT("Show All Processes"), wxITEM_CHECK);
                 _processContextMenu->Append(static_cast<int>(ProcessContextMenuId::About), wxT("&About\tCtrl+I"), wxT("About"));
                 _processContextMenu->AppendSeparator();
                 _processContextMenu->Append(static_cast<int>(ProcessContextMenuId::Close), wxT("&Close\tAlt+F4"), wxT("Close"));
@@ -555,6 +559,10 @@ namespace SystemExplorer
                         ToggleViewState();
                         UpdateView();
                         break;
+                    case ProcessContextMenuId::AutoSort:
+                        _miAutoSort->Check(!_miAutoSort->IsChecked());
+                        Sort();
+                        break;
                     case ProcessContextMenuId::ShowAllProcesses:
                         _miShowAllProcesses->Check(!_miShowAllProcesses->IsChecked());
                         BindData();
@@ -668,7 +676,7 @@ namespace SystemExplorer
 
                 _processesListControl->BindData(items);
                 _processesListControl->ExpandAll();
-
+                Sort();
                 UpdateStatusBarStatistics(processesStat);
             }
 
@@ -731,6 +739,7 @@ namespace SystemExplorer
                 }
 
                 _processesListControl->ReBindData(items);
+                Sort();
                 UpdateStatusBarStatistics(processesStat);
     //			_processesListControl->ExpandAll();
             }
@@ -838,6 +847,15 @@ namespace SystemExplorer
                 result += STATE_INDEX * 4;
 
                 return result;
+            }
+
+            void ProcessTreeViewController::Sort()
+            {
+                if(_miAutoSort->IsChecked())
+                {
+                    //std::cout << "Sorting..." << std::endl;
+                    _processesListControl->Sort();
+                }
             }
 
             void ProcessTreeViewController::StartTimer()

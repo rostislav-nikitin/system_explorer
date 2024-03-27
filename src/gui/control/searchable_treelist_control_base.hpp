@@ -32,6 +32,9 @@ namespace SystemExplorer
                 wxBoxSizer *_bsSizer;
 	            wxTreeListCtrl *_tlcTreeList;
 
+                unsigned _currentSortingColumn;
+                bool _currentSortingOrder;
+
                 virtual void CreateChildControls() override;
                 virtual void BindEvents() override;
 
@@ -60,6 +63,7 @@ namespace SystemExplorer
                 void PopupMenu(wxMenu *menu, const wxPoint &pos = wxDefaultPosition);
 
                 virtual void SetItemComparator(wxTreeListItemComparator *treeListItemCopmarator) override;
+                virtual void Sort() override;
             };
         }
     }
