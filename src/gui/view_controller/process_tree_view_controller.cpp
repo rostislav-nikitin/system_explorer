@@ -288,6 +288,7 @@ namespace SystemExplorer
 	    		_processesListControl->AppendColumn(_T("Name"), 300, wxALIGN_LEFT, wxCOL_RESIZABLE | wxCOL_SORTABLE);
 		    	_processesListControl->AppendColumn(_T("PID"), 64, wxALIGN_RIGHT, wxCOL_RESIZABLE | wxCOL_SORTABLE);
                 _processesListControl->AppendColumn(_T("CPU, %"), 88, wxALIGN_RIGHT, wxCOL_RESIZABLE | wxCOL_SORTABLE);
+                _processesListControl->AppendColumn(_T("User"), 88, wxALIGN_LEFT, wxCOL_RESIZABLE | wxCOL_SORTABLE);
                 _processesListControl->AppendColumn(_T("State"), 72, wxALIGN_LEFT, wxCOL_RESIZABLE | wxCOL_SORTABLE);
                 _processesListControl->AppendColumn(_T("VM, Gib"), 84, wxALIGN_RIGHT, wxCOL_RESIZABLE | wxCOL_SORTABLE);
                 _processesListControl->AppendColumn(_T("Resident, Mb"), 116, wxALIGN_RIGHT, wxCOL_RESIZABLE | wxCOL_SORTABLE);
@@ -635,6 +636,8 @@ namespace SystemExplorer
                     pid_t pid = (*it).first;
                     pid_t parentPid = (*it).second.GetParentPid();
                     std::string text = (*it).second.GetName();
+                    std::string userName = (*it).second.GetUserName();
+                    long unsigned userId = (*it).second.GetUserId();
                     bool matched = (*it).second.GetNameMatched();
                     bool picked = (*it).second.GetPicked();
                     float cpu_load = -1.0f;
@@ -643,6 +646,7 @@ namespace SystemExplorer
 
                     std::vector<std::string> other({std::to_string(pid), 
                         to_string_with_precision((cpu_load < 0.0f)?0.0f:cpu_load, 2),
+                        userName,
                         to_string(processesStat.processes_stat[pid].state),
                         to_string_with_precision(processesStat.processes_stat[pid].mem_vsize, 2),
                         to_string_with_precision(processesStat.processes_stat[pid].mem_rss, 2),
@@ -654,7 +658,7 @@ namespace SystemExplorer
 
                     int iconIndex = MapProcessStatToIconIndex(processesStat.processes_stat[pid]);
 
-                    if (picked)
+                    if (picked && (_viewState == ViewState::Tree || _miShowAllProcesses->IsChecked() || userId == currentUserId))
                     {
                         Control::SearchableControlBase::SearchableItem item(pid, text, parentPid, matched, other, iconIndex);
                         items.push_back(item);
@@ -695,6 +699,8 @@ namespace SystemExplorer
                     pid_t pid = (*it).first;
                     pid_t parentPid = (*it).second.GetParentPid();
                     std::string text = (*it).second.GetName();
+                    std::string userName = (*it).second.GetUserName();
+                    unsigned long userId = (*it).second.GetUserId();
                     bool matched = (*it).second.GetNameMatched();
                     bool picked = (*it).second.GetPicked();
 
@@ -704,6 +710,7 @@ namespace SystemExplorer
 
                     std::vector<std::string> other({std::to_string(pid), 
                         to_string_with_precision(((cpu_load < 0) ? 0 : cpu_load), 2),
+                        userName,
                         to_string(processesStat.processes_stat[pid].state),
                         to_string_with_precision(processesStat.processes_stat[pid].mem_vsize, 2),
                         to_string_with_precision(processesStat.processes_stat[pid].mem_rss, 2),
@@ -715,7 +722,7 @@ namespace SystemExplorer
 
                     int iconIndex = MapProcessStatToIconIndex(processesStat.processes_stat[pid]);
 
-                    if (picked)
+                    if (picked && (_viewState == ViewState::Tree || _miShowAllProcesses->IsChecked() || userId == currentUserId))
                     {
                         Control::SearchableControlBase::SearchableItem item(pid, text, parentPid, matched, other, iconIndex);
                         items.push_back(item);
