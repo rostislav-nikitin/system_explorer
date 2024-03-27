@@ -25,7 +25,7 @@ namespace SystemExplorer
       {
         int result;
 
-        if(column > 10)
+        if(column > 11)
           return 0;
 
         wxString 
