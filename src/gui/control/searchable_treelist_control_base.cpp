@@ -79,14 +79,8 @@ namespace SystemExplorer
 	            wxTreeListItems selectedItems;
 	            //std::cout << keyCode << std::endl;
 
-                if(keyCode == WXK_BACK)
-                {
-                    std::cout << "BACK" << std::endl;
-                    _scSearch->SetFocus();
-            		_scSearch->SelectNone();
-
-                }
-                else if(event.IsKeyInCategory(WXK_CATEGORY_NAVIGATION))
+                
+                if(event.IsKeyInCategory(WXK_CATEGORY_NAVIGATION))
                 {
                     wxTreeListItem selectedItem = _tlcTreeList->GetSelection();
                     if(selectedItem.IsOk())
@@ -101,9 +95,24 @@ namespace SystemExplorer
                         }
                     }
                 }
-	            if(!event.IsKeyInCategory(WXK_CATEGORY_NAVIGATION) 
+
+                if(keyCode == WXK_BACK)
+                {
+                    _scSearch->SetFocus();
+            		_scSearch->SelectNone();
+
+                }
+                else if(keyCode == WXK_SPACE)
+                {
+                    _scSearch->SetValue("");
+                    _scSearch->SetFocus();
+            		_scSearch->SelectNone();
+
+                }
+                else if(!event.IsKeyInCategory(WXK_CATEGORY_NAVIGATION) 
                     && (keyCode != WXK_TAB) 
-                    && (keyCode >= WXK_SPACE) && (std::isalnum(keyCode) || std::ispunct(keyCode)))
+                    && (keyCode >= WXK_SPACE) 
+                    && (std::isalnum(keyCode) || std::ispunct(keyCode)))
 	            {
             		_scSearch->SetValue(wxString(event.GetUnicodeKey()));
                 	_scSearch->SetFocus();
