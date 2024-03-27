@@ -29,7 +29,7 @@ namespace SystemExplorer
                     SearchableItem item = *it;
                     wxTreeListItem parent;
                     parent = _tlcTreeList->GetRootItem();
-
+            
                     if(item.GetSelected() || FilterEmpty())
                     {
                         wxTreeListItem treeListItem = _tlcTreeList->AppendItem(parent, item.GetText());

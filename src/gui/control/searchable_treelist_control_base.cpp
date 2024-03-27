@@ -79,7 +79,14 @@ namespace SystemExplorer
 	            wxTreeListItems selectedItems;
 	            //std::cout << keyCode << std::endl;
 
-                if(event.IsKeyInCategory(WXK_CATEGORY_NAVIGATION))
+                if(keyCode == WXK_BACK)
+                {
+                    std::cout << "BACK" << std::endl;
+                    _scSearch->SetFocus();
+            		_scSearch->SelectNone();
+
+                }
+                else if(event.IsKeyInCategory(WXK_CATEGORY_NAVIGATION))
                 {
                     wxTreeListItem selectedItem = _tlcTreeList->GetSelection();
                     if(selectedItem.IsOk())

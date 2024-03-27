@@ -187,15 +187,15 @@ namespace SystemExplorer
                 entries.push_back(wxAcceleratorEntry(static_cast<wxAcceleratorEntryFlags>(
                     (int)wxACCEL_CTRL), (int)'O', static_cast<int>(ProcessContextMenuId::Open)));
                 entries.push_back(wxAcceleratorEntry(static_cast<wxAcceleratorEntryFlags>(
-                    (int)wxACCEL_CTRL), (int)'E', static_cast<int>(ProcessContextMenuId::ExpandAll)));
+                    (int)wxACCEL_CTRL), (int)']', static_cast<int>(ProcessContextMenuId::ExpandAll)));
                 entries.push_back(wxAcceleratorEntry(static_cast<wxAcceleratorEntryFlags>(
-                    (int)wxACCEL_CTRL), (int)'L', static_cast<int>(ProcessContextMenuId::CollapseAll)));
+                    (int)wxACCEL_CTRL), (int)'[', static_cast<int>(ProcessContextMenuId::CollapseAll)));
                 entries.push_back(wxAcceleratorEntry(static_cast<wxAcceleratorEntryFlags>(
-                    (int)wxACCEL_CTRL), (int)'T', static_cast<int>(ProcessContextMenuId::ToggleView)));
+                    (int)wxACCEL_CTRL), (int)'W', static_cast<int>(ProcessContextMenuId::ToggleView)));
                 entries.push_back(wxAcceleratorEntry(static_cast<wxAcceleratorEntryFlags>(
-                    (int)wxACCEL_CTRL | (int)wxACCEL_SHIFT), (int)'A', static_cast<int>(ProcessContextMenuId::ShowAllProcesses)));
+                    (int)wxACCEL_CTRL), (int)'S', static_cast<int>(ProcessContextMenuId::ShowAllProcesses)));
                 entries.push_back(wxAcceleratorEntry(static_cast<wxAcceleratorEntryFlags>(
-                    (int)wxACCEL_CTRL | (int)wxACCEL_SHIFT), (int)'I', static_cast<int>(ProcessContextMenuId::About)));
+                    (int)wxACCEL_CTRL), (int)'I', static_cast<int>(ProcessContextMenuId::About)));
                 entries.push_back(wxAcceleratorEntry(static_cast<wxAcceleratorEntryFlags>(
                     (int)wxACCEL_ALT), WXK_F4, static_cast<int>(ProcessContextMenuId::Close)));
 
@@ -352,14 +352,14 @@ namespace SystemExplorer
                 AppendMenuItem(_processContextMenu, SignalManager::GetSignal("SIGCONT"), PROCESS_CONTEXT_MENU_SIGNAL_BASE, "Continue");
 
                 _processContextMenu->AppendSeparator();
-                _miExpandAll = _processContextMenu->Append(static_cast<int>(ProcessContextMenuId::ExpandAll), wxT("&Expand All\tCtrl+E"), wxT("Expand All"));
-                _miCollapseAll = _processContextMenu->Append(static_cast<int>(ProcessContextMenuId::CollapseAll), wxT("&Collapse All\tCtrl+L"), wxT("Collapse All"));
+                _miExpandAll = _processContextMenu->Append(static_cast<int>(ProcessContextMenuId::ExpandAll), wxT("&Expand All\tCtrl+]"), wxT("Expand All"));
+                _miCollapseAll = _processContextMenu->Append(static_cast<int>(ProcessContextMenuId::CollapseAll), wxT("&Collapse All\tCtrl+["), wxT("Collapse All"));
                 _processContextMenu->AppendSeparator();
-                _miToggleView = _processContextMenu->Append(static_cast<int>(ProcessContextMenuId::ToggleView), wxT("&Toggle Tree/List\tCtrl+T"), wxT("Toggle Tree/List"));
+                _miToggleView = _processContextMenu->Append(static_cast<int>(ProcessContextMenuId::ToggleView), wxT("&Toggle Tree/List\tCtrl+W"), wxT("Toggle Tree/List"));
                 _processContextMenu->AppendSeparator();
                 _processContextMenu->AppendSeparator();
-                _miShowAllProcesses = _processContextMenu->Append(static_cast<int>(ProcessContextMenuId::ShowAllProcesses), wxT("&Show All Processes\tCtrl+Shift+A"), wxT("Show All Processes"), wxITEM_CHECK);
-                _processContextMenu->Append(static_cast<int>(ProcessContextMenuId::About), wxT("&About\tCtrl+Shift+I"), wxT("About"));
+                _miShowAllProcesses = _processContextMenu->Append(static_cast<int>(ProcessContextMenuId::ShowAllProcesses), wxT("&Show All Processes\tCtrl+S"), wxT("Show All Processes"), wxITEM_CHECK);
+                _processContextMenu->Append(static_cast<int>(ProcessContextMenuId::About), wxT("&About\tCtrl+I"), wxT("About"));
                 _processContextMenu->AppendSeparator();
                 _processContextMenu->Append(static_cast<int>(ProcessContextMenuId::Close), wxT("&Close\tAlt+F4"), wxT("Close"));
 
@@ -499,8 +499,9 @@ namespace SystemExplorer
 
                 std::string sarchText = _processesListControl->GetSearchText();
 
+                this->GetParent()->SetFocus();
                 this->_bsSizer->Clear(true);
-
+                
                 //!IMPORTANT: Uncomment in case of ListView usage (it destroys image view and it should be re-created before new usage)
                 //if(_viewState == ViewState::Tree)
                 //    CreateImageList();
