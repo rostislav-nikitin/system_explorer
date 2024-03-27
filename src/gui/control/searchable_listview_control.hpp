@@ -30,7 +30,7 @@ namespace SystemExplorer
             class SearchableListViewControl : public SearchableControlBase
             {
                 wxBoxSizer *_bsSizer;
-	            wxListView *_lvProcesses;
+	            wxListView *_lvListView;
 
                 virtual void CreateChildControls() override;
                 virtual void BindEvents() override;

@@ -24,16 +24,16 @@ namespace SystemExplorer
             {
                 SearchableControlBase::CreateChildControls();
                 
-		        _lvProcesses = new wxListView(this, wxID_ANY, wxPoint(0,0), wxSize(100, 100), wxLC_REPORT | wxBORDER_NONE);
-                //_lvProcesses->SetSingleStyle(wxLC_REPORT, false);
+		        _lvListView = new wxListView(this, wxID_ANY, wxPoint(0,0), wxSize(100, 100), wxLC_REPORT | wxBORDER_NONE);
+                //_lvListView->SetSingleStyle(wxLC_REPORT, false);
                 //TODO: Uncomment
-                _lvProcesses->AssignImageList(_imageList, wxIMAGE_LIST_SMALL);
-		        //_lvProcesses->SetWindowStyle(wxBORDER_NONE);
+                _lvListView->AssignImageList(_imageList, wxIMAGE_LIST_SMALL);
+		        //_lvListView->SetWindowStyle(wxBORDER_NONE);
 
-                //std::cout << (_lvProcesses->GetParent() == nullptr) << std::endl;
+                //std::cout << (_lvListView->GetParent() == nullptr) << std::endl;
                 _bsSizer = new wxBoxSizer(wxVERTICAL);
 		        _bsSizer->Add(_scSearch, 0, wxEXPAND | wxALL, 0);
-		        _bsSizer->Add(_lvProcesses, 1, wxEXPAND | wxALL, 0);
+		        _bsSizer->Add(_lvListView, 1, wxEXPAND | wxALL, 0);
 
 		        this->SetSizer(_bsSizer);
             }
@@ -42,8 +42,8 @@ namespace SystemExplorer
             {
                 SearchableControlBase::BindEvents();
 
-                _lvProcesses->Bind(wxEVT_CHAR, &SearchableListViewControl::lvProcesses_OnChar, this);
-                _lvProcesses->Bind(wxEVT_LIST_ITEM_RIGHT_CLICK, &SearchableListViewControl::lvProcesses_OnItemContextMenu, this);
+                _lvListView->Bind(wxEVT_CHAR, &SearchableListViewControl::lvProcesses_OnChar, this);
+                _lvListView->Bind(wxEVT_LIST_ITEM_RIGHT_CLICK, &SearchableListViewControl::lvProcesses_OnItemContextMenu, this);
             }
 
             int SearchableListViewControl::AppendColumn(const wxString &title, int width, wxAlignment align, int flags)
@@ -52,19 +52,19 @@ namespace SystemExplorer
                 if(align == wxAlignment::wxALIGN_RIGHT)
                     format = wxListColumnFormat::wxLIST_FORMAT_RIGHT;
 
-                return _lvProcesses->AppendColumn(title, format, width);
+                return _lvListView->AppendColumn(title, format, width);
             }
 
 
             unsigned int SearchableListViewControl::GetSelections(std::vector<SearchableItem> &selections) const
             {
 
-                for(long item_index = _lvProcesses->GetFirstSelected();
-                    item_index != -1; item_index = _lvProcesses->GetNextSelected(item_index))
+                for(long item_index = _lvListView->GetFirstSelected();
+                    item_index != -1; item_index = _lvListView->GetNextSelected(item_index))
                     {
 
                         SearchableItem *searchableItem = 
-                            (SearchableItem *)_lvProcesses->GetItemData(item_index);
+                            (SearchableItem *)_lvListView->GetItemData(item_index);
                         selections.push_back(*searchableItem);
                     }
 
@@ -74,7 +74,7 @@ namespace SystemExplorer
 
             void SearchableListViewControl::BindData(std::vector<SearchableItem> &dataSource)
             {
-               	_lvProcesses->DeleteAllItems();
+               	_lvListView->DeleteAllItems();
 
                 int insertIndex = 0;
                 for(std::vector<SearchableItem>::const_iterator it = dataSource.begin(); it != dataSource.end(); ++it)
@@ -88,16 +88,16 @@ namespace SystemExplorer
                         //listItem.SetId(item.GetId());
                         //listItem.SetText(item.GetText());
                         //listItem.SetImage(item.GetIconIndex());
-                        int listItemIndex = _lvProcesses->InsertItem(insertIndex++, item.GetText(), item.GetIconIndex());
+                        int listItemIndex = _lvListView->InsertItem(insertIndex++, item.GetText(), item.GetIconIndex());
                         SearchableItem *dataItem = new SearchableItem(item);
-                        _lvProcesses->SetItemPtrData(listItemIndex, (wxUIntPtr)dataItem);
+                        _lvListView->SetItemPtrData(listItemIndex, (wxUIntPtr)dataItem);
                         
                         for(int idx = 0; idx < item.GetOther().size(); ++idx)
                         {
-                            _lvProcesses->SetItem(listItemIndex, idx + 1, item.GetOther()[idx]);
+                            _lvListView->SetItem(listItemIndex, idx + 1, item.GetOther()[idx]);
                         }
                         if(item.GetSelected())
-                            _lvProcesses->Select(listItemIndex, true);
+                            _lvListView->Select(listItemIndex, true);
                     }
                 }
 /*
@@ -109,7 +109,7 @@ namespace SystemExplorer
                     {
                         long listItemIndex = FindItemById(item.GetId());
                         if(listItemIndex != -1)
-                            _lvProcesses->Select(listItemIndex, true);
+                            _lvListView->Select(listItemIndex, true);
                     }
                 }
 */
@@ -124,7 +124,7 @@ namespace SystemExplorer
             {
                 // Cases
                 // 1. Item retured
-                int insertIndex = _lvProcesses->GetItemCount();
+                int insertIndex = _lvListView->GetItemCount();
                 for(std::vector<SearchableItem>::const_iterator it = dataSource.begin(); it != dataSource.end(); ++it)
                 {
                     SearchableItem item = *it;
@@ -138,25 +138,25 @@ namespace SystemExplorer
                         long listItemIndex = FindItemById(id);
                         if(listItemIndex == -1)
                         {
-                            int listItemIndex = _lvProcesses->InsertItem(insertIndex++, item.GetText(), item.GetIconIndex());
+                            int listItemIndex = _lvListView->InsertItem(insertIndex++, item.GetText(), item.GetIconIndex());
                             SearchableItem *dataItem = new SearchableItem(item);
-                            _lvProcesses->SetItemPtrData(listItemIndex, (wxUIntPtr)dataItem);
+                            _lvListView->SetItemPtrData(listItemIndex, (wxUIntPtr)dataItem);
                     
                             for(int idx = 0; idx < item.GetOther().size(); ++idx)
                             {
-                                _lvProcesses->SetItem(listItemIndex, idx + 1, item.GetOther()[idx]);
+                                _lvListView->SetItem(listItemIndex, idx + 1, item.GetOther()[idx]);
                             }
 
                             if(selected)
-                                _lvProcesses->Select(listItemIndex);
+                                _lvListView->Select(listItemIndex);
                         }
                         else
                         {
-                            _lvProcesses->SetItemImage (listItemIndex, item.GetIconIndex(), item.GetIconIndex());
+                            _lvListView->SetItemImage (listItemIndex, item.GetIconIndex(), item.GetIconIndex());
 
                             for(int idx = 0; idx < item.GetOther().size(); ++idx)
                             {
-                                _lvProcesses->SetItem(listItemIndex, idx + 1, item.GetOther()[idx]);
+                                _lvListView->SetItem(listItemIndex, idx + 1, item.GetOther()[idx]);
                             }
                             
                         }
@@ -168,11 +168,11 @@ namespace SystemExplorer
                 std::vector<int> toDelete;
 
                 for(
-                    long current = _lvProcesses->GetNextItem(-1, wxLIST_NEXT_ALL); 
+                    long current = _lvListView->GetNextItem(-1, wxLIST_NEXT_ALL); 
                     current != -1;
-                    current = _lvProcesses->GetNextItem(current, wxLIST_NEXT_ALL))
+                    current = _lvListView->GetNextItem(current, wxLIST_NEXT_ALL))
                 {
-                    SearchableItem *searchableItem = (SearchableItem *)_lvProcesses->GetItemData(current);
+                    SearchableItem *searchableItem = (SearchableItem *)_lvListView->GetItemData(current);
                     int id = searchableItem->GetId();
 
                     auto item = std::find_if(dataSource.begin(), dataSource.end(), 
@@ -189,14 +189,14 @@ namespace SystemExplorer
                     long listItemIndex = FindItemById(*it);
                     if(listItemIndex != -1)
                     {
-                        _lvProcesses->DeleteItem(listItemIndex);
+                        _lvListView->DeleteItem(listItemIndex);
                     }
                 }
             }                        
 
             /*void SearchableListViewControl::SetItemComparator(wxTreeListItemComparator *treeListItemCopmarator)
             {
-                _lvProcesses->SetItemComparator(treeListItemCopmarator);
+                _lvListView->SetItemComparator(treeListItemCopmarator);
             }*/
 
             void SearchableListViewControl::lvProcesses_OnChar(wxKeyEvent &event)
@@ -231,17 +231,17 @@ namespace SystemExplorer
             void SearchableListViewControl::OnSearchTextClick()
             {
                 SearchableControlBase::OnSearchTextClick();
-	            _lvProcesses->SetFocus();
+	            _lvListView->SetFocus();
             }
 
 
             void SearchableListViewControl::SetFocus()
             {
-                _lvProcesses->SetFocus();
-                long firstItem = _lvProcesses->GetNextItem(-1);
+                _lvListView->SetFocus();
+                long firstItem = _lvListView->GetNextItem(-1);
                 if (firstItem != -1)
                 {
-                    _lvProcesses->Select(firstItem);
+                    _lvListView->Select(firstItem);
                 }
             }
 
@@ -255,7 +255,7 @@ namespace SystemExplorer
 
             void SearchableListViewControl::PopupMenu(wxMenu *menu, const wxPoint &pos)
             {
-                _lvProcesses->PopupMenu(menu, pos);
+                _lvListView->PopupMenu(menu, pos);
             }
 
 
@@ -265,9 +265,9 @@ namespace SystemExplorer
             {
                 long result = -1;
 
-                for(long current = _lvProcesses->GetNextItem(-1); current != -1; current = _lvProcesses->GetNextItem(current))
+                for(long current = _lvListView->GetNextItem(-1); current != -1; current = _lvListView->GetNextItem(current))
                 {
-                    SearchableItem *item = (SearchableItem *)_lvProcesses->GetItemData(current);
+                    SearchableItem *item = (SearchableItem *)_lvListView->GetItemData(current);
                     int itemId = item->GetId();
                     if(itemId == id)
                     {
