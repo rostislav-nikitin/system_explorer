@@ -110,6 +110,12 @@ namespace SystemExplorer
                 _scSearch->SetValue(value);
             }
 
+            bool SearchableControlBase::FilterEmpty() const
+            {
+                return GetSearchText().empty();
+            }
+
+
             void SearchableControlBase::SetItemComparator(wxTreeListItemComparator *treeListItemCopmarator)
             {
                 //TODO: Not Implemented in base. Should be implemented in concrete control

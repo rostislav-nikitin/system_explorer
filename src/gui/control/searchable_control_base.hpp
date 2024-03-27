@@ -88,6 +88,7 @@ namespace SystemExplorer
 
                 virtual std::string GetSearchText() const;
                 virtual void SetSearchText(std::string value);
+                virtual bool FilterEmpty() const;
 
                 virtual void ExpandAll() = 0;
                 virtual void CollapseAll() = 0;

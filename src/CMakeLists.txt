@@ -64,6 +64,7 @@ add_executable(system_explorer
 
 	gui/control/control_base.cpp
 	gui/control/searchable_control_base.cpp
+	gui/control/searchable_treelist_control_base.cpp
 	gui/control/icon_control.cpp
 	gui/control/searchable_list_control.cpp
 	gui/control/searchable_treelist_control.cpp
