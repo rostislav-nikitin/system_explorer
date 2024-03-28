@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="classSystemExplorer_1_1Core_1_1Models_1_1ProcessesStat" kind="class" language="C++" prot="public">
+    <compoundname>SystemExplorer::Core::Models::ProcessesStat</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classSystemExplorer_1_1Core_1_1Models_1_1ProcessesStat_1af9f64a7225a144979ca0deca54a3a079" prot="public" static="no" mutable="no">
+        <type><ref refid="classSystemExplorer_1_1Core_1_1Models_1_1ProcessesStatCommon" kindref="compound">ProcessesStatCommon</ref></type>
+        <definition>ProcessesStatCommon SystemExplorer::Core::Models::ProcessesStat::processes_stat_common</definition>
+        <argsstring></argsstring>
+        <name>processes_stat_common</name>
+        <qualifiedname>SystemExplorer::Core::Models::ProcessesStat::processes_stat_common</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="core/models/processes_stat.hpp" line="19" column="37" bodyfile="core/models/processes_stat.hpp" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSystemExplorer_1_1Core_1_1Models_1_1ProcessesStat_1a5439dd94e2baf73755548a5123dfb841" prot="public" static="no" mutable="no">
+        <type>std::map&lt; pid_t, <ref refid="classSystemExplorer_1_1Core_1_1Models_1_1ProcessStat" kindref="compound">ProcessStat</ref> &gt;</type>
+        <definition>std::map&lt;pid_t, ProcessStat&gt; SystemExplorer::Core::Models::ProcessesStat::processes_stat</definition>
+        <argsstring></argsstring>
+        <name>processes_stat</name>
+        <qualifiedname>SystemExplorer::Core::Models::ProcessesStat::processes_stat</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="core/models/processes_stat.hpp" line="20" column="26" bodyfile="core/models/processes_stat.hpp" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>SystemExplorer::Core::Models::ProcessesStat</label>
+        <link refid="classSystemExplorer_1_1Core_1_1Models_1_1ProcessesStat"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>processes_stat_common</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>SystemExplorer::Core::Models::ProcessesStatCommon</label>
+        <link refid="classSystemExplorer_1_1Core_1_1Models_1_1ProcessesStatCommon"/>
+      </node>
+    </collaborationgraph>
+    <location file="core/models/processes_stat.hpp" line="16" column="13" bodyfile="core/models/processes_stat.hpp" bodystart="17" bodyend="21"/>
+    <listofallmembers>
+      <member refid="classSystemExplorer_1_1Core_1_1Models_1_1ProcessesStat_1a5439dd94e2baf73755548a5123dfb841" prot="public" virt="non-virtual"><scope>SystemExplorer::Core::Models::ProcessesStat</scope><name>processes_stat</name></member>
+      <member refid="classSystemExplorer_1_1Core_1_1Models_1_1ProcessesStat_1af9f64a7225a144979ca0deca54a3a079" prot="public" virt="non-virtual"><scope>SystemExplorer::Core::Models::ProcessesStat</scope><name>processes_stat_common</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

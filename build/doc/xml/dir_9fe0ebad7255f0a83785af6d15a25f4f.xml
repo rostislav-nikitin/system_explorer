@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="dir_9fe0ebad7255f0a83785af6d15a25f4f" kind="dir">
+    <compoundname>libs/wild_card_expr/include/wild_card_expr</compoundname>
+    <innerfile refid="wild__card__expr_8hpp">wild_card_expr.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="libs/wild_card_expr/include/wild_card_expr/"/>
+  </compounddef>
+</doxygen>

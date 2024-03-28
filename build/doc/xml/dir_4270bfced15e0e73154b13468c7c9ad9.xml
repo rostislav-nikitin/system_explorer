@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="dir_4270bfced15e0e73154b13468c7c9ad9" kind="dir">
+    <compoundname>core</compoundname>
+    <innerdir refid="dir_b549b9f85a72a4f17f491b04f7f79df1">core/models</innerdir>
+    <innerdir refid="dir_27499683eba85f461dcaeb974caa53a9">core/parsers</innerdir>
+    <innerfile refid="proc__tree__stat__manager_8hpp">proc_tree_stat_manager.hpp</innerfile>
+    <innerfile refid="proc__tree__stat__manager__impl_8hpp">proc_tree_stat_manager_impl.hpp</innerfile>
+    <innerfile refid="process__manager_8hpp">process_manager.hpp</innerfile>
+    <innerfile refid="process__manager__impl_8hpp">process_manager_impl.hpp</innerfile>
+    <innerfile refid="processes__stat__manager_8hpp">processes_stat_manager.hpp</innerfile>
+    <innerfile refid="processes__stat__manager__impl_8hpp">processes_stat_manager_impl.hpp</innerfile>
+    <innerfile refid="signal__manager_8hpp">signal_manager.hpp</innerfile>
+    <innerfile refid="signal__manager__impl_8hpp">signal_manager_impl.hpp</innerfile>
+    <innerfile refid="signal__types__dict_8hpp">signal_types_dict.hpp</innerfile>
+    <innerfile refid="signal__types__dict__impl_8hpp">signal_types_dict_impl.hpp</innerfile>
+    <innerfile refid="signals__dict_8hpp">signals_dict.hpp</innerfile>
+    <innerfile refid="signals__dict__impl_8hpp">signals_dict_impl.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="core/"/>
+  </compounddef>
+</doxygen>

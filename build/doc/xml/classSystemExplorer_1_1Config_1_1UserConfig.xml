@@ -1,0 +1,223 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="classSystemExplorer_1_1Config_1_1UserConfig" kind="class" language="C++" prot="public">
+    <compoundname>SystemExplorer::Config::UserConfig</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classSystemExplorer_1_1Config_1_1UserConfig_1ac1ee222f203a98f6632f1cae7d8c7654" prot="private" static="no" mutable="no">
+        <type>const char *</type>
+        <definition>const char* SystemExplorer::Config::UserConfig::RELATIVE_CONFIG_PATH</definition>
+        <argsstring></argsstring>
+        <name>RELATIVE_CONFIG_PATH</name>
+        <qualifiedname>SystemExplorer::Config::UserConfig::RELATIVE_CONFIG_PATH</qualifiedname>
+        <initializer>= &quot;.system_explorer&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="config/user_config.hpp" line="15" column="25" bodyfile="config/user_config.hpp" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSystemExplorer_1_1Config_1_1UserConfig_1a11e5ff5366b7ebac6a2acebb620acf6a" prot="private" static="no" mutable="no">
+        <type>const char *</type>
+        <definition>const char* SystemExplorer::Config::UserConfig::PROCESSES_AUTOCOMPLETE_CHOICES_PATH</definition>
+        <argsstring></argsstring>
+        <name>PROCESSES_AUTOCOMPLETE_CHOICES_PATH</name>
+        <qualifiedname>SystemExplorer::Config::UserConfig::PROCESSES_AUTOCOMPLETE_CHOICES_PATH</qualifiedname>
+        <initializer>= &quot;processes_autocomplete_choices.dat&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="config/user_config.hpp" line="17" column="25" bodyfile="config/user_config.hpp" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSystemExplorer_1_1Config_1_1UserConfig_1a4eb38cf9477ca2485072eefef03f2328" prot="private" static="no" mutable="no">
+        <type>std::set&lt; std::string &gt;</type>
+        <definition>std::set&lt;std::string&gt; SystemExplorer::Config::UserConfig::_processesAutoCompleteChoices</definition>
+        <argsstring></argsstring>
+        <name>_processesAutoCompleteChoices</name>
+        <qualifiedname>SystemExplorer::Config::UserConfig::_processesAutoCompleteChoices</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="config/user_config.hpp" line="22" column="22" bodyfile="config/user_config.hpp" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classSystemExplorer_1_1Config_1_1UserConfig_1a9cf95381a2b4e8c0604d20376ff50f86" prot="private" static="yes" mutable="no">
+        <type>int const</type>
+        <definition>int const SystemExplorer::Config::UserConfig::MAX_SIZE</definition>
+        <argsstring></argsstring>
+        <name>MAX_SIZE</name>
+        <qualifiedname>SystemExplorer::Config::UserConfig::MAX_SIZE</qualifiedname>
+        <initializer>= 100</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="config/user_config.hpp" line="20" column="30" bodyfile="config/user_config.hpp" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classSystemExplorer_1_1Config_1_1UserConfig_1a8d384a34c9d61f3adaef8d1125cb441f" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string SystemExplorer::Config::UserConfig::GetConfigPath</definition>
+        <argsstring>() const</argsstring>
+        <name>GetConfigPath</name>
+        <qualifiedname>SystemExplorer::Config::UserConfig::GetConfigPath</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="config/user_config.hpp" line="24" column="25"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Config_1_1UserConfig_1a7aa6c9894650840456f152e1d8fb05d1" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string SystemExplorer::Config::UserConfig::GetProcessesAutoCompleteChoicesPath</definition>
+        <argsstring>() const</argsstring>
+        <name>GetProcessesAutoCompleteChoicesPath</name>
+        <qualifiedname>SystemExplorer::Config::UserConfig::GetProcessesAutoCompleteChoicesPath</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="config/user_config.hpp" line="25" column="25"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Config_1_1UserConfig_1a0666e1f77b90d0db2cc7600f6ad5c610" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SystemExplorer::Config::UserConfig::LoadProcessesAutoCompleteChoices</definition>
+        <argsstring>()</argsstring>
+        <name>LoadProcessesAutoCompleteChoices</name>
+        <qualifiedname>SystemExplorer::Config::UserConfig::LoadProcessesAutoCompleteChoices</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="config/user_config.hpp" line="27" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Config_1_1UserConfig_1aef66548eb719b2abe910c97e92b7660d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SystemExplorer::Config::UserConfig::SaveProcessesAutoCompleteChoices</definition>
+        <argsstring>()</argsstring>
+        <name>SaveProcessesAutoCompleteChoices</name>
+        <qualifiedname>SystemExplorer::Config::UserConfig::SaveProcessesAutoCompleteChoices</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="config/user_config.hpp" line="28" column="18"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classSystemExplorer_1_1Config_1_1UserConfig_1aef88f22ef35b5ff0d6d29f3eb797bf08" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SystemExplorer::Config::UserConfig::UserConfig</definition>
+        <argsstring>()</argsstring>
+        <name>UserConfig</name>
+        <qualifiedname>SystemExplorer::Config::UserConfig::UserConfig</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="config/user_config.hpp" line="31" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Config_1_1UserConfig_1a72a48a5e3f40ebeae9e103f294cd0548" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SystemExplorer::Config::UserConfig::Load</definition>
+        <argsstring>()</argsstring>
+        <name>Load</name>
+        <qualifiedname>SystemExplorer::Config::UserConfig::Load</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="config/user_config.hpp" line="33" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Config_1_1UserConfig_1a899c9ccb6bf9eac27705b3253c5effc8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SystemExplorer::Config::UserConfig::Save</definition>
+        <argsstring>()</argsstring>
+        <name>Save</name>
+        <qualifiedname>SystemExplorer::Config::UserConfig::Save</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="config/user_config.hpp" line="34" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Config_1_1UserConfig_1aa1194b3f1c58841ad4be8c59a2639b80" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::set&lt; std::string &gt;</type>
+        <definition>std::set&lt; std::string &gt; SystemExplorer::Config::UserConfig::GetProcessesAutoCompleteChoices</definition>
+        <argsstring>()</argsstring>
+        <name>GetProcessesAutoCompleteChoices</name>
+        <qualifiedname>SystemExplorer::Config::UserConfig::GetProcessesAutoCompleteChoices</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="config/user_config.hpp" line="36" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Config_1_1UserConfig_1ab6516628f04f72f7d972ba7575ccf517" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SystemExplorer::Config::UserConfig::SetProcessesAutoCompleteChoices</definition>
+        <argsstring>(std::set&lt; std::string &gt; &amp;value)</argsstring>
+        <name>SetProcessesAutoCompleteChoices</name>
+        <qualifiedname>SystemExplorer::Config::UserConfig::SetProcessesAutoCompleteChoices</qualifiedname>
+        <param>
+          <type>std::set&lt; std::string &gt; &amp;</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="config/user_config.hpp" line="37" column="18"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="config/user_config.hpp" line="13" column="9" bodyfile="config/user_config.hpp" bodystart="14" bodyend="39"/>
+    <listofallmembers>
+      <member refid="classSystemExplorer_1_1Config_1_1UserConfig_1a4eb38cf9477ca2485072eefef03f2328" prot="private" virt="non-virtual"><scope>SystemExplorer::Config::UserConfig</scope><name>_processesAutoCompleteChoices</name></member>
+      <member refid="classSystemExplorer_1_1Config_1_1UserConfig_1a8d384a34c9d61f3adaef8d1125cb441f" prot="private" virt="non-virtual"><scope>SystemExplorer::Config::UserConfig</scope><name>GetConfigPath</name></member>
+      <member refid="classSystemExplorer_1_1Config_1_1UserConfig_1aa1194b3f1c58841ad4be8c59a2639b80" prot="public" virt="non-virtual"><scope>SystemExplorer::Config::UserConfig</scope><name>GetProcessesAutoCompleteChoices</name></member>
+      <member refid="classSystemExplorer_1_1Config_1_1UserConfig_1a7aa6c9894650840456f152e1d8fb05d1" prot="private" virt="non-virtual"><scope>SystemExplorer::Config::UserConfig</scope><name>GetProcessesAutoCompleteChoicesPath</name></member>
+      <member refid="classSystemExplorer_1_1Config_1_1UserConfig_1a72a48a5e3f40ebeae9e103f294cd0548" prot="public" virt="non-virtual"><scope>SystemExplorer::Config::UserConfig</scope><name>Load</name></member>
+      <member refid="classSystemExplorer_1_1Config_1_1UserConfig_1a0666e1f77b90d0db2cc7600f6ad5c610" prot="private" virt="non-virtual"><scope>SystemExplorer::Config::UserConfig</scope><name>LoadProcessesAutoCompleteChoices</name></member>
+      <member refid="classSystemExplorer_1_1Config_1_1UserConfig_1a9cf95381a2b4e8c0604d20376ff50f86" prot="private" virt="non-virtual"><scope>SystemExplorer::Config::UserConfig</scope><name>MAX_SIZE</name></member>
+      <member refid="classSystemExplorer_1_1Config_1_1UserConfig_1a11e5ff5366b7ebac6a2acebb620acf6a" prot="private" virt="non-virtual"><scope>SystemExplorer::Config::UserConfig</scope><name>PROCESSES_AUTOCOMPLETE_CHOICES_PATH</name></member>
+      <member refid="classSystemExplorer_1_1Config_1_1UserConfig_1ac1ee222f203a98f6632f1cae7d8c7654" prot="private" virt="non-virtual"><scope>SystemExplorer::Config::UserConfig</scope><name>RELATIVE_CONFIG_PATH</name></member>
+      <member refid="classSystemExplorer_1_1Config_1_1UserConfig_1a899c9ccb6bf9eac27705b3253c5effc8" prot="public" virt="non-virtual"><scope>SystemExplorer::Config::UserConfig</scope><name>Save</name></member>
+      <member refid="classSystemExplorer_1_1Config_1_1UserConfig_1aef66548eb719b2abe910c97e92b7660d" prot="private" virt="non-virtual"><scope>SystemExplorer::Config::UserConfig</scope><name>SaveProcessesAutoCompleteChoices</name></member>
+      <member refid="classSystemExplorer_1_1Config_1_1UserConfig_1ab6516628f04f72f7d972ba7575ccf517" prot="public" virt="non-virtual"><scope>SystemExplorer::Config::UserConfig</scope><name>SetProcessesAutoCompleteChoices</name></member>
+      <member refid="classSystemExplorer_1_1Config_1_1UserConfig_1aef88f22ef35b5ff0d6d29f3eb797bf08" prot="public" virt="non-virtual"><scope>SystemExplorer::Config::UserConfig</scope><name>UserConfig</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

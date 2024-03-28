@@ -32,7 +32,9 @@ namespace SystemExplorer
             public:
                 SearchableTreeListControl(wxWindow *parent, wxWindowID Id, 
                     wxImageList *imageList = nullptr);
+                // The method that iniitialy and on change event binds the data to the data view control(wxTreeList).
                 virtual void BindData(std::vector<SearchableItem> &dataSource) override;
+                // The method that rebinds data to the data view control(wxTreeList) by timer.
                 virtual void ReBindData(std::vector<SearchableItem> &dataSource) override;
             };
         }

@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="structSystemExplorer_1_1Core_1_1Models_1_1ProcStat" kind="struct" language="C++" prot="public">
+    <compoundname>SystemExplorer::Core::Models::ProcStat</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structSystemExplorer_1_1Core_1_1Models_1_1ProcStat_1a02dfca366c7184de0c7b3fa78ac9e66a" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="structSystemExplorer_1_1Core_1_1Models_1_1ProcCpuStat" kindref="compound">ProcCpuStat</ref> &gt;</type>
+        <definition>std::vector&lt;ProcCpuStat&gt; SystemExplorer::Core::Models::ProcStat::proc_cpu_stat</definition>
+        <argsstring></argsstring>
+        <name>proc_cpu_stat</name>
+        <qualifiedname>SystemExplorer::Core::Models::ProcStat::proc_cpu_stat</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="core/models/proc_stat.hpp" line="43" column="29" bodyfile="core/models/proc_stat.hpp" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="core/models/proc_stat.hpp" line="41" column="13" bodyfile="core/models/proc_stat.hpp" bodystart="42" bodyend="44"/>
+    <listofallmembers>
+      <member refid="structSystemExplorer_1_1Core_1_1Models_1_1ProcStat_1a02dfca366c7184de0c7b3fa78ac9e66a" prot="public" virt="non-virtual"><scope>SystemExplorer::Core::Models::ProcStat</scope><name>proc_cpu_stat</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

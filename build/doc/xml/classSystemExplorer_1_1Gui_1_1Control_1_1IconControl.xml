@@ -1,0 +1,160 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="classSystemExplorer_1_1Gui_1_1Control_1_1IconControl" kind="class" language="C++" prot="public">
+    <compoundname>SystemExplorer::Gui::Control::IconControl</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">wxPanel</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classSystemExplorer_1_1Gui_1_1Control_1_1IconControl_1af841ffbf4ea015cc29e0136ef97d8c66" prot="private" static="no" mutable="no">
+        <type>wxStaticText *</type>
+        <definition>wxStaticText* SystemExplorer::Gui::Control::IconControl::_label</definition>
+        <argsstring></argsstring>
+        <name>_label</name>
+        <qualifiedname>SystemExplorer::Gui::Control::IconControl::_label</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/control/icon_control.hpp" line="16" column="33" bodyfile="gui/control/icon_control.hpp" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSystemExplorer_1_1Gui_1_1Control_1_1IconControl_1a060205766e8fa348272de5723a7be4ce" prot="private" static="no" mutable="no">
+        <type>wxStaticBitmap *</type>
+        <definition>wxStaticBitmap* SystemExplorer::Gui::Control::IconControl::_icon</definition>
+        <argsstring></argsstring>
+        <name>_icon</name>
+        <qualifiedname>SystemExplorer::Gui::Control::IconControl::_icon</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/control/icon_control.hpp" line="17" column="33" bodyfile="gui/control/icon_control.hpp" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSystemExplorer_1_1Gui_1_1Control_1_1IconControl_1a3a5c6a059dd368728d34f23d723386a1" prot="private" static="no" mutable="no">
+        <type>wxBoxSizer *</type>
+        <definition>wxBoxSizer* SystemExplorer::Gui::Control::IconControl::_bsSizer</definition>
+        <argsstring></argsstring>
+        <name>_bsSizer</name>
+        <qualifiedname>SystemExplorer::Gui::Control::IconControl::_bsSizer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/control/icon_control.hpp" line="18" column="33" bodyfile="gui/control/icon_control.hpp" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1Control_1_1IconControl_1a75d36e2c521caa62e78ab4b03d9e55dc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SystemExplorer::Gui::Control::IconControl::IconControl</definition>
+        <argsstring>(wxWindow *parent, wxWindowID id, wxBitmap icon, wxString labelText, wxPoint position=wxDefaultPosition, wxSize size=wxDefaultSize)</argsstring>
+        <name>IconControl</name>
+        <qualifiedname>SystemExplorer::Gui::Control::IconControl::IconControl</qualifiedname>
+        <param>
+          <type>wxWindow *</type>
+          <declname>parent</declname>
+        </param>
+        <param>
+          <type>wxWindowID</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>wxBitmap</type>
+          <declname>icon</declname>
+        </param>
+        <param>
+          <type>wxString</type>
+          <declname>labelText</declname>
+        </param>
+        <param>
+          <type>wxPoint</type>
+          <declname>position</declname>
+          <defval>wxDefaultPosition</defval>
+        </param>
+        <param>
+          <type>wxSize</type>
+          <declname>size</declname>
+          <defval>wxDefaultSize</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/control/icon_control.hpp" line="22" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1Control_1_1IconControl_1add67b6886a75e8577042dafdfa33b5ee" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>wxString</type>
+        <definition>wxString SystemExplorer::Gui::Control::IconControl::GetText</definition>
+        <argsstring>() const</argsstring>
+        <name>GetText</name>
+        <qualifiedname>SystemExplorer::Gui::Control::IconControl::GetText</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/control/icon_control.hpp" line="31" column="26"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1Control_1_1IconControl_1abd1aeeb2c9e93340e580918eccbd2313" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SystemExplorer::Gui::Control::IconControl::SetText</definition>
+        <argsstring>(wxString text)</argsstring>
+        <name>SetText</name>
+        <qualifiedname>SystemExplorer::Gui::Control::IconControl::SetText</qualifiedname>
+        <param>
+          <type>wxString</type>
+          <declname>text</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/control/icon_control.hpp" line="33" column="22"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>SystemExplorer::Gui::Control::IconControl</label>
+        <link refid="classSystemExplorer_1_1Gui_1_1Control_1_1IconControl"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>wxPanel</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>SystemExplorer::Gui::Control::IconControl</label>
+        <link refid="classSystemExplorer_1_1Gui_1_1Control_1_1IconControl"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>wxPanel</label>
+      </node>
+    </collaborationgraph>
+    <location file="gui/control/icon_control.hpp" line="13" column="13" bodyfile="gui/control/icon_control.hpp" bodystart="14" bodyend="34"/>
+    <listofallmembers>
+      <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1IconControl_1a3a5c6a059dd368728d34f23d723386a1" prot="private" virt="non-virtual"><scope>SystemExplorer::Gui::Control::IconControl</scope><name>_bsSizer</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1IconControl_1a060205766e8fa348272de5723a7be4ce" prot="private" virt="non-virtual"><scope>SystemExplorer::Gui::Control::IconControl</scope><name>_icon</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1IconControl_1af841ffbf4ea015cc29e0136ef97d8c66" prot="private" virt="non-virtual"><scope>SystemExplorer::Gui::Control::IconControl</scope><name>_label</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1IconControl_1add67b6886a75e8577042dafdfa33b5ee" prot="public" virt="non-virtual"><scope>SystemExplorer::Gui::Control::IconControl</scope><name>GetText</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1IconControl_1a75d36e2c521caa62e78ab4b03d9e55dc" prot="public" virt="non-virtual"><scope>SystemExplorer::Gui::Control::IconControl</scope><name>IconControl</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1IconControl_1abd1aeeb2c9e93340e580918eccbd2313" prot="public" virt="non-virtual"><scope>SystemExplorer::Gui::Control::IconControl</scope><name>SetText</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

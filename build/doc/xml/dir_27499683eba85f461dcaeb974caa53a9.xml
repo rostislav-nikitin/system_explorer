@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="dir_27499683eba85f461dcaeb974caa53a9" kind="dir">
+    <compoundname>core/parsers</compoundname>
+    <innerfile refid="proc__process__stat__parser_8hpp">proc_process_stat_parser.hpp</innerfile>
+    <innerfile refid="proc__stat__parser_8hpp">proc_stat_parser.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="core/parsers/"/>
+  </compounddef>
+</doxygen>

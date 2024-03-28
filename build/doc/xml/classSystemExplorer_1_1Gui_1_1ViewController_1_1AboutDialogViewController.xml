@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="classSystemExplorer_1_1Gui_1_1ViewController_1_1AboutDialogViewController" kind="class" language="C++" prot="public">
+    <compoundname>SystemExplorer::Gui::ViewController::AboutDialogViewController</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">wxDialog</basecompoundref>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1AboutDialogViewController_1a4d266a6bc0e04d31e76d7011b992ed3d" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>virtual void SystemExplorer::Gui::ViewController::AboutDialogViewController::CreateChildControls</definition>
+        <argsstring>()</argsstring>
+        <name>CreateChildControls</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::AboutDialogViewController::CreateChildControls</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/about_dialog_view_controller.hpp" line="18" column="30"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1AboutDialogViewController_1a021191476d2d48e025a02d8db0e0c86a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SystemExplorer::Gui::ViewController::AboutDialogViewController::AboutDialogViewController</definition>
+        <argsstring>(wxWindow *parent, wxWindowID id=wxID_ANY)</argsstring>
+        <name>AboutDialogViewController</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::AboutDialogViewController::AboutDialogViewController</qualifiedname>
+        <param>
+          <type>wxWindow *</type>
+          <declname>parent</declname>
+        </param>
+        <param>
+          <type>wxWindowID</type>
+          <declname>id</declname>
+          <defval>wxID_ANY</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/about_dialog_view_controller.hpp" line="20" column="17"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>SystemExplorer::Gui::ViewController::AboutDialogViewController</label>
+        <link refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1AboutDialogViewController"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>wxDialog</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>SystemExplorer::Gui::ViewController::AboutDialogViewController</label>
+        <link refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1AboutDialogViewController"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>wxDialog</label>
+      </node>
+    </collaborationgraph>
+    <location file="gui/view_controller/about_dialog_view_controller.hpp" line="15" column="13" bodyfile="gui/view_controller/about_dialog_view_controller.hpp" bodystart="16" bodyend="22"/>
+    <listofallmembers>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1AboutDialogViewController_1a021191476d2d48e025a02d8db0e0c86a" prot="public" virt="non-virtual"><scope>SystemExplorer::Gui::ViewController::AboutDialogViewController</scope><name>AboutDialogViewController</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1AboutDialogViewController_1a4d266a6bc0e04d31e76d7011b992ed3d" prot="protected" virt="virtual"><scope>SystemExplorer::Gui::ViewController::AboutDialogViewController</scope><name>CreateChildControls</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

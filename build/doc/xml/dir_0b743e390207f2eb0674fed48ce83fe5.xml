@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="dir_0b743e390207f2eb0674fed48ce83fe5" kind="dir">
+    <compoundname>gui/control</compoundname>
+    <innerfile refid="control__base_8h">control_base.h</innerfile>
+    <innerfile refid="control__base_8hpp">control_base.hpp</innerfile>
+    <innerfile refid="icon__control_8hpp">icon_control.hpp</innerfile>
+    <innerfile refid="searchable__control__base_8hpp">searchable_control_base.hpp</innerfile>
+    <innerfile refid="searchable__list__control_8hpp">searchable_list_control.hpp</innerfile>
+    <innerfile refid="searchable__listview__control_8hpp">searchable_listview_control.hpp</innerfile>
+    <innerfile refid="searchable__treelist__control_8hpp">searchable_treelist_control.hpp</innerfile>
+    <innerfile refid="searchable__treelist__control__base_8hpp">searchable_treelist_control_base.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="gui/control/"/>
+  </compounddef>
+</doxygen>

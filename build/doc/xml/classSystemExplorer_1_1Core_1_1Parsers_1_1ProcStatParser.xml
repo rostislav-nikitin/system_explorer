@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="classSystemExplorer_1_1Core_1_1Parsers_1_1ProcStatParser" kind="class" language="C++" prot="public">
+    <compoundname>SystemExplorer::Core::Parsers::ProcStatParser</compoundname>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classSystemExplorer_1_1Core_1_1Parsers_1_1ProcStatParser_1a36d2c9e904494809cd1407798564294e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structSystemExplorer_1_1Core_1_1Models_1_1ProcStat" kindref="compound">Models::ProcStat</ref></type>
+        <definition>Models::ProcStat SystemExplorer::Core::Parsers::ProcStatParser::Parse</definition>
+        <argsstring>(std::istream &amp;stream)</argsstring>
+        <name>Parse</name>
+        <qualifiedname>SystemExplorer::Core::Parsers::ProcStatParser::Parse</qualifiedname>
+        <param>
+          <type>std::istream &amp;</type>
+          <declname>stream</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="core/parsers/proc_stat_parser.hpp" line="17" column="34"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="core/parsers/proc_stat_parser.hpp" line="14" column="13" bodyfile="core/parsers/proc_stat_parser.hpp" bodystart="15" bodyend="18"/>
+    <listofallmembers>
+      <member refid="classSystemExplorer_1_1Core_1_1Parsers_1_1ProcStatParser_1a36d2c9e904494809cd1407798564294e" prot="public" virt="non-virtual"><scope>SystemExplorer::Core::Parsers::ProcStatParser</scope><name>Parse</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

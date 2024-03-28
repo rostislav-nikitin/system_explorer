@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="namespace_0d133" kind="namespace" language="C++">
+    <compoundname>@133</compoundname>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="namespace_0d133_1a352dfbb6fadfa756906c25fcfd0e4e25" prot="public" static="no" strong="no">
+        <type></type>
+        <name>FailureType</name>
+        <qualifiedname>@133::FailureType</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="build/_deps/googletest-src/googletest/test/gtest_environment_test.cc" line="41" column="1" bodyfile="build/_deps/googletest-src/googletest/test/gtest_environment_test.cc" bodystart="41" bodyend="41"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="build/_deps/googletest-src/googletest/test/gtest_environment_test.cc" line="39" column="1"/>
+  </compounddef>
+</doxygen>

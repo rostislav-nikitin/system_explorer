@@ -1,0 +1,408 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="classSystemExplorer_1_1Core_1_1Models_1_1Process" kind="class" language="C++" prot="public">
+    <compoundname>SystemExplorer::Core::Models::Process</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classSystemExplorer_1_1Core_1_1Models_1_1Process_1ad8b277d92fe5e66f53c85e36903ba54b" prot="private" static="no" mutable="no">
+        <type>pid_t</type>
+        <definition>pid_t SystemExplorer::Core::Models::Process::_pid</definition>
+        <argsstring></argsstring>
+        <name>_pid</name>
+        <qualifiedname>SystemExplorer::Core::Models::Process::_pid</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="core/models/process.hpp" line="18" column="23" bodyfile="core/models/process.hpp" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSystemExplorer_1_1Core_1_1Models_1_1Process_1ac23bb945d6cd49578136defece8212cd" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string SystemExplorer::Core::Models::Process::_name</definition>
+        <argsstring></argsstring>
+        <name>_name</name>
+        <qualifiedname>SystemExplorer::Core::Models::Process::_name</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="core/models/process.hpp" line="19" column="29" bodyfile="core/models/process.hpp" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSystemExplorer_1_1Core_1_1Models_1_1Process_1ad7bcaa203938fd484b4178826b3ae37d" prot="private" static="no" mutable="no">
+        <type>char</type>
+        <definition>char SystemExplorer::Core::Models::Process::_state</definition>
+        <argsstring></argsstring>
+        <name>_state</name>
+        <qualifiedname>SystemExplorer::Core::Models::Process::_state</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="core/models/process.hpp" line="20" column="22" bodyfile="core/models/process.hpp" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSystemExplorer_1_1Core_1_1Models_1_1Process_1a951b62b1165c194599d1ce3d7280573d" prot="private" static="no" mutable="no">
+        <type>pid_t</type>
+        <definition>pid_t SystemExplorer::Core::Models::Process::_parentPid</definition>
+        <argsstring></argsstring>
+        <name>_parentPid</name>
+        <qualifiedname>SystemExplorer::Core::Models::Process::_parentPid</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="core/models/process.hpp" line="21" column="23" bodyfile="core/models/process.hpp" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSystemExplorer_1_1Core_1_1Models_1_1Process_1a4b3220e2912e3c8a15c1e8647e97d492" prot="private" static="no" mutable="no">
+        <type>unsigned long</type>
+        <definition>unsigned long SystemExplorer::Core::Models::Process::_userId</definition>
+        <argsstring></argsstring>
+        <name>_userId</name>
+        <qualifiedname>SystemExplorer::Core::Models::Process::_userId</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="core/models/process.hpp" line="23" column="31" bodyfile="core/models/process.hpp" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSystemExplorer_1_1Core_1_1Models_1_1Process_1a60a9bc76adc31f47eafeaa724442fe69" prot="private" static="no" mutable="no">
+        <type>unsigned long</type>
+        <definition>unsigned long SystemExplorer::Core::Models::Process::_groupId</definition>
+        <argsstring></argsstring>
+        <name>_groupId</name>
+        <qualifiedname>SystemExplorer::Core::Models::Process::_groupId</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="core/models/process.hpp" line="24" column="31" bodyfile="core/models/process.hpp" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSystemExplorer_1_1Core_1_1Models_1_1Process_1a701ca88f2abb8d7326a0e6174595646a" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string SystemExplorer::Core::Models::Process::_userName</definition>
+        <argsstring></argsstring>
+        <name>_userName</name>
+        <qualifiedname>SystemExplorer::Core::Models::Process::_userName</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="core/models/process.hpp" line="25" column="29" bodyfile="core/models/process.hpp" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSystemExplorer_1_1Core_1_1Models_1_1Process_1abae85f170e57a40e90a61a1bf43099a5" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string SystemExplorer::Core::Models::Process::_groupName</definition>
+        <argsstring></argsstring>
+        <name>_groupName</name>
+        <qualifiedname>SystemExplorer::Core::Models::Process::_groupName</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="core/models/process.hpp" line="26" column="29" bodyfile="core/models/process.hpp" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSystemExplorer_1_1Core_1_1Models_1_1Process_1a7266dfda0e5880e03a0aca519941f027" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool SystemExplorer::Core::Models::Process::_picked</definition>
+        <argsstring></argsstring>
+        <name>_picked</name>
+        <qualifiedname>SystemExplorer::Core::Models::Process::_picked</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="core/models/process.hpp" line="29" column="22" bodyfile="core/models/process.hpp" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSystemExplorer_1_1Core_1_1Models_1_1Process_1a952682659edd0deb2ed1b1a001f1c724" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool SystemExplorer::Core::Models::Process::_nameMatched</definition>
+        <argsstring></argsstring>
+        <name>_nameMatched</name>
+        <qualifiedname>SystemExplorer::Core::Models::Process::_nameMatched</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="core/models/process.hpp" line="30" column="6" bodyfile="core/models/process.hpp" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classSystemExplorer_1_1Core_1_1Models_1_1Process_1a4598443948ed90cda4458a52ea5ddd5d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SystemExplorer::Core::Models::Process::Process</definition>
+        <argsstring>()</argsstring>
+        <name>Process</name>
+        <qualifiedname>SystemExplorer::Core::Models::Process::Process</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="core/models/process.hpp" line="36" column="17"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Core_1_1Models_1_1Process_1a6b308ba0ccf208f2afc9c756b8d2635d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SystemExplorer::Core::Models::Process::Process</definition>
+        <argsstring>(std::string name, pid_t pid, pid_t parentPid, unsigned long userId, std::string userName, unsigned long groupId, std::string groupName, bool picked=true, bool nameMatched=false)</argsstring>
+        <name>Process</name>
+        <qualifiedname>SystemExplorer::Core::Models::Process::Process</qualifiedname>
+        <param>
+          <type>std::string</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>pid_t</type>
+          <declname>pid</declname>
+        </param>
+        <param>
+          <type>pid_t</type>
+          <declname>parentPid</declname>
+        </param>
+        <param>
+          <type>unsigned long</type>
+          <declname>userId</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>userName</declname>
+        </param>
+        <param>
+          <type>unsigned long</type>
+          <declname>groupId</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>groupName</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>picked</declname>
+          <defval>true</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>nameMatched</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="core/models/process.hpp" line="37" column="17"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Core_1_1Models_1_1Process_1aefbde9629a86a32c8fff8305256b522c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string SystemExplorer::Core::Models::Process::GetName</definition>
+        <argsstring>() const</argsstring>
+        <name>GetName</name>
+        <qualifiedname>SystemExplorer::Core::Models::Process::GetName</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="core/models/process.hpp" line="42" column="29"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Core_1_1Models_1_1Process_1a49d6d561d990a346f7578605597a7550" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>pid_t</type>
+        <definition>pid_t SystemExplorer::Core::Models::Process::GetPid</definition>
+        <argsstring>() const</argsstring>
+        <name>GetPid</name>
+        <qualifiedname>SystemExplorer::Core::Models::Process::GetPid</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="core/models/process.hpp" line="43" column="23"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Core_1_1Models_1_1Process_1a8c8e3128e8fd672d86b1a2af8a0398a9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>pid_t</type>
+        <definition>pid_t SystemExplorer::Core::Models::Process::GetParentPid</definition>
+        <argsstring>() const</argsstring>
+        <name>GetParentPid</name>
+        <qualifiedname>SystemExplorer::Core::Models::Process::GetParentPid</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="core/models/process.hpp" line="44" column="23"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Core_1_1Models_1_1Process_1a5ea72aaadb26e95c6530a37214a24ab4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned long</type>
+        <definition>unsigned long SystemExplorer::Core::Models::Process::GetUserId</definition>
+        <argsstring>() const</argsstring>
+        <name>GetUserId</name>
+        <qualifiedname>SystemExplorer::Core::Models::Process::GetUserId</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="core/models/process.hpp" line="46" column="31"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Core_1_1Models_1_1Process_1a4f14233f756be94df5b33ea2ec2b1b2f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string SystemExplorer::Core::Models::Process::GetUserName</definition>
+        <argsstring>() const</argsstring>
+        <name>GetUserName</name>
+        <qualifiedname>SystemExplorer::Core::Models::Process::GetUserName</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="core/models/process.hpp" line="47" column="29"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Core_1_1Models_1_1Process_1ae3fd7e3a38e21d8aadee470543c03cc3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned long</type>
+        <definition>unsigned long SystemExplorer::Core::Models::Process::GetGroupId</definition>
+        <argsstring>() const</argsstring>
+        <name>GetGroupId</name>
+        <qualifiedname>SystemExplorer::Core::Models::Process::GetGroupId</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="core/models/process.hpp" line="48" column="31"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Core_1_1Models_1_1Process_1a8be70b35256f965e4fd97a3bc4e9d433" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string SystemExplorer::Core::Models::Process::GetGroupName</definition>
+        <argsstring>() const</argsstring>
+        <name>GetGroupName</name>
+        <qualifiedname>SystemExplorer::Core::Models::Process::GetGroupName</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="core/models/process.hpp" line="49" column="29"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Core_1_1Models_1_1Process_1a4331fcbf7314cc48e0ef6eb4dbf437af" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool SystemExplorer::Core::Models::Process::GetNameMatched</definition>
+        <argsstring>() const</argsstring>
+        <name>GetNameMatched</name>
+        <qualifiedname>SystemExplorer::Core::Models::Process::GetNameMatched</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="core/models/process.hpp" line="52" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Core_1_1Models_1_1Process_1a19bec5ea9787b1f1034754fc0291cabf" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool SystemExplorer::Core::Models::Process::GetPicked</definition>
+        <argsstring>() const</argsstring>
+        <name>GetPicked</name>
+        <qualifiedname>SystemExplorer::Core::Models::Process::GetPicked</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="core/models/process.hpp" line="53" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Core_1_1Models_1_1Process_1a85d2dec39661558c679fb6cde1a46003" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SystemExplorer::Core::Models::Process::SetPicked</definition>
+        <argsstring>(bool value)</argsstring>
+        <name>SetPicked</name>
+        <qualifiedname>SystemExplorer::Core::Models::Process::SetPicked</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="core/models/process.hpp" line="54" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Core_1_1Models_1_1Process_1ab0595b4a852bf8021c8089be99eb1c65" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SystemExplorer::Core::Models::Process::SetNameMatched</definition>
+        <argsstring>(bool value)</argsstring>
+        <name>SetNameMatched</name>
+        <qualifiedname>SystemExplorer::Core::Models::Process::SetNameMatched</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="core/models/process.hpp" line="55" column="6"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="core/models/process.hpp" line="15" column="13" bodyfile="core/models/process.hpp" bodystart="16" bodyend="56"/>
+    <listofallmembers>
+      <member refid="classSystemExplorer_1_1Core_1_1Models_1_1Process_1a60a9bc76adc31f47eafeaa724442fe69" prot="private" virt="non-virtual"><scope>SystemExplorer::Core::Models::Process</scope><name>_groupId</name></member>
+      <member refid="classSystemExplorer_1_1Core_1_1Models_1_1Process_1abae85f170e57a40e90a61a1bf43099a5" prot="private" virt="non-virtual"><scope>SystemExplorer::Core::Models::Process</scope><name>_groupName</name></member>
+      <member refid="classSystemExplorer_1_1Core_1_1Models_1_1Process_1ac23bb945d6cd49578136defece8212cd" prot="private" virt="non-virtual"><scope>SystemExplorer::Core::Models::Process</scope><name>_name</name></member>
+      <member refid="classSystemExplorer_1_1Core_1_1Models_1_1Process_1a952682659edd0deb2ed1b1a001f1c724" prot="private" virt="non-virtual"><scope>SystemExplorer::Core::Models::Process</scope><name>_nameMatched</name></member>
+      <member refid="classSystemExplorer_1_1Core_1_1Models_1_1Process_1a951b62b1165c194599d1ce3d7280573d" prot="private" virt="non-virtual"><scope>SystemExplorer::Core::Models::Process</scope><name>_parentPid</name></member>
+      <member refid="classSystemExplorer_1_1Core_1_1Models_1_1Process_1a7266dfda0e5880e03a0aca519941f027" prot="private" virt="non-virtual"><scope>SystemExplorer::Core::Models::Process</scope><name>_picked</name></member>
+      <member refid="classSystemExplorer_1_1Core_1_1Models_1_1Process_1ad8b277d92fe5e66f53c85e36903ba54b" prot="private" virt="non-virtual"><scope>SystemExplorer::Core::Models::Process</scope><name>_pid</name></member>
+      <member refid="classSystemExplorer_1_1Core_1_1Models_1_1Process_1ad7bcaa203938fd484b4178826b3ae37d" prot="private" virt="non-virtual"><scope>SystemExplorer::Core::Models::Process</scope><name>_state</name></member>
+      <member refid="classSystemExplorer_1_1Core_1_1Models_1_1Process_1a4b3220e2912e3c8a15c1e8647e97d492" prot="private" virt="non-virtual"><scope>SystemExplorer::Core::Models::Process</scope><name>_userId</name></member>
+      <member refid="classSystemExplorer_1_1Core_1_1Models_1_1Process_1a701ca88f2abb8d7326a0e6174595646a" prot="private" virt="non-virtual"><scope>SystemExplorer::Core::Models::Process</scope><name>_userName</name></member>
+      <member refid="classSystemExplorer_1_1Core_1_1Models_1_1Process_1ae3fd7e3a38e21d8aadee470543c03cc3" prot="public" virt="non-virtual"><scope>SystemExplorer::Core::Models::Process</scope><name>GetGroupId</name></member>
+      <member refid="classSystemExplorer_1_1Core_1_1Models_1_1Process_1a8be70b35256f965e4fd97a3bc4e9d433" prot="public" virt="non-virtual"><scope>SystemExplorer::Core::Models::Process</scope><name>GetGroupName</name></member>
+      <member refid="classSystemExplorer_1_1Core_1_1Models_1_1Process_1aefbde9629a86a32c8fff8305256b522c" prot="public" virt="non-virtual"><scope>SystemExplorer::Core::Models::Process</scope><name>GetName</name></member>
+      <member refid="classSystemExplorer_1_1Core_1_1Models_1_1Process_1a4331fcbf7314cc48e0ef6eb4dbf437af" prot="public" virt="non-virtual"><scope>SystemExplorer::Core::Models::Process</scope><name>GetNameMatched</name></member>
+      <member refid="classSystemExplorer_1_1Core_1_1Models_1_1Process_1a8c8e3128e8fd672d86b1a2af8a0398a9" prot="public" virt="non-virtual"><scope>SystemExplorer::Core::Models::Process</scope><name>GetParentPid</name></member>
+      <member refid="classSystemExplorer_1_1Core_1_1Models_1_1Process_1a19bec5ea9787b1f1034754fc0291cabf" prot="public" virt="non-virtual"><scope>SystemExplorer::Core::Models::Process</scope><name>GetPicked</name></member>
+      <member refid="classSystemExplorer_1_1Core_1_1Models_1_1Process_1a49d6d561d990a346f7578605597a7550" prot="public" virt="non-virtual"><scope>SystemExplorer::Core::Models::Process</scope><name>GetPid</name></member>
+      <member refid="classSystemExplorer_1_1Core_1_1Models_1_1Process_1a5ea72aaadb26e95c6530a37214a24ab4" prot="public" virt="non-virtual"><scope>SystemExplorer::Core::Models::Process</scope><name>GetUserId</name></member>
+      <member refid="classSystemExplorer_1_1Core_1_1Models_1_1Process_1a4f14233f756be94df5b33ea2ec2b1b2f" prot="public" virt="non-virtual"><scope>SystemExplorer::Core::Models::Process</scope><name>GetUserName</name></member>
+      <member refid="classSystemExplorer_1_1Core_1_1Models_1_1Process_1a4598443948ed90cda4458a52ea5ddd5d" prot="public" virt="non-virtual"><scope>SystemExplorer::Core::Models::Process</scope><name>Process</name></member>
+      <member refid="classSystemExplorer_1_1Core_1_1Models_1_1Process_1a6b308ba0ccf208f2afc9c756b8d2635d" prot="public" virt="non-virtual"><scope>SystemExplorer::Core::Models::Process</scope><name>Process</name></member>
+      <member refid="classSystemExplorer_1_1Core_1_1Models_1_1Process_1ab0595b4a852bf8021c8089be99eb1c65" prot="public" virt="non-virtual"><scope>SystemExplorer::Core::Models::Process</scope><name>SetNameMatched</name></member>
+      <member refid="classSystemExplorer_1_1Core_1_1Models_1_1Process_1a85d2dec39661558c679fb6cde1a46003" prot="public" virt="non-virtual"><scope>SystemExplorer::Core::Models::Process</scope><name>SetPicked</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

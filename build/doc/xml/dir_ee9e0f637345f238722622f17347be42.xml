@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="dir_ee9e0f637345f238722622f17347be42" kind="dir">
+    <compoundname>gui/view_controller</compoundname>
+    <innerfile refid="about__dialog__view__controller_8hpp">about_dialog_view_controller.hpp</innerfile>
+    <innerfile refid="iview__controller_8hpp">iview_controller.hpp</innerfile>
+    <innerfile refid="process__details__view__controller_8hpp">process_details_view_controller.hpp</innerfile>
+    <innerfile refid="process__tree__view__controller_8hpp">process_tree_view_controller.hpp</innerfile>
+    <innerfile refid="processes__tree__list__item__comparator_8hpp">processes_tree_list_item_comparator.hpp</innerfile>
+    <innerfile refid="root__view__controller_8hpp">root_view_controller.hpp</innerfile>
+    <innerfile refid="view__controller__base_8hpp">view_controller_base.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="gui/view_controller/"/>
+  </compounddef>
+</doxygen>

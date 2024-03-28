@@ -1,0 +1,216 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="classgoogletest-catch-exceptions-test_1_1CatchCxxExceptionsTest" kind="class" language="Python" prot="public">
+    <compoundname>googletest-catch-exceptions-test::CatchCxxExceptionsTest</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">gtest_test_utils.TestCase</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classgoogletest-catch-exceptions-test_1_1CatchCxxExceptionsTest_1a2e45e6a6ecc7d4e1171a48f9c30e1306" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def googletest-catch-exceptions-test.CatchCxxExceptionsTest.testCatchesCxxExceptionsInFixtureConstructor</definition>
+        <argsstring>(self)</argsstring>
+        <name>testCatchesCxxExceptionsInFixtureConstructor</name>
+        <qualifiedname>googletest-catch-exceptions-test.CatchCxxExceptionsTest.testCatchesCxxExceptionsInFixtureConstructor</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="build/_deps/googletest-src/googletest/test/googletest-catch-exceptions-test.py" line="136" column="1" bodyfile="build/_deps/googletest-src/googletest/test/googletest-catch-exceptions-test.py" bodystart="136" bodyend="152"/>
+      </memberdef>
+      <memberdef kind="function" id="classgoogletest-catch-exceptions-test_1_1CatchCxxExceptionsTest_1ae5ed341fb122b7d03da8ce86043166c3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def googletest-catch-exceptions-test.CatchCxxExceptionsTest.testCatchesCxxExceptionsInFixtureDestructor</definition>
+        <argsstring>(self)</argsstring>
+        <name>testCatchesCxxExceptionsInFixtureDestructor</name>
+        <qualifiedname>googletest-catch-exceptions-test.CatchCxxExceptionsTest.testCatchesCxxExceptionsInFixtureDestructor</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="build/_deps/googletest-src/googletest/test/googletest-catch-exceptions-test.py" line="158" column="1" bodyfile="build/_deps/googletest-src/googletest/test/googletest-catch-exceptions-test.py" bodystart="158" bodyend="172"/>
+      </memberdef>
+      <memberdef kind="function" id="classgoogletest-catch-exceptions-test_1_1CatchCxxExceptionsTest_1ad7ceec96581c2cfff6267d26a43e2e7d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def googletest-catch-exceptions-test.CatchCxxExceptionsTest.testCatchesCxxExceptionsInSetUpTestCase</definition>
+        <argsstring>(self)</argsstring>
+        <name>testCatchesCxxExceptionsInSetUpTestCase</name>
+        <qualifiedname>googletest-catch-exceptions-test.CatchCxxExceptionsTest.testCatchesCxxExceptionsInSetUpTestCase</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="build/_deps/googletest-src/googletest/test/googletest-catch-exceptions-test.py" line="173" column="1" bodyfile="build/_deps/googletest-src/googletest/test/googletest-catch-exceptions-test.py" bodystart="173" bodyend="210"/>
+      </memberdef>
+      <memberdef kind="function" id="classgoogletest-catch-exceptions-test_1_1CatchCxxExceptionsTest_1ae3b886e83d78eac40718ff0aeb5ee76b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def googletest-catch-exceptions-test.CatchCxxExceptionsTest.testCatchesCxxExceptionsInTearDownTestCase</definition>
+        <argsstring>(self)</argsstring>
+        <name>testCatchesCxxExceptionsInTearDownTestCase</name>
+        <qualifiedname>googletest-catch-exceptions-test.CatchCxxExceptionsTest.testCatchesCxxExceptionsInTearDownTestCase</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="build/_deps/googletest-src/googletest/test/googletest-catch-exceptions-test.py" line="211" column="1" bodyfile="build/_deps/googletest-src/googletest/test/googletest-catch-exceptions-test.py" bodystart="211" bodyend="218"/>
+      </memberdef>
+      <memberdef kind="function" id="classgoogletest-catch-exceptions-test_1_1CatchCxxExceptionsTest_1aefd6501c46ece89e1558b708d2b7f932" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def googletest-catch-exceptions-test.CatchCxxExceptionsTest.testCatchesCxxExceptionsInSetUp</definition>
+        <argsstring>(self)</argsstring>
+        <name>testCatchesCxxExceptionsInSetUp</name>
+        <qualifiedname>googletest-catch-exceptions-test.CatchCxxExceptionsTest.testCatchesCxxExceptionsInSetUp</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="build/_deps/googletest-src/googletest/test/googletest-catch-exceptions-test.py" line="219" column="1" bodyfile="build/_deps/googletest-src/googletest/test/googletest-catch-exceptions-test.py" bodystart="219" bodyend="249"/>
+      </memberdef>
+      <memberdef kind="function" id="classgoogletest-catch-exceptions-test_1_1CatchCxxExceptionsTest_1ab7130e108d4530a70b604a7710229811" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def googletest-catch-exceptions-test.CatchCxxExceptionsTest.testCatchesCxxExceptionsInTearDown</definition>
+        <argsstring>(self)</argsstring>
+        <name>testCatchesCxxExceptionsInTearDown</name>
+        <qualifiedname>googletest-catch-exceptions-test.CatchCxxExceptionsTest.testCatchesCxxExceptionsInTearDown</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="build/_deps/googletest-src/googletest/test/googletest-catch-exceptions-test.py" line="250" column="1" bodyfile="build/_deps/googletest-src/googletest/test/googletest-catch-exceptions-test.py" bodystart="250" bodyend="267"/>
+      </memberdef>
+      <memberdef kind="function" id="classgoogletest-catch-exceptions-test_1_1CatchCxxExceptionsTest_1a48ada29ca056cd94368189ed0509baa8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def googletest-catch-exceptions-test.CatchCxxExceptionsTest.testCatchesCxxExceptionsInTestBody</definition>
+        <argsstring>(self)</argsstring>
+        <name>testCatchesCxxExceptionsInTestBody</name>
+        <qualifiedname>googletest-catch-exceptions-test.CatchCxxExceptionsTest.testCatchesCxxExceptionsInTestBody</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="build/_deps/googletest-src/googletest/test/googletest-catch-exceptions-test.py" line="268" column="1" bodyfile="build/_deps/googletest-src/googletest/test/googletest-catch-exceptions-test.py" bodystart="268" bodyend="290"/>
+      </memberdef>
+      <memberdef kind="function" id="classgoogletest-catch-exceptions-test_1_1CatchCxxExceptionsTest_1a01731aaf8269fc952559f5684b395119" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def googletest-catch-exceptions-test.CatchCxxExceptionsTest.testCatchesNonStdCxxExceptions</definition>
+        <argsstring>(self)</argsstring>
+        <name>testCatchesNonStdCxxExceptions</name>
+        <qualifiedname>googletest-catch-exceptions-test.CatchCxxExceptionsTest.testCatchesNonStdCxxExceptions</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="build/_deps/googletest-src/googletest/test/googletest-catch-exceptions-test.py" line="291" column="1" bodyfile="build/_deps/googletest-src/googletest/test/googletest-catch-exceptions-test.py" bodystart="291" bodyend="296"/>
+      </memberdef>
+      <memberdef kind="function" id="classgoogletest-catch-exceptions-test_1_1CatchCxxExceptionsTest_1ab2304b62b833f0729e8909ad8615212c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def googletest-catch-exceptions-test.CatchCxxExceptionsTest.testUnhandledCxxExceptionsAbortTheProgram</definition>
+        <argsstring>(self)</argsstring>
+        <name>testUnhandledCxxExceptionsAbortTheProgram</name>
+        <qualifiedname>googletest-catch-exceptions-test.CatchCxxExceptionsTest.testUnhandledCxxExceptionsAbortTheProgram</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="build/_deps/googletest-src/googletest/test/googletest-catch-exceptions-test.py" line="297" column="1" bodyfile="build/_deps/googletest-src/googletest/test/googletest-catch-exceptions-test.py" bodystart="297" bodyend="313"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><verbatim>Tests C++ exception-catching behavior.
+
+Tests in this test case verify that:
+* C++ exceptions are caught and logged as C++ (not SEH) exceptions
+* Exception thrown affect the remainder of the test work flow in the
+  expected manner.
+</verbatim> </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>googletest-catch-exceptions-test.CatchCxxExceptionsTest</label>
+        <link refid="classgoogletest-catch-exceptions-test_1_1CatchCxxExceptionsTest"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>gtest_test_utils.TestCase</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>googletest-catch-exceptions-test.CatchCxxExceptionsTest</label>
+        <link refid="classgoogletest-catch-exceptions-test_1_1CatchCxxExceptionsTest"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>gtest_test_utils.TestCase</label>
+      </node>
+    </collaborationgraph>
+    <location file="build/_deps/googletest-src/googletest/test/googletest-catch-exceptions-test.py" line="127" column="1" bodyfile="build/_deps/googletest-src/googletest/test/googletest-catch-exceptions-test.py" bodystart="127" bodyend="313"/>
+    <listofallmembers>
+      <member refid="classgoogletest-catch-exceptions-test_1_1CatchCxxExceptionsTest_1a2e45e6a6ecc7d4e1171a48f9c30e1306" prot="public" virt="non-virtual"><scope>googletest-catch-exceptions-test::CatchCxxExceptionsTest</scope><name>testCatchesCxxExceptionsInFixtureConstructor</name></member>
+      <member refid="classgoogletest-catch-exceptions-test_1_1CatchCxxExceptionsTest_1ae5ed341fb122b7d03da8ce86043166c3" prot="public" virt="non-virtual"><scope>googletest-catch-exceptions-test::CatchCxxExceptionsTest</scope><name>testCatchesCxxExceptionsInFixtureDestructor</name></member>
+      <member refid="classgoogletest-catch-exceptions-test_1_1CatchCxxExceptionsTest_1aefd6501c46ece89e1558b708d2b7f932" prot="public" virt="non-virtual"><scope>googletest-catch-exceptions-test::CatchCxxExceptionsTest</scope><name>testCatchesCxxExceptionsInSetUp</name></member>
+      <member refid="classgoogletest-catch-exceptions-test_1_1CatchCxxExceptionsTest_1ad7ceec96581c2cfff6267d26a43e2e7d" prot="public" virt="non-virtual"><scope>googletest-catch-exceptions-test::CatchCxxExceptionsTest</scope><name>testCatchesCxxExceptionsInSetUpTestCase</name></member>
+      <member refid="classgoogletest-catch-exceptions-test_1_1CatchCxxExceptionsTest_1ab7130e108d4530a70b604a7710229811" prot="public" virt="non-virtual"><scope>googletest-catch-exceptions-test::CatchCxxExceptionsTest</scope><name>testCatchesCxxExceptionsInTearDown</name></member>
+      <member refid="classgoogletest-catch-exceptions-test_1_1CatchCxxExceptionsTest_1ae3b886e83d78eac40718ff0aeb5ee76b" prot="public" virt="non-virtual"><scope>googletest-catch-exceptions-test::CatchCxxExceptionsTest</scope><name>testCatchesCxxExceptionsInTearDownTestCase</name></member>
+      <member refid="classgoogletest-catch-exceptions-test_1_1CatchCxxExceptionsTest_1a48ada29ca056cd94368189ed0509baa8" prot="public" virt="non-virtual"><scope>googletest-catch-exceptions-test::CatchCxxExceptionsTest</scope><name>testCatchesCxxExceptionsInTestBody</name></member>
+      <member refid="classgoogletest-catch-exceptions-test_1_1CatchCxxExceptionsTest_1a01731aaf8269fc952559f5684b395119" prot="public" virt="non-virtual"><scope>googletest-catch-exceptions-test::CatchCxxExceptionsTest</scope><name>testCatchesNonStdCxxExceptions</name></member>
+      <member refid="classgoogletest-catch-exceptions-test_1_1CatchCxxExceptionsTest_1ab2304b62b833f0729e8909ad8615212c" prot="public" virt="non-virtual"><scope>googletest-catch-exceptions-test::CatchCxxExceptionsTest</scope><name>testUnhandledCxxExceptionsAbortTheProgram</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,590 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.9.6" xml:lang="en-US">
+  <compound refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1AboutDialogViewController" kind="class"><name>SystemExplorer::Gui::ViewController::AboutDialogViewController</name>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1AboutDialogViewController_1a4d266a6bc0e04d31e76d7011b992ed3d" kind="function"><name>CreateChildControls</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1AboutDialogViewController_1a021191476d2d48e025a02d8db0e0c86a" kind="function"><name>AboutDialogViewController</name></member>
+  </compound>
+  <compound refid="classSystemExplorer_1_1Gui_1_1Control_1_1ControlBase" kind="class"><name>SystemExplorer::Gui::Control::ControlBase</name>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1ControlBase_1a2a3a123bc2276cca5901189fa168508c" kind="function"><name>CreateChildControls</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1ControlBase_1a0c9c3ea3dc22fe5afffa371c40279032" kind="function"><name>BindEvents</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1ControlBase_1a297fcbbe9e660661b4038f6f9bf78542" kind="function"><name>Initialize</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1ControlBase_1a2a3a123bc2276cca5901189fa168508c" kind="function"><name>CreateChildControls</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1ControlBase_1a0c9c3ea3dc22fe5afffa371c40279032" kind="function"><name>BindEvents</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1ControlBase_1a297fcbbe9e660661b4038f6f9bf78542" kind="function"><name>Initialize</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1ControlBase_1a36e48ed15b4cc2d40a911bfec0c6df75" kind="function"><name>ControlBase</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1ControlBase_1a36e48ed15b4cc2d40a911bfec0c6df75" kind="function"><name>ControlBase</name></member>
+  </compound>
+  <compound refid="classSystemExplorer_1_1Gui_1_1Control_1_1IconControl" kind="class"><name>SystemExplorer::Gui::Control::IconControl</name>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1IconControl_1af841ffbf4ea015cc29e0136ef97d8c66" kind="variable"><name>_label</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1IconControl_1a060205766e8fa348272de5723a7be4ce" kind="variable"><name>_icon</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1IconControl_1a3a5c6a059dd368728d34f23d723386a1" kind="variable"><name>_bsSizer</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1IconControl_1a75d36e2c521caa62e78ab4b03d9e55dc" kind="function"><name>IconControl</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1IconControl_1add67b6886a75e8577042dafdfa33b5ee" kind="function"><name>GetText</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1IconControl_1abd1aeeb2c9e93340e580918eccbd2313" kind="function"><name>SetText</name></member>
+  </compound>
+  <compound refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1IViewController" kind="class"><name>SystemExplorer::Gui::ViewController::IViewController</name>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1IViewController_1a20dc613549d7092e54872b4cbc68fc66" kind="function"><name>CreateChildControls</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1IViewController_1a222e6d3f35b5c717e5d32112099b662e" kind="function"><name>BindEvents</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1IViewController_1a3e2b314ad593737919290d079c07286d" kind="function"><name>BindData_Before</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1IViewController_1a7c1083ebd28913a77543c19bb4bea1a5" kind="function"><name>BindData</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1IViewController_1ae909fde6fe1b4016fe51e827554e258f" kind="function"><name>~IViewController</name></member>
+  </compound>
+  <compound refid="structSystemExplorer_1_1Core_1_1Models_1_1ProcCpuStat" kind="struct"><name>SystemExplorer::Core::Models::ProcCpuStat</name>
+    <member refid="structSystemExplorer_1_1Core_1_1Models_1_1ProcCpuStat_1ae1e5317bfdb089363b0fbd212b731f13" kind="variable"><name>user</name></member>
+    <member refid="structSystemExplorer_1_1Core_1_1Models_1_1ProcCpuStat_1acb9368c601353017f014a3b6af35f3a5" kind="variable"><name>nice</name></member>
+    <member refid="structSystemExplorer_1_1Core_1_1Models_1_1ProcCpuStat_1a691eccb213c38033dbf06be169317586" kind="variable"><name>system</name></member>
+    <member refid="structSystemExplorer_1_1Core_1_1Models_1_1ProcCpuStat_1a97d9d1db3b844a123fa986faa24cd892" kind="variable"><name>idle</name></member>
+    <member refid="structSystemExplorer_1_1Core_1_1Models_1_1ProcCpuStat_1a946c4fa163d231e45851517fad5c4820" kind="variable"><name>iowait</name></member>
+    <member refid="structSystemExplorer_1_1Core_1_1Models_1_1ProcCpuStat_1a4a61c5db8eeaca3eb1827d3a4eb56779" kind="variable"><name>irq</name></member>
+    <member refid="structSystemExplorer_1_1Core_1_1Models_1_1ProcCpuStat_1af4f055077b7e29927a2c6c4d71c5eb00" kind="variable"><name>softirq</name></member>
+    <member refid="structSystemExplorer_1_1Core_1_1Models_1_1ProcCpuStat_1a83fb7271494d4c9e5f0bbb2add3d6843" kind="variable"><name>steal</name></member>
+    <member refid="structSystemExplorer_1_1Core_1_1Models_1_1ProcCpuStat_1a39b145af9cc0f8aba5304880aadf8f49" kind="variable"><name>guest</name></member>
+    <member refid="structSystemExplorer_1_1Core_1_1Models_1_1ProcCpuStat_1ac267094a11e654ec46686c7a86c20996" kind="variable"><name>guest_nice</name></member>
+    <member refid="structSystemExplorer_1_1Core_1_1Models_1_1ProcCpuStat_1a1dc6bb3ff393e11bb8c2ca958ba1a1b4" kind="function"><name>get_total_cpu_work_time</name></member>
+    <member refid="structSystemExplorer_1_1Core_1_1Models_1_1ProcCpuStat_1a8a5463cecbfba698c4b551b4b464bcc4" kind="function"><name>get_effective_cpu_work_time</name></member>
+    <member refid="structSystemExplorer_1_1Core_1_1Models_1_1ProcCpuStat_1a3d362a68039efeb72472baf8d04c4a54" kind="function"><name>get_avg_cpu_load</name></member>
+  </compound>
+  <compound refid="classSystemExplorer_1_1Core_1_1Models_1_1Process" kind="class"><name>SystemExplorer::Core::Models::Process</name>
+    <member refid="classSystemExplorer_1_1Core_1_1Models_1_1Process_1ad8b277d92fe5e66f53c85e36903ba54b" kind="variable"><name>_pid</name></member>
+    <member refid="classSystemExplorer_1_1Core_1_1Models_1_1Process_1ac23bb945d6cd49578136defece8212cd" kind="variable"><name>_name</name></member>
+    <member refid="classSystemExplorer_1_1Core_1_1Models_1_1Process_1ad7bcaa203938fd484b4178826b3ae37d" kind="variable"><name>_state</name></member>
+    <member refid="classSystemExplorer_1_1Core_1_1Models_1_1Process_1a951b62b1165c194599d1ce3d7280573d" kind="variable"><name>_parentPid</name></member>
+    <member refid="classSystemExplorer_1_1Core_1_1Models_1_1Process_1a4b3220e2912e3c8a15c1e8647e97d492" kind="variable"><name>_userId</name></member>
+    <member refid="classSystemExplorer_1_1Core_1_1Models_1_1Process_1a60a9bc76adc31f47eafeaa724442fe69" kind="variable"><name>_groupId</name></member>
+    <member refid="classSystemExplorer_1_1Core_1_1Models_1_1Process_1a701ca88f2abb8d7326a0e6174595646a" kind="variable"><name>_userName</name></member>
+    <member refid="classSystemExplorer_1_1Core_1_1Models_1_1Process_1abae85f170e57a40e90a61a1bf43099a5" kind="variable"><name>_groupName</name></member>
+    <member refid="classSystemExplorer_1_1Core_1_1Models_1_1Process_1a7266dfda0e5880e03a0aca519941f027" kind="variable"><name>_picked</name></member>
+    <member refid="classSystemExplorer_1_1Core_1_1Models_1_1Process_1a952682659edd0deb2ed1b1a001f1c724" kind="variable"><name>_nameMatched</name></member>
+    <member refid="classSystemExplorer_1_1Core_1_1Models_1_1Process_1a4598443948ed90cda4458a52ea5ddd5d" kind="function"><name>Process</name></member>
+    <member refid="classSystemExplorer_1_1Core_1_1Models_1_1Process_1a6b308ba0ccf208f2afc9c756b8d2635d" kind="function"><name>Process</name></member>
+    <member refid="classSystemExplorer_1_1Core_1_1Models_1_1Process_1aefbde9629a86a32c8fff8305256b522c" kind="function"><name>GetName</name></member>
+    <member refid="classSystemExplorer_1_1Core_1_1Models_1_1Process_1a49d6d561d990a346f7578605597a7550" kind="function"><name>GetPid</name></member>
+    <member refid="classSystemExplorer_1_1Core_1_1Models_1_1Process_1a8c8e3128e8fd672d86b1a2af8a0398a9" kind="function"><name>GetParentPid</name></member>
+    <member refid="classSystemExplorer_1_1Core_1_1Models_1_1Process_1a5ea72aaadb26e95c6530a37214a24ab4" kind="function"><name>GetUserId</name></member>
+    <member refid="classSystemExplorer_1_1Core_1_1Models_1_1Process_1a4f14233f756be94df5b33ea2ec2b1b2f" kind="function"><name>GetUserName</name></member>
+    <member refid="classSystemExplorer_1_1Core_1_1Models_1_1Process_1ae3fd7e3a38e21d8aadee470543c03cc3" kind="function"><name>GetGroupId</name></member>
+    <member refid="classSystemExplorer_1_1Core_1_1Models_1_1Process_1a8be70b35256f965e4fd97a3bc4e9d433" kind="function"><name>GetGroupName</name></member>
+    <member refid="classSystemExplorer_1_1Core_1_1Models_1_1Process_1a4331fcbf7314cc48e0ef6eb4dbf437af" kind="function"><name>GetNameMatched</name></member>
+    <member refid="classSystemExplorer_1_1Core_1_1Models_1_1Process_1a19bec5ea9787b1f1034754fc0291cabf" kind="function"><name>GetPicked</name></member>
+    <member refid="classSystemExplorer_1_1Core_1_1Models_1_1Process_1a85d2dec39661558c679fb6cde1a46003" kind="function"><name>SetPicked</name></member>
+    <member refid="classSystemExplorer_1_1Core_1_1Models_1_1Process_1ab0595b4a852bf8021c8089be99eb1c65" kind="function"><name>SetNameMatched</name></member>
+  </compound>
+  <compound refid="classSystemExplorer_1_1Core_1_1Models_1_1ProcessCpuStat" kind="class"><name>SystemExplorer::Core::Models::ProcessCpuStat</name>
+    <member refid="classSystemExplorer_1_1Core_1_1Models_1_1ProcessCpuStat_1ade1aa2b3357a382ac75294bab070a4d6" kind="variable"><name>cpu_usage_per_all_cores</name></member>
+    <member refid="classSystemExplorer_1_1Core_1_1Models_1_1ProcessCpuStat_1a949a8312a2ddf824e23505b7d7d71da3" kind="variable"><name>cpu_usage_per_core</name></member>
+  </compound>
+  <compound refid="classProcessDetailsViewController" kind="class"><name>ProcessDetailsViewController</name>
+    <member refid="classProcessDetailsViewController_1affdf89f0b2cf73632c8efd97fc254cd7" kind="variable"><name>_mainBook</name></member>
+    <member refid="classProcessDetailsViewController_1a4d2505237449bd429e5c3ed55afe98f4" kind="function"><name>ProcessDetailsViewController</name></member>
+  </compound>
+  <compound refid="classSystemExplorer_1_1Core_1_1Models_1_1ProcessesStat" kind="class"><name>SystemExplorer::Core::Models::ProcessesStat</name>
+    <member refid="classSystemExplorer_1_1Core_1_1Models_1_1ProcessesStat_1af9f64a7225a144979ca0deca54a3a079" kind="variable"><name>processes_stat_common</name></member>
+    <member refid="classSystemExplorer_1_1Core_1_1Models_1_1ProcessesStat_1a5439dd94e2baf73755548a5123dfb841" kind="variable"><name>processes_stat</name></member>
+  </compound>
+  <compound refid="classSystemExplorer_1_1Core_1_1Models_1_1ProcessesStatCommon" kind="class"><name>SystemExplorer::Core::Models::ProcessesStatCommon</name>
+    <member refid="classSystemExplorer_1_1Core_1_1Models_1_1ProcessesStatCommon_1a294e2852cf3172f3fbcb7dcbb04ac84b" kind="variable"><name>cpu_load</name></member>
+    <member refid="classSystemExplorer_1_1Core_1_1Models_1_1ProcessesStatCommon_1ae0fa5b43c3fd87e9365c12d5272c9f5c" kind="variable"><name>rss</name></member>
+    <member refid="classSystemExplorer_1_1Core_1_1Models_1_1ProcessesStatCommon_1a3b7c06f8b17db6ef27c0a30786d710c3" kind="variable"><name>vmsize</name></member>
+  </compound>
+  <compound refid="classSystemExplorer_1_1Core_1_1ProcessesStatManager" kind="class"><name>SystemExplorer::Core::ProcessesStatManager</name>
+    <member refid="classSystemExplorer_1_1Core_1_1ProcessesStatManager_1a01916744942060f8a0f377ff9d292ef1" kind="variable"><name>_proc_tree_stat_manager</name></member>
+    <member refid="classSystemExplorer_1_1Core_1_1ProcessesStatManager_1a0090005b244b375d1e4e561f14b77a0f" kind="function"><name>GetProcessesStatCommon</name></member>
+    <member refid="classSystemExplorer_1_1Core_1_1ProcessesStatManager_1afa10318666e540c08a22ef524577d85c" kind="function"><name>GetProcessStat</name></member>
+    <member refid="classSystemExplorer_1_1Core_1_1ProcessesStatManager_1a5827c68087f7e35f2d9359f1df1c394e" kind="function"><name>GetProcessesStat</name></member>
+    <member refid="classSystemExplorer_1_1Core_1_1ProcessesStatManager_1a089af7135b8fc0bbc996830010cc6ade" kind="function"><name>Tick</name></member>
+  </compound>
+  <compound refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessesTreeListItemComparator" kind="class"><name>SystemExplorer::Gui::ViewController::ProcessesTreeListItemComparator</name>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessesTreeListItemComparator_1adfb21136641f1926d70578845fbffd25" kind="function"><name>Compare</name></member>
+  </compound>
+  <compound refid="classSystemExplorer_1_1Core_1_1ProcessManager" kind="class"><name>SystemExplorer::Core::ProcessManager</name>
+    <member refid="classSystemExplorer_1_1Core_1_1ProcessManager_1a0d907481af67a9adbda344160e5bfa16" kind="function"><name>IsNumber</name></member>
+    <member refid="classSystemExplorer_1_1Core_1_1ProcessManager_1a88d7cf096379fab56cc23b73c28a6231" kind="function"><name>GetName</name></member>
+    <member refid="classSystemExplorer_1_1Core_1_1ProcessManager_1a27cd57d8890d3bda437f4feffff862c6" kind="function"><name>GetParentPid</name></member>
+    <member refid="classSystemExplorer_1_1Core_1_1ProcessManager_1a4d588b78b1f4be82faa60c304cdc74d4" kind="function"><name>GetProcessTree</name></member>
+  </compound>
+  <compound refid="classSystemExplorer_1_1Core_1_1Models_1_1ProcessStat" kind="class"><name>SystemExplorer::Core::Models::ProcessStat</name>
+    <member refid="classSystemExplorer_1_1Core_1_1Models_1_1ProcessStat_1a95d15e55f8f2862d85d16e54f52cd83a" kind="variable"><name>pid</name></member>
+    <member refid="classSystemExplorer_1_1Core_1_1Models_1_1ProcessStat_1aab365284ff9f96130327a02e3643a4e7" kind="variable"><name>cpu_stat</name></member>
+    <member refid="classSystemExplorer_1_1Core_1_1Models_1_1ProcessStat_1a309c0588a2a1ac9e1a307a2bc4e26649" kind="variable"><name>state</name></member>
+    <member refid="classSystemExplorer_1_1Core_1_1Models_1_1ProcessStat_1a8ea7c736f0bc2501cf7cc5696bbdabe8" kind="variable"><name>threads</name></member>
+    <member refid="classSystemExplorer_1_1Core_1_1Models_1_1ProcessStat_1a2ee81384cee2c0b3b407dba7ce248e91" kind="variable"><name>priority</name></member>
+    <member refid="classSystemExplorer_1_1Core_1_1Models_1_1ProcessStat_1a66a6b0e47101142e0182093574b966e8" kind="variable"><name>nice</name></member>
+    <member refid="classSystemExplorer_1_1Core_1_1Models_1_1ProcessStat_1ad93bbb63d3a1384f3721461a5033f4a3" kind="variable"><name>mem_vsize</name></member>
+    <member refid="classSystemExplorer_1_1Core_1_1Models_1_1ProcessStat_1adbdeb7ff6e44c5de5d80526e49c39122" kind="variable"><name>mem_rss</name></member>
+    <member refid="classSystemExplorer_1_1Core_1_1Models_1_1ProcessStat_1a86baa49fce8f1c74e084762400f5f63c" kind="variable"><name>mem_pages_swapped</name></member>
+    <member refid="classSystemExplorer_1_1Core_1_1Models_1_1ProcessStat_1a7af5b5f57925c31944cb3a816a0cac90" kind="variable"><name>processor</name></member>
+  </compound>
+  <compound refid="classSystemExplorer_1_1Core_1_1Models_1_1ProcessTree" kind="class"><name>SystemExplorer::Core::Models::ProcessTree</name>
+    <member refid="classSystemExplorer_1_1Core_1_1Models_1_1ProcessTree_1a7a6b253281aaee943c50357d9923d346" kind="variable"><name>processes</name></member>
+  </compound>
+  <compound refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController" kind="class"><name>SystemExplorer::Gui::ViewController::ProcessTreeViewController</name>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a76cfe0e53a114dd612891e2a622fcba6" kind="enum"><name>ProcessContextMenuId</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a76cfe0e53a114dd612891e2a622fcba6ac3bf447eabe632720a3aa1a7ce401274" kind="enumvalue"><name>Open</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a76cfe0e53a114dd612891e2a622fcba6af2f8f426f80c232d8ae12cac0f9b0bee" kind="enumvalue"><name>ExpandAll</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a76cfe0e53a114dd612891e2a622fcba6a57100869769961c8590fac6570c7f989" kind="enumvalue"><name>CollapseAll</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a76cfe0e53a114dd612891e2a622fcba6a3842e234458f3f925aa3730a0381d92e" kind="enumvalue"><name>ToggleView</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a76cfe0e53a114dd612891e2a622fcba6ad23b0fc36164c2727a81d5918ac5f6fd" kind="enumvalue"><name>AutoSort</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a76cfe0e53a114dd612891e2a622fcba6a77379e82f72a0e4f7e4f93f04747e63f" kind="enumvalue"><name>ShowAllProcesses</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a76cfe0e53a114dd612891e2a622fcba6a8f7f4c1ce7a4f933663d10543562b096" kind="enumvalue"><name>About</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a76cfe0e53a114dd612891e2a622fcba6ad3d2e617335f08df83599665eef8a418" kind="enumvalue"><name>Close</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a76cfe0e53a114dd612891e2a622fcba6adc75890401ac11a74261e1862345eebd" kind="enumvalue"><name>SendSignal</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a76cfe0e53a114dd612891e2a622fcba6a502673de6c349249d1c4316f1fa5a8d2" kind="enumvalue"><name>KillSigTerm</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a76cfe0e53a114dd612891e2a622fcba6a042fc3313a36156f23d133e561babb94" kind="enumvalue"><name>KillSigKill</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a7f3db6f366bf7e63a3015a1b15e14241" kind="enum"><name>ViewState</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a7f3db6f366bf7e63a3015a1b15e14241a3b0c14770e6bd663518496da60f524da" kind="enumvalue"><name>Tree</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a7f3db6f366bf7e63a3015a1b15e14241a4ee29ca12c7d126654bd0e5275de6135" kind="enumvalue"><name>List</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a075094cf22f7bbbd2f52c07d9007eb34" kind="variable"><name>RELATIVE_CONFIG_PATH</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1af56262fb6c5351ef736c342e97627afd" kind="variable"><name>PROCESSES_AUTOCOMPLETE_CHOICES_PATH</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a576d50d847a0aae407361e74b35e96f0" kind="variable"><name>REFRESH_INTERVAL</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a8466ccc014a498ad0cd1e0fbec88f639" kind="variable"><name>PROCESS_CONTEXT_MENU_RANGE_SIZE</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a6135da4b6bf1e4d6a1e887560d118991" kind="variable"><name>PROCESS_CONTEXT_MENU_ROOT_BASE</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1ad7703cad30fb00829545ad65400cd2ea" kind="variable"><name>PROCESS_CONTEXT_MENU_SIGNAL_TYPE_BASE</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a4c22762e3e66e6b1227fb79756ab9b6f" kind="variable"><name>PROCESS_CONTEXT_MENU_SIGNAL_BASE</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a52f52cdbddeabeb95281dc976995a350" kind="variable"><name>_userConfig</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1ac7f028904b2e8f309d2b46215cdb2333" kind="variable"><name>_viewState</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a30bee475268c1e4aa192ccdb6c5bd33e" kind="variable"><name>_statusBar</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1ae3d9e3afdb12bf132baacad67625c643" kind="variable"><name>_sbStatIndex</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a30c126de0aa4a74a8a6477c7a7665295" kind="variable"><name>_hotKeys</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1ab54aa3786fb44806e7f498e630abf096" kind="variable"><name>_processesTreeListItemComparator</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a9c9975e68be1274de861eb0deff22e31" kind="variable"><name>_imageList</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1ab0db4ac4a6da9323736b862d5315054e" kind="variable"><name>_processContextMenu</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1ae2b0bb6d5148f3f3f92f8f23c18021bd" kind="variable"><name>_timer</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a83455603e0c6269525d5b4659a6e8632" kind="variable"><name>_processesListControl</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1aa3f45843032a239100f5e714c5481231" kind="variable"><name>_processManager</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a7559bb6ff9569b104856d01d633c420e" kind="variable"><name>_processesStatManager</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1aee58f1ee89357cf6e648104527718f02" kind="variable"><name>_bsSizer</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1adcc12e1e69554423875e6ad4e35270a6" kind="variable"><name>_cpuStat</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1ac732ab57336c556b947e6895405f2e7d" kind="variable"><name>_ramStat</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1aca5048419823ddaec81d6298675a7ef2" kind="variable"><name>_gProgressBarCpu</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1ab3fdb12bd4acf120c1f444ea006f241c" kind="variable"><name>_gProgressBarRss</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1aa3976f95fcfe6249b6c96f91e4182278" kind="variable"><name>_miExpandAll</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a52a5f2d6d4c4564b648473da9d5d5b98" kind="variable"><name>_miCollapseAll</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1ab5642251f76de55ab87bb1535a58c2f4" kind="variable"><name>_miToggleView</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a3db4de8afa9184cbef52b85178b35045" kind="variable"><name>_miAutoSort</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1ab73a965cd14e531d18fe5b4322525873" kind="variable"><name>_miShowAllProcesses</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1aae6dee0d70a0959c2fcacffd830bcb17" kind="function"><name>SetAutoCompleteChoices</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a0f5541f55f0ea7ea037c957a664749c1" kind="function"><name>UpdateAutoCompleteChoices</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a1056d991ed587ec41840090ff5d69f43" kind="function"><name>CreateStatusBarField</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a210cb597f1f22a214ff2159994fa2e4d" kind="function"><name>CreateHotKeys</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a735c0af5ba03f384cf060fd0e3e15785" kind="function"><name>CreateAcceleratorTable</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a957f7077cac45ba36bdfb175977e3ce6" kind="function"><name>CreateTimer</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a4a4d5baab57bf3f8673eb58bba2d7fad" kind="function"><name>CreateImageList</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a9a798e31468dd6c51398be7ad2f5399c" kind="function"><name>CreateProcessesTreeList</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1acf59dede221e3564b5dd4887e0134491" kind="function"><name>CreateMainSizer</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1ac159d28ca25adcd121f095dd321870bc" kind="function"><name>CreateContextMenu</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a55a93f73e3a50b6eaff3ce33892ad5ba" kind="function"><name>BindProcessesListControlEvents</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a2c1fd2d1d1a603f2b93bd8e9f8ae191f" kind="function"><name>BindContextMenuEvents</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a2b22a002d7774fc8232cf677ec20f1db" kind="function"><name>BindTimerEvents</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1af562980e2a67c5752b3a70e05fdc70b6" kind="function"><name>UpdateContextMenu</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a24babfcc4afb2b4b016462e4f2cfe558" kind="function"><name>SetFocus</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1af91f1cd491b8f41bad551908db69b3be" kind="function"><name>StartTimer</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1ad5b69fa679cb797500ac330846d3809c" kind="function"><name>StopTimer</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a39a81444a0adec6f80cef8d92c335d3b" kind="function"><name>ReBindData</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a76e817a129aac4098592b834ec126de7" kind="function"><name>ToggleViewState</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a544e871865cf00df2b66c77eedbb10c3" kind="function"><name>UpdateView</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1aaf7194df0136eddcfa9fffe294c787ba" kind="function"><name>AddHotKey</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a22b29502cd973ac545e587b6fd341156" kind="function"><name>GetHotKey</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a49f96e131360751faa16a4b5f07a2591" kind="function"><name>AttachMenuItem</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1ac3467fe764abf5fa552eb1f1b4d8e527" kind="function"><name>AppendMenuItem</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1ae154a80c1ea8922d9fa318138cafe2ce" kind="function"><name>AppendSubMenu</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1aec837521d41c51b9745defca8d965b28" kind="function"><name>ExtractPid</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a3e784004ecde45be9c6a94b7d9746f3b" kind="function"><name>SendSignalToSelectedProcesses</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a0c8b3363e370669e5fb23878dbe7972b" kind="function"><name>UpdateStatusBarStatistics</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1af3134e90fd9c0287383772bc846ed621" kind="function"><name>MapProcessStatToIconIndex</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a4c725705fd029be595596cfd72d4fdc8" kind="function"><name>Sort</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a780a7bc5b89e7d7c9e32f9b6315a9fc6" kind="function"><name>window_OnSize</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1ae5e3a73de18c1d17e3ac7abe222c8852" kind="function"><name>processesListControl_Search</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1ab33a921d957bc46a683c674dd4225c21" kind="function"><name>processesListControl_OnItemContextMenu</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1abf45dc145e3ee8aeed0bb71420eb8820" kind="function"><name>processesContextMenu_OnMenuItem</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a52a0b1954654f5c2594aa92dd26c2843" kind="function"><name>processesContextMenu_OnMenuHighlight</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a5fe5878bedbe891f5c6833d4cf0c06f8" kind="function"><name>processesContextMenu_OnMenuOpen</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1aeb80c3f2d89fc45a505a97f5867a9563" kind="function"><name>processesContextMenu_OnMenuClose</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1ae1c9404bc54bc7d8857980204d670c88" kind="function"><name>timer_OnTick</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a32f37cd5016a6be348dbe071a1d1afa3" kind="function"><name>CreateChildControls</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a69cccb55e49f3f7f782d39834522c9d0" kind="function"><name>BindEvents</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1aa2aebc623cfcb8514c0150a2427b332d" kind="function"><name>BindData_Before</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a60b66e1df0994c291d393d30d8f7911d" kind="function"><name>BindData</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1ab26b952c20af48a54862ba51aaa477e0" kind="function"><name>PostInitialize</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a023572a87171b1a8755b775e1646adf7" kind="function"><name>ProcessTreeViewController</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a35cba2ba1f8931b3d27f8f0957a74dcd" kind="function"><name>~ProcessTreeViewController</name></member>
+  </compound>
+  <compound refid="structSystemExplorer_1_1Core_1_1Models_1_1ProcProcessStat" kind="struct"><name>SystemExplorer::Core::Models::ProcProcessStat</name>
+    <member refid="structSystemExplorer_1_1Core_1_1Models_1_1ProcProcessStat_1a09e5de8cb7c29a8ec40d4bff616be41e" kind="variable"><name>pid</name></member>
+    <member refid="structSystemExplorer_1_1Core_1_1Models_1_1ProcProcessStat_1aab55be52c431e3f25866b8d3fca7bea5" kind="variable"><name>comm</name></member>
+    <member refid="structSystemExplorer_1_1Core_1_1Models_1_1ProcProcessStat_1ab651e81e5aefb189173c9070eac0152b" kind="variable"><name>state</name></member>
+    <member refid="structSystemExplorer_1_1Core_1_1Models_1_1ProcProcessStat_1a9087a907dfa8424f515120ef1176c4c7" kind="variable"><name>ppid</name></member>
+    <member refid="structSystemExplorer_1_1Core_1_1Models_1_1ProcProcessStat_1a79a692d6137995b7f6c307d063deef4a" kind="variable"><name>pgrp</name></member>
+    <member refid="structSystemExplorer_1_1Core_1_1Models_1_1ProcProcessStat_1a526a019ac5a9a0de0cee39cd638d5750" kind="variable"><name>session</name></member>
+    <member refid="structSystemExplorer_1_1Core_1_1Models_1_1ProcProcessStat_1a260f5a81fa5bd5e15d4ec2504423e92a" kind="variable"><name>tty_nr</name></member>
+    <member refid="structSystemExplorer_1_1Core_1_1Models_1_1ProcProcessStat_1aeb4710a99cc39a7134496bdbc86fc816" kind="variable"><name>tpgid</name></member>
+    <member refid="structSystemExplorer_1_1Core_1_1Models_1_1ProcProcessStat_1a391331db073ccf91ec81e130593e0ea3" kind="variable"><name>flags</name></member>
+    <member refid="structSystemExplorer_1_1Core_1_1Models_1_1ProcProcessStat_1a221cb076428d88b47ca1d67491bf13ba" kind="variable"><name>minflt</name></member>
+    <member refid="structSystemExplorer_1_1Core_1_1Models_1_1ProcProcessStat_1a39af0660e21dbd42ae0ab89351de539a" kind="variable"><name>cminflt</name></member>
+    <member refid="structSystemExplorer_1_1Core_1_1Models_1_1ProcProcessStat_1ae9790efa2e9ef79ad56a7f519adf185a" kind="variable"><name>majflt</name></member>
+    <member refid="structSystemExplorer_1_1Core_1_1Models_1_1ProcProcessStat_1afbc50eeb26f7b97e3a1d46a99fb4312c" kind="variable"><name>cmajflt</name></member>
+    <member refid="structSystemExplorer_1_1Core_1_1Models_1_1ProcProcessStat_1addb9cb8de498d65115a6d20e6f31d571" kind="variable"><name>utime</name></member>
+    <member refid="structSystemExplorer_1_1Core_1_1Models_1_1ProcProcessStat_1acdc8949cb0160191a3cb4a0a52e2f537" kind="variable"><name>stime</name></member>
+    <member refid="structSystemExplorer_1_1Core_1_1Models_1_1ProcProcessStat_1a244281a06e8b49b2267c75648c216c9b" kind="variable"><name>cutime</name></member>
+    <member refid="structSystemExplorer_1_1Core_1_1Models_1_1ProcProcessStat_1ad26c6362ec5bf5a98d7bc845e6ba64b6" kind="variable"><name>cstime</name></member>
+    <member refid="structSystemExplorer_1_1Core_1_1Models_1_1ProcProcessStat_1aff1b61d0405514f20d54270d5322b880" kind="variable"><name>priority</name></member>
+    <member refid="structSystemExplorer_1_1Core_1_1Models_1_1ProcProcessStat_1a741848951e3e50068d3746a807cb8abf" kind="variable"><name>nice</name></member>
+    <member refid="structSystemExplorer_1_1Core_1_1Models_1_1ProcProcessStat_1ad45e41c707e4c3155f6d3826cfa69f60" kind="variable"><name>num_threads</name></member>
+    <member refid="structSystemExplorer_1_1Core_1_1Models_1_1ProcProcessStat_1aa197692c985fbc9e8ff9b0c1f26dc085" kind="variable"><name>itrvalue</name></member>
+    <member refid="structSystemExplorer_1_1Core_1_1Models_1_1ProcProcessStat_1a5effcc18dba15a7c0dcb440c8cbe2b34" kind="variable"><name>starttime</name></member>
+    <member refid="structSystemExplorer_1_1Core_1_1Models_1_1ProcProcessStat_1a84553593775a582fdb8cb633fa8b348a" kind="variable"><name>vsize</name></member>
+    <member refid="structSystemExplorer_1_1Core_1_1Models_1_1ProcProcessStat_1a84d2d15d94f93a31abe187d06f03f562" kind="variable"><name>rss</name></member>
+    <member refid="structSystemExplorer_1_1Core_1_1Models_1_1ProcProcessStat_1af2e1d4dedc27e9625384120aee45da3a" kind="variable"><name>rsslim</name></member>
+    <member refid="structSystemExplorer_1_1Core_1_1Models_1_1ProcProcessStat_1a4f0359c8c06948a7433712b0dbb22742" kind="variable"><name>startcode</name></member>
+    <member refid="structSystemExplorer_1_1Core_1_1Models_1_1ProcProcessStat_1a0ffc8c87eb186a91d9ad2b0940738d81" kind="variable"><name>endcode</name></member>
+    <member refid="structSystemExplorer_1_1Core_1_1Models_1_1ProcProcessStat_1a6d75c5d7d4e0bbef1f54a67d69a0932f" kind="variable"><name>startstack</name></member>
+    <member refid="structSystemExplorer_1_1Core_1_1Models_1_1ProcProcessStat_1a50f97801fcfe872269069c2e82bd7b8b" kind="variable"><name>kstesp</name></member>
+    <member refid="structSystemExplorer_1_1Core_1_1Models_1_1ProcProcessStat_1ab629fd64ad5815ec3d40dc90ef32fe24" kind="variable"><name>ksteip</name></member>
+    <member refid="structSystemExplorer_1_1Core_1_1Models_1_1ProcProcessStat_1a0662cb1a403c0f5827eed64b4843ad6a" kind="variable"><name>signal</name></member>
+    <member refid="structSystemExplorer_1_1Core_1_1Models_1_1ProcProcessStat_1a935a219c06b02bc6c5eb47c95bf07df5" kind="variable"><name>blocked</name></member>
+    <member refid="structSystemExplorer_1_1Core_1_1Models_1_1ProcProcessStat_1a13aa60960eb1d55b0e2963fd37a9bb2f" kind="variable"><name>sigignore</name></member>
+    <member refid="structSystemExplorer_1_1Core_1_1Models_1_1ProcProcessStat_1a093e652d52454ecbffccbe950e9463bc" kind="variable"><name>sigcatch</name></member>
+    <member refid="structSystemExplorer_1_1Core_1_1Models_1_1ProcProcessStat_1a3b7d8f9d604262171c463d9181a1e0f7" kind="variable"><name>wchan</name></member>
+    <member refid="structSystemExplorer_1_1Core_1_1Models_1_1ProcProcessStat_1abb9f4022922040abaa263d3dafd706f7" kind="variable"><name>snwap</name></member>
+    <member refid="structSystemExplorer_1_1Core_1_1Models_1_1ProcProcessStat_1ac5617ad780836f034f3700fe4890970a" kind="variable"><name>cnswap</name></member>
+    <member refid="structSystemExplorer_1_1Core_1_1Models_1_1ProcProcessStat_1ad806f5562b8efd03e4735bebeb4460e3" kind="variable"><name>exit_signal</name></member>
+    <member refid="structSystemExplorer_1_1Core_1_1Models_1_1ProcProcessStat_1aa27d5f18b766b04b13c9a3beed4d7ac9" kind="variable"><name>processor</name></member>
+    <member refid="structSystemExplorer_1_1Core_1_1Models_1_1ProcProcessStat_1a2c297fc656e023ea9fa6d1d1d5c68e60" kind="variable"><name>rt_priority</name></member>
+    <member refid="structSystemExplorer_1_1Core_1_1Models_1_1ProcProcessStat_1a1dc42a5a350055bcbab8013bc6733d5a" kind="variable"><name>policy</name></member>
+    <member refid="structSystemExplorer_1_1Core_1_1Models_1_1ProcProcessStat_1a132b1f0ba126238530b3f9388a4f64c0" kind="variable"><name>delayacct_blkio_ticks</name></member>
+    <member refid="structSystemExplorer_1_1Core_1_1Models_1_1ProcProcessStat_1a1e6b07b8f06a551aafff918a1ddb5099" kind="variable"><name>guest_time</name></member>
+    <member refid="structSystemExplorer_1_1Core_1_1Models_1_1ProcProcessStat_1accd1a4ce2216fc5d33047405e509549f" kind="variable"><name>cguest_time</name></member>
+    <member refid="structSystemExplorer_1_1Core_1_1Models_1_1ProcProcessStat_1a7bf58d429e0a269a06128eaff192efb1" kind="variable"><name>start_data</name></member>
+    <member refid="structSystemExplorer_1_1Core_1_1Models_1_1ProcProcessStat_1a83f22ef057a3256c73926bfb6a83e90e" kind="variable"><name>end_data</name></member>
+    <member refid="structSystemExplorer_1_1Core_1_1Models_1_1ProcProcessStat_1aab8c84d15b106ad6a224aad767264022" kind="variable"><name>stack_brk</name></member>
+    <member refid="structSystemExplorer_1_1Core_1_1Models_1_1ProcProcessStat_1abacf6dc0b40fe8e69303c819ac63593d" kind="variable"><name>arg_start</name></member>
+    <member refid="structSystemExplorer_1_1Core_1_1Models_1_1ProcProcessStat_1aaba990982a3f374315d181f99c9141e5" kind="variable"><name>arg_end</name></member>
+    <member refid="structSystemExplorer_1_1Core_1_1Models_1_1ProcProcessStat_1a34be8d32f0f9dd7ee87ed7d93a908a0d" kind="variable"><name>env_start</name></member>
+    <member refid="structSystemExplorer_1_1Core_1_1Models_1_1ProcProcessStat_1a406ff362eb2bc7f8659355816c5aa3bb" kind="variable"><name>env_end</name></member>
+    <member refid="structSystemExplorer_1_1Core_1_1Models_1_1ProcProcessStat_1a309b84802bf65f6064a90a314256790e" kind="variable"><name>exit_code</name></member>
+  </compound>
+  <compound refid="classSystemExplorer_1_1Core_1_1Parsers_1_1ProcProcessStatParser" kind="class"><name>SystemExplorer::Core::Parsers::ProcProcessStatParser</name>
+    <member refid="classSystemExplorer_1_1Core_1_1Parsers_1_1ProcProcessStatParser_1a4121a92ad865517bd1479957729dfc9d" kind="function"><name>Parse</name></member>
+  </compound>
+  <compound refid="structSystemExplorer_1_1Core_1_1Models_1_1ProcStat" kind="struct"><name>SystemExplorer::Core::Models::ProcStat</name>
+    <member refid="structSystemExplorer_1_1Core_1_1Models_1_1ProcStat_1a02dfca366c7184de0c7b3fa78ac9e66a" kind="variable"><name>proc_cpu_stat</name></member>
+  </compound>
+  <compound refid="classSystemExplorer_1_1Core_1_1Parsers_1_1ProcStatParser" kind="class"><name>SystemExplorer::Core::Parsers::ProcStatParser</name>
+    <member refid="classSystemExplorer_1_1Core_1_1Parsers_1_1ProcStatParser_1a36d2c9e904494809cd1407798564294e" kind="function"><name>Parse</name></member>
+  </compound>
+  <compound refid="structSystemExplorer_1_1Core_1_1Models_1_1ProcTreeStat" kind="struct"><name>SystemExplorer::Core::Models::ProcTreeStat</name>
+    <member refid="structSystemExplorer_1_1Core_1_1Models_1_1ProcTreeStat_1a624ee3b6f073882febe14f3db7884008" kind="variable"><name>proc_stat</name></member>
+    <member refid="structSystemExplorer_1_1Core_1_1Models_1_1ProcTreeStat_1a8a7b0ea8f73098a81b4552cd709716d9" kind="variable"><name>proc_processes_stat</name></member>
+  </compound>
+  <compound refid="classSystemExplorer_1_1Core_1_1ProcTreeStatManager" kind="class"><name>SystemExplorer::Core::ProcTreeStatManager</name>
+    <member refid="classSystemExplorer_1_1Core_1_1ProcTreeStatManager_1a49b316d988d457fd73562e7c54537528" kind="variable"><name>_proc_tree_stat</name></member>
+    <member refid="classSystemExplorer_1_1Core_1_1ProcTreeStatManager_1aba4dcf882be281668adfb46730dfe7b6" kind="function"><name>IsNumber</name></member>
+    <member refid="classSystemExplorer_1_1Core_1_1ProcTreeStatManager_1a134926fd888b76f11613ed0822facd9f" kind="function"><name>GetProcStat</name></member>
+    <member refid="classSystemExplorer_1_1Core_1_1ProcTreeStatManager_1a3e247a5bf6834b0135761022966c5a12" kind="function"><name>GetProcesses</name></member>
+    <member refid="classSystemExplorer_1_1Core_1_1ProcTreeStatManager_1a65a4daedeba89be84b6bd8ec713da243" kind="function"><name>GetProcessStat</name></member>
+    <member refid="classSystemExplorer_1_1Core_1_1ProcTreeStatManager_1a7c19bb88f74ab211277761e4d3235d9b" kind="function"><name>GetProcesssesStat</name></member>
+    <member refid="classSystemExplorer_1_1Core_1_1ProcTreeStatManager_1afdc8063128015c863da76285cee36154" kind="function"><name>GetProcTreeStat</name></member>
+    <member refid="classSystemExplorer_1_1Core_1_1ProcTreeStatManager_1a7f54c0926a1408696c7a292d7382354b" kind="function"><name>Tick</name></member>
+  </compound>
+  <compound refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1RootViewController" kind="class"><name>SystemExplorer::Gui::ViewController::RootViewController</name>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1RootViewController_1aeb98a32a529f9b4bf33c7a147f83cdd6" kind="variable"><name>_config</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1RootViewController_1a0071250342b3f6cbdd6c21c498a20cd6" kind="variable"><name>_processTreeViewController</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1RootViewController_1ae2ae2bd6299c63e77069b0cfdf414306" kind="function"><name>RootViewController</name></member>
+  </compound>
+  <compound refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase" kind="class"><name>SystemExplorer::Gui::Control::SearchableControlBase</name>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1a1fa9d3e4bbf6bf9bea64526555c84695" kind="variable"><name>_imageList</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1a1485add6becaedff616d88f9e0853c4c" kind="variable"><name>_scSearch</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1aa832561083564c51d56c283ea0343beb" kind="function"><name>CreateChildControls</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1af075a612513e0fcda07dc12315938be1" kind="function"><name>BindEvents</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1a4931c25344b2716e8266c9225df6743a" kind="function"><name>OnSearchTextClick</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1a1857c9699ed4c704cbd3b38aff77ae25" kind="function"><name>scSearch_Text</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1a56997a88cbd9e5ee7dd21c1371e86883" kind="function"><name>scSearch_Click</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1ade5b2debb867e7842236666d50461e04" kind="function"><name>scSearch_OnKillFocus</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1a9a3f6e6e3fcab035305289a0761e367f" kind="function"><name>SearchableControlBase</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1adbab839b9e92d73d2c29a47efad1c07b" kind="function"><name>BindData</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1aa3c306a8ce4be70baac2deff06b45e98" kind="function"><name>ReBindData</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1a5078e24e74ece6f9606f0b8221d2b636" kind="function"><name>AppendColumn</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1a73cfea826d97247e62ef41ad4b576213" kind="function"><name>GetSelections</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1aefc5a82aab63bb8a52fa215a907fa7e7" kind="function"><name>AutoComplete</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1a6882a456a9db73baca66e3c2394c43a5" kind="function"><name>SetFocus</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1a117136537374522142b19bd99591b204" kind="function"><name>PopupMenu</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1adff85e9128e69187e124e2c67c810966" kind="function"><name>GetSearchText</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1af7ee3c9e14b09fef38675be230b62a17" kind="function"><name>SetSearchText</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1aac1fc8cacf9549c218058d14624005c7" kind="function"><name>FilterEmpty</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1a0bb45e0f545d1795657b94846fb1042b" kind="function"><name>ExpandAll</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1ac059f3ef6df96807e80ea433d1d3bfdc" kind="function"><name>CollapseAll</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1a014d0d19eaccc501e4976e544067f3e5" kind="function"><name>SetItemComparator</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1a0dfb0c069860a300efe776414f64f64b" kind="function"><name>Sort</name></member>
+  </compound>
+  <compound refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1_1SearchableItem" kind="class"><name>SystemExplorer::Gui::Control::SearchableControlBase::SearchableItem</name>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1_1SearchableItem_1aac263a481a3a75434d00e0d4696019ae" kind="variable"><name>_id</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1_1SearchableItem_1a61e700075966972a4521b062f2243be8" kind="variable"><name>_parentId</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1_1SearchableItem_1a46a4994dea04626b24ec0682e1119f12" kind="variable"><name>_text</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1_1SearchableItem_1a97330f4713afeb407762510ab6cf668f" kind="variable"><name>_selected</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1_1SearchableItem_1a8652bd367262f2679d0d441cc402bf19" kind="variable"><name>_other</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1_1SearchableItem_1ae69afe7c8702dfe597e02cc75e957310" kind="variable"><name>_iconIndex</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1_1SearchableItem_1a9b736d2b522ce2f5d104cffbf1035b58" kind="variable"><name>_bgColour</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1_1SearchableItem_1aff107cb067dc5b35a681657426210ec2" kind="function"><name>SearchableItem</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1_1SearchableItem_1aba5295345a084ada5ed0fdd04cea2acc" kind="function"><name>GetId</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1_1SearchableItem_1a39d7eec5a77c7d3c97991c0628f357da" kind="function"><name>GetParentId</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1_1SearchableItem_1ad0da48dec23f215a303d4d7228e8bcdd" kind="function"><name>GetText</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1_1SearchableItem_1ab8e6b35b2205efd251341e4b3fdf74c4" kind="function"><name>GetSelected</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1_1SearchableItem_1a656c27152e7ce4fe3acbcca54a90288d" kind="function"><name>GetOther</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1_1SearchableItem_1a108d142ed7bbec0ecb4164f6246bcb09" kind="function"><name>GetIconIndex</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1_1SearchableItem_1af13397065711a6dd665d8aeea7a3e592" kind="function"><name>GetBgColour</name></member>
+  </compound>
+  <compound refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableListControl" kind="class"><name>SystemExplorer::Gui::Control::SearchableListControl</name>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableListControl_1a88536fcd2ed263ff4df7bc67340d6002" kind="function"><name>SearchableListControl</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableListControl_1a72c775ce799a28b832fa29cb3ce5049c" kind="function"><name>BindData</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableListControl_1a99c45ddfbaa3c56488b6bb6c608d5ca6" kind="function"><name>ReBindData</name></member>
+  </compound>
+  <compound refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableListViewControl" kind="class"><name>SystemExplorer::Gui::Control::SearchableListViewControl</name>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableListViewControl_1aba2797e7ae91de218b104ca58ea795e7" kind="variable"><name>_bsSizer</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableListViewControl_1a8aa9e2fdcaa75fc8c9d2b881683b204e" kind="variable"><name>_lvListView</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableListViewControl_1a5cacd78838ec9995f61f38b2907318a9" kind="function"><name>CreateChildControls</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableListViewControl_1a0218e0978fc04b32e32cab633b83215f" kind="function"><name>BindEvents</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableListViewControl_1acc798d8973c965caf1cba7970145c7aa" kind="function"><name>lvProcesses_OnChar</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableListViewControl_1a8bc700c144120e383e8f16980efe29db" kind="function"><name>lvProcesses_OnItemContextMenu</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableListViewControl_1ac2f481d73baa5510f86b3997a1bf832a" kind="function"><name>lvProcesses_OnMenuItem</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableListViewControl_1a84158b8d51b0864cc0cc5530256108e5" kind="function"><name>FilterEmpty</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableListViewControl_1a8a8dd745af254277cc245d1de98da9ec" kind="function"><name>FindItemById</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableListViewControl_1a4837f4af27aa00c287807061ac242446" kind="function"><name>SearchableListViewControl</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableListViewControl_1aab157a8c855d0e88adbc1e5baebef376" kind="function"><name>AppendColumn</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableListViewControl_1a47e663717bfd2455ef1bcb138a36b238" kind="function"><name>GetSelections</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableListViewControl_1a8976511ccf450496a491ba8b866281d9" kind="function"><name>BindData</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableListViewControl_1a08b0a5ec0b7b84e54c049b52e4f7c395" kind="function"><name>ReBindData</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableListViewControl_1aa5816104393a4b595f8b3ec648c69483" kind="function"><name>OnSearchTextClick</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableListViewControl_1a3674641ae4f07119fa796e0fe2cc6964" kind="function"><name>SetFocus</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableListViewControl_1ae5d82d15b718f536e4e2792658994190" kind="function"><name>ExpandAll</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableListViewControl_1aad8c2c30a528af6c9e420293c2688d48" kind="function"><name>CollapseAll</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableListViewControl_1a7ab1b5d10197798b23457b99ac3f7269" kind="function"><name>PopupMenu</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableListViewControl_1a7466bdeafd932ebbbf472bef6e59b8a3" kind="function"><name>Sort</name></member>
+  </compound>
+  <compound refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControl" kind="class"><name>SystemExplorer::Gui::Control::SearchableTreeListControl</name>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControl_1ae3a6f594bdf41110cae419f497cbaae0" kind="function"><name>SearchableTreeListControl</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControl_1a83f63f741613533c7dfd6153c75e1cd1" kind="function"><name>BindData</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControl_1a0f2cda2667055d9ef69944f4c4940e15" kind="function"><name>ReBindData</name></member>
+  </compound>
+  <compound refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase" kind="class"><name>SystemExplorer::Gui::Control::SearchableTreeListControlBase</name>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase_1ae17f906caef5ccc49e9bac0f2e5f9a71" kind="variable"><name>_bsSizer</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase_1a2fd728f0d0002fe2b29417d397107309" kind="variable"><name>_tlcTreeList</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase_1ac547cc4357194844b80f7e3d46a06365" kind="variable"><name>_currentSortingColumn</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase_1ae555d41c7391aae1afd3473dfeba89df" kind="variable"><name>_currentSortingOrder</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase_1a057316bb0b03969d17a9d8af263d93c4" kind="function"><name>CreateChildControls</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase_1a9c6dae532e0d004e8912e8506da0dafb" kind="function"><name>BindEvents</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase_1a2fb09a6ba1f0c30a38318ef7043b43b4" kind="function"><name>tlcTreeList_OnChar</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase_1a9c0fda4acfb8012dc4011ecc12feec82" kind="function"><name>tlcTreeList_OnItemContextMenu</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase_1a0befe1512cd9b59bf60339f85d0fd6a0" kind="function"><name>tlcTreeList_OnMenuItem</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase_1a85c0e47cd23f2573d629ae56c48e7572" kind="function"><name>ExpandAll</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase_1a0cc3f904ecc27a90bec88eed77cc4192" kind="function"><name>CollapseAll</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase_1a4fa01dc632d688fdb69dbc9e70689d10" kind="function"><name>GetAllSubNodes</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase_1a9396b3c35b21a2c1123019a264ede414" kind="function"><name>FindItemById</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase_1a687dfed90497c1eb161c2481cc4d5a60" kind="function"><name>SearchableTreeListControlBase</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase_1a446ac3ef4c1ec77f9a6507e4c75a6d03" kind="function"><name>AppendColumn</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase_1ac1458c9438032935ba4cef8e4e52e4e5" kind="function"><name>GetSelections</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase_1a9a8628338edae7c2fcfcdb75dcf02836" kind="function"><name>OnSearchTextClick</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase_1a53144627b3a889865e7e9b6239de97fc" kind="function"><name>SetFocus</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase_1aae3cf49f8e42033e7d500dca521c2726" kind="function"><name>ExpandAll</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase_1a98795b98965e60a80f6d1192a029194c" kind="function"><name>CollapseAll</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase_1a27f2f904a3ef0cdc265243a3cd26a2f3" kind="function"><name>PopupMenu</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase_1ac9e8ca8bd56893dbc2296468b17ca2a6" kind="function"><name>SetItemComparator</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase_1a59d02c76b02955ab959b8b60fe8fa7a2" kind="function"><name>Sort</name></member>
+  </compound>
+  <compound refid="classSystemExplorer_1_1Core_1_1Models_1_1Signal" kind="class"><name>SystemExplorer::Core::Models::Signal</name>
+    <member refid="classSystemExplorer_1_1Core_1_1Models_1_1Signal_1a021ce5dc91ca2da11e1d454a9fd77b9c" kind="variable"><name>_id</name></member>
+    <member refid="classSystemExplorer_1_1Core_1_1Models_1_1Signal_1af5e0b99ea8fa80aa2388eb96d724e6ed" kind="variable"><name>_alias</name></member>
+    <member refid="classSystemExplorer_1_1Core_1_1Models_1_1Signal_1aa614776c7a8daa054fc5c1cfe83d0504" kind="variable"><name>_signalType</name></member>
+    <member refid="classSystemExplorer_1_1Core_1_1Models_1_1Signal_1a5950e5735321bfa6a02d7b443ea1b919" kind="variable"><name>_standard</name></member>
+    <member refid="classSystemExplorer_1_1Core_1_1Models_1_1Signal_1a50b217b6c8b4e6eb5e1ed225db4c00b9" kind="variable"><name>_description</name></member>
+    <member refid="classSystemExplorer_1_1Core_1_1Models_1_1Signal_1a249ebfbb4b4c23386a9a7639559f77c8" kind="function"><name>Signal</name></member>
+    <member refid="classSystemExplorer_1_1Core_1_1Models_1_1Signal_1a0122429e18a0ce1802505d5cc228aada" kind="function"><name>Signal</name></member>
+    <member refid="classSystemExplorer_1_1Core_1_1Models_1_1Signal_1af84cceab80f5fca80abc5c1d81b0d8d0" kind="function"><name>GetId</name></member>
+    <member refid="classSystemExplorer_1_1Core_1_1Models_1_1Signal_1a6cb6cf5977248c3cccb2715c3a6e0c54" kind="function"><name>GetAlias</name></member>
+    <member refid="classSystemExplorer_1_1Core_1_1Models_1_1Signal_1a8b898fbc7dee4138d48d995a4996e216" kind="function"><name>GetSignalType</name></member>
+    <member refid="classSystemExplorer_1_1Core_1_1Models_1_1Signal_1afb02815d5ea3c22686715226b8e4c7d9" kind="function"><name>GetStandard</name></member>
+    <member refid="classSystemExplorer_1_1Core_1_1Models_1_1Signal_1af7d5589976342dd3096803417e596675" kind="function"><name>GetDescription</name></member>
+  </compound>
+  <compound refid="classSystemExplorer_1_1Core_1_1SignalManager" kind="class"><name>SystemExplorer::Core::SignalManager</name>
+    <member refid="classSystemExplorer_1_1Core_1_1SignalManager_1ab2c0a5b7b585544cac2f68f3621e651a" kind="variable"><name>_signalTypes</name></member>
+    <member refid="classSystemExplorer_1_1Core_1_1SignalManager_1a2fa180434ff9b9c951494de9c30668fb" kind="variable"><name>_signals</name></member>
+    <member refid="classSystemExplorer_1_1Core_1_1SignalManager_1a4ef5b1317edfec2a1dae70b0cbc4333f" kind="function"><name>SignalManager</name></member>
+    <member refid="classSystemExplorer_1_1Core_1_1SignalManager_1af947055344cb740a057c6fccb1511fd1" kind="function"><name>GetSignalTypes</name></member>
+    <member refid="classSystemExplorer_1_1Core_1_1SignalManager_1a6a9e6938abccc5f28b03fabc9c1d7699" kind="function"><name>GetSignals</name></member>
+    <member refid="classSystemExplorer_1_1Core_1_1SignalManager_1a40f02adcac22a5131356cba923aba85b" kind="function"><name>GetSignals</name></member>
+    <member refid="classSystemExplorer_1_1Core_1_1SignalManager_1af66416a1e2675eb594163c8ef62efe8b" kind="function"><name>GetSignal</name></member>
+    <member refid="classSystemExplorer_1_1Core_1_1SignalManager_1a1e9b7ac199822e3b3028dea3999923be" kind="function"><name>SendSignal</name></member>
+  </compound>
+  <compound refid="classSystemExplorer_1_1Core_1_1SignalsDict" kind="class"><name>SystemExplorer::Core::SignalsDict</name>
+    <member refid="classSystemExplorer_1_1Core_1_1SignalsDict_1a0fb594d711cbe8e5efdf450f78536961" kind="variable"><name>_instance</name></member>
+    <member refid="classSystemExplorer_1_1Core_1_1SignalsDict_1ad072b4d19450a8ec3181639d7ae251b0" kind="variable"><name>_signals</name></member>
+    <member refid="classSystemExplorer_1_1Core_1_1SignalsDict_1a6110ef7ffb57156b2f70850e2df6c485" kind="function"><name>SignalsDict</name></member>
+    <member refid="classSystemExplorer_1_1Core_1_1SignalsDict_1a7cbaca73d56ad9a2cc38f8f1dff24b76" kind="function"><name>GetInstance</name></member>
+    <member refid="classSystemExplorer_1_1Core_1_1SignalsDict_1a605b69c7df24e12311c8603b739a5bd8" kind="function"><name>Get</name></member>
+    <member refid="classSystemExplorer_1_1Core_1_1SignalsDict_1a9cf0b1c0294bdbdb08046953401c92f6" kind="function"><name>GetAll</name></member>
+  </compound>
+  <compound refid="classSystemExplorer_1_1Core_1_1Models_1_1SignalType" kind="class"><name>SystemExplorer::Core::Models::SignalType</name>
+    <member refid="classSystemExplorer_1_1Core_1_1Models_1_1SignalType_1a84fcce4513d2ce55ea0acdc99181f88b" kind="variable"><name>_id</name></member>
+    <member refid="classSystemExplorer_1_1Core_1_1Models_1_1SignalType_1ad30220bcba7ae4f3a5aec6372fed8ca6" kind="variable"><name>_alias</name></member>
+    <member refid="classSystemExplorer_1_1Core_1_1Models_1_1SignalType_1a22e20c3726bb6f1795dbc356ca64db31" kind="variable"><name>_description</name></member>
+    <member refid="classSystemExplorer_1_1Core_1_1Models_1_1SignalType_1a7c94ef31b9222fdc1e0fe98ef493c563" kind="function"><name>SignalType</name></member>
+    <member refid="classSystemExplorer_1_1Core_1_1Models_1_1SignalType_1aef29c2993e99bae243347cc9bf1cece3" kind="function"><name>SignalType</name></member>
+    <member refid="classSystemExplorer_1_1Core_1_1Models_1_1SignalType_1a1d46bea7b22545fde3b9ef6e908bdb62" kind="function"><name>GetId</name></member>
+    <member refid="classSystemExplorer_1_1Core_1_1Models_1_1SignalType_1a0e5bea5a790bb00436cdf230c509b800" kind="function"><name>GetAlias</name></member>
+    <member refid="classSystemExplorer_1_1Core_1_1Models_1_1SignalType_1ad297dd3c48822da4bfb55c0716b63bb8" kind="function"><name>GetDescription</name></member>
+  </compound>
+  <compound refid="classSystemExplorer_1_1Core_1_1SignalTypesDict" kind="class"><name>SystemExplorer::Core::SignalTypesDict</name>
+    <member refid="classSystemExplorer_1_1Core_1_1SignalTypesDict_1ad720f8bb9cb2fd544a7f4f377295433c" kind="variable"><name>_instance</name></member>
+    <member refid="classSystemExplorer_1_1Core_1_1SignalTypesDict_1a920ac8eb1f5026ccdab3f92afd204d39" kind="variable"><name>_signalTypes</name></member>
+    <member refid="classSystemExplorer_1_1Core_1_1SignalTypesDict_1af2abe57b108704954f0c228b94d0e039" kind="function"><name>SignalTypesDict</name></member>
+    <member refid="classSystemExplorer_1_1Core_1_1SignalTypesDict_1a95a44d46344400ef3bd409e2642e218d" kind="function"><name>GetInstance</name></member>
+    <member refid="classSystemExplorer_1_1Core_1_1SignalTypesDict_1aec395e636b8aaf007d1419cdca92b926" kind="function"><name>Get</name></member>
+    <member refid="classSystemExplorer_1_1Core_1_1SignalTypesDict_1a6f1bd89af2ba2d7280d7837f84d460ff" kind="function"><name>GetAll</name></member>
+  </compound>
+  <compound refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ViewControllerBase" kind="class"><name>SystemExplorer::Gui::ViewController::ViewControllerBase</name>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ViewControllerBase_1a652ee5227a114cb7534b83b9740f753a" kind="variable"><name>_book</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ViewControllerBase_1a592b71e61f48a66d318f4237c19ba3b0" kind="function"><name>ViewControllerBase</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ViewControllerBase_1a5813960a65733c45503d736e004538fa" kind="function"><name>CreateChildControls</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ViewControllerBase_1ae273430b5cb4a895f10736401be35f68" kind="function"><name>BindEvents</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ViewControllerBase_1a637ce08535eb9e17aa1b3a0cd0c48e90" kind="function"><name>BindData_Before</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ViewControllerBase_1a8667331137f0c7c38d9a6e0937975808" kind="function"><name>BindData</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ViewControllerBase_1a79d36c29a3928dd1722a5cb7ef31df2e" kind="function"><name>PostInitialize</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ViewControllerBase_1a755db8be9d5d41d33726d11a0096a3d5" kind="function"><name>SetHelpStatusText</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ViewControllerBase_1ae6942df1bf670db7f7414a1af3387c02" kind="function"><name>GetStatusBar</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ViewControllerBase_1a386c14f2c5453421b46b8669dd60f25d" kind="function"><name>GetTopFrame</name></member>
+    <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ViewControllerBase_1a222264fdce4b2a6d78cb8c796bdc69e6" kind="function"><name>Initialize</name></member>
+  </compound>
+  <compound refid="namespaceSystemExplorer" kind="namespace"><name>SystemExplorer</name>
+  </compound>
+  <compound refid="namespaceSystemExplorer_1_1Core" kind="namespace"><name>SystemExplorer::Core</name>
+  </compound>
+  <compound refid="namespaceSystemExplorer_1_1Core_1_1Models" kind="namespace"><name>SystemExplorer::Core::Models</name>
+    <member refid="process__state_8hpp_1ae45b77fec9115c521589586e7359b52b" kind="enum"><name>ProcessState</name></member>
+    <member refid="process__state_8hpp_1ae45b77fec9115c521589586e7359b52ba88183b946cc5f0e8c96b2e66e1c74a7e" kind="enumvalue"><name>Unknown</name></member>
+    <member refid="process__state_8hpp_1ae45b77fec9115c521589586e7359b52ba5bda814c4aedb126839228f1a3d92f09" kind="enumvalue"><name>Running</name></member>
+    <member refid="process__state_8hpp_1ae45b77fec9115c521589586e7359b52babddd4f44136f466c065a2c7a4c53e75b" kind="enumvalue"><name>Sleeping</name></member>
+    <member refid="process__state_8hpp_1ae45b77fec9115c521589586e7359b52ba5706de961fb376d701be6e7762d8b09c" kind="enumvalue"><name>Waiting</name></member>
+    <member refid="process__state_8hpp_1ae45b77fec9115c521589586e7359b52ba7c3d115a77fd8d39fbbc0bb2bf54cfc7" kind="enumvalue"><name>Zombie</name></member>
+    <member refid="process__state_8hpp_1ae45b77fec9115c521589586e7359b52bac23e2b09ebe6bf4cb5e2a9abe85c0be2" kind="enumvalue"><name>Stopped</name></member>
+    <member refid="process__state_8hpp_1ae45b77fec9115c521589586e7359b52ba7805e3613f4312b2031111778c56b498" kind="enumvalue"><name>TracingStop</name></member>
+    <member refid="process__state_8hpp_1ae45b77fec9115c521589586e7359b52babb4cbdb803531576447d962aaeac5851" kind="enumvalue"><name>Paging</name></member>
+    <member refid="process__state_8hpp_1ae45b77fec9115c521589586e7359b52badf5237d396dac1868b9c513ed0f8b0e6" kind="enumvalue"><name>Dead1</name></member>
+    <member refid="process__state_8hpp_1ae45b77fec9115c521589586e7359b52bae1099dcf8a6cde06676270883e0cfcac" kind="enumvalue"><name>Dead2</name></member>
+    <member refid="process__state_8hpp_1ae45b77fec9115c521589586e7359b52ba5627c3ef62d733d93bf62607138f69ab" kind="enumvalue"><name>Wakekill</name></member>
+    <member refid="process__state_8hpp_1ae45b77fec9115c521589586e7359b52bad36de7305cf2441b4563ce293bc5789c" kind="enumvalue"><name>Waking</name></member>
+    <member refid="process__state_8hpp_1ae45b77fec9115c521589586e7359b52ba62ac4240652006ba76861232e0173344" kind="enumvalue"><name>Parked</name></member>
+    <member refid="process__state_8hpp_1ae45b77fec9115c521589586e7359b52bae599161956d626eda4cb0a5ffb85271c" kind="enumvalue"><name>Idle</name></member>
+    <member refid="process__state__helpers_8hpp_1a4586d6975fec2f343fce2c67078101c8" kind="function"><name>GetProcessState</name></member>
+    <member refid="process__state__helpers_8hpp_1a986368fb801ab3f0c8070f2d3361f55f" kind="function"><name>to_string</name></member>
+  </compound>
+  <compound refid="namespaceSystemExplorer_1_1Core_1_1Parsers" kind="namespace"><name>SystemExplorer::Core::Parsers</name>
+  </compound>
+  <compound refid="namespaceSystemExplorer_1_1Gui" kind="namespace"><name>SystemExplorer::Gui</name>
+    <member refid="searchable__control__base_8hpp_1a56fa6436be9b24a55c6e80714f69ef7a" kind="function"><name>wxDECLARE_EVENT</name></member>
+    <member refid="searchable__control__base_8hpp_1a16411b225422658109443d12c8a59aba" kind="function"><name>wxDECLARE_EVENT</name></member>
+  </compound>
+  <compound refid="namespaceSystemExplorer_1_1Gui_1_1Control" kind="namespace"><name>SystemExplorer::Gui::Control</name>
+  </compound>
+  <compound refid="namespaceSystemExplorer_1_1Gui_1_1ViewController" kind="namespace"><name>SystemExplorer::Gui::ViewController</name>
+  </compound>
+  <compound refid="proc__process__stat_8hpp" kind="file"><name>proc_process_stat.hpp</name>
+  </compound>
+  <compound refid="proc__stat_8hpp" kind="file"><name>proc_stat.hpp</name>
+  </compound>
+  <compound refid="proc__tree__stat_8hpp" kind="file"><name>proc_tree_stat.hpp</name>
+  </compound>
+  <compound refid="process_8hpp" kind="file"><name>process.hpp</name>
+  </compound>
+  <compound refid="process__cpu__stat_8hpp" kind="file"><name>process_cpu_stat.hpp</name>
+  </compound>
+  <compound refid="process__impl_8hpp" kind="file"><name>process_impl.hpp</name>
+  </compound>
+  <compound refid="process__stat_8hpp" kind="file"><name>process_stat.hpp</name>
+  </compound>
+  <compound refid="process__state_8hpp" kind="file"><name>process_state.hpp</name>
+  </compound>
+  <compound refid="process__state__helpers_8hpp" kind="file"><name>process_state_helpers.hpp</name>
+  </compound>
+  <compound refid="process__state__helpers__impl_8hpp" kind="file"><name>process_state_helpers_impl.hpp</name>
+  </compound>
+  <compound refid="process__tree_8hpp" kind="file"><name>process_tree.hpp</name>
+  </compound>
+  <compound refid="process__tree__impl_8hpp" kind="file"><name>process_tree_impl.hpp</name>
+  </compound>
+  <compound refid="processes__stat_8hpp" kind="file"><name>processes_stat.hpp</name>
+  </compound>
+  <compound refid="processes__stat__common_8hpp" kind="file"><name>processes_stat_common.hpp</name>
+  </compound>
+  <compound refid="signal_8hpp" kind="file"><name>signal.hpp</name>
+  </compound>
+  <compound refid="signal__type_8hpp" kind="file"><name>signal_type.hpp</name>
+  </compound>
+  <compound refid="proc__process__stat__parser_8hpp" kind="file"><name>proc_process_stat_parser.hpp</name>
+  </compound>
+  <compound refid="proc__stat__parser_8hpp" kind="file"><name>proc_stat_parser.hpp</name>
+  </compound>
+  <compound refid="proc__tree__stat__manager_8hpp" kind="file"><name>proc_tree_stat_manager.hpp</name>
+  </compound>
+  <compound refid="proc__tree__stat__manager__impl_8hpp" kind="file"><name>proc_tree_stat_manager_impl.hpp</name>
+  </compound>
+  <compound refid="process__manager_8hpp" kind="file"><name>process_manager.hpp</name>
+  </compound>
+  <compound refid="process__manager__impl_8hpp" kind="file"><name>process_manager_impl.hpp</name>
+  </compound>
+  <compound refid="processes__stat__manager_8hpp" kind="file"><name>processes_stat_manager.hpp</name>
+  </compound>
+  <compound refid="processes__stat__manager__impl_8hpp" kind="file"><name>processes_stat_manager_impl.hpp</name>
+  </compound>
+  <compound refid="signal__manager_8hpp" kind="file"><name>signal_manager.hpp</name>
+  </compound>
+  <compound refid="signal__manager__impl_8hpp" kind="file"><name>signal_manager_impl.hpp</name>
+  </compound>
+  <compound refid="signal__types__dict_8hpp" kind="file"><name>signal_types_dict.hpp</name>
+  </compound>
+  <compound refid="signal__types__dict__impl_8hpp" kind="file"><name>signal_types_dict_impl.hpp</name>
+  </compound>
+  <compound refid="signals__dict_8hpp" kind="file"><name>signals_dict.hpp</name>
+  </compound>
+  <compound refid="signals__dict__impl_8hpp" kind="file"><name>signals_dict_impl.hpp</name>
+  </compound>
+  <compound refid="control__base_8h" kind="file"><name>control_base.h</name>
+  </compound>
+  <compound refid="control__base_8hpp" kind="file"><name>control_base.hpp</name>
+  </compound>
+  <compound refid="icon__control_8hpp" kind="file"><name>icon_control.hpp</name>
+  </compound>
+  <compound refid="searchable__control__base_8hpp" kind="file"><name>searchable_control_base.hpp</name>
+  </compound>
+  <compound refid="searchable__list__control_8hpp" kind="file"><name>searchable_list_control.hpp</name>
+  </compound>
+  <compound refid="searchable__listview__control_8hpp" kind="file"><name>searchable_listview_control.hpp</name>
+  </compound>
+  <compound refid="searchable__treelist__control_8hpp" kind="file"><name>searchable_treelist_control.hpp</name>
+  </compound>
+  <compound refid="searchable__treelist__control__base_8hpp" kind="file"><name>searchable_treelist_control_base.hpp</name>
+  </compound>
+  <compound refid="about__dialog__view__controller_8hpp" kind="file"><name>about_dialog_view_controller.hpp</name>
+  </compound>
+  <compound refid="iview__controller_8hpp" kind="file"><name>iview_controller.hpp</name>
+  </compound>
+  <compound refid="process__details__view__controller_8hpp" kind="file"><name>process_details_view_controller.hpp</name>
+  </compound>
+  <compound refid="process__tree__view__controller_8hpp" kind="file"><name>process_tree_view_controller.hpp</name>
+  </compound>
+  <compound refid="processes__tree__list__item__comparator_8hpp" kind="file"><name>processes_tree_list_item_comparator.hpp</name>
+  </compound>
+  <compound refid="root__view__controller_8hpp" kind="file"><name>root_view_controller.hpp</name>
+  </compound>
+  <compound refid="view__controller__base_8hpp" kind="file"><name>view_controller_base.hpp</name>
+  </compound>
+  <compound refid="dir_0b743e390207f2eb0674fed48ce83fe5" kind="dir"><name>gui/control</name>
+  </compound>
+  <compound refid="dir_4270bfced15e0e73154b13468c7c9ad9" kind="dir"><name>core</name>
+  </compound>
+  <compound refid="dir_11bc0974ce736ce9a6fadebbeb7a8314" kind="dir"><name>gui</name>
+  </compound>
+  <compound refid="dir_b549b9f85a72a4f17f491b04f7f79df1" kind="dir"><name>core/models</name>
+  </compound>
+  <compound refid="dir_27499683eba85f461dcaeb974caa53a9" kind="dir"><name>core/parsers</name>
+  </compound>
+  <compound refid="dir_ee9e0f637345f238722622f17347be42" kind="dir"><name>gui/view_controller</name>
+  </compound>
+</doxygenindex>

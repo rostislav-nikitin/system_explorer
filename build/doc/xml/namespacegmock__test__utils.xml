@@ -1,0 +1,173 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="namespacegmock__test__utils" kind="namespace" language="Python">
+    <compoundname>gmock_test_utils</compoundname>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacegmock__test__utils_1a82fd0b8b606ad27c7a5fbd05e8eaa920" prot="public" static="no" mutable="no">
+        <type>gtest_test_utils</type>
+        <definition>gtest_test_utils gmock_test_utils.Subprocess</definition>
+        <argsstring></argsstring>
+        <name>Subprocess</name>
+        <qualifiedname>gmock_test_utils.Subprocess</qualifiedname>
+        <initializer>=  <ref refid="classgtest__test__utils_1_1Subprocess" kindref="compound">gtest_test_utils.Subprocess</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="build/_deps/googletest-src/googlemock/test/gmock_test_utils.py" line="81" column="1" bodyfile="build/_deps/googletest-src/googlemock/test/gmock_test_utils.py" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacegmock__test__utils_1a6718b41ce4676455c2cd0f22c1e64c11" prot="public" static="no" mutable="no">
+        <type>gtest_test_utils</type>
+        <definition>gtest_test_utils gmock_test_utils.TestCase</definition>
+        <argsstring></argsstring>
+        <name>TestCase</name>
+        <qualifiedname>gmock_test_utils.TestCase</qualifiedname>
+        <initializer>=  gtest_test_utils.TestCase</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="build/_deps/googletest-src/googlemock/test/gmock_test_utils.py" line="82" column="1" bodyfile="build/_deps/googletest-src/googlemock/test/gmock_test_utils.py" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacegmock__test__utils_1a0eedb1250652065d3104450b25a07be5" prot="public" static="no" mutable="no">
+        <type>gtest_test_utils</type>
+        <definition>gtest_test_utils gmock_test_utils.environ</definition>
+        <argsstring></argsstring>
+        <name>environ</name>
+        <qualifiedname>gmock_test_utils.environ</qualifiedname>
+        <initializer>=  gtest_test_utils.environ</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="build/_deps/googletest-src/googlemock/test/gmock_test_utils.py" line="83" column="1" bodyfile="build/_deps/googletest-src/googlemock/test/gmock_test_utils.py" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacegmock__test__utils_1a27ec54d1868258a9e1f86aa8382378dd" prot="public" static="no" mutable="no">
+        <type>gtest_test_utils</type>
+        <definition>gtest_test_utils gmock_test_utils.SetEnvVar</definition>
+        <argsstring></argsstring>
+        <name>SetEnvVar</name>
+        <qualifiedname>gmock_test_utils.SetEnvVar</qualifiedname>
+        <initializer>=  gtest_test_utils.SetEnvVar</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="build/_deps/googletest-src/googlemock/test/gmock_test_utils.py" line="84" column="1" bodyfile="build/_deps/googletest-src/googlemock/test/gmock_test_utils.py" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacegmock__test__utils_1af856ebe41afe10f9a4728081a05fa2df" prot="public" static="no" mutable="no">
+        <type>gtest_test_utils</type>
+        <definition>gtest_test_utils gmock_test_utils.PREMATURE_EXIT_FILE_ENV_VAR</definition>
+        <argsstring></argsstring>
+        <name>PREMATURE_EXIT_FILE_ENV_VAR</name>
+        <qualifiedname>gmock_test_utils.PREMATURE_EXIT_FILE_ENV_VAR</qualifiedname>
+        <initializer>=  gtest_test_utils.PREMATURE_EXIT_FILE_ENV_VAR</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="build/_deps/googletest-src/googlemock/test/gmock_test_utils.py" line="85" column="1" bodyfile="build/_deps/googletest-src/googlemock/test/gmock_test_utils.py" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespacegmock__test__utils_1ab7217591e655e80392c9db6b99d04765" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def gmock_test_utils.GetSourceDir</definition>
+        <argsstring>()</argsstring>
+        <name>GetSourceDir</name>
+        <qualifiedname>gmock_test_utils.GetSourceDir</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Returns the absolute path of the directory where the .py files are.</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="build/_deps/googletest-src/googlemock/test/gmock_test_utils.py" line="38" column="1" bodyfile="build/_deps/googletest-src/googlemock/test/gmock_test_utils.py" bodystart="38" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacegmock__test__utils_1aadd2927024e24f0c53f7ba283402cdb1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def gmock_test_utils.GetTestExecutablePath</definition>
+        <argsstring>(executable_name)</argsstring>
+        <name>GetTestExecutablePath</name>
+        <qualifiedname>gmock_test_utils.GetTestExecutablePath</qualifiedname>
+        <param>
+          <type>executable_name</type>
+          <defname>executable_name</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Returns the absolute path of the test binary given its name.
+
+The function will print a message and abort the program if the resulting file
+doesn&apos;t exist.
+
+Args:
+  executable_name: name of the test binary that the test script runs.
+
+Returns:
+  The absolute path of the test binary.
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="build/_deps/googletest-src/googlemock/test/gmock_test_utils.py" line="44" column="1" bodyfile="build/_deps/googletest-src/googlemock/test/gmock_test_utils.py" bodystart="44" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacegmock__test__utils_1a9146f81ff42389086b3eaee25dbf0263" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def gmock_test_utils.GetExitStatus</definition>
+        <argsstring>(exit_code)</argsstring>
+        <name>GetExitStatus</name>
+        <qualifiedname>gmock_test_utils.GetExitStatus</qualifiedname>
+        <param>
+          <type>exit_code</type>
+          <defname>exit_code</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Returns the argument to exit(), or -1 if exit() wasn&apos;t called.
+
+Args:
+  exit_code: the result value of os.system(command).
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="build/_deps/googletest-src/googlemock/test/gmock_test_utils.py" line="60" column="1" bodyfile="build/_deps/googletest-src/googlemock/test/gmock_test_utils.py" bodystart="60" bodyend="80"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacegmock__test__utils_1ad79dc6aea3727ee23b5f5c454ef0d78a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def gmock_test_utils.Main</definition>
+        <argsstring>()</argsstring>
+        <name>Main</name>
+        <qualifiedname>gmock_test_utils.Main</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Runs the unit test.</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="build/_deps/googletest-src/googlemock/test/gmock_test_utils.py" line="88" column="1" bodyfile="build/_deps/googletest-src/googlemock/test/gmock_test_utils.py" bodystart="88" bodyend="92"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><verbatim>Unit test utilities for Google C++ Mocking Framework.</verbatim> </para>
+    </detaileddescription>
+    <location file="build/_deps/googletest-src/googlemock/test/gmock_test_utils.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

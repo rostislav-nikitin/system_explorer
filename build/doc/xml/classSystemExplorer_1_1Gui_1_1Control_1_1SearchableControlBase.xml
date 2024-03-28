@@ -1,0 +1,539 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>SystemExplorer::Gui::Control::SearchableControlBase</compoundname>
+    <basecompoundref refid="classSystemExplorer_1_1Gui_1_1Control_1_1ControlBase" prot="public" virt="non-virtual">SystemExplorer::Gui::Control::ControlBase</basecompoundref>
+    <derivedcompoundref refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableListViewControl" prot="public" virt="non-virtual">SystemExplorer::Gui::Control::SearchableListViewControl</derivedcompoundref>
+    <derivedcompoundref refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase" prot="public" virt="non-virtual">SystemExplorer::Gui::Control::SearchableTreeListControlBase</derivedcompoundref>
+    <innerclass refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1_1SearchableItem" prot="public">SystemExplorer::Gui::Control::SearchableControlBase::SearchableItem</innerclass>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1a1fa9d3e4bbf6bf9bea64526555c84695" prot="protected" static="no" mutable="no">
+        <type>wxImageList *</type>
+        <definition>wxImageList* SystemExplorer::Gui::Control::SearchableControlBase::_imageList</definition>
+        <argsstring></argsstring>
+        <name>_imageList</name>
+        <qualifiedname>SystemExplorer::Gui::Control::SearchableControlBase::_imageList</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/control/searchable_control_base.hpp" line="36" column="29" bodyfile="gui/control/searchable_control_base.hpp" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1a1485add6becaedff616d88f9e0853c4c" prot="protected" static="no" mutable="no">
+        <type>wxSearchCtrl *</type>
+        <definition>wxSearchCtrl* SystemExplorer::Gui::Control::SearchableControlBase::_scSearch</definition>
+        <argsstring></argsstring>
+        <name>_scSearch</name>
+        <qualifiedname>SystemExplorer::Gui::Control::SearchableControlBase::_scSearch</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/control/searchable_control_base.hpp" line="37" column="26" bodyfile="gui/control/searchable_control_base.hpp" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1aa832561083564c51d56c283ea0343beb" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>virtual void SystemExplorer::Gui::Control::SearchableControlBase::CreateChildControls</definition>
+        <argsstring>() override</argsstring>
+        <name>CreateChildControls</name>
+        <qualifiedname>SystemExplorer::Gui::Control::SearchableControlBase::CreateChildControls</qualifiedname>
+        <reimplements refid="classSystemExplorer_1_1Gui_1_1Control_1_1ControlBase_1a2a3a123bc2276cca5901189fa168508c">CreateChildControls</reimplements>
+        <reimplementedby refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableListViewControl_1a5cacd78838ec9995f61f38b2907318a9">CreateChildControls</reimplementedby>
+        <reimplementedby refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase_1a057316bb0b03969d17a9d8af263d93c4">CreateChildControls</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/control/searchable_control_base.hpp" line="39" column="30"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1af075a612513e0fcda07dc12315938be1" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>virtual void SystemExplorer::Gui::Control::SearchableControlBase::BindEvents</definition>
+        <argsstring>() override</argsstring>
+        <name>BindEvents</name>
+        <qualifiedname>SystemExplorer::Gui::Control::SearchableControlBase::BindEvents</qualifiedname>
+        <reimplements refid="classSystemExplorer_1_1Gui_1_1Control_1_1ControlBase_1a0c9c3ea3dc22fe5afffa371c40279032">BindEvents</reimplements>
+        <reimplementedby refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableListViewControl_1a0218e0978fc04b32e32cab633b83215f">BindEvents</reimplementedby>
+        <reimplementedby refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase_1a9c6dae532e0d004e8912e8506da0dafb">BindEvents</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/control/searchable_control_base.hpp" line="40" column="30"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1a4931c25344b2716e8266c9225df6743a" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>virtual void SystemExplorer::Gui::Control::SearchableControlBase::OnSearchTextClick</definition>
+        <argsstring>()</argsstring>
+        <name>OnSearchTextClick</name>
+        <qualifiedname>SystemExplorer::Gui::Control::SearchableControlBase::OnSearchTextClick</qualifiedname>
+        <reimplementedby refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableListViewControl_1aa5816104393a4b595f8b3ec648c69483">OnSearchTextClick</reimplementedby>
+        <reimplementedby refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase_1a9a8628338edae7c2fcfcdb75dcf02836">OnSearchTextClick</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/control/searchable_control_base.hpp" line="42" column="30"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1a1857c9699ed4c704cbd3b38aff77ae25" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SystemExplorer::Gui::Control::SearchableControlBase::scSearch_Text</definition>
+        <argsstring>(wxCommandEvent &amp;event)</argsstring>
+        <name>scSearch_Text</name>
+        <qualifiedname>SystemExplorer::Gui::Control::SearchableControlBase::scSearch_Text</qualifiedname>
+        <param>
+          <type>wxCommandEvent &amp;</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/control/searchable_control_base.hpp" line="45" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1a56997a88cbd9e5ee7dd21c1371e86883" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SystemExplorer::Gui::Control::SearchableControlBase::scSearch_Click</definition>
+        <argsstring>(wxCommandEvent &amp;event)</argsstring>
+        <name>scSearch_Click</name>
+        <qualifiedname>SystemExplorer::Gui::Control::SearchableControlBase::scSearch_Click</qualifiedname>
+        <param>
+          <type>wxCommandEvent &amp;</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/control/searchable_control_base.hpp" line="46" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1ade5b2debb867e7842236666d50461e04" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SystemExplorer::Gui::Control::SearchableControlBase::scSearch_OnKillFocus</definition>
+        <argsstring>(wxFocusEvent &amp;event)</argsstring>
+        <name>scSearch_OnKillFocus</name>
+        <qualifiedname>SystemExplorer::Gui::Control::SearchableControlBase::scSearch_OnKillFocus</qualifiedname>
+        <param>
+          <type>wxFocusEvent &amp;</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/control/searchable_control_base.hpp" line="47" column="22"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1a9a3f6e6e3fcab035305289a0761e367f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SystemExplorer::Gui::Control::SearchableControlBase::SearchableControlBase</definition>
+        <argsstring>(wxWindow *parent, wxWindowID Id, wxImageList *imageList=nullptr)</argsstring>
+        <name>SearchableControlBase</name>
+        <qualifiedname>SystemExplorer::Gui::Control::SearchableControlBase::SearchableControlBase</qualifiedname>
+        <param>
+          <type>wxWindow *</type>
+          <declname>parent</declname>
+        </param>
+        <param>
+          <type>wxWindowID</type>
+          <declname>Id</declname>
+        </param>
+        <param>
+          <type>wxImageList *</type>
+          <declname>imageList</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/control/searchable_control_base.hpp" line="90" column="17"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1adbab839b9e92d73d2c29a47efad1c07b" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void SystemExplorer::Gui::Control::SearchableControlBase::BindData</definition>
+        <argsstring>(std::vector&lt; SearchableItem &gt; &amp;items)=0</argsstring>
+        <name>BindData</name>
+        <qualifiedname>SystemExplorer::Gui::Control::SearchableControlBase::BindData</qualifiedname>
+        <reimplementedby refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableListControl_1a72c775ce799a28b832fa29cb3ce5049c">BindData</reimplementedby>
+        <reimplementedby refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableListViewControl_1a8976511ccf450496a491ba8b866281d9">BindData</reimplementedby>
+        <reimplementedby refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControl_1a83f63f741613533c7dfd6153c75e1cd1">BindData</reimplementedby>
+        <param>
+          <type>std::vector&lt; <ref refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1_1SearchableItem" kindref="compound">SearchableItem</ref> &gt; &amp;</type>
+          <declname>items</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/control/searchable_control_base.hpp" line="93" column="30"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1aa3c306a8ce4be70baac2deff06b45e98" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void SystemExplorer::Gui::Control::SearchableControlBase::ReBindData</definition>
+        <argsstring>(std::vector&lt; SearchableItem &gt; &amp;items)=0</argsstring>
+        <name>ReBindData</name>
+        <qualifiedname>SystemExplorer::Gui::Control::SearchableControlBase::ReBindData</qualifiedname>
+        <reimplementedby refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableListControl_1a99c45ddfbaa3c56488b6bb6c608d5ca6">ReBindData</reimplementedby>
+        <reimplementedby refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableListViewControl_1a08b0a5ec0b7b84e54c049b52e4f7c395">ReBindData</reimplementedby>
+        <reimplementedby refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControl_1a0f2cda2667055d9ef69944f4c4940e15">ReBindData</reimplementedby>
+        <param>
+          <type>std::vector&lt; <ref refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1_1SearchableItem" kindref="compound">SearchableItem</ref> &gt; &amp;</type>
+          <declname>items</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/control/searchable_control_base.hpp" line="95" column="30"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1a5078e24e74ece6f9606f0b8221d2b636" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>int</type>
+        <definition>virtual int SystemExplorer::Gui::Control::SearchableControlBase::AppendColumn</definition>
+        <argsstring>(const wxString &amp;title, int width=wxCOL_WIDTH_AUTOSIZE, wxAlignment align=wxALIGN_LEFT, int flags=wxCOL_RESIZABLE)=0</argsstring>
+        <name>AppendColumn</name>
+        <qualifiedname>SystemExplorer::Gui::Control::SearchableControlBase::AppendColumn</qualifiedname>
+        <reimplementedby refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableListViewControl_1aab157a8c855d0e88adbc1e5baebef376">AppendColumn</reimplementedby>
+        <reimplementedby refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase_1a446ac3ef4c1ec77f9a6507e4c75a6d03">AppendColumn</reimplementedby>
+        <param>
+          <type>const wxString &amp;</type>
+          <declname>title</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>width</declname>
+          <defval>wxCOL_WIDTH_AUTOSIZE</defval>
+        </param>
+        <param>
+          <type>wxAlignment</type>
+          <declname>align</declname>
+          <defval>wxALIGN_LEFT</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>flags</declname>
+          <defval>wxCOL_RESIZABLE</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/control/searchable_control_base.hpp" line="97" column="29"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1a73cfea826d97247e62ef41ad4b576213" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>unsigned int</type>
+        <definition>virtual unsigned int SystemExplorer::Gui::Control::SearchableControlBase::GetSelections</definition>
+        <argsstring>(std::vector&lt; SearchableItem &gt; &amp;selections) const =0</argsstring>
+        <name>GetSelections</name>
+        <qualifiedname>SystemExplorer::Gui::Control::SearchableControlBase::GetSelections</qualifiedname>
+        <reimplementedby refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableListViewControl_1a47e663717bfd2455ef1bcb138a36b238">GetSelections</reimplementedby>
+        <reimplementedby refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase_1ac1458c9438032935ba4cef8e4e52e4e5">GetSelections</reimplementedby>
+        <param>
+          <type>std::vector&lt; <ref refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1_1SearchableItem" kindref="compound">SearchableItem</ref> &gt; &amp;</type>
+          <declname>selections</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/control/searchable_control_base.hpp" line="99" column="38"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1aefc5a82aab63bb8a52fa215a907fa7e7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SystemExplorer::Gui::Control::SearchableControlBase::AutoComplete</definition>
+        <argsstring>(wxArrayString choices)</argsstring>
+        <name>AutoComplete</name>
+        <qualifiedname>SystemExplorer::Gui::Control::SearchableControlBase::AutoComplete</qualifiedname>
+        <param>
+          <type>wxArrayString</type>
+          <declname>choices</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/control/searchable_control_base.hpp" line="101" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1a6882a456a9db73baca66e3c2394c43a5" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void SystemExplorer::Gui::Control::SearchableControlBase::SetFocus</definition>
+        <argsstring>()=0</argsstring>
+        <name>SetFocus</name>
+        <qualifiedname>SystemExplorer::Gui::Control::SearchableControlBase::SetFocus</qualifiedname>
+        <reimplementedby refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableListViewControl_1a3674641ae4f07119fa796e0fe2cc6964">SetFocus</reimplementedby>
+        <reimplementedby refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase_1a53144627b3a889865e7e9b6239de97fc">SetFocus</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/control/searchable_control_base.hpp" line="103" column="30"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1a117136537374522142b19bd99591b204" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void SystemExplorer::Gui::Control::SearchableControlBase::PopupMenu</definition>
+        <argsstring>(wxMenu *menu, const wxPoint &amp;pos=wxDefaultPosition)=0</argsstring>
+        <name>PopupMenu</name>
+        <qualifiedname>SystemExplorer::Gui::Control::SearchableControlBase::PopupMenu</qualifiedname>
+        <reimplementedby refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableListViewControl_1a7ab1b5d10197798b23457b99ac3f7269">PopupMenu</reimplementedby>
+        <reimplementedby refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase_1a27f2f904a3ef0cdc265243a3cd26a2f3">PopupMenu</reimplementedby>
+        <param>
+          <type>wxMenu *</type>
+          <declname>menu</declname>
+        </param>
+        <param>
+          <type>const wxPoint &amp;</type>
+          <declname>pos</declname>
+          <defval>wxDefaultPosition</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/control/searchable_control_base.hpp" line="105" column="30"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1adff85e9128e69187e124e2c67c810966" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>std::string</type>
+        <definition>virtual std::string SystemExplorer::Gui::Control::SearchableControlBase::GetSearchText</definition>
+        <argsstring>() const</argsstring>
+        <name>GetSearchText</name>
+        <qualifiedname>SystemExplorer::Gui::Control::SearchableControlBase::GetSearchText</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/control/searchable_control_base.hpp" line="107" column="37"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1af7ee3c9e14b09fef38675be230b62a17" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>virtual void SystemExplorer::Gui::Control::SearchableControlBase::SetSearchText</definition>
+        <argsstring>(std::string value)</argsstring>
+        <name>SetSearchText</name>
+        <qualifiedname>SystemExplorer::Gui::Control::SearchableControlBase::SetSearchText</qualifiedname>
+        <param>
+          <type>std::string</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/control/searchable_control_base.hpp" line="109" column="30"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1aac1fc8cacf9549c218058d14624005c7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>virtual bool SystemExplorer::Gui::Control::SearchableControlBase::FilterEmpty</definition>
+        <argsstring>() const</argsstring>
+        <name>FilterEmpty</name>
+        <qualifiedname>SystemExplorer::Gui::Control::SearchableControlBase::FilterEmpty</qualifiedname>
+        <reimplementedby refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableListViewControl_1a84158b8d51b0864cc0cc5530256108e5">FilterEmpty</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/control/searchable_control_base.hpp" line="111" column="30"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1a0bb45e0f545d1795657b94846fb1042b" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void SystemExplorer::Gui::Control::SearchableControlBase::ExpandAll</definition>
+        <argsstring>()=0</argsstring>
+        <name>ExpandAll</name>
+        <qualifiedname>SystemExplorer::Gui::Control::SearchableControlBase::ExpandAll</qualifiedname>
+        <reimplementedby refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableListViewControl_1ae5d82d15b718f536e4e2792658994190">ExpandAll</reimplementedby>
+        <reimplementedby refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase_1aae3cf49f8e42033e7d500dca521c2726">ExpandAll</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/control/searchable_control_base.hpp" line="114" column="30"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1ac059f3ef6df96807e80ea433d1d3bfdc" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void SystemExplorer::Gui::Control::SearchableControlBase::CollapseAll</definition>
+        <argsstring>()=0</argsstring>
+        <name>CollapseAll</name>
+        <qualifiedname>SystemExplorer::Gui::Control::SearchableControlBase::CollapseAll</qualifiedname>
+        <reimplementedby refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableListViewControl_1aad8c2c30a528af6c9e420293c2688d48">CollapseAll</reimplementedby>
+        <reimplementedby refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase_1a98795b98965e60a80f6d1192a029194c">CollapseAll</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/control/searchable_control_base.hpp" line="116" column="30"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1a014d0d19eaccc501e4976e544067f3e5" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>virtual void SystemExplorer::Gui::Control::SearchableControlBase::SetItemComparator</definition>
+        <argsstring>(wxTreeListItemComparator *treeListItemCopmarator)</argsstring>
+        <name>SetItemComparator</name>
+        <qualifiedname>SystemExplorer::Gui::Control::SearchableControlBase::SetItemComparator</qualifiedname>
+        <reimplementedby refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase_1ac9e8ca8bd56893dbc2296468b17ca2a6">SetItemComparator</reimplementedby>
+        <param>
+          <type>wxTreeListItemComparator *</type>
+          <declname>treeListItemCopmarator</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/control/searchable_control_base.hpp" line="119" column="30"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1a0dfb0c069860a300efe776414f64f64b" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void SystemExplorer::Gui::Control::SearchableControlBase::Sort</definition>
+        <argsstring>()=0</argsstring>
+        <name>Sort</name>
+        <qualifiedname>SystemExplorer::Gui::Control::SearchableControlBase::Sort</qualifiedname>
+        <reimplementedby refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableListViewControl_1a7466bdeafd932ebbbf472bef6e59b8a3">Sort</reimplementedby>
+        <reimplementedby refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase_1a59d02c76b02955ab959b8b60fe8fa7a2">Sort</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/control/searchable_control_base.hpp" line="121" column="30"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>SystemExplorer::Gui::Control::ControlBase</label>
+        <link refid="classSystemExplorer_1_1Gui_1_1Control_1_1ControlBase"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>SystemExplorer::Gui::Control::SearchableControlBase</label>
+        <link refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>SystemExplorer::Gui::Control::SearchableListControl</label>
+        <link refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableListControl"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>SystemExplorer::Gui::Control::SearchableListViewControl</label>
+        <link refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableListViewControl"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>SystemExplorer::Gui::Control::SearchableTreeListControl</label>
+        <link refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControl"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>SystemExplorer::Gui::Control::SearchableTreeListControlBase</label>
+        <link refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>wxPanel</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>SystemExplorer::Gui::Control::ControlBase</label>
+        <link refid="classSystemExplorer_1_1Gui_1_1Control_1_1ControlBase"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>SystemExplorer::Gui::Control::SearchableControlBase</label>
+        <link refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>wxPanel</label>
+      </node>
+    </collaborationgraph>
+    <location file="gui/control/searchable_control_base.hpp" line="33" column="13" bodyfile="gui/control/searchable_control_base.hpp" bodystart="34" bodyend="122"/>
+    <listofallmembers>
+      <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1a1fa9d3e4bbf6bf9bea64526555c84695" prot="protected" virt="non-virtual"><scope>SystemExplorer::Gui::Control::SearchableControlBase</scope><name>_imageList</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1a1485add6becaedff616d88f9e0853c4c" prot="protected" virt="non-virtual"><scope>SystemExplorer::Gui::Control::SearchableControlBase</scope><name>_scSearch</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1a5078e24e74ece6f9606f0b8221d2b636" prot="public" virt="pure-virtual"><scope>SystemExplorer::Gui::Control::SearchableControlBase</scope><name>AppendColumn</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1aefc5a82aab63bb8a52fa215a907fa7e7" prot="public" virt="non-virtual"><scope>SystemExplorer::Gui::Control::SearchableControlBase</scope><name>AutoComplete</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1adbab839b9e92d73d2c29a47efad1c07b" prot="public" virt="pure-virtual"><scope>SystemExplorer::Gui::Control::SearchableControlBase</scope><name>BindData</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1af075a612513e0fcda07dc12315938be1" prot="protected" virt="virtual"><scope>SystemExplorer::Gui::Control::SearchableControlBase</scope><name>BindEvents</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1ac059f3ef6df96807e80ea433d1d3bfdc" prot="public" virt="pure-virtual"><scope>SystemExplorer::Gui::Control::SearchableControlBase</scope><name>CollapseAll</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1ControlBase_1a36e48ed15b4cc2d40a911bfec0c6df75" prot="public" virt="non-virtual"><scope>SystemExplorer::Gui::Control::SearchableControlBase</scope><name>ControlBase</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1ControlBase_1a36e48ed15b4cc2d40a911bfec0c6df75" prot="public" virt="non-virtual"><scope>SystemExplorer::Gui::Control::SearchableControlBase</scope><name>ControlBase</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1aa832561083564c51d56c283ea0343beb" prot="protected" virt="virtual"><scope>SystemExplorer::Gui::Control::SearchableControlBase</scope><name>CreateChildControls</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1a0bb45e0f545d1795657b94846fb1042b" prot="public" virt="pure-virtual"><scope>SystemExplorer::Gui::Control::SearchableControlBase</scope><name>ExpandAll</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1aac1fc8cacf9549c218058d14624005c7" prot="public" virt="virtual"><scope>SystemExplorer::Gui::Control::SearchableControlBase</scope><name>FilterEmpty</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1adff85e9128e69187e124e2c67c810966" prot="public" virt="virtual"><scope>SystemExplorer::Gui::Control::SearchableControlBase</scope><name>GetSearchText</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1a73cfea826d97247e62ef41ad4b576213" prot="public" virt="pure-virtual"><scope>SystemExplorer::Gui::Control::SearchableControlBase</scope><name>GetSelections</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1ControlBase_1a297fcbbe9e660661b4038f6f9bf78542" prot="protected" virt="non-virtual"><scope>SystemExplorer::Gui::Control::SearchableControlBase</scope><name>Initialize</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1ControlBase_1a297fcbbe9e660661b4038f6f9bf78542" prot="protected" virt="non-virtual"><scope>SystemExplorer::Gui::Control::SearchableControlBase</scope><name>Initialize</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1a4931c25344b2716e8266c9225df6743a" prot="protected" virt="virtual"><scope>SystemExplorer::Gui::Control::SearchableControlBase</scope><name>OnSearchTextClick</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1a117136537374522142b19bd99591b204" prot="public" virt="pure-virtual"><scope>SystemExplorer::Gui::Control::SearchableControlBase</scope><name>PopupMenu</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1aa3c306a8ce4be70baac2deff06b45e98" prot="public" virt="pure-virtual"><scope>SystemExplorer::Gui::Control::SearchableControlBase</scope><name>ReBindData</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1a56997a88cbd9e5ee7dd21c1371e86883" prot="private" virt="non-virtual"><scope>SystemExplorer::Gui::Control::SearchableControlBase</scope><name>scSearch_Click</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1ade5b2debb867e7842236666d50461e04" prot="private" virt="non-virtual"><scope>SystemExplorer::Gui::Control::SearchableControlBase</scope><name>scSearch_OnKillFocus</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1a1857c9699ed4c704cbd3b38aff77ae25" prot="private" virt="non-virtual"><scope>SystemExplorer::Gui::Control::SearchableControlBase</scope><name>scSearch_Text</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1a9a3f6e6e3fcab035305289a0761e367f" prot="public" virt="non-virtual"><scope>SystemExplorer::Gui::Control::SearchableControlBase</scope><name>SearchableControlBase</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1a6882a456a9db73baca66e3c2394c43a5" prot="public" virt="pure-virtual"><scope>SystemExplorer::Gui::Control::SearchableControlBase</scope><name>SetFocus</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1a014d0d19eaccc501e4976e544067f3e5" prot="public" virt="virtual"><scope>SystemExplorer::Gui::Control::SearchableControlBase</scope><name>SetItemComparator</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1af7ee3c9e14b09fef38675be230b62a17" prot="public" virt="virtual"><scope>SystemExplorer::Gui::Control::SearchableControlBase</scope><name>SetSearchText</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1a0dfb0c069860a300efe776414f64f64b" prot="public" virt="pure-virtual"><scope>SystemExplorer::Gui::Control::SearchableControlBase</scope><name>Sort</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

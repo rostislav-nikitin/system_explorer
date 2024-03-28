@@ -1,0 +1,1477 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController" kind="class" language="C++" prot="public">
+    <compoundname>SystemExplorer::Gui::ViewController::ProcessTreeViewController</compoundname>
+    <basecompoundref refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ViewControllerBase" prot="public" virt="non-virtual">SystemExplorer::Gui::ViewController::ViewControllerBase</basecompoundref>
+      <sectiondef kind="private-type">
+      <memberdef kind="enum" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a76cfe0e53a114dd612891e2a622fcba6" prot="private" static="no" strong="yes">
+        <type></type>
+        <name>ProcessContextMenuId</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::ProcessTreeViewController::ProcessContextMenuId</qualifiedname>
+        <enumvalue id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a76cfe0e53a114dd612891e2a622fcba6ac3bf447eabe632720a3aa1a7ce401274" prot="private">
+          <name>Open</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a76cfe0e53a114dd612891e2a622fcba6af2f8f426f80c232d8ae12cac0f9b0bee" prot="private">
+          <name>ExpandAll</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a76cfe0e53a114dd612891e2a622fcba6a57100869769961c8590fac6570c7f989" prot="private">
+          <name>CollapseAll</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a76cfe0e53a114dd612891e2a622fcba6a3842e234458f3f925aa3730a0381d92e" prot="private">
+          <name>ToggleView</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a76cfe0e53a114dd612891e2a622fcba6ad23b0fc36164c2727a81d5918ac5f6fd" prot="private">
+          <name>AutoSort</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a76cfe0e53a114dd612891e2a622fcba6a77379e82f72a0e4f7e4f93f04747e63f" prot="private">
+          <name>ShowAllProcesses</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a76cfe0e53a114dd612891e2a622fcba6a8f7f4c1ce7a4f933663d10543562b096" prot="private">
+          <name>About</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a76cfe0e53a114dd612891e2a622fcba6ad3d2e617335f08df83599665eef8a418" prot="private">
+          <name>Close</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a76cfe0e53a114dd612891e2a622fcba6adc75890401ac11a74261e1862345eebd" prot="private">
+          <name>SendSignal</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a76cfe0e53a114dd612891e2a622fcba6a502673de6c349249d1c4316f1fa5a8d2" prot="private">
+          <name>KillSigTerm</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a76cfe0e53a114dd612891e2a622fcba6a042fc3313a36156f23d133e561babb94" prot="private">
+          <name>KillSigKill</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/process_tree_view_controller.hpp" line="69" column="17" bodyfile="gui/view_controller/process_tree_view_controller.hpp" bodystart="70" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="enum" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a7f3db6f366bf7e63a3015a1b15e14241" prot="private" static="no" strong="yes">
+        <type></type>
+        <name>ViewState</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::ProcessTreeViewController::ViewState</qualifiedname>
+        <enumvalue id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a7f3db6f366bf7e63a3015a1b15e14241a3b0c14770e6bd663518496da60f524da" prot="private">
+          <name>Tree</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a7f3db6f366bf7e63a3015a1b15e14241a4ee29ca12c7d126654bd0e5275de6135" prot="private">
+          <name>List</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/process_tree_view_controller.hpp" line="84" column="17" bodyfile="gui/view_controller/process_tree_view_controller.hpp" bodystart="85" bodyend="88"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a075094cf22f7bbbd2f52c07d9007eb34" prot="private" static="no" mutable="no">
+        <type>const char *</type>
+        <definition>const char* SystemExplorer::Gui::ViewController::ProcessTreeViewController::RELATIVE_CONFIG_PATH</definition>
+        <argsstring></argsstring>
+        <name>RELATIVE_CONFIG_PATH</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::ProcessTreeViewController::RELATIVE_CONFIG_PATH</qualifiedname>
+        <initializer>= &quot;.system_explorer&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/process_tree_view_controller.hpp" line="58" column="29" bodyfile="gui/view_controller/process_tree_view_controller.hpp" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1af56262fb6c5351ef736c342e97627afd" prot="private" static="no" mutable="no">
+        <type>const char *</type>
+        <definition>const char* SystemExplorer::Gui::ViewController::ProcessTreeViewController::PROCESSES_AUTOCOMPLETE_CHOICES_PATH</definition>
+        <argsstring></argsstring>
+        <name>PROCESSES_AUTOCOMPLETE_CHOICES_PATH</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::ProcessTreeViewController::PROCESSES_AUTOCOMPLETE_CHOICES_PATH</qualifiedname>
+        <initializer>= &quot;processes_autocomplete_choices.dat&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/process_tree_view_controller.hpp" line="59" column="29" bodyfile="gui/view_controller/process_tree_view_controller.hpp" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a576d50d847a0aae407361e74b35e96f0" prot="private" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int SystemExplorer::Gui::ViewController::ProcessTreeViewController::REFRESH_INTERVAL</definition>
+        <argsstring></argsstring>
+        <name>REFRESH_INTERVAL</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::ProcessTreeViewController::REFRESH_INTERVAL</qualifiedname>
+        <initializer>= 1000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/process_tree_view_controller.hpp" line="61" column="17" bodyfile="gui/view_controller/process_tree_view_controller.hpp" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a8466ccc014a498ad0cd1e0fbec88f639" prot="private" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int SystemExplorer::Gui::ViewController::ProcessTreeViewController::PROCESS_CONTEXT_MENU_RANGE_SIZE</definition>
+        <argsstring></argsstring>
+        <name>PROCESS_CONTEXT_MENU_RANGE_SIZE</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::ProcessTreeViewController::PROCESS_CONTEXT_MENU_RANGE_SIZE</qualifiedname>
+        <initializer>= 1000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/process_tree_view_controller.hpp" line="63" column="23" bodyfile="gui/view_controller/process_tree_view_controller.hpp" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a6135da4b6bf1e4d6a1e887560d118991" prot="private" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int SystemExplorer::Gui::ViewController::ProcessTreeViewController::PROCESS_CONTEXT_MENU_ROOT_BASE</definition>
+        <argsstring></argsstring>
+        <name>PROCESS_CONTEXT_MENU_ROOT_BASE</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::ProcessTreeViewController::PROCESS_CONTEXT_MENU_ROOT_BASE</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/process_tree_view_controller.hpp" line="65" column="27" bodyfile="gui/view_controller/process_tree_view_controller.hpp" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1ad7703cad30fb00829545ad65400cd2ea" prot="private" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int SystemExplorer::Gui::ViewController::ProcessTreeViewController::PROCESS_CONTEXT_MENU_SIGNAL_TYPE_BASE</definition>
+        <argsstring></argsstring>
+        <name>PROCESS_CONTEXT_MENU_SIGNAL_TYPE_BASE</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::ProcessTreeViewController::PROCESS_CONTEXT_MENU_SIGNAL_TYPE_BASE</qualifiedname>
+        <initializer>= 1000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/process_tree_view_controller.hpp" line="66" column="27" bodyfile="gui/view_controller/process_tree_view_controller.hpp" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a4c22762e3e66e6b1227fb79756ab9b6f" prot="private" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int SystemExplorer::Gui::ViewController::ProcessTreeViewController::PROCESS_CONTEXT_MENU_SIGNAL_BASE</definition>
+        <argsstring></argsstring>
+        <name>PROCESS_CONTEXT_MENU_SIGNAL_BASE</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::ProcessTreeViewController::PROCESS_CONTEXT_MENU_SIGNAL_BASE</qualifiedname>
+        <initializer>= 2000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/process_tree_view_controller.hpp" line="67" column="27" bodyfile="gui/view_controller/process_tree_view_controller.hpp" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a52f52cdbddeabeb95281dc976995a350" prot="private" static="no" mutable="no">
+        <type>Config::UserConfig &amp;</type>
+        <definition>Config::UserConfig&amp; SystemExplorer::Gui::ViewController::ProcessTreeViewController::_userConfig</definition>
+        <argsstring></argsstring>
+        <name>_userConfig</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::ProcessTreeViewController::_userConfig</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/process_tree_view_controller.hpp" line="91" column="36" bodyfile="gui/view_controller/process_tree_view_controller.hpp" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1ac7f028904b2e8f309d2b46215cdb2333" prot="private" static="no" mutable="no">
+        <type>ViewState</type>
+        <definition>ViewState SystemExplorer::Gui::ViewController::ProcessTreeViewController::_viewState</definition>
+        <argsstring></argsstring>
+        <name>_viewState</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::ProcessTreeViewController::_viewState</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/process_tree_view_controller.hpp" line="92" column="27" bodyfile="gui/view_controller/process_tree_view_controller.hpp" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a30bee475268c1e4aa192ccdb6c5bd33e" prot="private" static="no" mutable="no">
+        <type>wxStatusBar *</type>
+        <definition>wxStatusBar* SystemExplorer::Gui::ViewController::ProcessTreeViewController::_statusBar</definition>
+        <argsstring></argsstring>
+        <name>_statusBar</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::ProcessTreeViewController::_statusBar</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/process_tree_view_controller.hpp" line="94" column="29" bodyfile="gui/view_controller/process_tree_view_controller.hpp" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1ae3d9e3afdb12bf132baacad67625c643" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int SystemExplorer::Gui::ViewController::ProcessTreeViewController::_sbStatIndex</definition>
+        <argsstring></argsstring>
+        <name>_sbStatIndex</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::ProcessTreeViewController::_sbStatIndex</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/process_tree_view_controller.hpp" line="95" column="21" bodyfile="gui/view_controller/process_tree_view_controller.hpp" bodystart="95" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a30c126de0aa4a74a8a6477c7a7665295" prot="private" static="no" mutable="no">
+        <type>std::map&lt; int, wxAcceleratorEntry &gt;</type>
+        <definition>std::map&lt;int, wxAcceleratorEntry&gt; SystemExplorer::Gui::ViewController::ProcessTreeViewController::_hotKeys</definition>
+        <argsstring></argsstring>
+        <name>_hotKeys</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::ProcessTreeViewController::_hotKeys</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/process_tree_view_controller.hpp" line="96" column="22" bodyfile="gui/view_controller/process_tree_view_controller.hpp" bodystart="96" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1ab54aa3786fb44806e7f498e630abf096" prot="private" static="no" mutable="no">
+        <type><ref refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessesTreeListItemComparator" kindref="compound">ProcessesTreeListItemComparator</ref></type>
+        <definition>ProcessesTreeListItemComparator SystemExplorer::Gui::ViewController::ProcessTreeViewController::_processesTreeListItemComparator</definition>
+        <argsstring></argsstring>
+        <name>_processesTreeListItemComparator</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::ProcessTreeViewController::_processesTreeListItemComparator</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/process_tree_view_controller.hpp" line="98" column="49" bodyfile="gui/view_controller/process_tree_view_controller.hpp" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a9c9975e68be1274de861eb0deff22e31" prot="private" static="no" mutable="no">
+        <type>wxImageList *</type>
+        <definition>wxImageList* SystemExplorer::Gui::ViewController::ProcessTreeViewController::_imageList</definition>
+        <argsstring></argsstring>
+        <name>_imageList</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::ProcessTreeViewController::_imageList</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/process_tree_view_controller.hpp" line="100" column="29" bodyfile="gui/view_controller/process_tree_view_controller.hpp" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1ab0db4ac4a6da9323736b862d5315054e" prot="private" static="no" mutable="no">
+        <type>wxMenu *</type>
+        <definition>wxMenu* SystemExplorer::Gui::ViewController::ProcessTreeViewController::_processContextMenu</definition>
+        <argsstring></argsstring>
+        <name>_processContextMenu</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::ProcessTreeViewController::_processContextMenu</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/process_tree_view_controller.hpp" line="101" column="24" bodyfile="gui/view_controller/process_tree_view_controller.hpp" bodystart="101" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1ae2b0bb6d5148f3f3f92f8f23c18021bd" prot="private" static="no" mutable="no">
+        <type>wxTimer *</type>
+        <definition>wxTimer* SystemExplorer::Gui::ViewController::ProcessTreeViewController::_timer</definition>
+        <argsstring></argsstring>
+        <name>_timer</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::ProcessTreeViewController::_timer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/process_tree_view_controller.hpp" line="102" column="21" bodyfile="gui/view_controller/process_tree_view_controller.hpp" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a83455603e0c6269525d5b4659a6e8632" prot="private" static="no" mutable="no">
+        <type><ref refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase" kindref="compound">Control::SearchableControlBase</ref> *</type>
+        <definition>Control::SearchableControlBase* SystemExplorer::Gui::ViewController::ProcessTreeViewController::_processesListControl</definition>
+        <argsstring></argsstring>
+        <name>_processesListControl</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::ProcessTreeViewController::_processesListControl</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/process_tree_view_controller.hpp" line="103" column="44" bodyfile="gui/view_controller/process_tree_view_controller.hpp" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1aa3f45843032a239100f5e714c5481231" prot="private" static="no" mutable="no">
+        <type><ref refid="classSystemExplorer_1_1Core_1_1ProcessManager" kindref="compound">SystemExplorer::Core::ProcessManager</ref></type>
+        <definition>SystemExplorer::Core::ProcessManager SystemExplorer::Gui::ViewController::ProcessTreeViewController::_processManager</definition>
+        <argsstring></argsstring>
+        <name>_processManager</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::ProcessTreeViewController::_processManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/process_tree_view_controller.hpp" line="106" column="54" bodyfile="gui/view_controller/process_tree_view_controller.hpp" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a7559bb6ff9569b104856d01d633c420e" prot="private" static="no" mutable="no">
+        <type><ref refid="classSystemExplorer_1_1Core_1_1ProcessesStatManager" kindref="compound">SystemExplorer::Core::ProcessesStatManager</ref></type>
+        <definition>SystemExplorer::Core::ProcessesStatManager SystemExplorer::Gui::ViewController::ProcessTreeViewController::_processesStatManager</definition>
+        <argsstring></argsstring>
+        <name>_processesStatManager</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::ProcessTreeViewController::_processesStatManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/process_tree_view_controller.hpp" line="107" column="60" bodyfile="gui/view_controller/process_tree_view_controller.hpp" bodystart="107" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1aee58f1ee89357cf6e648104527718f02" prot="private" static="no" mutable="no">
+        <type>wxBoxSizer *</type>
+        <definition>wxBoxSizer* SystemExplorer::Gui::ViewController::ProcessTreeViewController::_bsSizer</definition>
+        <argsstring></argsstring>
+        <name>_bsSizer</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::ProcessTreeViewController::_bsSizer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/process_tree_view_controller.hpp" line="109" column="28" bodyfile="gui/view_controller/process_tree_view_controller.hpp" bodystart="109" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1adcc12e1e69554423875e6ad4e35270a6" prot="private" static="no" mutable="no">
+        <type><ref refid="classSystemExplorer_1_1Gui_1_1Control_1_1IconControl" kindref="compound">Control::IconControl</ref> *</type>
+        <definition>Control::IconControl* SystemExplorer::Gui::ViewController::ProcessTreeViewController::_cpuStat</definition>
+        <argsstring></argsstring>
+        <name>_cpuStat</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::ProcessTreeViewController::_cpuStat</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/process_tree_view_controller.hpp" line="111" column="38" bodyfile="gui/view_controller/process_tree_view_controller.hpp" bodystart="111" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1ac732ab57336c556b947e6895405f2e7d" prot="private" static="no" mutable="no">
+        <type><ref refid="classSystemExplorer_1_1Gui_1_1Control_1_1IconControl" kindref="compound">Control::IconControl</ref> *</type>
+        <definition>Control::IconControl* SystemExplorer::Gui::ViewController::ProcessTreeViewController::_ramStat</definition>
+        <argsstring></argsstring>
+        <name>_ramStat</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::ProcessTreeViewController::_ramStat</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/process_tree_view_controller.hpp" line="112" column="38" bodyfile="gui/view_controller/process_tree_view_controller.hpp" bodystart="112" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1aca5048419823ddaec81d6298675a7ef2" prot="private" static="no" mutable="no">
+        <type>wxGauge *</type>
+        <definition>wxGauge* SystemExplorer::Gui::ViewController::ProcessTreeViewController::_gProgressBarCpu</definition>
+        <argsstring></argsstring>
+        <name>_gProgressBarCpu</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::ProcessTreeViewController::_gProgressBarCpu</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/process_tree_view_controller.hpp" line="114" column="25" bodyfile="gui/view_controller/process_tree_view_controller.hpp" bodystart="114" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1ab3fdb12bd4acf120c1f444ea006f241c" prot="private" static="no" mutable="no">
+        <type>wxGauge *</type>
+        <definition>wxGauge* SystemExplorer::Gui::ViewController::ProcessTreeViewController::_gProgressBarRss</definition>
+        <argsstring></argsstring>
+        <name>_gProgressBarRss</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::ProcessTreeViewController::_gProgressBarRss</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/process_tree_view_controller.hpp" line="115" column="25" bodyfile="gui/view_controller/process_tree_view_controller.hpp" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1aa3976f95fcfe6249b6c96f91e4182278" prot="private" static="no" mutable="no">
+        <type>wxMenuItem *</type>
+        <definition>wxMenuItem* SystemExplorer::Gui::ViewController::ProcessTreeViewController::_miExpandAll</definition>
+        <argsstring></argsstring>
+        <name>_miExpandAll</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::ProcessTreeViewController::_miExpandAll</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/process_tree_view_controller.hpp" line="117" column="28" bodyfile="gui/view_controller/process_tree_view_controller.hpp" bodystart="117" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a52a5f2d6d4c4564b648473da9d5d5b98" prot="private" static="no" mutable="no">
+        <type>wxMenuItem *</type>
+        <definition>wxMenuItem* SystemExplorer::Gui::ViewController::ProcessTreeViewController::_miCollapseAll</definition>
+        <argsstring></argsstring>
+        <name>_miCollapseAll</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::ProcessTreeViewController::_miCollapseAll</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/process_tree_view_controller.hpp" line="118" column="28" bodyfile="gui/view_controller/process_tree_view_controller.hpp" bodystart="118" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1ab5642251f76de55ab87bb1535a58c2f4" prot="private" static="no" mutable="no">
+        <type>wxMenuItem *</type>
+        <definition>wxMenuItem* SystemExplorer::Gui::ViewController::ProcessTreeViewController::_miToggleView</definition>
+        <argsstring></argsstring>
+        <name>_miToggleView</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::ProcessTreeViewController::_miToggleView</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/process_tree_view_controller.hpp" line="119" column="28" bodyfile="gui/view_controller/process_tree_view_controller.hpp" bodystart="119" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a3db4de8afa9184cbef52b85178b35045" prot="private" static="no" mutable="no">
+        <type>wxMenuItem *</type>
+        <definition>wxMenuItem* SystemExplorer::Gui::ViewController::ProcessTreeViewController::_miAutoSort</definition>
+        <argsstring></argsstring>
+        <name>_miAutoSort</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::ProcessTreeViewController::_miAutoSort</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/process_tree_view_controller.hpp" line="120" column="28" bodyfile="gui/view_controller/process_tree_view_controller.hpp" bodystart="120" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1ab73a965cd14e531d18fe5b4322525873" prot="private" static="no" mutable="no">
+        <type>wxMenuItem *</type>
+        <definition>wxMenuItem* SystemExplorer::Gui::ViewController::ProcessTreeViewController::_miShowAllProcesses</definition>
+        <argsstring></argsstring>
+        <name>_miShowAllProcesses</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::ProcessTreeViewController::_miShowAllProcesses</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/process_tree_view_controller.hpp" line="121" column="28" bodyfile="gui/view_controller/process_tree_view_controller.hpp" bodystart="121" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1aae6dee0d70a0959c2fcacffd830bcb17" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SystemExplorer::Gui::ViewController::ProcessTreeViewController::SetAutoCompleteChoices</definition>
+        <argsstring>()</argsstring>
+        <name>SetAutoCompleteChoices</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::ProcessTreeViewController::SetAutoCompleteChoices</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/process_tree_view_controller.hpp" line="123" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a0f5541f55f0ea7ea037c957a664749c1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool SystemExplorer::Gui::ViewController::ProcessTreeViewController::UpdateAutoCompleteChoices</definition>
+        <argsstring>()</argsstring>
+        <name>UpdateAutoCompleteChoices</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::ProcessTreeViewController::UpdateAutoCompleteChoices</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/process_tree_view_controller.hpp" line="124" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a1056d991ed587ec41840090ff5d69f43" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SystemExplorer::Gui::ViewController::ProcessTreeViewController::CreateStatusBarField</definition>
+        <argsstring>()</argsstring>
+        <name>CreateStatusBarField</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::ProcessTreeViewController::CreateStatusBarField</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/process_tree_view_controller.hpp" line="126" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a210cb597f1f22a214ff2159994fa2e4d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SystemExplorer::Gui::ViewController::ProcessTreeViewController::CreateHotKeys</definition>
+        <argsstring>()</argsstring>
+        <name>CreateHotKeys</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::ProcessTreeViewController::CreateHotKeys</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/process_tree_view_controller.hpp" line="127" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a735c0af5ba03f384cf060fd0e3e15785" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SystemExplorer::Gui::ViewController::ProcessTreeViewController::CreateAcceleratorTable</definition>
+        <argsstring>()</argsstring>
+        <name>CreateAcceleratorTable</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::ProcessTreeViewController::CreateAcceleratorTable</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/process_tree_view_controller.hpp" line="128" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a957f7077cac45ba36bdfb175977e3ce6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SystemExplorer::Gui::ViewController::ProcessTreeViewController::CreateTimer</definition>
+        <argsstring>()</argsstring>
+        <name>CreateTimer</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::ProcessTreeViewController::CreateTimer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/process_tree_view_controller.hpp" line="129" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a4a4d5baab57bf3f8673eb58bba2d7fad" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SystemExplorer::Gui::ViewController::ProcessTreeViewController::CreateImageList</definition>
+        <argsstring>()</argsstring>
+        <name>CreateImageList</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::ProcessTreeViewController::CreateImageList</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/process_tree_view_controller.hpp" line="131" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a9a798e31468dd6c51398be7ad2f5399c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SystemExplorer::Gui::ViewController::ProcessTreeViewController::CreateProcessesTreeList</definition>
+        <argsstring>()</argsstring>
+        <name>CreateProcessesTreeList</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::ProcessTreeViewController::CreateProcessesTreeList</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/process_tree_view_controller.hpp" line="132" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1acf59dede221e3564b5dd4887e0134491" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SystemExplorer::Gui::ViewController::ProcessTreeViewController::CreateMainSizer</definition>
+        <argsstring>()</argsstring>
+        <name>CreateMainSizer</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::ProcessTreeViewController::CreateMainSizer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/process_tree_view_controller.hpp" line="133" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1ac159d28ca25adcd121f095dd321870bc" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SystemExplorer::Gui::ViewController::ProcessTreeViewController::CreateContextMenu</definition>
+        <argsstring>()</argsstring>
+        <name>CreateContextMenu</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::ProcessTreeViewController::CreateContextMenu</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/process_tree_view_controller.hpp" line="134" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a55a93f73e3a50b6eaff3ce33892ad5ba" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SystemExplorer::Gui::ViewController::ProcessTreeViewController::BindProcessesListControlEvents</definition>
+        <argsstring>()</argsstring>
+        <name>BindProcessesListControlEvents</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::ProcessTreeViewController::BindProcessesListControlEvents</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/process_tree_view_controller.hpp" line="136" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a2c1fd2d1d1a603f2b93bd8e9f8ae191f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SystemExplorer::Gui::ViewController::ProcessTreeViewController::BindContextMenuEvents</definition>
+        <argsstring>()</argsstring>
+        <name>BindContextMenuEvents</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::ProcessTreeViewController::BindContextMenuEvents</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/process_tree_view_controller.hpp" line="137" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a2b22a002d7774fc8232cf677ec20f1db" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SystemExplorer::Gui::ViewController::ProcessTreeViewController::BindTimerEvents</definition>
+        <argsstring>()</argsstring>
+        <name>BindTimerEvents</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::ProcessTreeViewController::BindTimerEvents</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/process_tree_view_controller.hpp" line="138" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1af562980e2a67c5752b3a70e05fdc70b6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SystemExplorer::Gui::ViewController::ProcessTreeViewController::UpdateContextMenu</definition>
+        <argsstring>()</argsstring>
+        <name>UpdateContextMenu</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::ProcessTreeViewController::UpdateContextMenu</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/process_tree_view_controller.hpp" line="140" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a24babfcc4afb2b4b016462e4f2cfe558" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SystemExplorer::Gui::ViewController::ProcessTreeViewController::SetFocus</definition>
+        <argsstring>()</argsstring>
+        <name>SetFocus</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::ProcessTreeViewController::SetFocus</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/process_tree_view_controller.hpp" line="142" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1af91f1cd491b8f41bad551908db69b3be" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SystemExplorer::Gui::ViewController::ProcessTreeViewController::StartTimer</definition>
+        <argsstring>()</argsstring>
+        <name>StartTimer</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::ProcessTreeViewController::StartTimer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/process_tree_view_controller.hpp" line="143" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1ad5b69fa679cb797500ac330846d3809c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SystemExplorer::Gui::ViewController::ProcessTreeViewController::StopTimer</definition>
+        <argsstring>()</argsstring>
+        <name>StopTimer</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::ProcessTreeViewController::StopTimer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/process_tree_view_controller.hpp" line="144" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a39a81444a0adec6f80cef8d92c335d3b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SystemExplorer::Gui::ViewController::ProcessTreeViewController::ReBindData</definition>
+        <argsstring>()</argsstring>
+        <name>ReBindData</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::ProcessTreeViewController::ReBindData</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/process_tree_view_controller.hpp" line="145" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a76e817a129aac4098592b834ec126de7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SystemExplorer::Gui::ViewController::ProcessTreeViewController::ToggleViewState</definition>
+        <argsstring>()</argsstring>
+        <name>ToggleViewState</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::ProcessTreeViewController::ToggleViewState</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/process_tree_view_controller.hpp" line="147" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a544e871865cf00df2b66c77eedbb10c3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SystemExplorer::Gui::ViewController::ProcessTreeViewController::UpdateView</definition>
+        <argsstring>()</argsstring>
+        <name>UpdateView</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::ProcessTreeViewController::UpdateView</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/process_tree_view_controller.hpp" line="148" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1aaf7194df0136eddcfa9fffe294c787ba" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SystemExplorer::Gui::ViewController::ProcessTreeViewController::AddHotKey</definition>
+        <argsstring>(int menuBase, int itemId, wxAcceleratorEntryFlags flags, int key)</argsstring>
+        <name>AddHotKey</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::ProcessTreeViewController::AddHotKey</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>menuBase</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>itemId</declname>
+        </param>
+        <param>
+          <type>wxAcceleratorEntryFlags</type>
+          <declname>flags</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/process_tree_view_controller.hpp" line="150" column="21"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a22b29502cd973ac545e587b6fd341156" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::optional&lt; wxAcceleratorEntry &gt;</type>
+        <definition>std::optional&lt; wxAcceleratorEntry &gt; SystemExplorer::Gui::ViewController::ProcessTreeViewController::GetHotKey</definition>
+        <argsstring>(int menuBase, int itemId)</argsstring>
+        <name>GetHotKey</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::ProcessTreeViewController::GetHotKey</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>menuBase</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>itemId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/process_tree_view_controller.hpp" line="152" column="27"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a49f96e131360751faa16a4b5f07a2591" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SystemExplorer::Gui::ViewController::ProcessTreeViewController::AttachMenuItem</definition>
+        <argsstring>(int menuItemId, wxMenuItem *menuItem)</argsstring>
+        <name>AttachMenuItem</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::ProcessTreeViewController::AttachMenuItem</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>menuItemId</declname>
+        </param>
+        <param>
+          <type>wxMenuItem *</type>
+          <declname>menuItem</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/process_tree_view_controller.hpp" line="153" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1ac3467fe764abf5fa552eb1f1b4d8e527" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>wxMenuItem *</type>
+        <definition>wxMenuItem * SystemExplorer::Gui::ViewController::ProcessTreeViewController::AppendMenuItem</definition>
+        <argsstring>(wxMenu *parentMenu, T dataItem, int base=0, std::string overridenName=&quot;&quot;, wxItemKind kind=wxITEM_NORMAL)</argsstring>
+        <name>AppendMenuItem</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::ProcessTreeViewController::AppendMenuItem</qualifiedname>
+        <param>
+          <type>wxMenu *</type>
+          <declname>parentMenu</declname>
+        </param>
+        <param>
+          <type>T</type>
+          <declname>dataItem</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>base</declname>
+          <defval>0</defval>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>overridenName</declname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <param>
+          <type>wxItemKind</type>
+          <declname>kind</declname>
+          <defval>wxITEM_NORMAL</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/process_tree_view_controller.hpp" line="156" column="28" bodyfile="gui/view_controller/process_tree_view_controller.hpp" bodystart="156" bodyend="178"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1ae154a80c1ea8922d9fa318138cafe2ce" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>wxMenuItem *</type>
+        <definition>wxMenuItem * SystemExplorer::Gui::ViewController::ProcessTreeViewController::AppendSubMenu</definition>
+        <argsstring>(wxMenu *parentMenu, T dataItem, wxMenu *subMenu, int base=0, std::string overridenName=&quot;&quot;)</argsstring>
+        <name>AppendSubMenu</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::ProcessTreeViewController::AppendSubMenu</qualifiedname>
+        <param>
+          <type>wxMenu *</type>
+          <declname>parentMenu</declname>
+        </param>
+        <param>
+          <type>T</type>
+          <declname>dataItem</declname>
+        </param>
+        <param>
+          <type>wxMenu *</type>
+          <declname>subMenu</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>base</declname>
+          <defval>0</defval>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>overridenName</declname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/process_tree_view_controller.hpp" line="181" column="28" bodyfile="gui/view_controller/process_tree_view_controller.hpp" bodystart="181" bodyend="184"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1aec837521d41c51b9745defca8d965b28" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>pid_t</type>
+        <definition>pid_t SystemExplorer::Gui::ViewController::ProcessTreeViewController::ExtractPid</definition>
+        <argsstring>(wxTreeListItem const &amp;item) const</argsstring>
+        <name>ExtractPid</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::ProcessTreeViewController::ExtractPid</qualifiedname>
+        <param>
+          <type>wxTreeListItem const &amp;</type>
+          <declname>item</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/process_tree_view_controller.hpp" line="186" column="23"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a3e784004ecde45be9c6a94b7d9746f3b" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SystemExplorer::Gui::ViewController::ProcessTreeViewController::SendSignalToSelectedProcesses</definition>
+        <argsstring>(int signal) const</argsstring>
+        <name>SendSignalToSelectedProcesses</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::ProcessTreeViewController::SendSignalToSelectedProcesses</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>signal</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/process_tree_view_controller.hpp" line="187" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a0c8b3363e370669e5fb23878dbe7972b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SystemExplorer::Gui::ViewController::ProcessTreeViewController::UpdateStatusBarStatistics</definition>
+        <argsstring>(Core::Models::ProcessesStat const &amp;processesStat)</argsstring>
+        <name>UpdateStatusBarStatistics</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::ProcessTreeViewController::UpdateStatusBarStatistics</qualifiedname>
+        <param>
+          <type><ref refid="classSystemExplorer_1_1Core_1_1Models_1_1ProcessesStat" kindref="compound">Core::Models::ProcessesStat</ref> const &amp;</type>
+          <declname>processesStat</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/process_tree_view_controller.hpp" line="189" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1af3134e90fd9c0287383772bc846ed621" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int SystemExplorer::Gui::ViewController::ProcessTreeViewController::MapProcessStatToIconIndex</definition>
+        <argsstring>(Core::Models::ProcessStat processStat)</argsstring>
+        <name>MapProcessStatToIconIndex</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::ProcessTreeViewController::MapProcessStatToIconIndex</qualifiedname>
+        <param>
+          <type><ref refid="classSystemExplorer_1_1Core_1_1Models_1_1ProcessStat" kindref="compound">Core::Models::ProcessStat</ref></type>
+          <declname>processStat</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/process_tree_view_controller.hpp" line="191" column="21"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a4c725705fd029be595596cfd72d4fdc8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SystemExplorer::Gui::ViewController::ProcessTreeViewController::Sort</definition>
+        <argsstring>()</argsstring>
+        <name>Sort</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::ProcessTreeViewController::Sort</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/process_tree_view_controller.hpp" line="193" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a780a7bc5b89e7d7c9e32f9b6315a9fc6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SystemExplorer::Gui::ViewController::ProcessTreeViewController::window_OnSize</definition>
+        <argsstring>(wxSizeEvent &amp;event)</argsstring>
+        <name>window_OnSize</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::ProcessTreeViewController::window_OnSize</qualifiedname>
+        <param>
+          <type>wxSizeEvent &amp;</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/process_tree_view_controller.hpp" line="195" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1ae5e3a73de18c1d17e3ac7abe222c8852" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SystemExplorer::Gui::ViewController::ProcessTreeViewController::processesListControl_Search</definition>
+        <argsstring>(wxCommandEvent &amp;event)</argsstring>
+        <name>processesListControl_Search</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::ProcessTreeViewController::processesListControl_Search</qualifiedname>
+        <param>
+          <type>wxCommandEvent &amp;</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/process_tree_view_controller.hpp" line="197" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1ab33a921d957bc46a683c674dd4225c21" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SystemExplorer::Gui::ViewController::ProcessTreeViewController::processesListControl_OnItemContextMenu</definition>
+        <argsstring>(wxCommandEvent &amp;event)</argsstring>
+        <name>processesListControl_OnItemContextMenu</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::ProcessTreeViewController::processesListControl_OnItemContextMenu</qualifiedname>
+        <param>
+          <type>wxCommandEvent &amp;</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/process_tree_view_controller.hpp" line="198" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1abf45dc145e3ee8aeed0bb71420eb8820" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SystemExplorer::Gui::ViewController::ProcessTreeViewController::processesContextMenu_OnMenuItem</definition>
+        <argsstring>(wxCommandEvent &amp;event)</argsstring>
+        <name>processesContextMenu_OnMenuItem</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::ProcessTreeViewController::processesContextMenu_OnMenuItem</qualifiedname>
+        <param>
+          <type>wxCommandEvent &amp;</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/process_tree_view_controller.hpp" line="200" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a52a0b1954654f5c2594aa92dd26c2843" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SystemExplorer::Gui::ViewController::ProcessTreeViewController::processesContextMenu_OnMenuHighlight</definition>
+        <argsstring>(wxMenuEvent &amp;event)</argsstring>
+        <name>processesContextMenu_OnMenuHighlight</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::ProcessTreeViewController::processesContextMenu_OnMenuHighlight</qualifiedname>
+        <param>
+          <type>wxMenuEvent &amp;</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/process_tree_view_controller.hpp" line="201" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a5fe5878bedbe891f5c6833d4cf0c06f8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SystemExplorer::Gui::ViewController::ProcessTreeViewController::processesContextMenu_OnMenuOpen</definition>
+        <argsstring>(wxMenuEvent &amp;event)</argsstring>
+        <name>processesContextMenu_OnMenuOpen</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::ProcessTreeViewController::processesContextMenu_OnMenuOpen</qualifiedname>
+        <param>
+          <type>wxMenuEvent &amp;</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/process_tree_view_controller.hpp" line="202" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1aeb80c3f2d89fc45a505a97f5867a9563" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SystemExplorer::Gui::ViewController::ProcessTreeViewController::processesContextMenu_OnMenuClose</definition>
+        <argsstring>(wxMenuEvent &amp;event)</argsstring>
+        <name>processesContextMenu_OnMenuClose</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::ProcessTreeViewController::processesContextMenu_OnMenuClose</qualifiedname>
+        <param>
+          <type>wxMenuEvent &amp;</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/process_tree_view_controller.hpp" line="203" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1ae1c9404bc54bc7d8857980204d670c88" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SystemExplorer::Gui::ViewController::ProcessTreeViewController::timer_OnTick</definition>
+        <argsstring>(wxTimerEvent &amp;event)</argsstring>
+        <name>timer_OnTick</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::ProcessTreeViewController::timer_OnTick</qualifiedname>
+        <param>
+          <type>wxTimerEvent &amp;</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/process_tree_view_controller.hpp" line="205" column="22"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a32f37cd5016a6be348dbe071a1d1afa3" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>virtual void SystemExplorer::Gui::ViewController::ProcessTreeViewController::CreateChildControls</definition>
+        <argsstring>() override</argsstring>
+        <name>CreateChildControls</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::ProcessTreeViewController::CreateChildControls</qualifiedname>
+        <reimplements refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ViewControllerBase_1a5813960a65733c45503d736e004538fa">CreateChildControls</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/process_tree_view_controller.hpp" line="208" column="30"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a69cccb55e49f3f7f782d39834522c9d0" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>virtual void SystemExplorer::Gui::ViewController::ProcessTreeViewController::BindEvents</definition>
+        <argsstring>() override</argsstring>
+        <name>BindEvents</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::ProcessTreeViewController::BindEvents</qualifiedname>
+        <reimplements refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ViewControllerBase_1ae273430b5cb4a895f10736401be35f68">BindEvents</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/process_tree_view_controller.hpp" line="209" column="30"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1aa2aebc623cfcb8514c0150a2427b332d" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>virtual void SystemExplorer::Gui::ViewController::ProcessTreeViewController::BindData_Before</definition>
+        <argsstring>() override</argsstring>
+        <name>BindData_Before</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::ProcessTreeViewController::BindData_Before</qualifiedname>
+        <reimplements refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ViewControllerBase_1a637ce08535eb9e17aa1b3a0cd0c48e90">BindData_Before</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/process_tree_view_controller.hpp" line="210" column="30"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a60b66e1df0994c291d393d30d8f7911d" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>virtual void SystemExplorer::Gui::ViewController::ProcessTreeViewController::BindData</definition>
+        <argsstring>() override</argsstring>
+        <name>BindData</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::ProcessTreeViewController::BindData</qualifiedname>
+        <reimplements refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ViewControllerBase_1a8667331137f0c7c38d9a6e0937975808">BindData</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/process_tree_view_controller.hpp" line="211" column="30"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1ab26b952c20af48a54862ba51aaa477e0" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>virtual void SystemExplorer::Gui::ViewController::ProcessTreeViewController::PostInitialize</definition>
+        <argsstring>() override</argsstring>
+        <name>PostInitialize</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::ProcessTreeViewController::PostInitialize</qualifiedname>
+        <reimplements refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ViewControllerBase_1a79d36c29a3928dd1722a5cb7ef31df2e">PostInitialize</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/process_tree_view_controller.hpp" line="213" column="30"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a023572a87171b1a8755b775e1646adf7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SystemExplorer::Gui::ViewController::ProcessTreeViewController::ProcessTreeViewController</definition>
+        <argsstring>(wxBookCtrl *book, SystemExplorer::Core::ProcessManager processManager, std::string title, Config::UserConfig &amp;userConfig, wxWindowID id=wxID_ANY, bool useByDefault=false)</argsstring>
+        <name>ProcessTreeViewController</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::ProcessTreeViewController::ProcessTreeViewController</qualifiedname>
+        <param>
+          <type>wxBookCtrl *</type>
+          <declname>book</declname>
+        </param>
+        <param>
+          <type><ref refid="classSystemExplorer_1_1Core_1_1ProcessManager" kindref="compound">SystemExplorer::Core::ProcessManager</ref></type>
+          <declname>processManager</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>title</declname>
+        </param>
+        <param>
+          <type>Config::UserConfig &amp;</type>
+          <declname>userConfig</declname>
+        </param>
+        <param>
+          <type>wxWindowID</type>
+          <declname>id</declname>
+          <defval>wxID_ANY</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>useByDefault</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/process_tree_view_controller.hpp" line="216" column="17"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a35cba2ba1f8931b3d27f8f0957a74dcd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SystemExplorer::Gui::ViewController::ProcessTreeViewController::~ProcessTreeViewController</definition>
+        <argsstring>()</argsstring>
+        <name>~ProcessTreeViewController</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::ProcessTreeViewController::~ProcessTreeViewController</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/process_tree_view_controller.hpp" line="222" column="17"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>SystemExplorer::Gui::ViewController::IViewController</label>
+        <link refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1IViewController"/>
+      </node>
+      <node id="1">
+        <label>SystemExplorer::Gui::ViewController::ProcessTreeViewController</label>
+        <link refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>SystemExplorer::Gui::ViewController::ViewControllerBase</label>
+        <link refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ViewControllerBase"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>wxPanel</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>SystemExplorer::Gui::ViewController::IViewController</label>
+        <link refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1IViewController"/>
+      </node>
+      <node id="1">
+        <label>SystemExplorer::Gui::ViewController::ProcessTreeViewController</label>
+        <link refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>SystemExplorer::Gui::ViewController::ViewControllerBase</label>
+        <link refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ViewControllerBase"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>wxPanel</label>
+      </node>
+    </collaborationgraph>
+    <location file="gui/view_controller/process_tree_view_controller.hpp" line="54" column="13" bodyfile="gui/view_controller/process_tree_view_controller.hpp" bodystart="55" bodyend="223"/>
+    <listofallmembers>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ViewControllerBase_1a652ee5227a114cb7534b83b9740f753a" prot="protected" virt="non-virtual"><scope>SystemExplorer::Gui::ViewController::ProcessTreeViewController</scope><name>_book</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1aee58f1ee89357cf6e648104527718f02" prot="private" virt="non-virtual"><scope>SystemExplorer::Gui::ViewController::ProcessTreeViewController</scope><name>_bsSizer</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1adcc12e1e69554423875e6ad4e35270a6" prot="private" virt="non-virtual"><scope>SystemExplorer::Gui::ViewController::ProcessTreeViewController</scope><name>_cpuStat</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1aca5048419823ddaec81d6298675a7ef2" prot="private" virt="non-virtual"><scope>SystemExplorer::Gui::ViewController::ProcessTreeViewController</scope><name>_gProgressBarCpu</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1ab3fdb12bd4acf120c1f444ea006f241c" prot="private" virt="non-virtual"><scope>SystemExplorer::Gui::ViewController::ProcessTreeViewController</scope><name>_gProgressBarRss</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a30c126de0aa4a74a8a6477c7a7665295" prot="private" virt="non-virtual"><scope>SystemExplorer::Gui::ViewController::ProcessTreeViewController</scope><name>_hotKeys</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a9c9975e68be1274de861eb0deff22e31" prot="private" virt="non-virtual"><scope>SystemExplorer::Gui::ViewController::ProcessTreeViewController</scope><name>_imageList</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a3db4de8afa9184cbef52b85178b35045" prot="private" virt="non-virtual"><scope>SystemExplorer::Gui::ViewController::ProcessTreeViewController</scope><name>_miAutoSort</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a52a5f2d6d4c4564b648473da9d5d5b98" prot="private" virt="non-virtual"><scope>SystemExplorer::Gui::ViewController::ProcessTreeViewController</scope><name>_miCollapseAll</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1aa3976f95fcfe6249b6c96f91e4182278" prot="private" virt="non-virtual"><scope>SystemExplorer::Gui::ViewController::ProcessTreeViewController</scope><name>_miExpandAll</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1ab73a965cd14e531d18fe5b4322525873" prot="private" virt="non-virtual"><scope>SystemExplorer::Gui::ViewController::ProcessTreeViewController</scope><name>_miShowAllProcesses</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1ab5642251f76de55ab87bb1535a58c2f4" prot="private" virt="non-virtual"><scope>SystemExplorer::Gui::ViewController::ProcessTreeViewController</scope><name>_miToggleView</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1ab0db4ac4a6da9323736b862d5315054e" prot="private" virt="non-virtual"><scope>SystemExplorer::Gui::ViewController::ProcessTreeViewController</scope><name>_processContextMenu</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a83455603e0c6269525d5b4659a6e8632" prot="private" virt="non-virtual"><scope>SystemExplorer::Gui::ViewController::ProcessTreeViewController</scope><name>_processesListControl</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a7559bb6ff9569b104856d01d633c420e" prot="private" virt="non-virtual"><scope>SystemExplorer::Gui::ViewController::ProcessTreeViewController</scope><name>_processesStatManager</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1ab54aa3786fb44806e7f498e630abf096" prot="private" virt="non-virtual"><scope>SystemExplorer::Gui::ViewController::ProcessTreeViewController</scope><name>_processesTreeListItemComparator</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1aa3f45843032a239100f5e714c5481231" prot="private" virt="non-virtual"><scope>SystemExplorer::Gui::ViewController::ProcessTreeViewController</scope><name>_processManager</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1ac732ab57336c556b947e6895405f2e7d" prot="private" virt="non-virtual"><scope>SystemExplorer::Gui::ViewController::ProcessTreeViewController</scope><name>_ramStat</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1ae3d9e3afdb12bf132baacad67625c643" prot="private" virt="non-virtual"><scope>SystemExplorer::Gui::ViewController::ProcessTreeViewController</scope><name>_sbStatIndex</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a30bee475268c1e4aa192ccdb6c5bd33e" prot="private" virt="non-virtual"><scope>SystemExplorer::Gui::ViewController::ProcessTreeViewController</scope><name>_statusBar</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1ae2b0bb6d5148f3f3f92f8f23c18021bd" prot="private" virt="non-virtual"><scope>SystemExplorer::Gui::ViewController::ProcessTreeViewController</scope><name>_timer</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a52f52cdbddeabeb95281dc976995a350" prot="private" virt="non-virtual"><scope>SystemExplorer::Gui::ViewController::ProcessTreeViewController</scope><name>_userConfig</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1ac7f028904b2e8f309d2b46215cdb2333" prot="private" virt="non-virtual"><scope>SystemExplorer::Gui::ViewController::ProcessTreeViewController</scope><name>_viewState</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1aaf7194df0136eddcfa9fffe294c787ba" prot="private" virt="non-virtual"><scope>SystemExplorer::Gui::ViewController::ProcessTreeViewController</scope><name>AddHotKey</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1ac3467fe764abf5fa552eb1f1b4d8e527" prot="private" virt="non-virtual"><scope>SystemExplorer::Gui::ViewController::ProcessTreeViewController</scope><name>AppendMenuItem</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1ae154a80c1ea8922d9fa318138cafe2ce" prot="private" virt="non-virtual"><scope>SystemExplorer::Gui::ViewController::ProcessTreeViewController</scope><name>AppendSubMenu</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a49f96e131360751faa16a4b5f07a2591" prot="private" virt="non-virtual"><scope>SystemExplorer::Gui::ViewController::ProcessTreeViewController</scope><name>AttachMenuItem</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a2c1fd2d1d1a603f2b93bd8e9f8ae191f" prot="private" virt="non-virtual"><scope>SystemExplorer::Gui::ViewController::ProcessTreeViewController</scope><name>BindContextMenuEvents</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a60b66e1df0994c291d393d30d8f7911d" prot="protected" virt="virtual"><scope>SystemExplorer::Gui::ViewController::ProcessTreeViewController</scope><name>BindData</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1aa2aebc623cfcb8514c0150a2427b332d" prot="protected" virt="virtual"><scope>SystemExplorer::Gui::ViewController::ProcessTreeViewController</scope><name>BindData_Before</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a69cccb55e49f3f7f782d39834522c9d0" prot="protected" virt="virtual"><scope>SystemExplorer::Gui::ViewController::ProcessTreeViewController</scope><name>BindEvents</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a55a93f73e3a50b6eaff3ce33892ad5ba" prot="private" virt="non-virtual"><scope>SystemExplorer::Gui::ViewController::ProcessTreeViewController</scope><name>BindProcessesListControlEvents</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a2b22a002d7774fc8232cf677ec20f1db" prot="private" virt="non-virtual"><scope>SystemExplorer::Gui::ViewController::ProcessTreeViewController</scope><name>BindTimerEvents</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a735c0af5ba03f384cf060fd0e3e15785" prot="private" virt="non-virtual"><scope>SystemExplorer::Gui::ViewController::ProcessTreeViewController</scope><name>CreateAcceleratorTable</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a32f37cd5016a6be348dbe071a1d1afa3" prot="protected" virt="virtual"><scope>SystemExplorer::Gui::ViewController::ProcessTreeViewController</scope><name>CreateChildControls</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1ac159d28ca25adcd121f095dd321870bc" prot="private" virt="non-virtual"><scope>SystemExplorer::Gui::ViewController::ProcessTreeViewController</scope><name>CreateContextMenu</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a210cb597f1f22a214ff2159994fa2e4d" prot="private" virt="non-virtual"><scope>SystemExplorer::Gui::ViewController::ProcessTreeViewController</scope><name>CreateHotKeys</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a4a4d5baab57bf3f8673eb58bba2d7fad" prot="private" virt="non-virtual"><scope>SystemExplorer::Gui::ViewController::ProcessTreeViewController</scope><name>CreateImageList</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1acf59dede221e3564b5dd4887e0134491" prot="private" virt="non-virtual"><scope>SystemExplorer::Gui::ViewController::ProcessTreeViewController</scope><name>CreateMainSizer</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a9a798e31468dd6c51398be7ad2f5399c" prot="private" virt="non-virtual"><scope>SystemExplorer::Gui::ViewController::ProcessTreeViewController</scope><name>CreateProcessesTreeList</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a1056d991ed587ec41840090ff5d69f43" prot="private" virt="non-virtual"><scope>SystemExplorer::Gui::ViewController::ProcessTreeViewController</scope><name>CreateStatusBarField</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a957f7077cac45ba36bdfb175977e3ce6" prot="private" virt="non-virtual"><scope>SystemExplorer::Gui::ViewController::ProcessTreeViewController</scope><name>CreateTimer</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1aec837521d41c51b9745defca8d965b28" prot="private" virt="non-virtual"><scope>SystemExplorer::Gui::ViewController::ProcessTreeViewController</scope><name>ExtractPid</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a22b29502cd973ac545e587b6fd341156" prot="private" virt="non-virtual"><scope>SystemExplorer::Gui::ViewController::ProcessTreeViewController</scope><name>GetHotKey</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ViewControllerBase_1ae6942df1bf670db7f7414a1af3387c02" prot="protected" virt="non-virtual"><scope>SystemExplorer::Gui::ViewController::ProcessTreeViewController</scope><name>GetStatusBar</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ViewControllerBase_1a386c14f2c5453421b46b8669dd60f25d" prot="protected" virt="non-virtual"><scope>SystemExplorer::Gui::ViewController::ProcessTreeViewController</scope><name>GetTopFrame</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ViewControllerBase_1a222264fdce4b2a6d78cb8c796bdc69e6" prot="public" virt="virtual"><scope>SystemExplorer::Gui::ViewController::ProcessTreeViewController</scope><name>Initialize</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1af3134e90fd9c0287383772bc846ed621" prot="private" virt="non-virtual"><scope>SystemExplorer::Gui::ViewController::ProcessTreeViewController</scope><name>MapProcessStatToIconIndex</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1ab26b952c20af48a54862ba51aaa477e0" prot="protected" virt="virtual"><scope>SystemExplorer::Gui::ViewController::ProcessTreeViewController</scope><name>PostInitialize</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a8466ccc014a498ad0cd1e0fbec88f639" prot="private" virt="non-virtual"><scope>SystemExplorer::Gui::ViewController::ProcessTreeViewController</scope><name>PROCESS_CONTEXT_MENU_RANGE_SIZE</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a6135da4b6bf1e4d6a1e887560d118991" prot="private" virt="non-virtual"><scope>SystemExplorer::Gui::ViewController::ProcessTreeViewController</scope><name>PROCESS_CONTEXT_MENU_ROOT_BASE</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a4c22762e3e66e6b1227fb79756ab9b6f" prot="private" virt="non-virtual"><scope>SystemExplorer::Gui::ViewController::ProcessTreeViewController</scope><name>PROCESS_CONTEXT_MENU_SIGNAL_BASE</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1ad7703cad30fb00829545ad65400cd2ea" prot="private" virt="non-virtual"><scope>SystemExplorer::Gui::ViewController::ProcessTreeViewController</scope><name>PROCESS_CONTEXT_MENU_SIGNAL_TYPE_BASE</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a76cfe0e53a114dd612891e2a622fcba6" prot="private" virt="non-virtual"><scope>SystemExplorer::Gui::ViewController::ProcessTreeViewController</scope><name>ProcessContextMenuId</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1af56262fb6c5351ef736c342e97627afd" prot="private" virt="non-virtual"><scope>SystemExplorer::Gui::ViewController::ProcessTreeViewController</scope><name>PROCESSES_AUTOCOMPLETE_CHOICES_PATH</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1aeb80c3f2d89fc45a505a97f5867a9563" prot="private" virt="non-virtual"><scope>SystemExplorer::Gui::ViewController::ProcessTreeViewController</scope><name>processesContextMenu_OnMenuClose</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a52a0b1954654f5c2594aa92dd26c2843" prot="private" virt="non-virtual"><scope>SystemExplorer::Gui::ViewController::ProcessTreeViewController</scope><name>processesContextMenu_OnMenuHighlight</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1abf45dc145e3ee8aeed0bb71420eb8820" prot="private" virt="non-virtual"><scope>SystemExplorer::Gui::ViewController::ProcessTreeViewController</scope><name>processesContextMenu_OnMenuItem</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a5fe5878bedbe891f5c6833d4cf0c06f8" prot="private" virt="non-virtual"><scope>SystemExplorer::Gui::ViewController::ProcessTreeViewController</scope><name>processesContextMenu_OnMenuOpen</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1ab33a921d957bc46a683c674dd4225c21" prot="private" virt="non-virtual"><scope>SystemExplorer::Gui::ViewController::ProcessTreeViewController</scope><name>processesListControl_OnItemContextMenu</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1ae5e3a73de18c1d17e3ac7abe222c8852" prot="private" virt="non-virtual"><scope>SystemExplorer::Gui::ViewController::ProcessTreeViewController</scope><name>processesListControl_Search</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a023572a87171b1a8755b775e1646adf7" prot="public" virt="non-virtual"><scope>SystemExplorer::Gui::ViewController::ProcessTreeViewController</scope><name>ProcessTreeViewController</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a39a81444a0adec6f80cef8d92c335d3b" prot="private" virt="non-virtual"><scope>SystemExplorer::Gui::ViewController::ProcessTreeViewController</scope><name>ReBindData</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a576d50d847a0aae407361e74b35e96f0" prot="private" virt="non-virtual"><scope>SystemExplorer::Gui::ViewController::ProcessTreeViewController</scope><name>REFRESH_INTERVAL</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a075094cf22f7bbbd2f52c07d9007eb34" prot="private" virt="non-virtual"><scope>SystemExplorer::Gui::ViewController::ProcessTreeViewController</scope><name>RELATIVE_CONFIG_PATH</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a3e784004ecde45be9c6a94b7d9746f3b" prot="private" virt="non-virtual"><scope>SystemExplorer::Gui::ViewController::ProcessTreeViewController</scope><name>SendSignalToSelectedProcesses</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1aae6dee0d70a0959c2fcacffd830bcb17" prot="private" virt="non-virtual"><scope>SystemExplorer::Gui::ViewController::ProcessTreeViewController</scope><name>SetAutoCompleteChoices</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a24babfcc4afb2b4b016462e4f2cfe558" prot="private" virt="non-virtual"><scope>SystemExplorer::Gui::ViewController::ProcessTreeViewController</scope><name>SetFocus</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ViewControllerBase_1a755db8be9d5d41d33726d11a0096a3d5" prot="protected" virt="non-virtual"><scope>SystemExplorer::Gui::ViewController::ProcessTreeViewController</scope><name>SetHelpStatusText</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a4c725705fd029be595596cfd72d4fdc8" prot="private" virt="non-virtual"><scope>SystemExplorer::Gui::ViewController::ProcessTreeViewController</scope><name>Sort</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1af91f1cd491b8f41bad551908db69b3be" prot="private" virt="non-virtual"><scope>SystemExplorer::Gui::ViewController::ProcessTreeViewController</scope><name>StartTimer</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1ad5b69fa679cb797500ac330846d3809c" prot="private" virt="non-virtual"><scope>SystemExplorer::Gui::ViewController::ProcessTreeViewController</scope><name>StopTimer</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1ae1c9404bc54bc7d8857980204d670c88" prot="private" virt="non-virtual"><scope>SystemExplorer::Gui::ViewController::ProcessTreeViewController</scope><name>timer_OnTick</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a76e817a129aac4098592b834ec126de7" prot="private" virt="non-virtual"><scope>SystemExplorer::Gui::ViewController::ProcessTreeViewController</scope><name>ToggleViewState</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a0f5541f55f0ea7ea037c957a664749c1" prot="private" virt="non-virtual"><scope>SystemExplorer::Gui::ViewController::ProcessTreeViewController</scope><name>UpdateAutoCompleteChoices</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1af562980e2a67c5752b3a70e05fdc70b6" prot="private" virt="non-virtual"><scope>SystemExplorer::Gui::ViewController::ProcessTreeViewController</scope><name>UpdateContextMenu</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a0c8b3363e370669e5fb23878dbe7972b" prot="private" virt="non-virtual"><scope>SystemExplorer::Gui::ViewController::ProcessTreeViewController</scope><name>UpdateStatusBarStatistics</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a544e871865cf00df2b66c77eedbb10c3" prot="private" virt="non-virtual"><scope>SystemExplorer::Gui::ViewController::ProcessTreeViewController</scope><name>UpdateView</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ViewControllerBase_1a592b71e61f48a66d318f4237c19ba3b0" prot="protected" virt="non-virtual"><scope>SystemExplorer::Gui::ViewController::ProcessTreeViewController</scope><name>ViewControllerBase</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a7f3db6f366bf7e63a3015a1b15e14241" prot="private" virt="non-virtual"><scope>SystemExplorer::Gui::ViewController::ProcessTreeViewController</scope><name>ViewState</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a780a7bc5b89e7d7c9e32f9b6315a9fc6" prot="private" virt="non-virtual"><scope>SystemExplorer::Gui::ViewController::ProcessTreeViewController</scope><name>window_OnSize</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1IViewController_1ae909fde6fe1b4016fe51e827554e258f" prot="public" virt="virtual"><scope>SystemExplorer::Gui::ViewController::ProcessTreeViewController</scope><name>~IViewController</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a35cba2ba1f8931b3d27f8f0957a74dcd" prot="public" virt="non-virtual"><scope>SystemExplorer::Gui::ViewController::ProcessTreeViewController</scope><name>~ProcessTreeViewController</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,178 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="classSystemExplorer_1_1Core_1_1Models_1_1ProcessStat" kind="class" language="C++" prot="public">
+    <compoundname>SystemExplorer::Core::Models::ProcessStat</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classSystemExplorer_1_1Core_1_1Models_1_1ProcessStat_1a95d15e55f8f2862d85d16e54f52cd83a" prot="public" static="no" mutable="no">
+        <type>pid_t</type>
+        <definition>pid_t SystemExplorer::Core::Models::ProcessStat::pid</definition>
+        <argsstring></argsstring>
+        <name>pid</name>
+        <qualifiedname>SystemExplorer::Core::Models::ProcessStat::pid</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="core/models/process_stat.hpp" line="18" column="23" bodyfile="core/models/process_stat.hpp" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSystemExplorer_1_1Core_1_1Models_1_1ProcessStat_1aab365284ff9f96130327a02e3643a4e7" prot="public" static="no" mutable="no">
+        <type><ref refid="classSystemExplorer_1_1Core_1_1Models_1_1ProcessCpuStat" kindref="compound">ProcessCpuStat</ref></type>
+        <definition>ProcessCpuStat SystemExplorer::Core::Models::ProcessStat::cpu_stat</definition>
+        <argsstring></argsstring>
+        <name>cpu_stat</name>
+        <qualifiedname>SystemExplorer::Core::Models::ProcessStat::cpu_stat</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="core/models/process_stat.hpp" line="19" column="32" bodyfile="core/models/process_stat.hpp" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSystemExplorer_1_1Core_1_1Models_1_1ProcessStat_1a309c0588a2a1ac9e1a307a2bc4e26649" prot="public" static="no" mutable="no">
+        <type>ProcessState</type>
+        <definition>ProcessState SystemExplorer::Core::Models::ProcessStat::state</definition>
+        <argsstring></argsstring>
+        <name>state</name>
+        <qualifiedname>SystemExplorer::Core::Models::ProcessStat::state</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="core/models/process_stat.hpp" line="20" column="30" bodyfile="core/models/process_stat.hpp" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSystemExplorer_1_1Core_1_1Models_1_1ProcessStat_1a8ea7c736f0bc2501cf7cc5696bbdabe8" prot="public" static="no" mutable="no">
+        <type>long</type>
+        <definition>long SystemExplorer::Core::Models::ProcessStat::threads</definition>
+        <argsstring></argsstring>
+        <name>threads</name>
+        <qualifiedname>SystemExplorer::Core::Models::ProcessStat::threads</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="core/models/process_stat.hpp" line="21" column="22" bodyfile="core/models/process_stat.hpp" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSystemExplorer_1_1Core_1_1Models_1_1ProcessStat_1a2ee81384cee2c0b3b407dba7ce248e91" prot="public" static="no" mutable="no">
+        <type>long</type>
+        <definition>long SystemExplorer::Core::Models::ProcessStat::priority</definition>
+        <argsstring></argsstring>
+        <name>priority</name>
+        <qualifiedname>SystemExplorer::Core::Models::ProcessStat::priority</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="core/models/process_stat.hpp" line="23" column="22" bodyfile="core/models/process_stat.hpp" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSystemExplorer_1_1Core_1_1Models_1_1ProcessStat_1a66a6b0e47101142e0182093574b966e8" prot="public" static="no" mutable="no">
+        <type>long</type>
+        <definition>long SystemExplorer::Core::Models::ProcessStat::nice</definition>
+        <argsstring></argsstring>
+        <name>nice</name>
+        <qualifiedname>SystemExplorer::Core::Models::ProcessStat::nice</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="core/models/process_stat.hpp" line="24" column="22" bodyfile="core/models/process_stat.hpp" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSystemExplorer_1_1Core_1_1Models_1_1ProcessStat_1ad93bbb63d3a1384f3721461a5033f4a3" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float SystemExplorer::Core::Models::ProcessStat::mem_vsize</definition>
+        <argsstring></argsstring>
+        <name>mem_vsize</name>
+        <qualifiedname>SystemExplorer::Core::Models::ProcessStat::mem_vsize</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="core/models/process_stat.hpp" line="26" column="23" bodyfile="core/models/process_stat.hpp" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSystemExplorer_1_1Core_1_1Models_1_1ProcessStat_1adbdeb7ff6e44c5de5d80526e49c39122" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float SystemExplorer::Core::Models::ProcessStat::mem_rss</definition>
+        <argsstring></argsstring>
+        <name>mem_rss</name>
+        <qualifiedname>SystemExplorer::Core::Models::ProcessStat::mem_rss</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="core/models/process_stat.hpp" line="27" column="23" bodyfile="core/models/process_stat.hpp" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSystemExplorer_1_1Core_1_1Models_1_1ProcessStat_1a86baa49fce8f1c74e084762400f5f63c" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float SystemExplorer::Core::Models::ProcessStat::mem_pages_swapped</definition>
+        <argsstring></argsstring>
+        <name>mem_pages_swapped</name>
+        <qualifiedname>SystemExplorer::Core::Models::ProcessStat::mem_pages_swapped</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="core/models/process_stat.hpp" line="28" column="23" bodyfile="core/models/process_stat.hpp" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSystemExplorer_1_1Core_1_1Models_1_1ProcessStat_1a7af5b5f57925c31944cb3a816a0cac90" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int SystemExplorer::Core::Models::ProcessStat::processor</definition>
+        <argsstring></argsstring>
+        <name>processor</name>
+        <qualifiedname>SystemExplorer::Core::Models::ProcessStat::processor</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="core/models/process_stat.hpp" line="29" column="21" bodyfile="core/models/process_stat.hpp" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>SystemExplorer::Core::Models::ProcessCpuStat</label>
+        <link refid="classSystemExplorer_1_1Core_1_1Models_1_1ProcessCpuStat"/>
+      </node>
+      <node id="1">
+        <label>SystemExplorer::Core::Models::ProcessStat</label>
+        <link refid="classSystemExplorer_1_1Core_1_1Models_1_1ProcessStat"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>cpu_stat</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="core/models/process_stat.hpp" line="15" column="13" bodyfile="core/models/process_stat.hpp" bodystart="16" bodyend="31"/>
+    <listofallmembers>
+      <member refid="classSystemExplorer_1_1Core_1_1Models_1_1ProcessStat_1aab365284ff9f96130327a02e3643a4e7" prot="public" virt="non-virtual"><scope>SystemExplorer::Core::Models::ProcessStat</scope><name>cpu_stat</name></member>
+      <member refid="classSystemExplorer_1_1Core_1_1Models_1_1ProcessStat_1a86baa49fce8f1c74e084762400f5f63c" prot="public" virt="non-virtual"><scope>SystemExplorer::Core::Models::ProcessStat</scope><name>mem_pages_swapped</name></member>
+      <member refid="classSystemExplorer_1_1Core_1_1Models_1_1ProcessStat_1adbdeb7ff6e44c5de5d80526e49c39122" prot="public" virt="non-virtual"><scope>SystemExplorer::Core::Models::ProcessStat</scope><name>mem_rss</name></member>
+      <member refid="classSystemExplorer_1_1Core_1_1Models_1_1ProcessStat_1ad93bbb63d3a1384f3721461a5033f4a3" prot="public" virt="non-virtual"><scope>SystemExplorer::Core::Models::ProcessStat</scope><name>mem_vsize</name></member>
+      <member refid="classSystemExplorer_1_1Core_1_1Models_1_1ProcessStat_1a66a6b0e47101142e0182093574b966e8" prot="public" virt="non-virtual"><scope>SystemExplorer::Core::Models::ProcessStat</scope><name>nice</name></member>
+      <member refid="classSystemExplorer_1_1Core_1_1Models_1_1ProcessStat_1a95d15e55f8f2862d85d16e54f52cd83a" prot="public" virt="non-virtual"><scope>SystemExplorer::Core::Models::ProcessStat</scope><name>pid</name></member>
+      <member refid="classSystemExplorer_1_1Core_1_1Models_1_1ProcessStat_1a2ee81384cee2c0b3b407dba7ce248e91" prot="public" virt="non-virtual"><scope>SystemExplorer::Core::Models::ProcessStat</scope><name>priority</name></member>
+      <member refid="classSystemExplorer_1_1Core_1_1Models_1_1ProcessStat_1a7af5b5f57925c31944cb3a816a0cac90" prot="public" virt="non-virtual"><scope>SystemExplorer::Core::Models::ProcessStat</scope><name>processor</name></member>
+      <member refid="classSystemExplorer_1_1Core_1_1Models_1_1ProcessStat_1a309c0588a2a1ac9e1a307a2bc4e26649" prot="public" virt="non-virtual"><scope>SystemExplorer::Core::Models::ProcessStat</scope><name>state</name></member>
+      <member refid="classSystemExplorer_1_1Core_1_1Models_1_1ProcessStat_1a8ea7c736f0bc2501cf7cc5696bbdabe8" prot="public" virt="non-virtual"><scope>SystemExplorer::Core::Models::ProcessStat</scope><name>threads</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

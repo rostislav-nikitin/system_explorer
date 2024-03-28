@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessesTreeListItemComparator" kind="class" language="C++" prot="public">
+    <compoundname>SystemExplorer::Gui::ViewController::ProcessesTreeListItemComparator</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">wxTreeListItemComparator</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessesTreeListItemComparator_1adfb21136641f1926d70578845fbffd25" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>int</type>
+        <definition>virtual int SystemExplorer::Gui::ViewController::ProcessesTreeListItemComparator::Compare</definition>
+        <argsstring>(wxTreeListCtrl *treelist, unsigned column, wxTreeListItem first, wxTreeListItem second) override</argsstring>
+        <name>Compare</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::ProcessesTreeListItemComparator::Compare</qualifiedname>
+        <param>
+          <type>wxTreeListCtrl *</type>
+          <declname>treelist</declname>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>column</declname>
+        </param>
+        <param>
+          <type>wxTreeListItem</type>
+          <declname>first</declname>
+        </param>
+        <param>
+          <type>wxTreeListItem</type>
+          <declname>second</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/processes_tree_list_item_comparator.hpp" line="15" column="21"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>SystemExplorer::Gui::ViewController::ProcessesTreeListItemComparator</label>
+        <link refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessesTreeListItemComparator"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>wxTreeListItemComparator</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>SystemExplorer::Gui::ViewController::ProcessesTreeListItemComparator</label>
+        <link refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessesTreeListItemComparator"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>wxTreeListItemComparator</label>
+      </node>
+    </collaborationgraph>
+    <location file="gui/view_controller/processes_tree_list_item_comparator.hpp" line="12" column="7" bodyfile="gui/view_controller/processes_tree_list_item_comparator.hpp" bodystart="13" bodyend="16"/>
+    <listofallmembers>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessesTreeListItemComparator_1adfb21136641f1926d70578845fbffd25" prot="public" virt="virtual"><scope>SystemExplorer::Gui::ViewController::ProcessesTreeListItemComparator</scope><name>Compare</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="namespacegoogletest-uninitialized-test" kind="namespace" language="Python">
+    <compoundname>googletest-uninitialized-test</compoundname>
+    <innerclass refid="classgoogletest-uninitialized-test_1_1GTestUninitializedTest" prot="public">googletest-uninitialized-test::GTestUninitializedTest</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="googletest-uninitialized-test_8py_1ad1eb7e24722103990b211162afb6f880" prot="public" static="no" mutable="no">
+        <type>gtest_test_utils</type>
+        <definition>gtest_test_utils googletest-uninitialized-test.COMMAND</definition>
+        <argsstring></argsstring>
+        <name>COMMAND</name>
+        <qualifiedname>googletest-uninitialized-test.COMMAND</qualifiedname>
+        <initializer>=  <ref refid="namespacegtest__test__utils_1a89ed3717984a80ffbb7a9c92f71b86a2" kindref="member">gtest_test_utils.GetTestExecutablePath</ref>(
+    &apos;googletest-uninitialized-test_&apos;
+)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="build/_deps/googletest-src/googletest/test/googletest-uninitialized-test.py" line="36" column="1" bodyfile="build/_deps/googletest-src/googletest/test/googletest-uninitialized-test.py" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="googletest-uninitialized-test_8py_1af02e731714736167bb758ba94b8ec109" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def googletest-uninitialized-test.Assert</definition>
+        <argsstring>(condition)</argsstring>
+        <name>Assert</name>
+        <qualifiedname>googletest-uninitialized-test.Assert</qualifiedname>
+        <param>
+          <type>condition</type>
+          <defname>condition</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="build/_deps/googletest-src/googletest/test/googletest-uninitialized-test.py" line="41" column="1" bodyfile="build/_deps/googletest-src/googletest/test/googletest-uninitialized-test.py" bodystart="41" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="googletest-uninitialized-test_8py_1a8b48f5e81e60f11030082240561c7f94" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def googletest-uninitialized-test.AssertEq</definition>
+        <argsstring>(expected, actual)</argsstring>
+        <name>AssertEq</name>
+        <qualifiedname>googletest-uninitialized-test.AssertEq</qualifiedname>
+        <param>
+          <type>expected</type>
+          <defname>expected</defname>
+        </param>
+        <param>
+          <type>actual</type>
+          <defname>actual</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="build/_deps/googletest-src/googletest/test/googletest-uninitialized-test.py" line="46" column="1" bodyfile="build/_deps/googletest-src/googletest/test/googletest-uninitialized-test.py" bodystart="46" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="googletest-uninitialized-test_8py_1a70d1a3c3521654597facb5344ee1c968" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def googletest-uninitialized-test.TestExitCodeAndOutput</definition>
+        <argsstring>(command)</argsstring>
+        <name>TestExitCodeAndOutput</name>
+        <qualifiedname>googletest-uninitialized-test.TestExitCodeAndOutput</qualifiedname>
+        <param>
+          <type>command</type>
+          <defname>command</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Runs the given command and verifies its exit code and output.</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="build/_deps/googletest-src/googletest/test/googletest-uninitialized-test.py" line="53" column="1" bodyfile="build/_deps/googletest-src/googletest/test/googletest-uninitialized-test.py" bodystart="53" bodyend="62"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="build/_deps/googletest-src/googletest/test/googletest-uninitialized-test.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

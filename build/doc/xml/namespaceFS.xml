@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="namespaceFS" kind="namespace" language="C++">
+    <compoundname>FS</compoundname>
+    <innerclass refid="classFS_1_1Directory" prot="public">FS::Directory</innerclass>
+    <innerclass refid="classFS_1_1File" prot="public">FS::File</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="libs/fs/include/fs/fs.hpp" line="7" column="1"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="dir_6719ab1f1f7655efc2fa43f7eb574fd1" kind="dir">
+    <compoundname>libs</compoundname>
+    <innerdir refid="dir_905ce68d5038e517b69d2177eb236a4e">libs/fs</innerdir>
+    <innerdir refid="dir_a6df7706e890a251d4cc8fcf76d09995">libs/wild_card_expr</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="libs/"/>
+  </compounddef>
+</doxygen>

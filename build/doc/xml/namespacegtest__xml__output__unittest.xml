@@ -1,0 +1,340 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="namespacegtest__xml__output__unittest" kind="namespace" language="Python">
+    <compoundname>gtest_xml_output_unittest</compoundname>
+    <innerclass refid="classgtest__xml__output__unittest_1_1GTestXMLOutputUnitTest" prot="public">gtest_xml_output_unittest::GTestXMLOutputUnitTest</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacegtest__xml__output__unittest_1a8ea103f905ebdad56034d8ae07ad0ae6" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str gtest_xml_output_unittest.GTEST_FILTER_FLAG</definition>
+        <argsstring></argsstring>
+        <name>GTEST_FILTER_FLAG</name>
+        <qualifiedname>gtest_xml_output_unittest.GTEST_FILTER_FLAG</qualifiedname>
+        <initializer>=  &apos;--gtest_filter&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="build/_deps/googletest-src/googletest/test/gtest_xml_output_unittest.py" line="44" column="1" bodyfile="build/_deps/googletest-src/googletest/test/gtest_xml_output_unittest.py" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacegtest__xml__output__unittest_1a280a12a559d66683eac3c099c7dad888" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str gtest_xml_output_unittest.GTEST_LIST_TESTS_FLAG</definition>
+        <argsstring></argsstring>
+        <name>GTEST_LIST_TESTS_FLAG</name>
+        <qualifiedname>gtest_xml_output_unittest.GTEST_LIST_TESTS_FLAG</qualifiedname>
+        <initializer>=  &apos;--gtest_list_tests&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="build/_deps/googletest-src/googletest/test/gtest_xml_output_unittest.py" line="45" column="1" bodyfile="build/_deps/googletest-src/googletest/test/gtest_xml_output_unittest.py" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacegtest__xml__output__unittest_1aed25603a5a92a3b8a51a1583b2bf4e5b" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str gtest_xml_output_unittest.GTEST_OUTPUT_FLAG</definition>
+        <argsstring></argsstring>
+        <name>GTEST_OUTPUT_FLAG</name>
+        <qualifiedname>gtest_xml_output_unittest.GTEST_OUTPUT_FLAG</qualifiedname>
+        <initializer>=  &apos;--gtest_output&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="build/_deps/googletest-src/googletest/test/gtest_xml_output_unittest.py" line="46" column="1" bodyfile="build/_deps/googletest-src/googletest/test/gtest_xml_output_unittest.py" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacegtest__xml__output__unittest_1a6a05def5622c527d3255f0abcba88f30" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str gtest_xml_output_unittest.GTEST_DEFAULT_OUTPUT_FILE</definition>
+        <argsstring></argsstring>
+        <name>GTEST_DEFAULT_OUTPUT_FILE</name>
+        <qualifiedname>gtest_xml_output_unittest.GTEST_DEFAULT_OUTPUT_FILE</qualifiedname>
+        <initializer>=  &apos;test_detail.xml&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="build/_deps/googletest-src/googletest/test/gtest_xml_output_unittest.py" line="47" column="1" bodyfile="build/_deps/googletest-src/googletest/test/gtest_xml_output_unittest.py" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacegtest__xml__output__unittest_1abfc7fc73b567332473d8424e4623fec9" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str gtest_xml_output_unittest.GTEST_PROGRAM_NAME</definition>
+        <argsstring></argsstring>
+        <name>GTEST_PROGRAM_NAME</name>
+        <qualifiedname>gtest_xml_output_unittest.GTEST_PROGRAM_NAME</qualifiedname>
+        <initializer>=  &apos;gtest_xml_output_unittest_&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="build/_deps/googletest-src/googletest/test/gtest_xml_output_unittest.py" line="48" column="1" bodyfile="build/_deps/googletest-src/googletest/test/gtest_xml_output_unittest.py" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacegtest__xml__output__unittest_1a6bba67ffa04ffc915567a34873fcd783" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str gtest_xml_output_unittest.NO_STACKTRACE_SUPPORT_FLAG</definition>
+        <argsstring></argsstring>
+        <name>NO_STACKTRACE_SUPPORT_FLAG</name>
+        <qualifiedname>gtest_xml_output_unittest.NO_STACKTRACE_SUPPORT_FLAG</qualifiedname>
+        <initializer>=  &apos;--no_stacktrace_support&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="build/_deps/googletest-src/googletest/test/gtest_xml_output_unittest.py" line="51" column="1" bodyfile="build/_deps/googletest-src/googletest/test/gtest_xml_output_unittest.py" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacegtest__xml__output__unittest_1a75be7e98ab6f32e4bc2b01402362e775" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str gtest_xml_output_unittest.TOTAL_SHARDS_ENV_VAR</definition>
+        <argsstring></argsstring>
+        <name>TOTAL_SHARDS_ENV_VAR</name>
+        <qualifiedname>gtest_xml_output_unittest.TOTAL_SHARDS_ENV_VAR</qualifiedname>
+        <initializer>=  &apos;GTEST_TOTAL_SHARDS&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="build/_deps/googletest-src/googletest/test/gtest_xml_output_unittest.py" line="54" column="1" bodyfile="build/_deps/googletest-src/googletest/test/gtest_xml_output_unittest.py" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacegtest__xml__output__unittest_1afa8985deb98def042f517dfb6f34599f" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str gtest_xml_output_unittest.SHARD_INDEX_ENV_VAR</definition>
+        <argsstring></argsstring>
+        <name>SHARD_INDEX_ENV_VAR</name>
+        <qualifiedname>gtest_xml_output_unittest.SHARD_INDEX_ENV_VAR</qualifiedname>
+        <initializer>=  &apos;GTEST_SHARD_INDEX&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="build/_deps/googletest-src/googletest/test/gtest_xml_output_unittest.py" line="55" column="1" bodyfile="build/_deps/googletest-src/googletest/test/gtest_xml_output_unittest.py" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacegtest__xml__output__unittest_1a86b79fd1b7fc85b134a113baeda62157" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str gtest_xml_output_unittest.SHARD_STATUS_FILE_ENV_VAR</definition>
+        <argsstring></argsstring>
+        <name>SHARD_STATUS_FILE_ENV_VAR</name>
+        <qualifiedname>gtest_xml_output_unittest.SHARD_STATUS_FILE_ENV_VAR</qualifiedname>
+        <initializer>=  &apos;GTEST_SHARD_STATUS_FILE&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="build/_deps/googletest-src/googletest/test/gtest_xml_output_unittest.py" line="56" column="1" bodyfile="build/_deps/googletest-src/googletest/test/gtest_xml_output_unittest.py" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacegtest__xml__output__unittest_1a75afc848a70e49172521e9d14d41b3f6" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str gtest_xml_output_unittest.SUPPORTS_STACK_TRACES</definition>
+        <argsstring></argsstring>
+        <name>SUPPORTS_STACK_TRACES</name>
+        <qualifiedname>gtest_xml_output_unittest.SUPPORTS_STACK_TRACES</qualifiedname>
+        <initializer>=  NO_STACKTRACE_SUPPORT_FLAG not in sys.argv</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="build/_deps/googletest-src/googletest/test/gtest_xml_output_unittest.py" line="58" column="1" bodyfile="build/_deps/googletest-src/googletest/test/gtest_xml_output_unittest.py" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacegtest__xml__output__unittest_1aaf40fa573b7a22eea5b5ec128e2d9338" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str gtest_xml_output_unittest::STACK_TRACE_TEMPLATE</definition>
+        <argsstring></argsstring>
+        <name>STACK_TRACE_TEMPLATE</name>
+        <qualifiedname>gtest_xml_output_unittest.STACK_TRACE_TEMPLATE</qualifiedname>
+        <initializer>=  &apos;\nStack trace:\n*&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="build/_deps/googletest-src/googletest/test/gtest_xml_output_unittest.py" line="61" column="1" bodyfile="build/_deps/googletest-src/googletest/test/gtest_xml_output_unittest.py" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacegtest__xml__output__unittest_1a37dcc59d0887470faebdd6f68f9c9792" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str gtest_xml_output_unittest::STACK_TRACE_ENTITY_TEMPLATE</definition>
+        <argsstring></argsstring>
+        <name>STACK_TRACE_ENTITY_TEMPLATE</name>
+        <qualifiedname>gtest_xml_output_unittest.STACK_TRACE_ENTITY_TEMPLATE</qualifiedname>
+        <initializer>=  &apos;&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="build/_deps/googletest-src/googletest/test/gtest_xml_output_unittest.py" line="62" column="1" bodyfile="build/_deps/googletest-src/googletest/test/gtest_xml_output_unittest.py" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacegtest__xml__output__unittest_1ab8f0ce825c7aa78e33fc79be48bf999b" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>gtest_xml_output_unittest.else</definition>
+        <argsstring></argsstring>
+        <name>else</name>
+        <qualifiedname>gtest_xml_output_unittest.else</qualifiedname>
+        <initializer>:</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="build/_deps/googletest-src/googletest/test/gtest_xml_output_unittest.py" line="63" column="1" bodyfile="build/_deps/googletest-src/googletest/test/gtest_xml_output_unittest.py" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacegtest__xml__output__unittest_1adaa81840366da3e921bfc8d9e46e0dbe" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str gtest_xml_output_unittest.EXPECTED_NON_EMPTY_XML</definition>
+        <argsstring></argsstring>
+        <name>EXPECTED_NON_EMPTY_XML</name>
+        <qualifiedname>gtest_xml_output_unittest.EXPECTED_NON_EMPTY_XML</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="build/_deps/googletest-src/googletest/test/gtest_xml_output_unittest.py" line="69" column="1" bodyfile="build/_deps/googletest-src/googletest/test/gtest_xml_output_unittest.py" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacegtest__xml__output__unittest_1ad0e8f6d3a2793593b729ed90419135ad" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str gtest_xml_output_unittest.EXPECTED_FILTERED_TEST_XML</definition>
+        <argsstring></argsstring>
+        <name>EXPECTED_FILTERED_TEST_XML</name>
+        <qualifiedname>gtest_xml_output_unittest.EXPECTED_FILTERED_TEST_XML</qualifiedname>
+        <initializer>=  &quot;&quot;&quot;&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;testsuites tests=&quot;1&quot; failures=&quot;0&quot; disabled=&quot;0&quot; errors=&quot;0&quot; time=&quot;*&quot;
+            timestamp=&quot;*&quot; name=&quot;AllTests&quot; ad_hoc_property=&quot;42&quot;&gt;
+  &lt;testsuite name=&quot;SuccessfulTest&quot; tests=&quot;1&quot; failures=&quot;0&quot; disabled=&quot;0&quot; skipped=&quot;0&quot;
+             errors=&quot;0&quot; time=&quot;*&quot; timestamp=&quot;*&quot;&gt;
+    &lt;testcase name=&quot;Succeeds&quot; file=&quot;gtest_xml_output_unittest_.cc&quot; line=&quot;53&quot; status=&quot;run&quot; result=&quot;completed&quot; time=&quot;*&quot; timestamp=&quot;*&quot; classname=&quot;SuccessfulTest&quot;/&gt;
+  &lt;/testsuite&gt;
+&lt;/testsuites&gt;&quot;&quot;&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="build/_deps/googletest-src/googletest/test/gtest_xml_output_unittest.py" line="196" column="1" bodyfile="build/_deps/googletest-src/googletest/test/gtest_xml_output_unittest.py" bodystart="196" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacegtest__xml__output__unittest_1afaffd38a55d838164297fe40b0647616" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str gtest_xml_output_unittest.EXPECTED_SHARDED_TEST_XML</definition>
+        <argsstring></argsstring>
+        <name>EXPECTED_SHARDED_TEST_XML</name>
+        <qualifiedname>gtest_xml_output_unittest.EXPECTED_SHARDED_TEST_XML</qualifiedname>
+        <initializer>=  &quot;&quot;&quot;&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;testsuites tests=&quot;3&quot; failures=&quot;0&quot; disabled=&quot;0&quot; errors=&quot;0&quot; time=&quot;*&quot; timestamp=&quot;*&quot; name=&quot;AllTests&quot; ad_hoc_property=&quot;42&quot;&gt;
+  &lt;testsuite name=&quot;SuccessfulTest&quot; tests=&quot;1&quot; failures=&quot;0&quot; disabled=&quot;0&quot; skipped=&quot;0&quot; errors=&quot;0&quot; time=&quot;*&quot; timestamp=&quot;*&quot;&gt;
+    &lt;testcase name=&quot;Succeeds&quot; file=&quot;gtest_xml_output_unittest_.cc&quot; line=&quot;53&quot; status=&quot;run&quot; result=&quot;completed&quot; time=&quot;*&quot; timestamp=&quot;*&quot; classname=&quot;SuccessfulTest&quot;/&gt;
+  &lt;/testsuite&gt;
+  &lt;testsuite name=&quot;PropertyRecordingTest&quot; tests=&quot;1&quot; failures=&quot;0&quot; disabled=&quot;0&quot; skipped=&quot;0&quot; errors=&quot;0&quot; time=&quot;*&quot; timestamp=&quot;*&quot; SetUpTestSuite=&quot;yes&quot; TearDownTestSuite=&quot;aye&quot;&gt;
+    &lt;testcase name=&quot;IntValuedProperty&quot; file=&quot;gtest_xml_output_unittest_.cc&quot; line=&quot;125&quot; status=&quot;run&quot; result=&quot;completed&quot; time=&quot;*&quot; timestamp=&quot;*&quot; classname=&quot;PropertyRecordingTest&quot;&gt;
+      &lt;properties&gt;
+        &lt;property name=&quot;key_int&quot; value=&quot;1&quot;/&gt;
+      &lt;/properties&gt;
+    &lt;/testcase&gt;
+  &lt;/testsuite&gt;
+  &lt;testsuite name=&quot;Single/ValueParamTest&quot; tests=&quot;1&quot; failures=&quot;0&quot; disabled=&quot;0&quot; skipped=&quot;0&quot; errors=&quot;0&quot; time=&quot;*&quot; timestamp=&quot;*&quot;&gt;
+    &lt;testcase name=&quot;HasValueParamAttribute/0&quot; file=&quot;gtest_xml_output_unittest_.cc&quot; line=&quot;164&quot; value_param=&quot;33&quot; status=&quot;run&quot; result=&quot;completed&quot; time=&quot;*&quot; timestamp=&quot;*&quot; classname=&quot;Single/ValueParamTest&quot; /&gt;
+  &lt;/testsuite&gt;
+&lt;/testsuites&gt;&quot;&quot;&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="build/_deps/googletest-src/googletest/test/gtest_xml_output_unittest.py" line="205" column="1" bodyfile="build/_deps/googletest-src/googletest/test/gtest_xml_output_unittest.py" bodystart="205" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacegtest__xml__output__unittest_1a4dc2cb16e185acc8eccd68e4982af492" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str gtest_xml_output_unittest.EXPECTED_NO_TEST_XML</definition>
+        <argsstring></argsstring>
+        <name>EXPECTED_NO_TEST_XML</name>
+        <qualifiedname>gtest_xml_output_unittest.EXPECTED_NO_TEST_XML</qualifiedname>
+        <initializer>=  &quot;&quot;&quot;&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;testsuites tests=&quot;0&quot; failures=&quot;0&quot; disabled=&quot;0&quot; errors=&quot;0&quot; time=&quot;*&quot;
+            timestamp=&quot;*&quot; name=&quot;AllTests&quot;&gt;
+  &lt;testsuite name=&quot;NonTestSuiteFailure&quot; tests=&quot;1&quot; failures=&quot;1&quot; disabled=&quot;0&quot; skipped=&quot;0&quot; errors=&quot;0&quot; time=&quot;*&quot; timestamp=&quot;*&quot;&gt;
+    &lt;testcase name=&quot;&quot; status=&quot;run&quot; result=&quot;completed&quot; time=&quot;*&quot; timestamp=&quot;*&quot; classname=&quot;&quot;&gt;
+      &lt;failure message=&quot;gtest_no_test_unittest.cc:*&amp;#x0A;Expected equality of these values:&amp;#x0A;  1&amp;#x0A;  2%(stack_entity)s&quot; type=&quot;&quot;&gt;&lt;![CDATA[gtest_no_test_unittest.cc:*
+Expected equality of these values:
+  1
+  2%(stack)s]]&gt;&lt;/failure&gt;
+    &lt;/testcase&gt;
+  &lt;/testsuite&gt;
+&lt;/testsuites&gt;&quot;&quot;&quot; % {
+    &apos;stack&apos;: STACK_TRACE_TEMPLATE,
+    &apos;stack_entity&apos;: STACK_TRACE_ENTITY_TEMPLATE,
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="build/_deps/googletest-src/googletest/test/gtest_xml_output_unittest.py" line="222" column="1" bodyfile="build/_deps/googletest-src/googletest/test/gtest_xml_output_unittest.py" bodystart="222" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacegtest__xml__output__unittest_1aac137e2875af24d113c96a7925e2dd61" prot="public" static="no" mutable="no">
+        <type>gtest_test_utils</type>
+        <definition>gtest_test_utils gtest_xml_output_unittest.GTEST_PROGRAM_PATH</definition>
+        <argsstring></argsstring>
+        <name>GTEST_PROGRAM_PATH</name>
+        <qualifiedname>gtest_xml_output_unittest.GTEST_PROGRAM_PATH</qualifiedname>
+        <initializer>=  <ref refid="namespacegtest__test__utils_1a89ed3717984a80ffbb7a9c92f71b86a2" kindref="member">gtest_test_utils.GetTestExecutablePath</ref>(GTEST_PROGRAM_NAME)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="build/_deps/googletest-src/googletest/test/gtest_xml_output_unittest.py" line="238" column="1" bodyfile="build/_deps/googletest-src/googletest/test/gtest_xml_output_unittest.py" bodystart="238" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacegtest__xml__output__unittest_1afd8f69b881759fd121eb187037f0aef8" prot="public" static="no" mutable="no">
+        <type>tuple</type>
+        <definition>tuple gtest_xml_output_unittest.SUPPORTS_TYPED_TESTS</definition>
+        <argsstring></argsstring>
+        <name>SUPPORTS_TYPED_TESTS</name>
+        <qualifiedname>gtest_xml_output_unittest.SUPPORTS_TYPED_TESTS</qualifiedname>
+        <initializer>=  (
+    &apos;<ref refid="classTypedTest" kindref="compound">TypedTest</ref>&apos;
+    in <ref refid="classgtest__test__utils_1_1Subprocess" kindref="compound">gtest_test_utils.Subprocess</ref>(
+        [GTEST_PROGRAM_PATH, GTEST_LIST_TESTS_FLAG], capture_stderr=False
+    ).output
+)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="build/_deps/googletest-src/googletest/test/gtest_xml_output_unittest.py" line="240" column="1" bodyfile="build/_deps/googletest-src/googletest/test/gtest_xml_output_unittest.py" bodystart="240" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><verbatim>Unit test for the gtest_xml_output module</verbatim> </para>
+    </detaileddescription>
+    <location file="build/_deps/googletest-src/googletest/test/gtest_xml_output_unittest.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="classSystemExplorer_1_1Core_1_1ProcessesStatManager" kind="class" language="C++" prot="public">
+    <compoundname>SystemExplorer::Core::ProcessesStatManager</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classSystemExplorer_1_1Core_1_1ProcessesStatManager_1a01916744942060f8a0f377ff9d292ef1" prot="private" static="no" mutable="no">
+        <type><ref refid="classSystemExplorer_1_1Core_1_1ProcTreeStatManager" kindref="compound">ProcTreeStatManager</ref></type>
+        <definition>ProcTreeStatManager SystemExplorer::Core::ProcessesStatManager::_proc_tree_stat_manager</definition>
+        <argsstring></argsstring>
+        <name>_proc_tree_stat_manager</name>
+        <qualifiedname>SystemExplorer::Core::ProcessesStatManager::_proc_tree_stat_manager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="core/processes_stat_manager.hpp" line="19" column="33" bodyfile="core/processes_stat_manager.hpp" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classSystemExplorer_1_1Core_1_1ProcessesStatManager_1a0090005b244b375d1e4e561f14b77a0f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classSystemExplorer_1_1Core_1_1Models_1_1ProcessesStatCommon" kindref="compound">Models::ProcessesStatCommon</ref></type>
+        <definition>Models::ProcessesStatCommon SystemExplorer::Core::ProcessesStatManager::GetProcessesStatCommon</definition>
+        <argsstring>()</argsstring>
+        <name>GetProcessesStatCommon</name>
+        <qualifiedname>SystemExplorer::Core::ProcessesStatManager::GetProcessesStatCommon</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="core/processes_stat_manager.hpp" line="22" column="41"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Core_1_1ProcessesStatManager_1afa10318666e540c08a22ef524577d85c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classSystemExplorer_1_1Core_1_1Models_1_1ProcessStat" kindref="compound">Models::ProcessStat</ref></type>
+        <definition>Models::ProcessStat SystemExplorer::Core::ProcessesStatManager::GetProcessStat</definition>
+        <argsstring>(pid_t pid)</argsstring>
+        <name>GetProcessStat</name>
+        <qualifiedname>SystemExplorer::Core::ProcessesStatManager::GetProcessStat</qualifiedname>
+        <param>
+          <type>pid_t</type>
+          <declname>pid</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="core/processes_stat_manager.hpp" line="25" column="33"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Core_1_1ProcessesStatManager_1a5827c68087f7e35f2d9359f1df1c394e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classSystemExplorer_1_1Core_1_1Models_1_1ProcessesStat" kindref="compound">Models::ProcessesStat</ref></type>
+        <definition>Models::ProcessesStat SystemExplorer::Core::ProcessesStatManager::GetProcessesStat</definition>
+        <argsstring>()</argsstring>
+        <name>GetProcessesStat</name>
+        <qualifiedname>SystemExplorer::Core::ProcessesStatManager::GetProcessesStat</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="core/processes_stat_manager.hpp" line="28" column="35"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Core_1_1ProcessesStatManager_1a089af7135b8fc0bbc996830010cc6ade" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SystemExplorer::Core::ProcessesStatManager::Tick</definition>
+        <argsstring>()</argsstring>
+        <name>Tick</name>
+        <qualifiedname>SystemExplorer::Core::ProcessesStatManager::Tick</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="core/processes_stat_manager.hpp" line="31" column="18"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="core/processes_stat_manager.hpp" line="16" column="9" bodyfile="core/processes_stat_manager.hpp" bodystart="17" bodyend="32"/>
+    <listofallmembers>
+      <member refid="classSystemExplorer_1_1Core_1_1ProcessesStatManager_1a01916744942060f8a0f377ff9d292ef1" prot="private" virt="non-virtual"><scope>SystemExplorer::Core::ProcessesStatManager</scope><name>_proc_tree_stat_manager</name></member>
+      <member refid="classSystemExplorer_1_1Core_1_1ProcessesStatManager_1a5827c68087f7e35f2d9359f1df1c394e" prot="public" virt="non-virtual"><scope>SystemExplorer::Core::ProcessesStatManager</scope><name>GetProcessesStat</name></member>
+      <member refid="classSystemExplorer_1_1Core_1_1ProcessesStatManager_1a0090005b244b375d1e4e561f14b77a0f" prot="public" virt="non-virtual"><scope>SystemExplorer::Core::ProcessesStatManager</scope><name>GetProcessesStatCommon</name></member>
+      <member refid="classSystemExplorer_1_1Core_1_1ProcessesStatManager_1afa10318666e540c08a22ef524577d85c" prot="public" virt="non-virtual"><scope>SystemExplorer::Core::ProcessesStatManager</scope><name>GetProcessStat</name></member>
+      <member refid="classSystemExplorer_1_1Core_1_1ProcessesStatManager_1a089af7135b8fc0bbc996830010cc6ade" prot="public" virt="non-virtual"><scope>SystemExplorer::Core::ProcessesStatManager</scope><name>Tick</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,223 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="classSystemExplorer_1_1Gui_1_1Control_1_1ControlBase" kind="class" language="C++" prot="public">
+    <compoundname>SystemExplorer::Gui::Control::ControlBase</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">wxPanel</basecompoundref>
+    <derivedcompoundref refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase" prot="public" virt="non-virtual">SystemExplorer::Gui::Control::SearchableControlBase</derivedcompoundref>
+    <includes refid="control__base_8h" local="no">control_base.h</includes>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1Control_1_1ControlBase_1a2a3a123bc2276cca5901189fa168508c" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>virtual void SystemExplorer::Gui::Control::ControlBase::CreateChildControls</definition>
+        <argsstring>()</argsstring>
+        <name>CreateChildControls</name>
+        <qualifiedname>SystemExplorer::Gui::Control::ControlBase::CreateChildControls</qualifiedname>
+        <reimplementedby refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1aa832561083564c51d56c283ea0343beb">CreateChildControls</reimplementedby>
+        <reimplementedby refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableListViewControl_1a5cacd78838ec9995f61f38b2907318a9">CreateChildControls</reimplementedby>
+        <reimplementedby refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase_1a057316bb0b03969d17a9d8af263d93c4">CreateChildControls</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/control/control_base.h" line="25" column="30"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1Control_1_1ControlBase_1a0c9c3ea3dc22fe5afffa371c40279032" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>virtual void SystemExplorer::Gui::Control::ControlBase::BindEvents</definition>
+        <argsstring>()</argsstring>
+        <name>BindEvents</name>
+        <qualifiedname>SystemExplorer::Gui::Control::ControlBase::BindEvents</qualifiedname>
+        <reimplementedby refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1af075a612513e0fcda07dc12315938be1">BindEvents</reimplementedby>
+        <reimplementedby refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableListViewControl_1a0218e0978fc04b32e32cab633b83215f">BindEvents</reimplementedby>
+        <reimplementedby refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase_1a9c6dae532e0d004e8912e8506da0dafb">BindEvents</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/control/control_base.h" line="28" column="30"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1Control_1_1ControlBase_1a297fcbbe9e660661b4038f6f9bf78542" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SystemExplorer::Gui::Control::ControlBase::Initialize</definition>
+        <argsstring>()</argsstring>
+        <name>Initialize</name>
+        <qualifiedname>SystemExplorer::Gui::Control::ControlBase::Initialize</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/control/control_base.h" line="31" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1Control_1_1ControlBase_1a2a3a123bc2276cca5901189fa168508c" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>virtual void SystemExplorer::Gui::Control::ControlBase::CreateChildControls</definition>
+        <argsstring>()</argsstring>
+        <name>CreateChildControls</name>
+        <qualifiedname>SystemExplorer::Gui::Control::ControlBase::CreateChildControls</qualifiedname>
+        <reimplementedby refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1aa832561083564c51d56c283ea0343beb">CreateChildControls</reimplementedby>
+        <reimplementedby refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableListViewControl_1a5cacd78838ec9995f61f38b2907318a9">CreateChildControls</reimplementedby>
+        <reimplementedby refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase_1a057316bb0b03969d17a9d8af263d93c4">CreateChildControls</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/control/control_base.hpp" line="25" column="30"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1Control_1_1ControlBase_1a0c9c3ea3dc22fe5afffa371c40279032" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>virtual void SystemExplorer::Gui::Control::ControlBase::BindEvents</definition>
+        <argsstring>()</argsstring>
+        <name>BindEvents</name>
+        <qualifiedname>SystemExplorer::Gui::Control::ControlBase::BindEvents</qualifiedname>
+        <reimplementedby refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1af075a612513e0fcda07dc12315938be1">BindEvents</reimplementedby>
+        <reimplementedby refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableListViewControl_1a0218e0978fc04b32e32cab633b83215f">BindEvents</reimplementedby>
+        <reimplementedby refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase_1a9c6dae532e0d004e8912e8506da0dafb">BindEvents</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/control/control_base.hpp" line="28" column="30"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1Control_1_1ControlBase_1a297fcbbe9e660661b4038f6f9bf78542" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SystemExplorer::Gui::Control::ControlBase::Initialize</definition>
+        <argsstring>()</argsstring>
+        <name>Initialize</name>
+        <qualifiedname>SystemExplorer::Gui::Control::ControlBase::Initialize</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/control/control_base.hpp" line="31" column="22"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1Control_1_1ControlBase_1a36e48ed15b4cc2d40a911bfec0c6df75" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SystemExplorer::Gui::Control::ControlBase::ControlBase</definition>
+        <argsstring>(wxWindow *parent, wxWindowID Id=wxID_ANY)</argsstring>
+        <name>ControlBase</name>
+        <qualifiedname>SystemExplorer::Gui::Control::ControlBase::ControlBase</qualifiedname>
+        <param>
+          <type>wxWindow *</type>
+          <declname>parent</declname>
+        </param>
+        <param>
+          <type>wxWindowID</type>
+          <declname>Id</declname>
+          <defval>wxID_ANY</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/control/control_base.h" line="35" column="17"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1Control_1_1ControlBase_1a36e48ed15b4cc2d40a911bfec0c6df75" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SystemExplorer::Gui::Control::ControlBase::ControlBase</definition>
+        <argsstring>(wxWindow *parent, wxWindowID Id=wxID_ANY)</argsstring>
+        <name>ControlBase</name>
+        <qualifiedname>SystemExplorer::Gui::Control::ControlBase::ControlBase</qualifiedname>
+        <param>
+          <type>wxWindow *</type>
+          <declname>parent</declname>
+        </param>
+        <param>
+          <type>wxWindowID</type>
+          <declname>Id</declname>
+          <defval>wxID_ANY</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/control/control_base.hpp" line="35" column="17"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>The base class for the all custom controls. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>SystemExplorer::Gui::Control::ControlBase</label>
+        <link refid="classSystemExplorer_1_1Gui_1_1Control_1_1ControlBase"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>SystemExplorer::Gui::Control::SearchableControlBase</label>
+        <link refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>SystemExplorer::Gui::Control::SearchableListControl</label>
+        <link refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableListControl"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>SystemExplorer::Gui::Control::SearchableListViewControl</label>
+        <link refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableListViewControl"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>SystemExplorer::Gui::Control::SearchableTreeListControl</label>
+        <link refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControl"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>SystemExplorer::Gui::Control::SearchableTreeListControlBase</label>
+        <link refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>wxPanel</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>SystemExplorer::Gui::Control::ControlBase</label>
+        <link refid="classSystemExplorer_1_1Gui_1_1Control_1_1ControlBase"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>wxPanel</label>
+      </node>
+    </collaborationgraph>
+    <location file="gui/control/control_base.h" line="20" column="13" bodyfile="gui/control/control_base.h" bodystart="21" bodyend="36"/>
+    <listofallmembers>
+      <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1ControlBase_1a0c9c3ea3dc22fe5afffa371c40279032" prot="protected" virt="virtual"><scope>SystemExplorer::Gui::Control::ControlBase</scope><name>BindEvents</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1ControlBase_1a0c9c3ea3dc22fe5afffa371c40279032" prot="protected" virt="virtual"><scope>SystemExplorer::Gui::Control::ControlBase</scope><name>BindEvents</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1ControlBase_1a36e48ed15b4cc2d40a911bfec0c6df75" prot="public" virt="non-virtual"><scope>SystemExplorer::Gui::Control::ControlBase</scope><name>ControlBase</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1ControlBase_1a36e48ed15b4cc2d40a911bfec0c6df75" prot="public" virt="non-virtual"><scope>SystemExplorer::Gui::Control::ControlBase</scope><name>ControlBase</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1ControlBase_1a2a3a123bc2276cca5901189fa168508c" prot="protected" virt="virtual"><scope>SystemExplorer::Gui::Control::ControlBase</scope><name>CreateChildControls</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1ControlBase_1a2a3a123bc2276cca5901189fa168508c" prot="protected" virt="virtual"><scope>SystemExplorer::Gui::Control::ControlBase</scope><name>CreateChildControls</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1ControlBase_1a297fcbbe9e660661b4038f6f9bf78542" prot="protected" virt="non-virtual"><scope>SystemExplorer::Gui::Control::ControlBase</scope><name>Initialize</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1ControlBase_1a297fcbbe9e660661b4038f6f9bf78542" prot="protected" virt="non-virtual"><scope>SystemExplorer::Gui::Control::ControlBase</scope><name>Initialize</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

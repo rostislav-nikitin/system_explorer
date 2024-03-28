@@ -1,0 +1,526 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase" kind="class" language="C++" prot="public">
+    <compoundname>SystemExplorer::Gui::Control::SearchableTreeListControlBase</compoundname>
+    <basecompoundref refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase" prot="public" virt="non-virtual">SystemExplorer::Gui::Control::SearchableControlBase</basecompoundref>
+    <derivedcompoundref refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableListControl" prot="public" virt="non-virtual">SystemExplorer::Gui::Control::SearchableListControl</derivedcompoundref>
+    <derivedcompoundref refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControl" prot="public" virt="non-virtual">SystemExplorer::Gui::Control::SearchableTreeListControl</derivedcompoundref>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase_1ae17f906caef5ccc49e9bac0f2e5f9a71" prot="protected" static="no" mutable="no">
+        <type>wxBoxSizer *</type>
+        <definition>wxBoxSizer* SystemExplorer::Gui::Control::SearchableTreeListControlBase::_bsSizer</definition>
+        <argsstring></argsstring>
+        <name>_bsSizer</name>
+        <qualifiedname>SystemExplorer::Gui::Control::SearchableTreeListControlBase::_bsSizer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/control/searchable_treelist_control_base.hpp" line="32" column="28" bodyfile="gui/control/searchable_treelist_control_base.hpp" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase_1a2fd728f0d0002fe2b29417d397107309" prot="protected" static="no" mutable="no">
+        <type>wxTreeListCtrl *</type>
+        <definition>wxTreeListCtrl* SystemExplorer::Gui::Control::SearchableTreeListControlBase::_tlcTreeList</definition>
+        <argsstring></argsstring>
+        <name>_tlcTreeList</name>
+        <qualifiedname>SystemExplorer::Gui::Control::SearchableTreeListControlBase::_tlcTreeList</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/control/searchable_treelist_control_base.hpp" line="33" column="28" bodyfile="gui/control/searchable_treelist_control_base.hpp" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase_1ac547cc4357194844b80f7e3d46a06365" prot="protected" static="no" mutable="no">
+        <type>unsigned</type>
+        <definition>unsigned SystemExplorer::Gui::Control::SearchableTreeListControlBase::_currentSortingColumn</definition>
+        <argsstring></argsstring>
+        <name>_currentSortingColumn</name>
+        <qualifiedname>SystemExplorer::Gui::Control::SearchableTreeListControlBase::_currentSortingColumn</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/control/searchable_treelist_control_base.hpp" line="35" column="26" bodyfile="gui/control/searchable_treelist_control_base.hpp" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase_1ae555d41c7391aae1afd3473dfeba89df" prot="protected" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool SystemExplorer::Gui::Control::SearchableTreeListControlBase::_currentSortingOrder</definition>
+        <argsstring></argsstring>
+        <name>_currentSortingOrder</name>
+        <qualifiedname>SystemExplorer::Gui::Control::SearchableTreeListControlBase::_currentSortingOrder</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/control/searchable_treelist_control_base.hpp" line="36" column="22" bodyfile="gui/control/searchable_treelist_control_base.hpp" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase_1a057316bb0b03969d17a9d8af263d93c4" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>virtual void SystemExplorer::Gui::Control::SearchableTreeListControlBase::CreateChildControls</definition>
+        <argsstring>() override</argsstring>
+        <name>CreateChildControls</name>
+        <qualifiedname>SystemExplorer::Gui::Control::SearchableTreeListControlBase::CreateChildControls</qualifiedname>
+        <reimplements refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1aa832561083564c51d56c283ea0343beb">CreateChildControls</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/control/searchable_treelist_control_base.hpp" line="38" column="30"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase_1a9c6dae532e0d004e8912e8506da0dafb" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>virtual void SystemExplorer::Gui::Control::SearchableTreeListControlBase::BindEvents</definition>
+        <argsstring>() override</argsstring>
+        <name>BindEvents</name>
+        <qualifiedname>SystemExplorer::Gui::Control::SearchableTreeListControlBase::BindEvents</qualifiedname>
+        <reimplements refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1af075a612513e0fcda07dc12315938be1">BindEvents</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/control/searchable_treelist_control_base.hpp" line="39" column="30"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase_1a2fb09a6ba1f0c30a38318ef7043b43b4" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SystemExplorer::Gui::Control::SearchableTreeListControlBase::tlcTreeList_OnChar</definition>
+        <argsstring>(wxKeyEvent &amp;event)</argsstring>
+        <name>tlcTreeList_OnChar</name>
+        <qualifiedname>SystemExplorer::Gui::Control::SearchableTreeListControlBase::tlcTreeList_OnChar</qualifiedname>
+        <param>
+          <type>wxKeyEvent &amp;</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/control/searchable_treelist_control_base.hpp" line="41" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase_1a9c0fda4acfb8012dc4011ecc12feec82" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SystemExplorer::Gui::Control::SearchableTreeListControlBase::tlcTreeList_OnItemContextMenu</definition>
+        <argsstring>(wxTreeListEvent &amp;event)</argsstring>
+        <name>tlcTreeList_OnItemContextMenu</name>
+        <qualifiedname>SystemExplorer::Gui::Control::SearchableTreeListControlBase::tlcTreeList_OnItemContextMenu</qualifiedname>
+        <param>
+          <type>wxTreeListEvent &amp;</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/control/searchable_treelist_control_base.hpp" line="42" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase_1a0befe1512cd9b59bf60339f85d0fd6a0" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SystemExplorer::Gui::Control::SearchableTreeListControlBase::tlcTreeList_OnMenuItem</definition>
+        <argsstring>(wxCommandEvent &amp;event)</argsstring>
+        <name>tlcTreeList_OnMenuItem</name>
+        <qualifiedname>SystemExplorer::Gui::Control::SearchableTreeListControlBase::tlcTreeList_OnMenuItem</qualifiedname>
+        <param>
+          <type>wxCommandEvent &amp;</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/control/searchable_treelist_control_base.hpp" line="43" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase_1a85c0e47cd23f2573d629ae56c48e7572" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SystemExplorer::Gui::Control::SearchableTreeListControlBase::ExpandAll</definition>
+        <argsstring>(wxTreeListItem &amp;item)</argsstring>
+        <name>ExpandAll</name>
+        <qualifiedname>SystemExplorer::Gui::Control::SearchableTreeListControlBase::ExpandAll</qualifiedname>
+        <param>
+          <type>wxTreeListItem &amp;</type>
+          <declname>item</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/control/searchable_treelist_control_base.hpp" line="45" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase_1a0cc3f904ecc27a90bec88eed77cc4192" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SystemExplorer::Gui::Control::SearchableTreeListControlBase::CollapseAll</definition>
+        <argsstring>(wxTreeListItem &amp;item)</argsstring>
+        <name>CollapseAll</name>
+        <qualifiedname>SystemExplorer::Gui::Control::SearchableTreeListControlBase::CollapseAll</qualifiedname>
+        <param>
+          <type>wxTreeListItem &amp;</type>
+          <declname>item</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/control/searchable_treelist_control_base.hpp" line="46" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase_1a4fa01dc632d688fdb69dbc9e70689d10" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; wxTreeListItem &gt;</type>
+        <definition>std::vector&lt; wxTreeListItem &gt; SystemExplorer::Gui::Control::SearchableTreeListControlBase::GetAllSubNodes</definition>
+        <argsstring>(wxTreeListItem &amp;parent)</argsstring>
+        <name>GetAllSubNodes</name>
+        <qualifiedname>SystemExplorer::Gui::Control::SearchableTreeListControlBase::GetAllSubNodes</qualifiedname>
+        <param>
+          <type>wxTreeListItem &amp;</type>
+          <declname>parent</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/control/searchable_treelist_control_base.hpp" line="48" column="29"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase_1a9396b3c35b21a2c1123019a264ede414" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>wxTreeListItem</type>
+        <definition>wxTreeListItem SystemExplorer::Gui::Control::SearchableTreeListControlBase::FindItemById</definition>
+        <argsstring>(int id)</argsstring>
+        <name>FindItemById</name>
+        <qualifiedname>SystemExplorer::Gui::Control::SearchableTreeListControlBase::FindItemById</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/control/searchable_treelist_control_base.hpp" line="49" column="32"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase_1a687dfed90497c1eb161c2481cc4d5a60" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SystemExplorer::Gui::Control::SearchableTreeListControlBase::SearchableTreeListControlBase</definition>
+        <argsstring>(wxWindow *parent, wxWindowID Id, wxImageList *imageList=nullptr)</argsstring>
+        <name>SearchableTreeListControlBase</name>
+        <qualifiedname>SystemExplorer::Gui::Control::SearchableTreeListControlBase::SearchableTreeListControlBase</qualifiedname>
+        <param>
+          <type>wxWindow *</type>
+          <declname>parent</declname>
+        </param>
+        <param>
+          <type>wxWindowID</type>
+          <declname>Id</declname>
+        </param>
+        <param>
+          <type>wxImageList *</type>
+          <declname>imageList</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/control/searchable_treelist_control_base.hpp" line="52" column="17"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase_1a446ac3ef4c1ec77f9a6507e4c75a6d03" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>int</type>
+        <definition>virtual int SystemExplorer::Gui::Control::SearchableTreeListControlBase::AppendColumn</definition>
+        <argsstring>(const wxString &amp;title, int width=wxCOL_WIDTH_AUTOSIZE, wxAlignment align=wxALIGN_LEFT, int flags=wxCOL_RESIZABLE) override</argsstring>
+        <name>AppendColumn</name>
+        <qualifiedname>SystemExplorer::Gui::Control::SearchableTreeListControlBase::AppendColumn</qualifiedname>
+        <reimplements refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1a5078e24e74ece6f9606f0b8221d2b636">AppendColumn</reimplements>
+        <param>
+          <type>const wxString &amp;</type>
+          <declname>title</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>width</declname>
+          <defval>wxCOL_WIDTH_AUTOSIZE</defval>
+        </param>
+        <param>
+          <type>wxAlignment</type>
+          <declname>align</declname>
+          <defval>wxALIGN_LEFT</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>flags</declname>
+          <defval>wxCOL_RESIZABLE</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/control/searchable_treelist_control_base.hpp" line="54" column="29"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase_1ac1458c9438032935ba4cef8e4e52e4e5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>unsigned int</type>
+        <definition>virtual unsigned int SystemExplorer::Gui::Control::SearchableTreeListControlBase::GetSelections</definition>
+        <argsstring>(std::vector&lt; SearchableItem &gt; &amp;selections) const</argsstring>
+        <name>GetSelections</name>
+        <qualifiedname>SystemExplorer::Gui::Control::SearchableTreeListControlBase::GetSelections</qualifiedname>
+        <reimplements refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1a73cfea826d97247e62ef41ad4b576213">GetSelections</reimplements>
+        <param>
+          <type>std::vector&lt; <ref refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1_1SearchableItem" kindref="compound">SearchableItem</ref> &gt; &amp;</type>
+          <declname>selections</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/control/searchable_treelist_control_base.hpp" line="55" column="38"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase_1a9a8628338edae7c2fcfcdb75dcf02836" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>virtual void SystemExplorer::Gui::Control::SearchableTreeListControlBase::OnSearchTextClick</definition>
+        <argsstring>() override</argsstring>
+        <name>OnSearchTextClick</name>
+        <qualifiedname>SystemExplorer::Gui::Control::SearchableTreeListControlBase::OnSearchTextClick</qualifiedname>
+        <reimplements refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1a4931c25344b2716e8266c9225df6743a">OnSearchTextClick</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/control/searchable_treelist_control_base.hpp" line="57" column="30"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase_1a53144627b3a889865e7e9b6239de97fc" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>virtual void SystemExplorer::Gui::Control::SearchableTreeListControlBase::SetFocus</definition>
+        <argsstring>() override</argsstring>
+        <name>SetFocus</name>
+        <qualifiedname>SystemExplorer::Gui::Control::SearchableTreeListControlBase::SetFocus</qualifiedname>
+        <reimplements refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1a6882a456a9db73baca66e3c2394c43a5">SetFocus</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/control/searchable_treelist_control_base.hpp" line="58" column="30"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase_1aae3cf49f8e42033e7d500dca521c2726" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void SystemExplorer::Gui::Control::SearchableTreeListControlBase::ExpandAll</definition>
+        <argsstring>()</argsstring>
+        <name>ExpandAll</name>
+        <qualifiedname>SystemExplorer::Gui::Control::SearchableTreeListControlBase::ExpandAll</qualifiedname>
+        <reimplements refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1a0bb45e0f545d1795657b94846fb1042b">ExpandAll</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/control/searchable_treelist_control_base.hpp" line="60" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase_1a98795b98965e60a80f6d1192a029194c" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void SystemExplorer::Gui::Control::SearchableTreeListControlBase::CollapseAll</definition>
+        <argsstring>()</argsstring>
+        <name>CollapseAll</name>
+        <qualifiedname>SystemExplorer::Gui::Control::SearchableTreeListControlBase::CollapseAll</qualifiedname>
+        <reimplements refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1ac059f3ef6df96807e80ea433d1d3bfdc">CollapseAll</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/control/searchable_treelist_control_base.hpp" line="61" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase_1a27f2f904a3ef0cdc265243a3cd26a2f3" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void SystemExplorer::Gui::Control::SearchableTreeListControlBase::PopupMenu</definition>
+        <argsstring>(wxMenu *menu, const wxPoint &amp;pos=wxDefaultPosition)</argsstring>
+        <name>PopupMenu</name>
+        <qualifiedname>SystemExplorer::Gui::Control::SearchableTreeListControlBase::PopupMenu</qualifiedname>
+        <reimplements refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1a117136537374522142b19bd99591b204">PopupMenu</reimplements>
+        <param>
+          <type>wxMenu *</type>
+          <declname>menu</declname>
+        </param>
+        <param>
+          <type>const wxPoint &amp;</type>
+          <declname>pos</declname>
+          <defval>wxDefaultPosition</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/control/searchable_treelist_control_base.hpp" line="63" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase_1ac9e8ca8bd56893dbc2296468b17ca2a6" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>virtual void SystemExplorer::Gui::Control::SearchableTreeListControlBase::SetItemComparator</definition>
+        <argsstring>(wxTreeListItemComparator *treeListItemCopmarator) override</argsstring>
+        <name>SetItemComparator</name>
+        <qualifiedname>SystemExplorer::Gui::Control::SearchableTreeListControlBase::SetItemComparator</qualifiedname>
+        <reimplements refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1a014d0d19eaccc501e4976e544067f3e5">SetItemComparator</reimplements>
+        <param>
+          <type>wxTreeListItemComparator *</type>
+          <declname>treeListItemCopmarator</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/control/searchable_treelist_control_base.hpp" line="65" column="30"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase_1a59d02c76b02955ab959b8b60fe8fa7a2" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>virtual void SystemExplorer::Gui::Control::SearchableTreeListControlBase::Sort</definition>
+        <argsstring>() override</argsstring>
+        <name>Sort</name>
+        <qualifiedname>SystemExplorer::Gui::Control::SearchableTreeListControlBase::Sort</qualifiedname>
+        <reimplements refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1a0dfb0c069860a300efe776414f64f64b">Sort</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/control/searchable_treelist_control_base.hpp" line="66" column="30"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>SystemExplorer::Gui::Control::ControlBase</label>
+        <link refid="classSystemExplorer_1_1Gui_1_1Control_1_1ControlBase"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>SystemExplorer::Gui::Control::SearchableControlBase</label>
+        <link refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>SystemExplorer::Gui::Control::SearchableListControl</label>
+        <link refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableListControl"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>SystemExplorer::Gui::Control::SearchableTreeListControl</label>
+        <link refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControl"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>SystemExplorer::Gui::Control::SearchableTreeListControlBase</label>
+        <link refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>wxPanel</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>SystemExplorer::Gui::Control::ControlBase</label>
+        <link refid="classSystemExplorer_1_1Gui_1_1Control_1_1ControlBase"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>SystemExplorer::Gui::Control::SearchableControlBase</label>
+        <link refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>SystemExplorer::Gui::Control::SearchableTreeListControlBase</label>
+        <link refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>wxPanel</label>
+      </node>
+    </collaborationgraph>
+    <location file="gui/control/searchable_treelist_control_base.hpp" line="29" column="13" bodyfile="gui/control/searchable_treelist_control_base.hpp" bodystart="30" bodyend="67"/>
+    <listofallmembers>
+      <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase_1ae17f906caef5ccc49e9bac0f2e5f9a71" prot="protected" virt="non-virtual"><scope>SystemExplorer::Gui::Control::SearchableTreeListControlBase</scope><name>_bsSizer</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase_1ac547cc4357194844b80f7e3d46a06365" prot="protected" virt="non-virtual"><scope>SystemExplorer::Gui::Control::SearchableTreeListControlBase</scope><name>_currentSortingColumn</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase_1ae555d41c7391aae1afd3473dfeba89df" prot="protected" virt="non-virtual"><scope>SystemExplorer::Gui::Control::SearchableTreeListControlBase</scope><name>_currentSortingOrder</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1a1fa9d3e4bbf6bf9bea64526555c84695" prot="protected" virt="non-virtual"><scope>SystemExplorer::Gui::Control::SearchableTreeListControlBase</scope><name>_imageList</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1a1485add6becaedff616d88f9e0853c4c" prot="protected" virt="non-virtual"><scope>SystemExplorer::Gui::Control::SearchableTreeListControlBase</scope><name>_scSearch</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase_1a2fd728f0d0002fe2b29417d397107309" prot="protected" virt="non-virtual"><scope>SystemExplorer::Gui::Control::SearchableTreeListControlBase</scope><name>_tlcTreeList</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase_1a446ac3ef4c1ec77f9a6507e4c75a6d03" prot="public" virt="virtual"><scope>SystemExplorer::Gui::Control::SearchableTreeListControlBase</scope><name>AppendColumn</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1aefc5a82aab63bb8a52fa215a907fa7e7" prot="public" virt="non-virtual"><scope>SystemExplorer::Gui::Control::SearchableTreeListControlBase</scope><name>AutoComplete</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1adbab839b9e92d73d2c29a47efad1c07b" prot="public" virt="pure-virtual"><scope>SystemExplorer::Gui::Control::SearchableTreeListControlBase</scope><name>BindData</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase_1a9c6dae532e0d004e8912e8506da0dafb" prot="protected" virt="virtual"><scope>SystemExplorer::Gui::Control::SearchableTreeListControlBase</scope><name>BindEvents</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase_1a0cc3f904ecc27a90bec88eed77cc4192" prot="protected" virt="non-virtual"><scope>SystemExplorer::Gui::Control::SearchableTreeListControlBase</scope><name>CollapseAll</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase_1a98795b98965e60a80f6d1192a029194c" prot="public" virt="virtual"><scope>SystemExplorer::Gui::Control::SearchableTreeListControlBase</scope><name>CollapseAll</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1ControlBase_1a36e48ed15b4cc2d40a911bfec0c6df75" prot="public" virt="non-virtual"><scope>SystemExplorer::Gui::Control::SearchableTreeListControlBase</scope><name>ControlBase</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1ControlBase_1a36e48ed15b4cc2d40a911bfec0c6df75" prot="public" virt="non-virtual"><scope>SystemExplorer::Gui::Control::SearchableTreeListControlBase</scope><name>ControlBase</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase_1a057316bb0b03969d17a9d8af263d93c4" prot="protected" virt="virtual"><scope>SystemExplorer::Gui::Control::SearchableTreeListControlBase</scope><name>CreateChildControls</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase_1a85c0e47cd23f2573d629ae56c48e7572" prot="protected" virt="non-virtual"><scope>SystemExplorer::Gui::Control::SearchableTreeListControlBase</scope><name>ExpandAll</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase_1aae3cf49f8e42033e7d500dca521c2726" prot="public" virt="virtual"><scope>SystemExplorer::Gui::Control::SearchableTreeListControlBase</scope><name>ExpandAll</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1aac1fc8cacf9549c218058d14624005c7" prot="public" virt="virtual"><scope>SystemExplorer::Gui::Control::SearchableTreeListControlBase</scope><name>FilterEmpty</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase_1a9396b3c35b21a2c1123019a264ede414" prot="protected" virt="non-virtual"><scope>SystemExplorer::Gui::Control::SearchableTreeListControlBase</scope><name>FindItemById</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase_1a4fa01dc632d688fdb69dbc9e70689d10" prot="protected" virt="non-virtual"><scope>SystemExplorer::Gui::Control::SearchableTreeListControlBase</scope><name>GetAllSubNodes</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1adff85e9128e69187e124e2c67c810966" prot="public" virt="virtual"><scope>SystemExplorer::Gui::Control::SearchableTreeListControlBase</scope><name>GetSearchText</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase_1ac1458c9438032935ba4cef8e4e52e4e5" prot="public" virt="virtual"><scope>SystemExplorer::Gui::Control::SearchableTreeListControlBase</scope><name>GetSelections</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1ControlBase_1a297fcbbe9e660661b4038f6f9bf78542" prot="protected" virt="non-virtual"><scope>SystemExplorer::Gui::Control::SearchableTreeListControlBase</scope><name>Initialize</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1ControlBase_1a297fcbbe9e660661b4038f6f9bf78542" prot="protected" virt="non-virtual"><scope>SystemExplorer::Gui::Control::SearchableTreeListControlBase</scope><name>Initialize</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase_1a9a8628338edae7c2fcfcdb75dcf02836" prot="public" virt="virtual"><scope>SystemExplorer::Gui::Control::SearchableTreeListControlBase</scope><name>OnSearchTextClick</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase_1a27f2f904a3ef0cdc265243a3cd26a2f3" prot="public" virt="virtual"><scope>SystemExplorer::Gui::Control::SearchableTreeListControlBase</scope><name>PopupMenu</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1aa3c306a8ce4be70baac2deff06b45e98" prot="public" virt="pure-virtual"><scope>SystemExplorer::Gui::Control::SearchableTreeListControlBase</scope><name>ReBindData</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1a9a3f6e6e3fcab035305289a0761e367f" prot="public" virt="non-virtual"><scope>SystemExplorer::Gui::Control::SearchableTreeListControlBase</scope><name>SearchableControlBase</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase_1a687dfed90497c1eb161c2481cc4d5a60" prot="public" virt="non-virtual"><scope>SystemExplorer::Gui::Control::SearchableTreeListControlBase</scope><name>SearchableTreeListControlBase</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase_1a53144627b3a889865e7e9b6239de97fc" prot="public" virt="virtual"><scope>SystemExplorer::Gui::Control::SearchableTreeListControlBase</scope><name>SetFocus</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase_1ac9e8ca8bd56893dbc2296468b17ca2a6" prot="public" virt="virtual"><scope>SystemExplorer::Gui::Control::SearchableTreeListControlBase</scope><name>SetItemComparator</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase_1af7ee3c9e14b09fef38675be230b62a17" prot="public" virt="virtual"><scope>SystemExplorer::Gui::Control::SearchableTreeListControlBase</scope><name>SetSearchText</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase_1a59d02c76b02955ab959b8b60fe8fa7a2" prot="public" virt="virtual"><scope>SystemExplorer::Gui::Control::SearchableTreeListControlBase</scope><name>Sort</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase_1a2fb09a6ba1f0c30a38318ef7043b43b4" prot="protected" virt="non-virtual"><scope>SystemExplorer::Gui::Control::SearchableTreeListControlBase</scope><name>tlcTreeList_OnChar</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase_1a9c0fda4acfb8012dc4011ecc12feec82" prot="protected" virt="non-virtual"><scope>SystemExplorer::Gui::Control::SearchableTreeListControlBase</scope><name>tlcTreeList_OnItemContextMenu</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase_1a0befe1512cd9b59bf60339f85d0fd6a0" prot="protected" virt="non-virtual"><scope>SystemExplorer::Gui::Control::SearchableTreeListControlBase</scope><name>tlcTreeList_OnMenuItem</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

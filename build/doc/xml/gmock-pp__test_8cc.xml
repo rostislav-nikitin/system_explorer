@@ -1,0 +1,213 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="gmock-pp__test_8cc" kind="file" language="C++">
+    <compoundname>gmock-pp_test.cc</compoundname>
+    <includes refid="gmock-pp_8h" local="yes">gmock/internal/gmock-pp.h</includes>
+    <incdepgraph>
+      <node id="2">
+        <label>gmock/internal/gmock-pp.h</label>
+        <link refid="gmock-pp_8h_source"/>
+      </node>
+      <node id="1">
+        <label>build/_deps/googletest-src/googlemock/test/gmock-pp_test.cc</label>
+        <link refid="gmock-pp__test_8cc"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <innerclass refid="structtesting_1_1internal_1_1gmockpp_1_1Test" prot="public">testing::internal::gmockpp::Test</innerclass>
+    <innernamespace refid="namespacetesting">testing</innernamespace>
+    <innernamespace refid="namespacetesting_1_1internal">testing::internal</innernamespace>
+    <innernamespace refid="namespacetesting_1_1internal_1_1gmockpp">testing::internal::gmockpp</innernamespace>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="gmock-pp__test_8cc_1a974b71842180276f73a7a64e88a8d2a1" prot="public" static="no">
+        <name>GMOCK_TEST_REPLACE_comma_WITH_COMMA_I_comma</name>
+        <initializer>,</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="build/_deps/googletest-src/googlemock/test/gmock-pp_test.cc" line="4" column="9" bodyfile="build/_deps/googletest-src/googlemock/test/gmock-pp_test.cc" bodystart="4" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="gmock-pp__test_8cc_1a4d8b8996f3785408cbed4d6061ba2744" prot="public" static="no">
+        <name>GMOCK_TEST_REPLACE_comma_WITH_COMMA</name>
+        <param><defname>x</defname></param>
+        <initializer>  GMOCK_PP_CAT(GMOCK_TEST_REPLACE_comma_WITH_COMMA_I_, x)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="build/_deps/googletest-src/googlemock/test/gmock-pp_test.cc" line="5" column="9" bodyfile="build/_deps/googletest-src/googlemock/test/gmock-pp_test.cc" bodystart="5" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="gmock-pp__test_8cc_1add9a565fd01a36e8fc77005ff7ddee44" prot="public" static="no">
+        <name>GMOCK_PP_INTERNAL_TYPE_TEST</name>
+        <param><defname>_i</defname></param>
+        <param><defname>_Data</defname></param>
+        <param><defname>_element</defname></param>
+        <initializer>  GMOCK_PP_COMMA_IF(_i) _element</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="build/_deps/googletest-src/googlemock/test/gmock-pp_test.cc" line="58" column="9" bodyfile="build/_deps/googletest-src/googlemock/test/gmock-pp_test.cc" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="gmock-pp__test_8cc_1af50bdb0dbcdac1eede87e5b261aef933" prot="public" static="no">
+        <name>GMOCK_PP_INTERNAL_VAR_TEST_1</name>
+        <param><defname>_x</defname></param>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="build/_deps/googletest-src/googlemock/test/gmock-pp_test.cc" line="63" column="9" bodyfile="build/_deps/googletest-src/googlemock/test/gmock-pp_test.cc" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="gmock-pp__test_8cc_1afad491ad91c52f7f8bad4ccd3448ce5b" prot="public" static="no">
+        <name>GMOCK_PP_INTERNAL_VAR_TEST_2</name>
+        <param><defname>_x</defname></param>
+        <param><defname>_y</defname></param>
+        <initializer>2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="build/_deps/googletest-src/googlemock/test/gmock-pp_test.cc" line="64" column="9" bodyfile="build/_deps/googletest-src/googlemock/test/gmock-pp_test.cc" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="gmock-pp__test_8cc_1aea89cca718bf036fc3f1b10ab67019fb" prot="public" static="no">
+        <name>GMOCK_PP_INTERNAL_VAR_TEST_3</name>
+        <param><defname>_x</defname></param>
+        <param><defname>_y</defname></param>
+        <param><defname>_z</defname></param>
+        <initializer>3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="build/_deps/googletest-src/googlemock/test/gmock-pp_test.cc" line="65" column="9" bodyfile="build/_deps/googletest-src/googlemock/test/gmock-pp_test.cc" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="gmock-pp__test_8cc_1af286893c080171240ce005160f017f65" prot="public" static="no">
+        <name>GMOCK_PP_INTERNAL_VAR_TEST</name>
+        <param><defname>...</defname></param>
+        <initializer>  GMOCK_PP_VARIADIC_CALL(GMOCK_PP_INTERNAL_VAR_TEST_, __VA_ARGS__)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="build/_deps/googletest-src/googlemock/test/gmock-pp_test.cc" line="67" column="9" bodyfile="build/_deps/googletest-src/googlemock/test/gmock-pp_test.cc" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="gmock-pp__test_8cc_1ab8635d85cb91992914a106bb5c229829" prot="public" static="no">
+        <name>GMOCK_PP_INTERNAL_IS_EMPTY_TEST_1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="build/_deps/googletest-src/googlemock/test/gmock-pp_test.cc" line="74" column="9" bodyfile="build/_deps/googletest-src/googlemock/test/gmock-pp_test.cc" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;gmock/internal/gmock-pp.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Used<sp/>to<sp/>test<sp/>MSVC<sp/>treating<sp/>__VA_ARGS__<sp/>with<sp/>a<sp/>comma<sp/>in<sp/>it<sp/>as<sp/>one<sp/>value</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GMOCK_TEST_REPLACE_comma_WITH_COMMA_I_comma<sp/>,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GMOCK_TEST_REPLACE_comma_WITH_COMMA(x)<sp/>\</highlight></codeline>
+<codeline lineno="6"><highlight class="preprocessor"><sp/><sp/>GMOCK_PP_CAT(GMOCK_TEST_REPLACE_comma_WITH_COMMA_I_,<sp/>x)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Static<sp/>assertions.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">testing<sp/>{</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">internal<sp/>{</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">gmockpp<sp/>{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">static_assert</highlight><highlight class="normal">(GMOCK_PP_CAT(1,<sp/>4)<sp/>==<sp/>14,<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keyword">static_assert</highlight><highlight class="normal">(GMOCK_PP_INTERNAL_INTERNAL_16TH(1,<sp/>2,<sp/>3,<sp/>4,<sp/>5,<sp/>6,<sp/>7,<sp/>8,<sp/>9,<sp/>10,<sp/>11,</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>12,<sp/>13,<sp/>14,<sp/>15,<sp/>16,<sp/>17,<sp/>18)<sp/>==<sp/>16,</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">static_assert</highlight><highlight class="normal">(GMOCK_PP_NARG()<sp/>==<sp/>1,<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">static_assert</highlight><highlight class="normal">(GMOCK_PP_NARG(x)<sp/>==<sp/>1,<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">static_assert</highlight><highlight class="normal">(GMOCK_PP_NARG(x,<sp/>y)<sp/>==<sp/>2,<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keyword">static_assert</highlight><highlight class="normal">(GMOCK_PP_NARG(x,<sp/>y,<sp/>z)<sp/>==<sp/>3,<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword">static_assert</highlight><highlight class="normal">(GMOCK_PP_NARG(x,<sp/>y,<sp/>z,<sp/>w)<sp/>==<sp/>4,<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keyword">static_assert</highlight><highlight class="normal">(!GMOCK_PP_HAS_COMMA(),<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keyword">static_assert</highlight><highlight class="normal">(GMOCK_PP_HAS_COMMA(b,<sp/>),<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">static_assert</highlight><highlight class="normal">(!GMOCK_PP_HAS_COMMA((,<sp/>)),<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keyword">static_assert</highlight><highlight class="normal">(GMOCK_PP_HAS_COMMA(GMOCK_TEST_REPLACE_comma_WITH_COMMA(comma)),</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">static_assert</highlight><highlight class="normal">(</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>GMOCK_PP_HAS_COMMA(GMOCK_TEST_REPLACE_comma_WITH_COMMA(comma(unrelated))),</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keyword">static_assert</highlight><highlight class="normal">(!GMOCK_PP_IS_EMPTY(,<sp/>),<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keyword">static_assert</highlight><highlight class="normal">(!GMOCK_PP_IS_EMPTY(a),<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keyword">static_assert</highlight><highlight class="normal">(!GMOCK_PP_IS_EMPTY(()),<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keyword">static_assert</highlight><highlight class="normal">(GMOCK_PP_IF(1,<sp/>1,<sp/>2)<sp/>==<sp/>1,<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="keyword">static_assert</highlight><highlight class="normal">(GMOCK_PP_IF(0,<sp/>1,<sp/>2)<sp/>==<sp/>2,<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="keyword">static_assert</highlight><highlight class="normal">(GMOCK_PP_NARG0(x)<sp/>==<sp/>1,<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="keyword">static_assert</highlight><highlight class="normal">(GMOCK_PP_NARG0(x,<sp/>y)<sp/>==<sp/>2,<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keyword">static_assert</highlight><highlight class="normal">(GMOCK_PP_HEAD(1)<sp/>==<sp/>1,<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keyword">static_assert</highlight><highlight class="normal">(GMOCK_PP_HEAD(1,<sp/>2)<sp/>==<sp/>1,<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keyword">static_assert</highlight><highlight class="normal">(GMOCK_PP_HEAD(1,<sp/>2,<sp/>3)<sp/>==<sp/>1,<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="keyword">static_assert</highlight><highlight class="normal">(GMOCK_PP_TAIL(1,<sp/>2)<sp/>==<sp/>2,<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="keyword">static_assert</highlight><highlight class="normal">(GMOCK_PP_HEAD(GMOCK_PP_TAIL(1,<sp/>2,<sp/>3))<sp/>==<sp/>2,<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keyword">static_assert</highlight><highlight class="normal">(!GMOCK_PP_IS_BEGIN_PARENS(sss),<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="keyword">static_assert</highlight><highlight class="normal">(!GMOCK_PP_IS_BEGIN_PARENS(sss()),<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="keyword">static_assert</highlight><highlight class="normal">(!GMOCK_PP_IS_BEGIN_PARENS(sss()<sp/>sss),<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="keyword">static_assert</highlight><highlight class="normal">(GMOCK_PP_IS_BEGIN_PARENS((sss)),<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="keyword">static_assert</highlight><highlight class="normal">(GMOCK_PP_IS_BEGIN_PARENS((sss)ss),<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="keyword">static_assert</highlight><highlight class="normal">(!GMOCK_PP_IS_ENCLOSED_PARENS(sss),<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="keyword">static_assert</highlight><highlight class="normal">(!GMOCK_PP_IS_ENCLOSED_PARENS(sss()),<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="keyword">static_assert</highlight><highlight class="normal">(!GMOCK_PP_IS_ENCLOSED_PARENS(sss()<sp/>sss),<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="keyword">static_assert</highlight><highlight class="normal">(!GMOCK_PP_IS_ENCLOSED_PARENS((sss)ss),<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="keyword">static_assert</highlight><highlight class="normal">(GMOCK_PP_REMOVE_PARENS((1<sp/>+<sp/>1))<sp/>*<sp/>2<sp/>==<sp/>3,<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="keyword">static_assert</highlight><highlight class="normal">(GMOCK_PP_INC(4)<sp/>==<sp/>5,<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal">...<sp/>Args&gt;</highlight></codeline>
+<codeline lineno="55" refid="structtesting_1_1internal_1_1gmockpp_1_1Test" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structtesting_1_1internal_1_1gmockpp_1_1Test" kindref="compound">Test</ref><sp/>{</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>kArgs<sp/>=<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">...(Args);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GMOCK_PP_INTERNAL_TYPE_TEST(_i,<sp/>_Data,<sp/>_element)<sp/>\</highlight></codeline>
+<codeline lineno="59"><highlight class="preprocessor"><sp/><sp/>GMOCK_PP_COMMA_IF(_i)<sp/>_element</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="keyword">static_assert</highlight><highlight class="normal">(<ref refid="structtesting_1_1internal_1_1gmockpp_1_1Test" kindref="compound">Test</ref>&lt;GMOCK_PP_FOR_EACH(GMOCK_PP_INTERNAL_TYPE_TEST,<sp/>~,</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">))&gt;::kArgs<sp/>==<sp/>4,</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GMOCK_PP_INTERNAL_VAR_TEST_1(_x)<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GMOCK_PP_INTERNAL_VAR_TEST_2(_x,<sp/>_y)<sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GMOCK_PP_INTERNAL_VAR_TEST_3(_x,<sp/>_y,<sp/>_z)<sp/>3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GMOCK_PP_INTERNAL_VAR_TEST(...)<sp/>\</highlight></codeline>
+<codeline lineno="68"><highlight class="preprocessor"><sp/><sp/>GMOCK_PP_VARIADIC_CALL(GMOCK_PP_INTERNAL_VAR_TEST_,<sp/>__VA_ARGS__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="keyword">static_assert</highlight><highlight class="normal">(GMOCK_PP_INTERNAL_VAR_TEST(x,<sp/>y)<sp/>==<sp/>2,<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="keyword">static_assert</highlight><highlight class="normal">(GMOCK_PP_INTERNAL_VAR_TEST(silly)<sp/>==<sp/>1,<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="keyword">static_assert</highlight><highlight class="normal">(GMOCK_PP_INTERNAL_VAR_TEST(x,<sp/>y,<sp/>z)<sp/>==<sp/>3,<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="comment">//<sp/>TODO(iserna):<sp/>The<sp/>following<sp/>asserts<sp/>fail<sp/>in<sp/>--config=lexan.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GMOCK_PP_INTERNAL_IS_EMPTY_TEST_1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="keyword">static_assert</highlight><highlight class="normal">(GMOCK_PP_IS_EMPTY(GMOCK_PP_INTERNAL_IS_EMPTY_TEST_1),<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="keyword">static_assert</highlight><highlight class="normal">(GMOCK_PP_IS_EMPTY(),<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight><highlight class="keyword">static_assert</highlight><highlight class="normal">(GMOCK_PP_IS_ENCLOSED_PARENS((sss)),<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight><highlight class="keyword">static_assert</highlight><highlight class="normal">(GMOCK_PP_IS_EMPTY(GMOCK_PP_TAIL(1)),<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="keyword">static_assert</highlight><highlight class="normal">(GMOCK_PP_NARG0()<sp/>==<sp/>0,<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>gmockpp</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>internal</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>testing</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="build/_deps/googletest-src/googlemock/test/gmock-pp_test.cc"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,203 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="namespacegoogletest-catch-exceptions-test" kind="namespace" language="Python">
+    <compoundname>googletest-catch-exceptions-test</compoundname>
+    <innerclass refid="classgoogletest-catch-exceptions-test_1_1CatchCxxExceptionsTest" prot="public">googletest-catch-exceptions-test::CatchCxxExceptionsTest</innerclass>
+    <innerclass refid="classgoogletest-catch-exceptions-test_1_1CatchSehExceptionsTest" prot="public">googletest-catch-exceptions-test::CatchSehExceptionsTest</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="googletest-catch-exceptions-test_8py_1a20f155f01c2bce4471705ea352bbf174" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str googletest-catch-exceptions-test.FLAG_PREFIX</definition>
+        <argsstring></argsstring>
+        <name>FLAG_PREFIX</name>
+        <qualifiedname>googletest-catch-exceptions-test.FLAG_PREFIX</qualifiedname>
+        <initializer>=  &apos;--gtest_&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="build/_deps/googletest-src/googletest/test/googletest-catch-exceptions-test.py" line="41" column="1" bodyfile="build/_deps/googletest-src/googletest/test/googletest-catch-exceptions-test.py" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="googletest-catch-exceptions-test_8py_1aceeed7fcf24e63f9f75d04920f7dc239" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str googletest-catch-exceptions-test.LIST_TESTS_FLAG</definition>
+        <argsstring></argsstring>
+        <name>LIST_TESTS_FLAG</name>
+        <qualifiedname>googletest-catch-exceptions-test.LIST_TESTS_FLAG</qualifiedname>
+        <initializer>=  FLAG_PREFIX + &apos;list_tests&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="build/_deps/googletest-src/googletest/test/googletest-catch-exceptions-test.py" line="42" column="1" bodyfile="build/_deps/googletest-src/googletest/test/googletest-catch-exceptions-test.py" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="googletest-catch-exceptions-test_8py_1a23277c194ade350c5f876d222390c494" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str googletest-catch-exceptions-test.NO_CATCH_EXCEPTIONS_FLAG</definition>
+        <argsstring></argsstring>
+        <name>NO_CATCH_EXCEPTIONS_FLAG</name>
+        <qualifiedname>googletest-catch-exceptions-test.NO_CATCH_EXCEPTIONS_FLAG</qualifiedname>
+        <initializer>=  FLAG_PREFIX + &apos;catch_exceptions=0&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="build/_deps/googletest-src/googletest/test/googletest-catch-exceptions-test.py" line="43" column="1" bodyfile="build/_deps/googletest-src/googletest/test/googletest-catch-exceptions-test.py" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="googletest-catch-exceptions-test_8py_1afc209184eda3b397b157233d2b80363d" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str googletest-catch-exceptions-test.FILTER_FLAG</definition>
+        <argsstring></argsstring>
+        <name>FILTER_FLAG</name>
+        <qualifiedname>googletest-catch-exceptions-test.FILTER_FLAG</qualifiedname>
+        <initializer>=  FLAG_PREFIX + &apos;filter&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="build/_deps/googletest-src/googletest/test/googletest-catch-exceptions-test.py" line="44" column="1" bodyfile="build/_deps/googletest-src/googletest/test/googletest-catch-exceptions-test.py" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="googletest-catch-exceptions-test_8py_1abf8d768ceed07c8aa3bdb508cb02c46d" prot="public" static="no" mutable="no">
+        <type>gtest_test_utils</type>
+        <definition>gtest_test_utils googletest-catch-exceptions-test.EX_EXE_PATH</definition>
+        <argsstring></argsstring>
+        <name>EX_EXE_PATH</name>
+        <qualifiedname>googletest-catch-exceptions-test.EX_EXE_PATH</qualifiedname>
+        <initializer>=  <ref refid="namespacegtest__test__utils_1a89ed3717984a80ffbb7a9c92f71b86a2" kindref="member">gtest_test_utils.GetTestExecutablePath</ref>(
+    &apos;googletest-catch-exceptions-ex-test_&apos;
+)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="build/_deps/googletest-src/googletest/test/googletest-catch-exceptions-test.py" line="48" column="1" bodyfile="build/_deps/googletest-src/googletest/test/googletest-catch-exceptions-test.py" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="googletest-catch-exceptions-test_8py_1a197330e6e13b66543df9fdb578703ec6" prot="public" static="no" mutable="no">
+        <type>gtest_test_utils</type>
+        <definition>gtest_test_utils googletest-catch-exceptions-test.EXE_PATH</definition>
+        <argsstring></argsstring>
+        <name>EXE_PATH</name>
+        <qualifiedname>googletest-catch-exceptions-test.EXE_PATH</qualifiedname>
+        <initializer>=  <ref refid="namespacegtest__test__utils_1a89ed3717984a80ffbb7a9c92f71b86a2" kindref="member">gtest_test_utils.GetTestExecutablePath</ref>(
+    &apos;googletest-catch-exceptions-no-ex-test_&apos;
+)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="build/_deps/googletest-src/googletest/test/googletest-catch-exceptions-test.py" line="54" column="1" bodyfile="build/_deps/googletest-src/googletest/test/googletest-catch-exceptions-test.py" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="googletest-catch-exceptions-test_8py_1adab640d1d1e2a06a92d7500c1df21731" prot="public" static="no" mutable="no">
+        <type>gtest_test_utils</type>
+        <definition>gtest_test_utils googletest-catch-exceptions-test.environ</definition>
+        <argsstring></argsstring>
+        <name>environ</name>
+        <qualifiedname>googletest-catch-exceptions-test.environ</qualifiedname>
+        <initializer>=  gtest_test_utils.environ</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="build/_deps/googletest-src/googletest/test/googletest-catch-exceptions-test.py" line="58" column="1" bodyfile="build/_deps/googletest-src/googletest/test/googletest-catch-exceptions-test.py" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="googletest-catch-exceptions-test_8py_1a6e3a5f13a7bdae8c6fe6e26e120d1a07" prot="public" static="no" mutable="no">
+        <type>gtest_test_utils</type>
+        <definition>gtest_test_utils googletest-catch-exceptions-test.SetEnvVar</definition>
+        <argsstring></argsstring>
+        <name>SetEnvVar</name>
+        <qualifiedname>googletest-catch-exceptions-test.SetEnvVar</qualifiedname>
+        <initializer>=  gtest_test_utils.SetEnvVar</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="build/_deps/googletest-src/googletest/test/googletest-catch-exceptions-test.py" line="59" column="1" bodyfile="build/_deps/googletest-src/googletest/test/googletest-catch-exceptions-test.py" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="googletest-catch-exceptions-test_8py_1a51f51699f2bd57cef49b945f51d22d33" prot="public" static="no" mutable="no">
+        <type>gtest_test_utils</type>
+        <definition>gtest_test_utils googletest-catch-exceptions-test.TEST_LIST</definition>
+        <argsstring></argsstring>
+        <name>TEST_LIST</name>
+        <qualifiedname>googletest-catch-exceptions-test.TEST_LIST</qualifiedname>
+        <initializer>=  <ref refid="classgtest__test__utils_1_1Subprocess" kindref="compound">gtest_test_utils.Subprocess</ref>(
+    [EXE_PATH, LIST_TESTS_FLAG], env=environ
+).output</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="build/_deps/googletest-src/googletest/test/googletest-catch-exceptions-test.py" line="68" column="1" bodyfile="build/_deps/googletest-src/googletest/test/googletest-catch-exceptions-test.py" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="googletest-catch-exceptions-test_8py_1a01614e3968732a897140c6df2d53d5c8" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str googletest-catch-exceptions-test.SUPPORTS_SEH_EXCEPTIONS</definition>
+        <argsstring></argsstring>
+        <name>SUPPORTS_SEH_EXCEPTIONS</name>
+        <qualifiedname>googletest-catch-exceptions-test.SUPPORTS_SEH_EXCEPTIONS</qualifiedname>
+        <initializer>=  &apos;ThrowsSehException&apos; in TEST_LIST</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="build/_deps/googletest-src/googletest/test/googletest-catch-exceptions-test.py" line="72" column="1" bodyfile="build/_deps/googletest-src/googletest/test/googletest-catch-exceptions-test.py" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="googletest-catch-exceptions-test_8py_1a08638999756d1954201d28a31fde9681" prot="public" static="no" mutable="no">
+        <type>gtest_test_utils</type>
+        <definition>gtest_test_utils googletest-catch-exceptions-test.BINARY_OUTPUT</definition>
+        <argsstring></argsstring>
+        <name>BINARY_OUTPUT</name>
+        <qualifiedname>googletest-catch-exceptions-test.BINARY_OUTPUT</qualifiedname>
+        <initializer>=  <ref refid="classgtest__test__utils_1_1Subprocess" kindref="compound">gtest_test_utils.Subprocess</ref>([EXE_PATH], env=environ).output</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="build/_deps/googletest-src/googletest/test/googletest-catch-exceptions-test.py" line="75" column="1" bodyfile="build/_deps/googletest-src/googletest/test/googletest-catch-exceptions-test.py" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="googletest-catch-exceptions-test_8py_1a25d3756f21e6b0f6b9a9a4535e62acca" prot="public" static="no" mutable="no">
+        <type>gtest_test_utils</type>
+        <definition>gtest_test_utils googletest-catch-exceptions-test.EX_BINARY_OUTPUT</definition>
+        <argsstring></argsstring>
+        <name>EX_BINARY_OUTPUT</name>
+        <qualifiedname>googletest-catch-exceptions-test.EX_BINARY_OUTPUT</qualifiedname>
+        <initializer>=  <ref refid="classgtest__test__utils_1_1Subprocess" kindref="compound">gtest_test_utils.Subprocess</ref>(
+    [EX_EXE_PATH], env=environ
+).output</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="build/_deps/googletest-src/googletest/test/googletest-catch-exceptions-test.py" line="77" column="1" bodyfile="build/_deps/googletest-src/googletest/test/googletest-catch-exceptions-test.py" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="build/_deps/googletest-src/googletest/test/googletest-catch-exceptions-test.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

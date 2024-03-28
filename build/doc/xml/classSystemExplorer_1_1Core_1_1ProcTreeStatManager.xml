@@ -1,0 +1,147 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="classSystemExplorer_1_1Core_1_1ProcTreeStatManager" kind="class" language="C++" prot="public">
+    <compoundname>SystemExplorer::Core::ProcTreeStatManager</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classSystemExplorer_1_1Core_1_1ProcTreeStatManager_1a49b316d988d457fd73562e7c54537528" prot="private" static="no" mutable="no">
+        <type><ref refid="structSystemExplorer_1_1Core_1_1Models_1_1ProcTreeStat" kindref="compound">Models::ProcTreeStat</ref></type>
+        <definition>Models::ProcTreeStat SystemExplorer::Core::ProcTreeStatManager::_proc_tree_stat</definition>
+        <argsstring></argsstring>
+        <name>_proc_tree_stat</name>
+        <qualifiedname>SystemExplorer::Core::ProcTreeStatManager::_proc_tree_stat</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="core/proc_tree_stat_manager.hpp" line="16" column="34" bodyfile="core/proc_tree_stat_manager.hpp" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classSystemExplorer_1_1Core_1_1ProcTreeStatManager_1aba4dcf882be281668adfb46730dfe7b6" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool SystemExplorer::Core::ProcTreeStatManager::IsNumber</definition>
+        <argsstring>(std::string str) const</argsstring>
+        <name>IsNumber</name>
+        <qualifiedname>SystemExplorer::Core::ProcTreeStatManager::IsNumber</qualifiedname>
+        <param>
+          <type>std::string</type>
+          <declname>str</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="core/proc_tree_stat_manager.hpp" line="18" column="18"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classSystemExplorer_1_1Core_1_1ProcTreeStatManager_1a134926fd888b76f11613ed0822facd9f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structSystemExplorer_1_1Core_1_1Models_1_1ProcStat" kindref="compound">Models::ProcStat</ref></type>
+        <definition>Models::ProcStat SystemExplorer::Core::ProcTreeStatManager::GetProcStat</definition>
+        <argsstring>()</argsstring>
+        <name>GetProcStat</name>
+        <qualifiedname>SystemExplorer::Core::ProcTreeStatManager::GetProcStat</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="core/proc_tree_stat_manager.hpp" line="22" column="30"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Core_1_1ProcTreeStatManager_1a3e247a5bf6834b0135761022966c5a12" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; pid_t &gt;</type>
+        <definition>std::vector&lt; pid_t &gt; SystemExplorer::Core::ProcTreeStatManager::GetProcesses</definition>
+        <argsstring>()</argsstring>
+        <name>GetProcesses</name>
+        <qualifiedname>SystemExplorer::Core::ProcTreeStatManager::GetProcesses</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="core/proc_tree_stat_manager.hpp" line="25" column="25"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Core_1_1ProcTreeStatManager_1a65a4daedeba89be84b6bd8ec713da243" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structSystemExplorer_1_1Core_1_1Models_1_1ProcProcessStat" kindref="compound">Models::ProcProcessStat</ref></type>
+        <definition>Models::ProcProcessStat SystemExplorer::Core::ProcTreeStatManager::GetProcessStat</definition>
+        <argsstring>(pid_t pid)</argsstring>
+        <name>GetProcessStat</name>
+        <qualifiedname>SystemExplorer::Core::ProcTreeStatManager::GetProcessStat</qualifiedname>
+        <param>
+          <type>pid_t</type>
+          <declname>pid</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="core/proc_tree_stat_manager.hpp" line="28" column="37"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Core_1_1ProcTreeStatManager_1a7c19bb88f74ab211277761e4d3235d9b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="structSystemExplorer_1_1Core_1_1Models_1_1ProcProcessStat" kindref="compound">Models::ProcProcessStat</ref> &gt;</type>
+        <definition>std::vector&lt; Models::ProcProcessStat &gt; SystemExplorer::Core::ProcTreeStatManager::GetProcesssesStat</definition>
+        <argsstring>()</argsstring>
+        <name>GetProcesssesStat</name>
+        <qualifiedname>SystemExplorer::Core::ProcTreeStatManager::GetProcesssesStat</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="core/proc_tree_stat_manager.hpp" line="31" column="25"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Core_1_1ProcTreeStatManager_1afdc8063128015c863da76285cee36154" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structSystemExplorer_1_1Core_1_1Models_1_1ProcTreeStat" kindref="compound">Models::ProcTreeStat</ref> &amp;</type>
+        <definition>Models::ProcTreeStat &amp; SystemExplorer::Core::ProcTreeStatManager::GetProcTreeStat</definition>
+        <argsstring>()</argsstring>
+        <name>GetProcTreeStat</name>
+        <qualifiedname>SystemExplorer::Core::ProcTreeStatManager::GetProcTreeStat</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="core/proc_tree_stat_manager.hpp" line="34" column="35"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Core_1_1ProcTreeStatManager_1a7f54c0926a1408696c7a292d7382354b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SystemExplorer::Core::ProcTreeStatManager::Tick</definition>
+        <argsstring>()</argsstring>
+        <name>Tick</name>
+        <qualifiedname>SystemExplorer::Core::ProcTreeStatManager::Tick</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="core/proc_tree_stat_manager.hpp" line="37" column="18"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="core/proc_tree_stat_manager.hpp" line="14" column="9" bodyfile="core/proc_tree_stat_manager.hpp" bodystart="15" bodyend="38"/>
+    <listofallmembers>
+      <member refid="classSystemExplorer_1_1Core_1_1ProcTreeStatManager_1a49b316d988d457fd73562e7c54537528" prot="private" virt="non-virtual"><scope>SystemExplorer::Core::ProcTreeStatManager</scope><name>_proc_tree_stat</name></member>
+      <member refid="classSystemExplorer_1_1Core_1_1ProcTreeStatManager_1a3e247a5bf6834b0135761022966c5a12" prot="public" virt="non-virtual"><scope>SystemExplorer::Core::ProcTreeStatManager</scope><name>GetProcesses</name></member>
+      <member refid="classSystemExplorer_1_1Core_1_1ProcTreeStatManager_1a7c19bb88f74ab211277761e4d3235d9b" prot="public" virt="non-virtual"><scope>SystemExplorer::Core::ProcTreeStatManager</scope><name>GetProcesssesStat</name></member>
+      <member refid="classSystemExplorer_1_1Core_1_1ProcTreeStatManager_1a65a4daedeba89be84b6bd8ec713da243" prot="public" virt="non-virtual"><scope>SystemExplorer::Core::ProcTreeStatManager</scope><name>GetProcessStat</name></member>
+      <member refid="classSystemExplorer_1_1Core_1_1ProcTreeStatManager_1a134926fd888b76f11613ed0822facd9f" prot="public" virt="non-virtual"><scope>SystemExplorer::Core::ProcTreeStatManager</scope><name>GetProcStat</name></member>
+      <member refid="classSystemExplorer_1_1Core_1_1ProcTreeStatManager_1afdc8063128015c863da76285cee36154" prot="public" virt="non-virtual"><scope>SystemExplorer::Core::ProcTreeStatManager</scope><name>GetProcTreeStat</name></member>
+      <member refid="classSystemExplorer_1_1Core_1_1ProcTreeStatManager_1aba4dcf882be281668adfb46730dfe7b6" prot="private" virt="non-virtual"><scope>SystemExplorer::Core::ProcTreeStatManager</scope><name>IsNumber</name></member>
+      <member refid="classSystemExplorer_1_1Core_1_1ProcTreeStatManager_1a7f54c0926a1408696c7a292d7382354b" prot="public" virt="non-virtual"><scope>SystemExplorer::Core::ProcTreeStatManager</scope><name>Tick</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

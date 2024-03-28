@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="classSystemExplorer_1_1Gui_1_1ViewController_1_1RootViewController" kind="class" language="C++" prot="public">
+    <compoundname>SystemExplorer::Gui::ViewController::RootViewController</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">wxFrame</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1RootViewController_1aeb98a32a529f9b4bf33c7a147f83cdd6" prot="private" static="no" mutable="no">
+        <type>Config::Config</type>
+        <definition>Config::Config SystemExplorer::Gui::ViewController::RootViewController::_config</definition>
+        <argsstring></argsstring>
+        <name>_config</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::RootViewController::_config</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/root_view_controller.hpp" line="21" column="32" bodyfile="gui/view_controller/root_view_controller.hpp" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1RootViewController_1a0071250342b3f6cbdd6c21c498a20cd6" prot="private" static="no" mutable="no">
+        <type><ref refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController" kindref="compound">ProcessTreeViewController</ref> *</type>
+        <definition>ProcessTreeViewController* SystemExplorer::Gui::ViewController::RootViewController::_processTreeViewController</definition>
+        <argsstring></argsstring>
+        <name>_processTreeViewController</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::RootViewController::_processTreeViewController</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/root_view_controller.hpp" line="23" column="43" bodyfile="gui/view_controller/root_view_controller.hpp" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1RootViewController_1ae2ae2bd6299c63e77069b0cfdf414306" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SystemExplorer::Gui::ViewController::RootViewController::RootViewController</definition>
+        <argsstring>(Config::Config config)</argsstring>
+        <name>RootViewController</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::RootViewController::RootViewController</qualifiedname>
+        <param>
+          <type>Config::Config</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/root_view_controller.hpp" line="25" column="17"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>SystemExplorer::Gui::ViewController::RootViewController</label>
+        <link refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1RootViewController"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>wxFrame</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>SystemExplorer::Gui::ViewController::RootViewController</label>
+        <link refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1RootViewController"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>wxFrame</label>
+      </node>
+    </collaborationgraph>
+    <location file="gui/view_controller/root_view_controller.hpp" line="19" column="13" bodyfile="gui/view_controller/root_view_controller.hpp" bodystart="20" bodyend="26"/>
+    <listofallmembers>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1RootViewController_1aeb98a32a529f9b4bf33c7a147f83cdd6" prot="private" virt="non-virtual"><scope>SystemExplorer::Gui::ViewController::RootViewController</scope><name>_config</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1RootViewController_1a0071250342b3f6cbdd6c21c498a20cd6" prot="private" virt="non-virtual"><scope>SystemExplorer::Gui::ViewController::RootViewController</scope><name>_processTreeViewController</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1RootViewController_1ae2ae2bd6299c63e77069b0cfdf414306" prot="public" virt="non-virtual"><scope>SystemExplorer::Gui::ViewController::RootViewController</scope><name>RootViewController</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

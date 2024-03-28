@@ -1,0 +1,561 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="bak_2resources_8icons_8h" kind="file" language="C++">
+    <compoundname>resources.icons.h</compoundname>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="bak_2resources_8icons_8h_1a0085cabc12d1bd72bf73ba793d6bff3b" prot="public" static="no" mutable="no">
+        <type>wxBitmap *</type>
+        <definition>wxBitmap* bin2c_box_64x64_png</definition>
+        <argsstring></argsstring>
+        <name>bin2c_box_64x64_png</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="resources/bak/resources.icons.h" line="8" column="17" declfile="resources/bak/resources.icons.h" declline="8" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="variable" id="bak_2resources_8icons_8h_1ad1e3db37d663370f8ac67d7a77214f79" prot="public" static="no" mutable="no">
+        <type>wxBitmap *</type>
+        <definition>wxBitmap* bin2c_cpu_png</definition>
+        <argsstring></argsstring>
+        <name>bin2c_cpu_png</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="resources/bak/resources.icons.h" line="9" column="17" declfile="resources/bak/resources.icons.h" declline="9" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="variable" id="bak_2resources_8icons_8h_1aa2783612bec626f6a860d67b9c800eaa" prot="public" static="no" mutable="no">
+        <type>wxBitmap *</type>
+        <definition>wxBitmap* bin2c_nice_idle_png</definition>
+        <argsstring></argsstring>
+        <name>bin2c_nice_idle_png</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="resources/bak/resources.icons.h" line="10" column="17" declfile="resources/bak/resources.icons.h" declline="10" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="variable" id="bak_2resources_8icons_8h_1a5c234e27a202e97e743884e5205ea79d" prot="public" static="no" mutable="no">
+        <type>wxBitmap *</type>
+        <definition>wxBitmap* bin2c_nice_killed_png</definition>
+        <argsstring></argsstring>
+        <name>bin2c_nice_killed_png</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="resources/bak/resources.icons.h" line="11" column="17" declfile="resources/bak/resources.icons.h" declline="11" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="variable" id="bak_2resources_8icons_8h_1adcd6d90177d66ac95bc8cfad3678b26f" prot="public" static="no" mutable="no">
+        <type>wxBitmap *</type>
+        <definition>wxBitmap* bin2c_nice_png</definition>
+        <argsstring></argsstring>
+        <name>bin2c_nice_png</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="resources/bak/resources.icons.h" line="12" column="17" declfile="resources/bak/resources.icons.h" declline="12" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="variable" id="bak_2resources_8icons_8h_1a13d0f09c4ace0ed94260df063ac67233" prot="public" static="no" mutable="no">
+        <type>wxBitmap *</type>
+        <definition>wxBitmap* bin2c_nice_running_png</definition>
+        <argsstring></argsstring>
+        <name>bin2c_nice_running_png</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="resources/bak/resources.icons.h" line="13" column="17" declfile="resources/bak/resources.icons.h" declline="13" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="variable" id="bak_2resources_8icons_8h_1ac6e887736837bf6e5f7bfb5516767a11" prot="public" static="no" mutable="no">
+        <type>wxBitmap *</type>
+        <definition>wxBitmap* bin2c_nice_sleeping_png</definition>
+        <argsstring></argsstring>
+        <name>bin2c_nice_sleeping_png</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="resources/bak/resources.icons.h" line="14" column="17" declfile="resources/bak/resources.icons.h" declline="14" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="variable" id="bak_2resources_8icons_8h_1a30d26a8c12612b9e9cd30319262352cd" prot="public" static="no" mutable="no">
+        <type>wxBitmap *</type>
+        <definition>wxBitmap* bin2c_nice_stopped_png</definition>
+        <argsstring></argsstring>
+        <name>bin2c_nice_stopped_png</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="resources/bak/resources.icons.h" line="15" column="17" declfile="resources/bak/resources.icons.h" declline="15" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="variable" id="bak_2resources_8icons_8h_1a1b903b9065ee7a317d4c7914c28f7b96" prot="public" static="no" mutable="no">
+        <type>wxBitmap *</type>
+        <definition>wxBitmap* bin2c_nice_waiting_png</definition>
+        <argsstring></argsstring>
+        <name>bin2c_nice_waiting_png</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="resources/bak/resources.icons.h" line="16" column="17" declfile="resources/bak/resources.icons.h" declline="16" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="variable" id="bak_2resources_8icons_8h_1aa74638bdad9b0e41b4457db3e8718e58" prot="public" static="no" mutable="no">
+        <type>wxBitmap *</type>
+        <definition>wxBitmap* bin2c_nice_zombie_png</definition>
+        <argsstring></argsstring>
+        <name>bin2c_nice_zombie_png</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="resources/bak/resources.icons.h" line="17" column="17" declfile="resources/bak/resources.icons.h" declline="17" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="variable" id="bak_2resources_8icons_8h_1a967b0ef10399ef3e3b6226282f5cfe78" prot="public" static="no" mutable="no">
+        <type>wxBitmap *</type>
+        <definition>wxBitmap* bin2c_normal_idle_png</definition>
+        <argsstring></argsstring>
+        <name>bin2c_normal_idle_png</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="resources/bak/resources.icons.h" line="18" column="17" declfile="resources/bak/resources.icons.h" declline="18" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="variable" id="bak_2resources_8icons_8h_1a2714723f8b27e705d01d0a9224fdba5b" prot="public" static="no" mutable="no">
+        <type>wxBitmap *</type>
+        <definition>wxBitmap* bin2c_normal_killed_png</definition>
+        <argsstring></argsstring>
+        <name>bin2c_normal_killed_png</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="resources/bak/resources.icons.h" line="19" column="17" declfile="resources/bak/resources.icons.h" declline="19" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="variable" id="bak_2resources_8icons_8h_1afeb5be3e96c7900937e1d83492e2b04a" prot="public" static="no" mutable="no">
+        <type>wxBitmap *</type>
+        <definition>wxBitmap* bin2c_normal_png</definition>
+        <argsstring></argsstring>
+        <name>bin2c_normal_png</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="resources/bak/resources.icons.h" line="20" column="17" declfile="resources/bak/resources.icons.h" declline="20" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="variable" id="bak_2resources_8icons_8h_1a68829f8244df8c603d327dddb3418d17" prot="public" static="no" mutable="no">
+        <type>wxBitmap *</type>
+        <definition>wxBitmap* bin2c_normal_running_png</definition>
+        <argsstring></argsstring>
+        <name>bin2c_normal_running_png</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="resources/bak/resources.icons.h" line="21" column="17" declfile="resources/bak/resources.icons.h" declline="21" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="variable" id="bak_2resources_8icons_8h_1a87d737bc1e4be1264ec6febf689f773a" prot="public" static="no" mutable="no">
+        <type>wxBitmap *</type>
+        <definition>wxBitmap* bin2c_normal_sleeping_png</definition>
+        <argsstring></argsstring>
+        <name>bin2c_normal_sleeping_png</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="resources/bak/resources.icons.h" line="22" column="17" declfile="resources/bak/resources.icons.h" declline="22" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="variable" id="bak_2resources_8icons_8h_1afc171142f00e5baad39691c1af2843e8" prot="public" static="no" mutable="no">
+        <type>wxBitmap *</type>
+        <definition>wxBitmap* bin2c_normal_stopped_png</definition>
+        <argsstring></argsstring>
+        <name>bin2c_normal_stopped_png</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="resources/bak/resources.icons.h" line="23" column="17" declfile="resources/bak/resources.icons.h" declline="23" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="variable" id="bak_2resources_8icons_8h_1a693b35bda29ba5714d330248fd6599ef" prot="public" static="no" mutable="no">
+        <type>wxBitmap *</type>
+        <definition>wxBitmap* bin2c_normal_waiting_png</definition>
+        <argsstring></argsstring>
+        <name>bin2c_normal_waiting_png</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="resources/bak/resources.icons.h" line="24" column="17" declfile="resources/bak/resources.icons.h" declline="24" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="variable" id="bak_2resources_8icons_8h_1ade96167013f19a02d7e7c45c5c2c98cc" prot="public" static="no" mutable="no">
+        <type>wxBitmap *</type>
+        <definition>wxBitmap* bin2c_normal_zombie_png</definition>
+        <argsstring></argsstring>
+        <name>bin2c_normal_zombie_png</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="resources/bak/resources.icons.h" line="25" column="17" declfile="resources/bak/resources.icons.h" declline="25" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="variable" id="bak_2resources_8icons_8h_1a0e8211c84ebbd57b95834aeb060a6eb4" prot="public" static="no" mutable="no">
+        <type>wxBitmap *</type>
+        <definition>wxBitmap* bin2c_not_nice_idle_png</definition>
+        <argsstring></argsstring>
+        <name>bin2c_not_nice_idle_png</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="resources/bak/resources.icons.h" line="26" column="17" declfile="resources/bak/resources.icons.h" declline="26" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="variable" id="bak_2resources_8icons_8h_1a6ca452f58b29f33b4ca6c87fd365d25b" prot="public" static="no" mutable="no">
+        <type>wxBitmap *</type>
+        <definition>wxBitmap* bin2c_not_nice_killed_png</definition>
+        <argsstring></argsstring>
+        <name>bin2c_not_nice_killed_png</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="resources/bak/resources.icons.h" line="27" column="17" declfile="resources/bak/resources.icons.h" declline="27" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="variable" id="bak_2resources_8icons_8h_1a35e67970f023d3af116716f2c05df4f8" prot="public" static="no" mutable="no">
+        <type>wxBitmap *</type>
+        <definition>wxBitmap* bin2c_not_nice_png</definition>
+        <argsstring></argsstring>
+        <name>bin2c_not_nice_png</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="resources/bak/resources.icons.h" line="28" column="17" declfile="resources/bak/resources.icons.h" declline="28" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="variable" id="bak_2resources_8icons_8h_1a6b583d73185fdaf3681fa5befdf59521" prot="public" static="no" mutable="no">
+        <type>wxBitmap *</type>
+        <definition>wxBitmap* bin2c_not_nice_running_png</definition>
+        <argsstring></argsstring>
+        <name>bin2c_not_nice_running_png</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="resources/bak/resources.icons.h" line="29" column="17" declfile="resources/bak/resources.icons.h" declline="29" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="variable" id="bak_2resources_8icons_8h_1af3a25d11d5c24c8c4779f824374db56b" prot="public" static="no" mutable="no">
+        <type>wxBitmap *</type>
+        <definition>wxBitmap* bin2c_not_nice_sleeping_png</definition>
+        <argsstring></argsstring>
+        <name>bin2c_not_nice_sleeping_png</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="resources/bak/resources.icons.h" line="30" column="17" declfile="resources/bak/resources.icons.h" declline="30" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="variable" id="bak_2resources_8icons_8h_1ad4279f4c06421e6957c7433174d5c6a4" prot="public" static="no" mutable="no">
+        <type>wxBitmap *</type>
+        <definition>wxBitmap* bin2c_not_nice_stopped_png</definition>
+        <argsstring></argsstring>
+        <name>bin2c_not_nice_stopped_png</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="resources/bak/resources.icons.h" line="31" column="17" declfile="resources/bak/resources.icons.h" declline="31" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="variable" id="bak_2resources_8icons_8h_1ae8c1a0c39d53c7a1c4dd94d8ed0445e7" prot="public" static="no" mutable="no">
+        <type>wxBitmap *</type>
+        <definition>wxBitmap* bin2c_not_nice_waiting_png</definition>
+        <argsstring></argsstring>
+        <name>bin2c_not_nice_waiting_png</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="resources/bak/resources.icons.h" line="32" column="17" declfile="resources/bak/resources.icons.h" declline="32" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="variable" id="bak_2resources_8icons_8h_1a986c73dd53b2c145077eccbf30a3d643" prot="public" static="no" mutable="no">
+        <type>wxBitmap *</type>
+        <definition>wxBitmap* bin2c_not_nice_zombie_png</definition>
+        <argsstring></argsstring>
+        <name>bin2c_not_nice_zombie_png</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="resources/bak/resources.icons.h" line="33" column="17" declfile="resources/bak/resources.icons.h" declline="33" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="variable" id="bak_2resources_8icons_8h_1ae2a0908b64d9366636fc9347d687c8d0" prot="public" static="no" mutable="no">
+        <type>wxBitmap *</type>
+        <definition>wxBitmap* bin2c_nut_64x64_png</definition>
+        <argsstring></argsstring>
+        <name>bin2c_nut_64x64_png</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="resources/bak/resources.icons.h" line="34" column="17" declfile="resources/bak/resources.icons.h" declline="34" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="variable" id="bak_2resources_8icons_8h_1a071f274ddd404108173fb3d85e060f62" prot="public" static="no" mutable="no">
+        <type>wxBitmap *</type>
+        <definition>wxBitmap* bin2c_ram_png</definition>
+        <argsstring></argsstring>
+        <name>bin2c_ram_png</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="resources/bak/resources.icons.h" line="35" column="17" declfile="resources/bak/resources.icons.h" declline="35" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="variable" id="bak_2resources_8icons_8h_1a8edbb55e09e6fff775441d5b17ad2a00" prot="public" static="no" mutable="no">
+        <type>wxBitmap *</type>
+        <definition>wxBitmap* bin2c_realtime_idle_png</definition>
+        <argsstring></argsstring>
+        <name>bin2c_realtime_idle_png</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="resources/bak/resources.icons.h" line="36" column="17" declfile="resources/bak/resources.icons.h" declline="36" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="variable" id="bak_2resources_8icons_8h_1a50de3cc2697a264c5a1bc9a91dd7030b" prot="public" static="no" mutable="no">
+        <type>wxBitmap *</type>
+        <definition>wxBitmap* bin2c_realtime_killed_png</definition>
+        <argsstring></argsstring>
+        <name>bin2c_realtime_killed_png</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="resources/bak/resources.icons.h" line="37" column="17" declfile="resources/bak/resources.icons.h" declline="37" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="variable" id="bak_2resources_8icons_8h_1ae1456bac399548b7406bca582591b6c4" prot="public" static="no" mutable="no">
+        <type>wxBitmap *</type>
+        <definition>wxBitmap* bin2c_realtime_png</definition>
+        <argsstring></argsstring>
+        <name>bin2c_realtime_png</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="resources/bak/resources.icons.h" line="38" column="17" declfile="resources/bak/resources.icons.h" declline="38" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="variable" id="bak_2resources_8icons_8h_1a6afc8c0c861620821c0c885a661c9a88" prot="public" static="no" mutable="no">
+        <type>wxBitmap *</type>
+        <definition>wxBitmap* bin2c_realtime_running_png</definition>
+        <argsstring></argsstring>
+        <name>bin2c_realtime_running_png</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="resources/bak/resources.icons.h" line="39" column="17" declfile="resources/bak/resources.icons.h" declline="39" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="variable" id="bak_2resources_8icons_8h_1a3aa99b2e2b486fbd293b9605589c3eaf" prot="public" static="no" mutable="no">
+        <type>wxBitmap *</type>
+        <definition>wxBitmap* bin2c_realtime_sleeping_png</definition>
+        <argsstring></argsstring>
+        <name>bin2c_realtime_sleeping_png</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="resources/bak/resources.icons.h" line="40" column="17" declfile="resources/bak/resources.icons.h" declline="40" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="variable" id="bak_2resources_8icons_8h_1aa9b01a17ca2001f127e536042ebfccb2" prot="public" static="no" mutable="no">
+        <type>wxBitmap *</type>
+        <definition>wxBitmap* bin2c_realtime_stopped_png</definition>
+        <argsstring></argsstring>
+        <name>bin2c_realtime_stopped_png</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="resources/bak/resources.icons.h" line="41" column="17" declfile="resources/bak/resources.icons.h" declline="41" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="variable" id="bak_2resources_8icons_8h_1a0d478505dd83778c0d1f562b0ebb426a" prot="public" static="no" mutable="no">
+        <type>wxBitmap *</type>
+        <definition>wxBitmap* bin2c_realtime_waiting_png</definition>
+        <argsstring></argsstring>
+        <name>bin2c_realtime_waiting_png</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="resources/bak/resources.icons.h" line="42" column="17" declfile="resources/bak/resources.icons.h" declline="42" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="variable" id="bak_2resources_8icons_8h_1acd2e2581722403c82b79475b092c0ca6" prot="public" static="no" mutable="no">
+        <type>wxBitmap *</type>
+        <definition>wxBitmap* bin2c_realtime_zombie_png</definition>
+        <argsstring></argsstring>
+        <name>bin2c_realtime_zombie_png</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="resources/bak/resources.icons.h" line="43" column="17" declfile="resources/bak/resources.icons.h" declline="43" declcolumn="17"/>
+      </memberdef>
+      <memberdef kind="variable" id="bak_2resources_8icons_8h_1ac5d344eb3f11c1fb90c1809d82f442dd" prot="public" static="no" mutable="no">
+        <type>wxBitmap *</type>
+        <definition>wxBitmap* bin2c_wxwidgets_logo_64x48_png</definition>
+        <argsstring></argsstring>
+        <name>bin2c_wxwidgets_logo_64x48_png</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="resources/bak/resources.icons.h" line="44" column="17" declfile="resources/bak/resources.icons.h" declline="44" declcolumn="17"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="bak_2resources_8icons_8h_1a66fb65d7365c670c7eed335cfb504f2d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void bin2c_init_RESOURCES_ICONS_H</definition>
+        <argsstring>(void)</argsstring>
+        <name>bin2c_init_RESOURCES_ICONS_H</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="resources/bak/resources.icons.h" line="7" column="17" declfile="resources/bak/resources.icons.h" declline="7" declcolumn="17"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*<sp/>Autogenerated<sp/>by<sp/>hxtools<sp/>bin2c<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>RESOURCES_ICONS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>RESOURCES_ICONS_H<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">wxBitmap;</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>bin2c_init_RESOURCES_ICONS_H(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>wxBitmap<sp/>*bin2c_box_64x64_png;</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>wxBitmap<sp/>*bin2c_cpu_png;</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>wxBitmap<sp/>*bin2c_nice_idle_png;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>wxBitmap<sp/>*bin2c_nice_killed_png;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>wxBitmap<sp/>*bin2c_nice_png;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>wxBitmap<sp/>*bin2c_nice_running_png;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>wxBitmap<sp/>*bin2c_nice_sleeping_png;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>wxBitmap<sp/>*bin2c_nice_stopped_png;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>wxBitmap<sp/>*bin2c_nice_waiting_png;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>wxBitmap<sp/>*bin2c_nice_zombie_png;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>wxBitmap<sp/>*bin2c_normal_idle_png;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>wxBitmap<sp/>*bin2c_normal_killed_png;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>wxBitmap<sp/>*bin2c_normal_png;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>wxBitmap<sp/>*bin2c_normal_running_png;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>wxBitmap<sp/>*bin2c_normal_sleeping_png;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>wxBitmap<sp/>*bin2c_normal_stopped_png;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>wxBitmap<sp/>*bin2c_normal_waiting_png;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>wxBitmap<sp/>*bin2c_normal_zombie_png;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>wxBitmap<sp/>*bin2c_not_nice_idle_png;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>wxBitmap<sp/>*bin2c_not_nice_killed_png;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>wxBitmap<sp/>*bin2c_not_nice_png;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>wxBitmap<sp/>*bin2c_not_nice_running_png;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>wxBitmap<sp/>*bin2c_not_nice_sleeping_png;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>wxBitmap<sp/>*bin2c_not_nice_stopped_png;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>wxBitmap<sp/>*bin2c_not_nice_waiting_png;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>wxBitmap<sp/>*bin2c_not_nice_zombie_png;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>wxBitmap<sp/>*bin2c_nut_64x64_png;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>wxBitmap<sp/>*bin2c_ram_png;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>wxBitmap<sp/>*bin2c_realtime_idle_png;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>wxBitmap<sp/>*bin2c_realtime_killed_png;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>wxBitmap<sp/>*bin2c_realtime_png;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>wxBitmap<sp/>*bin2c_realtime_running_png;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>wxBitmap<sp/>*bin2c_realtime_sleeping_png;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>wxBitmap<sp/>*bin2c_realtime_stopped_png;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>wxBitmap<sp/>*bin2c_realtime_waiting_png;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>wxBitmap<sp/>*bin2c_realtime_zombie_png;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>wxBitmap<sp/>*bin2c_wxwidgets_logo_64x48_png;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>RESOURCES_ICONS_H<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="resources/bak/resources.icons.h"/>
+  </compounddef>
+</doxygen>

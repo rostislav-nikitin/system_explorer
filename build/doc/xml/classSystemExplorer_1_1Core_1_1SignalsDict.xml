@@ -1,0 +1,117 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="classSystemExplorer_1_1Core_1_1SignalsDict" kind="class" language="C++" prot="public">
+    <compoundname>SystemExplorer::Core::SignalsDict</compoundname>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classSystemExplorer_1_1Core_1_1SignalsDict_1a0fb594d711cbe8e5efdf450f78536961" prot="private" static="yes" mutable="no">
+        <type><ref refid="classSystemExplorer_1_1Core_1_1SignalsDict" kindref="compound">SignalsDict</ref> *</type>
+        <definition>SignalsDict* SystemExplorer::Core::SignalsDict::_instance</definition>
+        <argsstring></argsstring>
+        <name>_instance</name>
+        <qualifiedname>SystemExplorer::Core::SignalsDict::_instance</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="core/signals_dict.hpp" line="18" column="20" bodyfile="core/signals_dict.hpp" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classSystemExplorer_1_1Core_1_1SignalsDict_1ad072b4d19450a8ec3181639d7ae251b0" prot="private" static="no" mutable="no">
+        <type>std::map&lt; std::string, <ref refid="classSystemExplorer_1_1Core_1_1Models_1_1Signal" kindref="compound">Signal</ref> &gt;</type>
+        <definition>std::map&lt;std::string, Signal&gt; SystemExplorer::Core::SignalsDict::_signals</definition>
+        <argsstring></argsstring>
+        <name>_signals</name>
+        <qualifiedname>SystemExplorer::Core::SignalsDict::_signals</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="core/signals_dict.hpp" line="20" column="10" bodyfile="core/signals_dict.hpp" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classSystemExplorer_1_1Core_1_1SignalsDict_1a6110ef7ffb57156b2f70850e2df6c485" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SystemExplorer::Core::SignalsDict::SignalsDict</definition>
+        <argsstring>()</argsstring>
+        <name>SignalsDict</name>
+        <qualifiedname>SystemExplorer::Core::SignalsDict::SignalsDict</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="core/signals_dict.hpp" line="21" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classSystemExplorer_1_1Core_1_1SignalsDict_1a7cbaca73d56ad9a2cc38f8f1dff24b76" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classSystemExplorer_1_1Core_1_1SignalsDict" kindref="compound">SignalsDict</ref> *</type>
+        <definition>static SignalsDict * SystemExplorer::Core::SignalsDict::GetInstance</definition>
+        <argsstring>()</argsstring>
+        <name>GetInstance</name>
+        <qualifiedname>SystemExplorer::Core::SignalsDict::GetInstance</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="core/signals_dict.hpp" line="23" column="20"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classSystemExplorer_1_1Core_1_1SignalsDict_1a605b69c7df24e12311c8603b739a5bd8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classSystemExplorer_1_1Core_1_1Models_1_1Signal" kindref="compound">Signal</ref></type>
+        <definition>Signal SystemExplorer::Core::SignalsDict::Get</definition>
+        <argsstring>(std::string const &amp;alias)</argsstring>
+        <name>Get</name>
+        <qualifiedname>SystemExplorer::Core::SignalsDict::Get</qualifiedname>
+        <param>
+          <type>std::string const &amp;</type>
+          <declname>alias</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="core/signals_dict.hpp" line="25" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Core_1_1SignalsDict_1a9cf0b1c0294bdbdb08046953401c92f6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="classSystemExplorer_1_1Core_1_1Models_1_1Signal" kindref="compound">Signal</ref> &gt;</type>
+        <definition>std::vector&lt; Signal &gt; SystemExplorer::Core::SignalsDict::GetAll</definition>
+        <argsstring>() const</argsstring>
+        <name>GetAll</name>
+        <qualifiedname>SystemExplorer::Core::SignalsDict::GetAll</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="core/signals_dict.hpp" line="26" column="13"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="core/signals_dict.hpp" line="16" column="1" bodyfile="core/signals_dict.hpp" bodystart="17" bodyend="28"/>
+    <listofallmembers>
+      <member refid="classSystemExplorer_1_1Core_1_1SignalsDict_1a0fb594d711cbe8e5efdf450f78536961" prot="private" virt="non-virtual"><scope>SystemExplorer::Core::SignalsDict</scope><name>_instance</name></member>
+      <member refid="classSystemExplorer_1_1Core_1_1SignalsDict_1ad072b4d19450a8ec3181639d7ae251b0" prot="private" virt="non-virtual"><scope>SystemExplorer::Core::SignalsDict</scope><name>_signals</name></member>
+      <member refid="classSystemExplorer_1_1Core_1_1SignalsDict_1a605b69c7df24e12311c8603b739a5bd8" prot="public" virt="non-virtual"><scope>SystemExplorer::Core::SignalsDict</scope><name>Get</name></member>
+      <member refid="classSystemExplorer_1_1Core_1_1SignalsDict_1a9cf0b1c0294bdbdb08046953401c92f6" prot="public" virt="non-virtual"><scope>SystemExplorer::Core::SignalsDict</scope><name>GetAll</name></member>
+      <member refid="classSystemExplorer_1_1Core_1_1SignalsDict_1a7cbaca73d56ad9a2cc38f8f1dff24b76" prot="public" virt="non-virtual"><scope>SystemExplorer::Core::SignalsDict</scope><name>GetInstance</name></member>
+      <member refid="classSystemExplorer_1_1Core_1_1SignalsDict_1a6110ef7ffb57156b2f70850e2df6c485" prot="private" virt="non-virtual"><scope>SystemExplorer::Core::SignalsDict</scope><name>SignalsDict</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

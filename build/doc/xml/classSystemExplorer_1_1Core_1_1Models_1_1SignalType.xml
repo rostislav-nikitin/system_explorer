@@ -1,0 +1,149 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="classSystemExplorer_1_1Core_1_1Models_1_1SignalType" kind="class" language="C++" prot="public">
+    <compoundname>SystemExplorer::Core::Models::SignalType</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classSystemExplorer_1_1Core_1_1Models_1_1SignalType_1a84fcce4513d2ce55ea0acdc99181f88b" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int SystemExplorer::Core::Models::SignalType::_id</definition>
+        <argsstring></argsstring>
+        <name>_id</name>
+        <qualifiedname>SystemExplorer::Core::Models::SignalType::_id</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="core/models/signal_type.hpp" line="14" column="5" bodyfile="core/models/signal_type.hpp" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSystemExplorer_1_1Core_1_1Models_1_1SignalType_1ad30220bcba7ae4f3a5aec6372fed8ca6" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string SystemExplorer::Core::Models::SignalType::_alias</definition>
+        <argsstring></argsstring>
+        <name>_alias</name>
+        <qualifiedname>SystemExplorer::Core::Models::SignalType::_alias</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="core/models/signal_type.hpp" line="15" column="13" bodyfile="core/models/signal_type.hpp" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSystemExplorer_1_1Core_1_1Models_1_1SignalType_1a22e20c3726bb6f1795dbc356ca64db31" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string SystemExplorer::Core::Models::SignalType::_description</definition>
+        <argsstring></argsstring>
+        <name>_description</name>
+        <qualifiedname>SystemExplorer::Core::Models::SignalType::_description</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="core/models/signal_type.hpp" line="16" column="13" bodyfile="core/models/signal_type.hpp" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classSystemExplorer_1_1Core_1_1Models_1_1SignalType_1a7c94ef31b9222fdc1e0fe98ef493c563" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SystemExplorer::Core::Models::SignalType::SignalType</definition>
+        <argsstring>()</argsstring>
+        <name>SignalType</name>
+        <qualifiedname>SystemExplorer::Core::Models::SignalType::SignalType</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="core/models/signal_type.hpp" line="18" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Core_1_1Models_1_1SignalType_1aef29c2993e99bae243347cc9bf1cece3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SystemExplorer::Core::Models::SignalType::SignalType</definition>
+        <argsstring>(int id, std::string alias, std::string description)</argsstring>
+        <name>SignalType</name>
+        <qualifiedname>SystemExplorer::Core::Models::SignalType::SignalType</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>alias</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>description</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="core/models/signal_type.hpp" line="19" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Core_1_1Models_1_1SignalType_1a1d46bea7b22545fde3b9ef6e908bdb62" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int SystemExplorer::Core::Models::SignalType::GetId</definition>
+        <argsstring>() const</argsstring>
+        <name>GetId</name>
+        <qualifiedname>SystemExplorer::Core::Models::SignalType::GetId</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="core/models/signal_type.hpp" line="21" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Core_1_1Models_1_1SignalType_1a0e5bea5a790bb00436cdf230c509b800" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string SystemExplorer::Core::Models::SignalType::GetAlias</definition>
+        <argsstring>() const</argsstring>
+        <name>GetAlias</name>
+        <qualifiedname>SystemExplorer::Core::Models::SignalType::GetAlias</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="core/models/signal_type.hpp" line="22" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Core_1_1Models_1_1SignalType_1ad297dd3c48822da4bfb55c0716b63bb8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string SystemExplorer::Core::Models::SignalType::GetDescription</definition>
+        <argsstring>() const</argsstring>
+        <name>GetDescription</name>
+        <qualifiedname>SystemExplorer::Core::Models::SignalType::GetDescription</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="core/models/signal_type.hpp" line="23" column="13"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="core/models/signal_type.hpp" line="12" column="1" bodyfile="core/models/signal_type.hpp" bodystart="13" bodyend="24"/>
+    <listofallmembers>
+      <member refid="classSystemExplorer_1_1Core_1_1Models_1_1SignalType_1ad30220bcba7ae4f3a5aec6372fed8ca6" prot="private" virt="non-virtual"><scope>SystemExplorer::Core::Models::SignalType</scope><name>_alias</name></member>
+      <member refid="classSystemExplorer_1_1Core_1_1Models_1_1SignalType_1a22e20c3726bb6f1795dbc356ca64db31" prot="private" virt="non-virtual"><scope>SystemExplorer::Core::Models::SignalType</scope><name>_description</name></member>
+      <member refid="classSystemExplorer_1_1Core_1_1Models_1_1SignalType_1a84fcce4513d2ce55ea0acdc99181f88b" prot="private" virt="non-virtual"><scope>SystemExplorer::Core::Models::SignalType</scope><name>_id</name></member>
+      <member refid="classSystemExplorer_1_1Core_1_1Models_1_1SignalType_1a0e5bea5a790bb00436cdf230c509b800" prot="public" virt="non-virtual"><scope>SystemExplorer::Core::Models::SignalType</scope><name>GetAlias</name></member>
+      <member refid="classSystemExplorer_1_1Core_1_1Models_1_1SignalType_1ad297dd3c48822da4bfb55c0716b63bb8" prot="public" virt="non-virtual"><scope>SystemExplorer::Core::Models::SignalType</scope><name>GetDescription</name></member>
+      <member refid="classSystemExplorer_1_1Core_1_1Models_1_1SignalType_1a1d46bea7b22545fde3b9ef6e908bdb62" prot="public" virt="non-virtual"><scope>SystemExplorer::Core::Models::SignalType</scope><name>GetId</name></member>
+      <member refid="classSystemExplorer_1_1Core_1_1Models_1_1SignalType_1a7c94ef31b9222fdc1e0fe98ef493c563" prot="public" virt="non-virtual"><scope>SystemExplorer::Core::Models::SignalType</scope><name>SignalType</name></member>
+      <member refid="classSystemExplorer_1_1Core_1_1Models_1_1SignalType_1aef29c2993e99bae243347cc9bf1cece3" prot="public" virt="non-virtual"><scope>SystemExplorer::Core::Models::SignalType</scope><name>SignalType</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

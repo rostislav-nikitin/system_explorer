@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="classSystemExplorer_1_1Core_1_1Models_1_1ProcessTree" kind="class" language="C++" prot="public">
+    <compoundname>SystemExplorer::Core::Models::ProcessTree</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classSystemExplorer_1_1Core_1_1Models_1_1ProcessTree_1a7a6b253281aaee943c50357d9923d346" prot="public" static="no" mutable="no">
+        <type>std::map&lt; pid_t, <ref refid="classSystemExplorer_1_1Core_1_1Models_1_1Process" kindref="compound">Process</ref> &gt;</type>
+        <definition>std::map&lt;pid_t, Process&gt; SystemExplorer::Core::Models::ProcessTree::processes</definition>
+        <argsstring></argsstring>
+        <name>processes</name>
+        <qualifiedname>SystemExplorer::Core::Models::ProcessTree::processes</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="core/models/process_tree.hpp" line="19" column="26" bodyfile="core/models/process_tree.hpp" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="core/models/process_tree.hpp" line="16" column="13" bodyfile="core/models/process_tree.hpp" bodystart="17" bodyend="20"/>
+    <listofallmembers>
+      <member refid="classSystemExplorer_1_1Core_1_1Models_1_1ProcessTree_1a7a6b253281aaee943c50357d9923d346" prot="public" virt="non-virtual"><scope>SystemExplorer::Core::Models::ProcessTree</scope><name>processes</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

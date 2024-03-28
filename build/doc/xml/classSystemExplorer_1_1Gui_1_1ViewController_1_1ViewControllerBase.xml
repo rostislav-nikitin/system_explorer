@@ -1,0 +1,259 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ViewControllerBase" kind="class" language="C++" prot="public">
+    <compoundname>SystemExplorer::Gui::ViewController::ViewControllerBase</compoundname>
+    <basecompoundref refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1IViewController" prot="public" virt="non-virtual">SystemExplorer::Gui::ViewController::IViewController</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">wxPanel</basecompoundref>
+    <derivedcompoundref refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController" prot="public" virt="non-virtual">SystemExplorer::Gui::ViewController::ProcessTreeViewController</derivedcompoundref>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ViewControllerBase_1a652ee5227a114cb7534b83b9740f753a" prot="protected" static="no" mutable="no">
+        <type>wxBookCtrl *</type>
+        <definition>wxBookCtrl* SystemExplorer::Gui::ViewController::ViewControllerBase::_book</definition>
+        <argsstring></argsstring>
+        <name>_book</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::ViewControllerBase::_book</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/view_controller_base.hpp" line="20" column="28" bodyfile="gui/view_controller/view_controller_base.hpp" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ViewControllerBase_1a592b71e61f48a66d318f4237c19ba3b0" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SystemExplorer::Gui::ViewController::ViewControllerBase::ViewControllerBase</definition>
+        <argsstring>(wxBookCtrl *book, std::string title, wxWindowID id=wxID_ANY, bool useByDefault=false)</argsstring>
+        <name>ViewControllerBase</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::ViewControllerBase::ViewControllerBase</qualifiedname>
+        <param>
+          <type>wxBookCtrl *</type>
+          <declname>book</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>title</declname>
+        </param>
+        <param>
+          <type>wxWindowID</type>
+          <declname>id</declname>
+          <defval>wxID_ANY</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>useByDefault</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/view_controller_base.hpp" line="22" column="17"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ViewControllerBase_1a5813960a65733c45503d736e004538fa" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>virtual void SystemExplorer::Gui::ViewController::ViewControllerBase::CreateChildControls</definition>
+        <argsstring>() override</argsstring>
+        <name>CreateChildControls</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::ViewControllerBase::CreateChildControls</qualifiedname>
+        <reimplements refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1IViewController_1a20dc613549d7092e54872b4cbc68fc66">CreateChildControls</reimplements>
+        <reimplementedby refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a32f37cd5016a6be348dbe071a1d1afa3">CreateChildControls</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/view_controller_base.hpp" line="24" column="30"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ViewControllerBase_1ae273430b5cb4a895f10736401be35f68" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>virtual void SystemExplorer::Gui::ViewController::ViewControllerBase::BindEvents</definition>
+        <argsstring>() override</argsstring>
+        <name>BindEvents</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::ViewControllerBase::BindEvents</qualifiedname>
+        <reimplements refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1IViewController_1a222e6d3f35b5c717e5d32112099b662e">BindEvents</reimplements>
+        <reimplementedby refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a69cccb55e49f3f7f782d39834522c9d0">BindEvents</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/view_controller_base.hpp" line="25" column="30"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ViewControllerBase_1a637ce08535eb9e17aa1b3a0cd0c48e90" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>virtual void SystemExplorer::Gui::ViewController::ViewControllerBase::BindData_Before</definition>
+        <argsstring>() override</argsstring>
+        <name>BindData_Before</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::ViewControllerBase::BindData_Before</qualifiedname>
+        <reimplements refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1IViewController_1a3e2b314ad593737919290d079c07286d">BindData_Before</reimplements>
+        <reimplementedby refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1aa2aebc623cfcb8514c0150a2427b332d">BindData_Before</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/view_controller_base.hpp" line="26" column="30"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ViewControllerBase_1a8667331137f0c7c38d9a6e0937975808" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>virtual void SystemExplorer::Gui::ViewController::ViewControllerBase::BindData</definition>
+        <argsstring>() override</argsstring>
+        <name>BindData</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::ViewControllerBase::BindData</qualifiedname>
+        <reimplements refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1IViewController_1a7c1083ebd28913a77543c19bb4bea1a5">BindData</reimplements>
+        <reimplementedby refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1a60b66e1df0994c291d393d30d8f7911d">BindData</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/view_controller_base.hpp" line="27" column="30"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ViewControllerBase_1a79d36c29a3928dd1722a5cb7ef31df2e" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>virtual void SystemExplorer::Gui::ViewController::ViewControllerBase::PostInitialize</definition>
+        <argsstring>()</argsstring>
+        <name>PostInitialize</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::ViewControllerBase::PostInitialize</qualifiedname>
+        <reimplementedby refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController_1ab26b952c20af48a54862ba51aaa477e0">PostInitialize</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/view_controller_base.hpp" line="29" column="30"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ViewControllerBase_1a755db8be9d5d41d33726d11a0096a3d5" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SystemExplorer::Gui::ViewController::ViewControllerBase::SetHelpStatusText</definition>
+        <argsstring>(wxString const &amp;text)</argsstring>
+        <name>SetHelpStatusText</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::ViewControllerBase::SetHelpStatusText</qualifiedname>
+        <param>
+          <type>wxString const &amp;</type>
+          <declname>text</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/view_controller_base.hpp" line="32" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ViewControllerBase_1ae6942df1bf670db7f7414a1af3387c02" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>wxStatusBar *</type>
+        <definition>wxStatusBar * SystemExplorer::Gui::ViewController::ViewControllerBase::GetStatusBar</definition>
+        <argsstring>() const</argsstring>
+        <name>GetStatusBar</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::ViewControllerBase::GetStatusBar</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/view_controller_base.hpp" line="33" column="29"/>
+      </memberdef>
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ViewControllerBase_1a386c14f2c5453421b46b8669dd60f25d" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>wxFrame *</type>
+        <definition>wxFrame * SystemExplorer::Gui::ViewController::ViewControllerBase::GetTopFrame</definition>
+        <argsstring>() const</argsstring>
+        <name>GetTopFrame</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::ViewControllerBase::GetTopFrame</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/view_controller_base.hpp" line="34" column="25"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classSystemExplorer_1_1Gui_1_1ViewController_1_1ViewControllerBase_1a222264fdce4b2a6d78cb8c796bdc69e6" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>virtual void SystemExplorer::Gui::ViewController::ViewControllerBase::Initialize</definition>
+        <argsstring>()</argsstring>
+        <name>Initialize</name>
+        <qualifiedname>SystemExplorer::Gui::ViewController::ViewControllerBase::Initialize</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="gui/view_controller/view_controller_base.hpp" line="37" column="30"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>SystemExplorer::Gui::ViewController::IViewController</label>
+        <link refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1IViewController"/>
+      </node>
+      <node id="4">
+        <label>SystemExplorer::Gui::ViewController::ProcessTreeViewController</label>
+        <link refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ProcessTreeViewController"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>SystemExplorer::Gui::ViewController::ViewControllerBase</label>
+        <link refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ViewControllerBase"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>wxPanel</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>SystemExplorer::Gui::ViewController::IViewController</label>
+        <link refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1IViewController"/>
+      </node>
+      <node id="1">
+        <label>SystemExplorer::Gui::ViewController::ViewControllerBase</label>
+        <link refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ViewControllerBase"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>wxPanel</label>
+      </node>
+    </collaborationgraph>
+    <location file="gui/view_controller/view_controller_base.hpp" line="17" column="13" bodyfile="gui/view_controller/view_controller_base.hpp" bodystart="18" bodyend="38"/>
+    <listofallmembers>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ViewControllerBase_1a652ee5227a114cb7534b83b9740f753a" prot="protected" virt="non-virtual"><scope>SystemExplorer::Gui::ViewController::ViewControllerBase</scope><name>_book</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ViewControllerBase_1a8667331137f0c7c38d9a6e0937975808" prot="protected" virt="virtual"><scope>SystemExplorer::Gui::ViewController::ViewControllerBase</scope><name>BindData</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ViewControllerBase_1a637ce08535eb9e17aa1b3a0cd0c48e90" prot="protected" virt="virtual"><scope>SystemExplorer::Gui::ViewController::ViewControllerBase</scope><name>BindData_Before</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ViewControllerBase_1ae273430b5cb4a895f10736401be35f68" prot="protected" virt="virtual"><scope>SystemExplorer::Gui::ViewController::ViewControllerBase</scope><name>BindEvents</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ViewControllerBase_1a5813960a65733c45503d736e004538fa" prot="protected" virt="virtual"><scope>SystemExplorer::Gui::ViewController::ViewControllerBase</scope><name>CreateChildControls</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ViewControllerBase_1ae6942df1bf670db7f7414a1af3387c02" prot="protected" virt="non-virtual"><scope>SystemExplorer::Gui::ViewController::ViewControllerBase</scope><name>GetStatusBar</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ViewControllerBase_1a386c14f2c5453421b46b8669dd60f25d" prot="protected" virt="non-virtual"><scope>SystemExplorer::Gui::ViewController::ViewControllerBase</scope><name>GetTopFrame</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ViewControllerBase_1a222264fdce4b2a6d78cb8c796bdc69e6" prot="public" virt="virtual"><scope>SystemExplorer::Gui::ViewController::ViewControllerBase</scope><name>Initialize</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ViewControllerBase_1a79d36c29a3928dd1722a5cb7ef31df2e" prot="protected" virt="virtual"><scope>SystemExplorer::Gui::ViewController::ViewControllerBase</scope><name>PostInitialize</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ViewControllerBase_1a755db8be9d5d41d33726d11a0096a3d5" prot="protected" virt="non-virtual"><scope>SystemExplorer::Gui::ViewController::ViewControllerBase</scope><name>SetHelpStatusText</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1ViewControllerBase_1a592b71e61f48a66d318f4237c19ba3b0" prot="protected" virt="non-virtual"><scope>SystemExplorer::Gui::ViewController::ViewControllerBase</scope><name>ViewControllerBase</name></member>
+      <member refid="classSystemExplorer_1_1Gui_1_1ViewController_1_1IViewController_1ae909fde6fe1b4016fe51e827554e258f" prot="public" virt="virtual"><scope>SystemExplorer::Gui::ViewController::ViewControllerBase</scope><name>~IViewController</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

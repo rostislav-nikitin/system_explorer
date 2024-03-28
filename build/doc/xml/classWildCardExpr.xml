@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="classWildCardExpr" kind="class" language="C++" prot="public">
+    <compoundname>WildCardExpr</compoundname>
+      <sectiondef kind="private-type">
+      <memberdef kind="enum" id="classWildCardExpr_1a6cb3bc47837d56af7f3d1466837e79c1" prot="private" static="no" strong="yes">
+        <type></type>
+        <name>WildCardExprState</name>
+        <qualifiedname>WildCardExpr::WildCardExprState</qualifiedname>
+        <enumvalue id="classWildCardExpr_1a6cb3bc47837d56af7f3d1466837e79c1a6adf97f83acf6453d4a6a4b1070f3754" prot="private">
+          <name>None</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classWildCardExpr_1a6cb3bc47837d56af7f3d1466837e79c1a960b44c579bc2f6818d2daaf9e4c16f0" prot="private">
+          <name>Normal</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classWildCardExpr_1a6cb3bc47837d56af7f3d1466837e79c1a841554877372e63fb76e619bcd0808f1" prot="private">
+          <name>CharacterSetStarted</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libs/wild_card_expr/include/wild_card_expr/wild_card_expr.hpp" line="17" column="1" bodyfile="libs/wild_card_expr/include/wild_card_expr/wild_card_expr.hpp" bodystart="18" bodyend="22"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classWildCardExpr_1ac171e4cdb10adcffb08a26398a25c783" prot="private" static="no" mutable="no">
+        <type>char const</type>
+        <definition>char const WildCardExpr::WCEXPR_NORMAL_START_CHARACTER_SET</definition>
+        <argsstring></argsstring>
+        <name>WCEXPR_NORMAL_START_CHARACTER_SET</name>
+        <qualifiedname>WildCardExpr::WCEXPR_NORMAL_START_CHARACTER_SET</qualifiedname>
+        <initializer>= &apos;[&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libs/wild_card_expr/include/wild_card_expr/wild_card_expr.hpp" line="12" column="12" bodyfile="libs/wild_card_expr/include/wild_card_expr/wild_card_expr.hpp" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classWildCardExpr_1a88dad24795472288586f317cf24687b5" prot="private" static="no" mutable="no">
+        <type>char const</type>
+        <definition>char const WildCardExpr::WCEXPR_NORMAL_ANY_CHARACTER</definition>
+        <argsstring></argsstring>
+        <name>WCEXPR_NORMAL_ANY_CHARACTER</name>
+        <qualifiedname>WildCardExpr::WCEXPR_NORMAL_ANY_CHARACTER</qualifiedname>
+        <initializer>= &apos;?&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libs/wild_card_expr/include/wild_card_expr/wild_card_expr.hpp" line="13" column="12" bodyfile="libs/wild_card_expr/include/wild_card_expr/wild_card_expr.hpp" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classWildCardExpr_1a2c6099ea1ffd91d9febdc65562acc33f" prot="private" static="no" mutable="no">
+        <type>char const</type>
+        <definition>char const WildCardExpr::WCEXPR_NORMAL_ANY_CHARACTERS</definition>
+        <argsstring></argsstring>
+        <name>WCEXPR_NORMAL_ANY_CHARACTERS</name>
+        <qualifiedname>WildCardExpr::WCEXPR_NORMAL_ANY_CHARACTERS</qualifiedname>
+        <initializer>= &apos;*&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libs/wild_card_expr/include/wild_card_expr/wild_card_expr.hpp" line="14" column="12" bodyfile="libs/wild_card_expr/include/wild_card_expr/wild_card_expr.hpp" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classWildCardExpr_1a5641668083601e5b948d222f729b10e3" prot="private" static="no" mutable="no">
+        <type>char const</type>
+        <definition>char const WildCardExpr::WCEXPR_CHARACTER_SET_STARTED_END_CHARACTER_SET</definition>
+        <argsstring></argsstring>
+        <name>WCEXPR_CHARACTER_SET_STARTED_END_CHARACTER_SET</name>
+        <qualifiedname>WildCardExpr::WCEXPR_CHARACTER_SET_STARTED_END_CHARACTER_SET</qualifiedname>
+        <initializer>= &apos;]&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libs/wild_card_expr/include/wild_card_expr/wild_card_expr.hpp" line="15" column="12" bodyfile="libs/wild_card_expr/include/wild_card_expr/wild_card_expr.hpp" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classWildCardExpr_1aefb3a1a951e8c40f1f42c044ba49749c" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string WildCardExpr::_expr_str</definition>
+        <argsstring></argsstring>
+        <name>_expr_str</name>
+        <qualifiedname>WildCardExpr::_expr_str</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libs/wild_card_expr/include/wild_card_expr/wild_card_expr.hpp" line="24" column="13" bodyfile="libs/wild_card_expr/include/wild_card_expr/wild_card_expr.hpp" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classWildCardExpr_1af0d509b4cd5cfeb6d640a49d75735718" prot="private" static="no" mutable="no">
+        <type>std::map&lt; WildCardExprState, std::vector&lt; char &gt; &gt;</type>
+        <definition>std::map&lt;WildCardExprState, std::vector&lt;char&gt; &gt; WildCardExpr::_state_modifying_characters</definition>
+        <argsstring></argsstring>
+        <name>_state_modifying_characters</name>
+        <qualifiedname>WildCardExpr::_state_modifying_characters</qualifiedname>
+        <initializer>=
+    {
+		{WildCardExprState::Normal, {WCEXPR_NORMAL_START_CHARACTER_SET, WCEXPR_NORMAL_ANY_CHARACTER, WCEXPR_NORMAL_ANY_CHARACTERS}},
+		{WildCardExprState::CharacterSetStarted, {WCEXPR_CHARACTER_SET_STARTED_END_CHARACTER_SET}}
+	}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libs/wild_card_expr/include/wild_card_expr/wild_card_expr.hpp" line="25" column="10" bodyfile="libs/wild_card_expr/include/wild_card_expr/wild_card_expr.hpp" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classWildCardExpr_1a37071fbfb2b04297edd7529a7e75d896" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>WildCardExpr::WildCardExpr</definition>
+        <argsstring>(std::string expr_str)</argsstring>
+        <name>WildCardExpr</name>
+        <qualifiedname>WildCardExpr::WildCardExpr</qualifiedname>
+        <param>
+          <type>std::string</type>
+          <declname>expr_str</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libs/wild_card_expr/include/wild_card_expr/wild_card_expr.hpp" line="33" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classWildCardExpr_1a2b39b128e97b585c271e8e1981fa432e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t WildCardExpr::find</definition>
+        <argsstring>(std::string const &amp;in_str, size_t in_pos=0)</argsstring>
+        <name>find</name>
+        <qualifiedname>WildCardExpr::find</qualifiedname>
+        <param>
+          <type>std::string const &amp;</type>
+          <declname>in_str</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>in_pos</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libs/wild_card_expr/include/wild_card_expr/wild_card_expr.hpp" line="35" column="8"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="libs/wild_card_expr/include/wild_card_expr/wild_card_expr.hpp" line="10" column="1" bodyfile="libs/wild_card_expr/include/wild_card_expr/wild_card_expr.hpp" bodystart="11" bodyend="36"/>
+    <listofallmembers>
+      <member refid="classWildCardExpr_1aefb3a1a951e8c40f1f42c044ba49749c" prot="private" virt="non-virtual"><scope>WildCardExpr</scope><name>_expr_str</name></member>
+      <member refid="classWildCardExpr_1af0d509b4cd5cfeb6d640a49d75735718" prot="private" virt="non-virtual"><scope>WildCardExpr</scope><name>_state_modifying_characters</name></member>
+      <member refid="classWildCardExpr_1a2b39b128e97b585c271e8e1981fa432e" prot="public" virt="non-virtual"><scope>WildCardExpr</scope><name>find</name></member>
+      <member refid="classWildCardExpr_1a5641668083601e5b948d222f729b10e3" prot="private" virt="non-virtual"><scope>WildCardExpr</scope><name>WCEXPR_CHARACTER_SET_STARTED_END_CHARACTER_SET</name></member>
+      <member refid="classWildCardExpr_1a88dad24795472288586f317cf24687b5" prot="private" virt="non-virtual"><scope>WildCardExpr</scope><name>WCEXPR_NORMAL_ANY_CHARACTER</name></member>
+      <member refid="classWildCardExpr_1a2c6099ea1ffd91d9febdc65562acc33f" prot="private" virt="non-virtual"><scope>WildCardExpr</scope><name>WCEXPR_NORMAL_ANY_CHARACTERS</name></member>
+      <member refid="classWildCardExpr_1ac171e4cdb10adcffb08a26398a25c783" prot="private" virt="non-virtual"><scope>WildCardExpr</scope><name>WCEXPR_NORMAL_START_CHARACTER_SET</name></member>
+      <member refid="classWildCardExpr_1a37071fbfb2b04297edd7529a7e75d896" prot="public" virt="non-virtual"><scope>WildCardExpr</scope><name>WildCardExpr</name></member>
+      <member refid="classWildCardExpr_1a6cb3bc47837d56af7f3d1466837e79c1" prot="private" virt="non-virtual"><scope>WildCardExpr</scope><name>WildCardExprState</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

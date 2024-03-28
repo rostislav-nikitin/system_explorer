@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="classSystemExplorer_1_1Core_1_1Models_1_1ProcessesStatCommon" kind="class" language="C++" prot="public">
+    <compoundname>SystemExplorer::Core::Models::ProcessesStatCommon</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classSystemExplorer_1_1Core_1_1Models_1_1ProcessesStatCommon_1a294e2852cf3172f3fbcb7dcbb04ac84b" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float SystemExplorer::Core::Models::ProcessesStatCommon::cpu_load</definition>
+        <argsstring></argsstring>
+        <name>cpu_load</name>
+        <qualifiedname>SystemExplorer::Core::Models::ProcessesStatCommon::cpu_load</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="core/models/processes_stat_common.hpp" line="13" column="23" bodyfile="core/models/processes_stat_common.hpp" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSystemExplorer_1_1Core_1_1Models_1_1ProcessesStatCommon_1ae0fa5b43c3fd87e9365c12d5272c9f5c" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double SystemExplorer::Core::Models::ProcessesStatCommon::rss</definition>
+        <argsstring></argsstring>
+        <name>rss</name>
+        <qualifiedname>SystemExplorer::Core::Models::ProcessesStatCommon::rss</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="core/models/processes_stat_common.hpp" line="14" column="24" bodyfile="core/models/processes_stat_common.hpp" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classSystemExplorer_1_1Core_1_1Models_1_1ProcessesStatCommon_1a3b7c06f8b17db6ef27c0a30786d710c3" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double SystemExplorer::Core::Models::ProcessesStatCommon::vmsize</definition>
+        <argsstring></argsstring>
+        <name>vmsize</name>
+        <qualifiedname>SystemExplorer::Core::Models::ProcessesStatCommon::vmsize</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="core/models/processes_stat_common.hpp" line="15" column="24" bodyfile="core/models/processes_stat_common.hpp" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="core/models/processes_stat_common.hpp" line="10" column="13" bodyfile="core/models/processes_stat_common.hpp" bodystart="11" bodyend="16"/>
+    <listofallmembers>
+      <member refid="classSystemExplorer_1_1Core_1_1Models_1_1ProcessesStatCommon_1a294e2852cf3172f3fbcb7dcbb04ac84b" prot="public" virt="non-virtual"><scope>SystemExplorer::Core::Models::ProcessesStatCommon</scope><name>cpu_load</name></member>
+      <member refid="classSystemExplorer_1_1Core_1_1Models_1_1ProcessesStatCommon_1ae0fa5b43c3fd87e9365c12d5272c9f5c" prot="public" virt="non-virtual"><scope>SystemExplorer::Core::Models::ProcessesStatCommon</scope><name>rss</name></member>
+      <member refid="classSystemExplorer_1_1Core_1_1Models_1_1ProcessesStatCommon_1a3b7c06f8b17db6ef27c0a30786d710c3" prot="public" virt="non-virtual"><scope>SystemExplorer::Core::Models::ProcessesStatCommon</scope><name>vmsize</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="namespaceSystemExplorer_1_1Gui_1_1Control" kind="namespace" language="C++">
+    <compoundname>SystemExplorer::Gui::Control</compoundname>
+    <innerclass refid="classSystemExplorer_1_1Gui_1_1Control_1_1ControlBase" prot="public">SystemExplorer::Gui::Control::ControlBase</innerclass>
+    <innerclass refid="classSystemExplorer_1_1Gui_1_1Control_1_1IconControl" prot="public">SystemExplorer::Gui::Control::IconControl</innerclass>
+    <innerclass refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableControlBase" prot="public">SystemExplorer::Gui::Control::SearchableControlBase</innerclass>
+    <innerclass refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableListControl" prot="public">SystemExplorer::Gui::Control::SearchableListControl</innerclass>
+    <innerclass refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableListViewControl" prot="public">SystemExplorer::Gui::Control::SearchableListViewControl</innerclass>
+    <innerclass refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControl" prot="public">SystemExplorer::Gui::Control::SearchableTreeListControl</innerclass>
+    <innerclass refid="classSystemExplorer_1_1Gui_1_1Control_1_1SearchableTreeListControlBase" prot="public">SystemExplorer::Gui::Control::SearchableTreeListControlBase</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="gui/control/control_base.h" line="15" column="9"/>
+  </compounddef>
+</doxygen>
