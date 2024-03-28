@@ -107,4 +107,4 @@ target_link_libraries(proc_process_stat_parser_test_runner gmock gtest ${googlet
 #list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake")
 #message("${CMAKE_MODULE_PATH}")
 
-add_subdirectory(doc)
+#add_subdirectory(doc)
