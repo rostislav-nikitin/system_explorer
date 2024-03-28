@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.24)
 
-project(system_explorer)
+#project("System Explorer" VERSION 0.0.1 LANGUAGES CXX)
+#project(system_explorer)
 
 # wxWidgest
 find_package(wxWidgets)
@@ -102,3 +103,8 @@ add_executable(proc_process_stat_parser_test_runner
 target_link_libraries(proc_process_stat_parser_test_runner gmock gtest ${googletest_LIBRARIES})
 
 #file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/assets DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+           
+#list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake")
+#message("${CMAKE_MODULE_PATH}")
+
+add_subdirectory(doc)
