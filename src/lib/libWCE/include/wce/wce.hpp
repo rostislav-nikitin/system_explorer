@@ -1,5 +1,5 @@
-#ifndef WILD_CARD_EXPR
-#define WILD_CARD_EXPR
+#ifndef WCE_HPP
+#define WCE_HPP
 
 
 #include <string>

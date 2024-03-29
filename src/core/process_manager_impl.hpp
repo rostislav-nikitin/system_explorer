@@ -9,7 +9,7 @@
 
 #include <algorithm>
 
-#include <wild_card_expr/wild_card_expr.hpp>
+#include <wce/wce.hpp>
 
 #include "models/process.hpp"
 

@@ -34,11 +34,11 @@ add_custom_command (OUTPUT ${CMAKE_CURRENT_SOURCE_DIR}/resources/resources.icons
                      WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/)
 
 #Libs
-include_directories(libs/wild_card_expr/include)
-add_library(wild_card_expr libs/wild_card_expr/src/wild_card_expr.cpp)
 
-include_directories(libs/fs/include)
-add_library(fs libs/fs/src/fs.cpp)
+#add_library(wild_card_expr libs/wild_card_expr/src/wild_card_expr.cpp)
+add_subdirectory(lib/libWCE)
+add_subdirectory(lib/libFS)
+#add_library(fs libs/fs/src/fs.cpp)
 
 #App
 add_executable(system_explorer 
@@ -81,7 +81,9 @@ add_executable(system_explorer
 
 	app.cpp)
 
-target_link_libraries(system_explorer wild_card_expr fs ${wxWidgets_LIBRARIES})
+target_include_directories(system_explorer PRIVATE lib/libFS/include)
+target_include_directories(system_explorer PRIVATE lib/libWCE/include)
+target_link_libraries(system_explorer libWCE libFS ${wxWidgets_LIBRARIES})
 
 # Tests
 
@@ -93,13 +95,11 @@ target_link_libraries(system_explorer wild_card_expr fs ${wxWidgets_LIBRARIES})
 add_executable(proc_stat_parser_test_runner 
 	core/parsers/proc_stat_parser.cpp
 	tests/core/proc_stat_parser_test_runner.cpp)
-
 target_link_libraries(proc_stat_parser_test_runner gmock gtest ${googletest_LIBRARIES})
 
 add_executable(proc_process_stat_parser_test_runner 
 	core/parsers/proc_process_stat_parser.cpp
 	tests/core/proc_process_stat_parser_test_runner.cpp)
-
 target_link_libraries(proc_process_stat_parser_test_runner gmock gtest ${googletest_LIBRARIES})
 
 #file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/assets DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
@@ -107,4 +107,4 @@ target_link_libraries(proc_process_stat_parser_test_runner gmock gtest ${googlet
 #list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake")
 #message("${CMAKE_MODULE_PATH}")
 
-#add_subdirectory(doc)
+add_subdirectory(doc)

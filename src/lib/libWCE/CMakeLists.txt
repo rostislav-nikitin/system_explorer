@@ -15,7 +15,8 @@ if(NOT googletest_POPULATED)
   add_subdirectory(${googletest_SOURCE_DIR} ${googletest_BUILD_DIR})
 endif()
 
-add_executable(test_runner wild_card_expr.cpp test_runner.cpp)
-target_link_libraries(test_runner gmock gtest)
+add_library(libWCE src/wce.cpp)
 
-add_executable(use_wild_card_expr wild_card_expr.cpp use_wild_card_expr.cpp)
+add_subdirectory(doc)
+
+#add_executable(use_wild_card_expr wild_card_expr.cpp use_wild_card_expr.cpp)

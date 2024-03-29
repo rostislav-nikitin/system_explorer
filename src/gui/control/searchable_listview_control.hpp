@@ -13,7 +13,7 @@
 
 #include "searchable_control_base.hpp"
 #include "searchable_control_base.hpp"
-#include <wild_card_expr/wild_card_expr.hpp>
+#include <wce/wce.hpp>
 
 // RESPONSIBILITIES:
 //  1. Show process data in a treelist
