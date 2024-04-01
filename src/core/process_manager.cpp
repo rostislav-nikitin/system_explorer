@@ -225,7 +225,7 @@ namespace SystemExplorer
 				std::find_if(filters.begin(), filters.end(),
 				[&lname](std::string const &filter)
 				{
-					WildCardExpr wcExpr(filter);
+					WildCardExpr::WildCardExpr wcExpr(filter);
 					//return wcExpr.find(lname) != std::string::npos;
 					return wcExpr.find(lname) == 0;
 				});

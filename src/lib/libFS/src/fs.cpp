@@ -17,7 +17,7 @@ namespace FS
     }
     std::string File::get_full_name() const
     {
-        return _path + std::string(1, '/') + _name;
+        return _path + std::string(1, PathSeparator) + _name;
     }
 
     bool File::exists(std::string path)
@@ -26,8 +26,6 @@ namespace FS
 
         return result;
     }
-
-    std::string Directory::PathSeparator = "/";
 
     std::string Directory::get_home_directory()
     {

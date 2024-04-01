@@ -18,7 +18,7 @@ TEST_P(WildCardExprPositiveCaseFixture, WhenValidThenPosIsNotNPOS)
 	std::string in_str = param.second;
 	size_t not_expected_pos = std::string::npos;
 	// Arrage
-	WildCardExpr sut(expression);
+	WildCardExpr::WildCardExpr sut(expression);
 	// Act
 	size_t actual_pos = sut.find(in_str);
 	// Assert
@@ -62,7 +62,7 @@ TEST_P(WildCardExprNegativeCaseFixture, WhenInvalidThenPosIsNPOS)
 	std::string in_str = param.second;
 	size_t expected_pos = std::string::npos;
 	// Arrage
-	WildCardExpr sut(expression);
+	WildCardExpr::WildCardExpr sut(expression);
 	// Act
 	size_t actual_pos = sut.find(in_str);
 	// Assert
@@ -83,7 +83,7 @@ INSTANTIATE_TEST_SUITE_P(WhenInvalidThenPosIsNPOS,
 
 TEST(TestSuite, TestOne)
 {
-	WildCardExpr sut("T*s*[Iiz]n?");
+	WildCardExpr::WildCardExpr sut("T*s*[Iiz]n?");
 
 	size_t expected_pos = 0;
 	size_t actual_pos =  sut.find("Test string");
