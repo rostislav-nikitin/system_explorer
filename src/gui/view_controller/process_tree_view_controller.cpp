@@ -156,9 +156,9 @@ namespace SystemExplorer
                 AddHotKey(PROCESS_CONTEXT_MENU_SIGNAL_BASE, SignalManager::GetSignal("SIGTERM").GetId(), wxACCEL_ALT, WXK_DELETE);
                 AddHotKey(PROCESS_CONTEXT_MENU_SIGNAL_BASE, SignalManager::GetSignal("SIGKILL").GetId(), wxACCEL_CTRL, WXK_DELETE);
                 AddHotKey(PROCESS_CONTEXT_MENU_SIGNAL_BASE, SignalManager::GetSignal("SIGSTOP").GetId(), 
-                    static_cast<wxAcceleratorEntryFlags>((int)wxACCEL_CTRL), static_cast<int>('P'));
+                    static_cast<wxAcceleratorEntryFlags>((int)wxACCEL_CTRL), static_cast<int>('T'));
                 AddHotKey(PROCESS_CONTEXT_MENU_SIGNAL_BASE, SignalManager::GetSignal("SIGCONT").GetId(), 
-                    static_cast<wxAcceleratorEntryFlags>((int)wxACCEL_CTRL), static_cast<int>('U'));
+                    static_cast<wxAcceleratorEntryFlags>((int)wxACCEL_CTRL), static_cast<int>('E'));
             }
 
             void ProcessTreeViewController::AddHotKey(int menuBase, int itemId, wxAcceleratorEntryFlags flags, int key)
@@ -195,7 +195,7 @@ namespace SystemExplorer
                 entries.push_back(wxAcceleratorEntry(static_cast<wxAcceleratorEntryFlags>(
                     (int)wxACCEL_CTRL), (int)'S', static_cast<int>(ProcessContextMenuId::AutoSort)));
                 entries.push_back(wxAcceleratorEntry(static_cast<wxAcceleratorEntryFlags>(
-                    (int)wxACCEL_CTRL), (int)'P', static_cast<int>(ProcessContextMenuId::ShowAllProcesses)));
+                    (int)wxACCEL_CTRL), (int)'L', static_cast<int>(ProcessContextMenuId::ShowAllProcesses)));
                 entries.push_back(wxAcceleratorEntry(static_cast<wxAcceleratorEntryFlags>(
                     (int)wxACCEL_CTRL), (int)'I', static_cast<int>(ProcessContextMenuId::About)));
                 entries.push_back(wxAcceleratorEntry(static_cast<wxAcceleratorEntryFlags>(
@@ -362,7 +362,7 @@ namespace SystemExplorer
                 _processContextMenu->AppendSeparator();
                 _miAutoSort = _processContextMenu->Append(static_cast<int>(ProcessContextMenuId::AutoSort), wxT("&Auto Sort\tCtrl+S"), wxT("Auto Sort"), wxITEM_CHECK);
                 _miAutoSort->Check(true);
-                _miShowAllProcesses = _processContextMenu->Append(static_cast<int>(ProcessContextMenuId::ShowAllProcesses), wxT("&Show All Processes\tCtrl+P"), wxT("Show All Processes"), wxITEM_CHECK);
+                _miShowAllProcesses = _processContextMenu->Append(static_cast<int>(ProcessContextMenuId::ShowAllProcesses), wxT("&Show All Processes\tCtrl+L"), wxT("Show All Processes"), wxITEM_CHECK);
                 _processContextMenu->Append(static_cast<int>(ProcessContextMenuId::About), wxT("&About\tCtrl+I"), wxT("About"));
                 _processContextMenu->AppendSeparator();
                 _processContextMenu->Append(static_cast<int>(ProcessContextMenuId::Close), wxT("&Close\tAlt+F4"), wxT("Close"));
