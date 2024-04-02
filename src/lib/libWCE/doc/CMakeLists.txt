@@ -6,10 +6,10 @@ endif()
 set(DOXYGEN_GENERATE_HTML NO)
 set(DOXYGEN_GENERATE_XML YES)
 
-set(DOXYGEN_STRIP_FROM_PATH ${CMAKE_CURRENT_SOURCE_DIR}/../abstractions)
+set(DOXYGEN_STRIP_FROM_PATH ${CMAKE_CURRENT_SOURCE_DIR}/../include/)
 set(DOXYGEN_EXCLUDE_PATTERNS "*.cpp")
 
-doxygen_add_docs(doxygen-doc-libwildcardexpr ${CMAKE_CURRENT_SOURCE_DIR}/../abstractions COMMENT "Generate Api documentation with Doxygen")
+doxygen_add_docs(doxygen-doc-libwildcardexpr ${CMAKE_CURRENT_SOURCE_DIR}/../wce COMMENT "Generate Api documentation with Doxygen")
 
 find_package(Sphinx REQUIRED)
 

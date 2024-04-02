@@ -7,12 +7,12 @@
 #include <map>
 #include <algorithm>
 
-#include "../../abstractions/wce.hpp"
+#include "abstractions/wce.hpp"
 
 namespace WildCardExpr
 {
 	/// @brief The class that provides a wilcard finding functionality.
-	class WildCardExpr : IWildCardExpr
+	class WildCardExpr : public IWildCardExpr
 	{
 		char const WCEXPR_NORMAL_START_CHARACTER_SET = '[';
 		char const WCEXPR_NORMAL_ANY_CHARACTER = '?';

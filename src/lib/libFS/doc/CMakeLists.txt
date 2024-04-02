@@ -9,7 +9,9 @@ set(DOXYGEN_GENERATE_XML YES)
 set(DOXYGEN_STRIP_FROM_PATH ${CMAKE_CURRENT_SOURCE_DIR}/../include)
 set(DOXYGEN_EXCLUDE_PATTERNS "*.cpp")
 
-doxygen_add_docs(doxygen-doc-libfs  ${CMAKE_CURRENT_SOURCE_DIR}/../include  COMMENT "Generate APP core documentation with Doxygen")
+doxygen_add_docs(doxygen-doc-libfs 
+	${CMAKE_CURRENT_SOURCE_DIR}/../include/fs/
+	COMMENT "Generate APP core documentation with Doxygen")
 
 
 find_package(Sphinx REQUIRED)

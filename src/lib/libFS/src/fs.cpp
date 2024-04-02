@@ -7,6 +7,10 @@ namespace FS
     File::File(std::string path, std::string name) : _path(path), _name(name)
     {
     }
+    char File::get_separator()
+    {
+        return PathSeparator;        
+    }
     std::string File::get_path() const
     {
         return _path;

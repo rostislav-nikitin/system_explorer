@@ -31,13 +31,13 @@ namespace SystemExplorer
         std::string UserConfig::GetConfigPath() const
         {
             return FS::Directory::get_home_directory() 
-                + FS::File::PathSeparator 
+                + FS::File::get_separator() 
                 + std::string(RELATIVE_CONFIG_PATH);
         }
         std::string UserConfig::GetProcessesAutoCompleteChoicesPath() const
         {
             return GetConfigPath() 
-                + FS::File::PathSeparator 
+                + FS::File::get_separator() 
                 + std::string(PROCESSES_AUTOCOMPLETE_CHOICES_PATH);
 
         }
