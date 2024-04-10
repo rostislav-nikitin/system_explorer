@@ -8,7 +8,7 @@ namespace SystemExplorer
         namespace ViewController
         {
             ProcessTreeViewController::ProcessTreeViewController(wxBookCtrl *book, 
-                SystemExplorer::Core::ProcessManager processManager,
+                OS::Process::ProcessManager processManager,
                 std::string title,
                 Config::UserConfig &userConfig,
                 wxWindowID id,
@@ -621,9 +621,9 @@ namespace SystemExplorer
             void ProcessTreeViewController::BindData()
             {
 
-                using SystemExplorer::Core::ProcessManager;
-                using SystemExplorer::Core::Models::Process;
-                using SystemExplorer::Core::Models::ProcessTree;
+                using OS::Process::ProcessManager;
+                using OS::Process::Model::Process;
+                using OS::Process::Model::ProcessTree;
                 using SystemExplorer::Core::Models::ProcessesStat;
 
                 unsigned long currentUserId = geteuid();
@@ -683,9 +683,9 @@ namespace SystemExplorer
 
             void ProcessTreeViewController::ReBindData()
             {
-                using SystemExplorer::Core::ProcessManager;
-                using SystemExplorer::Core::Models::Process;
-                using SystemExplorer::Core::Models::ProcessTree;
+                using OS::Process::ProcessManager;
+                using OS::Process::Model::Process;
+                using OS::Process::Model::ProcessTree;
                 using SystemExplorer::Core::Models::ProcessesStat;
 
                 unsigned long currentUserId = geteuid();

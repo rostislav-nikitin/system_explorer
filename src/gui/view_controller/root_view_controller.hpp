@@ -6,7 +6,8 @@
 
 #include "../../config/config.hpp"
 
-#include "../../core/process_manager.hpp"
+//#include "../../core/process_manager.hpp"
+#include <os/process/process_manager.hpp>
 
 #include "process_tree_view_controller.hpp"
 

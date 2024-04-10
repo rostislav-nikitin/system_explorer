@@ -9,7 +9,7 @@ namespace SystemExplorer
                 : wxFrame(nullptr, wxID_ANY, "System Explorer", wxPoint(-1, -1), wxSize(800, 600)),
                 _config(config)
             {
-                using SystemExplorer::Core::ProcessManager;
+                using OS::Process::ProcessManager;
                 using SystemExplorer::Gui::ViewController::ProcessTreeViewController;
 
                 CreateStatusBar(1, wxSTB_SIZEGRIP|wxSTB_ELLIPSIZE_END|wxSTB_SHOW_TIPS|wxFULL_REPAINT_ON_RESIZE);

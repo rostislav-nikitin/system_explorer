@@ -23,10 +23,11 @@
 #include <wx/imaglist.h>
 
 #include <fs/fs.hpp>
+#include <os/process/process_manager.hpp>
 
 #include "../../config/user_config.hpp"
 
-#include "../../core/process_manager.hpp"
+//#include "../../core/process_manager.hpp"
 #include "../../core/processes_stat_manager.hpp"
 #include "../../core/signal_manager.hpp"
 #include "../../core/models/process_stat.hpp"
@@ -103,7 +104,7 @@ namespace SystemExplorer
 	            Control::SearchableControlBase *_processesListControl;
                 //Control::SearchableListControl *_processesListControl;
 
-                SystemExplorer::Core::ProcessManager _processManager;
+                OS::Process::ProcessManager _processManager;
                 SystemExplorer::Core::ProcessesStatManager _processesStatManager;
 
                 wxBoxSizer *_bsSizer;
@@ -214,7 +215,7 @@ namespace SystemExplorer
 
             public:
                 ProcessTreeViewController(wxBookCtrl *book, 
-                    SystemExplorer::Core::ProcessManager processManager, 
+                    OS::Process::ProcessManager processManager, 
                     std::string title, 
                     Config::UserConfig &userConfig,
                     wxWindowID id = wxID_ANY, 

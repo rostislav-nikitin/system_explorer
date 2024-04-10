@@ -1,4 +1,4 @@
-#ifndef PROCESS_MANAGER_IMPL_HPP
+#ifndef LIB_OS_PROCESS_PROCESS_MANAGER_IMPL_HPP
 #define PROCESS_MANAGER_IMPL_HPP
 
 #include <sys/types.h>
@@ -11,7 +11,7 @@
 
 #include <wce/wce.hpp>
 
-#include "models/process.hpp"
+#include "model/process.hpp"
 
 #include "process_manager.hpp"
 

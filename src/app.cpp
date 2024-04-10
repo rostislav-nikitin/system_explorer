@@ -3,11 +3,13 @@
 #include <wx/wx.h>
 #include <wx/bookctrl.h>
 
+#include <os/process/process_manager.hpp>
+
 #include "resources/resources.icons.h"
 
 #include "config/config.hpp"
 
-#include "core/process_manager.hpp"
+
 #include "gui/view_controller/root_view_controller.hpp"
 
 namespace SystemExplorer

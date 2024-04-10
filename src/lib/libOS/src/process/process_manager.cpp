@@ -1,10 +1,10 @@
-#include "process_manager_impl.hpp"
+#include "../../include/os/process/process_manager_impl.hpp"
 
 #include <iostream>
 
-namespace SystemExplorer
+namespace OS
 {
-    namespace Core
+    namespace Process
     {
 
         std::string get_data(dirent *ent, std::string file_name);

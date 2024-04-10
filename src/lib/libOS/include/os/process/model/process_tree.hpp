@@ -1,5 +1,5 @@
-#ifndef PROCESS_TREE_HPP
-#define PROCESS_TREE_HPP
+#ifndef LIB_OS_PROCESS_MODEL_PROCESS_TREE_HPP
+#define LIB_OS_PROCESS_MODEL_PROCESS_TREE_HPP
 
 #include <sys/types.h>
 #include <string>
@@ -7,11 +7,11 @@
 
 #include "process.hpp"
 
-namespace SystemExplorer
+namespace OS
 {
-    namespace Core
+    namespace Process
     {
-        namespace Models
+        namespace Model
         {
             class ProcessTree
             {

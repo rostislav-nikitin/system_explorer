@@ -1,10 +1,10 @@
-#include "process_impl.hpp"
+#include "../../../include/os/process/model/process_impl.hpp"
 
-namespace SystemExplorer
+namespace OS
 {
-    namespace Core
+    namespace Process
     {
-        namespace Models
+        namespace Model
         {
             Process::Process() : _name(), _pid(0), _parentPid(0), 
                 _userId(0), _userName(""), 

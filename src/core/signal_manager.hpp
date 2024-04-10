@@ -11,6 +11,8 @@ namespace SystemExplorer
 {
 	namespace Core
 	{
+		using namespace Models;
+		
 		class SignalManager
 		{
 			static std::map<std::string, SignalType> _signalTypes;

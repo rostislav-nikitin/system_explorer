@@ -38,6 +38,7 @@ add_custom_command (OUTPUT ${CMAKE_CURRENT_SOURCE_DIR}/resources/resources.icons
 #add_library(wild_card_expr libs/wild_card_expr/src/wild_card_expr.cpp)
 add_subdirectory(lib/libWCE)
 add_subdirectory(lib/libFS)
+add_subdirectory(lib/libOS)
 #add_library(fs libs/fs/src/fs.cpp)
 
 #App
@@ -47,7 +48,6 @@ add_executable(system_explorer
 	config/config.cpp
 	config/user_config.cpp
 
-	
 	core/models/signal_type.cpp 
 	core/models/signal.cpp  
 	core/signal_types_dict.cpp 
@@ -55,9 +55,9 @@ add_executable(system_explorer
 	core/signal_manager.cpp 
 
 	core/models/process_state_helpers.cpp
-	core/models/process.cpp
-	core/models/process_tree.cpp 
-	core/process_manager.cpp
+#	core/models/process.cpp
+#	core/models/process_tree.cpp 
+#	core/process_manager.cpp
 
 	core/proc_tree_stat_manager.cpp
 	core/processes_stat_manager.cpp
@@ -83,7 +83,8 @@ add_executable(system_explorer
 
 target_include_directories(system_explorer PRIVATE lib/libFS/include)
 target_include_directories(system_explorer PRIVATE lib/libWCE/include)
-target_link_libraries(system_explorer libWCE libFS ${wxWidgets_LIBRARIES})
+target_include_directories(system_explorer PRIVATE lib/libOS/include)
+target_link_libraries(system_explorer libWCE libFS libOS ${wxWidgets_LIBRARIES})
 
 # Tests
 

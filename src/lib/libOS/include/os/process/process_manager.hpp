@@ -1,5 +1,5 @@
-#ifndef PROCESS_MANAGER_HPP
-#define PROCESS_MANAGER_HPP
+#ifndef LIB_OS_PROCESS_PROCESS_MANAGER_HPP
+#define LIB_OS_PROCESS_PROCESS_MANAGER_HPP
 
 #include <string>
 #include <optional>
@@ -7,14 +7,13 @@
 #include <pwd.h>
 #include <grp.h>
 
-#include "models/process_tree.hpp"
-#include "models/processes_stat.hpp"
+#include "model/process_tree.hpp"
 
-namespace SystemExplorer
+namespace OS
 {
-    namespace Core
+    namespace Process
     {
-        using namespace Models;
+        using namespace Model;
 
         class ProcessManager
         {
