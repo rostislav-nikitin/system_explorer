@@ -150,7 +150,7 @@ namespace SystemExplorer
 
        		void ProcessTreeViewController::CreateHotKeys()
             {
-                using SystemExplorer::Core::SignalManager;
+                using OS::Signal::SignalManager;
 
                 //	AddHotKey(PROCESS_CONTEXT_MENU_ROOT_BASE, static_cast<int>(ProcessContextMenuId::Open), owxACCEL_CTRL, static_cast<wxKeyCode>('O'));
                 AddHotKey(PROCESS_CONTEXT_MENU_SIGNAL_BASE, SignalManager::GetSignal("SIGTERM").GetId(), wxACCEL_ALT, WXK_DELETE);
@@ -318,9 +318,9 @@ namespace SystemExplorer
 
             void ProcessTreeViewController::CreateContextMenu()
             {
-                using SystemExplorer::Core::SignalManager;
-                using SystemExplorer::Core::Models::Signal;
-                using SystemExplorer::Core::Models::SignalType;
+                using OS::Signal::SignalManager;
+                using OS::Signal::Model::Signal;
+                using OS::Signal::Model::SignalType;
 
                 _processContextMenu = new wxMenu();
                 _processContextMenu->Append(static_cast<int>(ProcessContextMenuId::Open), wxT("&Open\tCtrl+O"), wxT("Open"));
@@ -603,7 +603,7 @@ namespace SystemExplorer
                 std::for_each(selectedItems.begin(), selectedItems.end(),
                     [signal, this](Control::SearchableControlBase::SearchableItem const &selectedItem)
                     {
-                        SystemExplorer::Core::SignalManager::SendSignal(selectedItem.GetId(), signal);
+                        OS::Signal::SignalManager::SendSignal(selectedItem.GetId(), signal);
                     });
             }
             template <typename T>

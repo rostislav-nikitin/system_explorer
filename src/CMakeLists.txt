@@ -48,11 +48,11 @@ add_executable(system_explorer
 	config/config.cpp
 	config/user_config.cpp
 
-	core/models/signal_type.cpp 
-	core/models/signal.cpp  
-	core/signal_types_dict.cpp 
-	core/signals_dict.cpp 
-	core/signal_manager.cpp 
+#	core/models/signal_type.cpp 
+#	core/models/signal.cpp  
+#	core/signal_types_dict.cpp 
+#	core/signals_dict.cpp 
+#	core/signal_manager.cpp 
 
 	core/models/process_state_helpers.cpp
 #	core/models/process.cpp

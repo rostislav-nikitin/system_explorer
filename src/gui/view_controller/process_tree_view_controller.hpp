@@ -24,12 +24,13 @@
 
 #include <fs/fs.hpp>
 #include <os/process/process_manager.hpp>
+#include <os/signal/signal_manager.hpp>
 
 #include "../../config/user_config.hpp"
 
 //#include "../../core/process_manager.hpp"
 #include "../../core/processes_stat_manager.hpp"
-#include "../../core/signal_manager.hpp"
+//#include "../../core/signal_manager.hpp"
 #include "../../core/models/process_stat.hpp"
 #include "../../core/models/process_state.hpp"
 #include "../../core/models/process_state_helpers.hpp"

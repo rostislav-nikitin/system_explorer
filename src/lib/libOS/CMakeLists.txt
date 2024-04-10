@@ -2,7 +2,13 @@
 
 add_library(libOS 
     src/process/model/process.cpp
-    src/process/process_manager.cpp)
+    src/process/process_manager.cpp
+    
+    src/signal/model/signal_type.cpp
+    src/signal/model/signal.cpp
+    src/signal/signal_types_dict.cpp
+    src/signal/signals_dict.cpp
+    src/signal/signal_manager.cpp)
 
 target_include_directories(libOS PRIVATE ../libWCE/include)
 target_link_libraries(libOS libWCE)

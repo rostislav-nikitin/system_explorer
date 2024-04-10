@@ -1,13 +1,13 @@
-#ifndef SIGNAL_TYPE_HPP
-#define SIGNAL_TYPE_HPP
+#ifndef LIBOS_SIGNAL_MODEL_SIGNAL_TYPE_HPP
+#define LIBOS_SIGNAL_MODEL_SIGNAL_TYPE_HPP
 
 #include <string>
 
-namespace SystemExplorer
+namespace OS
 {
-	namespace Core
+	namespace Signal
 	{
-		namespace Models
+		namespace Model
 		{
 			class SignalType
 			{

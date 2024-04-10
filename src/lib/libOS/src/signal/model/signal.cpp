@@ -1,10 +1,10 @@
-#include "signal.hpp"
+#include "../../../include/os/signal/model/signal.hpp"
 
-namespace SystemExplorer
+namespace OS
 {
-	namespace Core
+	namespace Signal
 	{
-		namespace Models
+		namespace Model
 		{
 			
 			Signal::Signal() : _id(0), _signalType(), _standard(), _alias(), _description() { }

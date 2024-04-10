@@ -1,10 +1,10 @@
-#include "signal_type.hpp"
+#include "../../../include/os/signal/model/signal_type.hpp"
 
-namespace SystemExplorer
+namespace OS
 {
-	namespace Core
+	namespace Signal
 	{
-		namespace Models
+		namespace Model
 		{
 			SignalType::SignalType() : SignalType(0, "", "") { }
 			SignalType::SignalType(int id, std::string alias, std::string description) : _id(id), _alias(alias), _description(description)

@@ -1,15 +1,15 @@
-#ifndef SIGNAL_HPP
-#define SIGNAL_HPP
+#ifndef LIBOS_SIGNAL_MODEL_SIGNAL_HPP
+#define LIBOS_SIGNAL_MODEL_SIGNAL_HPP
 
 #include <string>
 
 #include "signal_type.hpp"
 
-namespace SystemExplorer
+namespace OS
 {
-	namespace Core
+	namespace Signal
 	{
-		namespace Models
+		namespace Model
 		{
 			class Signal
 			{
