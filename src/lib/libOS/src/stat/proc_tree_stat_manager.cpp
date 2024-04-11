@@ -1,18 +1,18 @@
-#include "proc_tree_stat_manager_impl.hpp"
+#include "../../include/os/stat/proc_tree_stat_manager_impl.hpp"
 
 #include <iostream>
 
-namespace SystemExplorer
+namespace OS
 {
-    namespace Core
+    namespace Stat
     {
         // Get proc stat
-        Models::ProcStat ProcTreeStatManager::GetProcStat()
+        Model::ProcStat ProcTreeStatManager::GetProcStat()
         {
             std::ifstream proc_stat_file("/proc/stat");
 
-            Parsers::ProcStatParser parser;
-            Models::ProcStat result = parser.Parse(proc_stat_file);
+            Parser::ProcStatParser parser;
+            Model::ProcStat result = parser.Parse(proc_stat_file);
             
             return result;
         }
@@ -48,29 +48,29 @@ namespace SystemExplorer
 		}
 
         // Get particular process stat
-        Models::ProcProcessStat ProcTreeStatManager::GetProcessStat(pid_t pid)
+        Model::ProcProcessStat ProcTreeStatManager::GetProcessStat(pid_t pid)
         {
             std::ifstream process_stat_file(
                 std::string("/proc") + std::string("/") + std::to_string(pid) 
                     + "/stat");
 
-            Parsers::ProcProcessStatParser parser;
-            Models::ProcProcessStat result = parser.Parse(process_stat_file);
+            Parser::ProcProcessStatParser parser;
+            Model::ProcProcessStat result = parser.Parse(process_stat_file);
             
             return result;
         }
 
         // Get all processes stat
-        std::vector<Models::ProcProcessStat> ProcTreeStatManager::GetProcesssesStat()
+        std::vector<Model::ProcProcessStat> ProcTreeStatManager::GetProcesssesStat()
         {
-            std::vector<Models::ProcProcessStat> result;
+            std::vector<Model::ProcProcessStat> result;
 
             std::vector<pid_t> pids = ProcTreeStatManager::GetProcesses();
 
             std::for_each(pids.begin(), pids.end(), 
             [&result, this](pid_t pid)
             {
-                Models::ProcProcessStat stat = GetProcessStat(pid);
+                Model::ProcProcessStat stat = GetProcessStat(pid);
                 result.push_back(stat);
             });
 
@@ -78,7 +78,7 @@ namespace SystemExplorer
         }
 
 
-        Models::ProcTreeStat & ProcTreeStatManager::GetProcTreeStat()
+        Model::ProcTreeStat & ProcTreeStatManager::GetProcTreeStat()
         {
             return _proc_tree_stat;
         }
@@ -86,15 +86,15 @@ namespace SystemExplorer
         void ProcTreeStatManager::Tick()
         {   
             // Add next proc stat to queue
-            Models::ProcStat proc_stat = GetProcStat();
+            Model::ProcStat proc_stat = GetProcStat();
             _proc_tree_stat.proc_stat.push_front(proc_stat);
             if(_proc_tree_stat.proc_stat.size() > 2)
                 _proc_tree_stat.proc_stat.pop_back();
 
             // Add next proc processes stat to queue
-            std::vector<Models::ProcProcessStat> proc_processes_stat = GetProcesssesStat();
+            std::vector<Model::ProcProcessStat> proc_processes_stat = GetProcesssesStat();
             std::for_each(proc_processes_stat.begin(), proc_processes_stat.end(),
-                [this](Models::ProcProcessStat const &proc_process_stat)
+                [this](Model::ProcProcessStat const &proc_process_stat)
                 {
                     _proc_tree_stat
                         .proc_processes_stat[proc_process_stat.pid].push_front(proc_process_stat);
@@ -108,11 +108,11 @@ namespace SystemExplorer
 
             std::for_each(_proc_tree_stat.proc_processes_stat.begin(), 
                 _proc_tree_stat.proc_processes_stat.end(),
-                [&proc_processes_stat, &pids_to_delete](std::map<pid_t, std::deque<Models::ProcProcessStat>>::value_type const &item)
+                [&proc_processes_stat, &pids_to_delete](std::map<pid_t, std::deque<Model::ProcProcessStat>>::value_type const &item)
                 {
                     if(
                         std::find_if(proc_processes_stat.begin(), proc_processes_stat.end(), 
-                            [&item](std::vector<Models::ProcProcessStat>::value_type &proc_process_stat)
+                            [&item](std::vector<Model::ProcProcessStat>::value_type &proc_process_stat)
                             {
                                 return proc_process_stat.pid == item.first;
                             }) 

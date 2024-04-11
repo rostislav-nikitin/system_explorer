@@ -1,13 +1,13 @@
-#ifndef PROC_STAT_HPP
-#define PROC_STAT_HPP
+#ifndef LIBOS_STAT_MODEL_PROC_STAT_HPP
+#define LIBOS_STAT_MODEL_PROC_STAT_HPP
 
 #include <vector>
 
-namespace SystemExplorer
+namespace OS
 {
-    namespace Core
+    namespace Stat
     {
-        namespace Models
+        namespace Model
         {
             struct ProcCpuStat
             {

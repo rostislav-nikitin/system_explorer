@@ -1,14 +1,14 @@
-#include "proc_process_stat_parser.hpp"
+#include "../../../include/os/stat/parser/proc_process_stat_parser.hpp"
 
-namespace SystemExplorer
+namespace OS
 {
-    namespace Core
+    namespace Stat
     {
-        namespace Parsers
+        namespace Parser
         {
-            Models::ProcProcessStat ProcProcessStatParser::Parse(std::istream &stream)
+            Model::ProcProcessStat ProcProcessStatParser::Parse(std::istream &stream)
             {
-                Models::ProcProcessStat result;
+                Model::ProcProcessStat result;
 
                 stream >> result.pid;
 

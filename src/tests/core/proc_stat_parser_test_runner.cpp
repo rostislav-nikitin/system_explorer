@@ -4,7 +4,7 @@
 #include <string>
 #include <sstream>
 
-#include "../../core/parsers/proc_stat_parser.hpp"
+#include <os/stat/parser/proc_stat_parser.hpp>
 
 namespace Tests
 {
@@ -12,8 +12,8 @@ namespace Tests
     {
         TEST(ProcStatParserTestSuite, WhenProcStatStreamCorreclyParsedThenSuccess)
         {
-            using SystemExplorer::Core::Models::ProcStat;
-            using SystemExplorer::Core::Parsers::ProcStatParser;
+            using OS::Stat::Model::ProcStat;
+            using OS::Stat::Parser::ProcStatParser;
 
             //  Arrage
             std::string test_data =

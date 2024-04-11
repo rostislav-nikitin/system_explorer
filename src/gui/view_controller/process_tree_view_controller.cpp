@@ -624,7 +624,7 @@ namespace SystemExplorer
                 using OS::Process::ProcessManager;
                 using OS::Process::Model::Process;
                 using OS::Process::Model::ProcessTree;
-                using SystemExplorer::Core::Models::ProcessesStat;
+                using OS::Stat::Model::ProcessesStat;
 
                 unsigned long currentUserId = geteuid();
                 std::optional<unsigned long> filterUserId = std::nullopt;
@@ -686,7 +686,7 @@ namespace SystemExplorer
                 using OS::Process::ProcessManager;
                 using OS::Process::Model::Process;
                 using OS::Process::Model::ProcessTree;
-                using SystemExplorer::Core::Models::ProcessesStat;
+                using OS::Stat::Model::ProcessesStat;
 
                 unsigned long currentUserId = geteuid();
                 std::optional<unsigned long> filterUserId = std::nullopt;
@@ -744,7 +744,7 @@ namespace SystemExplorer
     //			_processesListControl->ExpandAll();
             }
 
-            void ProcessTreeViewController::UpdateStatusBarStatistics(Core::Models::ProcessesStat const &processesStat)
+            void ProcessTreeViewController::UpdateStatusBarStatistics(OS::Stat::Model::ProcessesStat const &processesStat)
             {
                 if(_sbStatIndex < 0)
                     return;
@@ -809,23 +809,23 @@ namespace SystemExplorer
 
             }
 
-            int ProcessTreeViewController::MapProcessStatToIconIndex(Core::Models::ProcessStat processStat)
+            int ProcessTreeViewController::MapProcessStatToIconIndex(OS::Stat::Model::ProcessStat processStat)
             {
                 const int ICON_INDEX_REALTIME = 0;
                 const int ICON_INDEX_NOT_NICE = 1;
                 const int ICON_INDEX_NORMAL = 2;
                 const int ICON_INDEX_NICE = 3;
 
-                std::map<Core::Models::ProcessState, int> processStateMap(
+                std::map<OS::Stat::Model::ProcessState, int> processStateMap(
                     {
-                        {Core::Models::ProcessState::Sleeping, 1},
-                        {Core::Models::ProcessState::Waiting, 2},
-                        {Core::Models::ProcessState::Idle, 3},
-                        {Core::Models::ProcessState::Running, 4},
-                        {Core::Models::ProcessState::Stopped, 5},
-                        {Core::Models::ProcessState::Dead1, 5},
-                        {Core::Models::ProcessState::Dead2, 5},
-                        {Core::Models::ProcessState::Zombie, 6}
+                        {OS::Stat::Model::ProcessState::Sleeping, 1},
+                        {OS::Stat::Model::ProcessState::Waiting, 2},
+                        {OS::Stat::Model::ProcessState::Idle, 3},
+                        {OS::Stat::Model::ProcessState::Running, 4},
+                        {OS::Stat::Model::ProcessState::Stopped, 5},
+                        {OS::Stat::Model::ProcessState::Dead1, 5},
+                        {OS::Stat::Model::ProcessState::Dead2, 5},
+                        {OS::Stat::Model::ProcessState::Zombie, 6}
                     });
 
                 int STATE_INDEX = 0;

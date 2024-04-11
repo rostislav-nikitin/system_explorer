@@ -1,19 +1,19 @@
 #include <istream>
 
-#include "proc_stat_parser.hpp"
+#include "../../../include/os/stat/parser/proc_stat_parser.hpp"
 
-namespace SystemExplorer
+namespace OS
 {
-    namespace Core
+    namespace Stat
     {
-        namespace Parsers
+        namespace Parser
         {
-            Models::ProcStat ProcStatParser::Parse(std::istream &stream)
+            Model::ProcStat ProcStatParser::Parse(std::istream &stream)
             {
-                Models::ProcStat result;
+                Model::ProcStat result;
                 while(true)
                 {
-                    Models::ProcCpuStat procCpuStat;
+                    Model::ProcCpuStat procCpuStat;
                     std::string cpu;
 
                     stream >> cpu;

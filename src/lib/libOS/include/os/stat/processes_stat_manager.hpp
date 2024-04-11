@@ -1,17 +1,17 @@
-#ifndef PROCESSES_STAT_MAANGER_HPP
-#define PROCESSES_STAT_MAANGER_HPP
+#ifndef LIBOS_STAT_PROCESSES_STAT_MAANGER_HPP
+#define LIBOS_STAT_PROCESSES_STAT_MAANGER_HPP
 
 #include <wait.h>
 
 #include "proc_tree_stat_manager.hpp"
 
-#include "models/process_stat.hpp"
-#include "models/processes_stat.hpp"
-#include "models/processes_stat_common.hpp"
+#include "model/process_stat.hpp"
+#include "model/processes_stat.hpp"
+#include "model/processes_stat_common.hpp"
 
-namespace SystemExplorer
+namespace OS
 {
-    namespace Core
+    namespace Stat
     {
         class ProcessesStatManager
         {
@@ -19,13 +19,13 @@ namespace SystemExplorer
             ProcTreeStatManager _proc_tree_stat_manager;
         public:
             // Get processes stat common like cpu load, etc.
-            Models::ProcessesStatCommon GetProcessesStatCommon();
+            Model::ProcessesStatCommon GetProcessesStatCommon();
             
             // Get single process stat
-            Models::ProcessStat GetProcessStat(pid_t pid);
+            Model::ProcessStat GetProcessStat(pid_t pid);
 
             // Get all running processes stat
-            Models::ProcessesStat GetProcessesStat();
+            Model::ProcessesStat GetProcessesStat();
 
             // Capture stat on each tick
             void Tick();

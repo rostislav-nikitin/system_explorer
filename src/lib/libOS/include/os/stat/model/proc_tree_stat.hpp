@@ -1,5 +1,5 @@
-#ifndef PROC_TREE_STAT_HPP
-#define PROC_TREE_STAT_HPP
+#ifndef LIBOS_STAT_MODEL_PROC_TREE_STAT_HPP
+#define LIBOS_STAT_MODEL_PROC_TREE_STAT_HPP
 
 #include <map>
 #include <queue>
@@ -9,11 +9,11 @@
 #include "proc_stat.hpp"
 #include "proc_process_stat.hpp"
 
-namespace SystemExplorer
+namespace OS
 {
-    namespace Core
+    namespace Stat
     {
-        namespace Models
+        namespace Model
         {
             struct ProcTreeStat
             {

@@ -1,14 +1,14 @@
-#ifndef PROC_PROCESS_STAT_HPP
-#define PROC_PROCESS_STAT_HPP
+#ifndef LIBOS_STAT_MODEL_PROC_PROCESS_STAT_HPP
+#define LIBOS_STAT_MODEL_PROC_PROCESS_STAT_HPP
 
 #include <string>
 #include <wait.h>
 
-namespace SystemExplorer
+namespace OS
 {
-    namespace Core
+    namespace Stat
     {
-        namespace Models
+        namespace Model
         {
             struct ProcProcessStat
             {

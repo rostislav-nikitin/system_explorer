@@ -54,16 +54,16 @@ add_executable(system_explorer
 #	core/signals_dict.cpp 
 #	core/signal_manager.cpp 
 
-	core/models/process_state_helpers.cpp
+#	core/models/process_state_helpers.cpp
 #	core/models/process.cpp
 #	core/models/process_tree.cpp 
 #	core/process_manager.cpp
 
-	core/proc_tree_stat_manager.cpp
-	core/processes_stat_manager.cpp
+#	core/proc_tree_stat_manager.cpp
+#	core/processes_stat_manager.cpp
 	
-	core/parsers/proc_stat_parser.cpp
-	core/parsers/proc_process_stat_parser.cpp
+#	core/parsers/proc_stat_parser.cpp
+#	core/parsers/proc_process_stat_parser.cpp
 
 	gui/control/control_base.cpp
 	gui/control/searchable_control_base.cpp
@@ -94,13 +94,15 @@ target_link_libraries(system_explorer libWCE libFS libOS ${wxWidgets_LIBRARIES})
 #target_link_libraries(process_manager_test_runner gmock gtest ${googletest_LIBRARIES})
 
 add_executable(proc_stat_parser_test_runner 
-	core/parsers/proc_stat_parser.cpp
+	lib/libOS/src/stat/parser/proc_stat_parser.cpp
 	tests/core/proc_stat_parser_test_runner.cpp)
+target_include_directories(proc_stat_parser_test_runner PRIVATE lib/libOS/include)	
 target_link_libraries(proc_stat_parser_test_runner gmock gtest ${googletest_LIBRARIES})
 
 add_executable(proc_process_stat_parser_test_runner 
-	core/parsers/proc_process_stat_parser.cpp
+	lib/libOS/src/stat/parser/proc_process_stat_parser.cpp
 	tests/core/proc_process_stat_parser_test_runner.cpp)
+target_include_directories(proc_process_stat_parser_test_runner PRIVATE lib/libOS/include)	
 target_link_libraries(proc_process_stat_parser_test_runner gmock gtest ${googletest_LIBRARIES})
 
 #file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/assets DESTINATION ${CMAKE_CURRENT_BINARY_DIR})

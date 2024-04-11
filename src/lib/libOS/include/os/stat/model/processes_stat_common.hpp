@@ -1,11 +1,11 @@
-#ifndef PROCESSES_STAT_COMMON_HPP
-#define PROCESSES_STAT_COMMON_HPP
+#ifndef LIBOS_STAT_MODEL_PROCESSES_STAT_COMMON_HPP
+#define LIBOS_STAT_MODEL_PROCESSES_STAT_COMMON_HPP
 
-namespace SystemExplorer
+namespace OS
 {
-    namespace Core
+    namespace Stat
     {
-        namespace Models
+        namespace Model
         {
             class ProcessesStatCommon
             {

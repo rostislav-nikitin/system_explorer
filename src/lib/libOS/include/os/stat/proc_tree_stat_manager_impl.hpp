@@ -1,8 +1,8 @@
-#ifndef PROC_STAT_MANAGER_IMPL_HPP
-#define PROC_STAT_MANAGER_IMPL_HPP
+#ifndef LIBOS_STAT_PROC_STAT_MANAGER_IMPL_HPP
+#define LIBOS_STAT_PROC_STAT_MANAGER_IMPL_HPP
 
-#include "parsers/proc_stat_parser.hpp"
-#include "parsers/proc_process_stat_parser.hpp"
+#include "parser/proc_stat_parser.hpp"
+#include "parser/proc_process_stat_parser.hpp"
 
 #include "proc_tree_stat_manager.hpp"
 

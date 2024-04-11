@@ -25,15 +25,21 @@
 #include <fs/fs.hpp>
 #include <os/process/process_manager.hpp>
 #include <os/signal/signal_manager.hpp>
+#include <os/stat/processes_stat_manager.hpp>
+#include <os/stat/process_state_helpers.hpp>
+#include <os/stat/model/process_stat.hpp>
+#include <os/stat/model/process_state.hpp>
+
+
 
 #include "../../config/user_config.hpp"
 
 //#include "../../core/process_manager.hpp"
-#include "../../core/processes_stat_manager.hpp"
+//#include "../../core/processes_stat_manager.hpp"
 //#include "../../core/signal_manager.hpp"
-#include "../../core/models/process_stat.hpp"
-#include "../../core/models/process_state.hpp"
-#include "../../core/models/process_state_helpers.hpp"
+//#include "../../core/models/process_stat.hpp"
+//#include "../../core/models/process_state.hpp"
+//#include "../../core/models/process_state_helpers.hpp"
 
 #include "../control/icon_control.hpp"
 #include "../control/searchable_control_base.hpp"
@@ -106,7 +112,7 @@ namespace SystemExplorer
                 //Control::SearchableListControl *_processesListControl;
 
                 OS::Process::ProcessManager _processManager;
-                SystemExplorer::Core::ProcessesStatManager _processesStatManager;
+                OS::Stat::ProcessesStatManager _processesStatManager;
 
                 wxBoxSizer *_bsSizer;
 
@@ -188,9 +194,9 @@ namespace SystemExplorer
                 pid_t ExtractPid(wxTreeListItem const &item) const;
                 void SendSignalToSelectedProcesses(int signal) const;
 
-                void UpdateStatusBarStatistics(Core::Models::ProcessesStat const &processesStat);
+                void UpdateStatusBarStatistics(OS::Stat::Model::ProcessesStat const &processesStat);
 
-                int MapProcessStatToIconIndex(Core::Models::ProcessStat processStat);
+                int MapProcessStatToIconIndex(OS::Stat::Model::ProcessStat processStat);
 
                 void Sort();
                 

@@ -1,10 +1,10 @@
-#include "process_state_helpers_impl.hpp"
+#include "../../include/os/stat/process_state_helpers_impl.hpp"
 
-namespace SystemExplorer
+namespace OS
 {
-    namespace Core
+    namespace Stat
     {
-        namespace Models
+        namespace Model
         {
             ProcessState GetProcessState(char state)
             {

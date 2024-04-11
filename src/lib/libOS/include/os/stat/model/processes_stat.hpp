@@ -1,5 +1,5 @@
-#ifndef PROCESSES_STAT_HPP
-#define PROCESSES_STAT_HPP
+#ifndef LIBOS_STAT_MODEL_PROCESSES_STAT_HPP
+#define LIBOS_STAT_MODEL_PROCESSES_STAT_HPP
 
 #include <map>
 #include <wait.h>
@@ -7,11 +7,11 @@
 #include "process_stat.hpp"
 #include "processes_stat_common.hpp"
 
-namespace SystemExplorer
+namespace OS
 {
-    namespace Core
+    namespace Stat
     {
-        namespace Models
+        namespace Model
         {
             class ProcessesStat
             {

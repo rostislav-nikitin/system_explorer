@@ -1,17 +1,17 @@
-#include "processes_stat_manager_impl.hpp"
+#include "../../include/os/stat/processes_stat_manager_impl.hpp"
 
 #include <iterator>
 #include <iostream>
 
-namespace SystemExplorer
+namespace OS
 {
-    namespace Core
+    namespace Stat
     {
-        Models::ProcessesStatCommon ProcessesStatManager::GetProcessesStatCommon()
+        Model::ProcessesStatCommon ProcessesStatManager::GetProcessesStatCommon()
         {
-            Models::ProcessesStatCommon result {0.0f, 0, 0};
+            Model::ProcessesStatCommon result {0.0f, 0, 0};
 
-            Models::ProcTreeStat &stat = _proc_tree_stat_manager.GetProcTreeStat();
+            Model::ProcTreeStat &stat = _proc_tree_stat_manager.GetProcTreeStat();
 
             // CPU stat
             if(stat.proc_stat.size() > 1)
@@ -28,7 +28,7 @@ namespace SystemExplorer
             }
 
             std::for_each(stat.proc_processes_stat.begin(), stat.proc_processes_stat.end(),
-                [&result](std::map<pid_t, std::deque<Models::ProcProcessStat>>::value_type const &item)
+                [&result](std::map<pid_t, std::deque<Model::ProcProcessStat>>::value_type const &item)
                 {
                     if(item.second.size() > 0)
                     {
@@ -45,11 +45,11 @@ namespace SystemExplorer
         }
 
         // Get single process stat
-        Models::ProcessStat ProcessesStatManager::GetProcessStat(pid_t pid)
+        Model::ProcessStat ProcessesStatManager::GetProcessStat(pid_t pid)
         {
-            Models::ProcessStat result;
+            Model::ProcessStat result;
 
-            Models::ProcTreeStat &stat = _proc_tree_stat_manager.GetProcTreeStat();
+            Model::ProcTreeStat &stat = _proc_tree_stat_manager.GetProcTreeStat();
 
             // CPU stat
             float avg_cpu_load_last = -1;
@@ -63,7 +63,7 @@ namespace SystemExplorer
                 cpu_load = avg_cpu_load_last - avg_cpu_load_before_last;
             }
 
-            std::deque<Models::ProcProcessStat> &q = stat.proc_processes_stat[pid];
+            std::deque<Model::ProcProcessStat> &q = stat.proc_processes_stat[pid];
 
             if(q.size() > 0)
             {
@@ -85,9 +85,9 @@ namespace SystemExplorer
             // Process state
             if(stat.proc_processes_stat[pid].size() > 0)
             {
-                Models::ProcProcessStat &pstat = stat.proc_processes_stat[pid][0];
+                Model::ProcProcessStat &pstat = stat.proc_processes_stat[pid][0];
 
-                result.state = Models::GetProcessState(pstat.state);
+                result.state = Model::GetProcessState(pstat.state);
                 result.threads = pstat.num_threads;
 
                 result.priority = pstat.priority;
@@ -104,18 +104,18 @@ namespace SystemExplorer
         }
 
         // Get all running processes stat
-        Models::ProcessesStat ProcessesStatManager::GetProcessesStat()
+        Model::ProcessesStat ProcessesStatManager::GetProcessesStat()
         {
-            Models::ProcessesStat result;
+            Model::ProcessesStat result;
 
             result.processes_stat_common = GetProcessesStatCommon();
 
-            Models::ProcTreeStat &stat = _proc_tree_stat_manager.GetProcTreeStat();
+            Model::ProcTreeStat &stat = _proc_tree_stat_manager.GetProcTreeStat();
 
             std::for_each(stat.proc_processes_stat.begin(), stat.proc_processes_stat.end(),
-            [&stat, &result, this](std::map<pid_t, std::deque<Models::ProcProcessStat>>::value_type &item)
+            [&stat, &result, this](std::map<pid_t, std::deque<Model::ProcProcessStat>>::value_type &item)
             {
-                Models::ProcessStat process_stat;
+                Model::ProcessStat process_stat;
 
                 pid_t pid = item.first;
 

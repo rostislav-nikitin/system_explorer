@@ -1,13 +1,13 @@
-#ifndef PROCESS_STATE_HPP
-#define PROCESS_STATE_HPP
+#ifndef LIBOS_STAT_MODEL_PROCESS_STATE_HPP
+#define LIBOS_STAT_MODEL_PROCESS_STATE_HPP
 
 #include <map>
 
-namespace SystemExplorer
+namespace OS
 {
-    namespace Core
+    namespace Stat
     {
-        namespace Models
+        namespace Model
         {
             enum class ProcessState
             {

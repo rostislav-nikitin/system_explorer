@@ -1,11 +1,11 @@
-#ifndef PROCESS_CPU_STAT_HPP
-#define PROCESS_CPU_STAT_HPP
+#ifndef LIBOS_STAT_MODEL_PROCESS_CPU_STAT_HPP
+#define LIBOS_STAT_MODEL_PROCESS_CPU_STAT_HPP
 
-namespace SystemExplorer
+namespace OS
 {
-    namespace Core
+    namespace Stat
     {
-        namespace Models
+        namespace Model
         {
             class ProcessCpuStat
             {
