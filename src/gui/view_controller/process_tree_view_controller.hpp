@@ -31,6 +31,12 @@
 #include <os/stat/model/process_state.hpp>
 
 
+#include <ui/control/icon_control.hpp>
+#include <ui/control/searchable_control_base.hpp>
+#include <ui/control/searchable_list_control.hpp>
+#include <ui/control/searchable_treelist_control.hpp>
+#include <ui/control/searchable_listview_control.hpp>
+
 
 #include "../../config/user_config.hpp"
 
@@ -41,11 +47,11 @@
 //#include "../../core/models/process_state.hpp"
 //#include "../../core/models/process_state_helpers.hpp"
 
-#include "../control/icon_control.hpp"
-#include "../control/searchable_control_base.hpp"
-#include "../control/searchable_list_control.hpp"
-#include "../control/searchable_treelist_control.hpp"
-#include "../control/searchable_listview_control.hpp"
+//#include "../control/icon_control.hpp"
+//#include "../control/searchable_control_base.hpp"
+//#include "../control/searchable_list_control.hpp"
+//#include "../control/searchable_treelist_control.hpp"
+//#include "../control/searchable_listview_control.hpp"
 
 #include "view_controller_base.hpp"
 #include "processes_tree_list_item_comparator.hpp"
@@ -108,7 +114,7 @@ namespace SystemExplorer
                 wxImageList *_imageList;
                 wxMenu *_processContextMenu;
 	            wxTimer *_timer;
-	            Control::SearchableControlBase *_processesListControl;
+	            UI::Control::SearchableControlBase *_processesListControl;
                 //Control::SearchableListControl *_processesListControl;
 
                 OS::Process::ProcessManager _processManager;
@@ -116,8 +122,8 @@ namespace SystemExplorer
 
                 wxBoxSizer *_bsSizer;
 
-                Control::IconControl *_cpuStat;
-                Control::IconControl *_ramStat;
+                UI::Control::IconControl *_cpuStat;
+                UI::Control::IconControl *_ramStat;
             
                 wxGauge *_gProgressBarCpu;
                 wxGauge *_gProgressBarRss;

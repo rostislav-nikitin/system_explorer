@@ -144,8 +144,8 @@ namespace SystemExplorer
                 _gProgressBarRss->SetValue(25);
                 */
 
-                _cpuStat = new Control::IconControl(_statusBar, wxID_ANY, *bin2c_cpu_png, "CPU: N/A", rect_cpu.GetPosition(), wxSize(144, 24));
-                _ramStat = new Control::IconControl(_statusBar, wxID_ANY, *bin2c_ram_png, "RAM: N/A", rect_ram.GetPosition(), wxSize(176, 24));
+                _cpuStat = new UI::Control::IconControl(_statusBar, wxID_ANY, *bin2c_cpu_png, "CPU: N/A", rect_cpu.GetPosition(), wxSize(144, 24));
+                _ramStat = new UI::Control::IconControl(_statusBar, wxID_ANY, *bin2c_ram_png, "RAM: N/A", rect_ram.GetPosition(), wxSize(176, 24));
             }
 
        		void ProcessTreeViewController::CreateHotKeys()
@@ -280,11 +280,11 @@ namespace SystemExplorer
 
                 if(_viewState == ViewState::Tree)
                 {
-       			    _processesListControl = new Control::SearchableTreeListControl(this, wxID_ANY, _imageList);
+       			    _processesListControl = new UI::Control::SearchableTreeListControl(this, wxID_ANY, _imageList);
                 }
                 else if(_viewState == ViewState::List)
                 {
-                    _processesListControl = new Control::SearchableListControl(this, wxID_ANY, _imageList);
+                    _processesListControl = new UI::Control::SearchableListControl(this, wxID_ANY, _imageList);
                 }
     			
 	    		_processesListControl->AppendColumn(_T("Name"), 300, wxALIGN_LEFT, wxCOL_RESIZABLE | wxCOL_SORTABLE);
@@ -384,8 +384,8 @@ namespace SystemExplorer
 
             void ProcessTreeViewController::BindProcessesListControlEvents()
             {
-                _processesListControl->Bind(custEVT_SEARCH, &ProcessTreeViewController::processesListControl_Search, this); 
-                _processesListControl->Bind(custEVT_ITEM_CONTEXT_MENU, &ProcessTreeViewController::processesListControl_OnItemContextMenu, this);
+                _processesListControl->Bind(UI::custEVT_SEARCH, &ProcessTreeViewController::processesListControl_Search, this); 
+                _processesListControl->Bind(UI::custEVT_ITEM_CONTEXT_MENU, &ProcessTreeViewController::processesListControl_OnItemContextMenu, this);
                 _processesListControl->Bind(wxEVT_MENU, &ProcessTreeViewController::processesContextMenu_OnMenuItem, this);
 
             }
@@ -527,7 +527,7 @@ namespace SystemExplorer
 
             void ProcessTreeViewController::processesContextMenu_OnMenuItem(wxCommandEvent &event)
             {
-                std::vector<Control::SearchableControlBase::SearchableItem> selectedItems;
+                std::vector<UI::Control::SearchableControlBase::SearchableItem> selectedItems;
                 if (!_processesListControl->GetSelections(selectedItems))
 
                 if(UpdateAutoCompleteChoices())
@@ -596,12 +596,12 @@ namespace SystemExplorer
 
             void ProcessTreeViewController::SendSignalToSelectedProcesses(int signal) const
             {
-                std::vector<Control::SearchableControlBase::SearchableItem> selectedItems;
+                std::vector<UI::Control::SearchableControlBase::SearchableItem> selectedItems;
                 if (!_processesListControl->GetSelections(selectedItems))
                     return;
 
                 std::for_each(selectedItems.begin(), selectedItems.end(),
-                    [signal, this](Control::SearchableControlBase::SearchableItem const &selectedItem)
+                    [signal, this](UI::Control::SearchableControlBase::SearchableItem const &selectedItem)
                     {
                         OS::Signal::SignalManager::SendSignal(selectedItem.GetId(), signal);
                     });
@@ -636,7 +636,7 @@ namespace SystemExplorer
                 std::string searchFilter = _processesListControl->GetSearchText();
                 ProcessTree processes = pm.GetProcessTree(searchFilter, filterUserId);
 
-                std::vector<Control::SearchableControlBase::SearchableItem> items;
+                std::vector<UI::Control::SearchableControlBase::SearchableItem> items;
 
                 for (std::map<pid_t, Process>::const_iterator it = processes.processes.begin(); it != processes.processes.end(); ++it)
                 {
@@ -669,7 +669,7 @@ namespace SystemExplorer
 
                     if (picked && (_viewState == ViewState::Tree || _miShowAllProcesses->IsChecked() || userId == currentUserId))
                     {
-                        Control::SearchableControlBase::SearchableItem item(pid, text, parentPid, matched, other, iconIndex);
+                        UI::Control::SearchableControlBase::SearchableItem item(pid, text, parentPid, matched, other, iconIndex);
                         items.push_back(item);
                     }
                 }
@@ -701,7 +701,7 @@ namespace SystemExplorer
                 ProcessTree processTreeToRebind = pm.GetProcessTree(searchFilter, filterUserId);
               
 
-                std::vector<Control::SearchableControlBase::SearchableItem> items;
+                std::vector<UI::Control::SearchableControlBase::SearchableItem> items;
                 for (std::map<pid_t, Process>::const_iterator it = processTreeToRebind.processes.begin(); it != processTreeToRebind.processes.end(); ++it)
                 {
                     // TODO: Fill items with data
@@ -733,7 +733,7 @@ namespace SystemExplorer
 
                     if (picked && (_viewState == ViewState::Tree || _miShowAllProcesses->IsChecked() || userId == currentUserId))
                     {
-                        Control::SearchableControlBase::SearchableItem item(pid, text, parentPid, matched, other, iconIndex);
+                        UI::Control::SearchableControlBase::SearchableItem item(pid, text, parentPid, matched, other, iconIndex);
                         items.push_back(item);
                     }
                 }
@@ -756,12 +756,12 @@ namespace SystemExplorer
                 float selected_total_cpu = 0.0f;
                 float selected_total_rss = 0.0f;
 
-                std::vector<Control::SearchableControlBase::SearchableItem> selectedItems;
+                std::vector<UI::Control::SearchableControlBase::SearchableItem> selectedItems;
                 if(_processesListControl->GetSelections(selectedItems))
                 {
                     std::for_each(selectedItems.begin(), selectedItems.end(), 
                         [&processesStat, &selected_total_cpu, &selected_total_rss, this]
-                            (Control::SearchableControlBase::SearchableItem const &searchableItem)
+                            (UI::Control::SearchableControlBase::SearchableItem const &searchableItem)
                         {
                             pid_t pid = searchableItem.GetId();
 

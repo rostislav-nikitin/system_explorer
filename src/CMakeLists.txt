@@ -39,6 +39,7 @@ add_custom_command (OUTPUT ${CMAKE_CURRENT_SOURCE_DIR}/resources/resources.icons
 add_subdirectory(lib/libWCE)
 add_subdirectory(lib/libFS)
 add_subdirectory(lib/libOS)
+add_subdirectory(lib/libUI)
 #add_library(fs libs/fs/src/fs.cpp)
 
 #App
@@ -65,13 +66,13 @@ add_executable(system_explorer
 #	core/parsers/proc_stat_parser.cpp
 #	core/parsers/proc_process_stat_parser.cpp
 
-	gui/control/control_base.cpp
-	gui/control/searchable_control_base.cpp
-	gui/control/searchable_treelist_control_base.cpp
-	gui/control/icon_control.cpp
-	gui/control/searchable_list_control.cpp
-	gui/control/searchable_treelist_control.cpp
-	gui/control/searchable_listview_control.cpp
+#	gui/control/control_base.cpp
+#	gui/control/searchable_control_base.cpp
+#	gui/control/searchable_treelist_control_base.cpp
+#	gui/control/icon_control.cpp
+#	gui/control/searchable_list_control.cpp
+#	gui/control/searchable_treelist_control.cpp
+#	gui/control/searchable_listview_control.cpp
 
 	gui/view_controller/view_controller_base.cpp
 	gui/view_controller/root_view_controller.cpp
@@ -84,7 +85,8 @@ add_executable(system_explorer
 target_include_directories(system_explorer PRIVATE lib/libFS/include)
 target_include_directories(system_explorer PRIVATE lib/libWCE/include)
 target_include_directories(system_explorer PRIVATE lib/libOS/include)
-target_link_libraries(system_explorer libWCE libFS libOS ${wxWidgets_LIBRARIES})
+target_include_directories(system_explorer PRIVATE lib/libUI/include)
+target_link_libraries(system_explorer libWCE libFS libOS libUI ${wxWidgets_LIBRARIES})
 
 # Tests
 
