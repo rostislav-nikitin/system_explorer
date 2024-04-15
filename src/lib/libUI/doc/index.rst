@@ -1,7 +1,7 @@
-Wild Card Expression Library
-============================
+User Interface Library
+======================
 
-Welcome to the WCE Library documentation!
+Welcome to the UI Library documentation!
 
 .. toctree::
     :maxdepth: 2

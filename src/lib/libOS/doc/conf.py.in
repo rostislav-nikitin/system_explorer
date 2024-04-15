@@ -1,0 +1,11 @@
+extensions = ["breathe", "m2r2"]
+breathe_projects = {"libOS": "@CMAKE_CURRENT_BINARY_DIR@/xml"}
+breathe_default_project = "libOS"
+
+project = "Operation System Library"
+author = "Rostyslav Nikitin"
+copyright = "2023, Ros Software"
+version = "@PROJECT_VERSION@"
+release = "@PROJECT_VERSION@"
+
+html_theme = 'sphinx_rtd_theme'

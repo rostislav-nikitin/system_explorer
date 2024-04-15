@@ -20,4 +20,4 @@ add_library(libOS
 target_include_directories(libOS PRIVATE ../libWCE/include)
 target_link_libraries(libOS libWCE)
 
-#add_subdirectory(doc)
+add_subdirectory(doc)

@@ -1,7 +1,7 @@
-Wild Card Expression Library
-============================
+Operation System Library
+========================
 
-Welcome to the WCE Library documentation!
+Welcome to the OS Library documentation!
 
 .. toctree::
     :maxdepth: 2

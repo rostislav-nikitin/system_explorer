@@ -21,4 +21,4 @@ add_library(libUI
 target_include_directories(libUI PRIVATE ../libWCE/include)
 target_link_libraries(libOS libWCE ${wxWidgets_LIBRARIES})
 
-#add_subdirectory(doc)
+add_subdirectory(doc)

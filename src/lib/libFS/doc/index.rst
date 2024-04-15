@@ -1,7 +1,7 @@
-System Explorer
-===============
+File System Library
+===================
 
-Welcome to the System Explorer documentation!
+Welcome to the FS Library documentation!
 
 .. toctree::
     :maxdepth: 2
