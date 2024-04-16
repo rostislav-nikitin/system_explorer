@@ -77,7 +77,6 @@ add_executable(system_explorer
 	gui/view_controller/view_controller_base.cpp
 	gui/view_controller/root_view_controller.cpp
 	gui/view_controller/about_dialog_view_controller.cpp
-	gui/view_controller/processes_tree_list_item_comparator.cpp 
 	gui/view_controller/process_tree_view_controller.cpp
 
 	app.cpp)

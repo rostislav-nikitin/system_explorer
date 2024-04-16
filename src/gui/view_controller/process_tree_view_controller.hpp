@@ -54,7 +54,6 @@
 //#include "../control/searchable_listview_control.hpp"
 
 #include "view_controller_base.hpp"
-#include "processes_tree_list_item_comparator.hpp"
 #include "about_dialog_view_controller.hpp"
 
 
@@ -109,8 +108,6 @@ namespace SystemExplorer
                 int _sbStatIndex;
 	            std::map<int, wxAcceleratorEntry> _hotKeys;
 
-                ProcessesTreeListItemComparator _processesTreeListItemComparator;
-	  
                 wxImageList *_imageList;
                 wxMenu *_processContextMenu;
 	            wxTimer *_timer;
