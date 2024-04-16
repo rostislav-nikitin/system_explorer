@@ -166,6 +166,7 @@ namespace SystemExplorer
         	    std::optional<wxAcceleratorEntry> GetHotKey(int menuBase, int itemId);
 	            void AttachMenuItem(int menuItemId, wxMenuItem *menuItem);
 
+               
                 template<class T>
                 wxMenuItem *AppendMenuItem(wxMenu *parentMenu, T dataItem, int base = 0, std::string overridenName = "", wxItemKind kind = wxITEM_NORMAL)
                 {

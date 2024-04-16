@@ -45,6 +45,7 @@ namespace UI
             void scSearch_OnKillFocus(wxFocusEvent &event);
 
         public:
+            
             // The class that represents a sarchable item.
             class SearchableItem : public wxClientData 
             {
@@ -84,6 +85,8 @@ namespace UI
                 wxColour GetBgColour() const;
             };
 
+            typedef int (*Comparer)(unsigned int column, std::pair<int, wxString> a, std::pair<int, wxString> b);
+
             // The constructor.
             SearchableControlBase(wxWindow *parent, wxWindowID Id, wxImageList *imageList = nullptr);
 
@@ -114,7 +117,8 @@ namespace UI
             virtual void CollapseAll() = 0;
 
             // The methods that sets item comparator(used for data items sorting).
-            virtual void SetItemComparator(wxTreeListItemComparator *treeListItemCopmarator);
+            //virtual void SetItemComparator(wxTreeListItemComparator *treeListItemCopmarator);
+            virtual void SetComparer(Comparer comparer) = 0;
             // The method that should apply sortig for the data view.
             virtual void Sort() = 0;
         };

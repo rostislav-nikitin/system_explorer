@@ -27,6 +27,17 @@ namespace UI
         class SearchableTreeListControlBase : public SearchableControlBase
         {
         protected:
+            class TreeListComparator : public wxTreeListItemComparator
+            {
+            public:
+               
+            private:
+                SearchableControlBase::Comparer _comparer;
+            public:
+                TreeListComparator(SearchableControlBase::Comparer comparer);
+                virtual int Compare (wxTreeListCtrl *treelist, unsigned column, wxTreeListItem first, wxTreeListItem second) override;
+            };
+
             wxBoxSizer *_bsSizer;
             wxTreeListCtrl *_tlcTreeList;
 
@@ -60,7 +71,8 @@ namespace UI
 
             void PopupMenu(wxMenu *menu, const wxPoint &pos = wxDefaultPosition);
 
-            virtual void SetItemComparator(wxTreeListItemComparator *treeListItemCopmarator) override;
+            //virtual void SetItemComparator(TreeListComparator::Comparaer comparer) override;
+            virtual void SetComparer(SearchableControlBase::Comparer comparer) override;
             virtual void Sort() override;
         };
     }

@@ -275,6 +275,64 @@ namespace SystemExplorer
 
             }
 
+            template<class T>
+            int cmp(T a, T b)
+            {
+                if(a < b)
+                return -1;
+                else if(a > b)
+                return 1;
+                else
+                return 0;
+            }
+
+            int Compare(unsigned int column, std::pair<int, wxString> a, std::pair<int, wxString> b)
+            {
+                int result;
+
+
+                pid_t first_id = a.first;
+                wxString first_text = a.second;
+                pid_t second_id = b.first;
+                wxString second_text = b.second;
+                switch(column)
+                {
+                // Process name
+                    case 0:
+                    case 3:
+                    case 4:
+                    result = first_text.CmpNoCase(second_text);
+                    if(result != 0)
+                        return result;
+                    else
+                        return cmp(first_id, second_id);
+                    case 1:
+                    case 8:
+                    case 9:
+                    case 10:
+                    case 11:
+                    if(atoi(first_text.c_str()) < atoi(second_text.c_str()))
+                        return  -1;
+                    else if(atoi(first_text.c_str()) > atoi(second_text.c_str()))
+                        return  1;
+                    else
+                        return cmp(first_id, second_id);
+                    case 2:
+                    case 5:
+                    case 6:
+                    case 7:
+                        if(std::atof(first_text.c_str()) < std::atof(second_text.c_str()))
+                            return -1;
+                        else if(std::atof(first_text.c_str()) > std::atof(second_text.c_str()))
+                            return 1;
+                        else
+                            return cmp(first_id, second_id);
+                }
+
+                return first_text.CmpNoCase(second_text);
+
+            }
+
             void ProcessTreeViewController::CreateProcessesTreeList()
             {
 
@@ -303,7 +361,8 @@ namespace SystemExplorer
 
                 
                 //TODO: Uncomment this
-			    _processesListControl->SetItemComparator(&_processesTreeListItemComparator);
+			    //_processesListControl->SetItemComparator(&_processesTreeListItemComparator);
+                _processesListControl->SetComparer(Compare);
 
                 SetAutoCompleteChoices();
 

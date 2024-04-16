@@ -10,6 +10,39 @@ namespace UI
     
     namespace Control
     {
+        template<class T>
+        int cmp(T a, T b)
+        {
+            if(a < b)
+                return -1;
+            else if(a > b)
+                return 1;
+            else
+                return 0;
+        }
+
+        SearchableTreeListControlBase::TreeListComparator::TreeListComparator(SearchableControlBase::Comparer comparer)
+            : _comparer(comparer)
+        {
+        }
+        int SearchableTreeListControlBase::TreeListComparator::Compare (wxTreeListCtrl *treelist, unsigned column, wxTreeListItem first, wxTreeListItem second)
+        {
+            int result;
+
+            if(column > 11)
+                return 0;
+
+            pid_t pid_a = atoi(treelist->GetItemText(first, 1));
+            pid_t pid_b = atoi(treelist->GetItemText(second, 1));
+            wxString text_a = treelist->GetItemText(first, column);
+            wxString text_b = treelist->GetItemText(second, column);
+
+            result = _comparer(column, std::make_pair(pid_a, text_a), std::make_pair(pid_b, text_b));
+
+            return result;
+        }
+
+
         SearchableTreeListControlBase::SearchableTreeListControlBase(
             wxWindow *parent, wxWindowID id, wxImageList *imageList) 
                 : SearchableControlBase(parent, wxID_ANY, imageList),
@@ -64,10 +97,11 @@ namespace UI
 
         }
 
-        
-        void SearchableTreeListControlBase::SetItemComparator(wxTreeListItemComparator *treeListItemCopmarator)
+        void SearchableTreeListControlBase::SetComparer(SearchableControlBase::Comparer comparer)
         {
-            _tlcTreeList->SetItemComparator(treeListItemCopmarator);
+            TreeListComparator *comparator = new TreeListComparator(comparer);
+            
+            _tlcTreeList->SetItemComparator(comparator);
         }
 
         
