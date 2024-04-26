@@ -27,6 +27,9 @@ if(NOT FetchContent_Populated)
 	message("${googletest_SOURCE_DIR}::${googletest_BUILD_DIR}")
 endif()
 
+#wxCharts
+find_package(wxcharts)
+
 #Resources
 add_custom_target(BuildResourcesIcons ALLDEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/resources/resources.icons.cpp)
 add_custom_command (OUTPUT ${CMAKE_CURRENT_SOURCE_DIR}/resources/resources.icons.cpp
@@ -78,6 +81,7 @@ add_executable(system_explorer
 	gui/view_controller/root_view_controller.cpp
 	gui/view_controller/about_dialog_view_controller.cpp
 	gui/view_controller/process_tree_view_controller.cpp
+	gui/view_controller/resources_view_controller.cpp
 
 	app.cpp)
 
@@ -85,7 +89,9 @@ target_include_directories(system_explorer PRIVATE lib/libFS/include)
 target_include_directories(system_explorer PRIVATE lib/libWCE/include)
 target_include_directories(system_explorer PRIVATE lib/libOS/include)
 target_include_directories(system_explorer PRIVATE lib/libUI/include)
-target_link_libraries(system_explorer libWCE libFS libOS libUI ${wxWidgets_LIBRARIES})
+target_include_directories(system_explorer PRIVATE /usr/local/include/wxcharts)
+
+target_link_libraries(system_explorer libWCE libFS libOS libUI "/usr/local/lib64/libwxcharts.a" ${wxWidgets_LIBRARIES})
 
 # Tests
 

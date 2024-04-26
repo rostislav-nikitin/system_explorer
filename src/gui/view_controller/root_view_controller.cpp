@@ -22,6 +22,9 @@ namespace SystemExplorer
                 _processTreeViewController = new ProcessTreeViewController(
                     mainBook, processManager, "Processes", _config.GetUserConfig(), wxID_ANY, true);
                 _processTreeViewController->Initialize();
+
+                _resourcesViewController = new ResourcesViewController(mainBook, "Resources");
+                _resourcesViewController->Initialize();
             }
         }
     }

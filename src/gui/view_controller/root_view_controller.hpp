@@ -10,6 +10,7 @@
 #include <os/process/process_manager.hpp>
 
 #include "process_tree_view_controller.hpp"
+#include "resources_view_controller.hpp"
 
 namespace SystemExplorer
 {
@@ -22,6 +23,7 @@ namespace SystemExplorer
                 Config::Config _config;
 
                 ProcessTreeViewController *_processTreeViewController;
+                ResourcesViewController *_resourcesViewController;
             public:
                 RootViewController(Config::Config config);
             };
