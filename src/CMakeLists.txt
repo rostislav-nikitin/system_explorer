@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.24)
 
 #project("System Explorer" VERSION 0.0.1 LANGUAGES CXX)
+set(CMAKE_CXX_STANDARD 17 CACHE STRING "C++ Standard")
 #project(system_explorer)
 
 # wxWidgest
@@ -39,6 +40,7 @@ add_custom_command (OUTPUT ${CMAKE_CURRENT_SOURCE_DIR}/resources/resources.icons
 #Libs
 
 #add_library(wild_card_expr libs/wild_card_expr/src/wild_card_expr.cpp)
+add_subdirectory(lib/wxCharts)
 add_subdirectory(lib/libWCE)
 add_subdirectory(lib/libFS)
 add_subdirectory(lib/libOS)
@@ -90,9 +92,9 @@ target_include_directories(system_explorer PRIVATE lib/libWCE/include)
 target_include_directories(system_explorer PRIVATE lib/libOS/include)
 target_include_directories(system_explorer PRIVATE lib/libUI/include)
 target_include_directories(system_explorer PRIVATE lib/wxCharts/include)
-target_include_directories(system_explorer PRIVATE lib/wxCharts/out)
+target_include_directories(system_explorer PRIVATE ${CMAKE_BINARY_DIR}/src/lib/wxCharts)
 
-target_link_libraries(system_explorer libWCE libFS libOS libUI ${CMAKE_CURRENT_SOURCE_DIR}/lib/wxCharts/out/bin/libwxcharts.a ${wxWidgets_LIBRARIES})
+target_link_libraries(system_explorer libWCE libFS libOS libUI wxcharts ${wxWidgets_LIBRARIES})
 
 # Tests
 

@@ -10,12 +10,12 @@ project(wxcharts
 
 # This sets a common dir called bin in the wxcharts_BINARY_DIR,
 #   all the executables and libraries will be put there inside a subdirectory called Debug or Release according to its build.
-SET(LIBRARY_OUTPUT_PATH    ${wxcharts_BINARY_DIR}/bin CACHE PATH "Single output directory for building all libraries."   FORCE)
-SET(EXECUTABLE_OUTPUT_PATH ${wxcharts_BINARY_DIR}/bin CACHE PATH "Single output directory for building all executables." FORCE)
+#SET(LIBRARY_OUTPUT_PATH    ${wxcharts_BINARY_DIR}/bin CACHE PATH "Single output directory for building all libraries."   FORCE)
+#SET(EXECUTABLE_OUTPUT_PATH ${wxcharts_BINARY_DIR}/bin CACHE PATH "Single output directory for building all executables." FORCE)
 
 
-set(CMAKE_CXX_STANDARD 11 CACHE STRING "C++ Standard")
-set(CMAKE_CXX_STANDARD_REQUIRED ON CACHE BOOL "")
+#set(CMAKE_CXX_STANDARD 11 CACHE STRING "C++ Standard")
+#set(CMAKE_CXX_STANDARD_REQUIRED ON CACHE BOOL "")
 set(CMAKE_CXX_EXTENSIONS OFF CACHE BOOL "")
 set(CMAKE_DEBUG_POSTFIX "d" CACHE STRING "Postfix for debug binaries")
 if (NOT WIN32)
@@ -25,7 +25,6 @@ endif()
 
 option(BUILD_SHARED_LIBS "Build shared libraries" OFF)
 if(BUILD_SHARED_LIBS)
-    message(WARNING "Warning for a shared build: API can change in any version!")
 endif()
 
 option(wxBUILD_DEBUG_LEVEL "Debug Level" Default)
@@ -58,7 +57,7 @@ include(${wxWidgets_USE_FILE})
 file(GLOB SOURCE_FILES src/*.cpp)
 
 add_library(${PROJECT_NAME} ${SOURCE_FILES})
-add_library(${PROJECT_NAME}::${PROJECT_NAME} ALIAS ${PROJECT_NAME})
+#add_library(${PROJECT_NAME}::${PROJECT_NAME} ALIAS ${PROJECT_NAME})
 
 # export macro
 include(GenerateExportHeader)
