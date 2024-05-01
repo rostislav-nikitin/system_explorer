@@ -89,9 +89,10 @@ target_include_directories(system_explorer PRIVATE lib/libFS/include)
 target_include_directories(system_explorer PRIVATE lib/libWCE/include)
 target_include_directories(system_explorer PRIVATE lib/libOS/include)
 target_include_directories(system_explorer PRIVATE lib/libUI/include)
-target_include_directories(system_explorer PRIVATE /usr/local/include/wxcharts)
+target_include_directories(system_explorer PRIVATE lib/wxCharts/include)
+target_include_directories(system_explorer PRIVATE lib/wxCharts/out)
 
-target_link_libraries(system_explorer libWCE libFS libOS libUI "/usr/local/lib64/libwxcharts.a" ${wxWidgets_LIBRARIES})
+target_link_libraries(system_explorer libWCE libFS libOS libUI ${CMAKE_CURRENT_SOURCE_DIR}/lib/wxCharts/out/bin/libwxcharts.a ${wxWidgets_LIBRARIES})
 
 # Tests
 
