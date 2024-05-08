@@ -67,6 +67,8 @@ public:
     void Save(const wxString &filename, const wxBitmapType &type,
         const wxSize &size, const wxColor &backgroundColor);
 
+    void Update(wxChartsCategoricalData::ptr &data);
+
 private:
     void Initialize(wxChartsCategoricalData::ptr &data);
     static wxDouble GetMinValue(const wxVector<wxChartsDoubleDataset::ptr>& datasets);
@@ -132,6 +134,7 @@ private:
     wxChartsGrid m_grid;
     wxVector<Dataset::ptr> m_datasets;
     wxChartsLineType m_lineType;
+    wxSize m_gridSize;
 };
 
 #endif

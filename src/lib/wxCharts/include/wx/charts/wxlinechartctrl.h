@@ -83,6 +83,8 @@ public:
         const wxPoint &pos = wxDefaultPosition, const wxSize &size = wxDefaultSize,
         long style = 0);
     
+    void Update(wxChartsCategoricalData::ptr &data);
+    
 private:
     virtual wxLineChart& GetChart();
 

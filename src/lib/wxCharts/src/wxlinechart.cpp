@@ -127,6 +127,7 @@ wxLineChart::wxLineChart(wxChartsCategoricalData::ptr &data,
                          const wxChartsLineType &lineType,
                          const wxSize &size)
     : m_options(wxChartsDefaultTheme->GetLineChartOptions()),
+    m_gridSize(size),
     m_grid(
         wxPoint2DDouble(m_options->GetPadding().GetLeft(), m_options->GetPadding().GetTop()),
         size,
@@ -143,7 +144,8 @@ wxLineChart::wxLineChart(wxChartsCategoricalData::ptr &data,
                          const wxChartsLineType &lineType,
                          const wxLineChartOptions &options,
                          const wxSize &size)
-    : m_options(new wxLineChartOptions(options)),
+    : m_options(new wxLineChartOptions(options)), 
+    m_gridSize(size),
     m_grid(
         wxPoint2DDouble(m_options->GetPadding().GetLeft(), m_options->GetPadding().GetTop()),
         size,
@@ -153,6 +155,20 @@ wxLineChart::wxLineChart(wxChartsCategoricalData::ptr &data,
         ),
     m_lineType(lineType)
 {
+    Initialize(data);
+}
+
+void wxLineChart::Update(wxChartsCategoricalData::ptr &data)
+{
+    m_datasets.clear();
+    
+    m_grid = wxChartsGrid(
+        wxPoint2DDouble(m_options->GetPadding().GetLeft(), m_options->GetPadding().GetTop()),
+        m_gridSize,
+        wxChartsCategoricalAxis::make_shared("x", data->GetCategories(), m_options->GetGridOptions().GetXAxisOptions()),
+        wxChartsNumericalAxis::make_shared("y", GetMinValue(data->GetDatasets()), GetMaxValue(data->GetDatasets()), m_options->GetGridOptions().GetYAxisOptions()),
+        m_options->GetGridOptions());
+    
     Initialize(data);
 }
 

@@ -63,6 +63,11 @@ wxLineChartCtrl::wxLineChartCtrl(wxWindow *parent,
     CreateContextMenu();
 }
 
+void wxLineChartCtrl::Update(wxChartsCategoricalData::ptr &data)
+{
+    m_lineChart.Update(data);
+}
+
 wxLineChart& wxLineChartCtrl::GetChart()
 {
     return m_lineChart;
