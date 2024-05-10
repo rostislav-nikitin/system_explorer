@@ -60,8 +60,10 @@ namespace SystemExplorer
                 chartData->AddDataset(dataset2);
                 
                 // Create the line chart widget from the constructed data
+                wxLineChartOptions chartOpts;
+                chartOpts.GetCommonOptions().SetShowTooltips(false);
                 _lineChartCtrl = new wxLineChartCtrl(this, wxID_ANY, chartData,
-                wxCHARTSLINETYPE_STRAIGHT, wxDefaultPosition, wxDefaultSize, wxBORDER_NONE);
+                wxCHARTSLINETYPE_STRAIGHT, chartOpts, wxDefaultPosition, wxDefaultSize, wxBORDER_NONE);
                 
                 // Create the legend widget
                 wxChartsLegendData legendData(chartData->GetDatasets());
@@ -138,7 +140,7 @@ namespace SystemExplorer
                 chartData->AddDataset(dataset2);
                 
                 // Create the line chart widget from the constructed data
-                //_lineChartCtrl->Update(chartData);
+                _lineChartCtrl->Update(chartData);
                 //_panelSizer->Layout();
 
             }
