@@ -9,12 +9,14 @@ namespace SystemExplorer
         {
             ProcessTreeViewController::ProcessTreeViewController(wxBookCtrl *book, 
                 OS::Process::ProcessManager processManager,
+                std::shared_ptr<OS::Stat::ProcessesStatManager> processesStatManager,
                 std::string title,
                 Config::UserConfig &userConfig,
                 wxWindowID id,
                 bool useByDefault) 
                 : ViewControllerBase(book, title, id, useByDefault), 
                     _processManager(processManager),
+                    _processesStatManager(processesStatManager),
                     _userConfig(userConfig),
                     _sbStatIndex(-1),
                     _viewState(ViewState::List)
@@ -59,7 +61,7 @@ namespace SystemExplorer
 
             void ProcessTreeViewController::CreateChildControls()
             {
-                _processesStatManager.Tick();
+                //_processesStatManager->Tick();
 
                 CreateStatusBarField();
             	CreateHotKeys();
@@ -77,7 +79,7 @@ namespace SystemExplorer
                 UpdateContextMenu();
        			StartTimer();
     			SetFocus();
-                _processesStatManager.Tick();
+                //_processesStatManager->Tick();
             }
 
             void ProcessTreeViewController::UpdateContextMenu()
@@ -503,7 +505,7 @@ namespace SystemExplorer
             void ProcessTreeViewController::timer_OnTick(wxTimerEvent &event)
             {
                 // Recalculate processes statistics like a CPU load, etc.
-                _processesStatManager.Tick();
+                //_processesStatManager->Tick();
                 // Rebind data to show new processes tree/stat
                 ReBindData();
             }
@@ -690,7 +692,7 @@ namespace SystemExplorer
                 if(!_miShowAllProcesses->IsChecked())
                     filterUserId = currentUserId;
                 
-                ProcessesStat processesStat = _processesStatManager.GetProcessesStat();
+                ProcessesStat processesStat = _processesStatManager->GetProcessesStat();
                 ProcessManager pm;
                 std::string searchFilter = _processesListControl->GetSearchText();
                 ProcessTree processes = pm.GetProcessTree(searchFilter, filterUserId);
@@ -753,7 +755,7 @@ namespace SystemExplorer
                     filterUserId = currentUserId;
                 // Get processes
                 ProcessManager pm;
-                ProcessesStat processesStat = _processesStatManager.GetProcessesStat();
+                ProcessesStat processesStat = _processesStatManager->GetProcessesStat();
                 float x = 0.0;
 
                 std::string searchFilter = _processesListControl->GetSearchText();

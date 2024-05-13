@@ -7,9 +7,12 @@ namespace SystemExplorer
         namespace ViewController
         {
             ResourcesViewController::ResourcesViewController(wxBookCtrl *book, 
+                std::shared_ptr<OS::Stat::ProcessesStatManager> processesStatManager,
                 std::string title, 
                 wxWindowID id, 
-                bool useByDefault) : ViewControllerBase(book, title, id, useByDefault)
+                bool useByDefault
+                ) : ViewControllerBase(book, title, id, useByDefault), 
+                    _processesStatManager(processesStatManager)
             {
             }
 
@@ -26,13 +29,13 @@ namespace SystemExplorer
                 
                 // Create the data for the line chart widget
                 wxVector<wxString> labels;
-                labels.push_back("10");
-                labels.push_back("20");
-                labels.push_back("30");
-                labels.push_back("40");
-                labels.push_back("50");
                 labels.push_back("60");
-                labels.push_back("70");
+                labels.push_back("50");
+                labels.push_back("40");
+                labels.push_back("30");
+                labels.push_back("20");
+                labels.push_back("10");
+                labels.push_back("0");
                 wxChartsCategoricalData::ptr chartData = wxChartsCategoricalData::make_shared(labels);
                 
                 // Add the first dataset
@@ -97,47 +100,50 @@ namespace SystemExplorer
 
             void ResourcesViewController::_timer_OnTimer(wxTimerEvent &event)
             {
-                //wxMessageBox("Test", "Test");
-                                // Create a top-level panel to hold all the contents of the frame
-                //wxPanel* panel = new wxPanel(this, wxID_ANY);
+                //_procTreeStatManager.Tick();
                 
                 // Create the data for the line chart widget
                 wxVector<wxString> labels;
-                labels.push_back("10");
-                labels.push_back("20");
-                labels.push_back("30");
-                labels.push_back("40");
-                labels.push_back("50");
-                labels.push_back("60");
-                labels.push_back("70");
-                labels.push_back("80");
+                for(int i = 60; i > -1; --i)
+                {
+                    if(i % 10 == 0)
+                        labels.push_back(std::to_string(i));
+                    else
+                        labels.push_back("");
+                }
+                
                 wxChartsCategoricalData::ptr chartData = wxChartsCategoricalData::make_shared(labels);
                 
                 // Add the first dataset
                 wxVector<wxDouble> points1;
-                points1.push_back(5);
-                points1.push_back(-2.5);
-                points1.push_back(-1.2);
-                points1.push_back(3);
-                points1.push_back(2);
-                points1.push_back(6);
-                points1.push_back(1);
-                points1.push_back(10.0);
+                for(int i = 60; i > -1; --i)
+                {
+                    points1.push_back(0);
+                }
                 wxChartsDoubleDataset::ptr dataset1(new wxChartsDoubleDataset("My First Dataset", points1));
                 chartData->AddDataset(dataset1);
                 
                 // Add the second dataset
                 wxVector<wxDouble> points2;
-                points2.push_back(3);
-                points2.push_back(-1.33);
-                points2.push_back(2.5);
-                points2.push_back(6);
-                points2.push_back(27);
-                points2.push_back(-2.1);
-                points2.push_back(0.2);
-                points2.push_back(6.0);
+                for(int i = 60; i > 0; --i)
+                {
+                    points2.push_back(0);
+                }
+                points2.push_back(_processesStatManager->GetProcessesStatCommon().cpu_load * 100.0);
+/*
+                if(_procTreeStatManager.GetProcTreeStat().proc_stat.size() > 0)
+                {
+                    points2.push_back(_procTreeStatManager.GetProcTreeStat().proc_stat[0].proc_cpu_stat[0].get_avg_cpu_load() * 100);
+                    std::cout << (_procTreeStatManager.GetProcTreeStat().proc_stat[0].proc_cpu_stat[0].get_avg_cpu_load() * 100) << std::endl;
+                }
+                else
+                    points2.push_back(0.0);
+*/
                 wxChartsDoubleDataset::ptr dataset2(new wxChartsDoubleDataset("My Second Dataset", points2));
                 chartData->AddDataset(dataset2);
+
+
+                
                 
                 // Create the line chart widget from the constructed data
                 _lineChartCtrl->Update(chartData);

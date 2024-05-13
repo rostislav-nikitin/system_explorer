@@ -2,12 +2,15 @@
 #define GUI_VIEW_CONTROLLER_RESOURCES_VIEW_CONTROLLER_HPP
 
 #include <string>
+#include <memory>
 #include <wx/wx.h>
 #include <wx/bookctrl.h>
 #include <wx/charts/wxcharts.h>
 #include <wx/timer.h>
 
 #include "view_controller_base.hpp"
+
+#include <os/stat/processes_stat_manager.hpp>
 
 namespace SystemExplorer
 {
@@ -18,6 +21,9 @@ namespace SystemExplorer
             class ResourcesViewController : public ViewControllerBase
             {
             private:
+
+                std::shared_ptr<OS::Stat::ProcessesStatManager> _processesStatManager;
+
                 wxTimer *_timer;
                 wxLineChartCtrl* _lineChartCtrl;
                 wxChartsLegendCtrl* _legendCtrl;
@@ -25,6 +31,7 @@ namespace SystemExplorer
 
             public:
                 ResourcesViewController(wxBookCtrl *book, 
+                    std::shared_ptr<OS::Stat::ProcessesStatManager> processesStatManager,
                     std::string title, 
                     wxWindowID id = wxID_ANY, 
                     bool useByDefault = false);
