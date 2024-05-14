@@ -29,6 +29,11 @@ namespace SystemExplorer
                 wxChartsLegendCtrl* _legendCtrl;
                 wxBoxSizer* _panelSizer;
 
+                wxVector<wxString> _labels;
+                wxVector<wxDouble> _pointsCpuTotal;
+                wxVector<wxDouble> _pointsCpuSystem;
+                wxVector<wxDouble> _pointsCpuSelectedProcesses;
+
             public:
                 ResourcesViewController(wxBookCtrl *book, 
                     std::shared_ptr<OS::Stat::ProcessesStatManager> processesStatManager,
