@@ -32,9 +32,19 @@ namespace OS
                     return user + nice + system;
                 }
 
+                unsigned long long get_system_cpu_work_time() const
+                {
+                    return system;
+                }
+
                 float get_avg_cpu_load() const
                 {
                     return float(get_effective_cpu_work_time()) / float(get_total_cpu_work_time());
+                }
+
+                float get_avg_system_cpu_load() const
+                {
+                    return float(get_system_cpu_work_time()) / float(get_total_cpu_work_time());
                 }
             };
 

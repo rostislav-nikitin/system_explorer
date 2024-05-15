@@ -103,6 +103,12 @@ wxChartsPresentationDatasetTheme2::wxChartsPresentationDatasetTheme2()
         wxChartsBrushOptions(wxColor(151, 187, 205, 0x7F))
     ));
 
+    SetLineChartDatasetOptions(wxLineChartDatasetOptions(
+        wxColor(171, 207, 225),
+        wxColor(255, 255, 255),
+        wxColor(171, 207, 225, 0x33)
+    ));
+ 
     SetStackedColumnChartDatasetOptions(wxStackedColumnChartDatasetOptions(
         wxChartsPenOptions(wxColor(151, 187, 205, 0xFF), 2),
         wxChartsBrushOptions(wxColor(151, 187, 205, 0x7F))

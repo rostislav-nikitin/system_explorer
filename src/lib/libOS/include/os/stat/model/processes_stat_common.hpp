@@ -11,6 +11,7 @@ namespace OS
             {
             public:
                 float cpu_load; 
+                float cpu_system_load;
                 double rss; 
                 double vmsize; 
             };

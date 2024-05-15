@@ -22,8 +22,15 @@ namespace OS
                 int avg_cpu_effective_load_last = stat.proc_stat[0].proc_cpu_stat[0].get_effective_cpu_work_time();
                 int avg_cpu_effective_load_before_last = stat.proc_stat[1].proc_cpu_stat[0].get_effective_cpu_work_time();
 
+                int avg_cpu_system_load_last = stat.proc_stat[0].proc_cpu_stat[0].get_system_cpu_work_time();
+                int avg_cpu_system_load_before_last = stat.proc_stat[1].proc_cpu_stat[0].get_system_cpu_work_time();
+
                 result.cpu_load = 
                     float(avg_cpu_effective_load_last - avg_cpu_effective_load_before_last)
+                    / float(avg_cpu_total_load_last - avg_cpu_total_load_before_last);
+
+                result.cpu_system_load = 
+                    float(avg_cpu_system_load_last - avg_cpu_system_load_before_last)
                     / float(avg_cpu_total_load_last - avg_cpu_total_load_before_last);
             }
 

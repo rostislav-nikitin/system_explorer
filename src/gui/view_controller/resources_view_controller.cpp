@@ -76,7 +76,7 @@ namespace SystemExplorer
                 chartOpts.GetCommonOptions().SetShowTooltips(false);
                 wxChartsAxisOptions &axisOptions = chartOpts.GetGridOptions().GetYAxisOptions();
                 axisOptions.SetExplicitStartValue(0);
-                axisOptions.SetExplicitEndValue(100);
+                axisOptions.SetExplicitEndValue(99);
 
                 _lineChartCtrl = new wxLineChartCtrl(this, wxID_ANY, chartData,
                 wxCHARTSLINETYPE_STRAIGHT, chartOpts, wxDefaultPosition, wxDefaultSize, wxBORDER_NONE);
@@ -120,8 +120,13 @@ namespace SystemExplorer
                 
                 wxChartsCategoricalData::ptr chartData = wxChartsCategoricalData::make_shared(_labels);
 
+                OS::Stat::Model::ProcessesStatCommon processStatCommon = _processesStatManager->GetProcessesStatCommon();
+
                 _pointsCpuTotal << 1;
-                _pointsCpuTotal[_pointsCpuTotal.size() - 1] = (_processesStatManager->GetProcessesStatCommon().cpu_load * 100.0);
+                _pointsCpuTotal[_pointsCpuTotal.size() - 1] = (processStatCommon.cpu_load * 100.0);
+                
+                _pointsCpuSystem << 1;
+                _pointsCpuSystem[_pointsCpuSystem.size() - 1] = (processStatCommon.cpu_system_load * 100.0);
 
                 wxChartsDoubleDataset::ptr dsCpuTotal(new wxChartsDoubleDataset("CPU Total", _pointsCpuTotal));
                 chartData->AddDataset(dsCpuTotal);
